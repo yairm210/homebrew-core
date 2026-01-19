@@ -14,11 +14,18 @@ class Xcsift < Formula
   end
 
   depends_on xcode: ["16.0", :build]
-  depends_on :macos
+  uses_from_macos "swift" => :build, since: :sonoma
 
   def install
     inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version.to_s
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+
+    system "swift", "build", *args, "-c", "release"
     bin.install ".build/release/xcsift"
   end
 
