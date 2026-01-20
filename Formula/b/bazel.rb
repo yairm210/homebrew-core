@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/8.5.1/bazel-8.5.1-dist.zip"
-  sha256 "bf66a1cbaaafec32e1e103d0e07343082f1f0f3f20ad4c6b66c4eda3f690ed4d"
+  url "https://github.com/bazelbuild/bazel/releases/download/9.0.0/bazel-9.0.0-dist.zip"
+  sha256 "dfa496089624d726a158afcac353725166f81c5708ee1ecc9e662f2891b3544d"
   license "Apache-2.0"
 
   livecheck do
@@ -49,11 +49,11 @@ class Bazel < Formula
   def install
     java_home_env = Language::Java.java_home_env("21")
 
-    ENV["EMBED_LABEL"] = "#{version}-homebrew"
+    ENV["EMBED_LABEL"] = "#{version} #{tap.user}"
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
-    # Force Bazel to use brew OpenJDK
-    extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    # Force Bazel to use brewed OpenJDK and PATH
+    extra_bazel_args = %w[--tool_java_runtime_version=local_jdk --action_env=PATH --host_action_env=PATH --isatty=no]
     ENV.merge! java_home_env.transform_keys(&:to_s)
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
@@ -120,7 +120,9 @@ class Bazel < Formula
   end
 
   test do
-    touch testpath/"WORKSPACE"
+    (testpath/"MODULE.bazel").write <<~STARLARK
+      bazel_dep(name = "rules_java", version = "9.5.0")
+    STARLARK
 
     (testpath/"ProjectRunner.java").write <<~JAVA
       public class ProjectRunner {
@@ -131,6 +133,8 @@ class Bazel < Formula
     JAVA
 
     (testpath/"BUILD").write <<~STARLARK
+      load("@rules_java//java:defs.bzl", "java_binary")
+
       java_binary(
         name = "bazel-test",
         srcs = glob(["*.java"]),
@@ -153,6 +157,6 @@ class Bazel < Formula
     (testpath/"tools/bazel").chmod 0755
 
     assert_equal "stub-wrapper\n", shell_output("#{bin}/bazel --version", 1)
-    assert_equal "bazel #{version}-homebrew\n", shell_output("#{bin}/bazel-#{version} --version")
+    assert_match "bazel #{version}", shell_output("#{bin}/bazel-#{version} --version")
   end
 end
