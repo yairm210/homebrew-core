@@ -2,8 +2,8 @@ class Minikube < Formula
   desc "Run a Kubernetes cluster locally"
   homepage "https://minikube.sigs.k8s.io/"
   url "https://github.com/kubernetes/minikube.git",
-      tag:      "v1.37.0",
-      revision: "65318f4cfff9c12cc87ec9eb8f4cdd57b25047f3"
+      tag:      "v1.38.0",
+      revision: "de81223c61ab1bd97dcfcfa6d9d5c59e5da4a0cf"
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git", branch: "master"
 
@@ -22,7 +22,15 @@ class Minikube < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "make"
     bin.install "out/minikube"
 
