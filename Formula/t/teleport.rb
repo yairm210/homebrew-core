@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.6.1.tar.gz"
-  sha256 "96923c4f116c9b4726f3abd0da6878c771fa0494631a1737b9200225e425a93f"
+  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.6.5.tar.gz"
+  sha256 "b4f4a706939853da6b92f2267ba610447bdd3093dd439e80690b0166c4ac7986"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -55,6 +55,12 @@ class Teleport < Formula
   patch :DATA
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     # Prevent pnpm from downloading another copy due to `packageManager` feature
     (buildpath/"pnpm-workspace.yaml").append_lines <<~YAML
       managePackageManagerVersions: false
