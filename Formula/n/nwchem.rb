@@ -5,6 +5,7 @@ class Nwchem < Formula
   version "7.3.1"
   sha256 "7bc6f9bae6e4bf45750968e97a3206b0b026eabd8aa7b5e54317a9a26afcbe60"
   license "ECL-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -34,10 +35,17 @@ class Nwchem < Formula
 
   uses_from_macos "libxcrypt"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def install
     pkgshare.install "QA"
 
     cd "src" do
+      # Workaround to link to LLVM OpenMP (libomp) with gfortran
+      inreplace "config/makefile.h", /(\bLDOPTIONS *\+= *)-fopenmp$/, "\\1-lomp" if OS.mac?
+
       (prefix/"etc").mkdir
       (prefix/"etc/nwchemrc").write <<~EOS
         nwchem_basis_library #{pkgshare}/libraries/
@@ -78,6 +86,12 @@ class Nwchem < Formula
   end
 
   test do
+    if OS.mac?
+      require "utils/linkage"
+      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      refute Utils.binary_linked_to_library?(bin/"nwchem", libgomp), "Unwanted linkage to libgomp!"
+    end
+
     cp_r pkgshare/"QA", testpath
     cd "QA" do
       ENV["OMP_NUM_THREADS"] = "1"
