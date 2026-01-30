@@ -11,12 +11,12 @@ class Ghidra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e6816482e93fc8a6c20e9fe1d4a322819f9b58450342f9ed50021cc0145bd00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e12be6e9b893c9b3c9af0e2ea34d4060d5f3e53d1655081f4acaa17cfdea75b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "672bb010b3e7a2d9c8bde56c64885b684025a40bfc076711bd7490d94975dd6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4cff1540502a19f751a18d1237aca02afccf043676a7177ae854251802c8b90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbf69fa8161534e8c605e0986c112a23eaad13740016e36a35fc74eb9274c8b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7bc034702acfe98fb020b0b14d615b505b93f2e5cfbaa32c5b77a416d1ab829"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc0f7bcbc098fbfce8e97d26a968bb32c299f27fe913653f88151cf0bac82ebb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf1514acf47f6059e6895ce5c54540b7fc6828eae009fd5f778813ade9fd5611"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "095a05d5b1c95221a0d8abbcf7f904f89ae95f74baca1589146bb2ab4bb47068"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75f438fb42c8a0e026efb3a7976b1cd0fb96399badbbf9f000486e2ff8caf727"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbcc89d3bc7550079bd84f6e50e748f2e9c5fb3d3d390ec774f53c591818ee76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "073f4492e04b6afd744f2c8d8859aafde203c760558a528684bd13ccf1c0d44e"
   end
 
   depends_on "gradle" => :build
