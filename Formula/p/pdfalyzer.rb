@@ -3,8 +3,8 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/b8/d2/2afde3ff0c4b99e61b28830fb4b1f4493905e20809cb63369a5ff0a63aab/pdfalyzer-1.19.3.tar.gz"
-  sha256 "5678228c37a3e5d4ee395ed711833d871c4c9ed43d845ffd7e6b1cfcf3481fb9"
+  url "https://files.pythonhosted.org/packages/af/0e/b8135d1bc6d30a0baee6fd10df4c01d2590a1ff6f817009adf3085ced31d/pdfalyzer-1.19.4.tar.gz"
+  sha256 "7bbb94f8342641de67cbeff2d186bb9b7a8c6ee4f31f3cc7db95dad3dc7996ef"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
@@ -72,8 +72,8 @@ class Pdfalyzer < Formula
   end
 
   resource "yaralyzer" do
-    url "https://files.pythonhosted.org/packages/17/9c/b714f8ff74b5cd5d6a3d54971c64456b28ee53119aad0658955c30f4930a/yaralyzer-1.3.12.tar.gz"
-    sha256 "c53ecbcdef733916f6fca05e208fa74f68e3070c997139756ec93d56e787399a"
+    url "https://files.pythonhosted.org/packages/50/70/c6fdd2f506adeafc1cfbe4d60ec213461b9848da2699773a1be226a44b14/yaralyzer-1.3.14.tar.gz"
+    sha256 "125a03f7bc0ceb62fdaab2e18ef25f43542ae1b7baa6bc709ad93a92b3af824a"
   end
 
   def install
