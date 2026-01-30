@@ -29,7 +29,7 @@ class KimApi < Formula
 
   def install
     args = [
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DCMAKE_INSTALL_RPATH=#{rpath};#{loader_path}/../../..",
       # adjust libexec dir
       "-DCMAKE_INSTALL_LIBEXECDIR=lib",
       # adjust directories for system collection
