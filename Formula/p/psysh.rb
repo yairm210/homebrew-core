@@ -6,7 +6,7 @@ class Psysh < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "619f5c3a9dee0b21bfd71f7959f842d868a5bab5f2372612239248ffb9cc5e22"
+    sha256 cellar: :any_skip_relocation, all: "72b5d2f0e496899672ffac06ff0ab7574e6faf470f6ba1e516ef66d0986601c8"
   end
 
   depends_on "php"
