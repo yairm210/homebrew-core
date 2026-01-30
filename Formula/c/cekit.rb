@@ -8,13 +8,12 @@ class Cekit < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "5a7bd13fc7d7409f321604e7130ad10e9371672477f82812ed804de5e861e7eb"
-    sha256 cellar: :any,                 arm64_sequoia: "f2f4c51e06c24076f37fb1f73f4c8be5b65961e38e0f26542574a09ba0ebebb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "653ca4927f72621e4590e9a38099fe985cc0c8bf8f36725d916eee7940299af0"
-    sha256 cellar: :any,                 sonoma:        "50f771db67098b4ddad445157f31c68daa2a02df6be18fce5c4b48d40806853e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24e51037651c7b645a0b1ff7296b92789e4a2ac74215e27ef8348c87669da698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b7f381c7ec6609a3f012a517b3d696c57d3b4609fc76d061252c3035249c50"
+    sha256 cellar: :any,                 arm64_tahoe:   "87c37dcbed05db79ec5b50b9276dcf59b919651359aaa4f6dc32d288752eaafe"
+    sha256 cellar: :any,                 arm64_sequoia: "c835d727e0ba9e7433e09aa85f49dffc90a4d55e68c39f643b5c584ce98799e9"
+    sha256 cellar: :any,                 arm64_sonoma:  "c41f78aaf385b0bcae1fd86833ce720883c1f8f93a277e2022c6cbd372065029"
+    sha256 cellar: :any,                 sonoma:        "edb62835bb61b5103635737185c0b0d05f03c6dbcc46d8eea531c9be08bf7e3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c51f4773091b2ebd1eaf8150882fbf92e26354ce249d35d056418b57c4b0a1c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "298b831ac276a17cc40a389484be26ea952a061d83cf7aeb78ce3c97cdc0fe39"
   end
 
   depends_on "libyaml"
