@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/c6/88/00f6116992091c3c4be9d606b693c5a4314210eda6e63fa4b2efae3614cc/flexget-3.18.41.tar.gz"
-  sha256 "b34ee3d62e18c93b2179618385129174270f843ce7625a55bf28c46752e04f3d"
+  url "https://files.pythonhosted.org/packages/16/7a/15ef05cb5ba9b760da61964127791ebd0c1e112ee645d587ca421b475a6b/flexget-3.18.42.tar.gz"
+  sha256 "30274ecbfda4a02b2047d7b7ef367106d41278665cdfac0b8c4c5e954e9a73d7"
   license "MIT"
 
   bottle do
@@ -218,15 +218,8 @@ class Flexget < Formula
   end
 
   resource "pendulum" do
-    url "https://files.pythonhosted.org/packages/23/7c/009c12b86c7cc6c403aec80f8a4308598dfc5995e5c523a5491faaa3952e/pendulum-3.1.0.tar.gz"
-    sha256 "66f96303560f41d097bee7d2dc98ffca716fbb3a832c4b3062034c2d45865015"
-
-    # Bump PyO3 version to add python@3.14 support
-    # https://github.com/python-pendulum/pendulum/pull/914
-    patch do
-      url "https://github.com/python-pendulum/pendulum/commit/0e9299108fc691cf993db31bd4d136b75a86079e.patch?full_index=1"
-      sha256 "cec51de828647d2768bdf739eecd567c6c15986272fc80c9c3eb3ba1f8d470a3"
-    end
+    url "https://files.pythonhosted.org/packages/cb/72/9a51afa0a822b09e286c4cb827ed7b00bc818dac7bd11a5f161e493a217d/pendulum-3.2.0.tar.gz"
+    sha256 "e80feda2d10fa3ff8b1526715f7d33dcb7e08494b3088f2c8a3ac92d4a4331ce"
   end
 
   resource "plumbum" do
@@ -240,8 +233,8 @@ class Flexget < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pygments" do
