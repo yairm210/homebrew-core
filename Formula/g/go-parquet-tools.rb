@@ -20,14 +20,16 @@ class GoParquetTools < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/hangxie/parquet-tools/cmd.version=v#{version}
-      -X github.com/hangxie/parquet-tools/cmd.build=#{time.iso8601}
-      -X github.com/hangxie/parquet-tools/cmd.source=#{tap.user}
+      -X github.com/hangxie/parquet-tools/cmd/version.version=v#{version}
+      -X github.com/hangxie/parquet-tools/cmd/version.build=#{time.iso8601}
+      -X github.com/hangxie/parquet-tools/cmd/version.source=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"parquet-tools")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/parquet-tools version")
+
     resource("test-parquet") do
       url "https://github.com/hangxie/parquet-tools/raw/950d21759ff3bd398d2432d10243e1bace3502c5/testdata/good.parquet"
       sha256 "daf5090fbc5523cf06df8896cf298dd5e53c058457e34766407cb6bff7522ba5"
