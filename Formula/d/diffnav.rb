@@ -1,8 +1,8 @@
 class Diffnav < Formula
   desc "Git diff pager based on delta but with a file tree"
   homepage "https://github.com/dlvhdr/diffnav"
-  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "501b5b283a23c9e58788c4dc1c384c27760dd20d82e801256e7ede86f39240af"
+  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c9eefb662dc27a0d196e59a134dd18b4fe7e6e579f7eab1c0b9c71ca75c47c5a"
   license "MIT"
   head "https://github.com/dlvhdr/diffnav.git", branch: "main"
 
@@ -31,13 +31,17 @@ class Diffnav < Formula
     system "git", "commit", "-m", "Initial commit"
     (testpath/"test.txt").append_lines("Hello, diffnav!")
 
-    r, w, pid = PTY.spawn("git diff | #{bin}/diffnav")
-    sleep 1
-    w.write "q"
-    assert_match "test.txt", r.read
-  rescue Errno::EIO
-    # GNU/Linux raises EIO when read is done on closed pty
-  ensure
-    Process.kill("TERM", pid) unless pid.nil?
+    require "pty"
+    begin
+      r, w, pid = PTY.spawn("git diff | #{bin}/diffnav")
+      r.winsize = [80, 43]
+      sleep 1
+      w.write "q"
+      assert_match "test.txt", r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.kill("TERM", pid) unless pid.nil?
+    end
   end
 end
