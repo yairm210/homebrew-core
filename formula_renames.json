@@ -19,6 +19,7 @@
   "bro": "zeek",
   "cdiff": "ydiff",
   "chipmunk": "chipmunk-physics",
+  "clawdbot-cli": "openclaw-cli",
   "cloog018": "cloog",
   "cloudflare-wrangler2": "cloudflare-wrangler",
   "commonmark": "cmark",
