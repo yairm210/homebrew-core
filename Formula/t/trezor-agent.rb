@@ -9,7 +9,7 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/11/bc/aa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63/trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
-  revision 11
+  revision 12
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "df5b99a9d545671b2cb423188f153a025863cdcefe714b4928c6b7115e7d0785"
@@ -172,8 +172,8 @@ class TrezorAgent < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pycryptodome" do
