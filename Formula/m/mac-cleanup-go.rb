@@ -6,6 +6,13 @@ class MacCleanupGo < Formula
   license "MIT"
   head "https://github.com/2ykwang/mac-cleanup-go.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7837067f48e3e574181ea8c2ca1b72427ad5e120d31493fa0dd0e794f17e6d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7837067f48e3e574181ea8c2ca1b72427ad5e120d31493fa0dd0e794f17e6d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7837067f48e3e574181ea8c2ca1b72427ad5e120d31493fa0dd0e794f17e6d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93afa2bc043b692cca63a680f31d5226dbe2f8314bf48d8b653a54d4e6ab5405"
+  end
+
   depends_on "go" => :build
   depends_on :macos
 
