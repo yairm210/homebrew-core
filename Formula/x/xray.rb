@@ -1,8 +1,8 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://xtls.github.io/"
-  url "https://github.com/XTLS/Xray-core/archive/refs/tags/v26.1.23.tar.gz"
-  sha256 "0442d7cbb7de02ef9eac9ad652df66972962473dc7b55441d5abcd032a74b41d"
+  url "https://github.com/XTLS/Xray-core/archive/refs/tags/v26.1.31.tar.gz"
+  sha256 "2aaa75d67bf590f46e1d0c9ea8d15ed6761585f3c94111e70c111c269e2b4433"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https://github.com/XTLS/Xray-core.git", branch: "main"
 
@@ -28,8 +28,8 @@ class Xray < Formula
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20260123065726/dlc.dat"
-    sha256 "5c4f403bed61b1579180d43ba66422d0577740543d2f8642e0b5b1ecf2994aa3"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20260131100437/dlc.dat"
+    sha256 "e183d477aa4c149a7c809cc2f31b82e6bb22c492421eb96d38c72f4904b4c31c"
   end
 
   resource "example_config" do
