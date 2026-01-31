@@ -1,8 +1,8 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.8.1.tgz"
-  sha256 "091c911dc37a506de9fad6e83b72a01bdc86897276a633e2d3a2d107f7a85ed0"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.8.2.tgz"
+  sha256 "e9e095d8f20d89f25f09db9254b53bd23b05109edebcec712e3ba366f5cd0ce7"
   license "MIT"
 
   bottle do
@@ -27,8 +27,8 @@ class Pake < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.1.0.tgz"
-    sha256 "492bca8e813411386e61e488f95b375262aa8f262e6e8b20d162e26bdf025f16"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.2.0.tgz"
+    sha256 "8689bbeb45a3219dfeb5b05a08d000d3b2492e12db02d46c81af0bee5c085fec"
   end
 
   def install
