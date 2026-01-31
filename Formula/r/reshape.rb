@@ -1,12 +1,10 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "f348a21547cb2bfdc294ecc8a846eacec1708c29458db9afb6f8a1239f68d6cb"
+  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "e18d64c8d7a093e45e829354ad8cf24ffbd6d2d6a1ae7b45471145264cb4bcff"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4cfaa10f4b329f49d24d50df97f84fc1457d655f27b74da5849a72190e052473"
@@ -47,7 +45,7 @@ class Reshape < Formula
     assert_match "SET search_path TO migration_test",
       shell_output("#{bin}/reshape generate-schema-query")
 
-    assert_match "Error: error connecting to server:",
+    assert_match "Error: error connecting to server",
       shell_output("#{bin}/reshape migrate 2>&1", 1)
   end
 end
