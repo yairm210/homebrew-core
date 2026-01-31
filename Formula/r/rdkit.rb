@@ -2,10 +2,9 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_4.tar.gz"
-  sha256 "b1811f4fa39b0a71e8f59f77cdaa2ce545af083052a9acef1ccf7fd2c8b9679f"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_5.tar.gz"
+  sha256 "1ac784a5f83a7db10aa50be0cd213eba7c1f3436ed4da12363e57589b571db46"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -36,12 +35,12 @@ class Rdkit < Formula
   depends_on "boost-python3"
   depends_on "cairo"
   depends_on "coordgen"
-  depends_on "eigen"
+  depends_on "eigen" => :no_linkage
   depends_on "freetype"
   depends_on "inchi"
   depends_on "maeparser"
   depends_on "numpy"
-  depends_on "py3cairo"
+  depends_on "py3cairo" => :no_linkage
   depends_on "python@3.14"
 
   resource "better_enums" do
