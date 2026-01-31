@@ -9,6 +9,7 @@ class Openblas < Formula
   # 3. interface/{gemmt.c,sbgemmt.c} is BSD-2-Clause
   # 4. relapack/ is MIT but license is omitted as it is not enabled
   license all_of: ["BSD-3-Clause", "BSD-2-Clause-Views", "BSD-3-Clause-Open-MPI", "BSD-2-Clause"]
+  revision 1
   head "https://github.com/OpenMathLib/OpenBLAS.git", branch: "develop"
 
   livecheck do
@@ -29,7 +30,10 @@ class Openblas < Formula
 
   depends_on "pkgconf" => :test
   depends_on "gcc" # for gfortran
-  fails_with :clang
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   # Fix configuration header on Linux Arm with GCC 12
   # https://github.com/OpenMathLib/OpenBLAS/pull/5606
@@ -39,6 +43,20 @@ class Openblas < Formula
   end
 
   def install
+    # Workaround to use Apple Clang, GCC gfortran and link to `libomp`. We do not
+    # want to link GCC's libgomp as it will cause dependents to mix multiple OpenMP:
+    # https://cpufun.substack.com/p/is-mixing-openmp-runtimes-safe
+    if ENV.compiler == :clang
+      inreplace "Makefile.install" do |s|
+        s.gsub! ":= -fopenmp", ":= -I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+        s.gsub! "+= -lgomp", "+= -L#{Formula["libomp"].opt_lib} -lomp"
+      end
+      inreplace "Makefile.system" do |s|
+        s.gsub! "+= -fopenmp", "+= -Xpreprocessor -fopenmp"
+        s.gsub! "+= -lgfortran", "+= -L#{Formula["gcc"].opt_lib}/gcc/current -lgfortran"
+      end
+    end
+
     ENV.runtime_cpu_detection
     ENV.deparallelize # build is parallel by default, but setting -j confuses it
 
@@ -72,6 +90,14 @@ class Openblas < Formula
   end
 
   test do
+    if OS.mac?
+      require "utils/linkage"
+      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libomp = Formula["libomp"].opt_lib/"libomp.dylib"
+      refute Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libgomp), "Unwanted linkage to libgomp!"
+      assert Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libomp), "Missing linkage to libomp!"
+    end
+
     (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
@@ -99,6 +125,8 @@ class Openblas < Formula
     cp_r pkgshare/"cpp_thread_test/.", testpath
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig" if OS.mac?
     flags = shell_output("pkgconf --cflags --libs openblas").chomp.split
+    flags += %W[-L#{Formula["libomp"].lib} -lomp] if OS.mac?
+
     %w[dgemm_thread_safety dgemv_thread_safety].each do |test|
       inreplace "#{test}.cpp", '"../cblas.h"', '"cblas.h"'
       system ENV.cxx, *ENV.cxxflags.to_s.split, "-std=c++11", "#{test}.cpp", "-o", test, *flags
