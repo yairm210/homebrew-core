@@ -1,8 +1,8 @@
 class CyclonedxGomod < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules"
   homepage "https://cyclonedx.org/"
-  url "https://github.com/CycloneDX/cyclonedx-gomod/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "4490e44e2478a3f8b62e568a530b604ace14bd12d26c0fb41656a24ffec566c7"
+  url "https://github.com/CycloneDX/cyclonedx-gomod/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "14d71dcce1164ada13832c6f61b6bb4f804e21966b03ff937b47609752b112f8"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
