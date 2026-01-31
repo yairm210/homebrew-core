@@ -6,12 +6,12 @@ class Pake < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "17fdcf6ffbf60839f761cc207189bb26eed54354533e33bf9bf3a4db633941dd"
-    sha256 cellar: :any,                 arm64_sequoia: "00a103d8f00a2f66fa3e430fad00663ebc3079eb2f17b0fae6f04a17862a7025"
-    sha256 cellar: :any,                 arm64_sonoma:  "00a103d8f00a2f66fa3e430fad00663ebc3079eb2f17b0fae6f04a17862a7025"
-    sha256 cellar: :any,                 sonoma:        "48aaab8cb265670bbeda5a3f9cc8636a7e1be70a0ee864ca2b956d8dddc69d30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb366f6e353fdd3ab0b9f21578fd735ee9da7984d1a0bbea256f6936ac82fbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9abdc364955eb4a44cf58163be506bdf037e09ea4969f171ebc63e683df36665"
+    sha256 cellar: :any,                 arm64_tahoe:   "127d7f67cabc5793a9681c6f1f9268db0c8b6c9f8d70099ebafcd8608e7a2586"
+    sha256 cellar: :any,                 arm64_sequoia: "0818a094bef8f5c5dc62ad3b5b808ad71e84d38dc5e7487855793685769e586e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0818a094bef8f5c5dc62ad3b5b808ad71e84d38dc5e7487855793685769e586e"
+    sha256 cellar: :any,                 sonoma:        "03e386a7fb27f28e718ea295b44e5064c5ea5920de42b8c8d97861d47f40384c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "810760085fa32efa8a20df73762bee91a1066d017b86768317355676e15c1d3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b429f37249217f28657c6ec75d07d4c1516f1d22aa2c99f709165dcafa4a01"
   end
 
   depends_on "node"
