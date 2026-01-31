@@ -138,6 +138,7 @@
   "php-intl": "php",
   "poac": "cabin",
   "polarssl": "mbedtls",
+  "pony-language-server": "ponyc",
   "postgresql": "postgresql@14",
   "prefligit": "prek",
   "prest": "prestd",
