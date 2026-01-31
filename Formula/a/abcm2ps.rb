@@ -1,16 +1,14 @@
 class Abcm2ps < Formula
   desc "ABC music notation software"
   homepage "http://moinejf.free.fr"
-  url "https://chiselapp.com/user/moinejf/repository/abcm2ps/tarball/v8.14.17/download.tar.gz"
-  sha256 "61df2c53f932b9dbce57e1c6c4ff5be6e69ca2162317a7c3e61297befa40aeaa"
+  url "https://chiselapp.com/user/moinejf/repository/abcm2ps/tarball/v8.14.18/download.tar.gz"
+  sha256 "d1f1100b525f0f0ae00d706d0b4ebc01df279312b3b32cf20f355f1430f36c0a"
   license "GPL-3.0-or-later"
 
   livecheck do
     url "https://chiselapp.com/user/moinejf/repository/abcm2ps/taglist"
     regex(%r{"tagDsp">v?(\d+(?:\.\d+)+)</span>}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "009998c0673285fe186b142ba9dfdf7e6da03baa621fed30626e0c208526e9a5"
@@ -25,7 +23,17 @@ class Abcm2ps < Formula
 
   depends_on "pkgconf" => :build
 
+  on_macos do
+    depends_on "coreutils" => :build
+    depends_on "gnu-sed" => :build
+  end
+
   def install
+    if OS.mac?
+      ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"
+      ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
+    end
+
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
