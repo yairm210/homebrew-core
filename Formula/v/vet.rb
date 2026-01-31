@@ -1,17 +1,17 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://safedep.io/"
-  url "https://github.com/safedep/vet/archive/refs/tags/v1.12.20.tar.gz"
-  sha256 "2c44f90f4684d17018b636b9f7074cd7129eb6cea3592bd66b47f49a110c3d53"
+  url "https://github.com/safedep/vet/archive/refs/tags/v1.12.21.tar.gz"
+  sha256 "ce698b325af5ead6f7d3fdc945496e49723cf39692d06a8f7a07e391142d6f52"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c55598ac032772d6d4eadddf6e7d88629b28a203dbe2b288584ceef055dc22c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "344c78effe6e0273ce458eaa4e30becd0d977c12830212167bd1f55d1b21ec2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f934ab637b5250a01ff73ee9528cea8e53edd3c57f2aeac92aa681799051f22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9914b9bd12b0e41564bac56e88174c6ca374b864518a62d3d02fc515ee77bc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "545e6c9f5bdfa6b265bef7ffedcf36ef9ca8c06a241ef2f82dda787896f82a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1b2cba8993f936ec82994a856ab314a14193581bf9b58aeca060907376fe70b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09859f8ae597d4ba7bc1ca0838ad513d5c4db90c9d6fa138355f88669b57e66b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c726e8294eb6c6a11d0ab6a11217a0113c6b9785a02cea14e3d4e7fc0607deae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb4fb109d1c1c972fb6444eca566dea3cc33092ab4d75394d3aee588c15fc8c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6804a186d55cc8ac4f236df6b22c968c59241d751b163e674e0a523209c0931a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a57fefdc3f64f1cf200a201cdfd893eb65b000c98738bb062c3e78f01e9895aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92489c33e5fd4a7bc1e1c615b17ad241e97fec533420f4b07e08fe4411265c33"
   end
 
   depends_on "go"
