@@ -1,16 +1,9 @@
 class Mad < Formula
   desc "MPEG audio decoder"
-  homepage "https://www.underbit.com/products/mad/"
-  url "https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz"
-  sha256 "bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690"
+  homepage "https://codeberg.org/tenacityteam/libmad"
+  url "https://codeberg.org/tenacityteam/libmad/releases/download/0.16.4/libmad-0.16.4.tar.gz"
+  sha256 "0f6bfb36c554075494b5fc2c646d08de7364819540f23bab30ae73fa1b5cfe65"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/libmad[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
@@ -29,41 +22,24 @@ class Mad < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "05670a88d2d0a50d03407a39987c573806c8bf9b7d67f2df4db3d121328123ae"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
+
+  # Backport commit for CMake 4
+  patch do
+    url "https://codeberg.org/tenacityteam/libmad/commit/326363f04e583b563f63941db3cf7f50e76aceb2.diff"
+    sha256 "8de5b7e7495ee789ecee07bacc93e2d2ce4be07c83e19c1181778d86fc7185ce"
+  end
 
   def install
-    touch "NEWS"
-    touch "AUTHORS"
-    touch "ChangeLog"
-    system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-debugging", "--enable-fpm=64bit", *std_configure_args
-    system "make", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", "install"
-    (lib/"pkgconfig/mad.pc").write pc_file
+    system "cmake", "-S", ".", "-B", "build", "-DEXAMPLE=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "minimad.c"
   end
 
   test do
-    system ENV.cc, "-I#{include}", pkgshare/"minimad.c", "-L#{lib}", "-lmad", "-o", "minimad"
+    system ENV.cc, pkgshare/"minimad.c", "-o", "minimad", "-I#{include}", "-L#{lib}", "-lmad"
     system "./minimad <#{test_fixtures("test.mp3")} >test.wav"
     assert_equal 4608, (testpath/"test.wav").size?
-  end
-
-  def pc_file
-    <<~EOS
-      prefix=#{opt_prefix}
-      exec_prefix=${prefix}
-      libdir=${exec_prefix}/lib
-      includedir=${prefix}/include
-
-      Name: mad
-      Description: MPEG Audio Decoder
-      Version: #{version}
-      Requires:
-      Conflicts:
-      Libs: -L${libdir} -lmad -lm
-      Cflags: -I${includedir}
-    EOS
   end
 end
