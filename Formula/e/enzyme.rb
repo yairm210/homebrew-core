@@ -1,18 +1,18 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.248.tar.gz"
-  sha256 "bc8f467336f1b188ee4682c4d5fca24e72eeb56b3c1fae804580c6668b0d190e"
+  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.249.tar.gz"
+  sha256 "0842c14bd3953502bda6e8bdff22e94f3d49b042839f2ae5c3d502a7686ab969"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49aaf8e582562ef1643972c11a9fc7a32b058a32c98ccf02e1101accaa5a5497"
-    sha256 cellar: :any,                 arm64_sequoia: "7456768e5c3f7ef171f96aa603ce2e986a294c0983c7eed933161f62e954fa99"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a8264c18222507b08ce0d28bfec7a2b5b14fcd2cca0b7e907bd25c91806a73b"
-    sha256 cellar: :any,                 sonoma:        "f5cf1dbab8d7cbf38453a9144fe05f986925f9f8f349171ec7dfe791d5f57f4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca4ca937db439c736c13cb42e22da0f8183ffb9fcc15c3feafd2e8e633725894"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "820f9839b6e2b258fd786eb738ee10142d77cc4ebcde220d79fbb46a2ca35ba9"
+    sha256 cellar: :any,                 arm64_tahoe:   "13619744bb57d6a5fc8261e92a25f17fb198b4c11e7265f9eeb8e872fdf7a126"
+    sha256 cellar: :any,                 arm64_sequoia: "56d36ac253ea485940f6a4da708013d2e1adbddee9f8aedb6708b05d0dd4a820"
+    sha256 cellar: :any,                 arm64_sonoma:  "8dd0c684bb330396a058a5d9a50b1016568abb4bc413e063aed2be847c6f4351"
+    sha256 cellar: :any,                 sonoma:        "c5b086143227155b21808e6c4fd987931c0d24cdb0b295c9b733a83cce1bcbfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9937e0fa2b77ee9b4b080d8c03205169feb948b5602c520035cf0dfa547c6135"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8d6562e1a6ccd1ba16680fc65e1371ed0c3f721824577f58feaa1761325557"
   end
 
   depends_on "cmake" => :build
