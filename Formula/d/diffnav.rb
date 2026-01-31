@@ -1,18 +1,18 @@
 class Diffnav < Formula
   desc "Git diff pager based on delta but with a file tree"
   homepage "https://github.com/dlvhdr/diffnav"
-  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "501b5b283a23c9e58788c4dc1c384c27760dd20d82e801256e7ede86f39240af"
+  url "https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c9eefb662dc27a0d196e59a134dd18b4fe7e6e579f7eab1c0b9c71ca75c47c5a"
   license "MIT"
   head "https://github.com/dlvhdr/diffnav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a68d66f4c28700eb420cf6eaeef98cc8e4b288cda954675be094dfeda231a70f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a68d66f4c28700eb420cf6eaeef98cc8e4b288cda954675be094dfeda231a70f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a68d66f4c28700eb420cf6eaeef98cc8e4b288cda954675be094dfeda231a70f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "359823b319ff065b1f45c18a8fcbd1c3795df8b2417298bfb5ea0278ff6ef393"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16e4594d9c0b3d9f21a4414d667a2c881d2b43c0f254b090fd58ace865135089"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1e01f7760d343d02be06364bc4e3b0e3d08185bd6d0b15f2195f9cf758e53f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a05687e55381ecbb945d82024794a73cc2b8cf69cf6c12b989b7da77b564156f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a05687e55381ecbb945d82024794a73cc2b8cf69cf6c12b989b7da77b564156f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a05687e55381ecbb945d82024794a73cc2b8cf69cf6c12b989b7da77b564156f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea8b2960c1c75ee6b4987813c0cc8d2530eb741b6e8926435785847316ccc206"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d571145cac1358cf500f42dbdb67c42cd82cf590f69e1bb1a2e9d15a93b9da2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1a5160b561cacaff573491dffa8f9e1d7f3e2b958b343f8573f7a6d562987c8"
   end
 
   depends_on "go" => :build
@@ -31,13 +31,17 @@ class Diffnav < Formula
     system "git", "commit", "-m", "Initial commit"
     (testpath/"test.txt").append_lines("Hello, diffnav!")
 
-    r, w, pid = PTY.spawn("git diff | #{bin}/diffnav")
-    sleep 1
-    w.write "q"
-    assert_match "test.txt", r.read
-  rescue Errno::EIO
-    # GNU/Linux raises EIO when read is done on closed pty
-  ensure
-    Process.kill("TERM", pid) unless pid.nil?
+    require "pty"
+    begin
+      r, w, pid = PTY.spawn("git diff | #{bin}/diffnav")
+      r.winsize = [80, 43]
+      sleep 1
+      w.write "q"
+      assert_match "test.txt", r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.kill("TERM", pid) unless pid.nil?
+    end
   end
 end
