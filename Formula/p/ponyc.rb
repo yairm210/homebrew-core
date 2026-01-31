@@ -37,8 +37,8 @@ class Ponyc < Formula
   end
 
   test do
+    # test ponyc
     system bin/"ponyc", "-rexpr", prefix/"packages/stdlib"
-
     (testpath/"test/main.pony").write <<~PONY
       actor Main
         new create(env: Env) =>
@@ -46,5 +46,23 @@ class Ponyc < Formula
     PONY
     system bin/"ponyc", "test"
     assert_equal "Hello World!", shell_output("./test1").strip
+
+    # test pony-lsp
+    require "open3"
+    json = <<~JSON
+      {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "rootUri": null,
+          "capabilities": {}
+        }
+      }
+    JSON
+    Open3.popen3(bin/"pony-lsp") do |stdin, stdout|
+      stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
+    end
   end
 end
