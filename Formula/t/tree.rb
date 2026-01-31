@@ -1,8 +1,8 @@
 class Tree < Formula
   desc "Display directories as trees (with optional color/HTML output)"
   homepage "https://oldmanprogrammer.net/source.php?dir=projects/tree"
-  url "https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "2300cc786dc2638956531b421326f257db7876619d811f5ef5d6120907172078"
+  url "https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.3.1.tar.gz"
+  sha256 "621ff2b4faf214d7023143f6f9d496117c7c75131927837750b904140aff48a1"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -14,9 +14,6 @@ class Tree < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4347aa52de2b046a275acb33fe63d8a4647d5234b02f00de89133383541063a"
   end
 
-  # Workaround for https://github.com/Old-Man-Programmer/tree/issues/30
-  patch :DATA
-
   def install
     system "make", "install", "PREFIX=#{prefix}", "MANDIR=#{man}"
   end
@@ -25,19 +22,3 @@ class Tree < Formula
     system bin/"tree", prefix
   end
 end
-
-__END__
-diff --git a/tree.c b/tree.c
-index 2d719c4..fa0fba1 100644
---- a/tree.c
-+++ b/tree.c
-@@ -1564,7 +1564,9 @@ char *fillinfo(char *buf, const struct _info *ent)
-   if (flag.g) n += sprintf(buf+n, " %-8.32s", gidtoname(ent->gid));
-   if (flag.s) n += psize(buf+n,ent->size);
-   if (flag.D) n += sprintf(buf+n, " %s", do_date(flag.c? ent->ctime : ent->mtime));
-+  #ifdef __linux__
-   if (flag.selinux) n += sprintf(buf+n, " %s", ent->secontext);
-+  #endif
- 
-   if (buf[0] == ' ') {
-       buf[0] = '[';
