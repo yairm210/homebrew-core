@@ -1,16 +1,14 @@
 class Girara < Formula
   desc "GTK+3-based user interface library"
   homepage "https://pwmt.org/projects/girara/"
-  url "https://pwmt.org/projects/girara/download/girara-0.4.5.tar.xz"
-  sha256 "6b7f7993f82796854d5036572b879ffaaf7e0b619d12abdb318ce14757bdda91"
+  url "https://pwmt.org/projects/girara/download/girara-2026.01.30.tar.xz"
+  sha256 "41d93a2fbf708c2ee1b0e8e3933bf33d3bed0a11669a6832e23c988413b3b113"
   license "Zlib"
 
   livecheck do
     url "https://pwmt.org/projects/girara/download/"
     regex(/girara[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "a1acae5cff148bce38ed23cf7d703ea25b10d8a2fd5d2de2aca60b6015b56571"
