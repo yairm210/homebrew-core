@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.3.tar.gz"
-  sha256 "7f4a7cf0a2cd217444063fe2a4d800bc9d21ed609badc2ac20c0841d67166550"
+  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.5.tar.gz"
+  sha256 "8e012493b2103e0471d3aba8048b73bc1a3138132974e2fd8bfb89a63e62f478"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
