@@ -1,43 +1,10 @@
 class Ettercap < Formula
   desc "Multipurpose sniffer/interceptor/logger for switched LAN"
   homepage "https://ettercap.github.io/ettercap/"
+  url "https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.4.tar.gz"
+  sha256 "1674c235b16b2048888b85a697697eb0c4e742f875fdaaef7acacc152568ad06"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
-
-  stable do
-    url "https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
-    sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
-
-    # Part of libmaxminddb backport that cannot be added via patch.
-    # Remove in the next release along with corresponding install
-    resource "GeoLite2-Country.mmdb" do
-      url "https://raw.githubusercontent.com/Ettercap/ettercap/741c4d3bcd5c3e37d7d6b0fe0e748a955b2f43f5/share/GeoLite2-Country.mmdb"
-      sha256 "b22fd1cc9bd76c0706ed6cafefcd07c2bfb5a22581faebdcd9161b9d8a44d0c0"
-    end
-
-    # Fix build for curl 8+
-    # https://github.com/Ettercap/ettercap/pull/1221
-    patch do
-      url "https://github.com/Ettercap/ettercap/commit/40534662043b7d831d1f6c70448afa9d374a9b63.patch?full_index=1"
-      sha256 "ac9edbd2f5d2e809835f8b111a7f20000ffab0efca2d6f17f4b199bb325009b1"
-    end
-
-    # Backport libmaxminddb support. Remove in the next release.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ettercap/libmaxminddb-backport.diff"
-      sha256 "b7869963df256af7cfae0f9e936e6dac4ec51a8b38dcfef6ea909e81e3ab8d0e"
-    end
-
-    # Apply Debian's upstreamed patch for pcre2 support. Remove in the next release.
-    # https://github.com/Ettercap/ettercap/commit/b1686d46792aecc10662e4a8ec221c9727661878
-    patch do
-      url "https://sources.debian.org/data/main/e/ettercap/1%3A0.8.3.1-15/debian/patches/1170.patch"
-      sha256 "a3c426d36f84487bbdb5d02b831df295af33373fcb59ee81254cee6807a50a4c"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
@@ -66,11 +33,6 @@ class Ettercap < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # Use ninja to work around build failure with make:
-    # .../tapi stubify -isysroot ... -o libettercap-ui.0.8.3.1.tbd libettercap-ui.0.8.3.1.dylib
-    # error: no such file or directory: 'libettercap-ui.0.8.3.1.dylib'
-    depends_on "ninja" => :build
-
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "freetype"
@@ -78,12 +40,6 @@ class Ettercap < Formula
   end
 
   def install
-    (buildpath/"share").install resource("GeoLite2-Country.mmdb") if build.stable?
-
-    # Work around a CMake bug affecting harfbuzz headers and pango
-    # https://gitlab.kitware.com/cmake/cmake/issues/19531
-    ENV.append_to_cflags "-I#{Formula["harfbuzz"].opt_include}/harfbuzz"
-
     args = %W[
       -DBUNDLED_LIBS=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"ettercap")}
@@ -104,8 +60,6 @@ class Ettercap < Formula
       # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
       ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw"
       args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/"
-    else
-      args << "-GNinja"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
