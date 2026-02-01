@@ -6,12 +6,13 @@ class Gnuastro < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "cd892c14cabdaac80ba71e110b465b62700c68edd28c6d78da3386def97ce9fd"
-    sha256 arm64_sequoia: "4cfd2845728a7f08a5d39f6894a68b3fc8b7b8e2b728d8172662fd4e98dd5241"
-    sha256 arm64_sonoma:  "b2054ac5b01de48d6d055bc6c57d7fab1aa7d23ff944c94e0592d5868881f4be"
-    sha256 sonoma:        "bee9d1dcefbc85b4bb16420fb094c0d46cb8d8e7cbdf07faa1f6aa03075153e5"
-    sha256 arm64_linux:   "11deea38b1051ea1ae5f3f3d70f3502dea5f83a2e2e82877d047ab4eba0f5d9c"
-    sha256 x86_64_linux:  "2e45da2c46731e0708fafa0b9a0eeab7caf5e59fe9ab68478a7e2bc2f190a373"
+    rebuild 1
+    sha256 arm64_tahoe:   "0ea7f7c21d2c2cb5bfe5e28bc5c713a054eaee0dc0a9332bbd6fd35513f786a8"
+    sha256 arm64_sequoia: "bdecce536f87dfd5990e32a7ba2fc20eae8e454bbe5d78a54636205f53317a8e"
+    sha256 arm64_sonoma:  "e8fa06180cc7280f1d8b36efcae5107e4bbbd5f3426ec3feafe6e43780b429f7"
+    sha256 sonoma:        "c259c00499eed3141ee5487b88156d000351b918ded15c5761115b8820f797f6"
+    sha256 arm64_linux:   "497105abef07079083f746d51e72b217b124df950d28369fc3b4887321d1325f"
+    sha256 x86_64_linux:  "950a234cf681d54c30ebff2c2444684bf3785a679dbceee9220f1cc860bedf6c"
   end
 
   depends_on "pkgconf" => :build
