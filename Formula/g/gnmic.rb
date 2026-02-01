@@ -1,8 +1,8 @@
 class Gnmic < Formula
   desc "GNMI CLI client and collector"
   homepage "https://gnmic.openconfig.net"
-  url "https://github.com/openconfig/gnmic/archive/refs/tags/v0.42.1.tar.gz"
-  sha256 "75485febc0d7548da6b91d0918407213d270c47e8babe4a303abe635f34d8b12"
+  url "https://github.com/openconfig/gnmic/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "eae6d07b1aeaf1e21a9342522cdee59a27ae2d020e8f84ecd03e0be10098f521"
   license "Apache-2.0"
   head "https://github.com/openconfig/gnmic.git", branch: "main"
 
