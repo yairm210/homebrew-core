@@ -1,8 +1,8 @@
 class Rmpc < Formula
   desc "Terminal based Media Player Client with album art support"
   homepage "https://mierak.github.io/rmpc/"
-  url "https://github.com/mierak/rmpc/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "86e6b465707cdca82f53aed2a3bef600430edbf4e626124d194ac346ee989cbd"
+  url "https://github.com/mierak/rmpc/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "930019066228d18e9530a8c0d77f10e231ab5efbbbca73b331efcd6fbb47557d"
   license "BSD-3-Clause"
 
   bottle do
