@@ -7,12 +7,12 @@ class Pvetui < Formula
   head "https://github.com/devnullvoid/pvetui.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06767dc5ab59cb25d7bb63e892a9c73ea06c85e2ab5d43a379e64307b99d2949"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06767dc5ab59cb25d7bb63e892a9c73ea06c85e2ab5d43a379e64307b99d2949"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06767dc5ab59cb25d7bb63e892a9c73ea06c85e2ab5d43a379e64307b99d2949"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13bf96f92bb12d269f2a7a19bb419289d53dc97bf415463484cc05a4cebdf294"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0d04c266726b351daa3aae9fe4d86ef6bfbc0f341341876bf988f13be7dbf4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45cdd7ac87335364b9d722aa19e52b1992dab7f8b7fe559b358296b46f921509"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b7e06f600ee2d65be1058abb7a6c5e6a5846780afd3d5aee1f666d14f1e48bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7e06f600ee2d65be1058abb7a6c5e6a5846780afd3d5aee1f666d14f1e48bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b7e06f600ee2d65be1058abb7a6c5e6a5846780afd3d5aee1f666d14f1e48bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "820346bec86f87de4965481a1d367c13d8886ff0d0ccd92555ee8c6c2760c7ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f26db8e65a26a3260bbd33279bcfac9ca7116930552d36b49a179c567f83b18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0db301b0155cf915af41b107b2332dbbb454157d746ab85f10df5bb34186364"
   end
 
   depends_on "go" => :build
