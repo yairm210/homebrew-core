@@ -1,8 +1,8 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.49.1.tar.gz"
-  sha256 "cc5557de5332a4033085627978fdfff2a028191794ed6976d0b165f1ae98bbc9"
+  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.49.3.tar.gz"
+  sha256 "88e5a72fb7820887d5e5bb0ebf414f1704de385ca2097e3e05149333351ae5f7"
   license "MIT"
 
   bottle do
@@ -15,6 +15,7 @@ class Beads < Formula
   end
 
   depends_on "go" => :build
+  depends_on "icu4c@78"
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
@@ -37,7 +38,7 @@ class Beads < Formula
 
     system "git", "init"
 
-    system bin/"bd", "init"
+    shell_output("#{bin}/bd init < /dev/null")
     assert_path_exists testpath/"AGENTS.md"
 
     output = shell_output("#{bin}/bd info")
