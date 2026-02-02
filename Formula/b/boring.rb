@@ -1,8 +1,8 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://github.com/alebeck/boring"
-  url "https://github.com/alebeck/boring/archive/refs/tags/v0.11.8.tar.gz"
-  sha256 "6b31a6046d595fc55496c0cc7654184d22c871729ec274709222e5f34678819a"
+  url "https://github.com/alebeck/boring/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "3d256a1b9bc8af30782377fafd8fa04c9d7d5bd8141b7a66ededfcd551876a76"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
@@ -20,7 +20,7 @@ class Boring < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-s -w -X github.com/alebeck/boring/internal/buildinfo.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/boring"
 
     generate_completions_from_executable(bin/"boring", "--shell")
