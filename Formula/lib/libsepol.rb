@@ -29,20 +29,7 @@ class Libsepol < Formula
   end
 
   def install
-    args = %W[
-      PREFIX=#{prefix}
-      SHLIBDIR=#{lib}
-    ]
-
-    # Submitted to upstream mailing list at https://lore.kernel.org/selinux/20250912132911.63623-1-calebcenter@live.com/T/#u
-    if OS.mac?
-      args += %w[
-        TARGET=libsepol.dylib
-        LIBSO=libsepol.$(LIBVERSION).dylib
-      ]
-    end
-
-    system "make", "install", *args
+    system "make", "install", "PREFIX=#{prefix}", "SHLIBDIR=#{lib}"
   end
 
   test do
