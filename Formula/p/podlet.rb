@@ -1,8 +1,8 @@
 class Podlet < Formula
   desc "Generate podman quadlet files from a podman command or compose file"
   homepage "https://github.com/containers/podlet"
-  url "https://github.com/containers/podlet/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "b91398ef75566a2a646e9845d1211854e7275fce727d4b976e7d8a3c4430ae52"
+  url "https://github.com/containers/podlet/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "9dd2ce4a618563f8cb607106eb8082744b228575627bcc5e144c9f076e4be691"
   license "MPL-2.0"
   head "https://github.com/containers/podlet.git", branch: "main"
 
