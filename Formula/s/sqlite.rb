@@ -5,6 +5,7 @@ class Sqlite < Formula
   version "3.51.2"
   sha256 "fbd89f866b1403bb66a143065440089dd76100f2238314d92274a082d4f2b7bb"
   license "blessing"
+  revision 1
 
   livecheck do
     url :homepage
@@ -31,7 +32,9 @@ class Sqlite < Formula
 
   depends_on "readline"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Default value of MAX_VARIABLE_NUMBER is 999 which is too low for many
