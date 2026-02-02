@@ -9,12 +9,12 @@ class Dbmate < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "985e741c1ce809ea550a73502358562b8d5e748ea7649465910f21d158590f2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22db913656a2e8d529b2cb7a6f899acd6dee6b768a5e5c4eda5efc3d761e8e8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8842e33296b55086134baaff9bf39a059db845595239ebd23d717aee190c01f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be09a80dc11c42fe22d34bd1caa198afd61601138afd4ac45cebd38075e5f8a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "553b15af4048be972df0b7b3f1f1d001b30048c575fb40208d100de79b368ee5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04600f1e184eb08fd7c47004c56d648741c6a87edada7f97b15a5bde11fbe2e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b70147bf595cb6d842bdfe673177f42f86b8e62f59446c82d0f2bfedd7d6c259"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "555bdc5d4c797c9f39655eab2d2ffdb098400bb93ff31ef96ec0beb3d37d5edc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96c75b56f48633e770bd5579f99320055710d6b2c3c42fcd315a3c8fa6a319e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "987b018ffbc00c48bc342c45ac5cb345df46b831063709b7d7e711d44c5cd01e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aadf784165e98c365df505057e07b0e3dd2b49f07bda9b06bbd63cc3c93989b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09055cbd39b296247fe611ae69248401725a5af55e58351d87aa9c54fbe4ef60"
   end
 
   depends_on "go" => :build
