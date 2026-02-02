@@ -1,10 +1,11 @@
 class Libint < Formula
   desc "Library for computing electron repulsion integrals efficiently"
   homepage "https://github.com/evaleev/libint"
-  url "https://github.com/evaleev/libint/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "732988a1ea95eb4eae91bcb2b2a718d95dc5caca41533746fc4111532d55ae74"
-  license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
-  revision 1
+  url "https://github.com/evaleev/libint/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "9651705c79f77418ef0230aafc0cf1b71b17c1c89e413ee0e5ee7818650ce978"
+  # The generator is GPLv3 but it doesn't impact the license of packaged library
+  license "LGPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "021285dd3c9f6f83647c2561fb5d51eed76f7093483fe23fb8541cb463f81b85"
@@ -15,13 +16,10 @@ class Libint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "924eb316cb90dd18ced1e1d52f2ddeefe8e6a13300d866450b966be540f72a7f"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "gcc" => :build # for gfortran
   depends_on "gmp" => :build
-  depends_on "libtool" => :build
-  depends_on "pkgconf" => [:build, :test]
+  depends_on "pkgconf" => :build
 
   depends_on "boost" => :no_linkage
   depends_on "eigen" => :no_linkage
@@ -30,34 +28,24 @@ class Libint < Formula
 
   def install
     args = %w[
-      --enable-shared
-      --disable-static
-      --enable-eri=1
-      --enable-eri2=1
-      --enable-eri3=1
+      -DBUILD_SHARED_LIBS=ON
+      -DLIBINT2_ENABLE_ERI=1
+      -DLIBINT2_ENABLE_ERI2=1
+      -DLIBINT2_ENABLE_ERI3=1
+      -DLIBINT2_ENABLE_FORTRAN=ON
     ]
-    system "glibtoolize", "--install", "--force"
-    system "./autogen.sh"
-    system "./configure", *args, *std_configure_args
-    system "make", "export"
 
-    # https://github.com/evaleev/libint/wiki#compiling-libint-library
-    system "tar", "-xf", "libint-#{version}.tgz"
-    system "cmake", "-S", "libint-#{version}", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DLIBINT2_ENABLE_FORTRAN=ON",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "tests/hartree-fock/hartree-fock.cc"
-    pkgshare.install "tests/hartree-fock/h2o.xyz"
+    pkgshare.install "export/tests/hartree-fock/hartree-fock.cc"
+    pkgshare.install "export/tests/hartree-fock/h2o.xyz"
   end
 
   test do
     system ENV.cxx, "-std=c++14", pkgshare/"hartree-fock.cc", "-o", "hartree-fock",
-                    "-I#{Formula["eigen"].opt_include}/eigen3",
-                    *shell_output("pkgconf --cflags --libs libint2").chomp.split
+                    "-I#{Formula["eigen"].opt_include}/eigen3", "-L#{lib}", "-lint2"
     system "./hartree-fock", pkgshare/"h2o.xyz"
   end
 end
