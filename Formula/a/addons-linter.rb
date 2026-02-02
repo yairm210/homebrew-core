@@ -6,7 +6,7 @@ class AddonsLinter < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "64be5fa944aec99c9a819d8ea8d0613ed6e930ba2d50853025065f6bc5891fa7"
+    sha256 cellar: :any_skip_relocation, all: "6f40275e18043a40363a7519da92d9908462d711f5d24a87891318f759405d7b"
   end
 
   depends_on "node"
