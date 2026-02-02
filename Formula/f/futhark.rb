@@ -1,8 +1,8 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https://futhark-lang.org/"
-  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.34.tar.gz"
-  sha256 "69a8aa7d196f4ea995e7f986ada178db2aaebceda3344c600e7b3cfbecba96be"
+  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.35.tar.gz"
+  sha256 "847f9f75c2b64a06c062ce4c2987fb2be95898300d3562124a384b5a959b810f"
   license "ISC"
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
@@ -25,9 +25,6 @@ class Futhark < Formula
   uses_from_macos "zlib"
 
   def install
-    # Workaround to fetch integer-logarithms 1.0.5 to build with GHC 9.14
-    inreplace "cabal.project", "index-state: 2025-10-31T08:41:05Z", "index-state: 2026-01-04T20:13:48Z"
-
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
 
