@@ -1,8 +1,8 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://github.com/uutils/coreutils/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "83535e10c3273c31baa2f553dfa0ceb4148914e9c1a9c5b00d19fbda5b2d4d7d"
+  url "https://github.com/uutils/coreutils/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "f751b8209ec05ae304941a727e42a668dcc45674986252f44d195ed43ccfad2f"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -52,13 +52,6 @@ class UutilsCoreutils < Formula
       uu_cmd = bin/"uu-#{cmd}"
       (libexec/"uubin").install_symlink uu_cmd.realpath => cmd
 
-      # Fix symlinked commands which require running with non-prefixed name, e.g. sha1sum
-      if uu_cmd.symlink?
-        rm(uu_cmd)
-        bin.write_exec_script libexec/"uubin"/cmd
-        bin.install bin/cmd => "uu-#{cmd}"
-      end
-
       # Create a temporary compatibility executable for previous 'u' prefix.
       # All users should get the warning in 0.6.0. Similar to brew's odeprecate
       # timeframe, the removal can be done after 2 minor releases, i.e. 0.8.0.
@@ -76,13 +69,6 @@ class UutilsCoreutils < Formula
     end
 
     (libexec/"uubin").install_symlink "../uuman" => "man"
-
-    # Symlink non-conflicting binaries
-    no_conflict = %w[hashsum]
-    no_conflict.each do |cmd|
-      bin.install_symlink "uu-#{cmd}" => cmd
-      man1.install_symlink "uu-#{cmd}.1.gz" => "#{cmd}.1.gz"
-    end
   end
 
   def caveats
@@ -107,8 +93,7 @@ class UutilsCoreutils < Formula
   test do
     (testpath/"test").write("test")
     (testpath/"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
-    system bin/"uhashsum", "--sha1", "-c", "test.sha1" # TODO: remove in 0.8.0
-    system bin/"uu-hashsum", "--sha1", "-c", "test.sha1"
+    system bin/"usha1sum", "-c", "test.sha1" # TODO: remove in 0.8.0
     system bin/"uu-sha1sum", "-c", "test.sha1"
     system bin/"uu-ln", "-f", "test", "test.sha1"
   end
