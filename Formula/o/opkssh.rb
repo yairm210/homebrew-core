@@ -7,12 +7,12 @@ class Opkssh < Formula
   head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0dc9c31cf48d286d9f60e846dc8a745f9e3375b877079742974edd2fc6ab213"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0dc9c31cf48d286d9f60e846dc8a745f9e3375b877079742974edd2fc6ab213"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0dc9c31cf48d286d9f60e846dc8a745f9e3375b877079742974edd2fc6ab213"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50cadf1429164febdea4922d26c63e46f7e5371566801a356c8b3205030d2ce8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddd04eead955cc8db01be5176f6a4b57f153d6b4ebe01439c3ee2b69d959b71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37357dddb020cdaa317f1f00192799756df84ea176097d836c2222148b569f05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a43e1383a77a301720e1ec28afc701d701c64ee4bd2fcf59fcf5a3b6c8d665aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a43e1383a77a301720e1ec28afc701d701c64ee4bd2fcf59fcf5a3b6c8d665aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43e1383a77a301720e1ec28afc701d701c64ee4bd2fcf59fcf5a3b6c8d665aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f3f2fd6232596799d4da2f93ac34faf9afb04cd75adb0140d83aa5cf10dbce6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c372830f1d4187c754ef016e740f767829f5aef3d2597f68939d790980d24219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bfc92e40fcdf687c0a7bb28b654900c81a598c6e263014c34b785cc69d92475"
   end
 
   depends_on "go" => :build
