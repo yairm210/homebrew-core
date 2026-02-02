@@ -26,13 +26,12 @@ class V8 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "608bb35f6b352cd6c1e10489fb301b6e826e8f97cb279d268a29829713924515"
-    sha256 cellar: :any,                 arm64_sequoia: "72d470fd40a8a7c552ed76a235a593eae664619f2ff63433e4dd99d41ae7c496"
-    sha256 cellar: :any,                 arm64_sonoma:  "042e5464470b5b353559ef4f50dcb118025f0969af15fc85025ed4c6202d9b3e"
-    sha256 cellar: :any,                 sonoma:        "13d60cdca44d3f1b9a5ea1997981321169048a24f384691f349887d27eb480b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b07cbc0682b820d94953ef5fe2b3c5940f7ebc9fb6375c38172b446cd08455a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c443ea4ea031822f96fddc71f10a6d0a56f3f1ab39d57b1732963ee90a04b778"
+    sha256 cellar: :any,                 arm64_tahoe:   "a0ac6e00b7bd9e7cdf199bbbdc216ff155bb16c8e554e414625d011e6ebdbb61"
+    sha256 cellar: :any,                 arm64_sequoia: "9ae8558d17dd0a765ba8854c90c6861eaeeb4689b5ca7ab544577e48a67cb563"
+    sha256 cellar: :any,                 arm64_sonoma:  "528f15654eb8df82553505279b162037515c7ed74841e5f76a2bbbceb7b68a60"
+    sha256 cellar: :any,                 sonoma:        "b7d7d4c65368fac3fb195cb797eef79cd12bc3487077923d4316868539d637de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ad5afceee6ed1954b4626ab7c8fda88016dfc03b4fd7b9e9ebf2d2170b97bb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0164bad901d11b0c204d5d52fc91fbd5c213d24ec146002de15e2170662efff7"
   end
 
   depends_on "llvm" => :build
