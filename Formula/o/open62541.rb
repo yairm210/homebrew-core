@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https://open62541.org/"
-  url "https://github.com/open62541/open62541/archive/refs/tags/v1.4.14.tar.gz"
-  sha256 "0a0a8830e4e5f720e901579f826c788fdbc3d49f44a9515ab15a06e877b59416"
+  url "https://github.com/open62541/open62541/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "b7d92fe4b767aac2935ffb7bff9c88d528ce8a05a3767d093748f14388622636"
   license "MPL-2.0"
 
   livecheck do
