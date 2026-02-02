@@ -1,29 +1,17 @@
 class Glslviewer < Formula
   desc "Live-coding console tool that renders GLSL Shaders"
   homepage "https://patriciogonzalezvivo.com/2015/glslViewer/"
+  url "https://github.com/patriciogonzalezvivo/glslViewer.git",
+    tag:      "3.5.1",
+    revision: "8fa52d335b032debb64558d367262aa6ca4a99a8"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/patriciogonzalezvivo/glslViewer.git", branch: "main"
-
-  stable do
-    url "https://github.com/patriciogonzalezvivo/glslViewer.git",
-        tag:      "3.2.4",
-        revision: "7eb6254cb4cedf03f1c78653f90905fe0c3b48fb"
-
-    # Backport support for FFmpeg 8
-    patch do
-      url "https://github.com/patriciogonzalezvivo/vera/commit/74b6ff1eccb7baccdb3f7506377846ef20051de1.patch?full_index=1"
-      sha256 "9fe1f83af45a8740bb7bd3322e9b71bd5c3582b7397d68864d4f75e0c83541d4"
-      directory "deps/vera"
-    end
-  end
 
   livecheck do
     url :stable
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "71def3742a3b6dcd962ba7fd6cdd972a32eb958457b4e95ecdbd25270260ed0c"
@@ -47,7 +35,7 @@ class Glslviewer < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
