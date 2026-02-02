@@ -38,7 +38,7 @@ class Argocd < Formula
     ) do
       system "yarn", "--cwd", "ui", "build"
     end
-    system "make", "cli-local"
+    system "make", "cli-local", "GIT_TAG=v#{version}"
     bin.install "dist/argocd"
 
     generate_completions_from_executable(bin/"argocd", "completion")
