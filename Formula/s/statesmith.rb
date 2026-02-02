@@ -2,8 +2,8 @@ class Statesmith < Formula
   desc "State machine code generation tool suitable for bare metal, embedded and more"
   homepage "https://github.com/StateSmith/StateSmith"
   # Try upgrade to latest `dotnet` on version bump
-  url "https://github.com/StateSmith/StateSmith/archive/refs/tags/cli-v0.19.0.tar.gz"
-  sha256 "62eb44d15a978c82f1ad8a54506f750b76c3dd30ebd1087384366a939a118749"
+  url "https://github.com/StateSmith/StateSmith/archive/refs/tags/cli-v0.20.0.tar.gz"
+  sha256 "be187b4063734694137a95b77928980ad0f61e44e6a4887d07dc7e3387ccfa0f"
   license "Apache-2.0"
 
   bottle do
