@@ -8,7 +8,7 @@ class VimtutorSequel < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "95f9e9dc1f8ef08838250ec32a95122ef979a6a437b5454cf5db4ce1ffe5e27b"
+    sha256 cellar: :any_skip_relocation, all: "4861ae2b888e47e777fd3f78ef878aea6b007147ec561ecc430d7abb61a85cb0"
   end
 
   depends_on "vim"
