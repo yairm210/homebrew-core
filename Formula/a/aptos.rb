@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptosfoundation.org/"
-  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v7.14.1.tar.gz"
-  sha256 "b4a963bd7e15220ba619f08d63ae06fa6356ba828ec68084a3e7c78de1787ed8"
+  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v7.14.2.tar.gz"
+  sha256 "88e8699c6cec1f6ff2b2d15479dc756476863c561abd525e157cee338a806d79"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
