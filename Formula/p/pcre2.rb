@@ -4,6 +4,7 @@ class Pcre2 < Formula
   url "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2"
   sha256 "47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -21,7 +22,7 @@ class Pcre2 < Formula
   end
 
   head do
-    url "https://github.com/PCRE2Project/pcre2.git", branch: "master"
+    url "https://github.com/PCRE2Project/pcre2.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -29,7 +30,10 @@ class Pcre2 < Formula
   end
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
