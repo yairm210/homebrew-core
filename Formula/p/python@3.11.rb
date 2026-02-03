@@ -12,12 +12,12 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "36edfd7ef2802833ffec6792cf760b39e2626c406e8aa71131f62b1143c77f74"
-    sha256 arm64_sequoia: "15679fe92790dfb4b181427d54f0cffd1ceffccdafac44eaba73ce12d9ee2af3"
-    sha256 arm64_sonoma:  "f630497a1d155a9cc6b2ea97d27e0b47257b5e1237c829b0ae40ed8496289e1f"
-    sha256 sonoma:        "319aca7f63fa6f4cda9b0bd1133afaea9d89ab47dec2bf63011d6ac561e5e22b"
-    sha256 arm64_linux:   "2f7be6fc3120ae8709fe1f24378c1064fb27a79d58089d7fd34fb4fc4d5f6608"
-    sha256 x86_64_linux:  "ac01a6b7d82bea60e8c6273caba378905cffc6b3b4c3f1fc4a7d6c4a8b46054d"
+    sha256 arm64_tahoe:   "31deb8ec16fff80f0248318c8973e8ce476f149cef2fdb335a052159b36e3ad0"
+    sha256 arm64_sequoia: "5520c16c2d8c0d84109f2c0236509e608c63bc7c16c82e801b00ec2481b68544"
+    sha256 arm64_sonoma:  "ef46a6699a22f332dd1d188749e2a4ab3afc031c75090615c54cb691cb294c2a"
+    sha256 sonoma:        "a05467514cc3382ecffe54fcca84c38dfa9ec92cce8726f0386779b1afab238c"
+    sha256 arm64_linux:   "a873884a109d3b6d486c8af26e061368adb64054d64746c64e135a1064d935fc"
+    sha256 x86_64_linux:  "3df99325e4e92c7f2b96366e3b52d38acd5569401784d756aa026b492925ba1b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
