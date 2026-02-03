@@ -6,12 +6,12 @@ class Pie < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdb90a5e411a776aba2b36ac9c4ab414128e5e9b4959547021a33ae1738b65aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdb90a5e411a776aba2b36ac9c4ab414128e5e9b4959547021a33ae1738b65aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdb90a5e411a776aba2b36ac9c4ab414128e5e9b4959547021a33ae1738b65aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8755f4f7a6aecfb61f272ba74baa81ec11162c166d77458c71a201e4412d8fca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8755f4f7a6aecfb61f272ba74baa81ec11162c166d77458c71a201e4412d8fca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8755f4f7a6aecfb61f272ba74baa81ec11162c166d77458c71a201e4412d8fca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
   end
 
   depends_on "php"
