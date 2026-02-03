@@ -1,17 +1,14 @@
 class Conserver < Formula
   desc "Allows multiple users to watch a serial console at the same time"
   homepage "https://www.conserver.com/"
-  url "https://github.com/bstansell/conserver/releases/download/v8.2.7/conserver-8.2.7.tar.gz"
-  sha256 "0607f2147a4d384f1e677fbe4e6c68b66a3f015136b21bcf83ef9575985273d8"
+  url "https://github.com/bstansell/conserver/releases/download/v8.3.0/conserver-8.3.0.tar.gz"
+  sha256 "202b2ace3e14f36bca4de6ccd43cc962a99853c1d50799672ce0ffc5c02f8404"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "441d8801740d8c42e668c2f308fb4d03098c196b004deed51a7bed08dbf0bb3f"
