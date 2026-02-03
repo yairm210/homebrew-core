@@ -11,14 +11,14 @@ class Sslmate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, tahoe:         "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3bdbdeca9bd38aa4c2b587b7fadd710978a2d12b20c814b8f463817cce90eee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a33c4fb02cd4543853b119533923a62e80f5690e23e42272b94c6a467c880320"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, tahoe:         "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, sequoia:       "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "606285c1406a2e5dce609201742f8308849268d7374493e6293d00382ba73dbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce71bcc850c75c1fbeb6f4cb3ae7bdba4ba0999fa29f7205db5e90dca9ad0a63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95bf782697993d0df50f7cb2ab865b07262ab8b1d0b8828cdfda97ef29e44be5"
   end
 
   uses_from_macos "perl"
