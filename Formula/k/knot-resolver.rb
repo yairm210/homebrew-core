@@ -14,13 +14,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "97d5240f290badc160df58eaeaeef31e8de31be51be2b343bc34106b9e3f67d5"
-    sha256 arm64_sequoia: "c46c527e67100d77fa83eb2c9d7698034a134371bcfb670d715344357531e8ed"
-    sha256 arm64_sonoma:  "7198cdae43ca26f1198a8b5b97beda3aaa2fdbd1f969288356f3141f43acdc58"
-    sha256 sonoma:        "8a9399ce3c7b5084ef8165bdebfc85a8a8e7452b69bd8f51d8f509dfe9a83dd3"
-    sha256 arm64_linux:   "b213e8c6953abb084a2818a2b9a9daacce913655fc25c76d28461304fa522819"
-    sha256 x86_64_linux:  "93cca41ec25e28a21c1aaec43c3c6aee34821a8548d80008d01bde812637c683"
+    sha256 arm64_tahoe:   "ddcc4fa27f264923b54c35196e6edae2f3b3df7a3b5c9a8ea49cc6d13e89983c"
+    sha256 arm64_sequoia: "5815943024b335698473f7604659ebd954119a7f68ba23da369a228d60d331c0"
+    sha256 arm64_sonoma:  "76abbf27fdf3b54e0eed1ec347493c941055e51456b946cf7cb24357af7edba5"
+    sha256 sonoma:        "719ebcd371e7126931ed1721625cff7d5ab3b30ccbfe7d70e6a47bd64f130f78"
+    sha256 arm64_linux:   "39801f1e1ab9553964216de8106e296d6bedf8651c329cf0370a1b6281f4c2e9"
+    sha256 x86_64_linux:  "9e1b841948f0dbb8c8f706edec71982111290cd2c03dcaa0268a4b45b7e78756"
   end
 
   depends_on "meson" => :build
