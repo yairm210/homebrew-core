@@ -49,6 +49,8 @@ class Libxslt < Formula
                           *std_configure_args
     system "make"
     system "make", "install"
+
+    inreplace [bin/"xslt-config", lib/"pkgconfig/libxslt.pc", lib/"pkgconfig/libexslt.pc"], prefix, opt_prefix
   end
 
   def caveats
