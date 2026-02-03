@@ -26,20 +26,22 @@ class Yaz < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
+    depends_on "bison" => :build
     depends_on "docbook-xsl" => :build
     depends_on "libtool" => :build
-
-    uses_from_macos "bison" => :build
-    uses_from_macos "tcl-tk" => :build
+    depends_on "tcl-tk" => :build
   end
 
   depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "icu4c@78"
-  depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
+
+  on_linux do
+    depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
+  end
 
   def install
     if build.head?
@@ -55,17 +57,7 @@ class Yaz < Formula
                           *std_configure_args
     system "make", "install"
 
-    # Replace dependencies' cellar paths, which can break build for dependents
-    # (like `metaproxy` and `zebra`) after a dependency is version/revision bumped
-    inreplace bin/"yaz-config" do |s|
-      s.gsub! Formula["gnutls"].prefix.realpath, Formula["gnutls"].opt_prefix
-      s.gsub! icu4c.prefix.realpath, icu4c.opt_prefix
-    end
-    unless OS.mac?
-      inreplace [bin/"yaz-config", lib/"pkgconfig/yaz.pc"] do |s|
-        s.gsub! Formula["libxslt"].prefix.realpath, Formula["libxslt"].opt_prefix
-      end
-    end
+    inreplace [bin/"yaz-config", *lib.glob("pkgconfig/yaz*.pc")], prefix, opt_prefix
   end
 
   test do
