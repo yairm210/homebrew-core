@@ -8,7 +8,7 @@ class LizardAnalyzer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "784cac13265ee763bd6435d55bf9cba8786130fbcc97b1abcc6b5ba147e70caf"
+    sha256 cellar: :any_skip_relocation, all: "1a994a99de756f1ab73ff910c78edc439b0617fe8a4b2efc5182cdcc36f2e757"
   end
 
   depends_on "python@3.14"
