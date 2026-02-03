@@ -4,6 +4,7 @@ class MlxC < Formula
   url "https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "e22b51b810b9c3bdce8c0df0d6112ca8e8a49ce0ea78b504e1bdbb59d731f5d8"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "252a76effb17e213664f0cddb0b0c28496fa1bdad146ef806416ada91f84e584"
@@ -17,6 +18,16 @@ class MlxC < Formula
   depends_on "mlx"
 
   def install
+    # Upstream: MLX Metal device_info is implemented via the GPU backend.
+    # https://github.com/ml-explore/mlx/blob/v0.30.5/mlx/backend/metal/device_info.cpp
+    # upstream pr ref, https://github.com/ml-explore/mlx-c/pull/99
+    inreplace "mlx/c/metal.cpp",
+              "#include \"mlx/c/metal.h\"\n",
+              "#include \"mlx/c/metal.h\"\n#include \"mlx/backend/gpu/device_info.h\"\n"
+    inreplace "mlx/c/metal.cpp",
+              "mlx::core::metal::device_info()",
+              "mlx::core::gpu::device_info(0)"
+
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DMLX_C_BUILD_EXAMPLES=OFF
