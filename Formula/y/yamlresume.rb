@@ -1,19 +1,22 @@
 class Yamlresume < Formula
   desc "Resumes as code in YAML"
   homepage "https://github.com/yamlresume/yamlresume"
-  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.10.2.tgz"
-  sha256 "93c7bde59f5d6982a7eb0359bd4adb32a90119c70177eefad961d0f53519379e"
+  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.11.1.tgz"
+  sha256 "eecf19120041bedfa4027bf3d95e98cc6cd82b8822816907db991286c4e8c490"
   license "MIT"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "136b9d1b904d319e017e0a83916b185c642679f1cfed40a853d24e004fa7baad"
-  end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    return unless OS.mac?
+
+    node_modules = libexec/"lib/node_modules/yamlresume/node_modules"
+    %w[fontlist fontlist2].each do |file|
+      deuniversalize_machos node_modules/"font-list/libs/darwin"/file
+    end
   end
 
   test do
