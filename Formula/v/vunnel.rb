@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/03/4c/5c9e717933d7679f65e9c765e7e61cfc353399bba7aa1a382b3f1cdaa817/vunnel-0.50.0.tar.gz"
-  sha256 "bd11ae93119c4fa521497745ce08099b567adf56300f31c95f916216620f4193"
+  url "https://files.pythonhosted.org/packages/35/75/a57eb32f517f15e097e0f05f8ee6baee49fe2dc01216bc6f524e756bc57e/vunnel-0.51.0.tar.gz"
+  sha256 "9dd32d4f249be3c3c3dd07fc59c0e1e3962cc0219f017e44deeae51eeb4a5527"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -124,8 +124,8 @@ class Vunnel < Formula
   end
 
   resource "mashumaro" do
-    url "https://files.pythonhosted.org/packages/f8/67/c4e235256baf6837106d2620c7123eb1e5786c704c7f7d7fa488ad6afc61/mashumaro-3.17.tar.gz"
-    sha256 "de1d8b1faffee58969c7f97e35963a92480a38d4c9858e92e0721efec12258ed"
+    url "https://files.pythonhosted.org/packages/eb/be/64b91309b2f612f38da650fbd930cd7461a0261e49c2d61067e2c3269da3/mashumaro-3.18.tar.gz"
+    sha256 "4ce1f2378b72791a8bcb5950241b9f6ba244876f7f4c0765289d10b4dc98d5a4"
   end
 
   resource "mergedeep" do
@@ -139,8 +139,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/70/a3/4e09c61a5f0c521cba0bb433639610ae037437669f1a4cbc93799e731d78/orjson-3.11.6.tar.gz"
-    sha256 "0a54c72259f35299fd033042367df781c2f66d10252955ca1efb7db309b954cb"
+    url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
+    sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
   end
 
   resource "packageurl-python" do
