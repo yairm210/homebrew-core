@@ -7,7 +7,7 @@ class CppLazy < Formula
   head "https://github.com/Kaaserne/cpp-lazy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1808987f40f8c3232932e375f40ddbc065a3de94fcf0238d791d6d21df05ce52"
+    sha256 cellar: :any_skip_relocation, all: "a6189f64f50809a62082509f85a970ade5984a5b7c4ef229aece0cf8e3f9b23b"
   end
 
   depends_on "cmake" => :build
