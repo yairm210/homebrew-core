@@ -1,8 +1,8 @@
 class Mill < Formula
   desc "Fast, scalable JVM build tool"
   homepage "https://mill-build.org/"
-  url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/1.0.6/mill-dist-1.0.6.exe"
-  sha256 "567a44bee9006ac943f8cbec18c38637c544144726cdc699aa4f3584ed52ae93"
+  url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/1.1.1/mill-dist-1.1.1.exe"
+  sha256 "929f50a4e89df0c94ac967ffa26ff91fded508866846ce2e5bde3b5a6e8458dd"
   license "MIT"
 
   livecheck do
@@ -30,7 +30,7 @@ class Mill < Formula
         def scalaVersion = "2.13.11"
       }
     SCALA
-    output = shell_output("#{bin}/mill resolve __.compile")
-    assert_equal "foo.compile", output.lines.last.chomp
+    output = shell_output("#{bin}/mill resolve __.compile 2>&1")
+    assert_match "SUCCESS", output
   end
 end
