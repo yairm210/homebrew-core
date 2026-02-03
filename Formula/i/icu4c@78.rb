@@ -42,6 +42,8 @@ class Icu4cAT78 < Formula
       system "make"
       system "make", "install"
     end
+
+    inreplace [bin/"icu-config", *lib.glob("pkgconfig/icu-*.pc")], prefix, opt_prefix
   end
 
   test do
