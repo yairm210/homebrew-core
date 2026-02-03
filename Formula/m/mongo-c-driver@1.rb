@@ -1,8 +1,8 @@
 class MongoCDriverAT1 < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.6.tar.gz"
-  sha256 "49904f5757fc6fd3671e554b93602907505a34c80365f4dceda3b5da481f0770"
+  url "https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.7.tar.gz"
+  sha256 "addac1f20d280a1a55fdbcb73edf929af74b9768b61c92d77703466f51d6885a"
   license "Apache-2.0"
 
   livecheck do
@@ -27,6 +27,7 @@ class MongoCDriverAT1 < Formula
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "openssl@3"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
