@@ -1,8 +1,8 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.4.335.0.tar.gz"
-  sha256 "c3e935cb19e2dda8e2e03fcfcbe451131595fec2cfbc73ab79a6f4c4cd43eb16"
+  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz"
+  sha256 "b2665ac9ddb65ff75a7ca2f6d410e73da443692742a1e3a5b7728ca6069a400c"
   license all_of: [
     "Apache-2.0",
     "MIT",
