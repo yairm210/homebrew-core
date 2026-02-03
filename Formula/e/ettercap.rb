@@ -7,13 +7,12 @@ class Ettercap < Formula
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "2244ce8f708f9889ff92f8861bbae03a92aac0a2cf7457bc0b334301f4bff2bd"
-    sha256 arm64_sequoia: "6d98587a5e98e2db83bf85117ea496c15f114fab7d702459811591af756f3c7c"
-    sha256 arm64_sonoma:  "a72d69fae20cd902444c9aed9ac7c2b34861319ffc2847b0ea2d23723bb8c181"
-    sha256 sonoma:        "9c04bde58b1776e853b1b9092899d28d90270907cd644d889db1fc00f32f18d3"
-    sha256 arm64_linux:   "8f7f88b2aa5083456ebaa7694d2ddafb83c46d0d8fad766e2ea4e583e3e0ffa0"
-    sha256 x86_64_linux:  "e825ecc7c84a08331974048d31b39125c15c8d8d44d002744be0686a000a3b4a"
+    sha256 arm64_tahoe:   "d866253edf99e32aabd71af32cdb93a04dab5e338df81c29dde60a878b2686c4"
+    sha256 arm64_sequoia: "6a9ecd815259623b2fda2ad8ceb8a5b24f95358d985d44de34fc4c55bd03c988"
+    sha256 arm64_sonoma:  "4c258ce9751edc76d653f25b962cc8f76547f3633d3a648780603feb6f086288"
+    sha256 sonoma:        "98b79bd173e14e6a247c8c999b2420934868c1e1e93cb675b859d0ca8d0b11b2"
+    sha256 arm64_linux:   "0fea091086e5e9b3b2de29839a96cdc9751569837145691697c381bc037bfe1d"
+    sha256 x86_64_linux:  "f9c93080e72d8a6eb989b37fffb75b49b6325e06c8bc0682af5c22f56226a3c4"
   end
 
   depends_on "cmake" => :build
