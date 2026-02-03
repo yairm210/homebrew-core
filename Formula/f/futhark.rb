@@ -7,12 +7,12 @@ class Futhark < Formula
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "130084440e6543ab7a53108e2c99a35dfd3e32e3127feaa72302be8159341744"
-    sha256 cellar: :any,                 arm64_sequoia: "3cd78e5471788499c116851a043458e539c83decf262512d63713f2665a0fbaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "914947277c70342f0a560cb45af27755d400322d29cbc4df4e5154860ff280e0"
-    sha256 cellar: :any,                 sonoma:        "5cccec0cd5e51288c7ad29822a083868af3ddd3770061716a5f6850ff31993c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7feb520e7e96799258a737209f246bb6ad08e24d81f44e2092303486cd22aec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1458802e265ff7a00dfd5ceca3a44df27812c1cf0768ec8946ed6368fd506366"
+    sha256 cellar: :any,                 arm64_tahoe:   "1a29e7dce1102f0f8f42ca1a27b0a786a0d0145e4356f604a283a6c7df3be3a6"
+    sha256 cellar: :any,                 arm64_sequoia: "68dfd8bdc0898938643656291dbd38e65d071393f2da914dc22e4c8aab5d76a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a9b5aeb2a3bc1d417e72707628dde384e7c93e9a10ea66cae2c2c37f9555717"
+    sha256 cellar: :any,                 sonoma:        "dcf9e0983ccfa31d0016e517e1e6817861002245cf741c48f72f3bfcd3ac8f8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a0e3d39269ffb9faeebaf64dcdb17c1038deef11020bdc17f1c0d1f7d47e1f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9629aea0a3e78068b324a20adbcb95004ae7bbe9d90d88c64a7ac0f442a21baf"
   end
 
   depends_on "cabal-install" => :build
