@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v25.5.0/node-v25.5.0.tar.xz"
-  sha256 "7e35efaf63c8fe7737b8c62792ec547e5a95a69f1f813fcfba28566aecc9fd92"
+  url "https://nodejs.org/dist/v25.6.0/node-v25.6.0.tar.xz"
+  sha256 "9db6848c802b1981c0faeb71a5b8cc79913f82a747f7f1d50260c6d2f781ef7e"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -133,11 +133,13 @@ class Node < Formula
     # - `--shared-nbytes` is not available as dependency in Homebrew.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
+    # - `--shared-lief` is not available as dependency in Homebrew.
     ignored_shared_flags = %w[
       gtest
       nbytes
       simdutf
       temporal_capi
+      lief
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")
