@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/refs/tags/v9.2.4.tar.gz"
-  sha256 "caa9bc31f2388456c731d1108c09c9bebf37526f82b71d1873a30754a42b3801"
+  url "https://github.com/elastic/logstash/archive/refs/tags/v9.3.0.tar.gz"
+  sha256 "8dc7d3623f14ae59c5d62219c1ec45a3057cfb5c7ec76aa15fdafed98841abec"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -21,6 +21,7 @@ class Logstash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0859b5e34aa064bb74247672fda4f686db1abf241faf31bf1934b46418d5b350"
   end
 
+  depends_on "gradle@8" => :build # gradle 9 support issue, https://github.com/elastic/logstash/issues/16641
   depends_on "openjdk@21"
 
   uses_from_macos "ruby" => :build
@@ -33,6 +34,9 @@ class Logstash < Formula
               'apply from: "${projectDir}/x-pack/distributions/internal/observabilitySRE/build-ext.gradle"',
               ""
     ENV["OSS"] = "true"
+
+    # Ensure Logstash core jars are built for the no-JDK artifact.
+    system "gradle", "bootstrap"
 
     # Build the package from source
     system "rake", "artifact:no_bundle_jdk_tar"
