@@ -5,8 +5,8 @@ class Perbase < Formula
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
-    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.2.0.tar.gz"
-    sha256 "35b35573e48e5af17d953e66d345c5e8b2ea69bb072e5bbaff87adbfc02cb472"
+    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.3.0.tar.gz"
+    sha256 "333ebc0939baed901cda752c64d00730470207dfb74d92a78635711088829002"
 
     uses_from_macos "xz" => :build
     uses_from_macos "curl"
@@ -44,6 +44,12 @@ class Perbase < Formula
 
   on_linux do
     depends_on "openssl@3" # need to build `openssl-sys`
+  end
+
+  # patch to use `setting` instead of `global_settings` for AppSettings, upstream pr ref, https://github.com/sstadick/perbase/pull/104
+  patch do
+    url "https://github.com/sstadick/perbase/commit/bbdd2025045d688fa5eae589d8032826c1d84c65.patch?full_index=1"
+    sha256 "51f67e50202af3ae21741a91b803a5c3d83fd0a52ed167e349f39d0b5f4e0f47"
   end
 
   def install
