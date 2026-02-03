@@ -1,10 +1,9 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
   homepage "https://pioneerspacesim.net/"
-  url "https://github.com/pioneerspacesim/pioneer/archive/refs/tags/20250501.tar.gz"
-  sha256 "959902d98a79536bd44f25bd7b29e48da94aeac597228776b0f91635877f362e"
+  url "https://github.com/pioneerspacesim/pioneer/archive/refs/tags/20260203.tar.gz"
+  sha256 "861341d317fc0ca506e3a2e8ff00858983652a5656289f8fe9ad1525df1a95da"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/pioneerspacesim/pioneer.git", branch: "master"
 
   bottle do
@@ -32,6 +31,14 @@ class Pioneer < Formula
 
   on_linux do
     depends_on "mesa"
+  end
+
+  # patch to fix ambiguous `to_string` overloads
+  patch do
+    on_macos do
+      url "https://github.com/pioneerspacesim/pioneer/commit/24023dfa75b1bd9de15b45692aeedab26da1b1b7.patch?full_index=1"
+      sha256 "9279afa54507c971ea517f508c1796b0ce9dc435d976778d13bfea7813056908"
+    end
   end
 
   # patch to fix `pi_lua_generic_push` call, upstream pr ref, https://github.com/pioneerspacesim/pioneer/pull/6000
