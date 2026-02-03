@@ -68,6 +68,8 @@ class Gnutls < Formula
     system "./configure", *args, *std_configure_args
     system "make", "install"
 
+    inreplace [lib/"pkgconfig/gnutls.pc", lib/"pkgconfig/gnutls-dane.pc"], prefix, opt_prefix
+
     # certtool shadows the macOS certtool utility
     mv bin/"certtool", bin/"gnutls-certtool"
     mv man1/"certtool.1", man1/"gnutls-certtool.1"
