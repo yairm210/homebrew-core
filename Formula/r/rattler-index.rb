@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.27.10.tar.gz"
-  sha256 "366db27ed1e62267f8e6e678c005a28a0745c2b3096db46c371ac71f771212e2"
+  url "https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.27.12.tar.gz"
+  sha256 "f355a3948196a63022e6b21b5089110396aa3d6bf1359716fbee96bb07f20bf4"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
