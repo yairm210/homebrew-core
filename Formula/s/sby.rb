@@ -10,7 +10,7 @@ class Sby < Formula
   head "https://github.com/YosysHQ/sby.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "384e71af0daa042fe47f526237cb271baed12718a66aa636d5cf2de5e55b1987"
+    sha256 cellar: :any_skip_relocation, all: "e6c0b78d91897e0b0e227c79d4939089c50d427a6429bf693b9cb2668216e685"
   end
 
   depends_on "yices2" => :test
