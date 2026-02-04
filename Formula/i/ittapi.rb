@@ -7,12 +7,12 @@ class Ittapi < Formula
   head "https://github.com/intel/ittapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30ff2366656b6f3be77a1ed201f86b23ff8ba01a76d8a8c34c355b9b1d572445"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ba72b9686637c79f19f2345570adcdca05be30b6e85591f865716da5ff35fdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37d5a896b087b9a11be64e7ba41dfd617554763f6d9380dff5316961f0005552"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bbe703dd088be65d9283c1243cf226e99bbe18bc752cff46ac460b9773f3a00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db9ee4c8298c8248b975defdf2d092c50e0496e501d7467b70ceaaa034c692c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "388b527025297c79906966b73bd202b4579286f72a822747d647a84589ecc606"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d05101c17697633c91b8cf06058aac95ae5e2e1947f9f3dbc68b9a84db53ccb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a5993bf31e09437b413c602fcdac7ec1fc783248b2121d9fbf5766a87c3022c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fa365b006c87ce4fc95ca3dcc2cd556ba1a269954495322419d4e6bd9fdf7e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac55f764a363deb44bf6c2fb5efff6014d3fac293ac285cc8b6e175cfb3b68b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a6a36c1506023abbd92c88c07da92313074f6976636931a6483db496833ca4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34fc8bac72d908cd322d8e876c1a18221df43034af87d47915d5156845ae4cb2"
   end
 
   depends_on "cmake" => :build
