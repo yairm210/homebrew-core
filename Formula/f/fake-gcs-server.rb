@@ -7,12 +7,12 @@ class FakeGcsServer < Formula
   head "https://github.com/fsouza/fake-gcs-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbaa7844e2b0ff0a395804c2c2795a6bee87116058e2255fbe9ab0e54b779bc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbaa7844e2b0ff0a395804c2c2795a6bee87116058e2255fbe9ab0e54b779bc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbaa7844e2b0ff0a395804c2c2795a6bee87116058e2255fbe9ab0e54b779bc7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "110df54768b84ac6957b45f833bffb4629a1b06bc59316e1048660bcc81ac8b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34ecf4c915facbf09d0302cc71af587b836969f2d9ecd394bfbadb3890caaf96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b171c6ec325110fbeac260a34e3ed8cfbcfbd0427bd4e245f5c77a23142c1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "077abb0b7943aedcb4b39adf101b6cb32478cabb2cf91003ddb2a36224fe719b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "077abb0b7943aedcb4b39adf101b6cb32478cabb2cf91003ddb2a36224fe719b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "077abb0b7943aedcb4b39adf101b6cb32478cabb2cf91003ddb2a36224fe719b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b66c3a64c5afcbecebb33654b15340f23757daded46038ae6f21a1913d8967d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1f37cdcb6d259a0ce40a75de8245f67f8ab4d6764789aa189c12fbf692a49e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f65839239fb2c10cd7c5a7ef669e91322df86f629d6500fe4c3fa09e8c405b7c"
   end
 
   depends_on "go" => :build
