@@ -3,18 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/38/cb/b403960929d8d7b5d4f42d99d0fe97f07a93698b82076d80b5bef3d4f955/commitizen-4.13.2.tar.gz"
-  sha256 "a2f3e08749c8c63cfbca61f29babb3d3c82b4810d7204f54761ba4f600d40a4e"
+  url "https://files.pythonhosted.org/packages/3e/44/c261d3432c91c0f6d60e261eb579b8136eedf90f829e0f6f031744316dfa/commitizen-4.13.3.tar.gz"
+  sha256 "eb577ad7c905e3202f0721a8800fa773e82ea9e507ef9a5004506208626f04ae"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8555fdf398b6f659b299eb157f66fb08a53d8ddf2fd324dfdd74225fa47525db"
-    sha256 cellar: :any,                 arm64_sequoia: "abcf0b57f671632f5f92b525c2490185dcc556de81b213448272aa2f1268eb03"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fb749f523f10180a2ea77f983befe511cb606df702bd0dc41ca946183f2f928"
-    sha256 cellar: :any,                 sonoma:        "6244a5780b4bad3d267d019c562dbf272c5eb9d16ffde3ce4f0e6588f5b7a57e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bffcec885492fdc3c65353c6a0404dd1002c7457779006e004b6fbde130dd224"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d45fa07a481c8f255adfbbfa8701de2e7c390cde1560a2cc362e8cc06330cc"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca785815735a406d53ff060e71b8cb443b0641a57a005d661a85c7334a1e022a"
+    sha256 cellar: :any,                 arm64_sequoia: "2bbbbc1ed2ed89ad4ab34323330358ea63aba02d06c40cbdeb791661fa76f960"
+    sha256 cellar: :any,                 arm64_sonoma:  "b78affbe66444ed7c87dfe7518d30ddc720f0874064dea752eb4dea9cdc98000"
+    sha256 cellar: :any,                 sonoma:        "1aadf20c62814c4c687bacbefbcb8d43d802578f510df4e66907ccb36db6931a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d20a254433c6d1b4f892c614e5e02beac87e72cdee3f766ab0346919038f325"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb9c1e86da6aaf39cce6ba04f47f2f628d86a615c495fe3e1873e20a434159d4"
   end
 
   depends_on "maturin" => :build
