@@ -8,18 +8,12 @@ class Rtmpdump < Formula
   head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "5b227da74ef1d3c1338e803ac514d9576cb5892680460d24f35074d6243d0038"
-    sha256 cellar: :any,                 arm64_sequoia:  "4d88c286ea074e6dc9612679d33f1e25910dce5cd4c4a3f9f2dcdec8ad950516"
-    sha256 cellar: :any,                 arm64_sonoma:   "fc5748b95d47c39bb4d633090cc0a7b5fe90bda5ef163fa5b8809272c9bf4618"
-    sha256 cellar: :any,                 arm64_ventura:  "1dec5a57d0173f54cb1f38efb6bfbd0bc416bdb298289ebaac1dce3a41bdd6fb"
-    sha256 cellar: :any,                 arm64_monterey: "5151b4682fa17d931e6383dd06b584d822df647fd454b22ddf498525606cff39"
-    sha256 cellar: :any,                 arm64_big_sur:  "b548e2d6b53bc0d03bdc73fb01a175c8ef2338f80a3ca0c1963af625f0baa523"
-    sha256 cellar: :any,                 sonoma:         "5d019561203c8b1c1c1e69c48b3987d531c55fa806bd83f0a462b6b7da732f48"
-    sha256 cellar: :any,                 ventura:        "b27c24194ded10a47b93a379efae8ead4b04a6d3e8e34bc3a70942380b1ed68b"
-    sha256 cellar: :any,                 monterey:       "b942d0dee2c95a00b3fd080c50d1f0d715448ae3147bbb18cf5adb758cb63798"
-    sha256 cellar: :any,                 big_sur:        "794073edbf7402af7750b21fbcb44c5df038d6d3606450bd6a453dc92b6b3b09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d3f2a6eb1d6c8409c69a89db67cb545acf7c6c568f0a57f6df7d7108cce87df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab7f054fd0b01975be1893437235c61e2761ed9fb54e7880a854ca37809d57e"
+    sha256 cellar: :any,                 arm64_tahoe:   "6da0c98fc9ec24bc43ef856f523ac07746b7612d9ff9e95089957c79578f6550"
+    sha256 cellar: :any,                 arm64_sequoia: "8eafa2bb31efb613a6dc317042ef72b72f6732cc8188bfbee84ad63732e06266"
+    sha256 cellar: :any,                 arm64_sonoma:  "01c87c00b31444f8d52e257a4023ffa42747f57a9e03228686bb52e3578ce42f"
+    sha256 cellar: :any,                 sonoma:        "526ac3a9d62403dbbb2cd2917c9e6c89d64a718897f26e11e23f762aaff0e0fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b50bb89c9c4b6684266523fca57729bf10ffb1855d81846b9a972fa67d333ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d157b751c5de5997aeeb24acb57d4d296fb715a50ae42f0a4e1f793fbde641a8"
   end
 
   depends_on "openssl@3"
