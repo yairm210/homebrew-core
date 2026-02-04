@@ -1,8 +1,8 @@
 class Nessie < Formula
   desc "Transactional Catalog for Data Lakes with Git-like semantics"
   homepage "https://projectnessie.org"
-  url "https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.106.0.tar.gz"
-  sha256 "b198fde77f7ce4d00d42cd2f5eacc16469162b859367a4c9338bd65fc4be8e2a"
+  url "https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.107.1.tar.gz"
+  sha256 "12b8462bf74682ea12992ec5c5ff94696d452834ef620e4bd101637f17fbee5e"
   license "Apache-2.0"
 
   bottle do
@@ -14,7 +14,7 @@ class Nessie < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5a35e4c27cbc55ceca2bd60d818085a2a9ba0545b890127570db3778cb0a7c"
   end
 
-  depends_on "gradle@8" => :build
+  depends_on "gradle" => :build
   # The build fails with more recent JDKs
   # See: https://github.com/projectnessie/nessie/issues/11145
   depends_on "openjdk@21"
