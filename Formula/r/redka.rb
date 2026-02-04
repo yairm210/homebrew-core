@@ -1,8 +1,8 @@
 class Redka < Formula
   desc "Redis re-implemented with SQLite"
   homepage "https://github.com/nalgeon/redka"
-  url "https://github.com/nalgeon/redka/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "cfccbfc5b4887211146352426efe0c3fcc2adbcfe71ef6b58da3d29cba867bde"
+  url "https://github.com/nalgeon/redka/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "368cfae611fcf908019f7f37d9fe400fd13b8c87c9ad0a091563c9aa6461f7c7"
   license "BSD-3-Clause"
   head "https://github.com/nalgeon/redka.git", branch: "main"
 
@@ -23,6 +23,13 @@ class Redka < Formula
   uses_from_macos "sqlite"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     ldflags = "-s -w -X main.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"redka"), "./cmd/redka"
   end
