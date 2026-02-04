@@ -6,12 +6,12 @@ class VercelCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7cf6e51374e2d67ae19caa6655c8cd2fd712ac4bf8bf5cc3a529c942d1f2c8d0"
-    sha256 cellar: :any,                 arm64_sequoia: "476661dc61ade369e30ce44362bf75874041e5372419238bc41e7c8f74c4edb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "476661dc61ade369e30ce44362bf75874041e5372419238bc41e7c8f74c4edb8"
-    sha256 cellar: :any,                 sonoma:        "653ed8ab97418355486c3121c4e712e0c2fba5791f9b3d5f84f00136ea12c5dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0760911bd7fc8064310cad0dadc15521e8e4b4257d4831d6ff42c9215c894e4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72e0a62c49ec6024940ef617186c8fc90c2d7bb3417632195c5a0831d595651a"
+    sha256 cellar: :any,                 arm64_tahoe:   "311ae724f9092c52184f3db2884da109961fd34d9b85ab3966cf51beb68fc8f4"
+    sha256 cellar: :any,                 arm64_sequoia: "00dd4ba4229d2ec08135f0780789eda698b16c7ff437c26e2ec3c4d042d79ffc"
+    sha256 cellar: :any,                 arm64_sonoma:  "00dd4ba4229d2ec08135f0780789eda698b16c7ff437c26e2ec3c4d042d79ffc"
+    sha256 cellar: :any,                 sonoma:        "a07279c50f12e07b681d12c27219bc16e9702a3cef95f379f7e6fc14a7bbd62a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cc94411fc13c5724dda3e97e40166d29670d255e6584c3a361663d4907fb2fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "053245030f611eba9be54f0ec02a5a333e5952bc23221c44d4e2a53ce8610f11"
   end
 
   depends_on "node"
