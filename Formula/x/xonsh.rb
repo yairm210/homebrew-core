@@ -10,12 +10,12 @@ class Xonsh < Formula
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32adab3106834f02c9f9ad5c8d5f6783c88bb69723816c389bf6ba247ff229c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9ee313c0bc7ecc53308faa4048a0d04af67bc386757934a46bc8d5fa2f24913"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "527b66b177142f65fc0360eb727cd062db8d2fd8d15466e82828f87313ab0468"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65da130544f79ad5490efd60ff83ee13d9b8b87e0af8de1c907e6d980fbc99a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "469000ee476f451784a620fdd6e1031dc76db0517900ede68e3cf518f152e1ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2dbdd9a84d396aaf14d7a1820c5b4e2444c0feba59c6e0a12dcfbfa32eb1383"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e38f8e971a1571f20107c4dc7cce13df84d5599c8ef8c6cf6fffc97aba0cd28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d0de8fe2ef05a485c82e6a6b02dc2d679e2ff0d867a2419e82c8cf0466559d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81cd7f0f9876af424394e116fcfab1d1f704221eb38401ead6467626e0f11424"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b476cd5a748daced1b8bca3f90ca91048987a153d817f5a75f4e8dc66a2b4ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56963b9e510cb3ed4fae100dcb3f8d8873598b753c39e81a30f4aa525883e4cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cf3cf50d01bd31207b7a687a305ba24acbe8944567f15d880f3c54355f9960a"
   end
 
   depends_on "python@3.14"
