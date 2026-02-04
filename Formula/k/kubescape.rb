@@ -3,8 +3,8 @@ class Kubescape < Formula
   homepage "https://kubescape.io"
   # Use GitHub repo URL because the version for the build will be automatically fetched from git.
   url "https://github.com/kubescape/kubescape.git",
-      tag:      "v3.0.48",
-      revision: "6ce0121a03697a6976656fe1f13dbb171a1610a9"
+      tag:      "v4.0.0",
+      revision: "cfe022ff1d3488415405711513ee993684696ad9"
 
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
@@ -26,7 +26,8 @@ class Kubescape < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"kubescape", shell_parameter_format: :cobra,
                                                           shells:                 [:bash, :zsh, :fish, :pwsh])
