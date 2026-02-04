@@ -6,6 +6,7 @@ class Copyparty < Formula
   url "https://files.pythonhosted.org/packages/83/b9/15b2c3f9ab5d0843d9ad3bd827ce389eaa272a2fd8c095e46f1ed96abaf2/copyparty-1.20.6.tar.gz"
   sha256 "1fc00d302505f56df2568193b8e224778eacfddfc70ffaa276c3be1a642df98e"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "511a544d44af87ea9d4fcf3b58a7d245e80eb9ee99c134770a8a3c742164c261"
@@ -18,7 +19,9 @@ class Copyparty < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cryptography" => :no_linkage
+  depends_on "libsodium"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
   depends_on "zeromq"
@@ -27,7 +30,9 @@ class Copyparty < Formula
     depends_on "gettext"
   end
 
-  pypi_packages package_name:     "copyparty[thumbnails,audiotags,ftpd,ftps,tftpd,pwhash,zeromq]",
+  # "all" intentionally excludes features that ffmpeg can provide:
+  # https://github.com/9001/copyparty/issues/398#issuecomment-3145365906
+  pypi_packages package_name:     "copyparty[all]",
                 exclude_packages: %w[cffi cryptography pillow pycparser]
 
   resource "argon2-cffi" do
@@ -40,6 +45,16 @@ class Copyparty < Formula
     sha256 "b957f3e6ea4d55d820e40ff76f450952807013d361a65d7f28acc0acbf29229d"
   end
 
+  resource "bcrypt" do
+    url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
+    sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"
+  end
+
+  resource "invoke" do
+    url "https://files.pythonhosted.org/packages/de/bd/b461d3424a24c80490313fd77feeb666ca4f6a28c7e72713e3d9095719b4/invoke-2.2.1.tar.gz"
+    sha256 "515bf49b4a48932b79b024590348da22f39c4942dff991ad1fb8b8baea1be707"
+  end
+
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
@@ -50,9 +65,9 @@ class Copyparty < Formula
     sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
-  resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
-    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+  resource "paramiko" do
+    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
+    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
   end
 
   resource "partftpy" do
@@ -73,6 +88,11 @@ class Copyparty < Formula
   resource "pyftpdlib" do
     url "https://files.pythonhosted.org/packages/fc/67/3299ce20585601d21e05153eb9275cb799ae408fe15ab93e48e4582ea9fe/pyftpdlib-2.1.0.tar.gz"
     sha256 "5e92e7ba37c3e458ec458e5c201e2deb992cb6011c963e6a8512a634d8d80116"
+  end
+
+  resource "pynacl" do
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyopenssl" do
