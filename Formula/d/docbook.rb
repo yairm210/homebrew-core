@@ -13,8 +13,7 @@ class Docbook < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ca237485ebe0b9ab1fc84d87b01b2f322fb285b085133ef727857818283d6d43"
+    sha256 cellar: :any_skip_relocation, all: "a0f63041884ef15e344abec96148793e2b18c011e3d72dbdb8bdb4d76d16deec"
   end
 
   uses_from_macos "libxml2"
