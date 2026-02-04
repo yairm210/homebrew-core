@@ -23,23 +23,22 @@ class I686ElfGrub < Formula
   depends_on "help2man" => :build
   depends_on "i686-elf-binutils" => :build
   depends_on "i686-elf-gcc" => [:build, :test]
-  depends_on "objconv" => :build
   depends_on "texinfo" => :build
-  depends_on "gettext"
-  depends_on "xorriso"
   depends_on "xz"
+
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def target
     "i686-elf"
   end
 
   def install
-    ENV.append_to_cflags "-Wno-error=incompatible-pointer-types"
-    ENV["PATH"]=prefix/"opt/gawk/libexec/gnubin:#{ENV["PATH"]}"
-
     touch buildpath/"grub-core/extra_deps.lst"
 
     mkdir "build" do
