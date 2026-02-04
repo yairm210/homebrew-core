@@ -13,13 +13,12 @@ class Openbao < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8999fa214ae6d762b4a220a4f50962446163fe41b1fee27b219a24654efa5397"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f68a8e8b14b413aa61647add948f8012222f7b11a33be605bfaf62c1610fac79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82e7b1d677857025887ba8d7e27295705b53589927a88b1cfcd671ca5d064d1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "170749bba9981bcee3d88ce4e73fc6a4edbcd22c0d0abccc580d548e2f44b99e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e16e7abfa3a9107c25dd26b0d5d0361bd1e25278f75e5ab96a1235d012338c29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fde949f5478f711a4a67dfaf406e3081b6cec60f42e789f53fdf1cb1cad779f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89e9bc7dcea945da0e0ff4dc7e28523f7da1e01c6649eb02c1780a84d5174b21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27dc1a886023dee99877fe1948c3fd60f96a366c764a0503a94532562904e827"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "464754315198a0e6a5460d9681ef35772c62c12bf9dfa2cc8dbc0a24a4a6ca83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3ef2ee2c95ce7b8d9c86ff60fe91652ad63a122f2e29968070647b78f508d46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e85e3ebc1c0a609aa4a9aebdf7dc6756af61f642c7721712e2692bb9e506f0c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bbdb545d3e56f73602e5955721213206b4e36fad01f1abbc4d95b2d5961a4d6"
   end
 
   depends_on "go" => :build
