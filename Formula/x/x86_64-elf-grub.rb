@@ -21,19 +21,20 @@ class X8664ElfGrub < Formula
 
   depends_on "gawk" => :build
   depends_on "help2man" => :build
-  depends_on "objconv" => :build
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
   depends_on "x86_64-elf-binutils" => :build
   depends_on "x86_64-elf-gcc" => [:build, :test]
   depends_on "freetype"
-  depends_on "gettext"
-  depends_on "mtools"
-  depends_on "xorriso"
   depends_on "xz"
+
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "unifont" do
     url "https://ftpmirror.gnu.org/gnu/unifont/unifont-16.0.02/unifont-16.0.02.pcf.gz", using: :nounzip
@@ -47,9 +48,6 @@ class X8664ElfGrub < Formula
   end
 
   def install
-    ENV.append_to_cflags "-Wno-error=incompatible-pointer-types"
-    ENV["PATH"]=prefix/"opt/gawk/libexec/gnubin:#{ENV["PATH"]}"
-
     touch buildpath/"grub-core/extra_deps.lst"
 
     resource("unifont").stage do |r|
