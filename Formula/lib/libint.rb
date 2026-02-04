@@ -8,12 +8,12 @@ class Libint < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "021285dd3c9f6f83647c2561fb5d51eed76f7093483fe23fb8541cb463f81b85"
-    sha256 cellar: :any,                 arm64_sequoia: "95ec5448bcc73ce713eeaf1fce1cc59ccb9bc21421cca17e33a53378cb3a14e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d311e23cd5cdeb601aaa98f8fd1c023bf8edfd95b7073814c4a7e0725599f850"
-    sha256 cellar: :any,                 sonoma:        "a90f91cd6b70acdcacf6c72eefeadf8a7973dd85f27af1ea3fcfd02b2a409f99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7c85675c38ecae95182d1f75922ba5a8f8cd729fe6ef441b232e7d9f0d959ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "924eb316cb90dd18ced1e1d52f2ddeefe8e6a13300d866450b966be540f72a7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b03a7d26170b597d8420de0020de22fca8622a1a5990f6139b11df4727722df"
+    sha256 cellar: :any,                 arm64_sequoia: "a46b2a128693e96482d182bd7ba1a28c146e5aaa591c264fca7bcdd0b8c7ae79"
+    sha256 cellar: :any,                 arm64_sonoma:  "69d323511bf9d7556ed922c1b623a7777dc7bdebecd77fb4d85cae61af2e0e17"
+    sha256 cellar: :any,                 sonoma:        "8f26efba8c16c3e353832d6b9a070cf68a005a853fe473feacad779aaf5f65a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "963b6d12f7047ea666a2b5f18f021bde6578bdcebc25f5007a49137b157d023e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34def8f50947bcdf2d36667e9bbb9bed785d9b52f62a7ebfef7020dd02f52b5b"
   end
 
   depends_on "cmake" => :build
