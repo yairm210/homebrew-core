@@ -5,8 +5,8 @@ class Perbase < Formula
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
-    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.3.0.tar.gz"
-    sha256 "333ebc0939baed901cda752c64d00730470207dfb74d92a78635711088829002"
+    url "https://github.com/sstadick/perbase/archive/refs/tags/v1.4.0.tar.gz"
+    sha256 "fc0d08964950381969a1cf12e1e1e39eb8edde26794b8d653e7d80b08180fc43"
 
     uses_from_macos "xz" => :build
     uses_from_macos "curl"
@@ -26,12 +26,12 @@ class Perbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "deddd7047c55fc5702e2ecebfbf3136e765564d7f838e64eef478b3415eb1e9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6233aa484e304a47225050410eae24bdcd1ebfddf5bb3a5ef1aba6facae788b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96f3a0161aa1648b79b3b4a1ff3b53d02ddb4577df7966fb83b16041106ccf8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57d6363625d631e6caea7bc222eb8087d6c6fc4de89e08dfc57e92b398da30d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cb3f11561cd0cedfc9f826ae1fcff2ca82a5a989846768ff43345ee61e6f9c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97596e7432df87b62a4224c2fc435ff0f6cf1eb76c547f5b72d56b7d54c45888"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b27f4cd506f89c3822aa14588869b38b370dad2b9c4a054263d3c12765c00c9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a1c6d4c2ae40f87cc7a785ffb31f0d64da26369ca813ebd1dc8ebcf9b33cd1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dd7e81330143f8e68f14c8188b3616571a1f2f55da6c64bc349b56b3e80bbbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cab8cc6d3e4cd2c64c8895b23ecd4b1021151d6ce3b94e3bc74b650c0430a473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29544aef879ded62af4a4c9344507a18d5e49fb430b05d0e7284180960ac8d34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97139d275264bcab4fc057f2e7e4fa2cdf187f73bfbd3e438956ff137151d026"
   end
 
   depends_on "cmake" => :build
@@ -44,12 +44,6 @@ class Perbase < Formula
 
   on_linux do
     depends_on "openssl@3" # need to build `openssl-sys`
-  end
-
-  # patch to use `setting` instead of `global_settings` for AppSettings, upstream pr ref, https://github.com/sstadick/perbase/pull/104
-  patch do
-    url "https://github.com/sstadick/perbase/commit/bbdd2025045d688fa5eae589d8032826c1d84c65.patch?full_index=1"
-    sha256 "51f67e50202af3ae21741a91b803a5c3d83fd0a52ed167e349f39d0b5f4e0f47"
   end
 
   def install
