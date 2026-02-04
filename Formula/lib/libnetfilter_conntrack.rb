@@ -1,8 +1,8 @@
 class LibnetfilterConntrack < Formula
   desc "Library providing an API to the in-kernel connection tracking state table"
   homepage "https://www.netfilter.org/projects/libnetfilter_conntrack/"
-  url "https://www.netfilter.org/pub/libnetfilter_conntrack/libnetfilter_conntrack-1.1.0.tar.xz"
-  sha256 "67edcb4eb826c2f8dc98af08dabff68f3b3d0fe6fb7d9d0ac1ee7ecce0fe694e"
+  url "https://www.netfilter.org/pub/libnetfilter_conntrack/libnetfilter_conntrack-1.1.1.tar.xz"
+  sha256 "769d3eaf57fa4fbdb05dd12873b6cb9a5be7844d8937e222b647381d44284820"
   license "GPL-2.0-or-later"
 
   livecheck do
