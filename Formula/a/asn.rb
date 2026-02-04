@@ -11,16 +11,18 @@ class Asn < Formula
   end
 
   depends_on "aha"
-  depends_on "bash"
   depends_on "coreutils"
   depends_on "grepcidr"
   depends_on "ipcalc"
-  depends_on "jq"
   depends_on "mtr"
   depends_on "nmap"
 
-  uses_from_macos "curl"
+  uses_from_macos "jq", since: :sequoia
   uses_from_macos "whois"
+
+  on_macos do
+    depends_on "bash" # Bash 4.2+
+  end
 
   on_linux do
     depends_on "bind" # for `host`
@@ -28,6 +30,7 @@ class Asn < Formula
 
   def install
     bin.install "asn"
+    man1.install "asn.1"
   end
 
   test do
