@@ -24,7 +24,6 @@ class Afflib < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "openssl@3"
-  depends_on "readline"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
@@ -35,6 +34,12 @@ class Afflib < Formula
   end
 
   def install
+    # BSD-4-Clause is GPL-incompatible so cannot be linked to GPL readline
+    # https://www.gnu.org/licenses/gpl-faq.html#OrigBSD
+    # https://src.fedoraproject.org/rpms/afflib/blob/f43/f/afflib.spec#_36-38
+    odie "readline cannot be a dependency!" if deps.map(&:name).include?("readline")
+    ENV["ac_cv_lib_readline_readline"] = "no" unless OS.mac?
+
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-fuse",
                           "--disable-python",
