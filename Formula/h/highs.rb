@@ -15,12 +15,12 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3bbe500a50da0b931796c0bc0f20568c6ab7854a3848c8ec457bf55a0185b87a"
-    sha256 cellar: :any,                 arm64_sequoia: "5660d2ecd3aaa09887bcc6dc7ac20f289006679c364c1edd56224fbf61d493df"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c586667407bb8298f20777dfc044098f0471d4b093455acf65b36f083321a58"
-    sha256 cellar: :any,                 sonoma:        "be40fae84781ebf8108c4647b125f8e5d2a874a8b2cac776e02f1261e28e90b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "948550cc36b0b0e3799f20fe509bb9aa8fd3b65bc14861cbbc7d18e5ab29f450"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28b51bf3b9155f286d5c6451f13f8b875f1a14d02b8e118b667efb16fa673a1"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6140db2002aaedec7d803da158feb2ecde26e45a0e191f97db8c1387771709c"
+    sha256 cellar: :any,                 arm64_sequoia: "b21d82b0bc99d42aaf16221a33d3964dccbda377a4b291a83e0d0471cfef40d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "87e6aa58ea607487202bd9cde4525b61d979f246fa99c193db6ce7f806c7d6d5"
+    sha256 cellar: :any,                 sonoma:        "06a6339c4e29ecdd7d08b62a4f8b39276ac2fab5f8d17f21e922c3e24cda6a57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18773b17dc264aa3b5c209394ac5c10c4b9c60a04560c68b7c05dc46e16cb9ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9417a6ec6a879308ea4459603c4eb5cb1a83659b9ba81819716959b96e01f171"
   end
 
   depends_on "cmake" => :build
