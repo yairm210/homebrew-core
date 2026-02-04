@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/39/48/f89d4a1cf7be7a8a17254c5ffe02065e9cff754244f5ece8460027809184/cycode-3.9.0.tar.gz"
-  sha256 "c24e16b2b37287918704903cbf9bfe16a0c59d56c0ff6e064252930e164c5b4a"
+  url "https://files.pythonhosted.org/packages/6a/63/e537c2bdad196585e1ce5d8907518c0e7d1999c04c65a09ade33fa1930d0/cycode-3.9.1.tar.gz"
+  sha256 "6ead1286855cb821bcb62a9f827b61a4e3d8755b63f966b1c34e8715246ed71b"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ffe608e3d14d298ecce6f8b651bdb2feced8310a41d4acd8a6c15cf42a27b70"
-    sha256 cellar: :any,                 arm64_sequoia: "bbc8b1bb7c6d1a95e85ffd64f8de06ed6861d7224ebe0eb691f88426f760f9a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "58d92ac84fd415ef20c1acbf1ff7c1bc22a707f1cbe869b85bdd810a46edcefe"
-    sha256 cellar: :any,                 sonoma:        "ef6fed02f4167e71f54d5f6eb14ae5df1ad68d8ec1df62809eca3f716a31eb8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b970e6c75a4fc5ebdd9a4bc658768eec258053978b1a66e85e9f4f32a3130c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "020807d2c1d45e9aa9ff145d0c5c1f167d77f472d23f5b935e3a35b858343a14"
+    sha256 cellar: :any,                 arm64_tahoe:   "793cb0a333d9465045adc74120cc9399dcf7b25812db2d2eceb77f10f6b20618"
+    sha256 cellar: :any,                 arm64_sequoia: "3c7da47d26cbf210aa898a9859fb045b6c6e58dd960abdfab68b96797745f59c"
+    sha256 cellar: :any,                 arm64_sonoma:  "30cf67e73544c5e48868bd0c4fa04ac0bd0be6e8c11efd79fab3f67b78c52152"
+    sha256 cellar: :any,                 sonoma:        "f5f934aa1145ee735978934807ae77ae238afb6e951fbb8a3994913124df092e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c51ba95154eba26fdaa0f2d45d4013de67ba58412fbf09b7d99dcd75fee5f159"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5113b64e426e685559da4615990f29fb3b6c95c77509734aa89b0a66a7a2b2b2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -157,8 +157,8 @@ class Cycode < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "python-dateutil" do
