@@ -1,10 +1,9 @@
 class ProtocGenGoGrpc < Formula
   desc "Protoc plugin that generates code for gRPC-Go clients"
   homepage "https://github.com/grpc/grpc-go"
-  url "https://github.com/grpc/grpc-go/archive/refs/tags/cmd/protoc-gen-go-grpc/v1.6.0.tar.gz"
-  sha256 "6e269733f8728b6583ce7e8ca4b2aafec286f4ac4e878a8d75477787ba8c389b"
+  url "https://github.com/grpc/grpc-go/archive/refs/tags/cmd/protoc-gen-go-grpc/v1.6.1.tar.gz"
+  sha256 "9dae3e712ceda8f3740511632bdb18872387bc4642131d05d190e65483f4a422"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
