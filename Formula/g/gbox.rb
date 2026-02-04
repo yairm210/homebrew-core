@@ -1,18 +1,17 @@
 class Gbox < Formula
   desc "Provides environments for AI Agents to operate computer and mobile devices"
   homepage "https://gbox.ai"
-  url "https://github.com/babelcloud/gbox/releases/download/v0.1.17/gbox-v0.1.17.tar.gz"
-  sha256 "48355c7859f009a16147af23a8646f77399a74bab3a36fb591281160a8c576a2"
+  url "https://github.com/babelcloud/gbox/releases/download/v0.1.18/gbox-v0.1.18.tar.gz"
+  sha256 "aa487c1ca91d8e6fa58da13b15013bff4d01f42be1b8b40a3ca917cdfe0253fb"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "011e64ea35e60795521020a58ddece288cda2aeea5ab3d9c17b0708ae3b4f14e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c73213b8085feb62e789eb3168645c386f82dc4d9e7a1249f856bea7b2e0b8ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56c45c820c82c226dd8839e11d65b7d64fb5dd03c414c294dba87068717008f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81fb41cc0a5ebea3de86eb7cef678d2bd209c837d5311e90bcd640974cba2373"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "757f4a545764e0e23eb71092bd773ecd70be2a4f116e82e332fa87aeb35093d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6707054c068ff37ef549ae54f40c0604938fb28d1ab4afd880b9db1ac2b83913"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75791e8a81f1f035a56a7fb6a755fb046b414e041ce73fe81ec912db9ae95f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2f780efb9affedc57cdd78d140f9b52782f3a768f6eaed6617a417e3f35c3c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90a6483d80d1b2b4918d37b4d416e46727f964cdb15ceeb4802204e204d812c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae6e84a197068d581fe7c544baef58e6aea7155ef8924502d5c6ac327769c5e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a68f8534773a3d32d7a58459a60a696ab0c84c06a84c9c854890976b3a87985d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dca1364c97e397d5ca45296d173c7a753a5733a2f02d6eb1c0d6b48634affa3"
   end
 
   depends_on "go" => :build
