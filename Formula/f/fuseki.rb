@@ -1,9 +1,9 @@
 class Fuseki < Formula
   desc "SPARQL server"
   homepage "https://jena.apache.org/documentation/fuseki2/"
-  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-fuseki-5.6.0.tar.gz"
-  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-5.6.0.tar.gz"
-  sha256 "5833260ae40a4f0dadc92f11510ad836f00ef63f61ea25aabe16d02d697e818d"
+  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-fuseki-6.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-6.0.0.tar.gz"
+  sha256 "b73d7cdeeed0fba247cece1047e7bc7ef38b7e631de7806e0bd511f32d8fb1ff"
   license "Apache-2.0"
 
   bottle do
@@ -21,7 +21,7 @@ class Fuseki < Formula
       FUSEKI_RUN:  var/"run/fuseki",
     )
 
-    bin.install %w[fuseki-server fuseki-backup fuseki]
+    bin.install %w[fuseki-server fuseki-backup fuseki-plain]
     bin.env_script_all_files(libexec, fuseki_env)
     chmod 0755, libexec.children
     libexec.install "fuseki-server.jar"
