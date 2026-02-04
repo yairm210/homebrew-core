@@ -64,6 +64,8 @@ class Tsduck < Formula
     if OS.linux?
       ENV["LINUXBREW"] = "true"
       ENV["VATEK_CFLAGS"] = "-I#{Formula["libvatek"].opt_include}/vatek"
+    else
+      ENV["LDFLAGS_EXTRA"] = "-Wl,-rpath,#{rpath(source: lib/"tsduck")}"
     end
     system "gmake", "NOGITHUB=1", "NOTEST=1"
     ENV.deparallelize
