@@ -16,14 +16,22 @@ class Zsv < Formula
   end
 
   depends_on "jq"
+  depends_on "pcre2"
 
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args
+    rm(Dir["app/external/{jq,pcre}*"])
 
+    args = %W[
+      --jq-prefix=#{Formula["jq"].opt_prefix}
+      --pcre2-8-prefix=#{Formula["pcre2"].opt_prefix}
+      --ncurses-dynamic
+    ]
+
+    system "./configure", *args, *std_configure_args
     ENV.deparallelize
-    system "make", "install", "VERSION=#{version}"
+    system "make", "install", "VERSION=#{version}", "PCRE2_STATIC="
   end
 
   test do
