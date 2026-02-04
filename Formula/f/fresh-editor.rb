@@ -1,8 +1,8 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.98.tar.gz"
-  sha256 "f20c70b0a7e26d13e7ab8cae91ce249af249c60c214c4264ac43d1fc01f5d2a9"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.99.tar.gz"
+  sha256 "01628722f584057ae71a6a731511f4b8c527b80a88b4d0d9be83fa23cd73848c"
   license "GPL-2.0-or-later"
 
   bottle do
