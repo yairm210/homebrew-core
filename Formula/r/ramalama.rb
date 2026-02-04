@@ -3,8 +3,8 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://github.com/containers/ramalama"
-  url "https://files.pythonhosted.org/packages/8d/46/f315941789325bb0c825e85b2ed5269539367bf0c2ed96b321a9143af9e5/ramalama-0.16.0.tar.gz"
-  sha256 "24e21c49934ec6f19664f270a78232f4bcc972a7e3fc8619381be4cf096fba01"
+  url "https://files.pythonhosted.org/packages/ad/13/600807d698930c30aab51ffb484cb83835af37505832f2ebf375c1fbd20a/ramalama-0.17.0.tar.gz"
+  sha256 "079aa5a614403414314e15b058dc48c4053ff456cbb8fa5f28c8e415bd9ee38e"
   license "MIT"
 
   bottle do
@@ -43,8 +43,8 @@ class Ramalama < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
