@@ -1,18 +1,18 @@
 class Ittapi < Formula
   desc "Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API"
   homepage "https://github.com/intel/ittapi"
-  url "https://github.com/intel/ittapi/archive/refs/tags/v3.26.5.tar.gz"
-  sha256 "9dad3eef9efa749a749f032e35b77b75016a0f1d3e084b89eaad725db44ac01a"
+  url "https://github.com/intel/ittapi/archive/refs/tags/v3.26.6.tar.gz"
+  sha256 "1e115e18753a95e74ed9647e8da52ec11ec6eccd97d81ed4e6ce2f9ebf9909a6"
   license "GPL-2.0-only"
   head "https://github.com/intel/ittapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d518f324699dfd3f0c4a77cb626dfcb792807875be47503df6ea2a66724f1f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0225b9f339b427fd90e272be80db224fedde101ac40c577fa9a214f7f76042db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "568282e8e66f1c9bf4a12e7f76010e18b06be1eafd83105fae5176c4df085f4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca2c5f32dafe095532f8804321337cb5fdb4ad21885f70ee9307fb65d320f2f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fa80363f3f3ffa8563f7eb550c85e672a1000ce3a8b976f4466eb761c4c6dda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ab580289b4dc8420b9df3b64ac5cf856c6355bec62df4fc0ca0a963382831a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30ff2366656b6f3be77a1ed201f86b23ff8ba01a76d8a8c34c355b9b1d572445"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ba72b9686637c79f19f2345570adcdca05be30b6e85591f865716da5ff35fdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37d5a896b087b9a11be64e7ba41dfd617554763f6d9380dff5316961f0005552"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8bbe703dd088be65d9283c1243cf226e99bbe18bc752cff46ac460b9773f3a00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db9ee4c8298c8248b975defdf2d092c50e0496e501d7467b70ceaaa034c692c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "388b527025297c79906966b73bd202b4579286f72a822747d647a84589ecc606"
   end
 
   depends_on "cmake" => :build
