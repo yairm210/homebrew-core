@@ -3,8 +3,8 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/39/48/f89d4a1cf7be7a8a17254c5ffe02065e9cff754244f5ece8460027809184/cycode-3.9.0.tar.gz"
-  sha256 "c24e16b2b37287918704903cbf9bfe16a0c59d56c0ff6e064252930e164c5b4a"
+  url "https://files.pythonhosted.org/packages/6a/63/e537c2bdad196585e1ce5d8907518c0e7d1999c04c65a09ade33fa1930d0/cycode-3.9.1.tar.gz"
+  sha256 "6ead1286855cb821bcb62a9f827b61a4e3d8755b63f966b1c34e8715246ed71b"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
@@ -157,8 +157,8 @@ class Cycode < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "python-dateutil" do
