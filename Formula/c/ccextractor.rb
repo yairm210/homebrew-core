@@ -4,6 +4,7 @@ class Ccextractor < Formula
   url "https://github.com/CCExtractor/ccextractor/archive/refs/tags/v0.96.5.tar.gz"
   sha256 "821614d7b31d47bf3bf6217a66464b826c0f86d2bcde070b6fba74f54dff55ff"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f640d9cd318188c14097436f5206c5a0854dc6d39aa668474b45284bdbeed0ab"
