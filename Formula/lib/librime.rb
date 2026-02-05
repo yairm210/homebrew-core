@@ -5,7 +5,7 @@ class Librime < Formula
       tag:      "1.16.1",
       revision: "de4700e9f6b75b109910613df907965e3cbe0567"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8db89710644f358eab0a32dcac27ca58a37a81ce9d7e4005b0f6bd18f85f91a9"
