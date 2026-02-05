@@ -4,6 +4,7 @@ class Qdmr < Formula
   url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.13.3.tar.gz"
   sha256 "c4711c5062dd6477454f4aa481fd8c37497ec08b1a8fd5f56c85ca6559b86824"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "87324ac9609701024096625a5c1b7e93284d7b75bd1cd222dfe41359f504a705"
