@@ -4,7 +4,7 @@ class Pdftoipe < Formula
   url "https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.29.1.tar.gz"
   sha256 "604ef6e83ad8648fa09c41a788549db28193bb3638033d69cac2b0b3f33bd69b"
   license "GPL-2.0-or-later"
-  revision 13
+  revision 14
 
   no_autobump! because: :requires_manual_review
 
@@ -32,6 +32,10 @@ class Pdftoipe < Formula
     sha256 "b1b48088c9dd4067d862d788643c750fc6981102cd85f62a85f898948ca33771"
   end
 
+  # Backport fix for poppler 26.02+ compatibility
+  # Upstream PR ref: https://github.com/otfried/ipe-tools/pull/79
+  patch :DATA
+
   def install
     cd "pdftoipe" do
       system "make"
@@ -46,3 +50,59 @@ class Pdftoipe < Formula
     assert_match "<ipestyle>", File.read("test.ipe")
   end
 end
+
+__END__
+diff --git a/pdftoipe/xmloutputdev.cpp b/pdftoipe/xmloutputdev.cpp
+index 506b16d..bb0b37d 100644
+--- a/pdftoipe/xmloutputdev.cpp
++++ b/pdftoipe/xmloutputdev.cpp
+@@ -290,21 +290,28 @@ void XmlOutputDev::startText(GfxState *state, double x, double y)
+   double xt, yt;
+   state->transform(x, y, &xt, &yt);
+ 
+-  const double *T = state->getTextMat();
+-  const double *C = state->getCTM();
++#if POPPLER_VERSION_AT_LEAST(26, 2, 0)
++  const auto &T = state->getTextMat();
++  const auto &C = state->getCTM();
++  const double *Tp = T.data();
++  const double *Cp = C.data();
++#else
++  const double *Tp = state->getTextMat();
++  const double *Cp = state->getCTM();
++#endif
+ 
+   /*
+   fprintf(stderr, "TextMatrix = %g %g %g %g %g %g\n", 
+-	  T[0], T[1], T[2], T[3], T[4], T[5]);
++	  Tp[0], Tp[1], Tp[2], Tp[3], Tp[4], Tp[5]);
+   fprintf(stderr, "CTM = %g %g %g %g %g %g\n", 
+-	  C[0], C[1], C[2], C[3], C[4], C[5]);
++	  Cp[0], Cp[1], Cp[2], Cp[3], Cp[4], Cp[5]);
+   */
+ 
+   double M[4];
+-  M[0] = C[0] * T[0] + C[2] * T[1];
+-  M[1] = C[1] * T[0] + C[3] * T[1];
+-  M[2] = C[0] * T[2] + C[2] * T[3];
+-  M[3] = C[1] * T[2] + C[3] * T[3];
++  M[0] = Cp[0] * Tp[0] + Cp[2] * Tp[1];
++  M[1] = Cp[1] * Tp[0] + Cp[3] * Tp[1];
++  M[2] = Cp[0] * Tp[2] + Cp[2] * Tp[3];
++  M[3] = Cp[1] * Tp[2] + Cp[3] * Tp[3];
+ 
+  GfxRGB rgb;
+  state->getFillRGB(&rgb);
+@@ -348,7 +355,12 @@ void XmlOutputDev::drawImage(GfxState *state, Object *ref, Stream *str,
+ 
+   writePSFmt("<image width=\"%d\" height=\"%d\"", width, height);
+ 
++#if POPPLER_VERSION_AT_LEAST(26, 2, 0)
++  const auto &matArr = state->getCTM();
++  const double *mat = matArr.data();
++#else
+   const double *mat = state->getCTM();
++#endif
+   double tx = mat[0] + mat[2] + mat[4];
+   double ty = mat[1] + mat[3] + mat[5];
+   writePSFmt(" rect=\"%g %g %g %g\"", mat[4], mat[5], tx, ty);
