@@ -3,18 +3,18 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/14/42/7f25a28c92e88718b160c316715a5ae9c8367db9e6effc21ed8b51aff16a/mcp_scan-0.3.39.tar.gz"
-  sha256 "17b0e37b2911325437a3d5d36c754e29fcc38043cbc0ad8513f47df6ba8493f4"
+  url "https://files.pythonhosted.org/packages/96/5b/5390b9af9ce877c2788586960bb02687f0b6a9d2dcf6d1e6fa7800c66e3a/mcp_scan-0.4.tar.gz"
+  sha256 "871ede6481dbf4a328a5ab014f8d771879464131048070aa00f96ecaebf916ee"
   license "Apache-2.0"
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d67bb366171cae43d25bacf75cf861a15991c4c3a4a3889b99c76ffa93324589"
-    sha256 cellar: :any,                 arm64_sequoia: "2f0bb22bd29b4436e75093312736841c00d158cc04779aed71dbab8094ac1d55"
-    sha256 cellar: :any,                 arm64_sonoma:  "857e8217f193f537b7eb01523771e6455817379e359e30db8fe9e73eebf16324"
-    sha256 cellar: :any,                 sonoma:        "894416c5e0e3b55a1da7cdd5ae3987169fc3df76fc1fbacde24d51ad583e4036"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3884eecf038592d20a054d3a9ef880af47a7b189a81cf261768b08e7d585de3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3690fed5e7879facdda0f2ddbc2b87fc2a250a5417c1944c4c40ae3ede694433"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb7a41399403a04325d09d70a5f419f6afdbb952aedae093aaf6c2d814b02f5f"
+    sha256 cellar: :any,                 arm64_sequoia: "6ae0145b9c9e45bf7dbe8627cb1e60d8e9fa339c82a9dbf263374d3f63f4bb0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "23d03c4aff8867054e71ccfe3d76444002e8d1d3ec44a2e1d070cc6491e19076"
+    sha256 cellar: :any,                 sonoma:        "a46c6c81630ff907cc330dba710da50c796b6cecaa93a7051d156eadb00fbe4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ffdcd38e996c3fe34aa74a09f6973c761649981e82d0b433c32510e01eaa4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "307e99592a292d1a6cd53f8296a2ac50ff9c21a47c48e24efef9de9caf0e2ccb"
   end
 
   depends_on "certifi" => :no_linkage
@@ -202,8 +202,8 @@ class McpScan < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "shellingham" do
