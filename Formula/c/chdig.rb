@@ -1,8 +1,8 @@
 class Chdig < Formula
   desc "Dig into ClickHouse with TUI interface"
   homepage "https://github.com/azat/chdig"
-  url "https://github.com/azat/chdig/archive/refs/tags/v26.1.1.tar.gz"
-  sha256 "8c4c8af3e7f029b3963c1a41066fefaf31934c377d7bfb9daa81823517bb2e5f"
+  url "https://github.com/azat/chdig/archive/refs/tags/v26.2.1.tar.gz"
+  sha256 "b72905b8df0b4dfd3240c2cba2db2a34b30d43f8938fdc8d5d7096508281714f"
   license "MIT"
   head "https://github.com/azat/chdig.git", branch: "main"
 
