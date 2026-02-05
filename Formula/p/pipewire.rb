@@ -37,7 +37,7 @@ class Pipewire < Formula
   depends_on "systemd"
 
   def install
-    args = %w[
+    args = %W[
       -Dexamples=disabled
       -Dtests=disabled
       -Dudevrulesdir=#{lib}/udev/rules.d
