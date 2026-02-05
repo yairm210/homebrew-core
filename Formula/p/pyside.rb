@@ -13,6 +13,7 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
+  revision 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -36,7 +37,7 @@ class Pyside < Formula
   depends_on "pkgconf" => :test
 
   depends_on "llvm"
-  depends_on "python@3.13" # not yet support for Python 3.14, https://wiki.qt.io/Qt_for_Python#Python_compatibility_matrix
+  depends_on "python@3.14"
   depends_on "qt3d"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -84,7 +85,7 @@ class Pyside < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
