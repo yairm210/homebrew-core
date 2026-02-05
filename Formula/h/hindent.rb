@@ -16,10 +16,10 @@ class Hindent < Formula
   end
 
   depends_on "cabal-install" => :build
-  # TODO: switch to ghc@9.12 in the next release
-  # https://github.com/mihaimaruseac/hindent/pull/1000
-  # See GHC 9.14 issue: https://github.com/mihaimaruseac/hindent/issues/1155
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc@9.12" => :build # GHC 9.14 issue: https://github.com/mihaimaruseac/hindent/issues/1155
+  depends_on "gmp"
+
+  uses_from_macos "libffi"
 
   def install
     system "cabal", "v2-update"
@@ -29,16 +29,15 @@ class Hindent < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/hindent --version")
 
-    (testpath/"Input.hs").write <<~HASKELL
+    input = <<~HASKELL
       example = case x of Just _ -> "Foo"
     HASKELL
-    (testpath/"Expected.hs").write <<~HASKELL
+    expected = <<~HASKELL
       example =
         case x of
           Just _ -> "Foo"
     HASKELL
 
-    assert_equal (testpath/"Expected.hs").read,
-      pipe_output("#{bin}/hindent --indent-size 2", (testpath/"Input.hs").read, 0)
+    assert_equal expected, pipe_output("#{bin}/hindent --indent-size 2", input, 0)
   end
 end
