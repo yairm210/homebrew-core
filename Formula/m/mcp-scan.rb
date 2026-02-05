@@ -3,18 +3,18 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/11/e1/68aa0ce16eb84a2dee85b5ab056a2d78652537be81cfc805289151e671a1/mcp_scan-0.3.38.tar.gz"
-  sha256 "0e60c5fa6e66ff3d712bca62fe3de14f82f304c28b188aea3d374fb230b6ea96"
+  url "https://files.pythonhosted.org/packages/14/42/7f25a28c92e88718b160c316715a5ae9c8367db9e6effc21ed8b51aff16a/mcp_scan-0.3.39.tar.gz"
+  sha256 "17b0e37b2911325437a3d5d36c754e29fcc38043cbc0ad8513f47df6ba8493f4"
   license "Apache-2.0"
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "df753ba08e7bcd51b41e1725e9fbd2a836fcd964340c7d0a05ff219d258a448b"
-    sha256 cellar: :any,                 arm64_sequoia: "cf6a4cdca3fd5b1b7479b933da6d2a9fc383db3392b50c6aa54c85eec2fcc691"
-    sha256 cellar: :any,                 arm64_sonoma:  "aab56e39ba67cd216fa40502f72ac48fab903413f9d8758fea1e6d6c8c0389a5"
-    sha256 cellar: :any,                 sonoma:        "82205dafbdc68c3647fa8279ba287db803a6f3c86d1e1d2925229d35caff0f8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c5d0e20618851d03e3c47a13dff2d458994534ee7ad7292b860ee5118bba86e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1ced749d74379e082829112be9f13fc8347dfca0f3e8e8b736fef445e6e43a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d67bb366171cae43d25bacf75cf861a15991c4c3a4a3889b99c76ffa93324589"
+    sha256 cellar: :any,                 arm64_sequoia: "2f0bb22bd29b4436e75093312736841c00d158cc04779aed71dbab8094ac1d55"
+    sha256 cellar: :any,                 arm64_sonoma:  "857e8217f193f537b7eb01523771e6455817379e359e30db8fe9e73eebf16324"
+    sha256 cellar: :any,                 sonoma:        "894416c5e0e3b55a1da7cdd5ae3987169fc3df76fc1fbacde24d51ad583e4036"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3884eecf038592d20a054d3a9ef880af47a7b189a81cf261768b08e7d585de3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3690fed5e7879facdda0f2ddbc2b87fc2a250a5417c1944c4c40ae3ede694433"
   end
 
   depends_on "certifi" => :no_linkage
@@ -67,8 +67,8 @@ class McpScan < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
-    sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
+    url "https://files.pythonhosted.org/packages/f6/59/28bde150415783ff084334e3de106eb7461a57864cf69f343950ad5a5ddd/fastapi-0.128.1.tar.gz"
+    sha256 "ce5be4fa26d4ce6f54debcc873d1fb8e0e248f5c48d7502ba6c61457ab2dc766"
   end
 
   resource "filelock" do
@@ -147,8 +147,8 @@ class McpScan < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pydantic-settings" do
@@ -167,8 +167,8 @@ class McpScan < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "python-dotenv" do
@@ -202,8 +202,8 @@ class McpScan < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
-    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
+    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
+    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
   end
 
   resource "shellingham" do
