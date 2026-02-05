@@ -1,9 +1,9 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "da68d99262eecd45219187cb5683bd90a7403206b842f910ff9b429fbf98cffb"
-  license "MIT"
+  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "8b25e29b9ac5d9fba29b96e3ac733c4d0798dd0e7be8bb9826842fd34855b587"
+  license "AGPL-3.0-or-later"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
   bottle do
@@ -15,7 +15,14 @@ class Bookokrat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1379eccb4b228e79774fd0306483bcaa2ef5092d67b649f793056e1449963eb"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" => :build
+
+  on_linux do
+    depends_on "fontconfig"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
