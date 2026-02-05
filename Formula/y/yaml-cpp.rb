@@ -1,9 +1,10 @@
 class YamlCpp < Formula
   desc "C++ YAML parser and emitter for YAML 1.2 spec"
   homepage "https://github.com/jbeder/yaml-cpp"
-  url "https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "fbe74bbdcee21d656715688706da3c8becfd946d92cd44705cc6098bb23b3a16"
+  url "https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.9.0.tar.gz"
+  sha256 "25cb043240f828a8c51beb830569634bc7ac603978e0f69d6b63558dadefd49a"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "2568a74c90066c521d45bfd6057d55e52a1cf170b87d24321ed39a91a8013c31"
@@ -21,24 +22,6 @@ class YamlCpp < Formula
   end
 
   depends_on "cmake" => :build
-
-  # CMake 4 build patch, remove in next release
-  # PR refs:
-  # - https://github.com/jbeder/yaml-cpp/pull/1171
-  # - https://github.com/jbeder/yaml-cpp/pull/1211
-  # - https://github.com/jbeder/yaml-cpp/pull/1351
-  patch do
-    url "https://github.com/jbeder/yaml-cpp/commit/f878043f12a9434a2ef72de3992ec92e6845c889.patch?full_index=1"
-    sha256 "4aa70d90cd971776b9082c08586384f53f290f58f1835a1d1a81df1e2c6754c7"
-  end
-  patch do
-    url "https://github.com/jbeder/yaml-cpp/commit/c2680200486572baf8221ba052ef50b58ecd816e.patch?full_index=1"
-    sha256 "61789d44d8d9395fa32d1c0ec10f67087450305f087a0403ab8ba78a5f792efa"
-  end
-  patch do
-    url "https://github.com/jbeder/yaml-cpp/commit/c9371de7836d113c0b14bfa15ca70f00ebb3ac6f.patch?full_index=1"
-    sha256 "43379ee0a8d9620524a6a7d34b098363e22e4152cc634e10d5ef2a175697ae72"
-  end
 
   def install
     args = %w[-DYAML_BUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF]
