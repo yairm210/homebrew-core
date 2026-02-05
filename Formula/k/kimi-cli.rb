@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/48/74/c38408122ca87b01fab9f3021bedf3c1c631195954e724ef6f238ce4c293/kimi_cli-1.7.0.tar.gz"
-  sha256 "1bb5da8a92d73aed057bf0b8d0c4893c242540e2cdaf4649d9569948db8adb6b"
+  url "https://files.pythonhosted.org/packages/b0/0a/ae91e92d800a9be5f76463fd5a06db8739f60b6a59412aff5eb2155e69b2/kimi_cli-1.8.0.tar.gz"
+  sha256 "8d50c15d7d64849dd2af672b5ebde44b7efd8190d22b86fa1fc4f370b93dfcf1"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -169,8 +169,8 @@ class KimiCli < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/69/38/421cd7e70952a536be87a0249409f87297d84f523754a25b08fe94b97e7f/google_genai-1.61.0.tar.gz"
-    sha256 "5773a4e8ad5b2ebcd54a633a67d8e9c4f413032fef07977ee47ffa34a6d3bbdf"
+    url "https://files.pythonhosted.org/packages/94/4c/71b32b5c8db420cf2fd0d5ef8a672adbde97d85e5d44a0b4fca712264ef1/google_genai-1.62.0.tar.gz"
+    sha256 "709468a14c739a080bc240a4f3191df597bf64485b1ca3728e0fb67517774c18"
   end
 
   resource "h11" do
@@ -269,8 +269,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/1a/1b/e2c92ea9f614d4faba7607c8918d462d660a9e5d4cef88d188ddb6b8e261/kosong-0.41.0.tar.gz"
-    sha256 "e1b4d0017ab194a197e403563912c6eebd5aaa7c11500fe472af61c24a892fc6"
+    url "https://files.pythonhosted.org/packages/74/27/b3d99d9fdb3fd9791fa7f1caccf4db42c6c2e13b2e92ff6782daaef06167/kosong-0.41.1.tar.gz"
+    sha256 "2e3e9e294fe77751cfae4d0bf59c2f437f58214970f5ce9b31ddd9f52e136d46"
   end
 
   resource "lazy-object-proxy" do
