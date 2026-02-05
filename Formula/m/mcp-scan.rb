@@ -3,8 +3,8 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/14/42/7f25a28c92e88718b160c316715a5ae9c8367db9e6effc21ed8b51aff16a/mcp_scan-0.3.39.tar.gz"
-  sha256 "17b0e37b2911325437a3d5d36c754e29fcc38043cbc0ad8513f47df6ba8493f4"
+  url "https://files.pythonhosted.org/packages/96/5b/5390b9af9ce877c2788586960bb02687f0b6a9d2dcf6d1e6fa7800c66e3a/mcp_scan-0.4.tar.gz"
+  sha256 "871ede6481dbf4a328a5ab014f8d771879464131048070aa00f96ecaebf916ee"
   license "Apache-2.0"
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
@@ -202,8 +202,8 @@ class McpScan < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "shellingham" do
