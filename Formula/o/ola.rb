@@ -5,7 +5,7 @@ class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://github.com/OpenLightingProject/ola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 8
+  revision 9
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   stable do
@@ -67,8 +67,8 @@ class Ola < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/43/29/d09e70352e4e88c9c7a198d5645d7277811448d76c23b00345670f7c8a38/protobuf-5.29.5.tar.gz"
-    sha256 "bc1463bafd4b0929216c35f437a8e28731a2b7fe3d98bb77a600efced5a15c84"
+    url "https://files.pythonhosted.org/packages/7e/57/394a763c103e0edf87f0938dafcd918d53b4c011dfc5c8ae80f3b0452dbb/protobuf-5.29.6.tar.gz"
+    sha256 "da9ee6a5424b6b30fd5e45c5ea663aef540ca95f9ad99d1e887e819cdf9b8723"
   end
 
   # Apply open PR to support Protobuf 22+ API
