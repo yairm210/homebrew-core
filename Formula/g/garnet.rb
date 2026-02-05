@@ -1,10 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  # Check for dotnet 10 support on release updates
-  # https://github.com/microsoft/garnet/blob/main/Directory.Build.props#L4
-  url "https://github.com/microsoft/garnet/archive/refs/tags/v1.0.96.tar.gz"
-  sha256 "cf3f4ea50db7bc0d640bd869793cbaf9b8fc6485b2f34795c4943ed0971a2cb9"
+  url "https://github.com/microsoft/garnet/archive/refs/tags/v1.0.97.tar.gz"
+  sha256 "508b2d4783ae14ba77c9c98d0ed666326af5d7fd117bdf87c59c24da9b6591cc"
   license "MIT"
 
   bottle do
@@ -16,7 +14,7 @@ class Garnet < Formula
   end
 
   depends_on "valkey" => :test
-  depends_on "dotnet@9"
+  depends_on "dotnet"
 
   on_linux do
     depends_on "cmake" => :build
@@ -39,7 +37,7 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet@9"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
