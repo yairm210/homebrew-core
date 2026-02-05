@@ -255,7 +255,10 @@ class SnowflakeCli < Formula
     sha256 "19c90354eb103c37c6502e5b880b47235db6abb0fac1910c022aa98740331785"
 
     # Remove `protoc-wheel-0` dependency, it can be replaced with `protobuf` formula
-    patch :DATA
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/homebrew-core/0861b15cab638c9e7b66743dae68abf12149b919/Patches/snowflake-cli/snowflake-snowpark-python.diff"
+      sha256 "ef7b5a62b4083a08514b6eeb392c8810730c5e19b41e28bf68e71eded9e91a83"
+    end
   end
 
   resource "sortedcontainers" do
@@ -306,17 +309,3 @@ class SnowflakeCli < Formula
     assert_match "No data", shell_output("#{bin}/snow connection list")
   end
 end
-
-__END__
-diff --git a/pyproject.toml b/pyproject.toml
-index 6b87735..34b6f7d 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -1,7 +1,6 @@
- [build-system]
- requires = [
-     "setuptools",
--    "protoc-wheel-0==21.1", # Protocol buffer compiler for Snowpark IR
-     "mypy-protobuf", # used in generating typed Python code from protobuf for Snowpark IR
- ]
- build-backend = "setuptools.build_meta"
