@@ -13,12 +13,12 @@ class Gpac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8bf0f70df5ff6eb637496a701d1edb87d1c0cba64d37727a0b901534a4bf0d25"
-    sha256 cellar: :any,                 arm64_sequoia: "335e62cb07a553ba150f6af7f4908187c75df376fc51f1e8eb090fa40db1d3b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "f037bb51fc3e11634361c80b4a7ba00550fd1e7fb933cb12a940282bf3710a9f"
-    sha256                               sonoma:        "62c598517a06e0e18a0704e6b1252cd4f3adb1aca18a32befc6001092c88d620"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11baac845e8aa3acfd9eb7cc026271bf87e93aa2041fe7b405d64b499634156c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ade92b91ef193a6ff88d76a1f311a96785b203487e7d6f4f6a862497625f5d"
+    sha256 cellar: :any,                 arm64_tahoe:   "b827c215c8b7d1e7d108a34a6d2f8bd127da04b548a61f58379df1a066451592"
+    sha256 cellar: :any,                 arm64_sequoia: "fd8a3461b048e0e74aa7165f98bef3cd86e0a018a13110a85bb14b42a97d0df2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b318337422c173c1c98c1b3016e4a9dd7b35267841ec95a579e73415ef64fd62"
+    sha256                               sonoma:        "8d43d2cadf89faced475a4c5250a663fe506d7effa103729da19504fab3bb7e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30bffae0554449c599a0b421f086e78c241acf5a7370171f559199ce06a42c09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "614c831f53a857cb73e09a384a97c2436185c79b07824aff604a3caee548ae8f"
   end
 
   depends_on "pkgconf" => :build
