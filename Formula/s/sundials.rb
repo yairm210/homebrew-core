@@ -1,14 +1,9 @@
 class Sundials < Formula
   desc "Nonlinear and differential/algebraic equations solver"
   homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://github.com/LLNL/sundials/releases/download/v7.5.0/sundials-7.5.0.tar.gz"
-  sha256 "089ac659507def738b7a65b574ffe3a900d38569e3323d9709ebed3e445adecc"
+  url "https://github.com/llnl/sundials/releases/download/v7.6.0/sundials-7.6.0.tar.gz"
+  sha256 "0cb6f4bebd2ec13a42714a0654a58431d2cc473b759898b8e5fd8e1797c22712"
   license "BSD-3-Clause"
-
-  livecheck do
-    url "https://computing.llnl.gov/projects/sundials/sundials-software"
-    regex(/href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "bdca6a1965e3c4d23438f226a3538d52d500466e25936a0cb2c6602ce634649f"
@@ -25,15 +20,11 @@ class Sundials < Formula
   depends_on "suite-sparse"
 
   def install
-    blas = "-L#{Formula["openblas"].opt_lib} -lopenblas"
-    args = %W[
+    args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_KLU=ON
       -DENABLE_LAPACK=ON
       -DENABLE_MPI=ON
-      -DKLU_LIBRARY_DIR=#{Formula["suite-sparse"].opt_lib}
-      -DKLU_INCLUDE_DIR=#{Formula["suite-sparse"].opt_include}/suitesparse
-      -DLAPACK_LIBRARIES=#{blas};#{blas}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -41,7 +32,7 @@ class Sundials < Formula
     system "cmake", "--install", "build"
 
     # Only keep one example for testing purposes
-    (pkgshare/"examples").install Dir[
+    (pkgshare/"examples").install [
       "test/unit_tests/nvector/test_nvector.c",
       "test/unit_tests/nvector/test_nvector.h",
       "test/unit_tests/nvector/serial/test_nvector_serial.c",
