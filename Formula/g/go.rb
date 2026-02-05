@@ -1,12 +1,22 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.7.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.7.src.tar.gz"
-  sha256 "178f2832820274b43e177d32f06a3ebb0129e427dd20a5e4c88df2c1763cf10a"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
   head "https://go.googlesource.com/go.git", branch: "master"
+
+  stable do
+    url "https://go.dev/dl/go1.25.7.src.tar.gz"
+    mirror "https://fossies.org/linux/misc/go1.25.7.src.tar.gz"
+    sha256 "178f2832820274b43e177d32f06a3ebb0129e427dd20a5e4c88df2c1763cf10a"
+
+    # patch to fix pkg-config flag sanitization
+    patch do
+      url "https://github.com/golang/go/commit/28fbdf7acb4146b5bc3d88128e407d1344691839.patch?full_index=1"
+      sha256 "2e05f7e16f2320685547a7ebb240163a8b7f1c7bf9d2f6dc4872ff8b27707a35"
+    end
+  end
 
   livecheck do
     url "https://go.dev/dl/?mode=json"
