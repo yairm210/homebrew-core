@@ -9,12 +9,12 @@ class McpScan < Formula
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "df753ba08e7bcd51b41e1725e9fbd2a836fcd964340c7d0a05ff219d258a448b"
-    sha256 cellar: :any,                 arm64_sequoia: "cf6a4cdca3fd5b1b7479b933da6d2a9fc383db3392b50c6aa54c85eec2fcc691"
-    sha256 cellar: :any,                 arm64_sonoma:  "aab56e39ba67cd216fa40502f72ac48fab903413f9d8758fea1e6d6c8c0389a5"
-    sha256 cellar: :any,                 sonoma:        "82205dafbdc68c3647fa8279ba287db803a6f3c86d1e1d2925229d35caff0f8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c5d0e20618851d03e3c47a13dff2d458994534ee7ad7292b860ee5118bba86e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1ced749d74379e082829112be9f13fc8347dfca0f3e8e8b736fef445e6e43a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d67bb366171cae43d25bacf75cf861a15991c4c3a4a3889b99c76ffa93324589"
+    sha256 cellar: :any,                 arm64_sequoia: "2f0bb22bd29b4436e75093312736841c00d158cc04779aed71dbab8094ac1d55"
+    sha256 cellar: :any,                 arm64_sonoma:  "857e8217f193f537b7eb01523771e6455817379e359e30db8fe9e73eebf16324"
+    sha256 cellar: :any,                 sonoma:        "894416c5e0e3b55a1da7cdd5ae3987169fc3df76fc1fbacde24d51ad583e4036"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3884eecf038592d20a054d3a9ef880af47a7b189a81cf261768b08e7d585de3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3690fed5e7879facdda0f2ddbc2b87fc2a250a5417c1944c4c40ae3ede694433"
   end
 
   depends_on "certifi" => :no_linkage
