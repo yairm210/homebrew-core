@@ -37,10 +37,13 @@ class Soapysdr < Formula
   def install
     args = %W[
       -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON3_EXECUTABLE=#{which(python3)}
       -DSOAPY_SDR_ROOT=#{HOMEBREW_PREFIX}
-      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
     args << "-DSOAPY_SDR_EXTVER=release" if build.stable?
+
+    site_packages = prefix/Language::Python.site_packages(python3)
+    args << "-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: site_packages)}" if OS.mac?
 
     # Workaround until next release to avoid backporting multiple commits
     if build.stable?
