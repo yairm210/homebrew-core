@@ -11,8 +11,6 @@ class Mercury < Formula
     regex(/href=.*?mercury-srcdist[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fe009114d3e453c085f4956f00a894e7262ca8834eff20971202ffdac952e23f"
     sha256 cellar: :any,                 arm64_sequoia: "5a8c953a905318645766c0457bbe546a8bc7b0d65b04d98c838ddf996f5d885a"
@@ -28,20 +26,12 @@ class Mercury < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit"
 
   def install
-    # Make readline/libedit usage explicit rather than relying on automatic detection
-    args = if OS.mac?
-      %w[--without-readline --with-editline]
-    else
-      %w[--with-readline --without-editline]
-    end
+    args = %w[--without-readline --with-editline]
     system "./configure", *args, *std_configure_args
-    system "make", "install", "PARALLEL=-j"
+    system "make", "install", "PARALLEL=-j#{ENV.make_jobs}"
 
     # Remove batch files for windows.
     bin.glob("*.bat").map(&:unlink)
@@ -49,8 +39,7 @@ class Mercury < Formula
 
   test do
     test_string = "Hello Homebrew\n"
-    path = testpath/"hello.m"
-    path.write <<~EOS
+    (testpath/"hello.m").write <<~MERCURY
       :- module hello.
       :- interface.
       :- import_module io.
@@ -58,16 +47,12 @@ class Mercury < Formula
       :- implementation.
       main(IOState_in, IOState_out) :-
           io.write_string("#{test_string}", IOState_in, IOState_out).
-    EOS
+    MERCURY
 
     system bin/"mmc", "-o", "hello_c", "hello"
-    assert_path_exists testpath/"hello_c"
-
-    assert_equal test_string, shell_output("#{testpath}/hello_c")
+    assert_equal test_string, shell_output("./hello_c")
 
     system bin/"mmc", "--grade", "java", "hello"
-    assert_path_exists testpath/"hello"
-
-    assert_equal test_string, shell_output("#{testpath}/hello")
+    assert_equal test_string, shell_output("./hello")
   end
 end
