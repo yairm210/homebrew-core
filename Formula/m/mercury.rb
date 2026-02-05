@@ -12,14 +12,13 @@ class Mercury < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe009114d3e453c085f4956f00a894e7262ca8834eff20971202ffdac952e23f"
-    sha256 cellar: :any,                 arm64_sequoia: "5a8c953a905318645766c0457bbe546a8bc7b0d65b04d98c838ddf996f5d885a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8132aa81235d40e482e84630d4b6d8e037ec0176fbbf7dd0b7a2457ef781ea7a"
-    sha256 cellar: :any,                 arm64_ventura: "ff7e02ae589247c4a6c07d1f4c0a8277d000188d8c36920ca1769073b759d562"
-    sha256 cellar: :any,                 sonoma:        "70c6cd977d7485a229575d4a1db077245a7a1984b467e92f5061ce363aa54922"
-    sha256 cellar: :any,                 ventura:       "3a970961faf6783d4e1129368cda20f58ee36edab81a62c0eb23b99481b14d51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b17d67e53415840a6362c3a43facb91ac8301fa31ea183fd365a170bc2d5fe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89b71d74d5df6b4a4c1efb4c0a68045c4c397967d88fcd8fcf44125d60d8ffad"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b4d0ab2e114dd28fb1b95c62bcd8401d6ef95195c2f5a74e89da28a1c55f275c"
+    sha256 cellar: :any,                 arm64_sequoia: "db876431b91d903991be29e49819963b3820ddf1312f72569b6e9c18f3f99cab"
+    sha256 cellar: :any,                 arm64_sonoma:  "41623c085798cc8cf269f9755d6c5b2848f5f3d141e9c826a657f97a4e4b2b5d"
+    sha256 cellar: :any,                 sonoma:        "499aa73ce989569c399b672e485f15d48362c395b71808f0bf1f490ff5b54a22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e90c695b191f860473f6042587dc25c8f85c0cfa3d79f00f43992a7a9e0b52a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5627e4fcb8f3fa0b0926ba97b0e3f5a868a06d856870b8ba6ad4e383254e8c68"
   end
 
   depends_on "openjdk"
