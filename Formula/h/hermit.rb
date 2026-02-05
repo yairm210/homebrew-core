@@ -1,18 +1,18 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
   homepage "https://cashapp.github.io/hermit"
-  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.47.0.tar.gz"
-  sha256 "57b22f55c5683c8ddb0b6bb051c4f64660a4bc607ac78b8c01b9d75f6b56295e"
+  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.48.0.tar.gz"
+  sha256 "f1b007d16562ba9fe657ed17995ab48332062cd54ba3ffcfd070d0022b0ade20"
   license "Apache-2.0"
   head "https://github.com/cashapp/hermit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26d4791e740cfb9c2e336cdde9f101f73eeac09b390420a5c0de03ee89b31553"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bfa26c8bfec7ab3ce0bbc3e7af98f4dda0d5e67a51b36675ae909381c5a5739"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a766d05acb00b43b6c5ad5e4cab41b6169837285bbeef0f383c0cdced945add6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26dfa968300ef29346ab0c7249bad175eeb26093143f87f62a9754aa6d3b049d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbd9e4c4acaeb513c089efcca8262b8efa7aefffe33db2aa46c9d2472287794d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f7d9c94409f5d5c9ab845831776168cf35f6f13514359cbb879e7414af20df0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62a9cf48a0f51dcdaef91efb596e2289f75674aa6a434175224285756ddaea63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "646acf7b7234039a872b0cf08279b7059bfc746b03baa821c94f344a8fc1f765"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97cd2754a6f74d51ffcdd535cdad49eb14bcb387f71bd1535dcb184dddc27957"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b689fd04524f092f5cb179828112cf29141d1387a6fbb4bb5c09d99b10e4e39b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be5ad707ba63d48f933196bb61751118bfa3f2d930a30080310b8b9541c93ca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dd3fdb83e65936b52b0f523c4d67e76d3116bb53d9a472cde9494d75929c3c9"
   end
 
   depends_on "go" => :build
