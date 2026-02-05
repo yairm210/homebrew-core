@@ -11,12 +11,12 @@ class Limine < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "22528b9b2da0fd4c7396b29be14e0fdc67625262c90d8d9b2fd23ec68619aa7e"
-    sha256 arm64_sequoia: "485ac82806f1e77203bc358f58326bb4596d286602f112dc32fa51d9ae2a34cf"
-    sha256 arm64_sonoma:  "02ecca1dcc6a5c3db9e32f8f583ced58dc1b40906998f66607dbceb153be8749"
-    sha256 sonoma:        "eb55fe950ad17daac12b74cca2f0b392442fd23f78402a45caae859f094f8c6f"
-    sha256 arm64_linux:   "1fa72d044d4403ca294fe8582a3ab1cbdb6eb3b455bb4bd780ff7c4baa560d05"
-    sha256 x86_64_linux:  "1b08cf253a75315375ea6e48d6b02e9083b7748ebc331bb9c99d6435fee3320a"
+    sha256 arm64_tahoe:   "ad63d4f3e73d4ca4559d01c5792fe97007f061da07a3312fed9e960cbe0a19ff"
+    sha256 arm64_sequoia: "076ab98351b11e3a2a8deab7b1a9951ff12cfda7231c49a9ebacc21bce31d0b7"
+    sha256 arm64_sonoma:  "b7b8ded2feab494da09b0d8bc21236ccc612a1a41db752e761012927b85ada9d"
+    sha256 sonoma:        "00c62e653409bdadf8232fd3bdb23032dc47752594934d28bb317b36957e68d7"
+    sha256 arm64_linux:   "262c34f280faa794944f00b9bfa733c5fba2ff0de9e7d613c604aa466b610839"
+    sha256 x86_64_linux:  "3e06d2e241c69873eded86bf3e016c1b03c4cbe75de7369f546dea09a961413e"
   end
 
   # The reason to have LLVM and LLD as dependencies here is because building the
