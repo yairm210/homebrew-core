@@ -216,7 +216,8 @@ class Gstreamer < Formula
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
-    rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
+    rpaths = [loader_path, rpath(source: plugin_dir), rpath(source: plugin_dir/"validate")]
+    rpath_args = rpaths.map { |path| "-rpath,#{path}" }
     ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
