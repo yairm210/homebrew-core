@@ -1,8 +1,8 @@
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https://esbuild.github.io/"
-  url "https://github.com/evanw/esbuild/archive/refs/tags/v0.27.2.tar.gz"
-  sha256 "d16527a0b29c747d80afaa1cd362d7eee5814c0569af6cc2080e7343482b28d2"
+  url "https://github.com/evanw/esbuild/archive/refs/tags/v0.27.3.tar.gz"
+  sha256 "05d56070104b46d24c8921bfc4c83209d71cf583eb0396c13d0f359705bb5b61"
   license "MIT"
   head "https://github.com/evanw/esbuild.git", branch: "main"
 
