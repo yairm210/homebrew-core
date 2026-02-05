@@ -1,8 +1,8 @@
 class Spago < Formula
   desc "PureScript package manager and build tool"
   homepage "https://github.com/purescript/spago"
-  url "https://github.com/purescript/spago/archive/refs/tags/0.21.0.tar.gz"
-  sha256 "0ae1b042010c4d1ffb3865ba0cf67beea741a40c724065dc4056367964b6f4ab"
+  url "https://registry.npmjs.org/spago/-/spago-1.0.3.tgz"
+  sha256 "c19564dfd1653baf6d458e3727c8849d4ab4b0ab321bd3fa4608058f3c1e9256"
   license "BSD-3-Clause"
   head "https://github.com/purescript/spago.git", branch: "master"
 
@@ -18,57 +18,17 @@ class Spago < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa71b6e0cbd41ac5c0bb966030f1fe4ca2d1dbc11c19162a9407cd0d0d5d82ab"
   end
 
-  # Current release is for deprecated `spago-legacy` that does not build with GHC 9.4+
-  # due to `spago -> bower-json -> aeson-better-errors -> aeson<2.1 -> ghc-prim<0.9`.
-  # Can be un-deprecated/restored if PureScript rewrite has a stable release.
-  deprecate! date: "2024-08-15", because: "depends on GHC 9.2 to build"
-  disable! date: "2025-08-16", because: "depends on GHC 9.2 to build"
-
-  depends_on "ghc@9.2" => :build
-  depends_on "haskell-stack" => :build
+  depends_on "node"
   depends_on "purescript"
 
-  # Check the `scripts/fetch-templates` file for appropriate resource versions.
-  resource "docs-search-app-0.0.10.js" do
-    url "https://github.com/purescript/purescript-docs-search/releases/download/v0.0.10/docs-search-app.js"
-    sha256 "45dd227a2139e965bedc33417a895ec7cb267ae4a2c314e6071924d19380aa54"
-  end
-
-  resource "docs-search-app-0.0.11.js" do
-    url "https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/docs-search-app.js"
-    sha256 "0254c9bd09924352f1571642bf0da588aa9bdb1f343f16d464263dd79b7e169f"
-  end
-
-  resource "purescript-docs-search-0.0.10" do
-    url "https://github.com/purescript/purescript-docs-search/releases/download/v0.0.10/purescript-docs-search"
-    sha256 "437ac8b15cf12c4f584736a07560ffd13f4440cd0c44c3a6f7a29248a1ff8171"
-  end
-
-  resource "purescript-docs-search-0.0.11" do
-    url "https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/purescript-docs-search"
-    sha256 "06dfcb9b84408527a2980802108fae6a5260a522013f67d0ef7e83946abe4dc2"
-  end
-
   def install
-    # Equivalent to make fetch-templates:
-    resources.each do |r|
-      r.stage do
-        template = Pathname.pwd.children.first
-        (buildpath/"templates").install template.to_s => "#{template.basename(".js")}-#{r.version}#{template.extname}"
-      end
-    end
-
-    system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
-    generate_completions_from_executable(bin/"spago", "--bash-completion-script", bin/"spago",
-                                         shells: [:bash], shell_parameter_format: :none)
-    generate_completions_from_executable(bin/"spago", "--zsh-completion-script", bin/"spago",
-                                         shells: [:zsh], shell_parameter_format: :none)
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     system bin/"spago", "init"
-    assert_path_exists testpath/"packages.dhall"
-    assert_path_exists testpath/"spago.dhall"
+    assert_path_exists testpath/"spago.yaml"
     assert_path_exists testpath/"src/Main.purs"
     system bin/"spago", "build"
     assert_path_exists testpath/"output/Main/index.js"
