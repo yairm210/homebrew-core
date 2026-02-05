@@ -9,12 +9,13 @@ class KimiCli < Formula
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33533691c1949dd97a345c3bca9f3dc8188ffb6cb7d8b4ef3c6e93f18eb72a4c"
-    sha256 cellar: :any,                 arm64_sequoia: "fb8b90b5b411b66e73950c89584a12201ada7939bba2abb52b3383912b0ad471"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9fb05958c739f85c24bf9121dd252dae966af6870187d0e79fb689a544b9b4a"
-    sha256 cellar: :any,                 sonoma:        "705e800276a6bf2eb3cff9ef97d1cc8d5ab784856c9ce3869f332da5b6bbed30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f569621b14def54de24c9b434cfc2b5606de1aa8b8cd07c9f0a84fdf0970d8c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8233bb19b9758b934ea574cd6d6f4a3f52e92d110cb4947f7986cd6c2f68ed16"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e933b136bc540ce83e3c365f620b4cb3aa8fdfbd6c6c6f16242c124bb2807c91"
+    sha256 cellar: :any,                 arm64_sequoia: "6f18c8b71061985b138addfc6a8422e952283e459c37d02086b2e4df46c7c21a"
+    sha256 cellar: :any,                 arm64_sonoma:  "de56689f2a052ea9000a2fad86f4721fb002fba774ac5daf8c8699d02d7a5a7e"
+    sha256 cellar: :any,                 sonoma:        "d16cc49079fb75e47de1b9641b01eb51332564f5484cd89e483d0b05d987625e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e2051a1c5cf1da66ce331ca73c93f68173c49ca42922c8242328f3520d2c161"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d491365a83824cddfb76be9b13d75e59c681b3ce6b852f3dfd3595532cc7bce4"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +25,7 @@ class KimiCli < Formula
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13" # aiopath does not support python@3.14, https://github.com/alexdelorenzo/aiopath/issues/45
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
