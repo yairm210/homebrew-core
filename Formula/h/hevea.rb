@@ -1,13 +1,12 @@
 class Hevea < Formula
   desc "LaTeX-to-HTML translator"
   homepage "https://hevea.inria.fr/"
-  url "https://hevea.inria.fr/old/hevea-2.37.tar.gz"
-  sha256 "b6e93f07f58179d65b4eb7e8c4a5d5f68b4a25f104c029a62fc9154e93e1af59"
+  url "https://hevea.inria.fr/old/hevea-2.38.tar.gz"
+  sha256 "722038065007226f0fa3de4629127294d2e29bfbbc41042c83a570fa0c455a47"
   license all_of: [
     "QPL-1.0", # source files
     "GPL-2.0-only", # binaries
   ]
-  revision 1
 
   livecheck do
     url "https://hevea.inria.fr/old/"
