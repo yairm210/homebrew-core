@@ -9,10 +9,9 @@ class Semgrep < Formula
   # 2. run `brew update-python-resources semgrep`
   # 3. uncomment `pcre` resource
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.146.0",
-      revision: "079e05d08b86ec1b07509d2e755c631156d3705b"
+      tag:      "v1.151.0",
+      revision: "190d740e895922779877638379d2f7963ae0e792"
   license "LGPL-2.1-only"
-  revision 2
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -23,12 +22,12 @@ class Semgrep < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f27d6dbc1e3a728f9f4a349532af9520096349c7c644a45c77a1d5e9a2ad08fb"
-    sha256 cellar: :any, arm64_sequoia: "f0e79e48fd9b4b173d4bd7475c749e38a2d29097f6726384f58f0100ec069a85"
-    sha256 cellar: :any, arm64_sonoma:  "d5a935b3a9f033ef5069374ba2422997aa9231b99698f3f6aa72bd5aa8be1853"
-    sha256 cellar: :any, sonoma:        "f6db01fb6f9b391331f36fee57b25bf5f2d4e94e612c409a5b90cddcd6c80f99"
-    sha256               arm64_linux:   "fd816e2d5be9c1ee98edab570de9de76c275709d134f549c34a6a16c1e7ecc24"
-    sha256               x86_64_linux:  "c456bf95a9475109cf3caf2def14e3ad01a7df5b834d5df7c7efb90a1410fc47"
+    sha256 cellar: :any, arm64_tahoe:   "c509e2887d715628ada97d30843ba176c35bbc61b3813ea5c38fef7fbe1cda07"
+    sha256 cellar: :any, arm64_sequoia: "d2a6f9ed08f8d87db79f5207feca3a2663891a09e3b930abf704c363d9b1e8fb"
+    sha256 cellar: :any, arm64_sonoma:  "dce480f65f7e462070aafc9cc13e28a26d7b8b82eb04fad56d3ea12f465520f4"
+    sha256 cellar: :any, sonoma:        "412deac32c30f1f97864871df3d3f2a586ebb7e33f50c6001698f8d7be7c3c31"
+    sha256               arm64_linux:   "201633debf5a39b675dee1714ddeb91df2b84499ea46b1951bd1c2a6038079af"
+    sha256               x86_64_linux:  "6625bad2b199d8edf035700cac57d1b43d7fd7815069092fe842bfbd63a01c6a"
   end
 
   depends_on "ocaml" => :build
@@ -109,8 +108,8 @@ class Semgrep < Formula
   end
 
   resource "glom" do
-    url "https://files.pythonhosted.org/packages/3f/d1/69432deefa6f5283ec75b246d0540097ae26f618b915519ee3824c4c5dd6/glom-22.1.0.tar.gz"
-    sha256 "1510c6587a8f9c64a246641b70033cbc5ebde99f02ad245693678038e821aeb5"
+    url "https://files.pythonhosted.org/packages/78/74/8387f95565ba7c30cd152a585b275ebb9a834d1d32782425c5d2fe0a102c/glom-25.12.0.tar.gz"
+    sha256 "1ae7da88be3693df40ad27bdf57a765a55c075c86c971bcddd67927403eb0069"
   end
 
   resource "googleapis-common-protos" do
@@ -198,6 +197,11 @@ class Semgrep < Formula
     sha256 "ae9495e6ff64e27bdb839fce91dbb4be56e325139828e8005f875baf41951a2e"
   end
 
+  resource "opentelemetry-instrumentation-threading" do
+    url "https://files.pythonhosted.org/packages/70/a9/3888cb0470e6eb48ea17b6802275ae71df411edd6382b9a8e8f391936fda/opentelemetry_instrumentation_threading-0.58b0.tar.gz"
+    sha256 "f68c61f77841f9ff6270176f4d496c10addbceacd782af434d705f83e4504862"
+  end
+
   resource "opentelemetry-proto" do
     url "https://files.pythonhosted.org/packages/dd/ea/a75f36b463a36f3c5a10c0b5292c58b31dbdde74f6f905d3d0ab2313987b/opentelemetry_proto-1.37.0.tar.gz"
     sha256 "30f5c494faf66f77faeaefa35ed4443c5edb3b0aa46dad073ed7210e1a789538"
@@ -219,8 +223,8 @@ class Semgrep < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "peewee" do
@@ -229,8 +233,8 @@ class Semgrep < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pydantic-settings" do
@@ -244,8 +248,8 @@ class Semgrep < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "python-dotenv" do
@@ -254,8 +258,8 @@ class Semgrep < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
-    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
+    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
+    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
   end
 
   resource "referencing" do
@@ -283,14 +287,19 @@ class Semgrep < Formula
     sha256 "803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e"
   end
 
+  resource "semantic-version" do
+    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
+  end
+
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
-    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
+    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
+    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/e7/65/5a1fadcc40c5fdc7df421a7506b79633af8f5d5e3a95c3e72acacec644b9/starlette-0.51.0.tar.gz"
-    sha256 "4c4fda9b1bc67f84037d3d14a5112e523509c369d9d47b111b2f984b0cc5ba6c"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "tomli" do
@@ -413,16 +422,7 @@ class Semgrep < Formula
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
     venv = virtualenv_create(libexec, "python3.14")
-    venv.pip_install resources.reject { |r| ["glom", "pcre"].include? r.name }
-
-    # Replace `imp` usage: https://github.com/mahmoud/glom/commit/1f883f0db898d6b15fcc0f293225dcccc16b2a57
-    # TODO: remove with glom>=23.4.0
-    resource("glom").stage do |r|
-      inreplace "setup.py", "import imp", ""
-      inreplace "setup.py", "_version_mod = imp.load_source('_version', _version_mod_path)", ""
-      inreplace "setup.py", "_version_mod.__version__", "'#{r.version}'"
-      venv.pip_install Pathname.pwd
-    end
+    venv.pip_install resources.reject { |r| r.name == "pcre" }
 
     venv.pip_install_and_link buildpath/"cli"
   end
