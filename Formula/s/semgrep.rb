@@ -12,7 +12,7 @@ class Semgrep < Formula
       tag:      "v1.146.0",
       revision: "079e05d08b86ec1b07509d2e755c631156d3705b"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -23,13 +23,12 @@ class Semgrep < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "603a50f804d5eb99c3a46c13cd044da69f38fe21c360dc8034138fb7cfcb2f6e"
-    sha256 cellar: :any, arm64_sequoia: "b13bf222207312424553050ddb2b378ed7825a47fcfe59764c4cfd7ec360c6c6"
-    sha256 cellar: :any, arm64_sonoma:  "fa7b435b66176a2ca00c6d7bf4a94a097b80f7fc40ef9857c8eca285c5d67023"
-    sha256 cellar: :any, sonoma:        "16f0ca619861bde599dd3479681b16e509995c8dc37c55c9ca20d16ae8e685be"
-    sha256               arm64_linux:   "62ea451a2aef829b84e3b157bb8703d0224c4fa5acc90e729e352df1e3218494"
-    sha256               x86_64_linux:  "e83d0d6e33804a8a1eb2a0b644ba03a92e299b4f7fa381b203d540ecaac6444d"
+    sha256 cellar: :any, arm64_tahoe:   "f27d6dbc1e3a728f9f4a349532af9520096349c7c644a45c77a1d5e9a2ad08fb"
+    sha256 cellar: :any, arm64_sequoia: "f0e79e48fd9b4b173d4bd7475c749e38a2d29097f6726384f58f0100ec069a85"
+    sha256 cellar: :any, arm64_sonoma:  "d5a935b3a9f033ef5069374ba2422997aa9231b99698f3f6aa72bd5aa8be1853"
+    sha256 cellar: :any, sonoma:        "f6db01fb6f9b391331f36fee57b25bf5f2d4e94e612c409a5b90cddcd6c80f99"
+    sha256               arm64_linux:   "fd816e2d5be9c1ee98edab570de9de76c275709d134f549c34a6a16c1e7ecc24"
+    sha256               x86_64_linux:  "c456bf95a9475109cf3caf2def14e3ad01a7df5b834d5df7c7efb90a1410fc47"
   end
 
   depends_on "ocaml" => :build
@@ -389,15 +388,23 @@ class Semgrep < Formula
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
 
-      # Manually run steps from `opam exec -- make setup` to link Homebrew's tree-sitter
-      system "opam", "update", "-y"
-      system "opam", "install", "-y", "--deps-only", "./libs/ocaml-tree-sitter-core"
-      system "opam", "install", "-y", "--deps-only", "./"
+      # We can't use `make install-deps-for-semgrep-core` directly because it runs
+      # `./scripts/install-tree-sitter-lib` which would conflict with Homebrew's
+      # tree-sitter dependency. Instead, we manually replicate its steps:
+      # 1. Configure tree-sitter (using homebrew's tree-sitter)
       cd "./libs/ocaml-tree-sitter-core" do
         system "./configure"
       end
 
-      # Install semgrep-core and spacegrep
+      # 2. Proceed with installing opam dependencies (taken from the --deps-only
+      # invocation in the Semgrep Makefile's `install-opam-deps` target)
+      system "opam", "update", "-y"
+      ENV["LWT_DISCOVER_ARGUMENTS"] = "--use-libev true"
+      system "opam", "install", "--locked", "--update-invariant",
+             "--confirm-level=unsafe-yes", "-y", "--deps-only",
+             "./semgrep.opam", "./dev/required.opam"
+
+      # 3. Finally build semgrep-core using the usual Makefile targets
       system "opam", "exec", "--", "make", "core"
       system "opam", "exec", "--", "make", "copy-core-for-cli"
 
