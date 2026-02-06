@@ -30,7 +30,9 @@ class Mandoc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "048e9149279a52292a203c6e6b4fd688b7b32501b8e05d806a5708587526a83c"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     localconfig = [
