@@ -27,17 +27,16 @@ class Freedink < Formula
 
   depends_on "glm" => :build
   depends_on "pkgconf" => :build
-  depends_on "check"
-  depends_on "cxxtest"
   depends_on "fontconfig"
-  depends_on "freetype"
-  depends_on "gettext"
-  depends_on "libzip"
   depends_on "sdl2"
   depends_on "sdl2_gfx"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "freedink-data" do
     url "https://ftpmirror.gnu.org/gnu/freedink/freedink-data-1.08.20190120.tar.gz"
@@ -66,7 +65,7 @@ class Freedink < Formula
     # Avoid windres causing build failure on Linux
     ENV["ac_cv_prog_ac_ct_WINDRES"] = "" if OS.linux?
 
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--disable-tests", *std_configure_args
     system "make", "install"
 
     resource("freedink-data").stage do
