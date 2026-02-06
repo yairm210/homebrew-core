@@ -12,12 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7961b7f20c6a369878cbde0532a30cd50a846b4abe0460bbb68369a6c39956c0"
-    sha256 cellar: :any,                 arm64_sequoia: "eb8f0e4c01b621c598334d6c31d15f718e86afb549594aac9767a44cf0eba5e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b4c5553f548cc00668544b5e68cd3176c2034956ac9056dc903d664dfb48395"
-    sha256 cellar: :any,                 sonoma:        "1d5569783b025d46ba0cae230c7b4af91e771b928a11e0c2952303a7b71000d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10e31920c66836733dabb7ba1e418659fdee4d69b9dee31e53c192ef486c1ff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6876efbb834a8c76531b95ec3625f0f8f21e8465d8791760d72d8696c495645f"
+    sha256 cellar: :any,                 arm64_tahoe:   "c079078f39161704606b1ea57c69844ad76db72c4da1011256986c29e4c2b88d"
+    sha256 cellar: :any,                 arm64_sequoia: "a82aef765849cc24065dbdd12678a438590c1bb3fcb3f670d6df5fd28aa9f5c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "0705554ef05144840de46747d0e61a58f7146da223e674c70bee3bc88d1c3b6d"
+    sha256 cellar: :any,                 sonoma:        "156693d1c96fff01d42fb69f6c91d51d419c970cb6ab4d1e4305d7d2e88c4e06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2801dea1eb0a09f26bc9ca4cc6afb96b134694b2df808e3538cf946441ac2bf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997b25b4b141c87c09a07c7acf0c87a4aae9fee37f9d5906f2f6e056e34b6bf6"
   end
 
   depends_on "boost" => :build
