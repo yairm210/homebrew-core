@@ -15,12 +15,12 @@ class SwiftProtobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff83a6161078845d614c79e71f1d7e06bd0afd482137f7b602d6f744b87dc144"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb999ed7902f650cfa45e51d0569b60c210ca034b4e8c2650a1da66d8206d76a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bf89cc165c2059febde14458e62a0058443071ae309731d1a05b9bcae60d20f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7849e5ff7fc1019e1baebe37723434f27efa01c8657086f3a21c9443def461c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bba07c437f7462cf5178c70fa0b53506286ea4f91cd1011b6014b5ed6724c8b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac239ddda66da1608c0d1e48f0a62f8b821897c4486f4d3f7d23b9a06812645c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c9afa37729fe35c1dedfe0c8183b328d78868998b916390eb2594ab3bb35c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98d4954084ed1aa7a4b9fbc746c0532d9f4d74522387da462b408c2dad0c8d73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a519c953f6a2b8592e2eb26c36ed3bfd6d95963ad60f4b75622022e7d3d85e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "296578b4104cf66a4ddebbc5c9b4f02e3c7c959b42d3293bd0689cbb4f037d5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12948e6df98e055fca4d85a6bd4939c6b6ac5bc3489c08e45557969ccd463285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97f5b08f9ce7c5771dedab9c4731079fbcad68fea33eeebab5ab7f30c9831c57"
   end
 
   depends_on xcode: ["15.3", :build]
