@@ -7,12 +7,12 @@ class Kool < Formula
   head "https://github.com/kool-dev/kool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d60ac5f127a4462fa18f95855d70b981157e7b80aec63440995edf5f809008f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d60ac5f127a4462fa18f95855d70b981157e7b80aec63440995edf5f809008f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d60ac5f127a4462fa18f95855d70b981157e7b80aec63440995edf5f809008f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afe91028208f535bc6ba507c45145857a57a32708618111203dea4fd84834803"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac8749cd8b85d03451fca74d583c14b52bfeade204962b10ac3362bc2c3458b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9636f92c2aa2ecf29a069af8e19359f67d64d8dfe21555d951951386551d2c5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d91f2e9d8b46f95ee9782233b7e182434a5ac77cc84d21c8fc2d97dcdcf4f703"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d91f2e9d8b46f95ee9782233b7e182434a5ac77cc84d21c8fc2d97dcdcf4f703"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d91f2e9d8b46f95ee9782233b7e182434a5ac77cc84d21c8fc2d97dcdcf4f703"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31a23b93af595df38fa5e8b4da05f08cb28cd65fc45eb5258bd3586bfa867779"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "449f0b84102e6b11f9a8a6b51f0e89e75ab0d96e9b2f92c2f48ef927f1290a59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31693d6c71d67b9200013d12128632e0fd07550487bb427f4f6889b06416a6d1"
   end
 
   depends_on "go" => :build
