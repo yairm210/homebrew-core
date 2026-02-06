@@ -6,6 +6,10 @@ class Yap < Formula
   license "CC0-1.0"
   head "https://github.com/finnvoor/yap.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "1c08194a69eeaf22abd406123025a7b5966285cc050ae7f528d56ae35f39376d"
+  end
+
   depends_on xcode: ["26.0", :build]
   depends_on macos: :tahoe
   depends_on :macos
