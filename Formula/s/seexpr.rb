@@ -41,12 +41,12 @@ class Seexpr < Formula
                                     (!build.bottle? && Hardware::CPU.sse4?))
 
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DUSE_PYTHON=FALSE
       -DENABLE_LLVM_BACKEND=FALSE
       -DENABLE_QT5=FALSE
       -DENABLE_SSE4=#{sse4 ? "ON" : "OFF"}
     ]
+    args << "-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: share/"SeExpr2/utils")}" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
