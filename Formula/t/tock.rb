@@ -1,8 +1,8 @@
 class Tock < Formula
   desc "Powerful time tracking tool for the command-line"
   homepage "https://github.com/kriuchkov/tock"
-  url "https://github.com/kriuchkov/tock/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "1383a309cc08bb26a3bdf986c220df0b5ebb639ce0c72a9fddc8de50a3dd2600"
+  url "https://github.com/kriuchkov/tock/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "61e135305e7e6a4657435ddd0f25017d98ada281eb864a841caf0ea1e82b4034"
   license "GPL-3.0-or-later"
   head "https://github.com/kriuchkov/tock.git", branch: "master"
 
