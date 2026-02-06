@@ -1,8 +1,8 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.21.tar.gz"
-  sha256 "e83c042e20b20ec80c9f28875412156b29478e894182e8568006d8b84fff88e5"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.22.tar.gz"
+  sha256 "065296879d1e769049b513f2a266933a3db42004d08987fa1260294a5d2cfe6d"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,7 +17,10 @@ class Diamond < Formula
   depends_on "cmake" => :build
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
