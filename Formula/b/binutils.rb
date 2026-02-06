@@ -8,12 +8,12 @@ class Binutils < Formula
   revision 1
 
   bottle do
-    sha256                               arm64_tahoe:   "787eb646984cfe01e0febce0934328284bd625c857000f7e26dd2fe321594570"
-    sha256                               arm64_sequoia: "58b610e8445a31be5a7319a146b38b42201f8d38311923e7c08e968927f3e9b9"
-    sha256                               arm64_sonoma:  "e7ebe50b0baeb016f9d19574441b39d282999c4e987c0c957982ef859f399355"
-    sha256                               sonoma:        "71b7c0860d54ad4044545dfe71d64e9ca4edce86d3b538d1e8bbc8509e57d6c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4a3aeddde228c29e66dc501b2a313856f4fb5f3d56b529484964bd26896e0ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e7a7d7a7f35c5a04d04539d9454e62e59dc3a03849ad00c01d97b4289faef90"
+    sha256                               arm64_tahoe:   "d2bcc281f2a8207fe326585ced7e73148c0e42ec1d71b0829de9964a230b3f55"
+    sha256                               arm64_sequoia: "e97335be93ee75b31cf298b7c74a65e163406363a7ab416070bf2400abbcf9a6"
+    sha256                               arm64_sonoma:  "931c0ec75ab3a04c9ed5956adf17e4be68b905ae6261cdd914f01a1289d5414b"
+    sha256                               sonoma:        "b4fccc0be2919a07196c04d7457d1136608e8e99c1df96c6973c55bd7cf65bd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2668806bbd1aa862c0bf07c3952e2e3d9aeb154df55314058bd800efb0b3037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67728aa46e2e6da7cc64c0864d823eccacf730eebfa0fca1d0d5dc961ab92782"
   end
 
   keg_only "it shadows the host toolchain"
