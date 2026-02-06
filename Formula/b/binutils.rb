@@ -5,6 +5,7 @@ class Binutils < Formula
   mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
   sha256 "860daddec9085cb4011279136fc8ad29eb533e9446d7524af7f517dd18f00224"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
     sha256                               arm64_tahoe:   "787eb646984cfe01e0febce0934328284bd625c857000f7e26dd2fe321594570"
@@ -21,7 +22,10 @@ class Binutils < Formula
   depends_on "zstd"
 
   uses_from_macos "bison" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   skip_clean "etc/ld.so.conf"
 
@@ -32,24 +36,21 @@ class Binutils < Formula
     touch "gas/doc/.dirstamp", mtime: Time.utc(2022, 1, 1)
     make_args = OS.mac? ? [] : ["MAKEINFO=true"] # for gprofng
 
-    args = [
-      "--disable-debug",
-      "--disable-dependency-tracking",
-      "--enable-deterministic-archives",
-      "--prefix=#{prefix}",
-      "--infodir=#{info}",
-      "--mandir=#{man}",
-      "--disable-werror",
-      "--enable-interwork",
-      "--enable-multilib",
-      "--enable-64-bit-bfd",
-      "--enable-plugins",
-      "--enable-targets=all",
-      "--with-system-zlib",
-      "--with-zstd",
-      "--disable-nls",
+    args = %W[
+      --enable-deterministic-archives
+      --infodir=#{info}
+      --mandir=#{man}
+      --disable-werror
+      --enable-interwork
+      --enable-multilib
+      --enable-64-bit-bfd
+      --enable-plugins
+      --enable-targets=all
+      --with-system-zlib
+      --with-zstd
+      --disable-nls
     ]
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", *make_args
     system "make", "install", *make_args
 
