@@ -1,16 +1,21 @@
 class Cdb < Formula
   desc "Create and read constant databases"
-  homepage "https://cr.yp.to/cdb.html"
-  url "https://cr.yp.to/cdb/cdb-0.75.tar.gz"
-  sha256 "1919577799a50c080a8a05a1cbfa5fa7e7abc823d8d7df2eeb181e624b7952c5"
-  license :public_domain
+  homepage "https://cdb.cr.yp.to/"
+  url "https://cdb.cr.yp.to/cdb-20251021.tar.gz"
+  sha256 "8e531d6390bcd7c9a4cbd16fed36326eee78e8b0e5c0783a8158a6a79437e3dd"
+  # https://cdb.cr.yp.to/license.html
+  license any_of: [
+    :public_domain, # LicenseRef-PD-hp - https://cr.yp.to/spdx.html
+    "CC0-1.0",
+    "0BSD",
+    "MIT-0",
+    "MIT",
+  ]
 
   livecheck do
-    url "https://cr.yp.to/cdb/install.html"
-    regex(/href=.*?cdb[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://cdb.cr.yp.to/download.html"
+    regex(/href=.*?cdb[._-]v?(\d{8})\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
@@ -29,25 +34,20 @@ class Cdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e39c6409d00f0176fd3bd2def3b15b555d5ea89d3b0f6dc9710f1ce61a442e99"
   end
 
-  # Fix build failure because of missing #include errno.h on Linux.
-  # Patch has been submitted to the cdb mailing list.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/cdb/errno.patch"
-    sha256 "9116b3577b29e01372a92ccbdbfa5f2b0957ae1b9f42f7df9bac101252f3538c"
-  end
-
   def install
     inreplace "conf-home", "/usr/local", prefix
-    # Fix compile with newer Clang
-    inreplace "conf-cc", "gcc -O2", "gcc -O2 -Wno-implicit-function-declaration -Wno-implicit-int"
     system "make", "setup"
+
+    man1.install Dir["doc/man/*.1"]
+    man3.install Dir["doc/man/*.3"]
+    prefix.install_metafiles "doc"
+    rm "README.md" # install doc/readme.md instead
   end
 
   test do
     record = "+4,8:test->homebrew\n\n"
     pipe_output("#{bin}/cdbmake db dbtmp", record, 0)
     assert_path_exists testpath/"db"
-    assert_equal(record,
-                 pipe_output("#{bin}/cdbdump", (testpath/"db").binread, 0))
+    assert_equal record, pipe_output("#{bin}/cdbdump", (testpath/"db").binread, 0)
   end
 end
