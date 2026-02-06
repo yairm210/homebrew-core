@@ -2,10 +2,9 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.23.2",
-      revision: "a83fc4d58cb48eb68890dd689f94f28288cf2278"
+      tag:      "v1.24.1",
+      revision: "470ae16099a74fe05e31f2530489332c0525edb5"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -36,21 +35,14 @@ class Onnxruntime < Formula
   depends_on "re2"
 
   resource "pytorch_cpuinfo" do
-    url "https://github.com/pytorch/cpuinfo/archive/8a1772a0c5c447df2d18edf33ec4603a8c9c04a6.tar.gz"
-    version "8a1772a0c5c447df2d18edf33ec4603a8c9c04a6"
-    sha256 "37bb2fd2d1e87102baea8d131a0c550c4ceff5a12fba61faeb1bff63868155f1"
+    url "https://github.com/pytorch/cpuinfo/archive/403d652dca4c1046e8145950b1c0997a9f748b57.tar.gz"
+    version "403d652dca4c1046e8145950b1c0997a9f748b57"
+    sha256 "c33bcad94ccbdd4966cc21291f0dcacd40d1dd04eb4c2a6ef1c8da669c01e024"
 
     livecheck do
       url "https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
       regex(%r{^pytorch_cpuinfo;.*/(\h+)\.zip}i)
     end
-  end
-
-  # Workaround for Abseil >= 20250814.0 which removed absl::low_level_hash.
-  # Issue ref: https://github.com/microsoft/onnxruntime/issues/25815
-  patch do
-    url "https://src.fedoraproject.org/rpms/onnxruntime/raw/1e041e70baa51b4661c16ec5446daab332937cb4/f/abseil-cpp-20250814.patch"
-    sha256 "9b0bf4fda2acf486907005e781f68c56b47c0b05cc2a2cff04c891f2d35b92f9"
   end
 
   # Apply Fedora's workaround[^1] to allow `onnxruntime` to use `onnx` built without
@@ -152,7 +144,11 @@ class Onnxruntime < Formula
     (testpath/"mul_1.onnx").write Base64.decode64(mul_1_onnx)
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "test.cc", "-L#{lib}", "-lonnxruntime", "-o", "test"
-    assert_equal version, shell_output("./test 2>&1")
+    output_lines = shell_output("./test 2>&1").lines
+
+    # Remove warning messages that are safe to ignore
+    output_lines.reject! { |line| line["Skipping pci_bus_id for PCI path"] }
+    assert_equal version.to_s, output_lines.join
   end
 end
 
