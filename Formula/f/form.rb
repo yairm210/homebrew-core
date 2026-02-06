@@ -19,10 +19,14 @@ class Form < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7452db7be5b86008708893949d2bc6435e13ec7dd9e620ab54fe5c43d00edaae"
   end
 
+  depends_on "flint"
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-native"
