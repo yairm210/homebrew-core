@@ -7,12 +7,12 @@ class Hermit < Formula
   head "https://github.com/cashapp/hermit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63c9ea2e69549cce0cd28d172ae6306e492d74125aa92465e776372dac0d07ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d176ed5616e873528f39482aad518fb258a84832b65183f26e18a88c3add8514"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c91aa53b6e246141775bce978e66aa3e81a59535880b3a5554ae16074bf530e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e214a7356cd57f416a018e8a0e882bb9d7952b73c72e0d345d774ded20846c22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e014493acdd71e51b466005045c61270d43e5ede64d6d4ad77237dd439779950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "140591338735bbdc5c08855ed95e722d9c4d9ddff7961e564387e4ed79ee0692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82f897986bbe28ab047828d1b4e2aeff88ae6153741c5af81c6b226f3231fc4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f2a044d11ad2d9b7bdb5526920b5cbb8a4e5d4c6f7a64c71722482efcd5b419"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c3e85e21c8e2d56219315cd6795c07d95203fa90ee6db4d1b6e8e645a27bf52"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4f25c6e883d7efca3d19127237f9c9d85292f74956da3a336224d48fd7a1b85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be41cd54e0e6819b1d29df3c2fb0ea5de7f50300df2e100c6c178b785b1bc2ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6f578210833b76e5d836c11d9ae32d72b6263f7f7f3ab1cebe4afed8e043e9b"
   end
 
   depends_on "go" => :build
