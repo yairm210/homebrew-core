@@ -4,8 +4,8 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/38/55/3d0e52ca7363a6a16347f0730de828e238c9a4e4f226679be82582e76b1c/meta_package_manager-6.1.0.tar.gz"
-  sha256 "8e053d13ee1e8bd9026ab6c06f7cdad29816b534bbacea326763db9d1ea3ff7e"
+  url "https://files.pythonhosted.org/packages/b8/f4/82cd0e83ece5a234bb293eb506f0025cc3c21fbe0d378bad2927ba88b274/meta_package_manager-6.1.1.tar.gz"
+  sha256 "9caf2dcc11f3fe799c9455a3c047df25583a030e44e53447ed099d2fce4f6396"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
@@ -71,8 +71,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/50/2a/79e85d7683fd97037326dbdad60524c075ef01dad2adad0a6d6fa40c41a4/click_extra-7.4.0.tar.gz"
-    sha256 "869cd811074a4c5049fb241087e55242bf36ee328133ae932f37730833d9b9d9"
+    url "https://files.pythonhosted.org/packages/ec/9f/b12162e9da04f4d26bf9f1f055c597f3620ebbfd041d6c9a06c2a13dd293/click_extra-7.5.1.tar.gz"
+    sha256 "df11522e33a3c5a7e9418d8b5b8882d92107c8ce7539fd0d7450b86f6ab7b7c5"
   end
 
   resource "cloup" do
@@ -101,8 +101,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/8c/36/1cf59977458a824a759a38b8279c7d5e41d8de12368f3685d188a5cc3ce4/extra_platforms-7.0.0.tar.gz"
-    sha256 "e45d539ae667e59711d3d4c25bba36bf0a45af7d444a64f6d22466cec3826965"
+    url "https://files.pythonhosted.org/packages/69/13/f3c798301018f336533918768fe64a3aeab02e9e3d110ff778296e50b8e0/extra_platforms-8.0.0.tar.gz"
+    sha256 "39c5f47f071f8710ce3cba8373fd7744a2a3dc37d5716cc227c23b47e211e5b5"
   end
 
   resource "fqdn" do
@@ -171,8 +171,8 @@ class MetaPackageManager < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
-    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
+    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
+    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
   end
 
   resource "python-dateutil" do
@@ -271,8 +271,8 @@ class MetaPackageManager < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
+    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
   end
 
   resource "webcolors" do
