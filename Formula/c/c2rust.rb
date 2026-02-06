@@ -1,8 +1,8 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
   homepage "https://c2rust.com/"
-  url "https://github.com/immunant/c2rust/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "4b39ae895f00b046878d5f312eec11c4b7d38d08b08e9de249a4eef938750229"
+  url "https://github.com/immunant/c2rust/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "c9c8a36332e8bcde0bb9739cec02bd5263c5b25b7300428d8c6a8af094160d98"
   license "BSD-3-Clause"
 
   bottle do
@@ -18,12 +18,6 @@ class C2rust < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
   depends_on "llvm"
-
-  # Backport fix for "Encountered unsupported BuiltinType kind 104 for type __mfp8"
-  patch do
-    url "https://github.com/immunant/c2rust/commit/a2c2149dae044629a49e996597ab58eb950072d0.patch?full_index=1"
-    sha256 "9ec18885f174526d3b6228c1e584dae942a5418f49089b4c0fc4439aecde7317"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")
