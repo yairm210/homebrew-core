@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-25.3.4.tar.xz"
-  sha256 "3a0fc6ec070b45ae25dc2ccb5e52fae1d89141f7c39c4a91fe4eaa80dfff9deb"
+  url "https://archive.mesa3d.org/mesa-25.3.5.tar.xz"
+  sha256 "be472413475082df945e0f9be34f5af008baa03eb357e067ce5a611a2d44c44b"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -58,7 +58,6 @@ class Mesa < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "molten-vk"
@@ -79,6 +78,7 @@ class Mesa < Formula
     depends_on "libxxf86vm"
     depends_on "lm-sensors"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
 
     on_intel do
       depends_on "cbindgen" => :build
