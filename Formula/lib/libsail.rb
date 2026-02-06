@@ -38,7 +38,7 @@ class Libsail < Formula
 
   def install
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"sail/codecs")}
       -DSAIL_BUILD_EXAMPLES=OFF
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
