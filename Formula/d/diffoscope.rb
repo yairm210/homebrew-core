@@ -3,9 +3,8 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  # TODO: Restore PyPI URL and previous `pypi_packages` DSL when upstream fixes uploads
-  url "https://salsa.debian.org/reproducible-builds/diffoscope/-/archive/311/diffoscope-311.tar.bz2"
-  sha256 "26d606468af01811f80ecbd0183fc958d9901634f4f587e775e1a6b52166d354"
+  url "https://files.pythonhosted.org/packages/e1/d1/49e81bd348ca929f744a84c67eb1c4d0c33e637ba32d2834df921568361f/diffoscope-312.tar.gz"
+  sha256 "aaa22b238d5b1d1804ee86b7a0526759b2984935f260a9ea8d72da7dd3c41c7f"
   license "GPL-3.0-or-later"
 
   bottle do
