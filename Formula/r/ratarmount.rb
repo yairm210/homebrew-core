@@ -19,7 +19,8 @@ class Ratarmount < Formula
   depends_on "libgit2"
   depends_on :linux
   depends_on "python@3.14"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
+  depends_on "zstd"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
