@@ -1,10 +1,11 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
-  homepage "http://www.libpng.org/pub/png/libpng.html"
+  homepage "https://www.libpng.org/pub/png/libpng.html"
   url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.54/libpng-1.6.54.tar.xz"
   mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.54/libpng-1.6.54.tar.xz"
   sha256 "01c9d8a303c941ec2c511c14312a3b1d36cedb41e2f5168ccdaa85d53b887805"
   license "libpng-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -28,9 +29,19 @@ class Libpng < Formula
     depends_on "libtool" => :build
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+
+    # Use Fedora's regenerated test PNG for zlib-ng-compat compression
+    resource "pngtest.png" do
+      url "https://src.fedoraproject.org/rpms/libpng/raw/49e9a06ca115aaa911dd3419ee79c1870d1428fb/f/pngtest.png"
+      sha256 "f925a657a5343cfb724414c01e87afd4d60b1f82a46edc0e11f016a126f84064"
+    end
+  end
 
   def install
+    resource("pngtest.png").stage(buildpath) if OS.linux?
+
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "test"
@@ -44,7 +55,7 @@ class Libpng < Formula
     (testpath/"test.c").write <<~C
       #include <png.h>
 
-      int main()
+      int main(void)
       {
         png_structp png_ptr;
         png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
