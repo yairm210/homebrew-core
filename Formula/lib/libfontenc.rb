@@ -4,6 +4,7 @@ class Libfontenc < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libfontenc-1.1.8.tar.xz"
   sha256 "7b02c3d405236e0d86806b1de9d6868fe60c313628b38350b032914aa4fd14c6"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "badff62bd95618002e7da104527ef4d9f6cd09c7fc285ffb5fc2d519b0e2e7ac"
@@ -23,7 +24,9 @@ class Libfontenc < Formula
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
