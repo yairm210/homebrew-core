@@ -1,14 +1,14 @@
 class Zeek < Formula
   desc "Network security monitor"
   homepage "https://zeek.org/"
-  url "https://github.com/zeek/zeek/releases/download/v8.1.0/zeek-8.1.0.tar.gz"
-  sha256 "bcd631ae0ad338772e27268f075c08758c5e9281123469a7396a73281cbd47b9"
+  url "https://github.com/zeek/zeek/releases/download/v8.1.1/zeek-8.1.1.tar.gz"
+  sha256 "b5f9edd4a10412426e6414d2f851ba42ce1fa94b59ccbad4238519adae6fc065"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do
@@ -32,8 +32,10 @@ class Zeek < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "libpcap"
-  uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
