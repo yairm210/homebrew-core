@@ -5,6 +5,10 @@ class StaticWebAppsCli < Formula
   sha256 "35b16aae6057ab0a15a083285259b439552c7c1565d0879bf915dc3c0b5282e9"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b84b059b27552e7d5ab0ee1f7019c1eca8aa5331c3ec43f986923e10ccc8fd4b"
+  end
+
   depends_on "node"
 
   def install
