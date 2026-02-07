@@ -19,7 +19,9 @@ class Luit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8bc415c330cfd9747ce7ecfb31783c56b8a0a2b89a615301e88a6b27793684"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--without-x",
