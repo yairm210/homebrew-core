@@ -36,7 +36,10 @@ class AircrackNg < Formula
   depends_on "sqlite"
 
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport support for PCRE2
   patch do
