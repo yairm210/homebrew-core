@@ -17,7 +17,9 @@ class Simg2img < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7ee989bd69ca55912a71b8317711a5ed08d5341c7ba5d24156abcb53a9a6135"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "PREFIX=#{prefix}", "install"
