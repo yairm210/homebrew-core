@@ -1,8 +1,8 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
   homepage "https://github.com/marcusbuffett/pipe-rename"
-  url "https://github.com/marcusbuffett/pipe-rename/archive/refs/tags/1.6.5.tar.gz"
-  sha256 "bc3cc51e02578e0c56f252e65136dbeb635ffc8468c45b5c38df311cab611b09"
+  url "https://github.com/marcusbuffett/pipe-rename/archive/refs/tags/1.6.6.tar.gz"
+  sha256 "7f4cd714b9551e7a13a006f0fb73cbda6448abd13c9597d8f91ad1ab3ae607f6"
   license "MIT"
   revision 1
   head "https://github.com/marcusbuffett/pipe-rename.git", branch: "master"
