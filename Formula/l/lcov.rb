@@ -19,9 +19,10 @@ class Lcov < Formula
   end
 
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_linux do
+    depends_on "zlib-ng-compat"
+
     resource "Capture::Tiny" do
       url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.50.tar.gz"
       sha256 "ca6e8d7ce7471c2be54e1009f64c367d7ee233a2894cacf52ebe6f53b04e81e5"
