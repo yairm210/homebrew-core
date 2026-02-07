@@ -8,7 +8,7 @@ class Curl < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.18.0.tar.bz2"
   sha256 "ffd671a3dad424fb68e113a5b9894c5d1b5e13a88c6bdf0d4af6645123b31faf"
   license "curl"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://curl.se/download/"
@@ -45,10 +45,13 @@ class Curl < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "openldap"
-  uses_from_macos "zlib"
 
   on_system :linux, macos: :monterey_or_older do
     depends_on "libidn2"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -129,8 +132,8 @@ class Curl < Formula
     assert_path_exists testpath/"test.pem"
     assert_path_exists testpath/"certdata.txt"
 
-    with_env(PKG_CONFIG_PATH: lib/"pkgconfig") do
-      system "pkgconf", "--cflags", "libcurl"
-    end
+    ENV["PKG_CONFIG_PATH"] = lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].lib/"pkgconfig" unless OS.mac?
+    system "pkgconf", "--cflags", "libcurl"
   end
 end
