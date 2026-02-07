@@ -21,7 +21,9 @@ class Fio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e56e62de3864f477e8926fbcaef5ebe534ec4191e184f1b20e1f853bfd0f63"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "fiona", because: "both install `fio` binaries"
 
