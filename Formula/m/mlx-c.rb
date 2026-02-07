@@ -6,9 +6,9 @@ class MlxC < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6784390f093bf0bb9f2d03dcc5d35a50e90e745612e12445464989c832c03283"
-    sha256 cellar: :any, arm64_sequoia: "0d6f8ed88a35e0c321bf823d769811942333e49e13bbea04f03980a027d444dd"
-    sha256 cellar: :any, arm64_sonoma:  "25f67cc6ab34aca8457eb15a390f54bc3e905a615411473b5e951c58db2794c1"
+    sha256 cellar: :any, arm64_tahoe:   "9c01f1a7b9ad2b7ce2a6017c29b6468ba076b5bd86c71ad857d622fad3b967d0"
+    sha256 cellar: :any, arm64_sequoia: "7b60942bf95ad387777939244dfc981878461d9c81bca995ad285c0b7c1b7d23"
+    sha256 cellar: :any, arm64_sonoma:  "8b862ecfc2b03ec842c2e18b97a1dfb8b53374f7163180c54704fe92d603fafc"
   end
 
   depends_on "cmake" => :build
