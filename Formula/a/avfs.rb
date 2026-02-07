@@ -25,7 +25,10 @@ class Avfs < Formula
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "xz"
-  depends_on "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules",
