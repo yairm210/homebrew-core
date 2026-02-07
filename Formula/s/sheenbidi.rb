@@ -1,8 +1,8 @@
 class Sheenbidi < Formula
   desc "Fast and stable implementation of the Unicode Bidirectional Algorithm"
   homepage "https://github.com/Tehreer/SheenBidi"
-  url "https://github.com/Tehreer/SheenBidi/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "e90ae142c6fc8b94366f3526f84b349a2c10137f87093db402fe51f6eace6d13"
+  url "https://github.com/Tehreer/SheenBidi/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "86c56014034739ba39a24c23eb00323b0bf6f737354f665786015fca842af786"
   license "Apache-2.0"
 
   bottle do
