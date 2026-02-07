@@ -23,7 +23,9 @@ class Libgadu < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "879c676edffa46a33d49bb980f2759b9a4db1d8e505473593c1d0873266ea0dd"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -32,9 +34,7 @@ class Libgadu < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--without-pthread"
+    system "./configure", "--without-pthread", *std_configure_args
     system "make", "install"
   end
 end
