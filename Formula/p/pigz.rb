@@ -23,7 +23,9 @@ class Pigz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f8eefa10c0d4704e5ab22e5211d683972f25e1573618191e6d29342a838c44"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
