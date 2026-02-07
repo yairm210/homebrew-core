@@ -6,12 +6,12 @@ class Smug < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10571660b89d7c7884c09384c9e4b7a0194db36258187592578c54c342ace4ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10571660b89d7c7884c09384c9e4b7a0194db36258187592578c54c342ace4ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10571660b89d7c7884c09384c9e4b7a0194db36258187592578c54c342ace4ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c875bbda25bc7b0b661a35c8597ab5dd16d124cf8402ca2cfd8f64d24de70b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b96e5e544f47c69af6a8c2c203ac720ccd346054e7befcd91c9acc2b6842ced9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2585f5816bc1f1eb282dea57afe6614180d62ef3497d45c2da4f6987575b0a17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89eb93bdc103eb379d9749d86da6564eb555e8559709aa8a7c70c3b7f341a555"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89eb93bdc103eb379d9749d86da6564eb555e8559709aa8a7c70c3b7f341a555"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89eb93bdc103eb379d9749d86da6564eb555e8559709aa8a7c70c3b7f341a555"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61e6aed32d308122e64fcc9e11bcab587053a3fe7dc5547d5afdf44c15fca675"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0884c849020f669a16de5d5450ab540b082597e2ddb2da3ed1da1e33e479720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3901839ad7c97a4895c11eef985bf991c95dd20b42fd5e3f35b3f68f3d1bc3cf"
   end
 
   depends_on "go" => :build
