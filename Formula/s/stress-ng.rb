@@ -20,7 +20,11 @@ class StressNg < Formula
   end
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "acl"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "Makefile" do |s|
