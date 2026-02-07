@@ -1,8 +1,8 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://www.nickg.me.uk/nvc/"
-  url "https://github.com/nickg/nvc/releases/download/r1.19.0/nvc-1.19.0.tar.gz"
-  sha256 "6ce569a3fd9b6d68d5337d73accf9dd94c812990d4e5ae5b7fcc2be3b22a914a"
+  url "https://github.com/nickg/nvc/releases/download/r1.19.1/nvc-1.19.1.tar.gz"
+  sha256 "da882efe5aad3df460dea75ed654f23760fc887414a254e628c35ea4c9aaa731"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -28,10 +28,10 @@ class Nvc < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "elfutils"
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -43,9 +43,8 @@ class Nvc < Formula
     # In-tree builds are not supported.
     mkdir "build" do
       system "../configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
-                             "--prefix=#{prefix}",
-                             "--with-system-cc=#{ENV.cc}",
-                             "--disable-silent-rules"
+                             "--disable-silent-rules",
+                             *std_configure_args
       system "make", "V=1"
       system "make", "V=1", "install"
     end
