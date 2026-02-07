@@ -16,7 +16,9 @@ class Miniprot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea05612a87b1d5a4dbd1763e2d2fb190e24cc9203d36449a292e4da1bd2d048e"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make"
