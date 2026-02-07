@@ -29,7 +29,9 @@ class Bcrypt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdc4ce5fa8dfa43b86a28d9f149ca0fe9ed94e698d4f3ca40c5352a9b912734e"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "CC=#{ENV.cc}",
