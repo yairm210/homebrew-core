@@ -27,14 +27,16 @@ class KyotoCabinet < Formula
     sha256 x86_64_linux:   "e5da4592e6cd893f7c1955a3d07b28e1ab97fc39ef1a41ea0550cdd4f84d3d0f"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   patch :DATA
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["zlib"].opt_include}"
-      ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
+      ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}"
+      ENV.append "LDFLAGS", "-L#{Formula["zlib-ng-compat"].opt_lib}"
     end
     ENV.cxx11
     system "./configure", *std_configure_args
