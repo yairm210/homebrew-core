@@ -1,11 +1,9 @@
 class Hstr < Formula
   desc "Bash and zsh history suggest box"
   homepage "https://github.com/dvorka/hstr"
-  url "https://github.com/dvorka/hstr/archive/refs/tags/3.1.tar.gz"
-  sha256 "e5293d4fe2502662f19c793bef416e05ac020490218e71c75a5e92919c466071"
+  url "https://github.com/dvorka/hstr/archive/refs/tags/v3.2.tar.gz"
+  sha256 "bceab1cb3c3b636d9ff4dfbaf8b035530e76a36d948767ed1735c4e79d7473eb"
   license "Apache-2.0"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "60932e5b5653859d9c2b7c74426edc047719ba50cd7b2071503636c2c0a0b40a"
