@@ -24,7 +24,9 @@ class Odt2txt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b48cef7a1fb7bf172435fbf6b465ea9fde29785f9be3d088075ad0e5224cfab"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "install", "DESTDIR=#{prefix}"
