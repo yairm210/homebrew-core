@@ -23,7 +23,9 @@ class Minigraph < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66fe3ea02850e9c7c043cf189d474d2e866b8c2f3540bf4338864c070a6be913"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     sse4 = Hardware::CPU.intel? && ((OS.mac? && MacOS.version.requires_sse4?) ||
