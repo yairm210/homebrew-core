@@ -7,12 +7,13 @@ class Navidrome < Formula
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "34e2921955c057c57c25b7ae6f4c1d65612cac73a26ad70f416ec3638e65477c"
-    sha256 cellar: :any,                 arm64_sequoia: "364203ca5a00668ae312fbcac8127870bb2d9c39ea2cf61bbfcc25f8acff203e"
-    sha256 cellar: :any,                 arm64_sonoma:  "812cd9375ef020d7b5251e25d26a165d519e323afeccd92378366a5562995c34"
-    sha256 cellar: :any,                 sonoma:        "09d1cc22b76f20d2de8d202cb3696c4e871e412e7edb2b27a7c58a2a8d9ab31d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be0dc28ee1f02de014ca39c19cffd5f259ca1665bb19b5153e706b742a5a1c4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbe71cd9638d57632af1a1bb7097aef7f61535d24b71295d69775beeef031bc4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e0598e0a7a5ffbec2cad57fab8d15e1f16781f5502665f3984ba8be3a1c2af20"
+    sha256 cellar: :any,                 arm64_sequoia: "85bf9a7ef24f284bb98115fe39d9a438150c19781ab16795ea496f7476a32902"
+    sha256 cellar: :any,                 arm64_sonoma:  "b25560e78ea95ce7da052e30e0a46e4ba011be65b8ace62bee5ea72265cad5a9"
+    sha256 cellar: :any,                 sonoma:        "bc2bf003e5c8536c7017fcd23b711a07d723cd90593291906fc319d8867103ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27618ad68e326b01ea67bfe29b69c8b01c03cb3694d7c7e6c1583a6d1d001970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6d37076bc7a1d5a9ea56b6a462f8607a13c10eb5297652adcc64ce3ea97eb8"
   end
 
   depends_on "go" => :build
@@ -38,6 +39,8 @@ class Navidrome < Formula
     system "make", "setup"
     system "make", "buildjs"
     system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "-buildvcs=false"
+
+    generate_completions_from_executable(bin/"navidrome", shell_parameter_format: :cobra)
   end
 
   test do
