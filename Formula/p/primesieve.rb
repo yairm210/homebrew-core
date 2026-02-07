@@ -1,8 +1,8 @@
 class Primesieve < Formula
   desc "Fast C/C++ prime number generator"
   homepage "https://github.com/kimwalisch/primesieve"
-  url "https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.12.tar.gz"
-  sha256 "1a94574552f67c9ef45d89a435510c2c9bd1b93c6097509cf8834167c2b486ee"
+  url "https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.13.tar.gz"
+  sha256 "4cd3f1b70f6b02d695e6495e6a0fc0fa99b4dc043e0f21686d2cf409e98295c9"
   license "BSD-2-Clause"
 
   bottle do
