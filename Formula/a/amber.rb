@@ -25,7 +25,9 @@ class Amber < Formula
   depends_on "pcre2"
   depends_on "sqlite"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # patch granite to fix db dependency resolution issue
   # upstream patch https://github.com/amberframework/amber/pull/1339
