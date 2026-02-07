@@ -9,12 +9,12 @@ class Tflint < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3faf7bf7be0821fd55f469752e001280c2d7458054a4097a5407c48b328e36c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3faf7bf7be0821fd55f469752e001280c2d7458054a4097a5407c48b328e36c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3faf7bf7be0821fd55f469752e001280c2d7458054a4097a5407c48b328e36c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd9145ca48e62e51327adbda4292eb8e57d2abe8f006ead9e84fc53019e627ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cac89f92f1b28e12254875907f90181b10ee783abc47575c8ea395dbe0258fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d92809ea4c977848d7c3d4f4130e2d4d9efb9ba52f46ad5d6f70811853cec6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74880fb58c8251cc4cef72ddf8bfdb4eee0910c5d9f480f9c8bbf796c7bd2564"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74880fb58c8251cc4cef72ddf8bfdb4eee0910c5d9f480f9c8bbf796c7bd2564"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74880fb58c8251cc4cef72ddf8bfdb4eee0910c5d9f480f9c8bbf796c7bd2564"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19ef66af3e849610ac2664876527efe4783457d8ec64d61d373963aa51204da0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d757d8cce83666f2715232cf720dff1036cd5861081995f9463e660b5c9bdcf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14a28d44e653de43ef61c1a5b9c041c612aa1833965a9767af85d49b5fcfb492"
   end
 
   depends_on "go" => :build
