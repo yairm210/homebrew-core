@@ -1,20 +1,11 @@
 class Rtags < Formula
   desc "Source code cross-referencer like ctags with a clang frontend"
   homepage "https://github.com/Andersbakken/rtags"
+  url "https://github.com/Andersbakken/rtags.git",
+    tag:      "v2.42",
+    revision: "446660730d10408a4106a8f31853bbd8bcc9c9c7"
   license "GPL-3.0-or-later"
   head "https://github.com/Andersbakken/rtags.git", branch: "master"
-
-  stable do
-    url "https://github.com/Andersbakken/rtags.git",
-        tag:      "v2.41",
-        revision: "39339388256df662d0084b4a094d03e52748f9e8"
-
-    # fix lisp files, remove on release 2.42
-    patch do
-      url "https://github.com/Andersbakken/rtags/commit/63f18acb21e664fd92fbc19465f0b5df085b5e93.patch?full_index=1"
-      sha256 "3229b2598211b2014a93a2d1e906cccf05b6a8a708234cc54f21803e6e31ef2a"
-    end
-  end
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 3.23. Until then, it's used to omit a malformed tag that would
@@ -51,10 +42,7 @@ class Rtags < Formula
   uses_from_macos "zlib"
 
   def install
-    # Fix to add backward compatibility for CMake version 4
-    # `master` and `v2.41` are differ too much and so patch is not working
-    # PR ref: https://github.com/Andersbakken/rtags/pull/1443
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -83,6 +71,7 @@ class Rtags < Formula
     rdm = spawn "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log", [:out, :err] => File::NULL
     begin
       sleep 5
+      sleep 10 if OS.mac? && Hardware::CPU.intel?
       pipe_output("#{bin}/rc -c", "clang -c #{testpath}/src/foo.c", 0)
       sleep 5
       assert_match "foo.c:1:6", shell_output("#{bin}/rc -f #{testpath}/src/foo.c:5:3")
