@@ -30,7 +30,10 @@ class Allureofthestars < Formula
   depends_on "sdl2_ttf"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # TODO: Remove resource once new release is available or hackage revision (r2+) with
   # equivalent changes (https://hackage.haskell.org/package/sdl2-2.5.5.0/revisions/).
