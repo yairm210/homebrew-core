@@ -14,7 +14,9 @@ class Atasm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9a213cabdfe9445ab776d7588de31d43005c0389c41a114ae8c3b1ebcf82c08"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     cd "src" do
