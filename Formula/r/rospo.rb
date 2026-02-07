@@ -6,13 +6,12 @@ class Rospo < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e4104cebc3b70dc7386c81dcca0100ae2db2faeecaaaa5081411cc25813c082"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc85fdc3962251bff000fa1fbac21a1d4735b9427ff3d6c919ce12652057218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "593d8629d1bb8d3439b00aabcf405fa61f73c3f83e4705445a79c9835f89d683"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9563ea06943a5ce9e30499b98497fad37ad2caf109fd39bb06efbd204750a9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72b0414b474ca2092c01f838241a445bf1e35c752e90c6b497bbd7592d83aa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb14ba71b779c20252f9f9b84cd8bacdd6e76cfc54086aaec50437312e42900c"
   end
 
   depends_on "go" => :build
