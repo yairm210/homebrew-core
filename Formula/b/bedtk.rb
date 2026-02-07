@@ -14,7 +14,9 @@ class Bedtk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dec9cdbe36442a536160a54b14e5d07eaa1a7f6e59dcd73d0cb154854211562"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make"
