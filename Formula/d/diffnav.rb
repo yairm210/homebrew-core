@@ -7,12 +7,12 @@ class Diffnav < Formula
   head "https://github.com/dlvhdr/diffnav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bdb3044d2924ec3b698025443c213a31daff58f8cfaa268e648fc861baa7d14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bdb3044d2924ec3b698025443c213a31daff58f8cfaa268e648fc861baa7d14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bdb3044d2924ec3b698025443c213a31daff58f8cfaa268e648fc861baa7d14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6cde75310075878615041b83b115a4b2def7119f41bfd8fd48dc0971aac804d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "beb8a9f6cc9e5a876712d20fe8bb1058c50f1bce0d5716ab9fd499c9cd70822c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2856daa5a9eb7d194b6d2150120efe3c1362dd639b4b5791daf2a31af3e57e15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad36282c8ffc44c60b905b4a1247c968c5f08659e7b4b8e98a46f3c8079329ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad36282c8ffc44c60b905b4a1247c968c5f08659e7b4b8e98a46f3c8079329ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad36282c8ffc44c60b905b4a1247c968c5f08659e7b4b8e98a46f3c8079329ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80fe087b56137a280d78d3114748f9c41616582e8d56a659835f37b3557746fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cf82e787122c4dfb651616012b1f038e8fe341571400767649e87569bb446eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aa1f89a2a377a5a3fdfd47de6dd9fb805885576665227913fedd8a5556b9378"
   end
 
   depends_on "go" => :build
