@@ -23,7 +23,9 @@ class Mergelog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f3e79e1bdb70b4094c813fda9442f858828cbff21f19ba6a239628a0a53605f"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround for newer Clang
