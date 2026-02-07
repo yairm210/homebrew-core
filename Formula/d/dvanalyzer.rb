@@ -28,7 +28,9 @@ class Dvanalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "439d718775ff2f2f2ae7f076c4cf120298b116b6a6fb0afdc4236823387948f0"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     cd "ZenLib/Project/GNU/Library" do
