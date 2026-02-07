@@ -23,7 +23,9 @@ class Advancescan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a42de6a209af1dd02c8544621f7da76afabd415d46265b548b3e35b7667b45d"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.cxx11
