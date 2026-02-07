@@ -6,12 +6,12 @@ class Sheenbidi < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "937f494d35e17ea7329000a4b2a65e44c40687b86f7116c7e4fd6841ffecb18f"
-    sha256 cellar: :any,                 arm64_sequoia: "8118d771952be49ca04efaaabbecae4b9b7abd5c8fd6d8a8581d4f4effe48f37"
-    sha256 cellar: :any,                 arm64_sonoma:  "254ff65fa1488865559fea8e76b2fb11f7fdf0053523f5fcc05314f6901a43a7"
-    sha256 cellar: :any,                 sonoma:        "2ae51b809fb3cccce63f59055a15ad85fa7abb6b509f05f697878fae2af4aa0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a7beddd0917b9af373f2d6ddfc581497551d8558cd04a5d401ed6ffbb9eea71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7320cea30ff43f03a54904ed3c4df20ae5f098da6bfe6c8bc42e55a92f858c"
+    sha256 cellar: :any,                 arm64_tahoe:   "14e0ca7bf19feb6565c75c0e6889b9ab52dc7c55ee9d5b428ad67558e3d1ce2b"
+    sha256 cellar: :any,                 arm64_sequoia: "8739bf9ac68dcd4ee535d1ec547c6c6e84f896c15b53da2ddf58ab97d283631a"
+    sha256 cellar: :any,                 arm64_sonoma:  "65f62b244de3488e95d71b92ce37d271c2c470f460e63f48f51a8d639396562c"
+    sha256 cellar: :any,                 sonoma:        "435a97ad757c441b2ce145f23e00286d9ff4e34f0c54abec73274433f7c61515"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3414fb9606596bafb2f0cd482e98d7889fb6110dcf9acb7e2f3f89930d72862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2da48567cc1918a6b3f792915171e9aa1c4fcc0ec7df70455cdf7f6c4d25f87e"
   end
 
   depends_on "cmake" => :build
