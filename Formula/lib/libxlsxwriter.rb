@@ -15,7 +15,9 @@ class Libxlsxwriter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9027a97c4824def33c88d47e7460a60104bca5e9c27e12c5fa2c06ca93bc86b6"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "V=1"
