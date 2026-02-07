@@ -6,6 +6,15 @@ class Odiff < Formula
   license "MIT"
   head "https://github.com/dmtrKovalenko/odiff.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cb3a56bedb3dc706bc0d20f327ba133c475ede848805efc7c4b8bc05a731cdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbb36e944ff54729f001085511a4f4edd7ad6a858ffedc645772a2773d69dbec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "586edf0e6ac966d1cadedd4c8a74690993182a8fd8bdaef437647cb0fd8d809f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bfc842ad179c8d34d187a2954462d4982a3abec7ae3dccdf1f66218f1e6c9f00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51037d5e22cc924480d398040e5f22301ba0cfcd0e2ac942daa1b805d4389443"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225b4d5d1c7fd31f9db28de5e7e32bbd968548cead0a06932c3a2f3e6e86d236"
+  end
+
   depends_on "zig" => :build
 
   on_intel do
