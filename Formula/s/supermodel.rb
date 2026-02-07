@@ -1,9 +1,9 @@
 class Supermodel < Formula
   desc "Sega Model 3 arcade emulator"
   homepage "https://github.com/trzy/Supermodel"
-  url "https://github.com/trzy/Supermodel/archive/refs/tags/v0.3a-20260129-git-e3a6b05.tar.gz"
-  version "0.3a-20260129-git-e3a6b05"
-  sha256 "9e06d7778727d48a2adcdfead9cb6e12c1309fba4012c630edff428d9b45ae7d"
+  url "https://github.com/trzy/Supermodel/archive/refs/tags/v0.3a-20260207-git-fe00551.tar.gz"
+  version "0.3a-20260207-git-fe00551"
+  sha256 "bc74409ae14ec4f37e6bf5756ec6b6881f8c3c61bf3ef403425a3d8e86337769"
   license "GPL-3.0-or-later"
   head "https://github.com/trzy/Supermodel.git", branch: "master"
 
@@ -18,11 +18,10 @@ class Supermodel < Formula
 
   depends_on "sdl2"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install
