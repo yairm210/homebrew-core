@@ -17,10 +17,12 @@ class Fastga < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6701f46303473e85afc9f708275e54f18d15004aebbc73039355459caef41b9"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
-    mkdir bin
+    bin.mkpath
     system "make"
     system "make", "install", "DEST_DIR=#{bin}"
     pkgshare.install "EXAMPLE"
