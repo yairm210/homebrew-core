@@ -36,7 +36,6 @@ class Aravis < Formula
   depends_on "libusb"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "at-spi2-core"
@@ -45,6 +44,10 @@ class Aravis < Formula
     depends_on "gettext"
     depends_on "harfbuzz"
     depends_on "pango"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
