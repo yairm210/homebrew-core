@@ -24,14 +24,12 @@ class Rtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "48ad2bdaf1a5da69b0043dd8c7d4b9aa472c4a61556e16460cd973e2bf16a300"
-    sha256 cellar: :any, arm64_sequoia: "8fd30b2507239fc7ff15cca941e00f105e8a6724b032a591b1b0d3812699d3cf"
-    sha256 cellar: :any, arm64_sonoma:  "4bd18ea58c0d2161ea6b22209ae085719b21e4db751ab60f4a46911e770affd0"
-    sha256 cellar: :any, arm64_ventura: "8a8fca81684ec7d9ddb05633c1f99b00f99f9222a6584bb494c52fa0ac0abe53"
-    sha256 cellar: :any, sonoma:        "fce14066a6e4c0345b2a7e5ddf8e03be8f6d577b558d1c887a82afcfcb3a64e8"
-    sha256 cellar: :any, ventura:       "719ad5a7d65ec34fbe8b28e3fe3c83c06a9a4e4d164da471f6658927d1a45b7c"
-    sha256               arm64_linux:   "a044de5d959c2c7e6e1976922eb3488ab2d5a04069f2400c89b739fad39aad7c"
-    sha256               x86_64_linux:  "606bea1ce1da5dfbddc609b1f5d80fb36b4edc7e5aa26351504b0bebb4edde74"
+    sha256 cellar: :any, arm64_tahoe:   "0f4c862af37cbe89e0f60fe2bb5bba367d242053ec011806f2de77bd32f0c7b3"
+    sha256 cellar: :any, arm64_sequoia: "d1e42fd3f0aeebb68b7433ec896d03289531d57e0d2aef125ad277fd60c96a8c"
+    sha256 cellar: :any, arm64_sonoma:  "f44cb58558839fc5fb8d4e3e8d55444427d0e1f7f28e5433fb2095f88a6d47a2"
+    sha256 cellar: :any, sonoma:        "178b1e30e3d0854dcd8efde6dc19a2e381758b8d827a149e002177c17816824d"
+    sha256               arm64_linux:   "76894967e23dd4b2a84f244aa7a311186f3acfcc8b2282f6a77f41c7815dbb96"
+    sha256               x86_64_linux:  "56ab5c0cbde519576bfd1bb1ab97822a4002aa946ece1b4ee9df2a0fe00b855c"
   end
 
   depends_on "cmake" => :build
