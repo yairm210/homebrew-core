@@ -38,6 +38,8 @@ class Navidrome < Formula
     system "make", "setup"
     system "make", "buildjs"
     system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "-buildvcs=false"
+
+    generate_completions_from_executable(bin/"navidrome", shell_parameter_format: :cobra)
   end
 
   test do
