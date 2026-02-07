@@ -7,12 +7,12 @@ class Kekkai < Formula
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "483597e0f426744defd8b8c4ff215ac538fc56cfa2ba60b616fc583fc86ee08d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "483597e0f426744defd8b8c4ff215ac538fc56cfa2ba60b616fc583fc86ee08d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "483597e0f426744defd8b8c4ff215ac538fc56cfa2ba60b616fc583fc86ee08d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d24d9915fed80946831b0fcfddfd1e06bfc02daf9ce5f67421aeb299ece8b0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b902cfc2ab51665f5500ff10f9c34576440a6379a2229c8ba61e0c55ab6f1ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e21f3b298a9f5b24b0a1145bb762eb035966effda5e767f6cfee883e5ded60ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "069d916c86b2c551acfcfb1f63ff4b7fa29fa05a6226b5271615ba7937122800"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "069d916c86b2c551acfcfb1f63ff4b7fa29fa05a6226b5271615ba7937122800"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "069d916c86b2c551acfcfb1f63ff4b7fa29fa05a6226b5271615ba7937122800"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62fe8b61a2d9bf094ed294705be8f651d35d9ff2c6c2f3d12bbb82ef2929e05d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "362f4b7975b61b945fa8562448a8efe7673828fb1523abe88c411caa4a0108d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9223b677d2ce3c8050ba6ecaabb4dd89e8004f43d5fa661df3d86b3bedc464a1"
   end
 
   depends_on "go" => :build
