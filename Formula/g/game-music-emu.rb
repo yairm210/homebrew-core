@@ -4,6 +4,7 @@ class GameMusicEmu < Formula
   url "https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.4.tar.gz"
   sha256 "f2360feb5a32ace226c583df4faf6eff74145c81264aaea11e17a1af2f6f101a"
   license one_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
   head "https://github.com/libgme/game-music-emu.git", branch: "master"
 
   bottle do
@@ -19,7 +20,9 @@ class GameMusicEmu < Formula
 
   depends_on "cmake" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DENABLE_UBSAN=OFF", *std_cmake_args
