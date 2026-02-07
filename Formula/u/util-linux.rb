@@ -25,12 +25,12 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9b7813eb6fd007f0adf2849ee1a20ef20d06742e61e059340507afd179150819"
-    sha256 arm64_sequoia: "cf92f0c16017d379985428bf0b2b173df77480f8d6cd460dc9eb87fc629742d4"
-    sha256 arm64_sonoma:  "bfbf0cd03e559b3dae074ef82559a4d11233b1b58c53d23bee8f568c57b32beb"
-    sha256 sonoma:        "8dc2b4b699538ba1ee5844672d5e6418ff00109648db0083662f35b842c63db2"
-    sha256 arm64_linux:   "cc4a76427841efe24c2b8a4237e15d1d1d579f9eb37b26e2a5c1f27aade94482"
-    sha256 x86_64_linux:  "a5c653c4935f1b399174876915afd2a59fc5367d4aa12a477d0e3681cc6c748a"
+    sha256 arm64_tahoe:   "a8603b1c1262144381fa966b199cc44cb741c78a273a89be1cad63ab7a683f98"
+    sha256 arm64_sequoia: "3513c9599542ce8bb3efc648cb5fb382cec57cc8e7132cd0688406e011e961a6"
+    sha256 arm64_sonoma:  "0dccbc7953bf922c977fe886b74b627b393534ebae3486686dfc75ed52755a0b"
+    sha256 sonoma:        "a67370fc42a725684d4efe1c0628b648a606260daa04e586129213271d8db573"
+    sha256 arm64_linux:   "f3ed9fde08fe40c39f4f2ea8b1ae02177d62165968d5fa7f5197f97d75e696a6"
+    sha256 x86_64_linux:  "780fd8935ee590bd6b9ad662d5a8e27d25e94174af6dde7a738256c3af723602"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
