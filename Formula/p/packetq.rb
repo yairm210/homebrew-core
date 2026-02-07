@@ -23,7 +23,9 @@ class Packetq < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "95b224f56ea3ceec3c1e6a13030405cb285de6861cee6987bfb0c472c68f7b5d"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", *std_configure_args
