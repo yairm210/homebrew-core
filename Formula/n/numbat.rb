@@ -7,12 +7,12 @@ class Numbat < Formula
   head "https://github.com/sharkdp/numbat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d88038adc361ef733a2bcb763c36cd2f8b04433d679f6aa8cd4b49200f0a0564"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1c502f326f3a8ac6deda047f09ed45baf17eb5151888bdf2a54e49c00f621d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e14f86d2065812196825b8d5f2cccc9df436a5e3c14a31aee77aadaa6c37f193"
-    sha256 cellar: :any_skip_relocation, sonoma:        "245dfbb71afb1a0a86d79980593aa41417f4ad273bb7cf2aaf2a3107f6582fa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b63fd69638a935d8dc7c9bc833c55e1d20a9b61a5d2863970be398527c9958b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68ca9518a4576631532a16c8b3a549eb8cbf5c985274f770fb8b801c759892a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2611ab81eeac8dcd7adf4088f05c58a1d53aaaeb3c12f1d886c4b705c510842"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eec03ffead194ae665d677a5c2651fe7c065be5c667b8137f13f13f35784fbc3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0fa5a58437b9505052555122ad100067db1bb99b0dc211ca5dae5a91ec4860a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c09842f948a5f0afe89de501fc171aa12db744a06c645fd753ea41a84d2b8e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "866cf576a14265a23efe7e23f07d3cfe72cb9da4d71cdba6341d8b38cdbd811a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0f6ab310cdb830e158a4a8de08f1fb55216b6cdb08681c14b667431c664f49"
   end
 
   depends_on "rust" => :build
