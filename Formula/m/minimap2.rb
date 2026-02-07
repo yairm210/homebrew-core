@@ -21,7 +21,9 @@ class Minimap2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28f740a2280da6423e032afba5109e2253f57286f779add8f2c0c52f783fff8"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     if Hardware::CPU.arm?
