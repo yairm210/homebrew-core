@@ -28,7 +28,9 @@ class Gzrt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "befaf922391daf55b95098ef2c66c02fcd04813517cef56c60caf3cd1297d986"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make"
