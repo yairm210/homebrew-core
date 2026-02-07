@@ -25,7 +25,10 @@ class Xorriso < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3610de57dbb6a1b2bf32776acc9803efe9a951791101692eb65dc6df1226bd"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "acl"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
