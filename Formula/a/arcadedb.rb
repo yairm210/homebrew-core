@@ -5,6 +5,10 @@ class Arcadedb < Formula
   sha256 "975dad6ae63b82faf86fa0bf03bff0568c60d35ece5f9849beb3bf5dba759b7e"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "1fcc1b1fc599b7188ed198a443f255fccd9a06e024f94306561eb6c4dd57eaaf"
+  end
+
   depends_on "openjdk"
 
   def install
