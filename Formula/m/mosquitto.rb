@@ -30,6 +30,7 @@ class Mosquitto < Formula
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "libedit"
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "util-linux"
@@ -38,7 +39,7 @@ class Mosquitto < Formula
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DWITH_PLUGINS=OFF
+      -DWITH_PLUGINS=ON
       -DWITH_WEBSOCKETS=ON
       -DWITH_TESTS=OFF
     ]
