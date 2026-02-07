@@ -14,9 +14,7 @@ class Ratarmount < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8d851e5ecf64f85e7f9276eea051188bfdd5f2c2c0a9c5d64d321e2ec3c220ee"
   end
 
-  depends_on "libffi"
-  depends_on "libfuse"
-  depends_on "libgit2"
+  depends_on "libfuse" => :no_linkage
   depends_on :linux
   depends_on "python@3.14"
   depends_on "zlib-ng-compat"
