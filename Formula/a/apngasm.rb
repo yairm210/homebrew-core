@@ -24,7 +24,9 @@ class Apngasm < Formula
   depends_on "libpng"
   depends_on "lzlib"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   fails_with :gcc do
     version "7"
