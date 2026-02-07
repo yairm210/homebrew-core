@@ -19,12 +19,14 @@ class Tkrzw < Formula
     sha256 x86_64_linux:  "8071105a6bd977363587e9d2995cc5d7b1a53da7a905d082df4033598ef1728e"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["zlib"].opt_include}"
-      ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
+      ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}"
+      ENV.append "LDFLAGS", "-L#{Formula["zlib-ng-compat"].opt_lib}"
     end
     # Don't add -lstdc++ to tkrzw_build_util and tkrzw.pc
     ENV["ac_cv_lib_stdcpp_main"] = "no" if ENV.compiler == :clang
@@ -49,6 +51,7 @@ class Tkrzw < Formula
 
     cflags = shell_output("#{bin}/tkrzw_build_util config -i").chomp.split
     ldflags = shell_output("#{bin}/tkrzw_build_util config -l").chomp.split
+    ldflags.unshift "-L#{Formula["zlib-ng-compat"].opt_lib}" if OS.linux?
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *cflags, *ldflags
     assert_equal "world\n", shell_output("./test")
   end
