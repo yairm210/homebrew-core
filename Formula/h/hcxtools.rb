@@ -1,18 +1,18 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://github.com/ZerBea/hcxtools/archive/refs/tags/7.1.1.tar.gz"
-  sha256 "3856328b015970e48981647bd6c2c502659e16947ae57d87751a2053e669080a"
+  url "https://github.com/ZerBea/hcxtools/archive/refs/tags/7.1.2.tar.gz"
+  sha256 "c726b93df32efd3298874b324f820d93cb08a4dae03d9144b0d5062c003fd77f"
   license "MIT"
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "52e91e41876ee0dace50f0eecf11e2965392d923f71f7ecc30c5d2db5cc36818"
-    sha256 cellar: :any,                 arm64_sequoia: "6008c4a7f571ac3c6aa8c9918b7aaf271a0d326d2485a5cec997639c65f84421"
-    sha256 cellar: :any,                 arm64_sonoma:  "41e97db33cb0569ebf7a54eb8bcee7f8c47212070bca6e04a5e1f37c1dd42922"
-    sha256 cellar: :any,                 sonoma:        "0b28402dcf12d4782cb1d776f644cd5b447752c9fb836a67beb27c4b580855eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b10c6fb4b2966edcaebb7cdcd8824f5af6e3894df88a6dd657c8e7f3852ed469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "847d5a2c07f77a76524ceaf988f34e2050381a28128a065a11a718fafa1a9620"
+    sha256 cellar: :any,                 arm64_tahoe:   "b786532da808f3d2df2a0196664c412cbcb7b9e8075ff4986be97516c7dda34c"
+    sha256 cellar: :any,                 arm64_sequoia: "b6ed19ef3e202ff7fccd37d1cb507a15ae9d27a0642b9adaed3f681d0898c167"
+    sha256 cellar: :any,                 arm64_sonoma:  "1651738e247aacea8e5370cd6864c7c74ea469326838eceb9a26fe0545c20bf3"
+    sha256 cellar: :any,                 sonoma:        "f780ee105f6fad885e76c94ca9dc0d0f262c45bcdbee5ab91f9db46c6006d6b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5dd620ba49c62840721470976e8c9fc315ccf53073a970e2fb773fab2b514a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8168c9e6a68a1707ec3c18c7f4c141664f1f9609f3432b761e2e076c0a3f71a7"
   end
 
   depends_on "pkgconf" => :build
