@@ -1,8 +1,8 @@
 class Bento < Formula
   desc "Fancy stream processing made operationally mundane"
   homepage "https://warpstreamlabs.github.io/bento/"
-  url "https://github.com/warpstreamlabs/bento/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "ff5260111eedd686645ec2bf259e61032af8a80043ba96fe87c9f11825ae8e08"
+  url "https://github.com/warpstreamlabs/bento/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "3acf54b202c250a3a2196f5b8f28788933f8689dc06f07feed7d996aae561182"
   license "MIT"
 
   bottle do
