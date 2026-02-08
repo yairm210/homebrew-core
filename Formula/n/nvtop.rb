@@ -1,8 +1,8 @@
 class Nvtop < Formula
   desc "Interactive GPU process monitor"
   homepage "https://github.com/Syllo/nvtop"
-  url "https://github.com/Syllo/nvtop/archive/refs/tags/3.3.1.tar.gz"
-  sha256 "8318aff973e0850bea4b9d7d313c513206cdc9b8387e8441681e84ac2bc0e980"
+  url "https://github.com/Syllo/nvtop/archive/refs/tags/3.3.2.tar.gz"
+  sha256 "bfcf24a4bbc763c92a630900f1679f05cce3c9d5f4d1f4a95bdb9230ef562665"
   license "GPL-3.0-or-later"
 
   bottle do
