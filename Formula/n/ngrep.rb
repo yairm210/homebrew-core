@@ -1,8 +1,8 @@
 class Ngrep < Formula
   desc "Network grep"
   homepage "https://github.com/jpr5/ngrep"
-  url "https://github.com/jpr5/ngrep/archive/refs/tags/v1.48.3.tar.gz"
-  sha256 "7c69777c21cc491368b2f1fe057d1d44febcf42413a885b59badeade5264a066"
+  url "https://github.com/jpr5/ngrep/archive/refs/tags/v1.49.0.tar.gz"
+  sha256 "6c94b31681316b7469a3ace92d2aeec7c9f490bd6782453dff2ade0e289a3348"
   license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
 
   no_autobump! because: :requires_manual_review
