@@ -1,8 +1,8 @@
 class Opencsg < Formula
   desc "Constructive solid geometry rendering library"
   homepage "https://www.opencsg.org/"
-  url "https://www.opencsg.org/OpenCSG-1.8.1.tar.gz"
-  sha256 "afcc004a89ed3bc478a9e4ba39b20f3d589b24e23e275b7383f91a590d4d57c5"
+  url "https://www.opencsg.org/OpenCSG-1.8.2.tar.gz"
+  sha256 "5ac5df73b1ad3340dd6705ff90e009f1a946bb9536c21c2263a6f974265664c0"
   license "GPL-2.0-or-later"
 
   livecheck do
