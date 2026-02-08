@@ -1,10 +1,9 @@
 class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
-  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.24.0.tar.gz"
-  sha256 "7b8e966affca1daf1906272f4d983631cad85fb6ea60fb6f55dcd1811a730604"
+  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.25.0.tar.gz"
+  sha256 "a0c944a9de981fe1874b31d1fe44b830fc30ee030efa27ee23fc73012a3a13e9"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
@@ -48,11 +47,11 @@ class OpentelemetryCpp < Formula
                     "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
                     "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS",
                     "-DOTELCPP_PROTO_PATH=#{buildpath}/opentelemetry-proto",
+                    "-DWITH_BENCHMARK=OFF",
                     "-DWITH_ELASTICSEARCH=ON",
                     "-DWITH_EXAMPLES=OFF",
                     "-DWITH_OTLP_GRPC=ON",
                     "-DWITH_OTLP_HTTP=ON",
-                    "-DWITH_ABSEIL=ON",
                     "-DWITH_PROMETHEUS=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
