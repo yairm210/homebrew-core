@@ -1,8 +1,8 @@
 class Libx11 < Formula
   desc "X.Org: Core X11 protocol client library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libX11-1.8.12.tar.gz"
-  sha256 "220fbcf54b6e4d8dc40076ff4ab87954358019982490b33c7802190b62d89ce1"
+  url "https://www.x.org/archive/individual/lib/libX11-1.8.13.tar.gz"
+  sha256 "acf0e7cd7541110e6330ecb539441a2d53061f386ec7be6906dfde0de2598470"
   license "MIT"
 
   bottle do
