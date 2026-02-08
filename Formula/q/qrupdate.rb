@@ -1,17 +1,9 @@
 class Qrupdate < Formula
   desc "Fast updates of QR and Cholesky decompositions"
-  homepage "https://sourceforge.net/projects/qrupdate/"
-  url "https://downloads.sourceforge.net/project/qrupdate/qrupdate/1.2/qrupdate-1.1.2.tar.gz"
-  sha256 "e2a1c711dc8ebc418e21195833814cb2f84b878b90a2774365f0166402308e08"
+  homepage "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng"
+  url "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng/-/archive/v1.1.5/qrupdate-ng-v1.1.5.tar.bz2"
+  sha256 "d81523077586fec9dc26585c82a6c9c109f912f29d5ec9097822faf56297c4d2"
   license "GPL-3.0-or-later"
-  revision 15
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/qrupdate[._-]v?(\d+(?:\.\d+)+)\.t}i)
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "06f87282b23c5f3cec4efedea8259122807837de4e2fa0928ca380a69357ab74"
@@ -29,26 +21,20 @@ class Qrupdate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf21846969fac2323ea2d8762b04c7f090bb0d9092c98636a853c50aaab49230"
   end
 
+  depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "openblas"
 
+  # Backport fix for CMake 4
+  patch do
+    url "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng/-/commit/5ae0333225130c1ec377e9cf10a60ad7c86c058d.diff"
+    sha256 "2396f89a55a12e65120358502a450a6752dfa6ca4fc3f00462a0510909eb33db"
+  end
+
   def install
-    # Parallel compilation not supported. Reported on 2017-07-21 at
-    # https://sourceforge.net/p/qrupdate/discussion/905477/thread/d8f9c7e5/
-    ENV.deparallelize
-
-    system "make", "lib", "solib",
-                   "BLAS=-L#{Formula["openblas"].opt_lib} -lopenblas"
-
-    # Confuses "make install" on case-insensitive filesystems
-    rm "INSTALL"
-
-    # BSD "install" does not understand GNU -D flag.
-    # Create the parent directory ourselves.
-    inreplace "src/Makefile", "install -D", "install"
-    lib.mkpath
-
-    system "make", "install", "PREFIX=#{prefix}"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "test/tch1dn.f", "test/utils.f"
   end
 
