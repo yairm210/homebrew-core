@@ -3,7 +3,7 @@ class Ngrep < Formula
   homepage "https://github.com/jpr5/ngrep"
   url "https://github.com/jpr5/ngrep/archive/refs/tags/v1.49.0.tar.gz"
   sha256 "6c94b31681316b7469a3ace92d2aeec7c9f490bd6782453dff2ade0e289a3348"
-  license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
+  license "ngrep"
 
   no_autobump! because: :requires_manual_review
 
@@ -20,15 +20,13 @@ class Ngrep < Formula
   depends_on "pcre2"
 
   def install
-    args = [
-      "--enable-ipv6",
-      "--enable-pcre2",
-      "--prefix=#{prefix}",
+    args = %w[
+      --enable-ipv6
+      --enable-pcre2
     ]
-
     args << "--with-pcap-includes=#{Formula["libpcap"].opt_include}"
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
