@@ -1,8 +1,8 @@
 class Atac < Formula
   desc "Simple API client (Postman-like) in your terminal"
   homepage "https://atac.julien-cpsn.com/"
-  url "https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "230fc1730fa8787a390232d88f286ba542e8627426ae9f7897f77d2a728b3578"
+  url "https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "79a5171a0af3ac99086d6e02d542b0c6330600517f1460cd291d2edbe331b461"
   license "MIT"
   head "https://github.com/Julien-cpsn/ATAC.git", branch: "main"
 
@@ -23,8 +23,7 @@ class Atac < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
-    # Turn off shell completions to clipboard feature
-    system "cargo", "install", "--no-default-features", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"atac", "completions")
 
