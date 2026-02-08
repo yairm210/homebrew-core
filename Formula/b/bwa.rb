@@ -17,7 +17,9 @@ class Bwa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b243ede1154f5e75c9c1af01f98be6b42be5e632d0054b3487e306b52e265eae"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     depends_on "sse2neon" => :build
