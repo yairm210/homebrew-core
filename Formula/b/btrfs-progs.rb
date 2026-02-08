@@ -27,7 +27,7 @@ class BtrfsProgs < Formula
   depends_on "lzo"
   depends_on "systemd" # for libudev
   depends_on "util-linux"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
   depends_on "zstd"
 
   def python3
