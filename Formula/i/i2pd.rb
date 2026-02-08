@@ -1,10 +1,9 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https://i2pd.website/"
-  url "https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.58.0.tar.gz"
-  sha256 "5ff650c6da8fda3522c10ec22889a7fd1c6b5d1af42c24531d84c36f6cc49019"
+  url "https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.59.0.tar.gz"
+  sha256 "0ebeb05e4f36ab3809449561a095dc767ad821ac6a61c95623ab49be4ffd398b"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "48c3ff51d49eff5f8a561137dfbe5f7e0cd2c1862d145c2aeb703b25aa3404e2"
@@ -19,7 +18,9 @@ class I2pd < Formula
   depends_on "miniupnpc"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
