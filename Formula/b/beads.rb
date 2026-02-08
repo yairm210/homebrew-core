@@ -1,8 +1,8 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.49.4.tar.gz"
-  sha256 "f4112b9fb80b6f2d8899c1dd80262f287ef37fd8eb2c7404642026cc12fabbb8"
+  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.49.5.tar.gz"
+  sha256 "4e94e65e56ba1c8cddb22aefa0857dc7f1c2c6df8b3a840300170b3a8323004d"
   license "MIT"
 
   bottle do
@@ -18,7 +18,11 @@ class Beads < Formula
   depends_on "icu4c@78"
 
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     ldflags = %W[
       -s -w
