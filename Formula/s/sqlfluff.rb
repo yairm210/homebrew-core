@@ -3,17 +3,17 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/41/9a/70ad0f3f7855f19d27cb76c1b3527f1d7ecc4c55b508491da11f656670b3/sqlfluff-4.0.1.post1.tar.gz"
-  sha256 "0a6bff9ac8f9b87515db2b993fa4ca40b9d05a48f39496d1107e4b6d40cbf8ef"
+  url "https://files.pythonhosted.org/packages/a3/b2/da8af15af1f2f0d6b5b1f63130d59a53daebef30f39ee0ceb582386edac4/sqlfluff-4.0.3.tar.gz"
+  sha256 "36d4be983ea3bceb93543bc390108e6a05b51f1639ec9834017d460e464c23ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04e5062071b2a1bd04930618f147d60358adfc5a3c7d96369a5a1d975a8c323c"
-    sha256 cellar: :any,                 arm64_sequoia: "f2388d56d7d186ee2df86c2f178d9087550215959686d476738b57a155486ccb"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2c5f8809ad78388fe09d69e9cb8cc060977adc1715156ae83f5ec1405bcda46"
-    sha256 cellar: :any,                 sonoma:        "348c2d21913574a4f912a5ff2fe9ecc401b0b591cd0a9742734ed8e3aa5cbdfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca3017c08a441269c6c68f5dedbc7c482edaa03a520be0c0b3c42da660676e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac137aae25f97548db03859c489691eb7f283037ffe6be3e173f2a8e92df594f"
+    sha256 cellar: :any,                 arm64_tahoe:   "839bcee5f4e7ded1e4a39bc1f666e6bd548434c4f8f208a737936b2fa7beecd7"
+    sha256 cellar: :any,                 arm64_sequoia: "3d1370ae9c757f76849c5eaf9429e9ec1bdaf8ec7dbb12d18c1880a7e1c66b75"
+    sha256 cellar: :any,                 arm64_sonoma:  "b866c0ab43ee29ddb75ce66271d04df1a9a4a216a66ecb0230b402152cada005"
+    sha256 cellar: :any,                 sonoma:        "857ee646d9f7d130c2b4eddf7ab8e123d8de1424e486b1b74cb4ad10ee2339da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28869143f2b9919ce3871db6b19c2410e4dda220d8cfdcd1c0b3da74d99efd57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b14b5375850b913333660044dbfa99142ba4e961878e0c6e13dbe413b3c2f8b"
   end
 
   depends_on "libyaml"
