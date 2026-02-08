@@ -30,14 +30,13 @@ class BareosClient < Formula
   depends_on "readline"
   depends_on "xxhash"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
     depends_on "acl"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"
