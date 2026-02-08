@@ -30,7 +30,10 @@ class Swig < Formula
   depends_on "pcre2"
 
   uses_from_macos "python" => :test
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.append "CXXFLAGS", "-std=c++11" # Fix `nullptr` support detection.
