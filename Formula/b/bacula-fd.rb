@@ -25,7 +25,9 @@ class BaculaFd < Formula
   depends_on "openssl@3"
   depends_on "readline"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "bareos-client", because: "both install a `bconsole` executable"
 
