@@ -4,6 +4,7 @@ class Libpciaccess < Formula
   url "https://www.x.org/pub/individual/lib/libpciaccess-0.18.1.tar.xz"
   sha256 "4af43444b38adb5545d0ed1c2ce46d9608cc47b31c2387fc5181656765a6fa76"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
@@ -17,9 +18,12 @@ class Libpciaccess < Formula
   depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on :linux
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
+    # Work around Meson's automatic removal of RPATHs by explicitly passing in LDFLAGS
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["zlib-ng-compat"].opt_lib}"
+
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
