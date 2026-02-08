@@ -29,10 +29,13 @@ class Blast < Formula
   uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "proj", because: "both install a `libproj.a` library"
