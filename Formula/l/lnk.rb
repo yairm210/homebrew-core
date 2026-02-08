@@ -23,6 +23,8 @@ class Lnk < Formula
       -X main.buildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"lnk", shell_parameter_format: :cobra)
   end
 
   test do
