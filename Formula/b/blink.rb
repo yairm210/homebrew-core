@@ -22,7 +22,10 @@ class Blink < Formula
 
   depends_on "make" => :build # Needs Make 4.0+
   depends_on "pkgconf" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # newer linker cause issue as `pointer not aligned at _kWhence+0x4`
