@@ -1,13 +1,11 @@
 class Bind < Formula
   desc "Implementation of the DNS protocols"
   homepage "https://www.isc.org/bind/"
-
   # BIND releases with even minor version numbers (9.14.x, 9.16.x, etc) are
   # stable. Odd-numbered minor versions are for testing, and can be unstable
   # or buggy. They are not suitable for general deployment. We have to use
   # "version_scheme" because someone upgraded to 9.15.0, and required a
   # downgrade.
-
   url "https://downloads.isc.org/isc/bind9/9.20.18/bind-9.20.18.tar.xz"
   sha256 "dfc546c990ac4515529cd45c4dd995862b18ae8a2d0cb29208e8896a5d325331"
   license "MPL-2.0"
@@ -42,10 +40,10 @@ class Bind < Formula
   depends_on "userspace-rcu"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libcap"
+    depends_on "zlib-ng-compat"
   end
 
   def install
