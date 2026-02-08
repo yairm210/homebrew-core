@@ -16,7 +16,7 @@ class Bpftop < Formula
   depends_on "rust" => :build
   depends_on "elfutils"
   depends_on :linux
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   fails_with :gcc do
     cause "build.rs needs to run clang and not shim for gcc"
