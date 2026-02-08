@@ -3,9 +3,10 @@ class Volk < Formula
 
   desc "Vector Optimized Library of Kernels"
   homepage "https://www.libvolk.org/"
-  url "https://github.com/gnuradio/volk/releases/download/v3.2.0/volk-3.2.0.tar.gz"
-  sha256 "9c6c11ec8e08aa37ce8ef7c5bcbdee60bac2428faeffb07d072e572ed05eb8cd"
+  url "https://github.com/gnuradio/volk/releases/download/v3.3.0/volk-3.3.0.tar.gz"
+  sha256 "89d11c8c8d4213b1b780354cfdbda1fed0c0b65c82847e710638eb3e21418628"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1
@@ -20,8 +21,12 @@ class Volk < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "cpu_features"
+  depends_on "fmt"
   depends_on "orc"
   depends_on "python@3.14"
+
+  pypi_packages package_name:   "",
+                extra_packages: "mako"
 
   resource "mako" do
     url "https://files.pythonhosted.org/packages/9e/38/bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535/mako-1.3.10.tar.gz"
@@ -29,8 +34,8 @@ class Volk < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   def python3
