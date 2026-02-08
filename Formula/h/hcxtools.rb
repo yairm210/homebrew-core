@@ -1,8 +1,8 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://github.com/ZerBea/hcxtools/archive/refs/tags/7.0.1.tar.gz"
-  sha256 "7697c429327cb9cef64bcd47e33988d691327ae62ac53ec74aa25097d8ef246d"
+  url "https://github.com/ZerBea/hcxtools/archive/refs/tags/7.1.1.tar.gz"
+  sha256 "3856328b015970e48981647bd6c2c502659e16947ae57d87751a2053e669080a"
   license "MIT"
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
@@ -21,7 +21,10 @@ class Hcxtools < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     bin.mkpath
