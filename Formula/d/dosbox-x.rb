@@ -38,7 +38,6 @@ class DosboxX < Formula
   depends_on "sdl2"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -49,6 +48,7 @@ class DosboxX < Formula
     depends_on "alsa-lib"
     depends_on "libx11"
     depends_on "libxrandr"
+    depends_on "zlib-ng-compat"
   end
 
   def install
