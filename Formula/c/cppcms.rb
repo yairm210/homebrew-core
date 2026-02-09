@@ -20,7 +20,10 @@ class Cppcms < Formula
   depends_on "openssl@3"
 
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport support for CMake 4
   patch do
