@@ -27,7 +27,10 @@ class YubicoPivTool < Formula
   depends_on "openssl@3"
 
   uses_from_macos "pcsc-lite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.append_to_cflags "-I#{Formula["pcsc-lite"].opt_include}/PCSC" unless OS.mac?
