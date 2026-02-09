@@ -1,8 +1,8 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.20.tar.gz"
-  sha256 "af0a815b54d04754e42daa0734025fb5720a26d86896a241598bc214f72a9567"
+  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.21.tar.gz"
+  sha256 "31581ecc92d75ed29103df636ddbd93f2c2f350104d82bba58c5e8ecf94660ca"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
