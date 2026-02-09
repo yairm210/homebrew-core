@@ -22,7 +22,10 @@ class Cubelib < Formula
   end
 
   depends_on "pkgconf" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
