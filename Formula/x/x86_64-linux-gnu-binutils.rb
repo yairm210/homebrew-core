@@ -26,13 +26,14 @@ class X8664LinuxGnuBinutils < Formula
   depends_on "zstd"
 
   uses_from_macos "llvm" => :test
-  uses_from_macos "zlib"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
 
   on_linux do
+    depends_on "zlib-ng-compat"
+
     on_intel do
       keg_only "it conflicts with `binutils`"
     end
