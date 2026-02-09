@@ -1,8 +1,8 @@
 class Cagent < Formula
   desc "Agent Builder and Runtime by Docker Engineering"
   homepage "https://github.com/docker/cagent"
-  url "https://github.com/docker/cagent/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "12fdec39e613dcb4865df439ad0ec57c0f0441f1493f1a5f0c4d310a2b7086de"
+  url "https://github.com/docker/cagent/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "cffcee722e69ecb8111fda9e6f8e6d46da09299a57b74f11982780a5ecd27e90"
   license "Apache-2.0"
   head "https://github.com/docker/cagent.git", branch: "main"
 
@@ -40,6 +40,7 @@ class Cagent < Formula
     YAML
 
     assert_match("cagent version v#{version}", shell_output("#{bin}/cagent version"))
-    assert_match(/must be set.*OPENAI_API_KEY/m, shell_output("#{bin}/cagent exec --dry-run agent.yaml 2>&1", 1))
+    output = shell_output("#{bin}/cagent exec --dry-run agent.yaml hello 2>&1", 1)
+    assert_match(/must be set.*OPENAI_API_KEY/m, output)
   end
 end
