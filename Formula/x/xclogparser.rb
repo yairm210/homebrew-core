@@ -17,10 +17,11 @@ class Xclogparser < Formula
   depends_on xcode: "13.0"
 
   uses_from_macos "swift"
-  uses_from_macos "zlib"
 
-  # patch to use linuxbrew zlib, upstream pr ref, https://github.com/1024jp/GzipSwift/pull/71
   on_linux do
+    depends_on "zlib-ng-compat"
+
+    # patch to use linuxbrew zlib, upstream pr ref, https://github.com/1024jp/GzipSwift/pull/71
     patch :DATA
   end
 
