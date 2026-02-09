@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://github.com/goretk/redress/archive/refs/tags/v1.2.53.tar.gz"
-  sha256 "ca394ea1753dcf956bcbbb245d47b0d8a1cebaeb451ce87da6e727d132f65f26"
+  url "https://github.com/goretk/redress/archive/refs/tags/v1.2.54.tar.gz"
+  sha256 "b86547b5bd050d039eb112202e3ac47005d26b4f59eb299233d24aade1950c4b"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
