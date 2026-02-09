@@ -2,6 +2,7 @@ class Pmix < Formula
   desc "Process Management Interface for HPC environments"
   homepage "https://openpmix.github.io/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://github.com/openpmix/openpmix/releases/download/v5.0.10/pmix-5.0.10.tar.bz2"
@@ -40,7 +41,10 @@ class Pmix < Formula
   depends_on "libevent"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Avoid references to the Homebrew shims directory
