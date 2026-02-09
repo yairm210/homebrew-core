@@ -1,10 +1,10 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https://risor.io/"
-  url "https://github.com/risor-io/risor/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "3253a3e6e6f2916f0fe5f415e170c84e7bfede59e66d45d036d1018c259cba91"
+  url "https://github.com/deepnoodle-ai/risor/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "231b2570f78865cc89f9962d7704353511bef3bfd3c9e70096a56a244b4ba5bf"
   license "Apache-2.0"
-  head "https://github.com/risor-io/risor.git", branch: "main"
+  head "https://github.com/deepnoodle-ai/risor.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,16 +28,18 @@ class Risor < Formula
       ldflags = "-s -w -X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"
       tags = "aws,k8s,vault"
       system "go", "build", *std_go_args(ldflags:, tags:)
-      generate_completions_from_executable(bin/"risor", shell_parameter_format: :cobra)
+      generate_completions_from_executable(bin/"risor", shell_parameter_format: :cobra,
+                                                        shells:                 [:bash, :zsh, :fish])
     end
   end
 
   test do
-    output = shell_output("#{bin}/risor -c \"time.now()\"")
-    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/, output)
+    output = shell_output("#{bin}/risor -c \"len([1, 2, 3])\"")
+    assert_equal "3\n", output
     assert_match version.to_s, shell_output("#{bin}/risor version")
-    assert_match "module(aws)", shell_output("#{bin}/risor -c aws")
-    assert_match "module(k8s)", shell_output("#{bin}/risor -c k8s")
-    assert_match "module(vault)", shell_output("#{bin}/risor -c vault")
+
+    assert_match "_risor_completion", shell_output("#{bin}/risor completion bash")
+    assert_match "unsupported shell: powershell",
+                 shell_output("#{bin}/risor completion powershell 2>&1", 1)
   end
 end
