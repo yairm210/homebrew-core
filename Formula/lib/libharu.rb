@@ -4,6 +4,7 @@ class Libharu < Formula
   url "https://github.com/libharu/libharu/archive/refs/tags/v2.4.5.tar.gz"
   sha256 "0ed3eacf3ceee18e40b6adffbc433f1afbe3c93500291cd95f1477bffe6f24fc"
   license "Zlib"
+  revision 1
   head "https://github.com/libharu/libharu.git", branch: "master"
 
   bottle do
@@ -19,7 +20,10 @@ class Libharu < Formula
 
   depends_on "cmake" => :build
   depends_on "libpng"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Build shared library
@@ -54,7 +58,7 @@ class Libharu < Formula
         return result;
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-lz", "-lm", "-o", "test"
+    system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-o", "test"
     system "./test"
   end
 end
