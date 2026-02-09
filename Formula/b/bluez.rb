@@ -11,8 +11,8 @@ class Bluez < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "3cbc716a9ba391cc0b6fae51ca287c3d271bcf3678a5565b3275c52db0c1cd09"
-    sha256 x86_64_linux: "167d70648e27acdec6714f30f7f2cff380ffd2edf150c15a4c8a7d2a14b96345"
+    sha256 arm64_linux:  "75d23317eadf590b4b45a76966106adae232125433566c95775615e9b7b5d785"
+    sha256 x86_64_linux: "5d7e0351068a6edd6921f781e6825778085eaf3fec9d55f841741b679ba0df4c"
   end
 
   head do
