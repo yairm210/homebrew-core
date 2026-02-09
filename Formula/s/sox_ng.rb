@@ -1,8 +1,8 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.6/sox_ng-14.7.0.6.tar.gz"
-  sha256 "24bf3eef707b161da4bad200af8df3eb14e1847f11747d88f70b23aec770ec0f"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.7/sox_ng-14.7.0.7.tar.gz"
+  sha256 "c494658ef29ebe84eddf525fcdcfe7ba67fca3ee778402cf46f1ec1178086b61"
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
@@ -31,14 +31,13 @@ class SoxNg < Formula
   depends_on "opusfile"
   depends_on "wavpack"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "opus"
   end
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "sox", because: "both install `play`, `rec`, `sox`, `soxi` binaries"
