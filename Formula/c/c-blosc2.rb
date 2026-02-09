@@ -19,10 +19,12 @@ class CBlosc2 < Formula
   depends_on "lz4"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
