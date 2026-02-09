@@ -1,8 +1,8 @@
 class Termshot < Formula
   desc "Creates screenshots based on terminal command output"
   homepage "https://github.com/homeport/termshot"
-  url "https://github.com/homeport/termshot/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "61acbacbed1d761965a46f379dbaf81c459e4c310d5b85972737b891b0a5aa09"
+  url "https://github.com/homeport/termshot/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "40abea3c9ae604f3c2cdc7e2a623bf6063c6b1c504a70c5e3a1b8457dbdd2fbc"
   license "MIT"
 
   bottle do
