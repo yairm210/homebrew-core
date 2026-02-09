@@ -8,8 +8,7 @@ class Specify < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "811c85475f6b2a1f3f0ed9f7f12a546930744faaad28af69028f46f0a57a4863"
+    sha256 cellar: :any_skip_relocation, all: "237f51979afcf265a9ff17f234d4cd1cc7138d8dacd3b73c98e9bb9eddfe8301"
   end
 
   depends_on "certifi" => :no_linkage
