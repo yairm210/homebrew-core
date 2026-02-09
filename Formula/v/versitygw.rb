@@ -1,8 +1,8 @@
 class Versitygw < Formula
   desc "Versity S3 Gateway"
   homepage "https://www.versity.com/products/versitygw/"
-  url "https://github.com/versity/versitygw/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "4a52ea2f297a8cbed98cdc8b2d2409a8b400996e091d639c384cbcb35afdc77c"
+  url "https://github.com/versity/versitygw/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "f950add37c4f6cb3004fdc2b1986a58a44e352277032a7725e9b7c89dcc6a4bb"
   license "Apache-2.0"
   head "https://github.com/versity/versitygw.git", branch: "main"
 
@@ -29,6 +29,6 @@ class Versitygw < Formula
     assert_equal true, JSON.parse((testpath/"event_config.json").read)["s3:ObjectAcl:Put"]
 
     output = shell_output("#{bin}/versitygw admin list-buckets 2>&1", 1)
-    assert_match "Required flags \"access, secret, endpoint-url\"", output
+    assert_match "Required flag \"endpoint-url\"", output
   end
 end
