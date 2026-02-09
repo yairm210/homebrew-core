@@ -6,7 +6,7 @@ class E2b < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "513296faceb93c43ef7bd0a9e5ac7e8b04309506b0d376387c8d37a9e644135f"
+    sha256 cellar: :any_skip_relocation, all: "6623ef8b2917d9068a431068890d4a115d2d3b04389f9cd66a22ec6fa3f6a785"
   end
 
   depends_on "node"
