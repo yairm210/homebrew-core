@@ -1,12 +1,10 @@
 class Mbpoll < Formula
   desc "Command-line utility to communicate with ModBus slave (RTU or TCP)"
   homepage "https://epsilonrt.fr"
-  url "https://github.com/epsilonrt/mbpoll/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "7d960cd4459b5f7c2412abc51aba93a20b6114fd75d1de412b1e540cfb63bfec"
+  url "https://github.com/epsilonrt/mbpoll/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "a9bcc3afa3b85b3794505d07827873ead280d96a94769d236892eb8a4fb9956f"
   license "GPL-3.0-only"
   head "https://github.com/epsilonrt/mbpoll.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e9a8e9a61b04c4c4b18a0af7c86006612b40949b381fba4cd0342cb0cf073245"
@@ -23,11 +21,10 @@ class Mbpoll < Formula
   depends_on "pkgconf" => :build
   depends_on "libmodbus"
 
-  # Workaround for CMake 4 compatibility
-  # PR ref: https://github.com/epsilonrt/mbpoll/pull/95
+  # fix missing INT_MAX/INT_MIN definitions, upstream pr ref: https://github.com/epsilonrt/mbpoll/pull/105
   patch do
-    url "https://github.com/epsilonrt/mbpoll/commit/baad0efca89f0d8fe370591283d87a6e8e7dee4c.patch?full_index=1"
-    sha256 "75cb9265a30218159d11e6dbda81aa17484d96721f71e22072639d490a7f95d2"
+    url "https://github.com/epsilonrt/mbpoll/commit/8a8bd34d803ef8f4daa5aad13eabbe838e2f3fad.patch?full_index=1"
+    sha256 "9c663ed9c66e6c62423957a2f19f0916d3ff577433f06f088b721db62c6c080b"
   end
 
   def install
