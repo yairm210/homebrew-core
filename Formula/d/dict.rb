@@ -21,7 +21,10 @@ class Dict < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround for Xcode 14.3
@@ -29,9 +32,9 @@ class Dict < Formula
 
     ENV["ac_cv_search_yywrap"] = "yes"
     ENV["LIBTOOL"] = "glibtool"
-    system "./configure", *std_configure_args,
+    system "./configure", "--mandir=#{man}",
                           "--sysconfdir=#{etc}",
-                          "--mandir=#{man}"
+                          *std_configure_args
     system "make"
     system "make", "install"
     (prefix/"etc/dict.conf").write <<~EOS
