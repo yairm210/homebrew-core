@@ -31,8 +31,6 @@ class ClawsMail < Formula
   depends_on "nettle"
   depends_on "pango"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "at-spi2-core"
     depends_on "gettext"
@@ -42,6 +40,7 @@ class ClawsMail < Formula
   on_linux do
     depends_on "libice"
     depends_on "libsm"
+    depends_on "zlib-ng-compat"
   end
 
   def install
