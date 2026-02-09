@@ -5,7 +5,7 @@ class Cpprestsdk < Formula
   url "https://github.com/microsoft/cpprestsdk/archive/refs/tags/v2.10.19.tar.gz"
   sha256 "4b0d14e5bfe77ce419affd253366e861968ae6ef2c35ae293727c1415bd145c8"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/microsoft/cpprestsdk.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
@@ -26,8 +26,6 @@ class Cpprestsdk < Formula
   depends_on "boost"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   # Apply FreeBSD patches for libc++ >= 19 needed in Xcode 16.3
   # https://github.com/microsoft/cpprestsdk/pull/1829
   on_sequoia :or_newer do
@@ -47,6 +45,10 @@ class Cpprestsdk < Formula
       url "https://github.com/microsoft/cpprestsdk/commit/32b322b564e5e540ff02393ffe3bd3bade8d299c.patch?full_index=1"
       sha256 "737567e533405f7f6ef0a83bafef7fdeea95c96947f66be0973e5f362e1b82f5"
     end
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Apply vcpkg patch to support Boost 1.87.0+
