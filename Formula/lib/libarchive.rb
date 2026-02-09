@@ -12,12 +12,12 @@ class Libarchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "64462599d1d89aa6eb98797ca80c39bc491c1d3c7cafd4e1d76e8cca9d964100"
-    sha256 cellar: :any,                 arm64_sequoia: "e66ef5adf6e4a18e85b539843551353b53fb0c4889bc47797d721e6b36be50dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad74cac45f900f21ca0a0449d5bcf2e8d5fe28ce7c11c126d386f372e2bb81d1"
-    sha256 cellar: :any,                 sonoma:        "4ea4029b386797ed0db92d5036f6b7dff9b39db852fcd1d690a144d9fbb5eb22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9734647635e4b46166ed614de642a34838ce5d647e7a97bbc9345c3c972bac10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5af0d3d3888ac0e912536969d456ab385c9fd914e6d56afda04db79ffddbd3"
+    sha256 cellar: :any,                 arm64_tahoe:   "c9c26bdbfd989e14ed9645fafec72ccb5c845a443c9c73d57f47301f7a21bd46"
+    sha256 cellar: :any,                 arm64_sequoia: "9845f54ebf8b829bfd12710755157065f94d5cdf2ffca43390e709925e40c582"
+    sha256 cellar: :any,                 arm64_sonoma:  "b8e283c5e59aad4c2cbd7d46187c8229e3d5fa1d61b43096f1f5730c6b04127e"
+    sha256 cellar: :any,                 sonoma:        "0f2e24f6e29c8ad74326778eea1070fe4c5a5c0c285117a3e8f6a4b5707e5d76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "533902d9205b221993cf665772eae44e2a33424d2f0a2ff13b17769fc922a202"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61c83e124381f5e889f5a1ca8bbb6cf73fbfd82b81628f2bf8bd39849f7fadac"
   end
 
   keg_only :provided_by_macos
