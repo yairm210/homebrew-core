@@ -4,8 +4,7 @@ class Libxfont2 < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libXfont2-2.0.7.tar.gz"
   sha256 "90b331c2fd2d0420767c4652e007d054c97a3f03a88c55e3b986bd3acfd7e338"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "f84c9f3936c3d9dd694e0dee4ba95df511a20845cacd570774700c9d0cc5eea6"
@@ -29,7 +28,10 @@ class Libxfont2 < Formula
   depends_on "libfontenc"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     configure_args = %w[
@@ -62,6 +64,5 @@ class Libxfont2 < Formula
       "-I#{include}", "-I#{Formula["xorgproto"].include}",
       "-L#{lib}", "-lXfont2"
     system "./test"
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
