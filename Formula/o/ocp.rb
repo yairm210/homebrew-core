@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.1.2.tar.xz"
-  sha256 "6bfa006bb0177c38fc000fce7e370961b0a7211d359a91c490cbb858afa992d9"
+  url "https://stian.cubic.org/ocp/ocp-3.1.3.tar.xz"
+  sha256 "4e8579b18d47ba2f4c667f577aa3286f6f8c4ea0b6192ff743f0f21678e60afd"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -37,7 +37,6 @@ class Ocp < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libogg"
@@ -46,6 +45,7 @@ class Ocp < Formula
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   # Fix qoaplay.c:226:5: error: expected expression
