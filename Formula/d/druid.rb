@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://dlcdn.apache.org/druid/35.0.1/apache-druid-35.0.1-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/35.0.1/apache-druid-35.0.1-bin.tar.gz"
-  sha256 "2df51edc0d97d4f0019088131d62e6409f37eac1dd7178b461ff13fb5e5448cc"
+  url "https://dlcdn.apache.org/druid/36.0.0/apache-druid-36.0.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/36.0.0/apache-druid-36.0.0-bin.tar.gz"
+  sha256 "e4a61b1ada6aedba77b12a9819a03e452e167d9605fd71c12af8a59074b9b490"
   license "Apache-2.0"
 
   livecheck do
@@ -20,6 +20,7 @@ class Druid < Formula
 
   # check https://github.com/apache/druid/blob/master/docs/development/extensions-core/mysql.md#install-mysql-connectorj
   # for mysql-connector-java version compatibility
+  # upstream report on updating mysql-connector-java, https://github.com/apache/druid/issues/18999
   resource "mysql-connector-java" do
     url "https://search.maven.org/remotecontent?filepath=com/mysql/mysql-connector-j/8.2.0/mysql-connector-j-8.2.0.jar"
     sha256 "06f14fbd664d0e382347489e66495ca27ab7e6c2e1d9969a496931736197465f"
