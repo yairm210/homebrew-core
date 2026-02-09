@@ -9,8 +9,8 @@ class Libpciaccess < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_linux:  "a8fb19ee3879959b844dd4ba0d79850dbaf58d99863aaafc74ce099165ff49fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3433b90a4f960f70e9203327f632387b5ada5017be2500ab8098f9142406a075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8dbbb641d72ca3d52c3e888e98ce1b4ebca20f5eca28a171b5ddc00b7a52bbf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a553839647c06387234321eb625545c4b1b3f757a9db3621127fff968a187a28"
   end
 
   depends_on "meson" => :build
