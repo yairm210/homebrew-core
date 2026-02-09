@@ -7,9 +7,8 @@ class LmSensors < Formula
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 arm64_linux:  "43d3fcb049210f0b67b6341f5e65645c69ddbfa3ecc8bf5926d612990f3fac35"
-    sha256 x86_64_linux: "9edce5d98c2e1541cba56961443f4bdb01ea6ab8b7bfd8aa4515c7eec9d17541"
+    sha256 arm64_linux:  "05d1a0969a84d7ed3f9b95effe63bc9378452f2a1a1e367b8c8ef1efde275af9"
+    sha256 x86_64_linux: "24aa125e2b8fe32e1600b64c0c5d8a32a575db9ef4dea9e17d31c6a02a48087f"
   end
 
   depends_on "bison" => :build
