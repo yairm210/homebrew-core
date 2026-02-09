@@ -19,7 +19,10 @@ class Darkstat < Formula
   depends_on "automake" => :build
 
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Patch reported to upstream on 2017-10-08
   # Work around `redefinition of clockid_t` issue on 10.12 SDK or newer
