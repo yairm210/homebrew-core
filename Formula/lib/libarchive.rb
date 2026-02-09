@@ -4,6 +4,7 @@ class Libarchive < Formula
   url "https://www.libarchive.org/downloads/libarchive-3.8.5.tar.xz"
   sha256 "d68068e74beee3a0ec0dd04aee9037d5757fcc651591a6dcf1b6d542fb15a703"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -28,16 +29,20 @@ class Libarchive < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
-    system "./configure", *std_configure_args,
-           "--without-lzo2",    # Use lzop binary instead of lzo2 due to GPL
-           "--without-nettle",  # xar hashing option but GPLv3
-           "--without-xml2",    # xar hashing option but tricky dependencies
-           "--without-openssl", # mtree hashing now possible without OpenSSL
-           "--with-expat"       # best xar hashing option
-
+    args = [
+      "--without-lzo2",    # Use lzop binary instead of lzo2 due to GPL
+      "--without-nettle",  # xar hashing option but GPLv3
+      "--without-xml2",    # xar hashing option but tricky dependencies
+      "--without-openssl", # mtree hashing now possible without OpenSSL
+      "--with-expat",      # best xar hashing option
+    ]
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # Avoid hardcoding Cellar paths in dependents.
