@@ -22,10 +22,12 @@ class X8664ElfBinutils < Formula
   depends_on "pkgconf" => :build
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
