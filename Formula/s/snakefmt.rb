@@ -3,8 +3,8 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/1f/73/01accd8e2ff05ed144c3140e56371e110cc63dc4c44694d9399e0f746eef/snakefmt-0.11.3.tar.gz"
-  sha256 "3efb82f66c0597712126ad540ec15cee24d797e443894fd86ccf6aa907506ec0"
+  url "https://files.pythonhosted.org/packages/24/32/90037b0f97cce04c4084bfede26292aa806d63226715671800104e65aacb/snakefmt-0.11.4.tar.gz"
+  sha256 "2df25561d56223cf0bfc3b5f503d739c11d488b41becc2a1c89da3845096e3e6"
   license "MIT"
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
@@ -35,8 +35,8 @@ class Snakefmt < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz"
-    sha256 "bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d"
+    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
+    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
   end
 
   resource "platformdirs" do
