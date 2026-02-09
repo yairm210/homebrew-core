@@ -2,9 +2,10 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-    tag:      "v1.78.0",
-    revision: "5e6ba94242b92e363220bc2163d55ce3554d4ecc"
+      tag:      "v1.78.0",
+      revision: "5e6ba94242b92e363220bc2163d55ce3554d4ecc"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -28,10 +29,7 @@ class Grpc < Formula
     sha256               x86_64_linux:  "df8246096895136065e7cf3386f12d59edd2ae79d71ec9507c2ea4e26cbd6ac9"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :test
   depends_on "abseil"
   depends_on "c-ares"
@@ -39,10 +37,12 @@ class Grpc < Formula
   depends_on "protobuf"
   depends_on "re2"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -65,9 +65,6 @@ class Grpc < Formula
       -DgRPC_ZLIB_PROVIDER=package
       -DgRPC_RE2_PROVIDER=package
     ]
-    linker_flags = []
-    linker_flags += %w[-undefined dynamic_lookup] if OS.mac?
-    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if linker_flags.present?
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
@@ -78,7 +75,7 @@ class Grpc < Formula
 
     # The following are installed manually, so need to use CMAKE_*_LINKER_FLAGS
     # TODO: `grpc_cli` is a huge pain to install. Consider removing it.
-    linker_flags += %W[-rpath #{rpath} -rpath #{rpath(target: HOMEBREW_PREFIX/"lib")}]
+    linker_flags = %W[-rpath #{rpath}]
     args = %W[
       -DCMAKE_EXE_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
       -DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
@@ -106,7 +103,9 @@ class Grpc < Formula
         return GRPC_STATUS_OK;
       }
     CPP
+
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].opt_lib/"pkgconfig" if OS.linux?
     flags = shell_output("pkgconf --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *flags, "-o", "test"
     system "./test"
