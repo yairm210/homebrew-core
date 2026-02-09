@@ -24,6 +24,8 @@ class Run < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "run-kit", because: "both install a `run` binary"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
