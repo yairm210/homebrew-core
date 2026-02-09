@@ -22,7 +22,9 @@ class C10t < Formula
   depends_on "freetype"
   depends_on "libpng"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Needed to compile against newer boost
   # Can be removed for the next version of c10t after 1.7
@@ -51,13 +53,7 @@ class C10t < Formula
 
   def install
     args = ["-DCMAKE_CXX_STANDARD=11", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"]
-    unless OS.mac?
-      args += %W[
-        -DCMAKE_LINK_WHAT_YOU_USE=ON
-        -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so.1
-        -DZLIB_INCLUDE_DIR=#{Formula["zlib"].include}
-      ]
-    end
+    args << "-DCMAKE_LINK_WHAT_YOU_USE=ON" unless OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
