@@ -54,8 +54,6 @@ class Xsane < Formula
   depends_on "libtiff"
   depends_on "sane-backends"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
@@ -67,6 +65,7 @@ class Xsane < Formula
 
   on_linux do
     depends_on "xorg-server" => :test
+    depends_on "zlib-ng-compat"
   end
 
   def install
