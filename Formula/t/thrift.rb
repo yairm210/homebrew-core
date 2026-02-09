@@ -2,6 +2,7 @@ class Thrift < Formula
   desc "Framework for scalable cross-language services development"
   homepage "https://thrift.apache.org/"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=thrift/0.22.0/thrift-0.22.0.tar.gz"
@@ -38,7 +39,10 @@ class Thrift < Formula
   depends_on "bison" => :build
   depends_on "boost" => [:build, :test]
   depends_on "openssl@3"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./bootstrap.sh" unless build.stable?
