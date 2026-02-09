@@ -1,8 +1,8 @@
 class Brogue < Formula
   desc "Roguelike game"
   homepage "https://sites.google.com/site/broguegame/"
-  url "https://github.com/tmewett/BrogueCE/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "0fe39782c029068b4d3f9f21cc13974ced56fdd9b192e6ca972f8e13cf726f20"
+  url "https://github.com/tmewett/BrogueCE/archive/refs/tags/v1.15.tar.gz"
+  sha256 "62730610a75c5108ac26ec895daa5d1611ff1127b972ee97c17fdd80ececca03"
   license "AGPL-3.0-or-later"
   head "https://github.com/tmewett/BrogueCE.git", branch: "master"
 
