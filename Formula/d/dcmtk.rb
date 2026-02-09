@@ -30,7 +30,10 @@ class Dcmtk < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = std_cmake_args + ["-DDCMTK_WITH_ICU=OFF"]
