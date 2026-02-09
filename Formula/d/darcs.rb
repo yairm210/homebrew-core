@@ -21,7 +21,10 @@ class Darcs < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport fixes for newer GHC[^1] and Cabal[^2]. Darcs uses a different
   # patch file format and cannot be applied with the external patch DSL.
