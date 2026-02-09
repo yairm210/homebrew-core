@@ -39,10 +39,12 @@ class Cataclysm < Formula
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
