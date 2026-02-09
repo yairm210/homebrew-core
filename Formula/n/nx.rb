@@ -1,8 +1,8 @@
 class Nx < Formula
   desc "Smart, Fast and Extensible Build System"
   homepage "https://nx.dev"
-  url "https://registry.npmjs.org/nx/-/nx-22.4.5.tgz"
-  sha256 "bde6a6e2031ae7fc8ab802cd3ac2d378791ddee9e50b62c4ba88783832460634"
+  url "https://registry.npmjs.org/nx/-/nx-22.5.0.tgz"
+  sha256 "eab9e95a35e20260a7216ab1884e1f154d4dcefb4a5cceb636e2a641a31574b9"
   license "MIT"
   version_scheme 1
 
@@ -36,7 +36,7 @@ class Nx < Formula
     system bin/"nx", "init", "--no-interactive"
     assert_path_exists testpath/"nx.json"
 
-    output = shell_output("#{bin}/nx 'test'")
-    assert_match "Successfully ran target test", output
+    output = shell_output("#{bin}/nx test").gsub(/\e\[[0-9;]*m/, "")
+    assert_match "Successfully ran target test for project @acme/repo", output
   end
 end
