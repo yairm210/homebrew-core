@@ -1,8 +1,8 @@
 class Tweakcc < Formula
   desc "Customize your Claude Code themes, thinking verbs, and more"
   homepage "https://github.com/Piebald-AI/tweakcc"
-  url "https://registry.npmjs.org/tweakcc/-/tweakcc-3.4.0.tgz"
-  sha256 "2da6ee2d9b0ee5c2c61ac11b830e8afb353952e4aa4f9e110922d7e83775d1fc"
+  url "https://registry.npmjs.org/tweakcc/-/tweakcc-4.0.0.tgz"
+  sha256 "0ce68d4dd3ba0c1c57ec82739cec781e8467f7b7b6537749afcdfdfbe95ce89b"
   license "MIT"
 
   bottle do
@@ -31,9 +31,6 @@ class Tweakcc < Formula
       rm_r d if d.basename.to_s != "#{os}-#{arch}"
     end
     rm prebuilds/"#{os}-#{arch}/node-lief.musl.node" if OS.linux?
-
-    # Replace universal binaries with their native slices
-    deuniversalize_machos node_modules/"app-path/main" if OS.mac?
   end
 
   test do
