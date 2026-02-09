@@ -13,12 +13,12 @@ class Libpng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6dc9b4e6276feaec173ab5c176886d761fe1f463d6d04137d899ab17fbf8b137"
-    sha256 cellar: :any,                 arm64_sequoia: "65efb33851b617baeae73a2432f356e4ca7aabb1a3fd41d2b246de962b234562"
-    sha256 cellar: :any,                 arm64_sonoma:  "54cc968d700adfcdd439f681c6432bddb696270ce251d3dd37fb7de755582892"
-    sha256 cellar: :any,                 sonoma:        "26d76792552523faf584cdcfd592b11ec86f075f62d83b2786c1c60e1dffc0a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dd66d5c4b3b060f9c0a3971a827247a8813cd82514c5da27f12211d4ef8ed27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06b9ba6739b64a9f294a212acf79952b38fc79caaec6d3117654722a70c7a7cb"
+    sha256 cellar: :any,                 arm64_tahoe:   "1a23f0376db294bbb09ee8e23055df533985eeb1621ffff4d5921f67ee97cdc4"
+    sha256 cellar: :any,                 arm64_sequoia: "f56418c7875657e8c021016714cb7b39a772e01abb694d062575761e8bfacf5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "236778ecc6aac0dd9123d824d7a31365584526f5399bfa80851e7226b8a53703"
+    sha256 cellar: :any,                 sonoma:        "7e1572adedc0b34891928e4307866bfbde23329b6e5a538328e8504c48e85005"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09e711ff10ab9ad9b3d306eaf2ec8334959042186a7bea73a866f143478724dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2049e956d8e5e3695b9345c1080c68041996422bc379d2f5a45a3da97cf3f6"
   end
 
   head do
