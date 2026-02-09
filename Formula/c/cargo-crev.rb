@@ -25,7 +25,9 @@ class CargoCrev < Formula
   depends_on "rustup" => :test
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
