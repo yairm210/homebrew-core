@@ -1,8 +1,8 @@
 class Havener < Formula
   desc "Swiss army knife for Kubernetes tasks"
   homepage "https://github.com/homeport/havener"
-  url "https://github.com/homeport/havener/archive/refs/tags/v2.2.6.tar.gz"
-  sha256 "f5fe8bc809694bd8c757c3ddaac91cdcc20eb9efc988dd736838b0a8bbfdf7e8"
+  url "https://github.com/homeport/havener/archive/refs/tags/v2.2.7.tar.gz"
+  sha256 "f923cd42bb4ded5535aa089037bc285110b2bc335ae108553e50ac8bddeafff0"
   license "MIT"
   head "https://github.com/homeport/havener.git", branch: "main"
 
