@@ -23,12 +23,11 @@ class Ccextractor < Formula
   depends_on "protobuf-c"
   depends_on "utf8proc"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "llvm" => :build
     depends_on "leptonica"
     depends_on "tesseract"
+    depends_on "zlib-ng-compat"
   end
 
   def install
