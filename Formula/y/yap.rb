@@ -1,8 +1,8 @@
 class Yap < Formula
   desc "On-device audio transcription using Speech.framework"
   homepage "https://github.com/finnvoor/yap"
-  url "https://github.com/finnvoor/yap/archive/refs/tags/1.0.6.tar.gz"
-  sha256 "5ab9c0cc7621e777afe210733bc12ec07e591e0c9d8825a4def0d5c98a64774a"
+  url "https://github.com/finnvoor/yap/archive/refs/tags/1.1.0.tar.gz"
+  sha256 "d4a3f0574779eb518e6de28f61fe5fef5aec4402bbc93119477619b18955114a"
   license "CC0-1.0"
   head "https://github.com/finnvoor/yap.git", branch: "main"
 
