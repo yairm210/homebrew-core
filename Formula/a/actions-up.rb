@@ -5,6 +5,10 @@ class ActionsUp < Formula
   sha256 "7d6384b3f68056847991a1615e575b1b090023f77b3ece8b2d6e1d1b107ecc49"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "7d630d118286f9d250866b5f183c2fe113c9fc19abe06dd19085e5b7a340d05d"
+  end
+
   depends_on "node"
 
   def install
