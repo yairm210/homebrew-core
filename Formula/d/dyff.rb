@@ -1,8 +1,8 @@
 class Dyff < Formula
   desc "Diff tool for YAML files, and sometimes JSON"
   homepage "https://github.com/homeport/dyff"
-  url "https://github.com/homeport/dyff/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "07ab1b365f876f92121ef5aa010de26f13a5bf495d29ee886d8781051dce3ea9"
+  url "https://github.com/homeport/dyff/archive/refs/tags/v1.10.4.tar.gz"
+  sha256 "eb0df6175ff66cc3494c856c2d70b980811bf3202b71be444209951458427ebf"
   license "MIT"
   head "https://github.com/homeport/dyff.git", branch: "main"
 
