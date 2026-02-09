@@ -1,8 +1,8 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
-  url "https://github.com/groonga/groonga/releases/download/v15.2.5/groonga-15.2.5.tar.gz"
-  sha256 "bfacfc5d867dc43ad48bef49e5302dd7db2109d67cc22995dc8c5ebc5c3ddd5b"
+  url "https://github.com/groonga/groonga/releases/download/v16.0.0/groonga-16.0.0.tar.gz"
+  sha256 "e8cec40d59c848617912d988c69ca67445c19fd2d8fcb5b6080eded2df89d545"
   license "LGPL-2.1-or-later"
   head "https://github.com/groonga/groonga.git", branch: "main"
 
@@ -31,7 +31,10 @@ class Groonga < Formula
   depends_on "zstd"
 
   uses_from_macos "libedit"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   link_overwrite "lib/groonga/plugins/normalizers/"
   link_overwrite "share/doc/groonga-normalizer-mysql/"
