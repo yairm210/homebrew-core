@@ -21,7 +21,9 @@ class Nuraft < Formula
   depends_on "asio"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # We override OPENSSL_LIBRARY_PATH to avoid statically linking to OpenSSL
