@@ -1,8 +1,8 @@
 class Osslsigncode < Formula
   desc "OpenSSL based Authenticode signing for PE/MSI/Java CAB files"
   homepage "https://github.com/mtrojnar/osslsigncode"
-  url "https://github.com/mtrojnar/osslsigncode/archive/refs/tags/2.12.tar.gz"
-  sha256 "6c0a2ac937d4c5a49afcba107a8d97622aa84b6ac1508df913fe6e3d4831d82e"
+  url "https://github.com/mtrojnar/osslsigncode/archive/refs/tags/2.13.tar.gz"
+  sha256 "ee95638b8bec0c019ddf28cb14988645abbd180dcd017536338b7d0d5eaaea96"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -19,7 +19,10 @@ class Osslsigncode < Formula
 
   uses_from_macos "curl"
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix permission issue when installing bash completionn
   patch :DATA
