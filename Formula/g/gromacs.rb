@@ -27,10 +27,12 @@ class Gromacs < Formula
   depends_on "muparser"
   depends_on "openblas"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
