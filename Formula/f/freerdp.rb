@@ -40,7 +40,6 @@ class Freerdp < Formula
   depends_on "sdl3_ttf"
 
   uses_from_macos "cups"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
@@ -50,6 +49,7 @@ class Freerdp < Formula
     depends_on "libfuse"
     depends_on "systemd"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def install
