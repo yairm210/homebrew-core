@@ -28,7 +28,10 @@ class Nginx < Formula
 
   uses_from_macos "xz" => :build
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
