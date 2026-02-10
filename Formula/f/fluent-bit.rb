@@ -28,7 +28,10 @@ class FluentBit < Formula
   depends_on "libyaml"
   depends_on "luajit"
   depends_on "openssl@3"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Prevent fluent-bit to install files into global init system
