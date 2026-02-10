@@ -25,7 +25,9 @@ class Julius < Formula
 
   depends_on "libsndfile"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "cmuclmtk", because: "both install `binlm2arpa` binaries"
 
