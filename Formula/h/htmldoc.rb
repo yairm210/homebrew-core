@@ -20,10 +20,10 @@ class Htmldoc < Formula
   depends_on "libpng"
 
   uses_from_macos "cups"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "gnutls"
+    depends_on "zlib-ng-compat"
   end
 
   def install
