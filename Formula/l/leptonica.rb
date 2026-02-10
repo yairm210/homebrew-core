@@ -27,7 +27,9 @@ class Leptonica < Formula
   depends_on "openjpeg"
   depends_on "webp"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--with-libwebp", "--with-libopenjpeg", *std_configure_args
