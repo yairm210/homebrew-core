@@ -40,7 +40,9 @@ class Mapnik < Formula
   depends_on "sqlite"
   depends_on "webp"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "svg2png", because: "both install `svg2png` binaries"
 
