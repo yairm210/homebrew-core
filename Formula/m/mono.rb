@@ -31,7 +31,6 @@ class Mono < Formula
 
   uses_from_macos "unzip" => :build
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     if DevelopmentTools.clang_build_version >= 1600
@@ -49,6 +48,7 @@ class Mono < Formula
 
   on_linux do
     depends_on "ca-certificates"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "xsd", because: "both install `xsd` binaries"
