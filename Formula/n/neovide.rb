@@ -41,7 +41,7 @@ class Neovide < Formula
     depends_on "libxcursor"
     depends_on "libxkbcommon" # dynamically loaded by xkbcommon-dl
     depends_on "mesa" # dynamically loaded by glutin
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc do
