@@ -33,10 +33,13 @@ class Nghttp2 < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
