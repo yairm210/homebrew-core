@@ -30,7 +30,9 @@ class Gpsbabel < Formula
   depends_on "qtbase"
   depends_on "shapelib"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.cxx11
