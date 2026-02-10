@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://github.com/denoland/deno/releases/download/v2.6.8/deno_src.tar.gz"
-  sha256 "61fab2832c0fd946ba40196df267d0f10cb5fc7ac375ca50d95cd463ecb775b2"
+  url "https://github.com/denoland/deno/releases/download/v2.6.9/deno_src.tar.gz"
+  sha256 "1c856233c2b845848b5d85f66404b6b6fa9a5e04c8cf8b13025f3ce76c5100a4"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
