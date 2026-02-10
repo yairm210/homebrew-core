@@ -28,7 +28,10 @@ class Ntbtls < Formula
   depends_on "libgcrypt"
   depends_on "libgpg-error"
   depends_on "libksba"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}",
