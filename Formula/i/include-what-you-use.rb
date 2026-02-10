@@ -29,7 +29,10 @@ class IncludeWhatYouUse < Formula
   depends_on "cmake" => :build
   depends_on "llvm"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
