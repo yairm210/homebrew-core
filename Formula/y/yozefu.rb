@@ -7,12 +7,12 @@ class Yozefu < Formula
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "35f3ea379653f624b52501faa94b9ae05e6cb287ddba55feefdc5bbc7ea861ce"
-    sha256 cellar: :any,                 arm64_sequoia: "3862b4501f5b4b401405d18eb34c61aaa07995486ff14a49d66d2725c3cbf0f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "c02322ffceb785f43db752f63a9de1d7744d9bc68b7366e8d89b5eb857db6ee0"
-    sha256 cellar: :any,                 sonoma:        "4dc38b3acbd8154c90509dbe102738796f9337fa09cbcabe96d67e04316a8249"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccac69a0c5cf12729ac70546aadf4f9d1fda92b1db55d10dbd43d3eef166596c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9590346a8e4de43c564dfba2a2794095842b38b04630bc16154b4ba39f138609"
+    sha256 cellar: :any,                 arm64_tahoe:   "02ef123acd3b31f1c15e9fdbf30e7f7d6ee15c29d838298d1acd3c2d9e378f0a"
+    sha256 cellar: :any,                 arm64_sequoia: "f856f17b9d0557562a97bfd6e977911006dd1a738bb7a8fa9e5622b72c4998e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fd3e5b6f8e25cab1138fda1e387030550e576c84b3cadad815e818a870a869a"
+    sha256 cellar: :any,                 sonoma:        "aacb945c7a5cadba0e3a5a5b65e5e555a41b2e5308448b7f66feeee17ae17cbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d70e5c21ce022bfc68fbbffefcf6c26c30173017ea82405144429a4c6bc69d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d71e8c02a03cafa6623a968b6109e1321914410f18e4d225185d44643030016d"
   end
 
   depends_on "cmake" => :build
