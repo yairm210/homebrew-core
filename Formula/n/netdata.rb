@@ -39,7 +39,6 @@ class Netdata < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "bison" => :build
@@ -51,6 +50,7 @@ class Netdata < Formula
     depends_on "libmnl"
     depends_on "systemd"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
