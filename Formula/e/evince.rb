@@ -16,6 +16,7 @@ class Evince < Formula
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
+  depends_on "gettext" => :build # for msgfmt
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
@@ -41,14 +42,13 @@ class Evince < Formula
   depends_on "poppler"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
-    depends_on "gettext" => :build # for msgfmt
+    depends_on "zlib-ng-compat"
   end
 
   def install
