@@ -31,6 +31,11 @@ class Esphome < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   pypi_packages exclude_packages: %w[certifi cryptography pillow],
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
@@ -353,8 +358,6 @@ class Esphome < Formula
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
     end
 
     without = if OS.mac?
