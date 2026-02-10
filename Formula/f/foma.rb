@@ -26,10 +26,10 @@ class Foma < Formula
   depends_on "bison" => :build # requires Bison 3.0+
 
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "freeling", because: "freeling ships its own copy of foma"
