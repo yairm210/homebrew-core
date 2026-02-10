@@ -20,7 +20,10 @@ class Hadolint < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "xz"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround for GHC 9.12 until https://github.com/phadej/puresat/pull/7
