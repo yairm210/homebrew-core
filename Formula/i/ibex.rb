@@ -28,11 +28,10 @@ class Ibex < Formula
   depends_on "flex" => :build
   depends_on "pkgconf" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     # https://github.com/ibex-team/ibex-lib/blob/master/interval_lib_wrapper/gaol/3rd/mathlib-2.1.1/CMakeLists.txt
     depends_on arch: :x86_64
+    depends_on "zlib-ng-compat"
   end
 
   # Workaround for Intel macOS processor detection
