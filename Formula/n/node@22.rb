@@ -42,10 +42,13 @@ class NodeAT22 < Formula
   depends_on "zstd"
 
   uses_from_macos "python"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -56,8 +59,6 @@ class NodeAT22 < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.13")
 
