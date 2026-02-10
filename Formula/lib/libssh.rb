@@ -7,14 +7,12 @@ class Libssh < Formula
   head "https://git.libssh.org/projects/libssh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e91e604beda45807e4e95bcc49aa19370e7060d27589e03ef76b4669965bcf79"
-    sha256 cellar: :any,                 arm64_sequoia: "ed8b3a5fc472d34a7dcc545125ad1b46018cb6a285f0493c983ed0057137dc1c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e138277845774eced73507b57d2e88ce083563e5c4422547ca3ee40828f4fbcd"
-    sha256 cellar: :any,                 arm64_ventura: "d964e62f422c90ce3993d41adc3f101196c24e3330c6e03e5c5a06bb42dfbd85"
-    sha256 cellar: :any,                 sonoma:        "ab10e4e2fcd6ce97b7d7c7dfbaea0067fdd104d2a48fca3c879bfcf3cf43a60f"
-    sha256 cellar: :any,                 ventura:       "4fec93f5cc2f344a18f91ec3ac76a9db6243acc3a4188772a9d7c2df579e5e95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a1d91932020c21898b7bd78cf3175e86af36f83bac9bb7ca936a41a7cac0285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea38523d0d8393df13be75c57f251ef7af84777edb9a643d302fedad89d39df"
+    sha256 cellar: :any,                 arm64_tahoe:   "92e32c71ce8d43597bd5305745825e1b53c21bf851092c4072c484020d006f6d"
+    sha256 cellar: :any,                 arm64_sequoia: "36c6234407a28413a0c389a232d272a584be9e0f273c6f05db42d2bb53c94d64"
+    sha256 cellar: :any,                 arm64_sonoma:  "43f63a8689e7972bbf5568e99388ed60fe693c85bad7940137bdf6d60d896108"
+    sha256 cellar: :any,                 sonoma:        "aa04743019e28b780925d68a4c6184adc4a71fae84106d5758bcaa8ac79617be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3ca4ba4e6f214929a60056a2875a24e544bfc0ee7f176004557b262ff3df146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55f4bffc8eae46c1636667035bdaf0b4226c5069c436c509b1b575ea37efe216"
   end
 
   depends_on "cmake" => :build
