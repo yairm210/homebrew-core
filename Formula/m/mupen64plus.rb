@@ -28,11 +28,10 @@ class Mupen64plus < Formula
   depends_on "libpng"
   depends_on "sdl2"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "mesa"
     depends_on "vulkan-loader"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do
