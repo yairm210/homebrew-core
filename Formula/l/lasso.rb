@@ -30,10 +30,13 @@ class Lasso < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   resource "six" do
