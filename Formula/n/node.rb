@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v25.6.0/node-v25.6.0.tar.xz"
-  sha256 "9db6848c802b1981c0faeb71a5b8cc79913f82a747f7f1d50260c6d2f781ef7e"
+  url "https://nodejs.org/dist/v25.6.1/node-v25.6.1.tar.xz"
+  sha256 "cf756781c8b4dc5ee030f87ddf9d51b8d5bf219ad56cbd9855c4a3bdc832c78e"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -63,8 +63,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.8.0.tgz"
-    sha256 "5a219dd7d4e71d7d289ed45097182cedaf93370223b143108f6dcb8eccac1375"
+    url "https://registry.npmjs.org/npm/-/npm-11.9.0.tgz"
+    sha256 "5a172e3228e59d44cb9f44d5e83977178323bba3cc506016cae8e40b92ad418f"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"
@@ -130,12 +130,14 @@ class Node < Formula
 
     # TODO: Try to devendor these libraries.
     # - `--shared-gtest` is only used for building the test suite, which we don't run here.
+    # - `--shared-merve` is not available as dependency in Homebrew.
     # - `--shared-nbytes` is not available as dependency in Homebrew.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
     # - `--shared-lief` is not available as dependency in Homebrew.
     ignored_shared_flags = %w[
       gtest
+      merve
       nbytes
       simdutf
       temporal_capi
