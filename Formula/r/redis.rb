@@ -18,12 +18,12 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "01c7de487d2e4016de95ccd9c4ba250a61453b0ffa847b602023b8ea90847fc0"
-    sha256 cellar: :any,                 arm64_sequoia: "7406bd552b4a6a935ccb1126da9651da2ad8e49a2830c40d071ba6608c5940df"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb6186ddf34a34c2a8afae26048d8e1134d6d0df5e0cae5b6c51eb6154dbcb98"
-    sha256 cellar: :any,                 sonoma:        "6cf93b7d3d8af0d2a2f7a8b37f9020936207dd9a6278d2373b55595a28071955"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "938cd9e524c190470fd286b6c35d10b9193df8455f71594f761accc99234b759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f4e3804f9e3ce129f20207e3fd6a974ad561929a2f6c53821ba58608f56bdea"
+    sha256 cellar: :any,                 arm64_tahoe:   "56eba1a890af40f2eae790c0ebf7009ef269e9b5fb7be30e42c6c5b2336bfd69"
+    sha256 cellar: :any,                 arm64_sequoia: "759d2d664d9873b15453e97fd415221f74e43b25925eec93b7de3ac3233053fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "3819d9535abcd165e363129542219439623b0103e2f6ca873562479c70208dc2"
+    sha256 cellar: :any,                 sonoma:        "642c207ee4e2970ff8aaea36f639902285fa3c9acde34c11f9c2c2c54453618a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68c3a478b2046d7b4986a7b1f6ed6ba7f79fb3d7ff1ffb2c09c2f5bddd468cda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d80fe07baae151a343a1734af4d8905ec5e2912582948cbc256eaa9a91a6f59"
   end
 
   depends_on "openssl@3"
