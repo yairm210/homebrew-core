@@ -27,15 +27,16 @@ class Fheroes2 < Formula
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Avoid running dylibbundler to prevent copying dylibs
     inreplace "CMakeLists.txt", /^(\s*run_dylibbundler)\s+ALL$/, "\\1"
 
-    args = std_cmake_args
-    args << "-DMACOS_APP_BUNDLE=ON" if OS.mac?
-    system "cmake", "-S", ".", "-B", "build", *args
+    args = ["-DMACOS_APP_BUNDLE=ON"] if OS.mac?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
