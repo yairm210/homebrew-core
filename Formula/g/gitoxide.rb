@@ -23,7 +23,10 @@ class Gitoxide < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     features = %w[max-control gitoxide-core-blocking-client http-client-curl]
