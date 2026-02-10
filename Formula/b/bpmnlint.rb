@@ -6,7 +6,7 @@ class Bpmnlint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "79ca8f83972d09583b8ebb3724d75cf4facd297f376eacac294b203da19a54d9"
+    sha256 cellar: :any_skip_relocation, all: "152f47b65234e3afa708fd8541c5802dc378dc42ff7ac1131c6711393b12a31c"
   end
 
   depends_on "node"
