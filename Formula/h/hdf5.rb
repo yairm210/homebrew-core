@@ -4,6 +4,7 @@ class Hdf5 < Formula
   url "https://github.com/HDFGroup/hdf5/releases/download/2.0.0/hdf5-2.0.0.tar.gz"
   sha256 "f4c2edc5668fb846627182708dbe1e16c60c467e63177a75b0b9f12c19d7efed"
   license "BSD-3-Clause"
+  revision 1
   version_scheme 1
 
   # Upstream maintains multiple major/minor versions and the "latest" release
@@ -28,7 +29,9 @@ class Hdf5 < Formula
   depends_on "libaec"
   depends_on "pkgconf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "hdf5-mpi", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 
