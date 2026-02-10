@@ -1,8 +1,8 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "3c2f5b06db995015f9c49fed181890e42a88891d4b01e9c671899f8c48a92fbd"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.10.1.tar.gz"
+  sha256 "668e374c9ffe14630d02004e67262219141548f9ad15e0847dc33b900e015a31"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
@@ -21,6 +21,12 @@ class Uv < Formula
   uses_from_macos "python" => :test
   uses_from_macos "bzip2"
   uses_from_macos "xz"
+
+  # fix missing `uv-test` crate dep issue, upstream pr ref, https://github.com/astral-sh/uv/pull/17954
+  patch do
+    url "https://github.com/astral-sh/uv/commit/9f5a48f968f8831ece813ee52ca06b0244e41e46.patch?full_index=1"
+    sha256 "94a7778c3b573d96cc923fac55ac10e0957d70c1bfb259f0216571fb4574f46e"
+  end
 
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user
