@@ -36,8 +36,6 @@ class Gpac < Formula
   depends_on "theora"
   depends_on "xz"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libogg"
   end
@@ -46,6 +44,7 @@ class Gpac < Formula
     depends_on "alsa-lib"
     depends_on "libxv"
     depends_on "pulseaudio"
+    depends_on "zlib-ng-compat"
   end
 
   def install
