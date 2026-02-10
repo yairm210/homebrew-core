@@ -1,8 +1,8 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https://risor.io/"
-  url "https://github.com/deepnoodle-ai/risor/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "231b2570f78865cc89f9962d7704353511bef3bfd3c9e70096a56a244b4ba5bf"
+  url "https://github.com/deepnoodle-ai/risor/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "053fd2a8057d4387ae746047f7f22dabe8c8c75f1fa1cee0ded50a74f33bb5f9"
   license "Apache-2.0"
   head "https://github.com/deepnoodle-ai/risor.git", branch: "main"
 
