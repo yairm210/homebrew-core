@@ -1,9 +1,10 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.14.2/poco-1.14.2-all.tar.bz2"
-  sha256 "7738a4c880f08e89318fc53915f86be5a0e70f14eb1e7f0e1767c8781c40d794"
+  url "https://pocoproject.org/releases/poco-1.15.0/poco-1.15.0-all.tar.bz2"
+  sha256 "4b0f7bbbb1abbd1c06e000635b20530b5a977f702cfd54647926c996d99a1282"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -21,13 +22,17 @@ class Poco < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "libpng"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "utf8proc"
 
   uses_from_macos "expat"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
