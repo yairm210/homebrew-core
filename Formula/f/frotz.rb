@@ -30,7 +30,9 @@ class Frotz < Formula
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # fix SDL interface build failure
   patch do
