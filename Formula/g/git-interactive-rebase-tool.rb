@@ -26,7 +26,9 @@ class GitInteractiveRebaseTool < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # support libgit2 1.9, upstream pr ref, https://github.com/MitMaro/git-interactive-rebase-tool/pull/948
   patch do
