@@ -40,12 +40,15 @@ class Fox < Formula
   depends_on "mesa-glu"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libxfixes"
     depends_on "libxi"
     depends_on "libxrender"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
