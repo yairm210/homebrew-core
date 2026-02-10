@@ -45,7 +45,6 @@ class Musikcube < Formula
   depends_on "taglib"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gnutls"
@@ -56,6 +55,7 @@ class Musikcube < Formula
     depends_on "alsa-lib"
     depends_on "pulseaudio"
     depends_on "systemd"
+    depends_on "zlib-ng-compat"
   end
 
   def install
