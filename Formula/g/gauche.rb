@@ -29,13 +29,17 @@ class Gauche < Formula
   depends_on "mbedtls@3"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
-    system "./configure",
-           *std_configure_args,
-           "--enable-multibyte=utf-8",
-           "--with-ca-bundle=#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem"
+    args = %W[
+      --enable-multibyte=utf-8
+      --with-ca-bundle=#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem
+    ]
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
