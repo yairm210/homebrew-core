@@ -33,8 +33,6 @@ class Mednafen < Formula
   depends_on "sdl2"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
@@ -42,6 +40,7 @@ class Mednafen < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install
