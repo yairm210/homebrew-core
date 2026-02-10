@@ -25,10 +25,10 @@ class Imapsync < Formula
   depends_on "pod2man" => :build
 
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
 
     resource "Digest::HMAC_SHA1" do
       url "https://cpan.metacpan.org/authors/id/A/AR/ARODLAND/Digest-HMAC-1.05.tar.gz"
