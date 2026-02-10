@@ -19,7 +19,9 @@ class Movgrab < Formula
 
   depends_on "libressl"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fixes an incompatibility between Linux's getxattr and macOS's.
   # Reported upstream; half of this is already committed, and there's
