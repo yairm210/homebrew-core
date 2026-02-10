@@ -29,14 +29,16 @@ class Instead < Formula
   depends_on "sdl2_mixer"
   depends_on "sdl2_ttf"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "gettext"
     depends_on "harfbuzz"
     depends_on "pango"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
