@@ -7,12 +7,12 @@ class Parlay < Formula
   head "https://github.com/snyk/parlay.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0092099408325109423825cb6c021a1b30345a5e45ed66967dbbefb8d1e91768"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0092099408325109423825cb6c021a1b30345a5e45ed66967dbbefb8d1e91768"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0092099408325109423825cb6c021a1b30345a5e45ed66967dbbefb8d1e91768"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6926910aaf3cd28a3abc63cdfa6738ddd5108ecdd3254514d1a9c8a1ea1cc033"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4721527d028d63cd025e55e13ac0fb363b07a26f3c19a74c7ec4dc8f453d5bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63ae80c044d1d761529f68449001b16f6f775b818fe6ae0894b788cce66e90dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd292a2313af1696d0a9bb418fb116f684a785f0238857b9ac9d327f1c88cf87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd292a2313af1696d0a9bb418fb116f684a785f0238857b9ac9d327f1c88cf87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd292a2313af1696d0a9bb418fb116f684a785f0238857b9ac9d327f1c88cf87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "317fc1de29e6aaeca917a94d65e1205415aaac971186de78e6362ce43c93d0ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb4424ae51442b6843720f50357049f8bc1d5ce3c3ca12fb303a424a08a15f24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4c7f7596f1a82cfe2db2db8164285cc2619006e00b9ce5521ca8bfe22a060c"
   end
 
   depends_on "go" => :build
