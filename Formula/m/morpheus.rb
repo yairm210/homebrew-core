@@ -35,10 +35,13 @@ class Morpheus < Formula
   uses_from_macos "libxslt" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Backport support for CMake 4
