@@ -47,7 +47,6 @@ class Mame < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "fontconfig"
@@ -57,6 +56,7 @@ class Mame < Formula
     depends_on "pulseaudio"
     depends_on "qtbase"
     depends_on "sdl2_ttf"
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -96,7 +96,7 @@ class Mame < Formula
   end
 
   test do
-    assert shell_output("#{bin}/mame -help").start_with? "MAME v#{version}"
+    assert_match "MAME v#{version}", shell_output("#{bin}/mame -help")
     system bin/"mame", "-validate"
   end
 end
