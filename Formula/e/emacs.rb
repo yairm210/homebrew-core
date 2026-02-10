@@ -32,10 +32,10 @@ class Emacs < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "jpeg-turbo"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with cask: "emacs-app"
