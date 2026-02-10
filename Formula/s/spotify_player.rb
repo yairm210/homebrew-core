@@ -7,12 +7,12 @@ class SpotifyPlayer < Formula
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ca859c6b5bdde5250a69af54c5875e343eaa1518ec343753703c9a2667ab749"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f367c7373701c98bcbd956e20ed020a0b2a9ebc9138105e2db09730994995d28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa8d52b52aec4d019d3855ed9c7e3c409b33e2c40122bbfd6b2af31376e35466"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb607fbc690d688230b7c4694b395c18394be3d9b8540661f656fc76461e6d43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc2d545844616419bc1bb2e9b0aac28ec99389cdb9111827004524cb5e7549ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f904593cc645dc9c8c1db5592febeaed1e2a4845ef1d84392d6fb6121ffb91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31ed14265c054ef0a89fa4a37c5060db27f504e8f6c5497b0c379eca02ecbb70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85c1296e1e3e22bdfbc24c09d3b8ff3a890e766efcd4c293d1f699eb17f236ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "577df86c83270c9678ccc0d7fa85a0c221e8cba69f094a3a90e304f309bfcf12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02ae4815fd6cf3fb23fd0eaba71e8b947143aa2c8e83c6cb9acdfad735a8c84e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1e71a778dd27a24991a496beedb0e0447a6ceb9cfb3700917433ba904c69f90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "012899c71ab30f0343d55d7f3227145391e86b20e1ddd02503d341737bed1134"
   end
 
   depends_on "pkgconf" => :build
