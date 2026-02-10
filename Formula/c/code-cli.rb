@@ -12,12 +12,13 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0168be38d839b6a852fa1458285f5628b0400ab0544eff7f4f17e4bf50df41cf"
-    sha256 cellar: :any,                 arm64_sequoia: "c24f0b70aa3522ff1b80d1d1f69aa58bf8e4b047ef22dee9867b949c2d44afe9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6263aa7d9f13463ddabc369e72c14198e3d3e7fe94c310fb83e36e3babc6fb43"
-    sha256 cellar: :any,                 sonoma:        "71e55481b306f79aad9836f9abe7c9a6689c00e2899af024ac9b758e2f91d0ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3facf5ba64ff6d049caf2c7a2fafe3f0d1ddff3d28f9c7789697e5f6053530b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7c74a4d5e3ba0107f9a2a46cf29c750486c9d2b40588bcb5401b7b95f2f774"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "aea7c3fea76bb10c67571858a61db6c8797ba0ce2fe487a2cf22111b8663136a"
+    sha256 cellar: :any,                 arm64_sequoia: "60b1e8e96069cd7af2e7141bcef77edc71ca081c9c97d57377610e7074bc1635"
+    sha256 cellar: :any,                 arm64_sonoma:  "516dfb2d826c3b259f3f94b6a9571a4fd05cab51d4aa563e17aa82baa4a5e4f2"
+    sha256 cellar: :any,                 sonoma:        "3c439e02f5c2eed923a6714ea39d4ca545b9b153a7ca19a52d1e361820f2e208"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3521fa0f082f6156c6cca5bdb4df146ba5ff1216bf1ca6fb2a6b08c85f7397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d167b078408009690fdd03bba6187c1730c1ccbd30262eadb1982cbe07b7bf89"
   end
 
   depends_on "pkgconf" => :build
