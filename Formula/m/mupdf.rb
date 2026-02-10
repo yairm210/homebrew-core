@@ -36,8 +36,6 @@ class Mupdf < Formula
   depends_on "python@3.14"
   depends_on "tesseract"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libarchive"
   end
@@ -47,6 +45,7 @@ class Mupdf < Formula
     depends_on "libx11"
     depends_on "libxext"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "mupdf-tools", because: "both install the same binaries"
