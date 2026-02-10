@@ -35,13 +35,16 @@ class Neomutt < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
     # Build again libiconv for now on,
     # but reconsider when macOS 14.2 is released
     depends_on "libiconv"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
