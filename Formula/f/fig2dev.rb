@@ -25,7 +25,9 @@ class Fig2dev < Formula
   depends_on "libpng"
   depends_on "netpbm"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--enable-transfig",
