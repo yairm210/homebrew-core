@@ -18,7 +18,9 @@ class Kallisto < Formula
   depends_on "cmake" => :build
   depends_on "hdf5"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix compilation error in Bifrost
   # https://github.com/pachterlab/kallisto/issues/488
