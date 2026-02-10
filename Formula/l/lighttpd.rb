@@ -29,7 +29,10 @@ class Lighttpd < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
