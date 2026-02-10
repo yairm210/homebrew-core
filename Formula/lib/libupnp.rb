@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.29/libupnp-1.14.29.tar.bz2"
-  sha256 "021bc19c8fc42748bf65707ab091cfe63caa57ffabd3848f43c6dcf39e0bde1e"
+  url "https://github.com/pupnp/pupnp/releases/download/release-1.18.0/libupnp-1.18.0.tar.bz2"
+  sha256 "addda30208adcea72d38e25e36b1c9a1239333e23294597db424f9ce825af60f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,14 +20,15 @@ class Libupnp < Formula
   end
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --enable-ipv6
-    ]
-
-    system "./configure", *args
+    system "./configure", "--enable-ipv6", *std_configure_args
     system "make", "install"
+    pkgshare.install "upnp/test/test_init.c"
+  end
+
+  test do
+    system ENV.cc, pkgshare/"test_init.c", "-o", "test", "-I#{include}/upnp", "-L#{lib}", "-lupnp"
+    output = shell_output("./test")
+    assert_match "UPNP_VERSION_STRING = \"#{version}\"", output
+    assert_match "UPnP Initialized OK", output
   end
 end
