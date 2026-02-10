@@ -28,12 +28,12 @@ class Neko < Formula
 
   uses_from_macos "apr"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "apr-util"
     depends_on "gtk+3" # On mac, neko uses carbon. On Linux it uses gtk3
     depends_on "httpd"
+    depends_on "zlib-ng-compat"
   end
 
   def install
