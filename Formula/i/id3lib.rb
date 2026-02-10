@@ -28,7 +28,9 @@ class Id3lib < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   patch do
     url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/id3lib/id3lib-main.patch"
