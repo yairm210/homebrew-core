@@ -24,7 +24,9 @@ class MemtierBenchmark < Formula
   depends_on "libevent"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
