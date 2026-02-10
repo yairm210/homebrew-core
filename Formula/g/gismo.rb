@@ -30,10 +30,12 @@ class Gismo < Formula
   depends_on "suite-sparse"
   depends_on "superlu"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
