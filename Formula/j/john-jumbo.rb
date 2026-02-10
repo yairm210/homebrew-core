@@ -31,7 +31,10 @@ class JohnJumbo < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "john", because: "both install the same binaries"
 
