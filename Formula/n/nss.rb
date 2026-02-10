@@ -17,12 +17,12 @@ class Nss < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f5d4a292ff909f62a43a065aa606cf13947f5f019b5c145bb7937f10df91c9b"
-    sha256 cellar: :any,                 arm64_sequoia: "fcb90df4c249c112b47f6039217ea67ad19917ab8968ce3438edbb8052e4aa3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "27f5cad81beaf6511f24096532c28a5fff94927a8de7086c00612b9a3107491f"
-    sha256 cellar: :any,                 sonoma:        "0c92173031aadc71ae098ecac6c79237590d41091cb06c511478010341c04a74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a71eb1468cb270b2d8dbcddc393e605a8a23c6bc6c0d3dee9757672e76bb02b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790e28560844fea12b5cee9e659c638fb5536995dac281a50f3cc561f8711ccb"
+    sha256 cellar: :any,                 arm64_tahoe:   "cd6e39b6b9bcb4cce7ac194470553b98f96e5c96cd876f8f868da498d205911b"
+    sha256 cellar: :any,                 arm64_sequoia: "f4828243b94e3bceaf6db994fd64dbe0fde344fd62effe903ed1602437821f5f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5447470e50bf12f0e00c83fbc8f57434da17e630ce80ff74acea528f61f3fbca"
+    sha256 cellar: :any,                 sonoma:        "95c1ac376f33068db0199619ac48ff462613985986c13beffb36b4c9512cd61c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f5bdf5a320736e2f21d703dfade98fdc145eb9493ac730cf005b0afe34c9c57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c721ecbd527c0da2556d33b7e82ae126bcdc0fd68d981e743fc16eede873845"
   end
 
   depends_on "nspr"
