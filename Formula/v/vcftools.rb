@@ -19,6 +19,10 @@ class Vcftools < Formula
   depends_on "pkgconf" => :build
   depends_on "htslib"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--with-pmdir=lib/perl5/site_perl",
