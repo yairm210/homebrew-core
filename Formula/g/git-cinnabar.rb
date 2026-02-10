@@ -21,10 +21,10 @@ class GitCinnabar < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkgconf" => :build # for curl-sys, not used on macOS
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
