@@ -50,11 +50,14 @@ class Mutt < Formula
   uses_from_macos "bzip2"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "libunistring"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "tin", because: "both install mmdf.5 and mbox.5 man pages"
