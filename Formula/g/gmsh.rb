@@ -30,8 +30,6 @@ class Gmsh < Formula
   depends_on "metis"
   depends_on "opencascade"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "freetype"
     depends_on "libomp"
@@ -40,6 +38,7 @@ class Gmsh < Formula
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install
