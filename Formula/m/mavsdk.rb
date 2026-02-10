@@ -34,10 +34,12 @@ class Mavsdk < Formula
   depends_on "tinyxml2"
   depends_on "xz"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
