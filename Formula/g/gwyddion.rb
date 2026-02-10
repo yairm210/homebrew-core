@@ -32,7 +32,6 @@ class Gwyddion < Formula
   depends_on "pango"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     # Regenerate autoconf files to avoid flat namespace in library
@@ -45,6 +44,10 @@ class Gwyddion < Formula
     depends_on "at-spi2-core"
     depends_on "gettext"
     depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Fix Autoconf ≥2.72 compatibility by explicitly declaring gettext version.
