@@ -37,7 +37,6 @@ class GnustepBase < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
 
   on_system :linux, macos: :big_sur_or_older do
     depends_on "icu4c@78"
@@ -45,6 +44,7 @@ class GnustepBase < Formula
 
   on_linux do
     depends_on "libobjc2"
+    depends_on "zlib-ng-compat"
     depends_on "zstd"
     fails_with :gcc
   end
