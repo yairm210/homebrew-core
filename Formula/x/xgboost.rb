@@ -11,12 +11,12 @@ class Xgboost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "183890261aed9bb97ad5ee316564664e16b36215bb70a3a91e63d489f4ebf537"
-    sha256 cellar: :any,                 arm64_sequoia: "3563bf70ceffc413bfd1671c34d1893b787b576ebac53ba4415a666601ecb290"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f01af1809d93dde95bfff54e79f6671e60db222b74b1a09a8092ed2805303fd"
-    sha256 cellar: :any,                 sonoma:        "27bf55b74bc1ae7c8f54476ea95452ae53c390f4a135a4c87a48d074ed81ab88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "527fcabfb6aa2663a47ef5195fe5c3eba4770571ccb15a583c9f4f4a6cdadfd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "580be1b22fdc397a3e8474ac1b1a2d83b3eb763803063ee1859aad076fce343f"
+    sha256 cellar: :any,                 arm64_tahoe:   "5a95ce8b876749dcc5ef5675674500ead83b3da69b64945455f20cc6765c8365"
+    sha256 cellar: :any,                 arm64_sequoia: "e346db9ed7ee1b5a718b0ee94ae7c311aa1baa31b7c0ed01db4ad93ae600d84b"
+    sha256 cellar: :any,                 arm64_sonoma:  "349ede65433762b092f684a0130fe9b63c134d8417e73cad766dd03cb35e9b5a"
+    sha256 cellar: :any,                 sonoma:        "bae04c0461e2a5e996e67a9e0c2e2648b7e58fa8cf9e9a35065ef1c8daa2b6cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5969e0b1577357773b3cf5daca4a7237fa62dae7dc3ce95c54dcae44944dd8f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbd350d38e5d16cc7f46993d316bdee723c7a4e7b9a53dab9e2d0912e5678e4f"
   end
 
   depends_on "cmake" => :build
