@@ -29,7 +29,6 @@ class Mold < Formula
   depends_on "blake3"
   depends_on "tbb"
   depends_on "zstd"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
@@ -37,6 +36,7 @@ class Mold < Formula
 
   on_linux do
     depends_on "mimalloc"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
