@@ -25,7 +25,9 @@ class Noir < Formula
   depends_on "openssl@3"
   depends_on "pcre2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "shards", "build", "--production", "--release", "--no-debug"
