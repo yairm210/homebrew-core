@@ -21,7 +21,9 @@ class Hercules < Formula
   depends_on "gnu-sed" => :build
   depends_on "libtool" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "crypto" do
     url "https://github.com/SDL-Hercules-390/crypto/archive/a5096e5dd79f46b568806240c0824cd8cb2fcda2.tar.gz"
