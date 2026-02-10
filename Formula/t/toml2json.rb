@@ -1,8 +1,8 @@
 class Toml2json < Formula
   desc "Convert TOML to JSON"
   homepage "https://github.com/woodruffw/toml2json"
-  url "https://github.com/woodruffw/toml2json/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "7cca2cf9339458c603729a3985211d164d07eeb1d40af4a59116aa21e25ef3ed"
+  url "https://github.com/woodruffw/toml2json/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "70c9bf872f22d22691d41eeb06442a0fddf4b341ddebfadf8734d1e68e0174ce"
   license "MIT"
   head "https://github.com/woodruffw/toml2json.git", branch: "main"
 
