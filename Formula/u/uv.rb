@@ -1,18 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "3c2f5b06db995015f9c49fed181890e42a88891d4b01e9c671899f8c48a92fbd"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.10.1.tar.gz"
+  sha256 "668e374c9ffe14630d02004e67262219141548f9ad15e0847dc33b900e015a31"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17d20d0194c30976757dd548bb6aee3e788452ed75e1d1b6bc819ea3c310f8a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7882e3bc4913c607f79579d4ba76094226750ae4b95291078bf56bd1b57953dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a861a7f48a9b7d5fa7fe8ac7468efc3152333eda45443ea60c3f27b01f761815"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50de3e6e126a3454f941482c8430b2bd2624ddb3f1fe2777e420449ce4707852"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ad09e61fb02ddff0ee752fea5391c3bcbc8c8ed8a275f223cf2637b07d989b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30563f7a76aa3c18a8f3105092d994803d989ffa8fbe3f8a8e0d8dd321bca107"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f97f85c39083b16682f78429fc2a515e62ac206d07ac115b4633783086783960"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e2c2372a98ddae575b453d794d60be52298076c4bb120448e6f1b1319258610"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc32647b2ab30a77230f7f7b2b9c65f9ec6aaab25391712e0e5c6e7a49d41223"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6dc40773f4965f8bd6c086401bbe0fae43aa66a933d13a24d8fb5fab5c1e297"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98a4d99a1ae12ceb3cb9ac8d4698f121f406e233d65c864bf07cfbcb49b02c0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafaf2e2dd4d26c1f47c8c7afe3e172bb519e45bc9a0cacc42e6c466f7f0abf9"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +21,12 @@ class Uv < Formula
   uses_from_macos "python" => :test
   uses_from_macos "bzip2"
   uses_from_macos "xz"
+
+  # fix missing `uv-test` crate dep issue, upstream pr ref, https://github.com/astral-sh/uv/pull/17954
+  patch do
+    url "https://github.com/astral-sh/uv/commit/9f5a48f968f8831ece813ee52ca06b0244e41e46.patch?full_index=1"
+    sha256 "94a7778c3b573d96cc923fac55ac10e0957d70c1bfb259f0216571fb4574f46e"
+  end
 
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user
