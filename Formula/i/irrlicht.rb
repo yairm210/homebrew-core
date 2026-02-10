@@ -38,12 +38,12 @@ class Irrlicht < Formula
   depends_on "libpng"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libx11"
     depends_on "libxxf86vm"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   # Use libraries from Homebrew or macOS
@@ -102,7 +102,7 @@ class Irrlicht < Formula
         ENV.append "LDFLAGS", "-L#{Formula["bzip2"].opt_lib} -lbz2"
         ENV.append "LDFLAGS", "-L#{Formula["jpeg-turbo"].opt_lib} -ljpeg"
         ENV.append "LDFLAGS", "-L#{Formula["libpng"].opt_lib} -lpng"
-        ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib} -lz"
+        ENV.append "LDFLAGS", "-L#{Formula["zlib-ng-compat"].opt_lib} -lz"
         ENV.append "LDFLAGS", "-L#{Formula["mesa"].opt_lib}"
         ENV.append "LDFLAGS", "-L#{Formula["libxxf86vm"].opt_lib}"
         ENV.append "CXXFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
