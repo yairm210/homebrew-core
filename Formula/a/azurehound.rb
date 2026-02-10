@@ -1,8 +1,8 @@
 class Azurehound < Formula
   desc "Azure Data Exporter for BloodHound"
   homepage "https://github.com/SpecterOps/AzureHound"
-  url "https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "da22d48396cf07732b7b8b2a0418de3ae20eb99ec67a786bd14e5cd144d6ff70"
+  url "https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "894fb82922c0ad3fe36c691b0af1ed192f031b969c15fbd2f59c18c175bb38c7"
   license "GPL-3.0-or-later"
   head "https://github.com/SpecterOps/AzureHound.git", branch: "main"
 
