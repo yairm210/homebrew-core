@@ -29,13 +29,16 @@ class Ettercap < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "freetype"
     depends_on "pango"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
