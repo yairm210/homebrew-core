@@ -31,7 +31,10 @@ class Echidna < Formula
   depends_on "slither-analyzer"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.cxx11
