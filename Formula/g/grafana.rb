@@ -25,7 +25,6 @@ class Grafana < Formula
   depends_on "yarn" => :build
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     # Workaround for old `node-gyp` that needs distutils.
@@ -33,6 +32,7 @@ class Grafana < Formula
     depends_on "python-setuptools" => :build
     depends_on "fontconfig"
     depends_on "freetype"
+    depends_on "zlib-ng-compat"
   end
 
   def install
