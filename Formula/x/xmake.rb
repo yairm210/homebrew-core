@@ -7,12 +7,12 @@ class Xmake < Formula
   head "https://github.com/xmake-io/xmake.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebda18fb4d3854af6c0e21dbcb1e6c6bbaa3932a11f8ae40be367e8ed1f595e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2ba1299114ecd736c834ef94a804fd174ccbef3543140b2cd0569ec7c1f299d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2fe1b8aba230b72a2eed77db4d340114bc2c7b3c1bd66eb18f0971f29ee6c7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a5738769949725ec1a628eabb1b5b12db49d3ca1d5e1006d06baaccb318853d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e2e0ae8aafbccd627672a4f522c43b3c89143053c98fe4e74cbb58eb32f9012"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cbe6c49d57301dfeeeab4aa2ca8ca946dfccbf481abaeebc8c3fa5cbb50a25d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d894528d5e21853788f313e1b1407dc7002a77c2e2455fb6dbd147dce5de595e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c554d24cc53498d0bc996a7ae8bba9e7a88c7406a6aeb78d37409a056cf06571"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df9e67df229b1bf5e4ac7a796cef5b9b6c98d5ff8e08631fb5a1fe14e77627aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "67f0ecef9ca9f8964a6424890accf62abc0402066870e8baac0f4796573fae4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dc3d3045dfe881b65508deff3fb014f8e0b7841da5ec13fb9e9b2028102a1ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1bc14dea30e316f040d34f7118559773a4f82bea7e4c964188077dfe9279ce6"
   end
 
   uses_from_macos "ncurses"
