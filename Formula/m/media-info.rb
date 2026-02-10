@@ -24,7 +24,9 @@ class MediaInfo < Formula
   depends_on "libmediainfo"
   depends_on "libzen"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     cd "MediaInfo/Project/GNU/CLI" do
