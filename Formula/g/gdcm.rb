@@ -32,11 +32,11 @@ class Gdcm < Formula
 
   uses_from_macos "expat"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "python@3.14"
     depends_on "util-linux" # for libuuid
+    depends_on "zlib-ng-compat"
   end
 
   def python3
