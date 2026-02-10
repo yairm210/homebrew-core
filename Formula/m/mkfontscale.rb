@@ -19,13 +19,16 @@ class Mkfontscale < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "xorgproto"  => :build
+  depends_on "xorgproto" => :build
 
   depends_on "freetype"
   depends_on "libfontenc"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     configure_args = %w[
