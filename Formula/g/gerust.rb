@@ -21,7 +21,9 @@ class Gerust < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["OPENSSL_NO_VENDOR"] = "1"
