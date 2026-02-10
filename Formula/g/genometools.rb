@@ -27,11 +27,14 @@ class Genometools < Formula
   uses_from_macos "bzip2"
   uses_from_macos "expat"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "libslax", because: "both install `bin/gt`"
