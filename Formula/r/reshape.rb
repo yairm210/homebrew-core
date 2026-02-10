@@ -1,8 +1,8 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "f9acbc3bbe31d5289d040082bdabe9ed1460728821a2d277374214a5a312b301"
+  url "https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "516c68a38c22be1262f3e3da45a9b382457299a3c7503bd018f358088d6970b1"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
@@ -15,9 +15,14 @@ class Reshape < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5a0e8515fa424eaa98a07fbcff6c145833dcff2d3fe3833c1030a55f71b3fc"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build # for libclang to build pg_query
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
