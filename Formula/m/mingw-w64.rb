@@ -40,7 +40,9 @@ class MingwW64 < Formula
   depends_on "mpfr"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "binutils" do
     url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
