@@ -48,7 +48,6 @@ class Mgba < Formula
   depends_on "sqlite"
 
   uses_from_macos "libedit"
-  uses_from_macos "zlib"
 
   on_macos do
     # https://github.com/mgba-emu/mgba/issues/3129
@@ -58,6 +57,7 @@ class Mgba < Formula
   on_linux do
     depends_on "elfutils"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install
