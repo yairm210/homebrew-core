@@ -8,7 +8,7 @@ class Nbdime < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8b002e03c4bf2d7c2cad5860801e8cec7ecadd4ea5cb27dc68412c74767d5523"
+    sha256 cellar: :any_skip_relocation, all: "10e1d5030917d64e598226a46c11ea59c15a718a7e879c580041639eba685a83"
   end
 
   depends_on "certifi"
