@@ -3,8 +3,8 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/7d/b8/61062279bcd8f5df1d12994eaa69c5a2977f54627d35ce24349b9ca5e301/glances-4.5.0.1.tar.gz"
-  sha256 "c07321e06c7dbde9a5563cb2bfbdead21a6f970ea553f839c188b970be27ceb3"
+  url "https://files.pythonhosted.org/packages/61/54/5a950b209fdce0a677a7a5dd0e09d3ea8c49cd3b5427a535a97837a2558a/glances-4.5.0.4.tar.gz"
+  sha256 "23b943ebe555a9aae32f0943521a7bf91216f03b58fadadf506bcd44fa40533f"
   license "LGPL-3.0-or-later"
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
@@ -63,8 +63,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/02/d4/811e7283aaaa84f1e7bd55fb642b58f8c01895e4884a9b7628cb55e00d63/fastapi-0.128.5.tar.gz"
-    sha256 "a7173579fc162d6471e3c6fbd9a4b7610c7a3b367bcacf6c4f90d5d022cab711"
+    url "https://files.pythonhosted.org/packages/a0/fc/af386750b3fd8d8828167e4c82b787a8eeca2eca5c5429c9db8bb7c70e04/fastapi-0.128.7.tar.gz"
+    sha256 "783c273416995486c155ad2c0e2b45905dedfaf20b9ef8d9f6a9124670639a24"
   end
 
   resource "h11" do
@@ -105,6 +105,11 @@ class Glances < Formula
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
     sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+  end
+
+  resource "pyinstrument" do
+    url "https://files.pythonhosted.org/packages/32/7f/d3c4ef7c43f3294bd5a475dfa6f295a9fee5243c292d5c8122044fa83bcb/pyinstrument-5.1.2.tar.gz"
+    sha256 "af149d672da9493fa37334a1cc68f7b80c3e6cb9fd99b9e426c447db5c650bf0"
   end
 
   resource "python-dateutil" do
