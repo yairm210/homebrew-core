@@ -27,11 +27,13 @@ class GtkGnutella < Formula
   depends_on "gtk+"
   depends_on "pango"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
     depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
