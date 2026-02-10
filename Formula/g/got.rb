@@ -31,12 +31,11 @@ class Got < Formula
   depends_on "ncurses"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libbsd"
     depends_on "libmd"
     depends_on "util-linux" # for libuuid
+    depends_on "zlib-ng-compat"
   end
 
   def install
