@@ -28,7 +28,6 @@ class Gdb < Formula
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
-  uses_from_macos "zlib"
 
   # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
@@ -43,6 +42,7 @@ class Gdb < Formula
 
   on_linux do
     depends_on "guile"
+    depends_on "zlib-ng-compat"
   end
 
   def install
