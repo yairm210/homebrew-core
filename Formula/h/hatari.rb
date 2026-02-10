@@ -21,11 +21,10 @@ class Hatari < Formula
   depends_on "libpng"
   depends_on "sdl2"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libx11"
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   # Download EmuTOS ROM image
