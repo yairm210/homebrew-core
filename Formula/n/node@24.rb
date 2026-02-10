@@ -1,8 +1,8 @@
 class NodeAT24 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v24.13.0/node-v24.13.0.tar.xz"
-  sha256 "320fe909cbb347dcf516201e4964ef177b8138df9a7f810d0d54950481b3158b"
+  url "https://nodejs.org/dist/v24.13.1/node-v24.13.1.tar.xz"
+  sha256 "b227bc868fb5e9ec8670620e2b25530eb12c17d43e6c7bc51bb38a660684192d"
   license "MIT"
 
   livecheck do
@@ -41,10 +41,13 @@ class NodeAT24 < Formula
   depends_on "zstd"
 
   uses_from_macos "python"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # https://github.com/swiftlang/llvm-project/commit/078651b6de4b767b91e3e6a51e5df11a06d7bc4f
