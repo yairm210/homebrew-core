@@ -28,7 +28,9 @@ class Pngnq < Formula
   depends_on "pkgconf" => :build
   depends_on "libpng"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Starting from libpng 1.5, the zlib.h header file
