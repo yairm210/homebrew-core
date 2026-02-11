@@ -19,7 +19,9 @@ class Pyinstaller < Formula
 
   depends_on "python@3.14"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages extra_packages: "macholib"
 
