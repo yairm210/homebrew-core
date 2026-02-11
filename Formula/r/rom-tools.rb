@@ -31,7 +31,6 @@ class RomTools < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "portaudio" => :build
@@ -39,6 +38,7 @@ class RomTools < Formula
     depends_on "pulseaudio" => :build
     depends_on "qtbase" => :build
     depends_on "sdl2_ttf" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def install
