@@ -30,8 +30,6 @@ class Wget < Formula
   depends_on "libidn2"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
     depends_on "libunistring"
@@ -39,6 +37,7 @@ class Wget < Formula
 
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
