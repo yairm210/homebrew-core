@@ -7,6 +7,15 @@ class Livereload < Formula
   sha256 "3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fed352cb705f7468ec7349e98c01df7979143b3fd5d2eed8ee051e4705f6d36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fba0ef1c9980a6d84962fe1fcb16e76b8f02978814b5788dea5f575e3a8397ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b277ba3ca4ecd34efbdf16d668d4a0d74e5209f87cf725c0ab6f08eea98949"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfddf49c8779a00ad2f1e31c643e0a91b6f779973b0cdb2c1a8d4e92f951723a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6f08550650309b022ca110f1466bce5e8fccc2d9516bd03c914c94f3e4bcb75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6031b88eed3220e42fc8258f15e0185bedcd6b214bcededc6584c30164bff4"
+  end
+
   depends_on "python@3.14"
 
   resource "tornado" do
