@@ -30,7 +30,9 @@ class Termrec < Formula
   depends_on "libtool" => :build
   depends_on "xz"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Work around build error: call to undeclared function 'forkpty'
