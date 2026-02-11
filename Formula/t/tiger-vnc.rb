@@ -28,8 +28,6 @@ class TigerVnc < Formula
   depends_on "nettle"
   depends_on "pixman"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
@@ -47,6 +45,7 @@ class TigerVnc < Formula
     depends_on "libxrender"
     depends_on "libxtst"
     depends_on "linux-pam"
+    depends_on "zlib-ng-compat"
   end
 
   def install
