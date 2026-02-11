@@ -6,7 +6,7 @@ class ZshYouShouldUse < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "564d564d93d4d4f4b9bd6f0188d1ac50cac902af05b97e0dc6eed8e47174f103"
+    sha256 cellar: :any_skip_relocation, all: "350034749860a420e21c835a98e25897706badc378b5cb66961aa64f33372264"
   end
 
   uses_from_macos "zsh"
