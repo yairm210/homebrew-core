@@ -33,11 +33,14 @@ class Weechat < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
