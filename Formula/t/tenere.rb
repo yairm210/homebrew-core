@@ -21,7 +21,9 @@ class Tenere < Formula
   depends_on "libgit2@1.8"
   depends_on "oniguruma"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
