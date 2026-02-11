@@ -1,18 +1,18 @@
 class Ferron < Formula
   desc "Fast, memory-safe web server written in Rust"
   homepage "https://www.ferronweb.org/"
-  url "https://github.com/ferronweb/ferron/archive/refs/tags/2.5.3.tar.gz"
-  sha256 "88e6e4e9c491f484136cb9f9035b4e0c6f48d4e3fe690b77939485a38d863b26"
+  url "https://github.com/ferronweb/ferron/archive/refs/tags/2.5.4.tar.gz"
+  sha256 "eb40766242fb66656c81793bbae69fe39ae6c1adf321e4cc58ae1b499ea0e315"
   license "MIT"
   head "https://github.com/ferronweb/ferron.git", branch: "develop-2.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f00f2baa9a27fd6c1ce6635c0c9a67d95b9eebeed4686cf96d20981be950e49f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ee92344fce03238ef2a7d6db4c7d1b97649b41b5be751c2b5bde42617265683"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad7c56f1b893fbd9b41f0704edb26c3f73e67504eae724590e1d218690af3580"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ad59a864383a2bc142863604e21f55a6912f552263b88537c530762855b610d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14e6c6722eaf11ac37469c6838885b2a0426577d287412c45b582aac1a5008b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef749e335cf0866140ba9086a1e6d4033f437bda3073f8c1cb02ee92dec2c271"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a5c97535aac1429c22ec1c3dbbd18109741068ba9b0b35c0017f759875dc706"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "485693977387636cc0e1ae984793719d720a9e98844646bb985c312cef90e2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9ce29859cc08770edba88f79e1482caa29dca4593cf9cbf0e50b51c80f326cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c728c445cb4ba20ff73f9580fb30189d1e7a0554ee8d46f33f113022d4a1cda2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf0dcdd0c034ef3f88cdfe08efe12fd249e8ee067d94db8e9767ad7d5422e937"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c260f55f5550d5321dfab441f473d26aa461746819e893223a02dcaf49ee725f"
   end
 
   depends_on "rust" => :build
