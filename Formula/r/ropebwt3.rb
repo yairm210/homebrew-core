@@ -15,10 +15,12 @@ class Ropebwt3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a50533ffbe4aaf7262926a560ce95c3dd9eff4bf387566cb14872aebe728983"
   end
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
