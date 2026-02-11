@@ -18,7 +18,9 @@ class RonnNg < Formula
   depends_on "ruby"
   depends_on "xz"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "ronn", because: "both install `ronn` binaries"
 
