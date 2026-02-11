@@ -20,13 +20,15 @@ class Unshield < Formula
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # cmake check for libiconv will miss the OS library without this hint
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DUSE_OUR_OWN_MD5=OFF"
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_OUR_OWN_MD5=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
