@@ -25,7 +25,9 @@ class VowpalWabbit < Formula
   depends_on "spdlog" => :build
   depends_on "fmt"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     depends_on "sse2neon" => :build
