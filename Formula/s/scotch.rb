@@ -1,8 +1,8 @@
 class Scotch < Formula
   desc "Package for graph partitioning, graph clustering, and sparse matrix ordering"
   homepage "https://gitlab.inria.fr/scotch/scotch"
-  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.10/scotch-v7.0.10.tar.bz2"
-  sha256 "75137f33ed28a12f433d4ab6e92794b2d4cfdd4377d35fe4361bc8e9808ffff4"
+  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.11/scotch-v7.0.11.tar.bz2"
+  sha256 "82fb468485b153a41031e50a7ca668fccbd3b8561d31dc7535da4210dde01f48"
   license "CECILL-C"
   head "https://gitlab.inria.fr/scotch/scotch.git", branch: "master"
 
@@ -27,7 +27,10 @@ class Scotch < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
@@ -64,6 +67,7 @@ class Scotch < Formula
     C
 
     args = %W[-I#{include} -L#{lib} -lscotch -lscotcherr -pthread -lz -lm]
+    args << "-L#{Formula["zlib-ng-compat"].opt_lib}" if OS.linux?
 
     system ENV.cc, "test.c", *args
     assert_match version.to_s, shell_output("./a.out")
