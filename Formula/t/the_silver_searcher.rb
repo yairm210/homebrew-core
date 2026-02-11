@@ -24,7 +24,9 @@ class TheSilverSearcher < Formula
   depends_on "pcre2"
   depends_on "xz"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Apply Debian patch to port from pcre to pcre2.
   patch do
