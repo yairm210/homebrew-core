@@ -19,11 +19,15 @@ class Rnp < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "e69e17ff598efdd28cf3880559fd999cef9ff702c655fae14c52c93c1f9020f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e48671491ac5bae9fb7971d448eb04399b8a46314ca87aa8ce2ec958dc54434c"
   end
+
   depends_on "cmake" => :build
   depends_on "botan"
   depends_on "json-c"
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
