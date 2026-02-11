@@ -11,7 +11,7 @@ class Unitycatalog < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d51b4ca73c34959c4fddc6f8f5c52b833d950a4b6ab29e4d1b249ebedf91f04a"
+    sha256 cellar: :any_skip_relocation, all: "5bb29544d5d9cd7b35507be2156ebd230a8e4065bd56c2fe384c0d510362b899"
   end
 
   depends_on "sbt" => :build
