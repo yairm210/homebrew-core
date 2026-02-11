@@ -23,7 +23,9 @@ class Ptex < Formula
   depends_on "pkgconf" => :build
   depends_on "libdeflate"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=17", *std_cmake_args
