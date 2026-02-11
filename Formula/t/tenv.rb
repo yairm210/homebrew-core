@@ -1,8 +1,8 @@
 class Tenv < Formula
   desc "OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager"
   homepage "https://tofuutils.github.io/tenv/"
-  url "https://github.com/tofuutils/tenv/archive/refs/tags/v4.9.1.tar.gz"
-  sha256 "fb2cb343857f6a668279d31d22998c2cf54a8af8d54c541334ccefa78105a63d"
+  url "https://github.com/tofuutils/tenv/archive/refs/tags/v4.9.3.tar.gz"
+  sha256 "ab24c11bb42f580d8700b357b7e07fdb004fafa6133f8ebd0e9d50829f66face"
   license "Apache-2.0"
   head "https://github.com/tofuutils/tenv.git", branch: "main"
 
