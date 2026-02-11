@@ -31,7 +31,10 @@ class Pyenv < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "xz"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX
