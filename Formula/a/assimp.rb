@@ -12,6 +12,7 @@ class Assimp < Formula
     "Unlicense", # contrib/zip
     "Zlib",      # contrib/unzip
   ]
+  revision 1
   head "https://github.com/assimp/assimp.git", branch: "master"
 
   bottle do
@@ -26,7 +27,9 @@ class Assimp < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Ignore error on older GCC
