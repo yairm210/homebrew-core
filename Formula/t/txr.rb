@@ -26,12 +26,15 @@ class Txr < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # FIXME: We need to bypass the compiler shim to work around `-mbranch-protection=standard`
     # (specifically pac-ret) causing tests/012/compile.tl to fail with an illegal instruction
-    if OS.linux? && Hardware::CPU.arch == :arm64
+    if OS.linux? && Hardware::CPU.arm64?
       ENV["CC"] = DevelopmentTools.locate(ENV.cc)
       ENV.append_to_cflags ENV["HOMEBREW_OPTFLAGS"] if ENV["HOMEBREW_OPTFLAGS"]
       ENV.append "CPPFLAGS", "-mbranch-protection=bti"
