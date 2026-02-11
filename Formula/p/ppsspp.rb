@@ -27,7 +27,6 @@ class Ppsspp < Formula
   depends_on "zstd"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "molten-vk"
@@ -36,6 +35,7 @@ class Ppsspp < Formula
   on_linux do
     depends_on "glew"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do
