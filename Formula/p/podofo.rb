@@ -31,7 +31,6 @@ class Podofo < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on "llvm"
@@ -39,6 +38,10 @@ class Podofo < Formula
     fails_with :clang do
       cause "error: 'to_chars' is unavailable: introduced in macOS 13.3"
     end
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
