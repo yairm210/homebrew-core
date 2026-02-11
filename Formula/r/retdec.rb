@@ -28,10 +28,12 @@ class Retdec < Formula
   depends_on "openssl@3"
   depends_on "python@3.14"
 
-  uses_from_macos "zlib"
-
   on_sequoia do
     depends_on xcode: ["16.4", :build]
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
