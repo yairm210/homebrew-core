@@ -31,11 +31,14 @@ class Pike < Formula
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gnu-sed" => :build
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
