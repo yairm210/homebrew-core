@@ -23,11 +23,14 @@ class Tin < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "libunistring"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "mutt", because: "both install mmdf.5 and mbox.5 man pages"
@@ -36,9 +39,9 @@ class Tin < Formula
     # Remove bundled libraries
     rm_r buildpath/"pcre"
 
-    system "./configure", *std_configure_args,
-                          "--mandir=#{man}",
-                          "--with-pcre2-config=#{Formula["pcre2"].opt_prefix}/bin/pcre2-config"
+    system "./configure", "--mandir=#{man}",
+                          "--with-pcre2-config=#{Formula["pcre2"].opt_prefix}/bin/pcre2-config",
+                          *std_configure_args
     system "make", "build"
     system "make", "install"
   end
