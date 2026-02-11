@@ -28,7 +28,10 @@ class Wiredtiger < Formula
   depends_on "zstd"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # CRC32 hardware detection: https://github.com/wiredtiger/wiredtiger/tree/develop/src/checksum
