@@ -38,7 +38,9 @@ class Wv2 < Formula
   depends_on "glib"
   depends_on "libgsf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Temporary test resource for bottles built before testole.doc was added.
   resource "testole.doc" do
