@@ -15,7 +15,10 @@ class Pngcheck < Formula
   end
 
   depends_on "cmake" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove files only needed on non-Unix. Doesn't need to be removed as CMake handles it
