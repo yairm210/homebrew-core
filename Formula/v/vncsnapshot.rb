@@ -31,7 +31,9 @@ class Vncsnapshot < Formula
 
   depends_on "jpeg-turbo"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   patch :DATA # remove old PPC __APPLE__ ifdef from sockets.cxx
 
@@ -45,8 +47,8 @@ class Vncsnapshot < Formula
       "JPEG_LIB=-L#{Formula["jpeg-turbo"].opt_lib} -ljpeg",
     ]
     if OS.linux?
-      args << "ZLIB_INCLUDE=-I#{Formula["zlib"].opt_include}"
-      args << "ZLIB_LIB=-L#{Formula["zlib"].opt_lib} -lz"
+      args << "ZLIB_INCLUDE=-I#{Formula["zlib-ng-compat"].opt_include}"
+      args << "ZLIB_LIB=-L#{Formula["zlib-ng-compat"].opt_lib} -lz"
     end
 
     ENV.deparallelize
