@@ -20,10 +20,13 @@ class RnaStar < Formula
   end
 
   uses_from_macos "vim" => :build # needed for xxd
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
