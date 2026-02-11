@@ -26,7 +26,10 @@ class Postgrest < Formula
   depends_on "libpq"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build with GHC >= 9.10
