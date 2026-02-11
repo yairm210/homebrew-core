@@ -29,7 +29,10 @@ class Ulfius < Formula
   depends_on "yder"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
