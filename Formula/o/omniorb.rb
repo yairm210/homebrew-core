@@ -24,7 +24,9 @@ class Omniorb < Formula
   depends_on "python@3.14"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "bindings" do
     url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.4/omniORBpy-4.3.4.tar.bz2"
@@ -40,7 +42,7 @@ class Omniorb < Formula
 
     # Help old config scripts identify arm64 linux
     build_arg = []
-    build_arg << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    build_arg << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     ENV["PYTHON"] = python3 = which("python3.14")
     xy = Language::Python.major_minor_version python3
