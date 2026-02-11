@@ -1,8 +1,8 @@
 class Gwt < Formula
   desc "Google web toolkit"
   homepage "https://www.gwtproject.org/"
-  url "https://github.com/gwtproject/gwt/releases/download/2.12.2/gwt-2.12.2.zip"
-  sha256 "32c17bbc8e98548c0be433aab36a3b8ba7428cfc70a26c41c4af4e0d6ecff1e1"
+  url "https://github.com/gwtproject/gwt/releases/download/2.13.0/gwt-2.13.0.zip"
+  sha256 "43ca936765a432d5e6fb7ce746caf9c9a7d6d47abb955da3f03742d7a61b31d3"
   license "Apache-2.0"
 
   livecheck do
