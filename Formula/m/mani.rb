@@ -1,8 +1,8 @@
 class Mani < Formula
   desc "CLI tool to help you manage repositories"
   homepage "https://manicli.com"
-  url "https://github.com/alajmo/mani/archive/refs/tags/v0.31.2.tar.gz"
-  sha256 "fdcf1b91ee8fb9403c9d70ae6703af05961df7b4daf906dee667ae31a6ee6925"
+  url "https://github.com/alajmo/mani/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "63151cc156130b335b1f844c6e88049670647c44d4a42516510a9fd70edff9b0"
   license "MIT"
   head "https://github.com/alajmo/mani.git", branch: "main"
 
