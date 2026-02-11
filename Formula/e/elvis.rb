@@ -1,8 +1,8 @@
 class Elvis < Formula
   desc "Erlang Style Reviewer"
   homepage "https://github.com/inaka/elvis"
-  url "https://github.com/inaka/elvis/archive/refs/tags/4.1.1.tar.gz"
-  sha256 "82a42102734285d0e39a8b55bc2195752f44347b6f2ef0962834e49579d067c8"
+  url "https://github.com/inaka/elvis/archive/refs/tags/4.2.0.tar.gz"
+  sha256 "4a3e33f3d3e787219d9877d7384d18b3687ab76c0387b0103251ad71965e22bc"
   license "Apache-2.0"
   head "https://github.com/inaka/elvis.git", branch: "master"
 
@@ -51,7 +51,7 @@ class Elvis < Formula
     EOS
 
     expected = <<~EOS.chomp
-      The macro named "bad_macro_name" on line 3 does not respect the format defined by the regular expression
+      At line 3, column 2, the name of macro "bad_macro_name" is not acceptable by regular expression
     EOS
 
     assert_match expected, shell_output("#{bin}/elvis rock", 1)
