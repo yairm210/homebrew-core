@@ -30,7 +30,9 @@ class Pngcrush < Formula
 
   depends_on "libpng"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Use Debian's patch to fix build with `libpng`.
   # Issue ref: https://sourceforge.net/p/pmt/bugs/82/
@@ -40,7 +42,7 @@ class Pngcrush < Formula
   end
 
   def install
-    zlib = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["zlib"].opt_prefix
+    zlib = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["zlib-ng-compat"].opt_prefix
     args = %W[
       CC=#{ENV.cc}
       LD=#{ENV.cc}
