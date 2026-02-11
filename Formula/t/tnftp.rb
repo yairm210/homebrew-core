@@ -1,9 +1,9 @@
 class Tnftp < Formula
   desc "NetBSD's FTP client"
   homepage "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/"
-  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
-  sha256 "be0134394bd7d418a3b34892b0709eeb848557e86474e1786f0d1a887d3a6580"
+  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20260211.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20260211.tar.gz"
+  sha256 "101cda6927e5de4338ad9d4b264304d7d15d6a78b435968a7b95093e0a2efe03"
   license all_of: [
     "BSD-2-Clause",
     "BSD-3-Clause", # src/domacro.c
@@ -14,8 +14,6 @@ class Tnftp < Formula
     url :homepage
     regex(/href=.*?tnftp[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
