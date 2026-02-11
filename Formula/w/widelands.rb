@@ -38,7 +38,6 @@ class Widelands < Formula
   depends_on "sdl2_ttf"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -46,6 +45,7 @@ class Widelands < Formula
 
   on_linux do
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install
