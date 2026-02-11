@@ -19,7 +19,9 @@ class Radicle < Formula
 
   depends_on "openssh"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["RADICLE_VERSION"] = version.to_s
