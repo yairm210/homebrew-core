@@ -19,7 +19,9 @@ class Pgrx < Formula
   depends_on "rustup" => :test
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-pgrx")
