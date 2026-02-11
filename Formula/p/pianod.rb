@@ -27,7 +27,6 @@ class Pianod < Formula
 
   uses_from_macos "curl"
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -35,6 +34,7 @@ class Pianod < Formula
 
   on_linux do
     depends_on "libbsd"
+    depends_on "zlib-ng-compat"
   end
 
   def install
