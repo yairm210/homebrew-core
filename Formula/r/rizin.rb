@@ -30,7 +30,9 @@ class Rizin < Formula
   depends_on "xz" # for lzma
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
