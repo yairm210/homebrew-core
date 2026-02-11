@@ -40,7 +40,6 @@ class Openmsx < Formula
   depends_on "theora"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on "llvm"
@@ -53,6 +52,7 @@ class Openmsx < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc do
