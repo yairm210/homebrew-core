@@ -25,7 +25,10 @@ class RpkiClient < Formula
   depends_on "rsync"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--with-rsync=#{Formula["rsync"].opt_bin}/rsync",
