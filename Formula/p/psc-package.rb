@@ -25,6 +25,10 @@ class PscPackage < Formula
 
   uses_from_macos "libffi"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   # Apply upstream patch to fix build. Remove with next release.
   patch do
     url "https://github.com/purescript/psc-package/commit/2817cfd7bbc29de790d2ab7bee582cd6167c16b5.patch?full_index=1"
