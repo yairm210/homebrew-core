@@ -19,7 +19,9 @@ class OsmPbf < Formula
   depends_on "abseil"
   depends_on "protobuf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
