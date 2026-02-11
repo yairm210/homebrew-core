@@ -1,8 +1,8 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-50.14.1.tgz"
-  sha256 "6c5263e67307dbdd3009a7c8764421a627578e3469aa96114ab67d06a574c285"
+  url "https://registry.npmjs.org/vercel/-/vercel-50.15.1.tgz"
+  sha256 "09f44a5eade0e3e3382f3e20d1ac32539f397f0c2207931821cece201fcf3b71"
   license "Apache-2.0"
 
   bottle do
@@ -17,8 +17,8 @@ class VercelCli < Formula
   depends_on "node"
 
   def install
-    inreplace "dist/index.js", "${await getUpdateCommand()}",
-                               "brew upgrade vercel-cli"
+    inreplace "dist/index.js", "await getUpdateCommand()",
+                               '"brew upgrade vercel-cli"'
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
