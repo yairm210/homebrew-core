@@ -4,6 +4,7 @@ class Mpd < Formula
   url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.8.tar.gz"
   sha256 "c6c21209617960f37d94e744e24ecf864a86a828e7ee3876ab490ea0b5c3cdb4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
@@ -34,12 +35,12 @@ class Mpd < Formula
   depends_on "libmikmod"
   depends_on "libmpdclient"
   depends_on "libnfs"
+  depends_on "libnpupnp"
   depends_on "libogg"
   depends_on "libsamplerate"
   depends_on "libshout"
   depends_on "libsndfile"
   depends_on "libsoxr"
-  depends_on "libupnp"
   depends_on "libvorbis"
   depends_on "mpg123"
   depends_on "opus"
@@ -99,7 +100,7 @@ class Mpd < Formula
       -Dfluidsynth=enabled
       -Dnfs=enabled
       -Dshout=enabled
-      -Dupnp=pupnp
+      -Dupnp=npupnp
       -Dvorbisenc=enabled
       -Dwavpack=enabled
       -Dgme=enabled
