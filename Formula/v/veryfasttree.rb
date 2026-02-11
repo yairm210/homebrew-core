@@ -27,10 +27,13 @@ class Veryfasttree < Formula
   depends_on "xxhash" => :build
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
