@@ -1,8 +1,8 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
-  url "https://github.com/opensearch-project/OpenSearch/archive/refs/tags/3.4.0.tar.gz"
-  sha256 "04f51a656a19c5831759abec75306d7fd501d9fb5a990bd71fdd1a95a236a3ea"
+  url "https://github.com/opensearch-project/OpenSearch/archive/refs/tags/3.5.0.tar.gz"
+  sha256 "b57b3bf4945d6759f31fbc76042c8ffdb5159bd12caf7738865f1b08d93f55c6"
   license "Apache-2.0"
 
   bottle do
