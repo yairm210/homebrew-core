@@ -18,7 +18,9 @@ class Upx < Formula
   depends_on "cmake" => :build
   depends_on "ucl" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
