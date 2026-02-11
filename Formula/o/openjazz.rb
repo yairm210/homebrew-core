@@ -21,7 +21,9 @@ class Openjazz < Formula
   depends_on "sdl2"
   depends_on "sdl2_net"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # From LICENSE.DOC:
   # "Epic MegaGames allows and encourages all bulletin board systems and online
