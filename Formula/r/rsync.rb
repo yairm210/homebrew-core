@@ -31,7 +31,9 @@ class Rsync < Formula
   depends_on "xxhash"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # hfs-compression.diff has been marked by upstream as broken since 3.1.3
   # and has not been reported fixed as of 3.2.7
