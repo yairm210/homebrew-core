@@ -35,11 +35,11 @@ class Opensc < Formula
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "pcsc-lite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "glib"
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install
