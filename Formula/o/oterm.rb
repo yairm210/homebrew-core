@@ -27,7 +27,9 @@ class Oterm < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
                 extra_packages:   %w[jeepney secretstorage]
