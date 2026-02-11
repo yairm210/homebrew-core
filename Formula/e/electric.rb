@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.4.1.tar.gz"
-  sha256 "252939615d940759c5067828c8b4693920bb27bef45f5a9a1403e7faf8dcf32e"
+  url "https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.4.3.tar.gz"
+  sha256 "322dd2e71838cdaec22264aab886082a168c1ecde487294e68c9f1af6cea81b9"
   license "Apache-2.0"
 
   livecheck do
@@ -25,7 +25,10 @@ class Electric < Formula
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["MIX_ENV"] = "prod"
