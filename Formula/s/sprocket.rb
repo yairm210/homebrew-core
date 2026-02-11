@@ -3,8 +3,8 @@ class Sprocket < Formula
   homepage "https://sprocket.bio"
   # pull from git tag to get submodules
   url "https://github.com/stjude-rust-labs/sprocket.git",
-      tag:      "v0.20.1",
-      revision: "11ded263f29d812601a730b1bf3889ac0671a327"
+      tag:      "v0.21.0",
+      revision: "ed1858bb03ced228fee2ed0abbd1a2ce93f76d96"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
