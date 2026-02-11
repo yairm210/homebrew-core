@@ -47,7 +47,6 @@ class Vice < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -61,6 +60,7 @@ class Vice < Formula
     depends_on "libx11"
     depends_on "mesa"
     depends_on "pulseaudio"
+    depends_on "zlib-ng-compat"
   end
 
   def install
