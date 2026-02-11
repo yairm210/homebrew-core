@@ -23,10 +23,9 @@ class Vtcode < Formula
   depends_on "rust" => :build
   depends_on "ripgrep"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install
