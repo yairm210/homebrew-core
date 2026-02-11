@@ -6,6 +6,15 @@ class Libnpupnp < Formula
   license "BSD-3-Clause"
   head "https://framagit.org/medoc92/npupnp.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "3278ce2a5a291e0f2d28f022453d0577a57f5071e4bc3bc2cfe3de8591a84627"
+    sha256 cellar: :any, arm64_sequoia: "41e44bcf67f2071457128e58931324c0af086c9942a66687a2d59f2458ef31fd"
+    sha256 cellar: :any, arm64_sonoma:  "39ba90edb2366733796e84d222bb0bf71e74c27c7f4471a8e7441e285880fba6"
+    sha256 cellar: :any, sonoma:        "d26a799d4eb9e425b424fb7b19195127889ca06cb0968a776e670b84ee75819f"
+    sha256               arm64_linux:   "ed47a43b39a4091cbc93abf7395cdfce37bf2ea946f716e74aa9a24ba0669290"
+    sha256               x86_64_linux:  "848948583f1484beb7d5084457f8083d5408eb7027b48666bcf6d2d48223b171"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
