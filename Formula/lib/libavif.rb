@@ -4,6 +4,7 @@ class Libavif < Formula
   url "https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "0a545e953cc049bf5bcf4ee467306a2f113a75110edf59e61248873101cd26c1"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     rebuild 1
@@ -22,7 +23,9 @@ class Libavif < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
