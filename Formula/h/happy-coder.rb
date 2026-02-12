@@ -6,6 +6,15 @@ class HappyCoder < Formula
   license "MIT"
   head "https://github.com/slopus/happy-cli.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03313b663fe8310e65192bf523cec55c71aac6c6921a19812e713789647cc11c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03313b663fe8310e65192bf523cec55c71aac6c6921a19812e713789647cc11c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03313b663fe8310e65192bf523cec55c71aac6c6921a19812e713789647cc11c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e961c5aaee5f1b54553a239ec2dee90a4b16942217ce6027d3ee442a904a9f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb9de9d2959ccac07a1d8ec38ea92c54cb850cb98b5da6e038ebaf077a475d17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb9de9d2959ccac07a1d8ec38ea92c54cb850cb98b5da6e038ebaf077a475d17"
+  end
+
   depends_on "yarn" => :build
   depends_on "difftastic"
   depends_on "node"
