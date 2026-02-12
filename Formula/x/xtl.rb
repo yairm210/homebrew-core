@@ -1,8 +1,8 @@
 class Xtl < Formula
   desc "X template library"
   homepage "https://github.com/xtensor-stack/xtl"
-  url "https://github.com/xtensor-stack/xtl/archive/refs/tags/0.8.1.tar.gz"
-  sha256 "e69a696068ccffd2b435539d583665981b6c6abed596a72832bffbe3e13e1f49"
+  url "https://github.com/xtensor-stack/xtl/archive/refs/tags/0.8.2.tar.gz"
+  sha256 "8fb38d6a5856aab5740d2ccb3d791d289f648d4cc506b94a1338fe5fce100c11"
   license "BSD-3-Clause"
 
   bottle do
