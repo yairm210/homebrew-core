@@ -1,10 +1,9 @@
 class PostgresqlAT17 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v17.7/postgresql-17.7.tar.bz2"
-  sha256 "ef9e343302eccd33112f1b2f0247be493cb5768313adeb558b02de8797a2e9b5"
+  url "https://ftp.postgresql.org/pub/source/v17.8/postgresql-17.8.tar.bz2"
+  sha256 "a88d195dd93730452d0cfa1a11896720d6d1ba084bc2be7d7fc557fa4e4158a0"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -44,7 +43,6 @@ class PostgresqlAT17 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -53,6 +51,7 @@ class PostgresqlAT17 < Formula
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
