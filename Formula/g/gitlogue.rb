@@ -1,8 +1,8 @@
 class Gitlogue < Formula
   desc "Cinematic Git commit replay tool"
   homepage "https://github.com/unhappychoice/gitlogue"
-  url "https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "57b1c7ed46bf989cd32c274a4e59469661f3018b89ba1cc01c0a0c964495f426"
+  url "https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "443a4b07d191c9a9ebcaf89e360bb2ad382bfdec1c520e2fbfa3492eac8a4e06"
   license "ISC"
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
