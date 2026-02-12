@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/30/25/82d3b377d576b1b405213db58f62ab93242eac356442add60875697c4457/vunnel-0.52.1.tar.gz"
-  sha256 "0f4e6197f3a13c72479cde0f13e71c9582c198ac394b7e294db7adc80a960beb"
+  url "https://files.pythonhosted.org/packages/f9/ef/f917e05a5a3b20f60ee95d52bd66d41972c7b805134f866850b3c8248154/vunnel-0.53.0.tar.gz"
+  sha256 "282fc1374691fa5646bbb0fb7468130a4a334f17e9bcae603c1e435d83bae286"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -124,8 +124,8 @@ class Vunnel < Formula
   end
 
   resource "oras" do
-    url "https://files.pythonhosted.org/packages/c3/78/16f3847ef31a3b1410c401712336a9c5d90fa97c3cc1f4bacd9dcfced9b7/oras-0.2.38.tar.gz"
-    sha256 "58482f78275cb5cc9fdf135248ca878a19204428a51bd3a1ca24c32714d35341"
+    url "https://files.pythonhosted.org/packages/d0/79/804ad8eb314929aa37a4d88f1dcfb683fc0d93f6e270739d07da4d8f5dee/oras-0.2.39.tar.gz"
+    sha256 "cf6103f35ae59227e6a5185479b5eda319aae57c6b8bacc35218ee551db647c3"
   end
 
   resource "orjson" do
