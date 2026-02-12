@@ -11,12 +11,12 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36c0beaeb0163c531dd8482873718370b81eaffdfbfc56bdf7bdffa20dac9d78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36c0beaeb0163c531dd8482873718370b81eaffdfbfc56bdf7bdffa20dac9d78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31593800d826f1f9213f01434e92be11f7714d8099ef96c008638f685b622291"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb16b0e131a70def319c839bc3e31ab2f36edd6e87dafaeca878ca8c18dced5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd8fee494df3f626ad57dc1ab952a107f5899911bd1acc52d6a2966df051bd97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87ddf0923c606badd36e8ba0e680ef459292d6e776879e520428b9a1fc124930"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b93b8c24160c8008e82e14cf343bf965d903d5f389a9953775675941f9517a3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b93b8c24160c8008e82e14cf343bf965d903d5f389a9953775675941f9517a3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8ed51284a3f0ff6134237ba61a0c6bd9f9758b125b51e9e5d2f9f7f9db4248d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07e3928b177f750d658ebc419aebc2310078f6eb0c887b04376359a0b1143d8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "223f7372762ef62f8cb2ace6d3cd4903529ad09e02b57f4d8be9e1ea3ac83c8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc9980313a5778b1bfbe939a02d35790681fc92ad6e0e7d9c99b9569ba10a936"
   end
 
   depends_on "openjdk@21"
