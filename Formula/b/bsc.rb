@@ -19,12 +19,13 @@ class Bsc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "271fac6bcb893b9ac9ed0816572967482485674525370bac1aec27e5fafdcec8"
-    sha256 cellar: :any,                 arm64_sequoia: "73ca733dc6506343d400fb4b3615473893bb7c14b840f4bc2a87dee1fea1b6dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "a76320a8ef7ff83fdcfee1f8ab422f1907f17e38849ce7b7adf5093941ddeef1"
-    sha256 cellar: :any,                 sonoma:        "99bea46008c809f6f605a517da2c24faf78ae7ce0ebfa015758e7d6c1a5d7744"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71d9a63e7c159e1ac85cff67a5e90f1711785d74ebc9250f470f361dd728648c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43b681c317a2919923ab0fcd8aea8fb74d2e5237fc4fa55cd2adef18cd8710dd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5a8e4ab5547aa47dfd38ebce591d09be2608ae9cbad646f812840a806d68bcf4"
+    sha256 cellar: :any,                 arm64_sequoia: "82b90b50a08f90e075c141679c91e704e8c3464cd5fd7c6086bd893db145a235"
+    sha256 cellar: :any,                 arm64_sonoma:  "49f11cd1b6c4f92ee3a5c51b460c6095ce5f82b66af0ef81795d28859ca8ae8a"
+    sha256 cellar: :any,                 sonoma:        "b0ba897244b18a97622c214ac93cfab649489e0e6ab1451e087a91a87ac10e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "684b5a230253935597e9048fe6f61cc9a8d0b01e98b1acbc4fff3d06cefa14f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a798403601b1b39a0296b83b31d4db1ad055bc13d83a8b6c1cbafebaa08ab53b"
   end
 
   depends_on "autoconf" => :build
