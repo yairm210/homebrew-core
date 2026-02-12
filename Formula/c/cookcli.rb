@@ -23,9 +23,10 @@ class Cookcli < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    # Install npm dependencies and build CSS
+    # Install npm dependencies and build assets
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build-css"
+    system "npm", "run", "build-js"
 
     # Build and install the binary
     system "cargo", "install", *std_cargo_args
