@@ -1,8 +1,8 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://github.com/rakudo/star/releases/download/2025.11/rakudo-star-2025.11.tar.gz"
-  sha256 "d013513cca2fd92c67e87d1cc67204d249d912cd8de29ed60773ce8a1bc2d627"
+  url "https://github.com/rakudo/star/releases/download/2026.01/rakudo-star-2026.01.tar.gz"
+  sha256 "10b3cbfe02af8ac6b4f50b51b21d5da69f097b6ed8fce37945988844997233be"
   license "Artistic-2.0"
 
   livecheck do
@@ -20,13 +20,12 @@ class RakudoStar < Formula
     sha256 x86_64_linux:  "dae805ddac85ce4b335457e5868ff7bd5ebbcf270b79653b5d39d78c0712b522"
   end
 
-  depends_on "bash" => :build
   depends_on "pkgconf" => :build
   depends_on "sqlite" => [:build, :test]
   depends_on "libtommath"
   depends_on "mimalloc"
-  depends_on "openssl@3" # for OpenSSL module, loaded by path
-  depends_on "readline" # for Readline module, loaded by path
+  depends_on "openssl@3" => :no_linkage # for OpenSSL module, loaded by path
+  depends_on "readline" => :no_linkage # for Readline module, loaded by path
   depends_on "zstd"
 
   uses_from_macos "perl" => :build
@@ -34,6 +33,7 @@ class RakudoStar < Formula
   uses_from_macos "libxml2"
 
   on_macos do
+    depends_on "bash" => :build
     depends_on "libuv"
   end
 
@@ -65,6 +65,11 @@ class RakudoStar < Formula
       rm_r(moarvm_3rdparty/"libuv")
     end
     inreplace "lib/actions/install.bash", "@@MOARVM_CONFIGURE_ARGS@@", moarvm_configure_args.join(" ")
+
+    # Workaround for https://github.com/rakudo/star/issues/217
+    inreplace "src/rakudo-star-modules/DBIish/t/01-Basic.rakutest",
+              "::('X::DBIish::DriverNotFound')",
+              "::X::DBIish::DriverNotFound"
 
     # Help Readline module find brew `readline` on Linux
     inreplace "src/rakudo-star-modules/Readline/lib/Readline.pm",
