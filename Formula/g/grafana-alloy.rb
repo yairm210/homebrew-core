@@ -7,12 +7,12 @@ class GrafanaAlloy < Formula
   head "https://github.com/grafana/alloy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bb3f4d188589c2a9641c04617120c11f93d16df3e580b74152ccda694c75272"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af56a0392bfb6b41d973bf5b56eb802b260a217554a1814e2efead9dd16aedaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f19cbb07ddf275bc17dd59f11dfcd641746d336e52642dcfc19bc8bb4566c1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adc958e4b288df5f3797a31aab5f620857d8f8cccea4239f6168eb38fcabdf74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e1ef63ca6d7d36f15c1efa49a882c9f5a8de9b1ad60be448d00eeb578c35191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d70495ee54bb422aa5af3504feca210128b6df899d273f37231c4b265ac43776"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cada51af817609213feb7b71433a310bfed9d9a5a52c59c59a5f1f4504eca0bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49fe294cb8f092eee28c88e0bf9522a02cfd8f3199200e45947b1b71b85ef140"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "318134b1e247d27d2f7b6b7c0f88511b2924f4a01a0f488d755476fa5b348119"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22a7e0c954d8d7fa2d969866c155ddb33eb4f955ff1e963792a91f814110b880"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65b8e574c484947c3e4825de7c1c1e65c332dac68cfd36ad6564e699fb0d122a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14643ccd844131dd0d9a3f29f70dd7f7966727a8b543760d86815ecc5c3eb7dd"
   end
 
   depends_on "go" => :build
