@@ -7,6 +7,15 @@ class Specify < Formula
   sha256 "f1d0ca1ccdffb49ad97637107eb0dec0685e94b8fbdc82b666bdaed442daec49"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ae6818db657141cd91ad23eb6542b86dc20997a51efce061921e54a177b92dbb"
+    sha256 cellar: :any,                 arm64_sequoia: "bcba29f12441ba39f72202c9cb3130623fd30a4bb9c8d04e771b25f12aacfd0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "259255c7d37deb56c757aae1d25d820b5710530e4b384c96abce02748cfefc08"
+    sha256 cellar: :any,                 sonoma:        "3315c3b6623cdf033e88b484a00cf251ffd74115e3a0916f9317d72a5e273fb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16662d63cc02bf9e98ed0c8c7835aa6aa4af907e506a2220dd0f2ceaf04171b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f8e577c02503dec7ff2a160040746f0bdc3f298fd3bcd1c4f0fb9b828b173fd"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
