@@ -10,6 +10,15 @@ class BazelAT8 < Formula
     regex(/^v?(8(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2ca5ecd479bc7700cdee5b54445f0c06e071d47f9b9093f0756a4a217018364"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ca5ecd479bc7700cdee5b54445f0c06e071d47f9b9093f0756a4a217018364"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a97ce7ffb1fd4c5fc47079f445078e2d6e2c774a1fd8ab6ee994f0de179f6c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef5d0ec7ca342fa6823de0f8331a31092be780243a9bebe270795d58a5bbee99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aa0ef542f6bde4c8848982b15477f8099cec7a5c967f28bc19dc58ebabdb457"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5b616836cf85ab4b2780fd856ae72233fdaf77d5d6cdb7862c895aebf68819"
+  end
+
   keg_only :versioned_formula
 
   # https://bazel.build/release#support-matrix
