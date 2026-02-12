@@ -20,7 +20,10 @@ class Sqlcipher < Formula
   # Build scripts require tclsh. `--disable-tcl` only skips building extension
   uses_from_macos "tcl-tk" => :build
   uses_from_macos "sqlite" => :test # check for conflicts on Linux
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Build with full-text search enabled
@@ -48,7 +51,8 @@ class Sqlcipher < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "install"
+    # Work around "install: mkdir .../lib: File exists"
+    ENV.deparallelize { system "make", "install" }
 
     # Modify file names to avoid conflicting with sqlite. Similar to
     # * Debian  - https://salsa.debian.org/debian/sqlcipher/-/blob/master/debian/rules
