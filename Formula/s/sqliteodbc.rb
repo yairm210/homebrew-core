@@ -29,7 +29,10 @@ class Sqliteodbc < Formula
   depends_on "unixodbc"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     # Added automake as a build dependency to update config files for ARM support.
