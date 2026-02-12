@@ -1,8 +1,8 @@
 class Whosthere < Formula
   desc "LAN discovery tool with a modern TUI written in Go"
   homepage "https://github.com/ramonvermeulen/whosthere"
-  url "https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "d60367a6c51a7a59b2d282e547fced3393c7a6b4918b262aa015caf1211e1c91"
+  url "https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "fafb6a69cf64593818c2944055b7a55572715f6136aa0b97767843b68c3556f7"
   license "Apache-2.0"
   head "https://github.com/ramonvermeulen/whosthere.git", branch: "main"
 
@@ -11,12 +11,12 @@ class Whosthere < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a67755e7b6b2d7d0a43e2f3bb3e6abeed9e6d3c555d2484d21ca0ba3015ab014"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90fc9589d7e70dc3dc529a9597d3e33101db7ae57abad6416fd43ff1f69e5ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fce4c776f6ee7d3ab109429bea0f0f34b07f4218c4bf261eb80161c84de90ca1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3632e83b7ac53fd1da174b183668e2e6810badf391b61fcbd90469adbc01f964"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29ec8df058d8df7b0cb85446cbd8e52aa5280f6b73e3d7d11fd2810b2b6246a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "936a68600a03812db3dda707b62527a361a32713440c59c4c60253d2d89eb679"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0946376455982d73d5113c149d7833ff5f11bf447a1a9837e555fa4131d57dac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62af42fa9124df09d566db7e4accda20b3a66755c82fce542afd159a9624a872"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccc49388c8b0b29e32335dc7fce0a7f8d4f12b146981d244e4b34767497d39cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "307ed960c69cd44376d794aa7d1571ec49a9cd0dacf919fd7c6d16b2d9156f13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3bd3a4796bf24bd03bc9a79629b0c379c1254c1c5a99a6139c820d102664930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561c04d83ef76ba0aefe83511225c4ac136ad126dfb22cd3b5171355dc0f589b"
   end
 
   depends_on "go" => :build
