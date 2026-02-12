@@ -1,8 +1,8 @@
 class JqLsp < Formula
   desc "Jq language server"
   homepage "https://github.com/wader/jq-lsp"
-  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.16.tar.gz"
-  sha256 "984115bdf6ab8ba155cd72011a75971366dfe240811e4fdba44a957a87cae217"
+  url "https://github.com/wader/jq-lsp/archive/refs/tags/v0.1.17.tar.gz"
+  sha256 "899cd2dcd4838d21bab1d84f687cb4a907e0fce7702990dac342b9b6fd88b5a2"
   license "MIT"
   head "https://github.com/wader/jq-lsp.git", branch: "master"
 
