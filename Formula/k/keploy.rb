@@ -1,8 +1,8 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://github.com/keploy/keploy/archive/refs/tags/v3.3.24.tar.gz"
-  sha256 "84a500d71118f79ec51bbaa559d1167ee957fc373c877c6b8d9fef61c5266cc1"
+  url "https://github.com/keploy/keploy/archive/refs/tags/v3.3.26.tar.gz"
+  sha256 "e7c18315fdcffb558a870adfb5796614de318b4ee223c0d37e9a8cd5630223bf"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
@@ -15,7 +15,9 @@ class Keploy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99b2fe6f68d3de4d8acdcf6495527bacab13e277c25cdd1f82e6269ebf25a3d8"
   end
 
-  depends_on "go" => :build
+  # Unpin Go when Keploy supports Go 1.26
+  # (when go.mod references vitess > v23.0.2, ref https://github.com/vitessio/vitess/pull/19367)
+  depends_on "go@1.25" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
