@@ -6,7 +6,7 @@ class EaskCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0ec393120b61f36d1961e465c7bfc467748a533247b4fa9a141e1c82a545e221"
+    sha256 cellar: :any_skip_relocation, all: "d5c6157a786ad8fd088d237f539dacee83f19f24b9e20cce0a1a8787edc54715"
   end
 
   depends_on "node"
