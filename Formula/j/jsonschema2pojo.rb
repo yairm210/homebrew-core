@@ -12,12 +12,12 @@ class Jsonschema2pojo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edb99d1265ef939c0501a99a4a0a957fdad8bd6be1e113af05e91a3a92c55a14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edb99d1265ef939c0501a99a4a0a957fdad8bd6be1e113af05e91a3a92c55a14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edb99d1265ef939c0501a99a4a0a957fdad8bd6be1e113af05e91a3a92c55a14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edb99d1265ef939c0501a99a4a0a957fdad8bd6be1e113af05e91a3a92c55a14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d59cbeb207969062c0e70ad795e40caa8c0cd218dc7cec8737d31b5a66ddda38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d59cbeb207969062c0e70ad795e40caa8c0cd218dc7cec8737d31b5a66ddda38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e54288130be9a5f59b961f8627cdecaf731da193d85ffe45425cb032fd5772f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e54288130be9a5f59b961f8627cdecaf731da193d85ffe45425cb032fd5772f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e54288130be9a5f59b961f8627cdecaf731da193d85ffe45425cb032fd5772f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e54288130be9a5f59b961f8627cdecaf731da193d85ffe45425cb032fd5772f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08a6643869c2531a18902af234a5a90a40106b9928a84c1918223e6454424e6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a6643869c2531a18902af234a5a90a40106b9928a84c1918223e6454424e6e"
   end
 
   depends_on "openjdk"
