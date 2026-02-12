@@ -6,8 +6,7 @@ class Sec < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8a177a1143fb753c0e6657473880f30f8d31cccff86b15ac6fac8274375f9d6c"
+    sha256 cellar: :any_skip_relocation, all: "7ac5555f3b48c112484a49be8909c19ad5d8a0f81d776cd2f70d165e495b790a"
   end
 
   def install
