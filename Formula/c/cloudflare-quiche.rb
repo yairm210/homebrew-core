@@ -13,12 +13,12 @@ class CloudflareQuiche < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ca6ad968cf8b1598652acb61a85711cd0249389208a751a7165a2dcce617cf3"
-    sha256 cellar: :any,                 arm64_sequoia: "4b0fa50c30a37ec0340136a0914560f1e30ba91ef009552046bad8d1267cc515"
-    sha256 cellar: :any,                 arm64_sonoma:  "784c2af35f2b10bc2b3599ff81d15e0bc8a2900f9a74bdae68d4f27145f0f655"
-    sha256 cellar: :any,                 sonoma:        "33bc40c259994cccd1986794f9b099fe73da523c688f73d87e318bba3a4d2bf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfe0792f8226a038d830b55a80ade177f892c143e226a2af109923f699d37ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f087b8ea7a5dbbde76e3e961b2b85b28229e012b8d425f3384d3564fd2ce14f5"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f879eb4af67d14fb7d38afc9e489801843a5982c85fdc39c29eb8eb08f54db6"
+    sha256 cellar: :any,                 arm64_sequoia: "89cac302c9aedf23a1c338fdc8a49bff86c0c3e90a554dc56776686eb37fddac"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc065c63c14b11498ef506259477b1468f25bc737433417efa7e91513afc0a75"
+    sha256 cellar: :any,                 sonoma:        "c21e4a084adbd1facf7cc2b9cc52ee5b4bf3828f4593a23f3f23835478608a48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d40c69e2e5cdd990d8fd65aeb29d6c5e4b73cafb4cbe34e34965af813f62df5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b39559e643d184dde4dd5471405c5a57c96204c2188033fd043c2d8c3ee63cfa"
   end
 
   depends_on "cmake" => :build
