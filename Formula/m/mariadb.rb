@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://archive.mariadb.org/mariadb-12.1.2/source/mariadb-12.1.2.tar.gz"
-  sha256 "6eb4f9aa99ee40e86a7753918e40d1745bfa90c5f91984d22fcedb2e9b570088"
+  url "https://archive.mariadb.org/mariadb-12.2.2/source/mariadb-12.2.2.tar.gz"
+  sha256 "fe82fe2e9af98dfcad8c0266a283ca349b78fd46989fff0d5e1ffca644b514bd"
   license "GPL-2.0-only"
 
   livecheck do
@@ -43,7 +43,6 @@ class Mariadb < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "openjdk" => :build
@@ -51,6 +50,7 @@ class Mariadb < Formula
 
   on_linux do
     depends_on "linux-pam"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "mysql", "percona-server", because: "mariadb, mysql, and percona install the same binaries"
