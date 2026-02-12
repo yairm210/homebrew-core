@@ -1,11 +1,22 @@
 class Bsc < Formula
   desc "Bluespec Compiler (BSC)"
   homepage "https://github.com/B-Lang-org/bsc"
-  url "https://github.com/B-Lang-org/bsc.git",
-      tag:      "2025.07",
-      revision: "282e82e95da4b8cdedc3af3431a45cc1c630c291"
   license "BSD-3-Clause"
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
+
+  stable do
+    url "https://github.com/B-Lang-org/bsc/archive/refs/tags/2025.07.tar.gz"
+    sha256 "5019721717ac27bf80a549ccdd0fadf57ac7fe08cfbd75b0de98569fa36780f7"
+
+    resource "yices" do
+      url "https://github.com/B-Lang-org/bsc/releases/download/2025.07/yices-src-for-bsc-2025.07.tar.gz", using: :nounzip
+      sha256 "a7211d089be68303983cc644b70edaae8efab529ff63fd8670a4f20119888781"
+
+      livecheck do
+        formula :parent
+      end
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "271fac6bcb893b9ac9ed0816572967482485674525370bac1aec27e5fafdcec8"
@@ -19,8 +30,6 @@ class Bsc < Formula
   depends_on "autoconf" => :build
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
-  depends_on "gperf" => :build
-  depends_on "make" => :build
   depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "icarus-verilog"
@@ -28,8 +37,9 @@ class Bsc < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "gperf" => :build
+  uses_from_macos "perl" => :build
   uses_from_macos "libffi"
-  uses_from_macos "perl"
 
   conflicts_with "libbsc", because: "both install `bsc` binaries"
 
@@ -38,6 +48,9 @@ class Bsc < Formula
   patch :DATA
 
   def install
+    # Directly running tar to unpack subdirectories into buildpath
+    resource("yices").stage { system "tar", "-xzf", Dir["*.tar.gz"].first, "-C", buildpath } if build.stable?
+
     store_dir = buildpath/"store"
     haskell_libs = %w[old-time regex-compat split syb]
     system "cabal", "v2-update"
@@ -51,7 +64,7 @@ class Bsc < Formula
       GHCRTSFLAGS:      "+RTS -M4G -A128m -RTS",
       GHC_PACKAGE_PATH: "#{package_db}:",
     ) do
-      system "make", "install-src", "-j#{ENV.make_jobs}"
+      system "make", "install-src", "-j#{ENV.make_jobs}", "LIBGMPA=-lgmp"
     end
 
     bin.write_exec_script libexec/"bin/bsc"
