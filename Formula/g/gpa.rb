@@ -1,20 +1,10 @@
 class Gpa < Formula
   desc "Graphical user interface for the GnuPG"
   homepage "https://www.gnupg.org/related_software/gpa/"
+  url "https://gnupg.org/ftp/gcrypt/gpa/gpa-0.11.1.tar.bz2"
+  mirror "https://deb.debian.org/debian/pool/main/g/gpa/gpa_0.11.1.orig.tar.bz2"
+  sha256 "0bc5b2cd3e0641d07a2d8af372a09659decd918bee22fdfbefd2133d7c4d5d0b"
   license "GPL-3.0-or-later"
-  revision 1
-
-  stable do
-    url "https://gnupg.org/ftp/gcrypt/gpa/gpa-0.11.0.tar.bz2"
-    mirror "https://deb.debian.org/debian/pool/main/g/gpa/gpa_0.11.0.orig.tar.bz2"
-    sha256 "26a8fa5bf70541cb741f0c71b7cfe291b1ea56eab68eeb07aa962cef5cdf33cc"
-
-    # Fix for `gpgme` >= 2.0.0 compatibility
-    patch do
-      url "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpa.git;a=patch;h=b6ba8bcc6db7765667cd6c49b7edc9a2073bc74f"
-      sha256 "3aab76d3d79cad0c756f9c73cc237b8632ae9e7f68d5f7715c3ca58e2c633bc5"
-    end
-  end
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpa/"
