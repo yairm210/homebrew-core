@@ -1,12 +1,10 @@
 class Pgpdump < Formula
   desc "PGP packet visualizer"
   homepage "https://www.mew.org/~kazu/proj/pgpdump/en/"
-  url "https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.36.tar.gz"
-  sha256 "9831fb578175f97f77e269326cb06e5367161e9ddbbfb7f753cef12f0f479c1d"
+  url "https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.37.tar.gz"
+  sha256 "bc3b6b85f3c95c68010883675283c1c905e6c4070ac5609ced1a87c53b3ee814"
   license "BSD-3-Clause"
-  head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "master"
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -18,6 +16,9 @@ class Pgpdump < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04042cf505e1ebaa0ae1c78a69a3fdf038a128d1fb1a37b438116b724bd6f26b"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+
   uses_from_macos "bzip2"
 
   on_linux do
@@ -25,6 +26,7 @@ class Pgpdump < Formula
   end
 
   def install
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
