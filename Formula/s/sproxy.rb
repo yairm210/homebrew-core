@@ -34,10 +34,10 @@ class Sproxy < Formula
   depends_on "libtool" => :build
 
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
 
     resource "File::Remove" do
       url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.60.tar.gz"
