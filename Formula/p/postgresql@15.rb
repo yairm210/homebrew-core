@@ -1,10 +1,9 @@
 class PostgresqlAT15 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v15.15/postgresql-15.15.tar.bz2"
-  sha256 "5753aaeb8b09cbf61016f78aa69bf5cbdf01b43263f010cbf168c82896213aaa"
+  url "https://ftp.postgresql.org/pub/source/v15.16/postgresql-15.16.tar.bz2"
+  sha256 "695ee29a77be1f5010e10f3667696f29871587f7aa311eadc1f809bea287cf48"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -42,7 +41,6 @@ class PostgresqlAT15 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -51,6 +49,7 @@ class PostgresqlAT15 < Formula
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
