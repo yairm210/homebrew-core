@@ -1,9 +1,9 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/community/"
-  url "https://swupdate.openvpn.org/community/releases/openvpn-2.6.19.tar.gz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.6.19.tar.gz"
-  sha256 "13702526f687c18b2540c1a3f2e189187baaa65211edcf7ff6772fa69f0536cf"
+  url "https://swupdate.openvpn.org/community/releases/openvpn-2.7.0.tar.gz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.7.0.tar.gz"
+  sha256 "2f0e10eb272be61e8fb25fe1cfa20875ff30ac857ef1418000c02290bd6dfa45"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
