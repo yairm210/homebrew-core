@@ -7,13 +7,12 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.102-sb1.tar.gz"
-    version "10.0.102"
-    sha256 "cc544f357e3674f3f4d170c82f781f6f9406760e8badbe1fbcaf04657e1554d4"
+    url "https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.103.tar.gz"
+    sha256 "92fbc35b1b7ede2f4995e32aaa354c7d227e99179aaaa4661282a9d0ec977e4e"
 
     resource "release.json" do
-      url "https://github.com/dotnet/dotnet/releases/download/v10.0.102-sb1/release.json"
-      sha256 "f22c317a69e38fbd5f1b0cf482065c8cc40dddedb4c3dc7f659c07b3603c46ed"
+      url "https://github.com/dotnet/dotnet/releases/download/v10.0.103/release.json"
+      sha256 "05154d070eebb81ef7b1eff89466956db93ee42f9d03059a9eb91c0f2bd745ba"
 
       livecheck do
         formula :parent
@@ -47,7 +46,6 @@ class Dotnet < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "bash" => :build
     depends_on "grep" => :build # grep: invalid option -- P
   end
 
@@ -118,7 +116,7 @@ class Dotnet < Formula
       buildpath.install resource("release.json")
     end
 
-    system "./prep-source-build.sh"
+    system "./prep-source-build.sh", "--"
     system "./build.sh", *args
 
     libexec.mkpath
