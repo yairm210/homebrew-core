@@ -6,12 +6,12 @@ class Cljfmt < Formula
   license "EPL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6a43697a2a694e5d051756df398312dc92ef5e8a3043cb91094c9ed860fe89c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea1d78f4bfa95e74cb113995f6b16e540608523eaf6352b4aded9a98ab2c1cee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f77a2d3ed93174c5b5a4d17a3ac7a01897adaffc21276f9370e13a2cf43f02e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e27637fd1f10880f9459eac52c7841e52821d5778f13f67695cdbe387191615"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "147de0121f7817facf321f23b5037a056a8d8cde3d0dc251241aa21153bb3746"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "496bab021627e8077e289930444b1c7a8622d5bb78953323fa30c85da409b4fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7dffd7c67db23ad6cc9bfbd590f9cec89870f19868605755ba418c1285343d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55ef0d7259408e23a4429366b874c8c88a81f52228bd621cdd0fa7f2a0805644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "118dae329714ee5e9856490068224e18ba4a07628940c30360761eb3155ff066"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc1e16de269ea5650b0b6187c6adc4be75cf57f9470764de02a5fcafff7a1463"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efe6ad4d70760af7d057832cf866e1c8b58b0f56d8dc6e2e7323599fed910aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7329fde35963f978fbeb661e17bb5a09a1ada71053ca3f574bbdf0c8ae9a065d"
   end
 
   depends_on "leiningen" => :build
