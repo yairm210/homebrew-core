@@ -11,9 +11,6 @@ class Squashfuse < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a8f4cd10ca2e0d20f7407ba2d8fa8240d3786dd4c65b40f1e24a7878e0f828e4"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
@@ -21,7 +18,7 @@ class Squashfuse < Formula
   depends_on "lzo"
   depends_on "squashfs"
   depends_on "xz"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
   depends_on "zstd"
 
   def install
