@@ -3,8 +3,8 @@ class FlowControl < Formula
   homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
   url "https://github.com/neurocyte/flow.git",
-      tag:      "v0.6.0",
-      revision: "98855a73e4b5f01b282d3a735ca205934a226627"
+      tag:      "v0.7.0",
+      revision: "e044d1111ea9b88558aa2d81aa1da3379080e119"
   license "MIT"
   head "https://github.com/neurocyte/flow.git", branch: "master"
 
@@ -20,6 +20,11 @@ class FlowControl < Formula
   depends_on "zig" => :build
 
   def install
+    # Avoid an error when the git repository is detached from HEAD
+    inreplace "build.zig",
+              /const describe_base_commit_ = try (.*);/,
+              "const describe_base_commit_ = \\1 catch \"\";"
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
