@@ -1,8 +1,8 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
-  url "https://github.com/containers/podman/archive/refs/tags/v5.7.1.tar.gz"
-  sha256 "c04c12f90d1bf410ccc4d27a30cff188d6a9361bddb5fceb19659ae08257cc6f"
+  url "https://github.com/containers/podman/archive/refs/tags/v5.8.0.tar.gz"
+  sha256 "19723cda810e087ded8903fb0f33918b10d81f7fd1d8964880c41ec30d1daa70"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -58,15 +58,15 @@ class Podman < Formula
   # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do
     on_macos do
-      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.7.tar.gz"
-      sha256 "ef9765d24bc3339014dd4a8f2e2224f039823278c249fb9bd1416ba8bbab590b"
+      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.8.tar.gz"
+      sha256 "4f7c4885225d71b21f6b547b94d92fc6da4a4fef9d382fdd19c8ea67f67be839"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.1.tar.gz"
-      sha256 "e35b44338e43d465f76dddbd3def25cbb31e56d822db365df9a79b13fc22698c"
+      url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.3.tar.gz"
+      sha256 "bb2a7f9d1bf41d2f823412ca20912bade606ae30b41afcd1366d32e3d100a09e"
     end
   end
 
@@ -79,15 +79,15 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v1.16.1.tar.gz"
-      sha256 "e655fcd882fe891bcc8328ddcfff3745831c8b1013ae59f012d37ce87175b0b3"
+      url "https://github.com/containers/netavark/archive/refs/tags/v1.17.2.tar.gz"
+      sha256 "284faa7cc525b869cbac4053e0a4127ac743ca7da1457c49fffb35558ea9c78d"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.16.0.tar.gz"
-      sha256 "6c84a3371087d6af95407b0d3de26cdc1e720ae8cd983a9bdaec8883e2216959"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.17.0.tar.gz"
+      sha256 "42556bf547c435a8f0ccb586b4f5000da3106a58c26f82e22d9db81ee5bd7eb2"
     end
   end
 
