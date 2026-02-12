@@ -11,12 +11,12 @@ class Whosthere < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "136a4a9932cbcf9c21f123853afed1774a87529dd480ee27984b408b8ec0a9a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03805cb76a36dca0aa61e1ff00834def004db87d1e1a4be860670b4d35a85d39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b485d842deb281905241897aaeaa0c1d86035c07c46346d1e2438bf2609550d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a22961ebdef5f72b697a62c6a0225c63f952382f448bcee9f66bfe15a2a245b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c90485e6adcd3fdefddbdd98c5d3d01072ad3b9060d1e0aafd4a5e22ba826eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71111888eb72c2b6ee2561ba90a36fddcc5c858eac1c17ada779bf9e3a91764"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a67755e7b6b2d7d0a43e2f3bb3e6abeed9e6d3c555d2484d21ca0ba3015ab014"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90fc9589d7e70dc3dc529a9597d3e33101db7ae57abad6416fd43ff1f69e5ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fce4c776f6ee7d3ab109429bea0f0f34b07f4218c4bf261eb80161c84de90ca1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3632e83b7ac53fd1da174b183668e2e6810badf391b61fcbd90469adbc01f964"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29ec8df058d8df7b0cb85446cbd8e52aa5280f6b73e3d7d11fd2810b2b6246a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "936a68600a03812db3dda707b62527a361a32713440c59c4c60253d2d89eb679"
   end
 
   depends_on "go" => :build
