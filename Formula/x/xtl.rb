@@ -6,7 +6,7 @@ class Xtl < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7ac3927ae041762e37a0b008b1456a41f116e698c8f1e09e65926ff43d3c582e"
+    sha256 cellar: :any_skip_relocation, all: "d90f6f106f3d81356101e8ed533410aa4d4ccb952b90ce93e7836438fb3d5377"
   end
 
   depends_on "cmake" => :build
