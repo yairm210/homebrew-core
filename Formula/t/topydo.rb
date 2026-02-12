@@ -8,12 +8,12 @@ class Topydo < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6969f8adb29ce8988ecebf3643dbf48cc01c4e6e979295f634803604e0613d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "301c37f5084e65866d3db3cf88697aa5d27019b16e2316f4a64f581cc9efb2b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9c7fff3dbca0f0e713440c448a38513146dd323a441fec8fd53de7061af0917"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1aa56eb1b5f125dfabda76cf2139dc13d54487ff78bb2d0bff4ab25cbb6f88a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7097c9179591dbbf690d067816c3afcff533c4e5ed72f8bb69254d07710436ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7097c9179591dbbf690d067816c3afcff533c4e5ed72f8bb69254d07710436ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f4329353c1d1fb2e9b6d08296304d03763fe1a3339626fa2aeaaf4d85d09b72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2ab91f9a1c6d364941ea3917da7176cd447d496cf37776fec1bd0680aef74b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98b6180f111937e21f5b7b625cda75146db1fe661af6a8687912e2fbc73430bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "996cc264fc9ff19db29b8b7355585a79d9451ca4bb2e73ff0076eac88b35eb9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3285119c254079b0d9e1ea4080664c4bc08e7f819734b34544dc8cdef70f8dda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3285119c254079b0d9e1ea4080664c4bc08e7f819734b34544dc8cdef70f8dda"
   end
 
   depends_on "python@3.14"
