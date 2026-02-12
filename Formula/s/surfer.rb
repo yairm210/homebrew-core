@@ -2,8 +2,8 @@ class Surfer < Formula
   desc "Waveform viewer, supporting VCD, FST, or GHW format"
   homepage "https://surfer-project.org/"
   url "https://gitlab.com/surfer-project/surfer.git",
-      tag:      "v0.5.0",
-      revision: "0be6f8ad869060791ad0864d77f2f842cd27ee65"
+      tag:      "v0.6.0",
+      revision: "78e71f1e7761750a68fd94c128dd60ad00b220bc"
   license "EUPL-1.2"
   head "https://gitlab.com/surfer-project/surfer.git", branch: "main"
 
