@@ -20,13 +20,12 @@ class Tor < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c3d7da589e8ecf357fe137351eb18fc21877604c7df573f4ea7fecb89a35bfdc"
-    sha256 arm64_sequoia: "13624ea1b1b7efc3d1f5657e14f7fb06a2b21bd7dc03711cf7f6e1f3b3dc7d67"
-    sha256 arm64_sonoma:  "97c7bd0e6a621ff52ccd1b8b88744b713c3d170a202261b18debb23e1e5d58a7"
-    sha256 sonoma:        "66d4480cae4f2adf09b7a5cd1dd88f2b71cb274911b420bac05fbeaafbdda8a6"
-    sha256 arm64_linux:   "9b8229fd016a5d857ddb388fa8b0e3c77a424f38f501cf98d51d454a391f73c3"
-    sha256 x86_64_linux:  "20e0f3ec9c8a238b9fe99aa1594da0b6295bd12d50d720e337e2253af1c4dbd5"
+    sha256 arm64_tahoe:   "7d792f62a46a6218dca7a4568e4f9a891d1fdbb201af2859920df3a5420b5f39"
+    sha256 arm64_sequoia: "442352ca0dc22fc40bdb8beea1a3f1d8dc932603bf14cb16e51f8d5161166914"
+    sha256 arm64_sonoma:  "7272ec29705c56be7d7cd76a60e39257d8349d0694eae3df2d88e05dfb685079"
+    sha256 sonoma:        "4d41ecaec0d95286308b33d5c375f12722fd9184ac3386d006091f48a09748c8"
+    sha256 arm64_linux:   "6c925c345ce39c546ba733810a1b40feb3df72b185424bc2ca67d422e3517253"
+    sha256 x86_64_linux:  "8c926840c71b225e857264c374932818854ca61386066165b365a3ec58ecadff"
   end
 
   depends_on "pkgconf" => :build
