@@ -1,13 +1,13 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
-  homepage "https://libuv.org"
-  url "https://github.com/libuv/libuv/archive/refs/tags/v1.51.0.tar.gz"
-  sha256 "27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd"
+  homepage "https://libuv.org/"
+  url "https://dist.libuv.org/dist/v1.52.0/libuv-v1.52.0.tar.gz"
+  sha256 "19fd091a582c39c7ea26dcbb40a7d2e7cf095b070a757b3c32c05de6cfed6638"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
   livecheck do
-    url :stable
+    url :head
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
