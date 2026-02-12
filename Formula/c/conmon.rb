@@ -7,8 +7,8 @@ class Conmon < Formula
   head "https://github.com/containers/conmon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "bd20d8e669c8394e2122b468a31be18777fb6d6ea4dab5f0b9dbc9135f7ed832"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b5922d020bbcbb3fa173ce7502c71db4bd7e19444ab0a9764975585837b99f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ad2a36cee01c75c27125ece2507f51cd3b5e6ffec84ec76cbd23c16315896204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "08eafee8471ae1ac41c2a408fefdb5059b5d180f84ad17ece149976a661c034b"
   end
 
   depends_on "go" => :build
