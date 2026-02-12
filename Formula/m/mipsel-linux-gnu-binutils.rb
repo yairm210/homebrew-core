@@ -10,6 +10,15 @@ class MipselLinuxGnuBinutils < Formula
     formula "binutils"
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "4f2876466d14051cf1cf6890da71148670f00c82610a5fe20592883ffa119444"
+    sha256 arm64_sequoia: "2a920ce4962541fbcd5ae03208e48cd9a562b972faf85a76938012e26aa44a78"
+    sha256 arm64_sonoma:  "b82236a26d9b2235a5f8de2d1d8788b2fbb64b92d56c1876bd588bc11267d744"
+    sha256 sonoma:        "7f1439192d29370f05571db6e11567524b075949d267b3e6847006d6334bec51"
+    sha256 arm64_linux:   "6947cc92890d2080de3d2cab0c717848b23e0a15585520d07ea77dbaae5f4866"
+    sha256 x86_64_linux:  "6cd7b50a76625e3dc2be82a336c8be32825d79266a589688e1f8268b59634a5e"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "zstd"
 
