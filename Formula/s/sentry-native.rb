@@ -1,8 +1,8 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.6.tar.gz"
-  sha256 "9d543e69fb76860624ec45ac6a20271163c6f4d6dba6fe4d1492bfb247b268f0"
+  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.7.tar.gz"
+  sha256 "ce69d233fa2e338611b880a54492df06a3049239d9dc65941abd290d22b36a58"
   license "MIT"
 
   bottle do
@@ -15,8 +15,12 @@ class SentryNative < Formula
   end
 
   depends_on "cmake" => :build
+
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # No recent tagged releases, use the latest commit
   resource "breakpad" do
