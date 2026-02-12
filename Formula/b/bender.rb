@@ -1,8 +1,8 @@
 class Bender < Formula
   desc "Dependency management tool for hardware projects"
   homepage "https://github.com/pulp-platform/bender"
-  url "https://github.com/pulp-platform/bender/archive/refs/tags/v0.29.1.tar.gz"
-  sha256 "e7a0025f17e4949b57928ee04b93924ae74d771d2b808568ef44799cc7346929"
+  url "https://github.com/pulp-platform/bender/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "cabfdbf0fb7282986f1c6adc82587cc70095bbb2a93f8f1dce4d6ed2c47c8470"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/pulp-platform/bender.git", branch: "master"
 
