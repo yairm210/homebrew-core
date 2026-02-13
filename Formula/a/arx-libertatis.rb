@@ -38,11 +38,10 @@ class ArxLibertatis < Formula
   depends_on "innoextract"
   depends_on "sdl2"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "mesa"
     depends_on "openal-soft"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "rnv", because: "both install `arx` binaries"
