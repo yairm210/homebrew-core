@@ -57,11 +57,11 @@ class Supertux < Formula
   depends_on "sdl2_image"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "mesa"
     depends_on "openal-soft"
+    depends_on "zlib-ng-compat"
   end
 
   def install
