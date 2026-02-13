@@ -39,7 +39,10 @@ class Libisofs < Formula
 
   depends_on "libzip"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "acl"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     if build.head?
