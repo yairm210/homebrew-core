@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
   sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -13,8 +13,6 @@ class Rtabmap < Formula
     url :stable
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256                               arm64_tahoe:   "288d26f9845db235aba5a0f17ea178180ca93b1981d3a9b5bd89811376a6f70c"
@@ -37,8 +35,6 @@ class Rtabmap < Formula
   depends_on "sqlite"
   depends_on "vtk"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "boost"
     depends_on "flann"
@@ -50,6 +46,10 @@ class Rtabmap < Formula
     depends_on "libpng"
     depends_on "lz4"
     depends_on "qhull"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
