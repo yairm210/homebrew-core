@@ -1,8 +1,8 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-50.16.0.tgz"
-  sha256 "b53076247f79a215e352168824268c60c7ff69679da6072080f89a47b79a6f1a"
+  url "https://registry.npmjs.org/vercel/-/vercel-50.17.0.tgz"
+  sha256 "3f26fb6686fc8fc6d1a24f987830b82a4d74774cf0a1e2fcdb87eb19ec2fdb58"
   license "Apache-2.0"
 
   bottle do
@@ -22,15 +22,6 @@ class VercelCli < Formula
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
-
-    # Remove incompatible deasync modules
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec/"lib/node_modules/vercel/node_modules"
-    node_modules.glob("deasync/bin/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
-
-    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do
