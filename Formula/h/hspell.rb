@@ -32,7 +32,9 @@ class Hspell < Formula
 
   depends_on "autoconf" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # hspell was built for linux and compiles a .so shared library, to comply with macOS
   # standards this patch creates a .dylib instead
