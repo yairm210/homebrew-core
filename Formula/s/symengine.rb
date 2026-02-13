@@ -25,10 +25,13 @@ class Symengine < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "z3"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
