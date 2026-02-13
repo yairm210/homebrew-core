@@ -35,11 +35,11 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "68387f12c3c64778b024971b624a511740a6951a47302eb955c8b3705b71972a"
-    sha256 cellar: :any,                 arm64_sequoia: "e6bcdb60f6aa1787e0ddbce65dd4d53ab742d714dc50df92e8f1c8581bfe63c6"
-    sha256 cellar: :any,                 arm64_sonoma:  "570cacf000d8bea9b0a555d5f3d21b04f6896c91a649f44720e6f65834753cb7"
-    sha256 cellar: :any,                 sonoma:        "ba4aadea07235411ebb57503b419288ba221a6748cd9eece755544bc552b21ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da3576192459dec351d4dfb88f120ce78b187f10c53c00e14b101b8e26ffcc32"
+    sha256 cellar: :any,                 arm64_tahoe:   "99dfde734b22c0064d6ed5168ba788470f16e2e6b94a5e2294bd473caa2dfcc7"
+    sha256 cellar: :any,                 arm64_sequoia: "1af3fda80d8e22716a7d6ae3ac5a3b498437c038c3f456953087dd442da6540d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b166219239385c92766d08f7f868f62fb72264fa5f50df77882afdfada493869"
+    sha256 cellar: :any,                 sonoma:        "172e03a367cd18d35540c936dae17d3256afea431a49814044f55eb0ea2c91b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d2b22e3ac0de9ac41fe7dec21b0b51b4d2d1d81d0debd2c33686fef9c5c1e3"
   end
 
   depends_on "cmake" => [:build, :test]
