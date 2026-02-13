@@ -4,6 +4,7 @@ class Cfitsio < Formula
   url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.6.3.tar.gz"
   sha256 "fad44fff274fdda5ffcc0c0fff3bc3c596362722b9292fc8944db91187813600"
   license "CFITSIO"
+  revision 1
 
   livecheck do
     url :homepage
@@ -21,7 +22,10 @@ class Cfitsio < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Incorporates upstream commits:
