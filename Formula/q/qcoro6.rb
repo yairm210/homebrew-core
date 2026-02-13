@@ -1,8 +1,8 @@
 class Qcoro6 < Formula
   desc "C++ Coroutines for Qt"
   homepage "https://qcoro.dev"
-  url "https://github.com/qcoro/qcoro/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "809afafab61593f994c005ca6e242300e1e3e7f4db8b5d41f8c642aab9450fbc"
+  url "https://github.com/qcoro/qcoro/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "4bff7513c5c8e301b66308df05795043b1792ed16381a484e5c990171b8ff19e"
   license "MIT"
 
   bottle do
