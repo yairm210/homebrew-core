@@ -4,6 +4,7 @@ class Taglib < Formula
   url "https://taglib.github.io/releases/taglib-2.1.1.tar.gz"
   sha256 "3716d31f7c83cbf17b67c8cf44dd82b2a2f17e6780472287a16823e70305ddba"
   license all_of: ["LGPL-2.1-only", "MPL-1.1"]
+  revision 1
   head "https://github.com/taglib/taglib.git", branch: "master"
 
   bottle do
@@ -20,7 +21,9 @@ class Taglib < Formula
   depends_on "cmake" => :build
   depends_on "utf8cpp"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %w[-DWITH_MP4=ON -DWITH_ASF=ON -DBUILD_SHARED_LIBS=ON]
@@ -31,7 +34,7 @@ class Taglib < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <taglib/id3v2tag.h>
       #include <taglib/textidentificationframe.h>
       #include <iostream>
@@ -52,9 +55,9 @@ class Taglib < Formula
 
         return 0;
       }
-    EOS
+    CPP
 
-    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-L#{lib}", "-ltag", "-I#{include}", "-lz"
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-ltag"
     assert_match "Artist: Test Artist", shell_output("./test")
 
     assert_match version.to_s, shell_output("#{bin}/taglib-config --version")
