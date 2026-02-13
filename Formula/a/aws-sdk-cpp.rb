@@ -29,7 +29,10 @@ class AwsSdkCpp < Formula
   depends_on "aws-crt-cpp"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Avoid OOM failure on Github runner
