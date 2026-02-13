@@ -25,13 +25,13 @@ class Plowshare < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b299d87fbdd4deb61521da33c68f81bed370130a2ecaa3565d059055f315d8"
   end
 
-  depends_on "bash"
   depends_on "feh"
   depends_on "libcaca"
   depends_on "recode"
   depends_on "spidermonkey"
 
   on_macos do
+    depends_on "bash" # Bash 4.1+
     depends_on "coreutils"
     depends_on "gnu-sed"
   end
