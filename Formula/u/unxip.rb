@@ -17,7 +17,7 @@ class Unxip < Formula
 
   depends_on macos: :sonoma
 
-  uses_from_macos "swift", since: :sonoma
+  uses_from_macos "swift" => :build
 
   on_sequoia :or_older do
     depends_on xcode: ["16.0", :build]
@@ -25,14 +25,21 @@ class Unxip < Formula
 
   # Uses Compression framework on macOS
   on_linux do
+    depends_on "libxml2"
     depends_on "xz"
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
   end
 
   def install
-    args = %w[--disable-sandbox --configuration release]
-    args += %W[-Xcc -I#{HOMEBREW_PREFIX}/include -Xlinker -L#{HOMEBREW_PREFIX}/lib] if OS.linux?
-
+    args = %w[--configuration release]
+    if OS.mac?
+      args << "--disable-sandbox"
+    else
+      args += %w[--static-swift-stdlib -Xswiftc -use-ld=ld]
+      # Swift doesn't run our CC so manually pass in shim include paths to find correct headers
+      ENV["HOMEBREW_ISYSTEM_PATHS"].to_s.split(":").each { |path| args += %W[-Xcc -isystem#{path}] }
+      ENV["HOMEBREW_INCLUDE_PATHS"].to_s.split(":").each { |path| args += %W[-Xcc -I#{path}] }
+    end
     system "swift", "build", *args
     bin.install ".build/release/unxip"
   end
