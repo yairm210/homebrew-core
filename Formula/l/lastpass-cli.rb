@@ -4,7 +4,7 @@ class LastpassCli < Formula
   url "https://github.com/lastpass/lastpass-cli/releases/download/v1.6.1/lastpass-cli-1.6.1.tar.gz"
   sha256 "5e4ff5c9fef8aa924547c565c44e5b4aa31e63d642873847b8e40ce34558a5e1"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
-  revision 2
+  revision 3
   head "https://github.com/lastpass/lastpass-cli.git", branch: "master"
 
   bottle do
@@ -20,10 +20,10 @@ class LastpassCli < Formula
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
+  depends_on "curl"
   depends_on "openssl@3"
   depends_on "pinentry"
 
-  uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
