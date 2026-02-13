@@ -9,12 +9,12 @@ class Bzt < Formula
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c794afee9b985c56fd8c6b007df1263b2eb344c8000fac1920141c300828783a"
-    sha256 cellar: :any,                 arm64_sequoia: "48dc570824f33dbdc393807327b6b7d4d38e4ea792cec1bafcf46a0610e35c67"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f20035aa54fb0f3792c1735d55d0f232ac0b23ef58909ca1ff4911001b5b162"
-    sha256 cellar: :any,                 sonoma:        "74fe9bb9633ef630bf1993278038764136ef7797e8b56bfa855627fd169a96e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d03b9d0c7d7c4fb8785f7c0585142ffa8e88da82dbd82c6885a6f3c8b68918d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c936f8c9e17d8db622f121e8df08a7d5e66e903121f064ac3bd04fdb6413481"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ed4fc69476e44820bbee599a553e9a10b9eee6a23d51ba41e13e388f4659e9d"
+    sha256 cellar: :any,                 arm64_sequoia: "982192ef1233d3fe1ab88fb1c9c86c4ec54d5bf816b06bf24750a5116895c684"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ada046d8f551bff0aa84e18d18b91dd5717d73b744fcc409efaf2ea585f4a0f"
+    sha256 cellar: :any,                 sonoma:        "ae4d3e2ff06112e63f79ba8af7e7789f85c98058bd732443240a678f385f4544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb563b6382e4bcc3d061bd77e0143fb70a57de8b13204a4c2caa1a9b5feb822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005cbdc21ce7cd86f1edee49caac3bf279ce1086e6f9c83c418556d3106e2d1a"
   end
 
   depends_on "cmake" => :build
