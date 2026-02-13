@@ -27,7 +27,9 @@ class H2o < Formula
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # https://github.com/Homebrew/homebrew-core/pull/1046
