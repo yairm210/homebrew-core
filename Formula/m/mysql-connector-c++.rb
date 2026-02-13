@@ -23,8 +23,11 @@ class MysqlConnectorCxx < Formula
   depends_on "rapidjson" => :build
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "zlib"
   depends_on "zstd"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
