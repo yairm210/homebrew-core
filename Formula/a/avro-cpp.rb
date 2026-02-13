@@ -21,7 +21,9 @@ class AvroCpp < Formula
   depends_on "boost"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Add missing cmake file from git
   resource "avro-cpp-config.cmake.in" do
