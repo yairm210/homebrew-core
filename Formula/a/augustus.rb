@@ -23,7 +23,10 @@ class Augustus < Formula
   depends_on "htslib"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Compile executables for macOS. Tarball ships with executables for Linux.
