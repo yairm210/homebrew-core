@@ -1,8 +1,8 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.20/postgresql-14.20.tar.bz2"
-  sha256 "7527f10f1640761bc280ad97d105d286d0cf72e54d36d78cf68e5e5f752b646b"
+  url "https://ftp.postgresql.org/pub/source/v14.21/postgresql-14.21.tar.bz2"
+  sha256 "5b30f19347efff32b6e09ed2cdff0b04e9aee913ec9bb7414de2b7c17b17f1f9"
   license "PostgreSQL"
 
   livecheck do
@@ -39,11 +39,11 @@ class PostgresqlAT14 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
