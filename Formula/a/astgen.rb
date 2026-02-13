@@ -12,7 +12,9 @@ class Astgen < Formula
 
   depends_on "node"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Install `devDependency` packages to compile the TypeScript files
