@@ -17,12 +17,12 @@ class Qtscxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e01d96ad44fdb99679f0ba00a49aaa5cfc602f593df3e6829aca69488c069d20"
-    sha256 cellar: :any,                 arm64_sequoia: "f12e9998c2570c486bc626333a879ba61ae145317458c316cc685c53d2e4f588"
-    sha256 cellar: :any,                 arm64_sonoma:  "711037e90ad1128036fe2937dcb5ea70ab6d2aab2f2caa9664350e2961ee5ae1"
-    sha256 cellar: :any,                 sonoma:        "4f12067ff9f9a0012c97c41607b4650389a746cb24d9a32f03727ecffb398901"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a0c1caa31ed8c49ebfbd6162c796b6046b085d8e28c642dda901e6cdc3017d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b52a8b8f04b2fac36465870c66dc1cec97971a06b247952173baf0d176276b8"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b869d1f7717baa90b0d1a6331edd1f8cf5c87a871c54066e0246cb659d07191"
+    sha256 cellar: :any,                 arm64_sequoia: "e4fafc8f713f6ebb19a40083d9b7b488cf960959bc61f34a4af24558a584de3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa210670a0846010df327a81a767e975f328074f3ecc067c1885b718d590ace8"
+    sha256 cellar: :any,                 sonoma:        "b598c56b0de80af53de2a4f418613681e0b3a4919d0d8ba17b014da8df71b5ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ff03b11dc64d6f0bb74d60bd87b7a62897619680df448caf22de1bd3418ba7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d1e8bcfa1cc8d21a56e3b2684269b4d5907c59ec403f01269ffd48e576f077b"
   end
 
   depends_on "cmake" => [:build, :test]
