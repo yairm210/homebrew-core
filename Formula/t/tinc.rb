@@ -26,7 +26,9 @@ class Tinc < Formula
   depends_on "lzo"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # fix build errors, upstream pr ref, https://github.com/gsliepen/tinc/pull/464
   patch :DATA
