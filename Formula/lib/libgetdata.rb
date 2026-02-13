@@ -25,7 +25,10 @@ class Libgetdata < Formula
   depends_on "libtool"
 
   uses_from_macos "perl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
