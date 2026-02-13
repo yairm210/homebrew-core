@@ -15,7 +15,7 @@ class Atop < Formula
   depends_on "glib"
   depends_on :linux
   depends_on "ncurses"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     inreplace "version.h", /"$/, "-#{Utils.git_short_head}\"", global: false if build.head?
