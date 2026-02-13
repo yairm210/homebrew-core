@@ -6,6 +6,7 @@ class Cryptominisat < Formula
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -25,7 +26,9 @@ class Cryptominisat < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "gmp"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Currently using revision in flake.lock
   resource "cadical" do
