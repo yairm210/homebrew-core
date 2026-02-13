@@ -1,8 +1,8 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://github.com/trycua/cua"
-  url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.80.tar.gz"
-  sha256 "cf9053ea4caa18c1bee8b7baddb6ac0cf6d80a8cc9c1eaff7b4ce1480a1e9634"
+  url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.81.tar.gz"
+  sha256 "752c3cbd7c2e1f6e7027a3e4870fc5723d7b6723a45632bed514c5537eab2723"
   license "MIT"
   head "https://github.com/trycua/cua.git", branch: "main"
 
@@ -25,7 +25,7 @@ class Lume < Formula
     cd "libs/lume" do
       system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "lume"
       system "/usr/bin/codesign", "-f", "-s", "-",
-             "--entitlement", "resources/lume.entitlements",
+             "--entitlements", "resources/lume.local.entitlements", # Avoid SIGKILL with ad-hoc signing.
              ".build/release/lume"
       bin.install ".build/release/lume"
     end
