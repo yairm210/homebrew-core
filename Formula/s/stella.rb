@@ -25,7 +25,10 @@ class Stella < Formula
   depends_on "sdl2"
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # ventura build patch, upstream pr ref, https://github.com/stella-emu/stella/pull/1064
   patch do
@@ -57,7 +60,7 @@ class Stella < Formula
                             "--enable-release",
                             "--with-sdl-prefix=#{sdl2.prefix}",
                             "--with-libpng-prefix=#{libpng.prefix}",
-                            "--with-zlib-prefix=#{Formula["zlib"].prefix}"
+                            "--with-zlib-prefix=#{Formula["zlib-ng-compat"].prefix}"
       system "make", "install"
     end
   end
