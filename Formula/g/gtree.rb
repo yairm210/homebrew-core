@@ -7,12 +7,12 @@ class Gtree < Formula
   head "https://github.com/ddddddO/gtree.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7596ffb33074bb609b87f0afc4de7f8b6b25f1eb7f8c6225fd8b969ee0a6bbb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7596ffb33074bb609b87f0afc4de7f8b6b25f1eb7f8c6225fd8b969ee0a6bbb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7596ffb33074bb609b87f0afc4de7f8b6b25f1eb7f8c6225fd8b969ee0a6bbb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9fab18c77843e300035bbe57210b41ea38b97ff6cc94125f08161e89d2340a44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02d0b1ec759601a80dca8730d531b2046bae8cb22311515d347d17e5031ff600"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5acbb6505fa9ff0753225c732d64ded50624d79fbfed18f052efd8746309f96e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "615fb48889bf535199e569ba234f39a9d0071c178e4eee044a0affd092520bb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "615fb48889bf535199e569ba234f39a9d0071c178e4eee044a0affd092520bb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "615fb48889bf535199e569ba234f39a9d0071c178e4eee044a0affd092520bb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c8d534f5b667792249bd5f4863ce6eaf44a64ce431df7f96e95576f7a6a4cea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13f256abf13e0441d81329bae0a600c15a5690f768d30d2cd6f6580320e3d662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6312c03b7276f5d46f5a5639eeaa66ad04dec587ca720059415c1794be093c65"
   end
 
   depends_on "go" => :build
