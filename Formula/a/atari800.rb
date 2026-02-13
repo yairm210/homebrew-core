@@ -41,10 +41,9 @@ class Atari800 < Formula
 
   depends_on "libpng"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install
