@@ -1,8 +1,8 @@
 class BtrfsProgs < Formula
   desc "Userspace utilities to manage btrfs filesystems"
   homepage "https://btrfs.readthedocs.io/en/latest/"
-  url "https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.17.1.tar.xz"
-  sha256 "a4be0a6ebb3c476427fb5d97b2cf027b0ccdb6b0c55ff16323320c1e8cb77658"
+  url "https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.19.tar.xz"
+  sha256 "ad6b791a60eb563d3314bc18e3c47f6b053a032639488b5b09b9d5e7921de6b6"
   license all_of: [
     "GPL-2.0-only",
     "LGPL-2.1-or-later", # libbtrfsutil
@@ -56,7 +56,7 @@ class BtrfsProgs < Formula
     output = shell_output("#{bin}/mkfs.btrfs #{device}")
     assert_match(/Filesystem size:\s*128\.00MiB/, output)
     output = shell_output("#{bin}/btrfs filesystem show #{device}")
-    assert_match "Total devices 1 FS bytes used 144.00KiB", output
+    assert_match "Total devices 1 FS bytes used 160.00KiB", output
 
     system python3, "-c", "import btrfsutil"
   end
