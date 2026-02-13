@@ -33,7 +33,6 @@ class ArmNoneEabiGdb < Formula
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
-  uses_from_macos "zlib"
 
   # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
@@ -44,6 +43,10 @@ class ArmNoneEabiGdb < Formula
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
