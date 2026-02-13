@@ -27,7 +27,10 @@ class ClangFormatAT11 < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "clang" do
     url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/clang-11.1.0.src.tar.xz"
