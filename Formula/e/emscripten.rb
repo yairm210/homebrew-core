@@ -1,8 +1,8 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/5.0.0.tar.gz"
-  sha256 "b36f5230b357649165656959aec26a400619876baa7d831e867a2f02032d66ca"
+  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/5.0.1.tar.gz"
+  sha256 "4612f72f59b383d270ea17cc4b4e5b3837b83e42362733a127cc149298cbd77e"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -30,7 +30,6 @@ class Emscripten < Formula
   depends_on "yuicompressor"
 
   uses_from_macos "llvm" => :build
-  uses_from_macos "zlib"
 
   # OpenJDK is needed as a dependency on Linux and ARM64 for google-closure-compiler,
   # an emscripten dependency, because the native GraalVM image will not work.
@@ -43,6 +42,7 @@ class Emscripten < Formula
   on_linux do
     depends_on "lld" => :build
     depends_on "openjdk"
+    depends_on "zlib-ng-compat"
   end
 
   # We use LLVM to work around an error while building bundled `google-benchmark` with GCC
@@ -62,9 +62,9 @@ class Emscripten < Formula
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
-    url "https://github.com/WebAssembly/binaryen/archive/6c29e8513c256fb3d8f280aca78acbdbaeae307d.tar.gz"
-    version "6c29e8513c256fb3d8f280aca78acbdbaeae307d"
-    sha256 "241341de508e4d3040a0afc06e0de74f4303b3364fbc196d627c438319fa8d67"
+    url "https://github.com/WebAssembly/binaryen/archive/18ba06162272bc8bbf1fc29b5cb0832dd54becac.tar.gz"
+    version "18ba06162272bc8bbf1fc29b5cb0832dd54becac"
+    sha256 "0bdb42545fde5ea45b239103d8343bce15170fa1f93b3aa498a3034184f79c07"
 
     livecheck do
       url "https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
@@ -88,9 +88,9 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https://github.com/llvm/llvm-project/archive/358db292cc6a9a8a5448a296f643312289f328d7.tar.gz"
-    version "358db292cc6a9a8a5448a296f643312289f328d7"
-    sha256 "02537ec36569a2dfe2ecca8a907f78056b58ec223edfc5943ffc66a71f677b20"
+    url "https://github.com/llvm/llvm-project/archive/b447f5d9763010f8c6806c578533291aef2bd484.tar.gz"
+    version "b447f5d9763010f8c6806c578533291aef2bd484"
+    sha256 "6d871689958255fce2ebee99e5055f5167c9451a6bc32332b1a2409fdf138842"
 
     livecheck do
       url "https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
