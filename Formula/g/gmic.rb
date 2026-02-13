@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.6.6.tar.gz"
-  sha256 "f93d725d8fd98122483704ec07928c3275a4b9149e81328f4b07e7d6ceb4c919"
+  url "https://gmic.eu/files/source/gmic_3.7.0.tar.gz"
+  sha256 "ccb17e22a726b5dbafd1811a519a1a1cf823fb671de600e0d1b1b27bcd4b694d"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -31,10 +31,14 @@ class Gmic < Formula
   depends_on "openexr"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   on_linux do
     depends_on "libx11"
+    depends_on "zlib-ng-compat"
   end
 
   def install
