@@ -1,9 +1,10 @@
 class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https://docs.opensearch.org/latest/dashboards/"
+  # Build fails if not a git repository
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "3.4.0",
-      revision: "c1d92e84395038f5f99e64e27b00c00fbabcd075"
+      tag:      "3.5.0",
+      revision: "7e86cf810d6e616a3453dd93062d7e22fa16c477"
   license "Apache-2.0"
 
   livecheck do
@@ -20,11 +21,9 @@ class OpensearchDashboards < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1827491f85dbe9d072cb1578821be0ded5e5940051afa5ca2380e7c554200d"
   end
 
-  deprecate! date: "2025-10-28", because: "uses deprecated node@20"
-
   depends_on "yarn" => :build
   depends_on "opensearch" => :test
-  depends_on "node@20"
+  depends_on "node@22"
 
   # - Do not download node and discard all actions related to this node
   patch :DATA
@@ -38,7 +37,7 @@ class OpensearchDashboards < Formula
     cd "build/opensearch-dashboards-#{version}-#{os}-#{arch}" do
       inreplace "bin/use_node",
                 /NODE=".+"/,
-                "NODE=\"#{Formula["node@20"].opt_bin/"node"}\""
+                "NODE=\"#{Formula["node@22"].opt_bin}/node\""
 
       inreplace "config/opensearch_dashboards.yml",
                 /#\s*pid\.file: .+$/,
@@ -49,18 +48,13 @@ class OpensearchDashboards < Formula
 
       prefix.install Dir["*"]
     end
-  end
 
-  def post_install
     (var/"log/opensearch-dashboards").mkpath
-
     (var/"lib/opensearch-dashboards").mkpath
-    ln_s var/"lib/opensearch-dashboards", prefix/"data" unless (prefix/"data").exist?
-
     (var/"opensearch-dashboards/plugins").mkpath
-    ln_s var/"opensearch-dashboards/plugins", prefix/"plugins" unless (prefix/"plugins").exist?
-
-    ln_s etc/"opensearch-dashboards", prefix/"config" unless (prefix/"config").exist?
+    prefix.install_symlink var/"lib/opensearch-dashboards" => "data"
+    prefix.install_symlink var/"opensearch-dashboards/plugins"
+    prefix.install_symlink etc/"opensearch-dashboards" => "config"
   end
 
   def caveats
