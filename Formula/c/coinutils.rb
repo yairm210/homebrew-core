@@ -4,6 +4,7 @@ class Coinutils < Formula
   url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.12.tar.gz"
   sha256 "eef1785d78639b228ae2de26b334129fe6a7d399c4ac6f8fc5bb9054ba00de64"
   license "EPL-2.0"
+  revision 1
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
   livecheck do
@@ -27,7 +28,9 @@ class Coinutils < Formula
   depends_on "pkgconf" => :build
   depends_on "openblas"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = [
