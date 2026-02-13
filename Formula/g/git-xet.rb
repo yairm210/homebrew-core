@@ -1,8 +1,8 @@
 class GitXet < Formula
   desc "Git LFS plugin that uploads and downloads using the Xet protocol"
   homepage "https://github.com/huggingface/xet-core"
-  url "https://github.com/huggingface/xet-core/archive/refs/tags/git-xet-v0.2.0.tar.gz"
-  sha256 "551237dbed960265804c745d50531cc16d8f13fb31e1900c9c6e081bfab01874"
+  url "https://github.com/huggingface/xet-core/archive/refs/tags/git-xet-v0.2.1.tar.gz"
+  sha256 "df2a90a8266918bf2aba35e22276c745d11bd9c39850410f78ebbf2b50d0c87c"
   license "Apache-2.0"
 
   livecheck do
