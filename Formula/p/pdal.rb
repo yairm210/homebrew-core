@@ -1,10 +1,10 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https://pdal.org/"
-  url "https://github.com/PDAL/PDAL/releases/download/2.9.3/PDAL-2.9.3-src.tar.bz2"
-  sha256 "22e90c8b9653e2bd0eb24efbe071b6c281e972145b47c0ccfdc329d73c188d9c"
+  url "https://github.com/PDAL/PDAL/releases/download/2.10.0/PDAL-2.10.0-src.tar.bz2"
+  sha256 "65eba26e24a2cb1752d3542cc84e8035ecb8dc890b72145128f9b33bd184f2f5"
   license "BSD-3-Clause"
-  revision 3
+  compatibility_version 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   livecheck do
@@ -41,10 +41,9 @@ class Pdal < Formula
   depends_on "xerces-c"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libunwind"
+    depends_on "zlib-ng-compat"
   end
 
   def install
