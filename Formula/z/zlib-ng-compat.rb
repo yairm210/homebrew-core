@@ -6,6 +6,7 @@ class ZlibNgCompat < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/zlib-ng-2.3.3.tar.gz"
   sha256 "f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1"
   license "Zlib"
+  revision 1
   head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
 
   livecheck do
@@ -25,9 +26,7 @@ class ZlibNgCompat < Formula
 
   depends_on "cmake" => :build
 
-  on_linux do
-    keg_only "it conflicts with zlib"
-  end
+  link_overwrite "include/zconf.h", "include/zlib.h", "lib/libz.*", "lib/pkgconfig/zlib.pc"
 
   def install
     ENV.runtime_cpu_detection
@@ -45,17 +44,17 @@ class ZlibNgCompat < Formula
 
   test do
     # https://zlib.net/zlib_how.html
-    resource "homebrew-test_artifact" do
-      url "https://zlib.net/zpipe.c"
-      version "20051211"
-      sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
+    resource "zpipe.c" do
+      url "https://raw.githubusercontent.com/madler/zlib/3f5d21e8f573a549ffc200e17dd95321db454aa1/examples/zpipe.c"
+      mirror "http://zlib.net/zpipe.c"
+      sha256 "e79717cefd20043fb78d730fd3b9d9cdf8f4642307fc001879dc82ddb468509f"
     end
 
-    testpath.install resource("homebrew-test_artifact")
+    testpath.install resource("zpipe.c")
     system ENV.cc, "zpipe.c", "-I#{include}", lib/shared_library("libz"), "-o", "zpipe"
 
     text = "Hello, Homebrew!"
-    compressed = pipe_output("./zpipe", text)
-    assert_equal text, pipe_output("./zpipe -d", compressed)
+    compressed = pipe_output("./zpipe", text, 0)
+    assert_equal text, pipe_output("./zpipe -d", compressed, 0)
   end
 end
