@@ -16,12 +16,12 @@ class Qtsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13a747e3883c26267748583ce2aba208015179aa77198ef0df594aaaa232bdab"
-    sha256 cellar: :any,                 arm64_sequoia: "dcb56cd4db79e2a8bc4ff1c462ba15c9a3c1eca93d59952cd8d51c73911b6bd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b8d826256dd4f26f24c72c07bc3b7b2b88897975a72b23a666d7721804ae208"
-    sha256 cellar: :any,                 sonoma:        "9e8da7b6f1c65dad56e7cd9b83d9c15937ba24ff719a336a20259d465f3ed77c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdcff344cd4663b5fa21024fcd34cbe0fbfddbbb88706adb2e4d981c757aa9b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e2df52acbc77adf10e819dba1b563c2594bf211fa34640c78615758f3dba466"
+    sha256 cellar: :any,                 arm64_tahoe:   "060b6db495b7836126c5dc6d77b5c4aa95b174954a025c74e94cd734a254774d"
+    sha256 cellar: :any,                 arm64_sequoia: "3df926eee1e4cf651ecbc2572ce7d563fb609cbd6667bfedbaaef89338faa27a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9eb363fcb8b5f8db9af7aa6df62e2b5b8b9f23df1c1c4024322ff5844058ca70"
+    sha256 cellar: :any,                 sonoma:        "fb242965e51cd00afe125e371706e4820e098ff5b17e3e5d25d50f5a347ba4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b415293317474a509c79cd6be4890a4c6bc56d9e98a99dc4bf96d00ea9a20bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed801d52d49d9340b88c0e814d01a49be8fb8b23ac3715ad0100398751e7ea21"
   end
 
   depends_on "cmake" => [:build, :test]
