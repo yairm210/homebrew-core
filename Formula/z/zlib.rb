@@ -7,6 +7,7 @@ class Zlib < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.3.1.tar.gz"
   sha256 "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
   license "Zlib"
+  revision 1
   head "https://github.com/madler/zlib.git", branch: "develop"
 
   livecheck do
@@ -29,12 +30,8 @@ class Zlib < Formula
 
   keg_only :provided_by_macos
 
-  # https://zlib.net/zlib_how.html
-  resource "test_artifact" do
-    url "https://zlib.net/zpipe.c"
-    mirror "http://zlib.net/zpipe.c"
-    version "20051211"
-    sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
+  on_linux do
+    keg_only "it conflicts with zlib-ng-compat"
   end
 
   def install
@@ -46,11 +43,18 @@ class Zlib < Formula
   end
 
   test do
-    testpath.install resource("test_artifact")
+    # https://zlib.net/zlib_how.html
+    resource "zpipe.c" do
+      url "https://raw.githubusercontent.com/madler/zlib/3f5d21e8f573a549ffc200e17dd95321db454aa1/examples/zpipe.c"
+      mirror "http://zlib.net/zpipe.c"
+      sha256 "e79717cefd20043fb78d730fd3b9d9cdf8f4642307fc001879dc82ddb468509f"
+    end
+
+    testpath.install resource("zpipe.c")
     system ENV.cc, "zpipe.c", "-I#{include}", "-L#{lib}", "-lz", "-o", "zpipe"
 
     text = "Hello, Homebrew!"
-    compressed = pipe_output("./zpipe", text)
-    assert_equal text, pipe_output("./zpipe -d", compressed)
+    compressed = pipe_output("./zpipe", text, 0)
+    assert_equal text, pipe_output("./zpipe -d", compressed, 0)
   end
 end
