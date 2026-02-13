@@ -25,7 +25,10 @@ class HaskellStack < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.
