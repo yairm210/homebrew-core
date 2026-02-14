@@ -7,7 +7,7 @@ class Physunits < Formula
   head "https://github.com/martinmoene/PhysUnits-CT-Cpp11.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0d821322abd11d644d0dbf1fe20bbee6fc39a44f2e2404eea9f0e5042605d772"
+    sha256 cellar: :any_skip_relocation, all: "e4d6c75204e45953990cd24da453433b51fecadea96fae5565348329c66fd687"
   end
 
   depends_on "cmake" => :build
