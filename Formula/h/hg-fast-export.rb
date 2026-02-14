@@ -1,28 +1,35 @@
 class HgFastExport < Formula
   include Language::Python::Shebang
+  include Language::Python::Virtualenv
 
   desc "Fast Mercurial to Git converter"
   homepage "https://repo.or.cz/fast-export.git"
   url "https://github.com/frej/fast-export/archive/refs/tags/v250330.tar.gz"
   sha256 "1c4785f1e9e63e0ada87e0be5a7236d6889eea98975800671e3c3805b54bf801"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/frej/fast-export.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "a5bb15dd75663590054cdcdd88d472155e5cea8f520ddd1ecd234b957bb733d5"
-  end
-
-  depends_on "mercurial"
+  depends_on "mercurial" => :test
   depends_on "python@3.14"
+
+  # TODO: Switch back to formula after https://github.com/frej/fast-export/issues/348
+  resource "mercurial" do
+    url "https://www.mercurial-scm.org/release/mercurial-7.1.2.tar.gz"
+    sha256 "ce27b9a4767cf2ea496b51468bae512fa6a6eaf0891e49f8961dc694b4dc81ca"
+  end
 
   def install
     python3 = which("python3.14")
     libexec.install "plugins", "pluginloader"
     bin.install buildpath.glob("hg*.{sh,py}")
 
-    rewrite_shebang detected_python_shebang, *bin.children
-    bin.env_script_all_files libexec/"bin", PYTHON: python3, PYTHONPATH: libexec
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resource("mercurial")
+    venv_python = venv.root/"bin/python"
+
+    rewrite_shebang python_shebang_rewrite_info(venv_python), *bin.children
+    bin.env_script_all_files libexec/"bin", PYTHON: venv_python, PYTHONPATH: libexec
   end
 
   test do
