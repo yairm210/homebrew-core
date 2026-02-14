@@ -7,7 +7,7 @@ class Mysqltuner < Formula
   head "https://github.com/jmrenouard/MySQLTuner-perl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f2c29110fd935510b436dc6d7c3a6392e635d566445195178d192910215a91dc"
+    sha256 cellar: :any_skip_relocation, all: "5f6ee58b42c4820efb18e3004c765e80368a09de825bdeed52aa7404b8dc6324"
   end
 
   def install
