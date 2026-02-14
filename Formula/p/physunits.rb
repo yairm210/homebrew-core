@@ -1,8 +1,8 @@
 class Physunits < Formula
   desc "C++ header-only for Physics unit/quantity manipulation and conversion"
   homepage "https://github.com/martinmoene/PhysUnits-CT-Cpp11"
-  url "https://github.com/martinmoene/PhysUnits-CT-Cpp11/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "64187aadf886f9bade5976f5f3289637f8882f36ac4767f1be201f89e5a4a47d"
+  url "https://github.com/martinmoene/PhysUnits-CT-Cpp11/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "4d1f3a4901ef910ae492ed7c5719da0c68f4f3a8551cdfbc90e3ab8aa02ab882"
   license "BSL-1.0"
   head "https://github.com/martinmoene/PhysUnits-CT-Cpp11.git", branch: "master"
 
