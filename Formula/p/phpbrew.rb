@@ -5,8 +5,6 @@ class Phpbrew < Formula
   sha256 "3247b8438888827d068542b2891392e3beffebe122f4955251fa4f9efa0da03d"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "90a16e50a47644f3efcd69153066536e4adf444a6ff67fea9ee4cf9f9788f442"
