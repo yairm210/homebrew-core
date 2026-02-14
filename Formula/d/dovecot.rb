@@ -24,13 +24,12 @@ class Dovecot < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "7ee0d42eb5589016822004eca42ccf20be6811df08a1afc6789b732d8da0f369"
-    sha256 arm64_sequoia: "d30709e7ecf049f407b9ca924a51f6d9aa201efa77b911936758be213ef75399"
-    sha256 arm64_sonoma:  "141354a9aed401cc0eb78f30ca9b96603e39589ad020b7d4e89d184d47e0c97a"
-    sha256 sonoma:        "21bf2f424e8ec257dea32b06a2b809de3e06b651a65462983fd97f9258f8973b"
-    sha256 arm64_linux:   "19abd78ff29b936c1bd813225fdca2b1a1cb6afb3bbc906500e761eb9116421f"
-    sha256 x86_64_linux:  "9118aafbb43e24aa3f46939bab11f8eee465732714e219406968afffa4b6272a"
+    sha256 arm64_tahoe:   "aee78ca4c72c8bc545a4133fbb95b9cc73e478d1c2981ea87aff1f035281813b"
+    sha256 arm64_sequoia: "84f2b6322b7a6bd1e3e862d858349ebd76d923d44ae73d209a67f16142e28c80"
+    sha256 arm64_sonoma:  "f87397ce7b42be06da6732f26f689e3a389c06bd097eeda31a10bc2edc40f760"
+    sha256 sonoma:        "07b0f4a45950693513df774e192e730ca44c1447adb5515dd380490c49e3bbbd"
+    sha256 arm64_linux:   "95dff8eee3b351c3f0841b919349b38c277c6902dab5807905894fc0f0bdb9e0"
+    sha256 x86_64_linux:  "9cde14d3d65deb1fcb0434b531124b128953947435be56f0871a73e4e1e01d83"
   end
 
   depends_on "pkgconf" => :build
