@@ -1,10 +1,9 @@
 class Morpheus < Formula
   desc "Modeling environment for multi-cellular systems biology"
   homepage "https://morpheus.gitlab.io/"
-  url "https://gitlab.com/morpheus.lab/morpheus/-/archive/v2.3.9/morpheus-v2.3.9.tar.gz"
-  sha256 "d27b7c2b5ecf503fd11777b3a75d4658a6926bfd9ae78ef97abf5e9540a6fb29"
+  url "https://gitlab.com/morpheus.lab/morpheus/-/archive/v2.3.10/morpheus-v2.3.10.tar.gz"
+  sha256 "59a7729223f80d60085deeaf61a651782ee2f8507ad93a920ef599b6af6aa279"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -43,20 +42,6 @@ class Morpheus < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Backport support for CMake 4
-  patch do
-    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/74aa906b9c2bd9144776118e61ffef3220a70878.diff"
-    sha256 "7d186bcd41b640e770f592053f25a4216c57ae56e5ecee68f271e8d00fbfa4a1"
-  end
-  patch do
-    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/aac15ea4e196083a00c0634d1aaa6d49875721c7.diff"
-    sha256 "2e6f40b7acf4b81643b5af411f1e6bb8d7bc01282a638488c8be41fbdbb68675"
-  end
-  patch do
-    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/8c5035ef693068a1ddcfdc710f45bd4f4663ee8b.diff"
-    sha256 "e0916157e4c32c7370f3b0a140b43c4a30c2173c9a65e73c2dd6a817011920ed"
   end
 
   def install
