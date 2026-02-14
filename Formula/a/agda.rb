@@ -92,7 +92,10 @@ class Agda < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     agda2hs_build = buildpath/"agda2hs"
@@ -212,6 +215,8 @@ class Agda < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["ghc@9.12"].opt_bin
+
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-libraries" => "libraries"
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-defaults" => "defaults"
 
