@@ -4,6 +4,7 @@ class Phpbrew < Formula
   url "https://github.com/phpbrew/phpbrew/releases/download/2.2.0/phpbrew.phar"
   sha256 "3247b8438888827d068542b2891392e3beffebe122f4955251fa4f9efa0da03d"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
@@ -21,7 +22,7 @@ class Phpbrew < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5313331a47dc3d43289333b1a1345dd53fcfd6b1cff99db2ee2483302288b1d8"
   end
 
-  depends_on "php"
+  depends_on "php@8.4"
 
   # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
   on_macos do
@@ -31,7 +32,11 @@ class Phpbrew < Formula
   end
 
   def install
-    bin.install "phpbrew.phar" => "phpbrew"
+    libexec.install "phpbrew.phar" => "phpbrew"
+    (bin/"phpbrew").write <<~PHP
+      #!#{Formula["php@8.4"].opt_bin}/php
+      <?php require '#{libexec}/phpbrew';
+    PHP
   end
 
   test do
