@@ -7,12 +7,12 @@ class Actionlint < Formula
   head "https://github.com/rhysd/actionlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75219d9c47da85d840bda6086e9e86411b02c8862665eb0e459316e492a92eda"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75219d9c47da85d840bda6086e9e86411b02c8862665eb0e459316e492a92eda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75219d9c47da85d840bda6086e9e86411b02c8862665eb0e459316e492a92eda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db12e88eee7462a461cbdb5edcec18115b27351f04dcd545c23092dabfa91020"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29b52c84728e9a5a0b2eff3605b926a4b162cea55a8517872109378af4d83192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39f81ede93b1282028ddae2dda72a4241777e34bfbbee039d52cb7067de63cfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bb18b268cf8645a0318e4a929b9e0b53ce1aa0f429250cfdec77f91a4cd6c19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bb18b268cf8645a0318e4a929b9e0b53ce1aa0f429250cfdec77f91a4cd6c19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bb18b268cf8645a0318e4a929b9e0b53ce1aa0f429250cfdec77f91a4cd6c19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5becd1a472ca94807b4382fdfef5d8836edd8838d80e158b41d665a9daae922d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc80a0e853ad651193f92c180a95a9f4d3f93fe0eba422c261dc908ecedd4a52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09a417b6ad3a2fc5583a4384c4817056f0fc9089a94a595aaa4fe3c9415e3184"
   end
 
   depends_on "go" => :build
