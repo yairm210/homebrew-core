@@ -5,6 +5,15 @@ class LsHpack < Formula
   sha256 "4abeeb786d6211d0aaf13ef3df7651c765c2ffb58cd226ec5c9e6e8b6d801ca1"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1f91663e7b38b1f45409a01931768ffdb3bc2c51718213bdfdaa71b2eb0a2358"
+    sha256 cellar: :any,                 arm64_sequoia: "bd14209d3b86ebd0eaf6918a9b21b9f2539a88812c7523ec95320495bd3ce487"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d8e795e730e48b08df95f10b0a11c16541894bba05028fb6306c833e4577b9a"
+    sha256 cellar: :any,                 sonoma:        "311fc1dc37b213162568e624a2b80142023fbce581443f4245b0d2c83b388d2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb97b47e4d51ebc3e308a82d206d8d7e1763be91b2a351619b09093def373860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6edeb50e88418f23113ed87ebfc7e39d834f718e2c379750869e60d2cb7bf7f"
+  end
+
   depends_on "cmake" => :build
 
   def install
