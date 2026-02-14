@@ -1,8 +1,8 @@
 class PrivatebinCli < Formula
   desc "CLI for creating and managing PrivateBin pastes"
   homepage "https://github.com/gearnode/privatebin"
-  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "eb143ed6d2ab88d66e615c5a98fb2c3f8b0ee5a8394590b68ddbf59bfb2c39d3"
+  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "1b03499608fca426ad6ecc2ea1c33af3f13fd8eaea40b05adc26d7f25ca8c350"
   license "ISC"
 
   bottle do
@@ -24,6 +24,6 @@ class PrivatebinCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/privatebin --version")
 
-    assert_match "Error: cannot load configuration", shell_output("#{bin}/privatebin create foo 2>&1", 1)
+    assert_match "Error: no privatebin instance configured", shell_output("#{bin}/privatebin create foo 2>&1", 1)
   end
 end
