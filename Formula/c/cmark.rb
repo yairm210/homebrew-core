@@ -1,10 +1,10 @@
 class Cmark < Formula
   desc "Strongly specified, highly compatible implementation of Markdown"
   homepage "https://commonmark.org/"
-  url "https://github.com/commonmark/cmark/archive/refs/tags/0.31.1.tar.gz"
-  sha256 "3da93db5469c30588cfeb283d9d62edfc6ded9eb0edc10a4f5bbfb7d722ea802"
+  url "https://github.com/commonmark/cmark/archive/refs/tags/0.31.2.tar.gz"
+  sha256 "f9bc5ca38bcb0b727f0056100fac4d743e768872e3bacec7746de28f5700d697"
   license "BSD-2-Clause"
-  revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8af79b78d1aa446d6c5532ec3553358c627f8a0b7cdfc2ea8663748e860cbe72"
@@ -18,6 +18,7 @@ class Cmark < Formula
   end
 
   depends_on "cmake" => :build
+
   uses_from_macos "python" => :build
 
   def install
