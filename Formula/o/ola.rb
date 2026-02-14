@@ -26,12 +26,13 @@ class Ola < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "94d29242499d1ea493b2a269d54292d819396768da5c838a1d5833f74daf6214"
-    sha256 arm64_sequoia: "7bd3ec517bfa3204bc8f21107c7aea5d88d08f43f477272aee1d5d7a42df7996"
-    sha256 arm64_sonoma:  "9e90b8ae3863aa609e44e2b3c4c61c0966b28da8e5a6d3764811251c0439cfe2"
-    sha256 sonoma:        "84c2c04a9689035070e17c0f0337ca28d9a9d8fb0a1aa594651466fb2cbeaba8"
-    sha256 arm64_linux:   "2a155af4587bc3d4648c6c53465037e55c251f11b008d97524833e9078d85f6c"
-    sha256 x86_64_linux:  "fcc937ff426ae7bde80c4772d5dd5f4cb31e2c01d0de538d393cbbb134e33003"
+    rebuild 1
+    sha256 arm64_tahoe:   "21263841e47b3744fccad6eada26ceef92076de81ec6b4c5a31072539c00a66d"
+    sha256 arm64_sequoia: "b1e6ae26b00042b30b8ac20c01d3d79fa8a2b0614417a5fa418f6e3ea1caebe7"
+    sha256 arm64_sonoma:  "6cf6322e993746272e098a906d026bd89c998edbb79f4d5c5d38ee7e20615f49"
+    sha256 sonoma:        "2ed7bfc577e4abb229174109e79ee0d1e9d801448d714af1091f06d0a481b250"
+    sha256 arm64_linux:   "a1748bcd6c276314a2149b79833074754a72edf7e43b6dbdaffce1ec5a52b0bd"
+    sha256 x86_64_linux:  "a74dcd978e3764c1e3139699be09b800d4850b54165a046a3afda0a03ab89316"
   end
 
   depends_on "autoconf" => :build
