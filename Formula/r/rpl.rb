@@ -1,10 +1,8 @@
 class Rpl < Formula
-  include Language::Python::Virtualenv
-
   desc "Text replacement utility"
   homepage "https://github.com/rrthomas/rpl"
-  url "https://files.pythonhosted.org/packages/f0/85/81cd913d43251f923a56b44586c717f41e8ff5e4ea35d2ced60e9de00bbd/rpl-1.18.tar.gz"
-  sha256 "378d38de283f6682f85e93695396f3461d719778e17a8013f64bd87d7f671d7e"
+  url "https://github.com/rrthomas/rpl/releases/download/v2.0.4/rpl-2.0.4.tar.gz"
+  sha256 "cb48bf6712cd4e7aa70b2225dcab0cb081582181d7e9766ada196b3ab5b2ec61"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,25 +15,35 @@ class Rpl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bb1e34afdd4f02172a30480efb626a835b70e988fe37b020aa4312d0453f02"
   end
 
-  depends_on "python@3.14"
+  depends_on "help2man" => :build
+  depends_on "pkgconf" => :build
+  depends_on "vala" => :build
+  depends_on "glib"
+  depends_on "pcre2"
+  depends_on "uchardet"
 
-  resource "chainstream" do
-    url "https://files.pythonhosted.org/packages/a5/cc/93357fd1f53c61fdc6111a6d9ea2cc565b2c1be9227c15bb036a0db0396b/chainstream-1.0.2.tar.gz"
-    sha256 "b32975d3b3d1c030a507ac298044c28fa3ca30d527abdfae281edd53276617b3"
+  on_macos do
+    depends_on "gettext"
   end
 
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+  # TODO: Remove next release
+  resource "vala-extra-vapis" do
+    url "https://gitlab.gnome.org/GNOME/vala-extra-vapis/-/archive/6b8a3e4faaabc462f90ffcb0cf0f91991ee58077/vala-extra-vapis-6b8a3e4faaabc462f90ffcb0cf0f91991ee58077.tar.bz2"
+    sha256 "161fbc1e2ac51886ec52c0ee8db69d6afe408279ec79a8bea2b472a23fef9e99"
   end
 
-  resource "regex" do
-    url "https://files.pythonhosted.org/packages/49/d3/eaa0d28aba6ad1827ad1e716d9a93e1ba963ada61887498297d3da715133/regex-2025.9.18.tar.gz"
-    sha256 "c5ba23274c61c6fef447ba6a39333297d0c247f53059dba0bca415cac511edc4"
+  # Backport fix for newer PCRE2.
+  # TODO: Remove patch and `vala` dependency in next release
+  patch do
+    url "https://github.com/rrthomas/rpl/commit/6e452376e32c230819078d92248433e800878bb0.patch?full_index=1"
+    sha256 "3b3634aaeff9e0eac0f3ec22a1a0346c1c56c8fd30a38aa12d90b3e5b71ce0fa"
   end
 
   def install
-    virtualenv_install_with_resources
+    (buildpath/"vala-extra-vapis").install resource("vala-extra-vapis")
+
+    system "./configure", "--disable-silent-rules", *std_configure_args
+    system "make", "install"
   end
 
   test do
