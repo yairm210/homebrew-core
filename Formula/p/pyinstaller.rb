@@ -9,15 +9,14 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "799d64346642d46b6fc2cb87a59c5e18c96b666f5e3803e558feec614f15230f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39f0dad7650a64925225bd7f81a04ffc3e4d41df56730100d280c233fac6ac6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38c05c20d08410513724a00a815566c8d16b51615d3fd3d687a718cdaafd1e2e"
-    sha256 cellar: :any_skip_relocation, tahoe:         "c03d80f6731ebca75994f5f99678ced88f92717e336010fd3ce05db0f6da8d26"
-    sha256 cellar: :any_skip_relocation, sequoia:       "83d25478681c25cee9971031579f30c0b26d197e7339b00155f93088ed4486e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "078f3a5c29d7ae56e571b28cdc8e8e1b29b07b344fd1596136a6a8a662fe6dcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95d3d2de57dbc6ea2f126fba0eb9cd9270225e6c63d5249e4ab6e9a6d3da44dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b056044ca37441fadbc7635a8d57c7dbc92a3bc6d9ee9c5ac6e7a2bc44bb013f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44a696fd78cacec38fa8fecaea843f65bdb3e03c3ddfaaefcc0c0cd0c72ab872"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd2f2dfd000c56a1db5c39b5aadf7bc554aab42d93036d23835ef4639eb6de80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eda92fa93b71941c60448a24c28a0f10b4c39ee041f3345aa503c43776870f20"
+    sha256 cellar: :any_skip_relocation, tahoe:         "cf54dbf3b85768d852b5ab5a8c5bce0a33117b757fa7a59fa9233e4356fcd834"
+    sha256 cellar: :any_skip_relocation, sequoia:       "28c1b664cb04e1ee950e720c89a5fcad78f99047ef30f5d0ceb8b04455c07b92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4249f190ff12fa683732b5cf8cfc371a1c9eb1f5600b9a8359df9b7af35eb6f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da47ef2ff3cf07b031384bbc51ae8dad8267bea9674afea3905e1f721bac71dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce89a7bde964bd597e0bd93fc18bc39f4659f813c711ffd329f0a4999618c18e"
   end
 
   depends_on "python@3.14"
