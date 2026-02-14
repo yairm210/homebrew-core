@@ -1,8 +1,8 @@
 class Gogcli < Formula
   desc "Google Suite CLI"
   homepage "https://gogcli.sh"
-  url "https://github.com/steipete/gogcli/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "58163d629da853a79055234f395850149bcb779389104526d40ac400c2318929"
+  url "https://github.com/steipete/gogcli/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "9a390fa206ccfa3a10201830fd4912048f4efbce949f8d6f04233727fc1c6547"
   license "MIT"
   head "https://github.com/steipete/gogcli.git", branch: "main"
 
@@ -33,7 +33,7 @@ class Gogcli < Formula
     assert_match version.to_s, shell_output("#{bin}/gog --version")
 
     ENV["GOG_ACCOUNT"] = "example@example.com"
-    output = shell_output("#{bin}/gog drive ls 2>&1", 1)
+    output = shell_output("#{bin}/gog drive ls 2>&1", 10)
     assert_match "OAuth client credentials missing", output
   end
 end
