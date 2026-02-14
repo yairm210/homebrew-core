@@ -1,10 +1,9 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://github.com/mikebrady/shairport-sync/archive/refs/tags/4.3.7.tar.gz"
-  sha256 "a1242d100b61fe1fffbbf706e919ed51d6a341c9fb8293fb42046e32ae2b3338"
+  url "https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.0.tar.gz"
+  sha256 "ace8e2c771f9c30e55f1a5e8b2b180b09fe29133e6ed1738032a6a7c3f74b22d"
   license "MIT"
-  revision 1
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
   livecheck do
@@ -33,6 +32,12 @@ class ShairportSync < Formula
   depends_on "popt"
   depends_on "pulseaudio"
 
+  # patch to fix version string from 5.0rc0 to 5.0, upstream pr ref, https://github.com/mikebrady/shairport-sync/pull/2144
+  patch do
+    url "https://github.com/mikebrady/shairport-sync/commit/6c71105e98af30a9b157a1534d0bed82f4e49de6.patch?full_index=1"
+    sha256 "67edc2bcb8b37a1fffacf7499d42c8abfe44a7af0312f7407f056b677d7681db"
+  end
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     args = %W[
@@ -40,7 +45,7 @@ class ShairportSync < Formula
       --with-ssl=openssl
       --with-ao
       --with-stdout
-      --with-pa
+      --with-pulseaudio
       --with-pipe
       --with-soxr
       --with-metadata
@@ -67,9 +72,9 @@ class ShairportSync < Formula
   test do
     output = shell_output("#{bin}/shairport-sync -V")
     if OS.mac?
-      assert_match "libdaemon-OpenSSL-dns_sd-ao-pa-stdout-pipe-soxr-metadata", output
+      assert_match "libdaemon-OpenSSL-dns_sd-ao-PulseAudio-stdout-pipe-soxr-metadata", output
     else
-      assert_match "OpenSSL-ao-pa-stdout-pipe-soxr-metadata-sysconfdir", output
+      assert_match "OpenSSL-ao-PulseAudio-stdout-pipe-soxr-metadata-sysconfdir", output
     end
   end
 end
