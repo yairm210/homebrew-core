@@ -2,8 +2,8 @@ class Ghr < Formula
   desc "Upload multiple artifacts to GitHub Release in parallel"
   # homepage bug report, https://github.com/tcnksm/ghr/issues/168
   homepage "https://github.com/tcnksm/ghr"
-  url "https://github.com/tcnksm/ghr/archive/refs/tags/v0.17.2.tar.gz"
-  sha256 "aac4c0cbff1b1980d197dd41f0cabe5a323a5e2ce953c81379787822921facf9"
+  url "https://github.com/tcnksm/ghr/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "2428daa1de7e03850349994e49857e336cb5cabc882ed4b9261f9aba87a9dc9e"
   license "MIT"
   head "https://github.com/tcnksm/ghr.git", branch: "master"
 
