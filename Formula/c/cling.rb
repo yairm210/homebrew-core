@@ -17,12 +17,12 @@ class Cling < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b09e0249110083ea166e4abddcd0fd0b1baae544cbb27c2b980d7df0473a15fe"
-    sha256 arm64_sequoia: "4c56a4179592ca8b3aa5ef8c172edfc46356382454fc56872c7cdac015614ad2"
-    sha256 arm64_sonoma:  "aaa711f705fd0e99b0c8a9ef9e831243b8fffdf8ec847952713ed806dd70d45d"
-    sha256 sonoma:        "b45e65c4c0a399f23eb9cdae58f502aa3f66ec6be01d4bfd72347551ecc1b9ef"
-    sha256 arm64_linux:   "1280cc977c508d088cca5ebf924a9777cffa894834295ee18beba4b58485e21c"
-    sha256 x86_64_linux:  "8664aa806ec0740a3fa1b79d8c7773941b301485e61d0b4d5483470fedf7961c"
+    sha256 arm64_tahoe:   "a0e982f092f47c906adcc71ff75b127822ecfab69cc40d353955a007682e4cf1"
+    sha256 arm64_sequoia: "77bd4ae3b0df3f1a2ac6b89b97653e5b77539f8704b5cbe3fa069f2e0b86fb1d"
+    sha256 arm64_sonoma:  "ca6edc3940448d844e33400c80631bead2c2be135af68c9305f9b720f31d8103"
+    sha256 sonoma:        "f0c5153fa13c8f5194047a799cb51f44e66bab25dadfea0486363f72194ee810"
+    sha256 arm64_linux:   "4a99d40bb84f2cc6986094d0e9c89e73fe34aa5df810a3408a56dc8ff2d00208"
+    sha256 x86_64_linux:  "7072596311dacb08ab7bddb2e7d4d12496c6525ba44981f3e9d2973f97c5fdba"
   end
 
   depends_on "cmake" => :build
