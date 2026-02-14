@@ -3,8 +3,8 @@ class FlowControl < Formula
   homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
   url "https://github.com/neurocyte/flow.git",
-      tag:      "v0.7.0",
-      revision: "e044d1111ea9b88558aa2d81aa1da3379080e119"
+      tag:      "v0.7.2",
+      revision: "af7c97acb9579f76a237a52e3104b1639dd24fbd"
   license "MIT"
   head "https://github.com/neurocyte/flow.git", branch: "master"
 
