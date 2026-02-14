@@ -4,16 +4,22 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.2.1.tar.gz"
-    sha256 "2558683c217ad2318833ab7731939617ed91dc79a6b1dee92bf88b56a1dc142a"
+    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.3.0.tar.gz"
+    sha256 "3bfa26c5499a94d3b2a98eb65113bbb902f51dadef767c7c7247fc0175885a9a"
 
     resource "ncbi-vdb" do
-      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.2.1.tar.gz"
-      sha256 "535511984928ec5bac02a61fc6b4d1ca72a5b69c742f4882eabd32ed3a97621c"
+      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.3.0.tar.gz"
+      sha256 "36b3467affd53bea794e3eeb5598619d820bc726dc68751a189181ac7973047d"
 
       livecheck do
         formula :parent
       end
+    end
+
+    # Backport fix for newer libxml2
+    patch do
+      url "https://github.com/ncbi/sra-tools/commit/e2b9d82b59c2636a1224995dbb7164c0b1391c77.patch?full_index=1"
+      sha256 "47a5b9811ef4745ebce51a7c7ed794855131702d93e8272385d326ef9cd0c52f"
     end
   end
 
@@ -50,18 +56,6 @@ class Sratoolkit < Formula
     odie "ncbi-vdb resource needs to be updated" if build.stable? && version != resource("ncbi-vdb").version
 
     (buildpath/"ncbi-vdb-source").install resource("ncbi-vdb")
-
-    # Issue ref: https://github.com/ncbi/sra-tools/issues/1096
-    if OS.mac? && DevelopmentTools.clang_build_version >= 1700
-      # Fix to error: static declaration of 'strchrnul' follows non-static declaration
-      inreplace "ncbi-vdb-source/interfaces/os/mac/os-native.h",
-                /^(\s*#\s*include\s*<.*>\s*)+/,
-                "\\0\n#include <string.h>\n#define strchrnul sratk_strchrnul\n"
-      # Fix to avoid fdopen() redefinition for vendored `zlib`
-      inreplace "ncbi-vdb-source/libs/ext/zlib/zutil.h",
-                "#        define fdopen(fd,mode) NULL /* No fdopen() */",
-                ""
-    end
 
     # Need to use HDF 1.10 API: error: too few arguments to function call, expected 5, have 4
     # herr_t h5e = H5Oget_info_by_name( self->hdf5_handle, buffer, &obj_info, H5P_DEFAULT );
