@@ -1,8 +1,8 @@
 class Llhttp < Formula
   desc "Port of http_parser to llparse"
   homepage "https://llhttp.org/"
-  url "https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.3.0.tar.gz"
-  sha256 "1a2b45cb8dda7082b307d336607023aa65549d6f060da1d246b1313da22b685a"
+  url "https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.3.1.tar.gz"
+  sha256 "c14a93f287d3dbd6580d08af968294f8bcc61e1e1e3c34301549d00f3cf09365"
   license "MIT"
 
   bottle do
