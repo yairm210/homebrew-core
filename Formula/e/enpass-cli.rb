@@ -1,8 +1,8 @@
 class EnpassCli < Formula
   desc "Enpass command-line client"
   homepage "https://github.com/hazcod/enpass-cli"
-  url "https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "7c60f51cfac907c8fb8ccddced4253618cb626ae8f3fbea093be32b265ee51a8"
+  url "https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "9880a54d3364aa2b6f51dffcbc54954ab5c23258d9c853cb322df0eaf1f18c09"
   license "MIT"
   head "https://github.com/hazcod/enpass-cli.git", branch: "master"
 
@@ -30,8 +30,8 @@ class EnpassCli < Formula
     mkdir "testvault"
     cp [pkgshare/"vault.json", pkgshare/"vault.enpassdb"], "testvault"
     # Master password for test vault
-    ENV["MASTERPW"]="mymasterpassword"
-    # Retrieve password for "myusername" from test vault
-    assert_match "mypassword", shell_output("#{bin}/enpass-cli -vault testvault/ pass myusername")
+    ENV["MASTERPW"] = "absolutely-No-clue"
+    # Retrieve password for "johndoe" from test vault
+    assert_match "noIdeaata11", shell_output("#{bin}/enpass-cli -vault testvault/ pass johndoe").chomp
   end
 end
