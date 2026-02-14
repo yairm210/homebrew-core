@@ -1,17 +1,10 @@
 class Gammu < Formula
   desc "Command-line utility to control a phone"
   homepage "https://wammu.eu/gammu/"
-  url "https://dl.cihar.com/gammu/releases/gammu-1.42.0.tar.xz"
-  sha256 "d8f152314d7e4d3d643610d742845e0a016ce97c234ad4b1151574e1b09651ee"
+  url "https://github.com/gammu/gammu/releases/download/1.43.2/Gammu-1.43.2.tar.gz"
+  sha256 "bd521c0483a52808abf885cf0dd9f42036354a5f94518ffe064cb9e7ef23fd02"
   license "GPL-2.0-or-later"
   head "https://github.com/gammu/gammu.git", branch: "master"
-
-  livecheck do
-    url "https://wammu.eu/download/gammu/"
-    regex(/href=.*?gammu[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:    "c5ff78b2fb4a85fbe0dcd2e00a9e300cfe7ecabe3622334cd58b78c8c7208088"
@@ -38,15 +31,11 @@ class Gammu < Formula
   end
 
   def install
-    # Disable opportunistic linking against Postgres
-    inreplace "CMakeLists.txt", "macro_optional_find_package (Postgres)", ""
-
     args = %W[
       -DBASH_COMPLETION_COMPLETIONSDIR=#{bash_completion}
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DWITH_Postgres=OFF
     ]
-    # Workaround for CMake 4 compatibility
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
