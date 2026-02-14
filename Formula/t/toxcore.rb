@@ -18,12 +18,12 @@ class Toxcore < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "050b0151151f4087dffb7dba9c69750d2f82aef2e5d61ff42643fd13dd818cc1"
-    sha256 cellar: :any,                 arm64_sequoia: "137d837b7683dac068a82ce27e8e55446da055016325c9c73ac77b11938f1037"
-    sha256 cellar: :any,                 arm64_sonoma:  "d16b1f9dc19c386cdcaacf38963055ccc4847030d5434b9000e7be647dcea28b"
-    sha256 cellar: :any,                 sonoma:        "53486ce5425f28e3d33f36714a0853aee85b5b6205cad2a04f9e7896a2138e65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4902d2da0346443d4378d7ba34e1ad4d7e91026a1aeeef0a87152803644ecbaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e988d944b8424cdeb67b056c5aa8ddef5728f975ef1e83c7f55db8f34f7c84"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ae8ce1025bc93c45c9fd531552147ce86580a4f8b03a366c1ccb5a1f5f3ae34"
+    sha256 cellar: :any,                 arm64_sequoia: "760b5ee2a711ec1cb258436350a2d4072260de47a05978ba69799b87d3c27271"
+    sha256 cellar: :any,                 arm64_sonoma:  "339bfd9374b677b7fe32bf74bce1775287cc7b6d87fc93f7a3a2931a2879fe98"
+    sha256 cellar: :any,                 sonoma:        "1a508f1d508f42d6e1bc95133d2b5835ba3a8011dd89b6dcf7cb90cf87c400f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dba3fafd018408183b85fc61d824289c0f539261e1fff6c1c5d9552140a4c41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "097414b1cbe53b9c858deb008efeba328f4fc30b216ce357f8f59773bebf7502"
   end
 
   depends_on "cmake" => :build
