@@ -1,8 +1,8 @@
 class MacCleanupGo < Formula
   desc "TUI macOS cleaner that scans caches/logs and lets you select what to delete"
   homepage "https://github.com/2ykwang/mac-cleanup-go"
-  url "https://github.com/2ykwang/mac-cleanup-go/archive/refs/tags/v1.3.11.tar.gz"
-  sha256 "3ebecab60c3a317c6d2b6689a79fce30727fcc8df7251adb8cd407ebf0e87ac9"
+  url "https://github.com/2ykwang/mac-cleanup-go/archive/refs/tags/v1.3.12.tar.gz"
+  sha256 "ec1399169c968f476eeb8014faa075f015bd320edfef8d982f8c700afd019eb6"
   license "MIT"
   head "https://github.com/2ykwang/mac-cleanup-go.git", branch: "main"
 
