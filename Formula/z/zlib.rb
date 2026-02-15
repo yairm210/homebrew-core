@@ -16,16 +16,12 @@ class Zlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "b1f6105bc71a21cad7eb7015d9d363ec1097bf80f91fd3c0d56bc0bece086364"
-    sha256 cellar: :any,                 arm64_sequoia:  "a801a93f88dba4df7319e46cd9ea5939351e73f7aa62a5153a2f7a0b0d79404d"
-    sha256 cellar: :any,                 arm64_sonoma:   "f867540472a59ab3fb1201625df546593e5fae2e98948c4c16c6154b0468b682"
-    sha256 cellar: :any,                 arm64_ventura:  "9033eedbd240076116fea9fa181882e75edee7fe0c5d2e3850258a185c52792f"
-    sha256 cellar: :any,                 arm64_monterey: "ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6"
-    sha256 cellar: :any,                 sonoma:         "217f4245cd1da65a3388f512530089f526cd63a38d49ee5f29a90576dfeb3bb7"
-    sha256 cellar: :any,                 ventura:        "6012d7831245716d8507da3d1eb14ad274f8aa0b71b59275fe6bbbd6cebd787f"
-    sha256 cellar: :any,                 monterey:       "56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "8f5d3038615e17d8de3a4b92895a151388e7adfe608f295f89aa669604541f39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f2469db2ce63b70855a98e5ee27b5b5a92874e52542cbdc0b230bba1e7195f"
+    sha256 cellar: :any,                 arm64_tahoe:   "d02341630db7995cc3fbab2fbc4c972a5f3234e06e2ea7d66befe77b648af7a4"
+    sha256 cellar: :any,                 arm64_sequoia: "a9c3e660b585126eeb798217e9974f8657224cc48c4e7ea7bc76fae95ab04a14"
+    sha256 cellar: :any,                 arm64_sonoma:  "93836f9d2dd4d0e28f09d616fb64e6890d3fdf8644d6134915134da0dca283f2"
+    sha256 cellar: :any,                 sonoma:        "d8486be76c60648958734b10999fefa078e094738734e20594d3c654f44bf5be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c3c57e35dd35f2ae6443cd03dbf5962a6f347c8943b39091410a66f1d2f6c38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dc996403a69700b568d92d9283a02b530e9349e5771019f226ee35505d26bd9"
   end
 
   keg_only :provided_by_macos
