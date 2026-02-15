@@ -1,8 +1,8 @@
 class Pvetui < Formula
   desc "Terminal UI for Proxmox VE"
   homepage "https://github.com/devnullvoid/pvetui"
-  url "https://github.com/devnullvoid/pvetui/archive/refs/tags/v1.0.17.tar.gz"
-  sha256 "6e5002a3ea2db0906a9b8bf5861c8a5b30dc31274c151833147c7438015b38d7"
+  url "https://github.com/devnullvoid/pvetui/archive/refs/tags/v1.0.18.tar.gz"
+  sha256 "f1e4149879309b19b72218b65f194a217f6befd38434e4aeeffe5ea00ff16725"
   license "MIT"
   head "https://github.com/devnullvoid/pvetui.git", branch: "master"
 
