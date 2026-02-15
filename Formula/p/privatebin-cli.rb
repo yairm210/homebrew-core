@@ -1,8 +1,8 @@
 class PrivatebinCli < Formula
   desc "CLI for creating and managing PrivateBin pastes"
   homepage "https://github.com/gearnode/privatebin"
-  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "1b03499608fca426ad6ecc2ea1c33af3f13fd8eaea40b05adc26d7f25ca8c350"
+  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.2.1.tar.gz"
+  sha256 "cf11851f5e76d7b8d2b90dd662eb0a3dd03cd71f10cad01fb2f81ecf23d303b2"
   license "ISC"
 
   bottle do
