@@ -1,9 +1,9 @@
 class Gawk < Formula
   desc "GNU awk utility"
   homepage "https://www.gnu.org/software/gawk/"
-  url "https://ftpmirror.gnu.org/gnu/gawk/gawk-5.3.1.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gawk/gawk-5.3.1.tar.xz"
-  sha256 "694db764812a6236423d4ff40ceb7b6c4c441301b72ad502bb5c27e00cd56f78"
+  url "https://ftpmirror.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz"
+  sha256 "f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc"
   license "GPL-3.0-or-later"
   head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
@@ -37,16 +37,13 @@ class Gawk < Formula
       --disable-silent-rules
       --without-libsigsegv-prefix
     ]
-    # Persistent memory allocator (PMA) is enabled by default. At the time of
-    # writing, that would force an x86_64 executable on macOS arm64, because a
-    # native ARM binary with such feature would not work. See:
-    # https://git.savannah.gnu.org/cgit/gawk.git/tree/README_d/README.macosx?h=gawk-5.2.1#n1
-    args << "--disable-pma" if OS.mac? && Hardware::CPU.arm?
     system "./configure", *args, *std_configure_args
 
     system "make"
     if which "cmp"
-      system "make", "check"
+      # Cannot run pma tests in Docker container due to seccomp needed for personality syscall
+      check_args = ["NEED_PMA="] if OS.linux?
+      system "make", "check", *check_args
     else
       opoo "Skipping `make check` due to unavailable `cmp`"
     end
