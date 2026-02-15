@@ -22,7 +22,7 @@ class Kmod < Formula
   depends_on :linux
   depends_on "openssl@3"
   depends_on "xz"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
   depends_on "zstd"
 
   def install
