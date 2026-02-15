@@ -7,12 +7,12 @@ class Cheat < Formula
   head "https://github.com/cheat/cheat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7730db54330947a96359e8a660a6fb3ac32af8e024b45679251f7ad4286ca0d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7730db54330947a96359e8a660a6fb3ac32af8e024b45679251f7ad4286ca0d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7730db54330947a96359e8a660a6fb3ac32af8e024b45679251f7ad4286ca0d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3bdd47236b7db05b24110155f94dc5043817a1fe30143d3ab93088d8f268386"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd3826cde45a9711c987723968fd52703b97392648acd320d2f03ff415eca796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcf3232a4f6bb7159026496ec38098c25271f2cbfbda35045f28f631ea62403b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afdaee849ce7abd8d02a1c2d55c53e62cfccfc7686cc0fbad5f38956b0c73106"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afdaee849ce7abd8d02a1c2d55c53e62cfccfc7686cc0fbad5f38956b0c73106"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afdaee849ce7abd8d02a1c2d55c53e62cfccfc7686cc0fbad5f38956b0c73106"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f728f8330dade5a50a75a5fd1d11010730599e60d75a0d0ecbbaa05d0767f3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5f044cce00a279fe2a92bfb608e3bd9fc5047d62c512e779040d90260c054a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "054f6915b9f88c875c913f40c74ba33b04a4fb035ae4c0761588da67991611ba"
   end
 
   depends_on "go" => :build
