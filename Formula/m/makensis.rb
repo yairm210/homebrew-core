@@ -19,7 +19,9 @@ class Makensis < Formula
   depends_on "mingw-w64" => :build
   depends_on "scons" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "nsis" do
     url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.11/nsis-3.11.zip"
@@ -32,7 +34,7 @@ class Makensis < Formula
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["zlib"].opt_include}"
+      ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}"
       ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     end
 
