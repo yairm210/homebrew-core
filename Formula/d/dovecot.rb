@@ -4,6 +4,7 @@ class Dovecot < Formula
   url "https://dovecot.org/releases/2.4/dovecot-2.4.2.tar.gz"
   sha256 "2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
+  revision 1
 
   livecheck do
     url "https://dovecot.org/releases/"
@@ -36,6 +37,7 @@ class Dovecot < Formula
   depends_on "openldap"
   depends_on "openssl@3"
 
+  uses_from_macos "netcat" => :test
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
@@ -79,6 +81,9 @@ class Dovecot < Formula
   patch :DATA
 
   def install
+    # Re-generate file as only Linux has inotify support for imap-hibernate
+    rm "src/config/all-settings.c" unless OS.linux?
+
     if OS.mac?
       odie "Remove workaround and autoreconf dependencies!" if version > "2.4.2"
       system "autoreconf", "--force", "--install", "--verbose"
@@ -129,28 +134,40 @@ class Dovecot < Formula
   test do
     assert_match version.to_s, shell_output("#{sbin}/dovecot --version")
 
-    cp_r share/"doc/dovecot/example-config", testpath/"example"
-    (testpath/"example/dovecot.conf").write <<~EOS
-      # required in 2.4
-      dovecot_config_version = 2.4.0
-      dovecot_storage_version = 2.4.0
+    port = free_port.to_s
+    cp_r share/"doc/dovecot/example-config", testpath/"config"
+    (testpath/"config/dovecot.conf").write <<~EOS
+      dovecot_config_version = #{version}
+      dovecot_storage_version = #{version}
 
-      base_dir = #{testpath}
+      base_dir = #{testpath}/run
+      state_dir = #{testpath}/state
       listen = *
       ssl = no
+      protocols = imap
+      service imap-login {
+        inet_listener imap {
+          port = #{port}
+        }
+      }
 
       default_login_user = #{ENV["USER"]}
       default_internal_user = #{ENV["USER"]}
-
-      # reference other conf files
-      # !include conf.d/*.conf
-
-      # same as 2.3
-      log_path = syslog
+      default_internal_group = #{Etc.getgrgid(Process.egid).name}
       auth_mechanisms = plain
+      log_path = #{testpath}/dovecot.log
     EOS
 
-    system bin/"doveconf", "-c", testpath/"example/dovecot.conf"
+    system bin/"doveconf", "-c", testpath/"config/dovecot.conf"
+
+    pid = spawn sbin/"dovecot", "-c", testpath/"config/dovecot.conf", "-F"
+    begin
+      sleep 5
+      system "nc", "-z", "localhost", port
+    ensure
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
 
