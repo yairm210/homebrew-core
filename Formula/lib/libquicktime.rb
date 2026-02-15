@@ -26,10 +26,12 @@ class Libquicktime < Formula
 
   depends_on "pkgconf" => :build
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Fix CVE-2016-2399. Applied upstream on March 6th 2017.
@@ -51,7 +53,7 @@ class Libquicktime < Formula
   def install
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", "--enable-gpl",
                           "--without-doxygen",
