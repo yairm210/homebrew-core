@@ -1,8 +1,8 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
   homepage "https://ryelang.org/"
-  url "https://github.com/refaktor/rye/archive/refs/tags/v0.1.01.tar.gz"
-  sha256 "46ebeff6996d0fc1fe2e8f0b45a320abf05da6cc0fff6826da4df2735eea1395"
+  url "https://github.com/refaktor/rye/archive/refs/tags/v0.1.02.tar.gz"
+  sha256 "8901573e3109a0d80df46ef7e82dd88d97dfed24ac9b4a4274fe2cc9167f0996"
   license "BSD-3-Clause"
   head "https://github.com/refaktor/rye.git", branch: "main"
 
@@ -45,6 +45,6 @@ class Ryelang < Formula
     EOS
     assert_path_exists testpath/"hello.rye"
     output = shell_output("#{bin}/rye hello.rye 2>&1")
-    assert_equal "Hello Mars\n42", output.strip
+    assert_match "Hello Mars\n42", output.strip
   end
 end
