@@ -1,8 +1,8 @@
 class Rhino < Formula
   desc "JavaScript engine"
   homepage "https://mozilla.github.io/rhino/"
-  url "https://repo.maven.apache.org/maven2/org/mozilla/rhino-all/1.9.0/rhino-all-1.9.0.jar"
-  sha256 "caafa887e3b32efa74f1aac9984f0f54e733ff5a0ea62b057861c053a6619328"
+  url "https://repo.maven.apache.org/maven2/org/mozilla/rhino-all/1.9.1/rhino-all-1.9.1.jar"
+  sha256 "1cc2b468a51857747dcb29ae533e352a2abc04e81c5aa61e397dc774dd395329"
   license "MPL-2.0"
 
   livecheck do
