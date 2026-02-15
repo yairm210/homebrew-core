@@ -32,7 +32,9 @@ class Tgif < Formula
   depends_on "libxmu"
   depends_on "libxt"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # patch sent upstream to the author email (bill.cheng@usc.edu)
   # fixes the -Wimplicit-function-declaration error on Sonoma
