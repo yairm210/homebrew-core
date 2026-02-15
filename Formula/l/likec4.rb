@@ -5,6 +5,15 @@ class Likec4 < Formula
   sha256 "2ab93034bfd1684f1fae8655a751c56dc0fbc53f4e1e27e1d3391292a4dafefb"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ff95b72ac54890350e268d29a6594d5bac0fd9296d2c41046f2fa24aefedc329"
+    sha256 cellar: :any,                 arm64_sequoia: "4e3fde311a235da6624ae7fa7bdaff19ee1ce5ae259d9f4c2bc127eccd4709e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e3fde311a235da6624ae7fa7bdaff19ee1ce5ae259d9f4c2bc127eccd4709e4"
+    sha256 cellar: :any,                 sonoma:        "f2b6d4f6873d400e61ede5ff6ba30b8c617490d6e5ed702cd0d31c8ef227e9c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "912ffb6e2c645a9fcefcbd4cd8329cae26005b2fd2ec3486b8f3f173439cc571"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23de0532c67bd02c0eba6496eace9ce1aa159424420015cabe8f7a8d27c4a199"
+  end
+
   depends_on "pnpm" => :build
   depends_on "graphviz"
   depends_on "node"
