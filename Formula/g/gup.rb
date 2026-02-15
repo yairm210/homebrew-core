@@ -1,8 +1,8 @@
 class Gup < Formula
   desc "Update binaries installed by go install"
   homepage "https://github.com/nao1215/gup"
-  url "https://github.com/nao1215/gup/archive/refs/tags/v0.28.3.tar.gz"
-  sha256 "1034788af0fb9049f4ad536a3f46c0dc3bd54ebcaa8df884bc897db5c47bc2d7"
+  url "https://github.com/nao1215/gup/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "fa80f65a46bffe35849da65be47bb477aeb63a6b040b9d2592e39ae139d5871f"
   license "Apache-2.0"
   head "https://github.com/nao1215/gup.git", branch: "main"
 
@@ -21,7 +21,8 @@ class Gup < Formula
     ldflags = "-s -w -X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra)
+    # upstream bug report on powershell completion support, https://github.com/nao1215/gup/issues/233
+    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish])
 
     ENV["MANPATH"] = man1.mkpath
     system bin/"gup", "man"
