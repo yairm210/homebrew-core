@@ -1,17 +1,17 @@
 class PrivatebinCli < Formula
   desc "CLI for creating and managing PrivateBin pastes"
   homepage "https://github.com/gearnode/privatebin"
-  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "eb143ed6d2ab88d66e615c5a98fb2c3f8b0ee5a8394590b68ddbf59bfb2c39d3"
+  url "https://github.com/gearnode/privatebin/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "1b03499608fca426ad6ecc2ea1c33af3f13fd8eaea40b05adc26d7f25ca8c350"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb4c13c2f9ea53f51675c8647c55767c74939837c097578ba38d3039e4c2d7c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4c13c2f9ea53f51675c8647c55767c74939837c097578ba38d3039e4c2d7c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb4c13c2f9ea53f51675c8647c55767c74939837c097578ba38d3039e4c2d7c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e91653fc6b2105a834846e498a97865246f173e20a1cc48e30fb2fa2f7b8d192"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2f4a75e45e63f8228738a2c4d9a6c793465168ee3831ee1c8b8c32b12f8920d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bbee2ff0b938abdcb16eeeeafb7b33a77123df28a3615574488104c186cf847"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "564bcaab2e4562084f74724662980b8486ac7bbc38f7a41554a38a56253742a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1a409e6c36704248f474b4a2a8fcb6b8d791f6e82cdfae9de912f0b1f59a3fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa2416df5f2ae560e8fef1f8377534ce35d632232d29dcb74fe0d95e760e0049"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,6 @@ class PrivatebinCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/privatebin --version")
 
-    assert_match "Error: cannot load configuration", shell_output("#{bin}/privatebin create foo 2>&1", 1)
+    assert_match "Error: no privatebin instance configured", shell_output("#{bin}/privatebin create foo 2>&1", 1)
   end
 end
