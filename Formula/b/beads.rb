@@ -1,8 +1,8 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.49.6.tar.gz"
-  sha256 "0427612c5e96744d4a3188bf75e92e85bdec9e20d5822b9aca4b4334bea6633a"
+  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.50.3.tar.gz"
+  sha256 "f04ec59cc69e262dbe9c6ae825da76f7697538a8a1c5a6316cfd7ebb1b7d5982"
   license "MIT"
 
   bottle do
@@ -46,6 +46,7 @@ class Beads < Formula
     assert_path_exists testpath/"AGENTS.md"
 
     output = shell_output("#{bin}/bd info")
-    assert_match "Connected: yes", output
+    assert_match "Beads Database Information", output
+    assert_match "Mode: direct", output
   end
 end
