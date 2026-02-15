@@ -6,6 +6,15 @@ class Difi < Formula
   license "MIT"
   head "https://github.com/oug-t/difi.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f53cb691f7cd8836bfd7ecae85f5ddedfd32ccc607f817df9abe0b2645993489"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f53cb691f7cd8836bfd7ecae85f5ddedfd32ccc607f817df9abe0b2645993489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f53cb691f7cd8836bfd7ecae85f5ddedfd32ccc607f817df9abe0b2645993489"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34e011c5ae368ff7c8176d1277cb455f7b97268770500a0d37d747429bf8604f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfac7e950d08f68b84810ada260a3e258a6ff4f2e338735a9595eb9aca71f6b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46b7e0e8d2e0aa7c166edc7ab57839ea2de5def417c31768dc1827422a2046fd"
+  end
+
   depends_on "go" => :build
 
   def install
