@@ -6,6 +6,15 @@ class Rustypaste < Formula
   license "MIT"
   head "https://github.com/orhun/rustypaste.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f740c83c45ab964419367ffeb9ee8120affba10e4101af891e8c93fca04520b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7549c6073caac74eac78311b23f4749a4e9c4bb24004bb3388dace94c6ca68d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4401816b4bbc3fb5cb2ee642c23777f5f4341458d5ab70d72fb2cd71a9cd919e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02e9650aa4526b365b5f95873003221577ee2709d7f7ea1e68e0328b810bec13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbce6cb426fef97c071dd06872cb7ebcf323c1a5c3dfb291a7d12e5d9ad6dbf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "493ed14e58870919b7b0e7d89eaeb71298b836acefd00819db24169c61a5a9d0"
+  end
+
   depends_on "rust" => :build
 
   def install
