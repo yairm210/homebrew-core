@@ -10,6 +10,15 @@ class Nikto < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f0196a9ccf7113d62c1cb722dab0f4744a78eb88c605c36762921a49449af4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecd1d17136bddbf40f16c1e19c92c8d5cadff0195d6710ecd1752a4883b71911"
+  end
+
   uses_from_macos "perl"
 
   on_linux do
