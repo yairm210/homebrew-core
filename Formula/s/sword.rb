@@ -29,7 +29,9 @@ class Sword < Formula
     sha256 x86_64_linux:   "d24c458654c45c7746615daf3627cd11c1a805ab2eac215f3d9c935575510a0b"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
