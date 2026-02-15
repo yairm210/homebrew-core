@@ -22,10 +22,10 @@ class Lc0 < Formula
   depends_on "eigen"
 
   uses_from_macos "python" => :build # required to compile .pb files
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openblas"
+    depends_on "zlib-ng-compat"
   end
 
   # We use "753723" network with 15 blocks x 192 filters (from release notes)
