@@ -12,12 +12,12 @@ class Tbox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a0067831ab388cc5fc99ff9c152437a579a85297d25e70f93cded7fbe130af5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dbbf045ecb2a8958efa18ab791198bd9065992986c65fd85cc5e91d6f47199c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30146fc27beaa177788147cde0e0e7ae67bf808c63caf87330f574336a826d00"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa1be6dd50a08ee5e5975cd44ccbce1ffb73816def52325342c68a837ad179eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2a8f5671d17aa9e7a8ffbdce4f3838c2f97b7e3d8ced4aaf9349294024d55f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53f1e814d9e023789e45c61ab45224a26f15899c6059ea95f7ffbcc6a6f6c566"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2e54884a4e796cfcf80f0626c4709cfb2457a7f55322620087960dd3898dc43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "191ed24e6b0df03c2f5d2de83f4fbae1f3471ef00ebd52e4fcad6cc8d49716e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78bc0408e71342dfbdd429ff61b6958bafb01dcb2fd243a29b52a5a1337e04d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d43414168d16c5dcc7b64f140cc6a6bdc1dff6284e6115267aea03d7a5982192"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "988c17883fa3616f79372ae9e8856ca03249c33a8feee0ccbcfceedcc3d33c01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cfd614c4c971f8b922e37ae936cb23625adc02c47c4f570587a5274ee357e26"
   end
 
   depends_on "xmake" => :build
