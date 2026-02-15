@@ -1,8 +1,8 @@
 class Polkit < Formula
   desc "Toolkit for defining and handling authorizations"
   homepage "https://github.com/polkit-org/polkit"
-  url "https://github.com/polkit-org/polkit/archive/refs/tags/126.tar.gz"
-  sha256 "2814a7281989f6baa9e57bd33bbc5e148827e2721ccef22aaf28ab2b376068e8"
+  url "https://github.com/polkit-org/polkit/archive/refs/tags/127.tar.gz"
+  sha256 "9b7bc16f086479dcc626c575976568ba4a85d34297a750d8ab3d2e57f6d8b988"
   license "LGPL-2.0-or-later"
 
   bottle do
@@ -32,6 +32,14 @@ class Polkit < Formula
   on_linux do
     depends_on "linux-pam"
     depends_on "systemd"
+  end
+
+  # Apply commit from open PR to fix macOS build. Can remove if one of following PRs are part of release:
+  # Ref: https://github.com/polkit-org/polkit/pull/629
+  # Ref: https://github.com/polkit-org/polkit/pull/624
+  patch do
+    url "https://github.com/polkit-org/polkit/commit/33330b0feaa36fc8a3637e7d36f792cebd421687.patch?full_index=1"
+    sha256 "d306d0eeebc2c950582a46bdbaf19180f371574e2fb71080ffc247597f2e7e4b"
   end
 
   def install
