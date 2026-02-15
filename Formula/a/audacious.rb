@@ -74,7 +74,6 @@ class Audacious < Formula
   depends_on "wavpack"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -86,6 +85,7 @@ class Audacious < Formula
     depends_on "libx11"
     depends_on "libxml2"
     depends_on "pulseaudio"
+    depends_on "zlib-ng-compat"
   end
 
   def install
