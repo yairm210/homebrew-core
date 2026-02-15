@@ -24,7 +24,9 @@ class Jose < Formula
   depends_on "jansson"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Apply upstream PR to fix build on macOS to use `-exported_symbol`
   # PR ref: https://github.com/latchset/jose/pull/163
