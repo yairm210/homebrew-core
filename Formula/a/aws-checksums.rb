@@ -6,12 +6,12 @@ class AwsChecksums < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec1cc8126b462a3eed6777c0573e77cc6b6b0fc3a933567be4e8d796d2ca538c"
-    sha256 cellar: :any,                 arm64_sequoia: "12f97ddf4127b0155cc3d0833bb69bd4f1a17a5f916a79f850a3b61b55e3a57f"
-    sha256 cellar: :any,                 arm64_sonoma:  "baa1a0cb2bbcfcb4d8ccc04ece02af07b6b8448d61b09d86294507e8e43a30d7"
-    sha256 cellar: :any,                 sonoma:        "09711a7db0110d370ee353d64b7438b4dd073647c369d534aa1b890cb925a21a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a5f19109020be4456051179b21a1e36ac82bd1611e02bff8878e5da5896eeab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56715c1b4ecca021680131b5d82d0fed93c90d8832e922af3e4d3797936a9ad0"
+    sha256 cellar: :any,                 arm64_tahoe:   "6d445735de28c8a10112acf0aef35604333dd1e116178049cb14fac250cc2a8e"
+    sha256 cellar: :any,                 arm64_sequoia: "51f9c37d851867716d37defe9144f5835fb6278ca1f35907e911a1d586bb0072"
+    sha256 cellar: :any,                 arm64_sonoma:  "e24b9a1b71244f86bd5fa10251200429c07d8a059c0457f07adecab8ddb7f1ee"
+    sha256 cellar: :any,                 sonoma:        "a61857ac1b1680a507dc293eafaec707cb2d9f3b39f4aa8526cf802f22d53b28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c915444ca9fc28a35b3b45d8af248c85af9e23b55d0f40e3dead889bd7f500e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36f9b3e8cbcd098bf0ef110583df824360ad86e71dd9265904203872f59c763f"
   end
 
   depends_on "cmake" => :build
