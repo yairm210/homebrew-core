@@ -1,21 +1,18 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://github.com/cheat/cheat/archive/refs/tags/4.4.2.tar.gz"
-  sha256 "6968ffdebb7c2a8390dea45f97884af3c623cda6c2d36c4c04443ed2454da431"
+  url "https://github.com/cheat/cheat/archive/refs/tags/4.5.0.tar.gz"
+  sha256 "50f28ae012145710dfb1a249d8bcbe8e9904a58d9df9c43e62bf6cc279e01432"
   license "MIT"
   head "https://github.com/cheat/cheat.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9bdff27a92bab0dd90d21017d8e6ca8c4f09fd9d027b581775d5e091a8f861f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de9fb22d8e57c93c2b3d7209f8200d7db98507bb160db8f7285e3be0cd7b061e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "056c862aa6f3f46ba541558de9ae41a0e0c81424934830c0f1e12b4530d2692b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71e2689795a69384bc9271eaa07fc2c9371a028d721057bba0f19529d3cfcee1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71e2689795a69384bc9271eaa07fc2c9371a028d721057bba0f19529d3cfcee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e2689795a69384bc9271eaa07fc2c9371a028d721057bba0f19529d3cfcee1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b908eab72d744511cd90a09284815d7f9854925e2e3bf8476dfd1043c34aa21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3fc04d849fe8542f56bcee6f3f72d66bf613504d4ec1956807dbb374f28f85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66767effc95bbb28d835ead2de407030043d46ecf0130f211b65edb89f6b0ed9"
   end
 
   depends_on "go" => :build
