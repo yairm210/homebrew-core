@@ -30,7 +30,9 @@ class GnupgAT14 < Formula
     sha256 x86_64_linux:   "4e742c3b7160f0cdc5d4399857508ed58d3e43abb7f41bc9f173b5b83c12bccf"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
