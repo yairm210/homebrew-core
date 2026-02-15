@@ -1,8 +1,8 @@
 class Libsidplayfp < Formula
   desc "Library to play Commodore 64 music"
   homepage "https://github.com/libsidplayfp/libsidplayfp"
-  url "https://github.com/libsidplayfp/libsidplayfp/releases/download/v2.16.0/libsidplayfp-2.16.0.tar.gz"
-  sha256 "81bfd58ccaa3a0ef28c903b841b4fa3014811901fd12fbb9a80b7b5d5ec2b151"
+  url "https://github.com/libsidplayfp/libsidplayfp/releases/download/v2.16.1/libsidplayfp-2.16.1.tar.gz"
+  sha256 "ace0f73c2ef8645ab069ce1b298b10e31e36af7b5996109983b2b67ad60ff3ca"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -26,6 +26,10 @@ class Libsidplayfp < Formula
 
   depends_on "pkgconf" => :build
   depends_on "libgcrypt"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
