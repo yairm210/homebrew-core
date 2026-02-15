@@ -1,8 +1,8 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://github.com/cheat/cheat/archive/refs/tags/4.5.0.tar.gz"
-  sha256 "50f28ae012145710dfb1a249d8bcbe8e9904a58d9df9c43e62bf6cc279e01432"
+  url "https://github.com/cheat/cheat/archive/refs/tags/4.5.2.tar.gz"
+  sha256 "d6f7ab84bc60842ba5a5bb3543297d2c04f073e00740286585b3bca7cebe8c4f"
   license "MIT"
   head "https://github.com/cheat/cheat.git", branch: "master"
 
@@ -32,6 +32,6 @@ class Cheat < Formula
     assert_match version.to_s, shell_output("#{bin}/cheat --version")
 
     output = shell_output("#{bin}/cheat --init 2>&1")
-    assert_match "editor: EDITOR_PATH", output
+    assert_match "cheatpaths:", output
   end
 end
