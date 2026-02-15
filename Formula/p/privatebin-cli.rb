@@ -6,12 +6,12 @@ class PrivatebinCli < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065645e665bd05cb5fa8308c363dcc5175c756b9f5423ecf2308536e80e7e71d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "564bcaab2e4562084f74724662980b8486ac7bbc38f7a41554a38a56253742a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1a409e6c36704248f474b4a2a8fcb6b8d791f6e82cdfae9de912f0b1f59a3fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa2416df5f2ae560e8fef1f8377534ce35d632232d29dcb74fe0d95e760e0049"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2e4fa411d88cce37a30da74d468d452692a4837d83655cffc4738bf1b324fb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dc9373dd412bfa83d39f08fbccd6ab55b0c58f4952d3b8b049c10e8cb2f2448"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a98fa2e7050c0484bceb3b221fabfa802f83c5f0a68eebfc5ef0f3485e5d2d8"
   end
 
   depends_on "go" => :build
