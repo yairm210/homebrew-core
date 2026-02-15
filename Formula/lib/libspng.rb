@@ -26,7 +26,9 @@ class Libspng < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args
