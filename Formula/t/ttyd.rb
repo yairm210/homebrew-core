@@ -24,7 +24,10 @@ class Ttyd < Formula
   depends_on "openssl@3"
 
   uses_from_macos "vim" # needed for xxd
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
@@ -40,8 +43,7 @@ class Ttyd < Formula
     fork do
       system bin/"ttyd", "--port", port.to_s, "bash"
     end
-    sleep 5
-
-    system "curl", "-sI", "http://localhost:#{port}"
+    output = shell_output("curl --silent --retry 5 --retry-connrefused http://localhost:#{port}")
+    assert_match "<title>ttyd - Terminal</title>", output[..256]
   end
 end
