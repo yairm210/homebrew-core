@@ -25,7 +25,13 @@ class Atac < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"atac", "completions")
+    # stdout is not supported, so install manually
+    [:bash, :zsh, :fish].each do |shell|
+      system bin/"atac", "completions", shell
+    end
+    bash_completion.install "atac.bash" => "atac"
+    zsh_completion.install "_atac"
+    fish_completion.install "atac.fish"
 
     system bin/"atac", "man"
     man1.install "atac.1"
