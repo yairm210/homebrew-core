@@ -28,10 +28,12 @@ class XmlToolingC < Formula
   depends_on "xerces-c"
   depends_on "xml-security-c"
 
-  uses_from_macos "zlib"
-
   on_sequoia do
     depends_on xcode: ["16.4", :build]
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
