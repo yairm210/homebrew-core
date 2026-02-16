@@ -1,8 +1,8 @@
 class AwsSpiffeWorkloadHelper < Formula
   desc "Helper for providing AWS credentials to workloads using their SPIFFE identity"
   homepage "https://github.com/spiffe/aws-spiffe-workload-helper"
-  url "https://github.com/spiffe/aws-spiffe-workload-helper/archive/refs/tags/v0.0.4.tar.gz"
-  sha256 "d670012e9dac1b2fdadf2d2c24c0844654239796ca71898b1d213cbca419d6d4"
+  url "https://github.com/spiffe/aws-spiffe-workload-helper/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "480071226243042f639422639edd38571199c4ab752f90f3ef71cdc71bef49b7"
   license "Apache-2.0"
   head "https://github.com/spiffe/aws-spiffe-workload-helper.git", branch: "main"
 
