@@ -45,10 +45,13 @@ class Wireshark < Formula
   uses_from_macos "krb5"
   uses_from_macos "libpcap"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with cask: "wireshark-app"
