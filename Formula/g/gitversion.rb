@@ -8,12 +8,12 @@ class Gitversion < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "942a470f118b326107a6b3c702c514d05fa50e57fd51b6f472b325bcf93b35ef"
-    sha256 cellar: :any,                 arm64_sequoia: "fcdd4dc3b2cd6de103045baf5e07e56ff0b8b46e4a20c7aa7bed9ec02fa3d2a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd96d2e19f8a8d999948c77097a021a905896b632cf4567f0aad1ca9fced3a51"
-    sha256 cellar: :any,                 sonoma:        "15c4f6703ffbc8ad7f6e5ad19daeae2e608b82de5cd3575ae0f2892d672a9b1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ab18f5bf4377626a877cb5c52758e3ec3ec43ce4efef36e4d07b8ddc91fe366"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e6c4f74f405abc6729397b7afeba17ff235bbdd7f083ffc12311d6c9e24a16d"
+    sha256 cellar: :any,                 arm64_tahoe:   "fe59b7e11dd63f56dcc65321daede76adb71cd05c0d707922e83efaaf394e637"
+    sha256 cellar: :any,                 arm64_sequoia: "657b6236e4608e629a04cc4858c854f8342856696bd6a0361f8323a9e9080a3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "29fe2851ca638961ebf950441d248641a130f56eb1122e35920a8008c5ffbda2"
+    sha256 cellar: :any,                 sonoma:        "1ce35e6402de57622f9fd367e765fa60280edb182e728006fce4f6d34683c075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "518958dd8f395c8a07b043cc7f3e6d88d3bccda42a3c6ba0ace0dfbe09773e77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72f5ac7d942bea01562ebf0eb2ff9393a0ed9f117376331ed6a266b32882a0da"
   end
 
   depends_on "dotnet"
