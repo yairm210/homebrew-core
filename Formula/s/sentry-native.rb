@@ -1,8 +1,8 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.7.tar.gz"
-  sha256 "ce69d233fa2e338611b880a54492df06a3049239d9dc65941abd290d22b36a58"
+  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.8.tar.gz"
+  sha256 "a9c065aac52eaf4e7fc670c136691432493579f7d41b1e7ab23e2a4df8ce9cd2"
   license "MIT"
 
   bottle do
