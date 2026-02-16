@@ -23,10 +23,9 @@ class Xapian < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   skip_clean :la
