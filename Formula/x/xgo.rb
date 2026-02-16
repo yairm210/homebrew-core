@@ -12,12 +12,12 @@ class Xgo < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "327de65a0450f47147acc99afc5cfdc5a3d407499d2d506dbd37de896fc1528c"
-    sha256 arm64_sequoia: "82b88f964aefc2670e17d2923bdec93abd21b96a7c4f2adffc6c9116ba4804e9"
-    sha256 arm64_sonoma:  "6849838d45583087b52e52675d8d38670169846965ec2c9cf3fe5e475e877cd3"
-    sha256 sonoma:        "c84da9b00f830dcae41a3d188246975444ae4e75500f83138ddfeeac51d4c6f9"
-    sha256 arm64_linux:   "d2814a297dcd979f2b9291d6ab818a8032fee8cf54e24a6aab6ef93782b32f65"
-    sha256 x86_64_linux:  "6252ca4b94116631284441dea700dd25ba2875b89f37dc6397fc4e440763c4e9"
+    sha256 arm64_tahoe:   "a988fb8dd5285ed677c5eb3c57e7fa78e999abb8c72cc09b7d89d0e2066ea1b1"
+    sha256 arm64_sequoia: "fe16d1167f844a869cd2dee50d59ce24ae7aba171ef3efec89bfde802e355c7e"
+    sha256 arm64_sonoma:  "961c48f5ba31c63b330fa465a20c513ab84a7b2da82fa71564793d46d2918753"
+    sha256 sonoma:        "bf955d390b91a02bae29d88cd3bdf538791dca6f3d4b22fd200e76c27e89e914"
+    sha256 arm64_linux:   "cd7d5651fa636b993e7edafb57ca5073abc29563b13716d85c0cfc8949c1e573"
+    sha256 x86_64_linux:  "7dbfc29c04acb19e0867a7cad211cfa550804c656ef19b2492ec5fa51fd4dba3"
   end
 
   depends_on "go"
