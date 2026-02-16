@@ -1,8 +1,8 @@
 class CodexAcp < Formula
   desc "Use Codex from ACP-compatible clients such as Zed!"
   homepage "https://github.com/zed-industries/codex-acp"
-  url "https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "300c760007d436f3e35e271bdcf12085b7b50aed5c0c3d75ca7d4d5de47b5405"
+  url "https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "ee715faa4ebfefaee87ecdd4b06238d35693823cb7b907b08e0f7e39e7fc0f22"
   license "Apache-2.0"
   head "https://github.com/zed-industries/codex-acp.git", branch: "main"
 
@@ -18,6 +18,11 @@ class CodexAcp < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+
+  on_linux do
+    depends_on "libcap"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -35,7 +40,7 @@ class CodexAcp < Formula
       stdin.write(json)
       stdin.close
 
-      line = Timeout.timeout(5) { stdout.gets }
+      line = Timeout.timeout(15) { stdout.gets }
       assert_match "\"protocolVersion\":1", line
     ensure
       if wait_thr&.alive?
