@@ -6,6 +6,15 @@ class Rustledger < Formula
   license "GPL-3.0-only"
   head "https://github.com/rustledger/rustledger.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b894941d4f87de0966d23ff0ede25bb8a094c1f2bcafd8148e04f5f5585277cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bba074508e3694f1b8569e7b705b1be56eb0b50f3ebd0042975d907ae43568a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40c6144b500225a00c63fe2edfdda41cab7585db0e838f696ceef2075fa8dfa0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f0030311b68e6d59a193b2eb6d04a5d64d6edb825169a1c3f8888a736233785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc6324f8016632d3d77bd3656687ca2d2ec9f67193f1a15c71ef5a880fa332e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5725f6018e48c14f2cf9016d2a7652e6152e0f448b78d5b70e2c80095e1b6c98"
+  end
+
   depends_on "rust" => :build
 
   def install
