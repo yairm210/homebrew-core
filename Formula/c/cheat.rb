@@ -1,8 +1,8 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://github.com/cheat/cheat/archive/refs/tags/4.7.1.tar.gz"
-  sha256 "d56857cd777d3eaa9f048a69fc81e97800abd311b42cbac1c16d6f100c929384"
+  url "https://github.com/cheat/cheat/archive/refs/tags/5.1.0.tar.gz"
+  sha256 "5ef8864dacb5b37268d7d26cd01f74b99a33b2e5eb5b290e4221358410c99db4"
   license "MIT"
   head "https://github.com/cheat/cheat.git", branch: "master"
 
@@ -22,9 +22,8 @@ class Cheat < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cheat"
 
-    bash_completion.install "scripts/cheat.bash" => "cheat"
-    fish_completion.install "scripts/cheat.fish"
-    zsh_completion.install "scripts/cheat.zsh" => "_cheat"
+    generate_completions_from_executable(bin/"cheat", "--completion", shells: [:bash, :zsh, :fish, :pwsh])
+
     man1.install "doc/cheat.1"
   end
 
