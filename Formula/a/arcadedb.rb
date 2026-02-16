@@ -6,7 +6,7 @@ class Arcadedb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1fcc1b1fc599b7188ed198a443f255fccd9a06e024f94306561eb6c4dd57eaaf"
+    sha256 cellar: :any_skip_relocation, all: "68384bee11075c424356080578c72ed3ca3071c9f0f99ab30e9f23060f81bfdf"
   end
 
   depends_on "openjdk"
