@@ -26,7 +26,6 @@ class WxwidgetsAT32 < Formula
   depends_on "pcre2"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "cairo"
@@ -43,6 +42,7 @@ class WxwidgetsAT32 < Formula
     depends_on "mesa-glu"
     depends_on "pango"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def install
