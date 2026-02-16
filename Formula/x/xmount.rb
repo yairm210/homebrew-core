@@ -16,7 +16,7 @@ class Xmount < Formula
   depends_on "libewf"
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
