@@ -7,12 +7,12 @@ class Cagent < Formula
   head "https://github.com/docker/cagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5693d3ae41649c88c26017d80dfdeec08d14c6c46db23cab26454f005934b511"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a065bd515c06dd8d8b0c60983d88c42f357f4f91d28d8835f7c84c14838c45c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f4c651e1cbabe6d9f764dbd29444e4704c35a1d21eaefc196f1b2fa724d4080"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fff9129381a4f89f19710a32d97d43f002a4cf510b0467209b751a5c32473ac3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bb897e2d1c85579de01f32bf7937458af8cb68a2d9fef0413d3016e632616ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f23af62bac0f92f1e0ffb793151b4b78a38bc86e26f9dbc2fc0a437cf4b4971a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c7468b4e8f779ab0921faed4568a96c4799a12358c546ffe22759776f6739c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e6c48ae60be409bcbb9fe627117ba606cd1e72397c79021ca188e5e9bd20254"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c5eacb885a11c3e793592be4125d162eacfc64c640140ced657109e1778f416"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5b24dc2bca76e7556e21f7a64cefb0236c8a128e7884e0bd153cbf201ed439a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dc0a34a267bac63fbe33e51c404e1d6f13ace13788ad1907210051f2985dde9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d8314674ca3c4323c9e0916276aaaa80d91fcb04d1fe30b77f42cdd76c2c74e"
   end
 
   depends_on "go" => :build
