@@ -24,10 +24,10 @@ class Mailcatcher < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "node" => :build
+    depends_on "zlib-ng-compat"
   end
 
   resource "rack" do
