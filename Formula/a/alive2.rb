@@ -25,7 +25,10 @@ class Alive2 < Formula
   depends_on "llvm"
   depends_on "z3"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   fails_with :clang do
     build 1500
