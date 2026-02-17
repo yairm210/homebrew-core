@@ -24,8 +24,6 @@ class ArgyllCms < Formula
   depends_on "libtiff"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libx11"
     depends_on "libxext"
@@ -34,6 +32,7 @@ class ArgyllCms < Formula
     depends_on "libxscrnsaver"
     depends_on "libxxf86vm"
     depends_on "xorgproto"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "num-utils", because: "both install `average` binaries"
