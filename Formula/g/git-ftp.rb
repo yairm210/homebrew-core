@@ -18,7 +18,9 @@ class GitFtp < Formula
   depends_on "curl"
   depends_on "libssh2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "prefix=#{prefix}", "install"
