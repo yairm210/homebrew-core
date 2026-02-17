@@ -29,8 +29,6 @@ class Klee < Formula
   depends_on "wllvm"
   depends_on "z3"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "cryptominisat"
     depends_on "gmp"
@@ -42,6 +40,7 @@ class Klee < Formula
     # * https://github.com/klee/klee/issues/1670
     # * https://github.com/klee/klee/issues/1767
     depends_on arch: :x86_64
+    depends_on "zlib-ng-compat"
   end
 
   # klee needs a version of libc++ compiled with wllvm
