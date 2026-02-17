@@ -12,12 +12,12 @@ class SoxNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "03a6873f41102ccfdf0a04c998e2384f4b756f1be1517f69d9bdd601d985e2aa"
-    sha256 cellar: :any,                 arm64_sequoia: "b5e0a278409182cf4ff8de041a5d00914c32e8ffcb1f28c7f216a683a5cc5884"
-    sha256 cellar: :any,                 arm64_sonoma:  "778a6d4fdb81608f7710e0d283d3f2b1fc2c9a459d8875c54f347efc82a85053"
-    sha256 cellar: :any,                 sonoma:        "3c82fac5acc923ee13578d7dec85dd08ae8820c0f285e7536f237a470c46282c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4ef8025d0321c09aadbe02db0465deb2b0bb04f4d217415c3a54e485c84d818"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bbc27546d31502fe55f14288819f87fe18b57999ede568f1cf3bffb2a8a6e2b"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec6270ecb1577a587ee744204beeb1a749e107c2757e5a172fd8f26655210f16"
+    sha256 cellar: :any,                 arm64_sequoia: "d8e0aba457ba94f313c1a868c0f87eaa0ee2216b9890b29685a122c870fa5c73"
+    sha256 cellar: :any,                 arm64_sonoma:  "be65b4f861bdd1496e47e9aa648e679395f5cc9d6458bbb446ed87a4311c5348"
+    sha256 cellar: :any,                 sonoma:        "328cf6f0f545c4f640855d079fc1b04072e87e46ac1a639ee82b0fbaede524c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa96a4f81ddcbdcda3de1812edb055b814484c9deb1b5ec07638360a947cf600"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c087a10584c929356b626b71edbdaf5eb275da456ff2765f2c923c95157602f"
   end
 
   depends_on "pkgconf" => :build
