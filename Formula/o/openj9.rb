@@ -1,9 +1,8 @@
 class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
-  url "https://github.com/eclipse-openj9/openj9.git",
-      tag:      "openj9-0.48.0",
-      revision: "1d5831436ec378c7dd9f57415bec39d3f5817d57"
+  url "https://github.com/eclipse-openj9/openj9/archive/refs/tags/openj9-0.57.0.tar.gz"
+  sha256 "84650d5f8e623bec413b72e5486a40f0b3dcc71435fa4dfe5b9bba5bea4c398d"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -33,7 +32,7 @@ class Openj9 < Formula
   depends_on "autoconf" => :build
   depends_on "bash" => :build
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
+  depends_on "openjdk" => :build # TODO: will need to use `openjdk@25` when JDK 26 is released
   depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "freetype"
@@ -48,7 +47,6 @@ class Openj9 < Formula
   uses_from_macos "libffi"
   uses_from_macos "unzip"
   uses_from_macos "zip"
-  uses_from_macos "zlib"
 
   on_linux do
     keg_only "it conflicts with openjdk"
@@ -62,54 +60,33 @@ class Openj9 < Formula
     depends_on "libxt"
     depends_on "libxtst"
     depends_on "numactl"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do
     depends_on "nasm" => :build
   end
 
-  # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
-  # We use JDK 22 to bootstrap.
-  resource "boot-jdk" do
-    on_macos do
-      on_arm do
-        url "https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_aarch64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
-        sha256 "623cc15daa3b4c7f21d47f225c94a163e2261074cc3c11f30d2938fc249b9355"
-      end
-      on_intel do
-        url "https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_x64_mac_22.0.1_8_openj9-0.45.0.tar.gz"
-        sha256 "f0e459df70b5a3c8fc0abc099d5c06a596da40b95f8226d76474516a646a3861"
-      end
-    end
-    on_linux do
-      on_arm do
-        url "https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_aarch64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
-        sha256 "feb2734b519990d730c577254df5a97f7110bb851994ce775977894a9fdc22c7"
-      end
-      on_intel do
-        url "https://github.com/AdoptOpenJDK/semeru22-binaries/releases/download/jdk-22.0.1%2B8_openj9-0.45.0/ibm-semeru-open-jdk_x64_linux_22.0.1_8_openj9-0.45.0.tar.gz"
-        sha256 "6e54d984bc0c058ffb7a604810dfffba210d79e12855e5c61e9295fedeff32db"
-      end
-    end
-  end
-
   resource "omr" do
-    url "https://github.com/eclipse-openj9/openj9-omr.git",
-        tag:      "openj9-0.48.0",
-        revision: "d10a4d553a3cfbf35db0bcde9ebccb24cdf1189f"
+    url "https://github.com/eclipse-openj9/openj9-omr/archive/refs/tags/openj9-0.57.0.tar.gz"
+    sha256 "7da11f270722c3d99570ef53af6dd84ae5ca865c7f9bc2982c4c415b7cb585c9"
 
-    # Fix syntax error in OptionFlagArray class definition
-    # Remove when bumped to openj9-0.53.0 or later.
-    patch do
-      url "https://github.com/eclipse-openj9/openj9-omr/commit/29203c807abe45fce56e70b93e80ebaef22b0844.patch?full_index=1"
-      sha256 "044a26ac76fafc536feb8dfc24c521ef26a66c98b78948f4571293a41ede24ca"
+    livecheck do
+      formula :parent
     end
   end
 
+  # Keep this on the latest LTS documented at
+  # https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
+  # This matches official documentation and allows us to bootstrap from an OpenJDK formula
   resource "openj9-openjdk-jdk" do
-    url "https://github.com/ibmruntimes/openj9-openjdk-jdk22.git",
-        tag:      "openj9-0.46.1",
-        revision: "b77827589c585158319340068dae8497b75322c6"
+    url "https://github.com/ibmruntimes/openj9-openjdk-jdk25.git",
+        tag:      "openj9-0.57.0",
+        revision: "394c3b425206fdffa3e09e1d874d1905c1957ebb"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   # Fix build on Clang 17+. Backport of:
@@ -117,13 +94,18 @@ class Openj9 < Formula
   patch :DATA
 
   def install
+    # Make sure JDK resource is on latest supported LTS and using correct tag
+    jdk_resource = resource("openj9-openjdk-jdk")
+    jdk_versions = Dir["doc/build-instructions/*"].filter_map { |path| path[/Build_Instructions_V(\d+)/, 1] }
+    jdk_version = jdk_versions.map(&:to_i).max.to_s
+    odie "Update respository to JDK #{jdk_version}!" if jdk_version != jdk_resource.url[/jdk(\d+)\.git/, 1]
+    odie "Update openj9-openjdk-jdk resource tag!" if jdk_resource.version != version
+
+    boot_jdk = Language::Java.java_home(jdk_version)
     openj9_files = buildpath.children
     (buildpath/"openj9").install openj9_files
     resource("openj9-openjdk-jdk").stage buildpath
     resource("omr").stage buildpath/"omr"
-    boot_jdk = buildpath/"boot-jdk"
-    resource("boot-jdk").stage boot_jdk
-    boot_jdk /= "Contents/Home" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     config_args = %W[
@@ -182,7 +164,6 @@ class Openj9 < Formula
     config_args << "--with-noncompressedrefs" if OS.mac? && Hardware::CPU.arm?
 
     ENV["CMAKE_CONFIG_TYPE"] = "Release"
-    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     system "bash", "./configure", *config_args
     system "make", "all", "-j"
@@ -204,12 +185,18 @@ class Openj9 < Formula
   end
 
   def caveats
+    s = <<~EOS
+      This formula provides the latest supported LTS JDK. If you need a specific
+      version, then you will have to use a different method to install OpenJ9.
+    EOS
     on_macos do
-      <<~EOS
+      s += <<~EOS
+
         For the system Java wrappers to find this JDK, symlink it with
           sudo ln -sfn #{opt_libexec}/openj9.jdk /Library/Java/JavaVirtualMachines/openj9.jdk
       EOS
     end
+    s
   end
 
   test do
