@@ -33,7 +33,9 @@ class AssimpAT5 < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
