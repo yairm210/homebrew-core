@@ -7,13 +7,12 @@ class Liqoctl < Formula
   head "https://github.com/liqotech/liqo.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0a7564fdf3668b894ceaa9a66468dab81fcda94233d72aadc3608e1ba4e7314"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a7564fdf3668b894ceaa9a66468dab81fcda94233d72aadc3608e1ba4e7314"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0a7564fdf3668b894ceaa9a66468dab81fcda94233d72aadc3608e1ba4e7314"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c55a6eeecb3a7f936f007106e8cd633ea61796eb2c21cc1292a30f3b355dce2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "232af48c5b9752029d5c72a83d1e246b05d075b0a3595c553a7e8aaa7624ae0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eedfa6b953b322000d5b6c673c755149c6cc8de0d82a3489da65e46591e7103"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd6323cef002ef81f1bab8a91be5c1e93a4a2b0543704ddcb871e2e893d6e816"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd6323cef002ef81f1bab8a91be5c1e93a4a2b0543704ddcb871e2e893d6e816"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd6323cef002ef81f1bab8a91be5c1e93a4a2b0543704ddcb871e2e893d6e816"
+    sha256 cellar: :any_skip_relocation, sonoma:        "281b0c4d3da112c042ccbe19329b9f6cb9482b647d2accf488a63d43f444e4ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c112b86d8c4baed51c84d5399c449db657c036fd4b277193ee9a14378bbf522"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3029b45cf8aa44700afceb96f4000285042d7de89a4cf65886abec30e85da198"
   end
 
   depends_on "go" => :build
