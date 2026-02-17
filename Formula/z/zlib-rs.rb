@@ -7,12 +7,12 @@ class ZlibRs < Formula
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19c8f5a8517752b647ecd3b853cfb01fdb46925ab12ca02bd65047e5c786dbc6"
-    sha256 cellar: :any,                 arm64_sequoia: "43b10da1eab03efcb0e50bc277ba3b72715503c0a247a50c0f74d5799a8e776b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b85b8863dc0cd2e5d2098219006b75dc2cf3dd0e54aa7e3085e577c1b490e373"
-    sha256 cellar: :any,                 sonoma:        "70faedde8a81552d859b118a10b685acc23cd46ddd9cd44275fd47060c73a0a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63eaf5c1cddf341784563a182dfd1ba5ac2f2609b359a73a950b149e6267111f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "364aae1b5ac613cca65411bdbc01c1222b506a3d2c4a1eb5cf6fb93926ee9ea6"
+    sha256 cellar: :any,                 arm64_tahoe:   "05608689e545409cfdb2ef017f5d5dbf76a48fbcde892cf4af8fa876b90e3259"
+    sha256 cellar: :any,                 arm64_sequoia: "bacd733a5f7e9a6f643b8657811e9aad01e4db23ea403818feda82bc7ba6d543"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7650499f87fece075c77f0c364078b87b5d2119b6a04fc3aa2d9b26e0d8065e"
+    sha256 cellar: :any,                 sonoma:        "13e5403c4a0516b071e267ae161745392accbfcf611e52f5c81e3d993d550b51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f44a228025a10f47f0814c3d58dae3ddc1ce53fbb1cbdf7108ef223bbca417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d99066b0e9df517527dd4b0e0c7f669886e485fb879ca864c9fdafd15840ac"
   end
 
   depends_on "cargo-c" => :build
