@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.76.1.tar.gz"
-  sha256 "09c071e550dc2f85caffe73a222d883f414757d60737f2659c6eba2e0c5a2c31"
+  url "https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.77.0.tar.gz"
+  sha256 "25ed50238153078999301ec17a7a79d494587bd0370559d4d35b0a44d10c3ad7"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
