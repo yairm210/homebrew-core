@@ -12,12 +12,12 @@ class Orbiton < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c5f266ad255f6dd591f560a632219c9689778a72037fd8fc2092a5d97dbc1eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c5f266ad255f6dd591f560a632219c9689778a72037fd8fc2092a5d97dbc1eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c5f266ad255f6dd591f560a632219c9689778a72037fd8fc2092a5d97dbc1eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf60f587ea599ca17bde9060acecc9bbf02cfe4e258986efb751e135d0e30466"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d98641778105fd2aaa1e79a536e357fea37eda4cad1ce343b5443bfd395330ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c695da2245cd315eab15fd53d8fd6122355ed0e0b92a97c7d79e4f18599c347"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0631d59e263b0c1d433da61d12abf769ea8264231f73cc70bfe97741ca77724"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0631d59e263b0c1d433da61d12abf769ea8264231f73cc70bfe97741ca77724"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0631d59e263b0c1d433da61d12abf769ea8264231f73cc70bfe97741ca77724"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb7d378d33b6fed4e1ef4c9be378a0a028419c895387e393a849a5320bcd1cd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "158b3a4e1cefc8d623a95354743b8fd04d6c670cbd0b645c90f2939e18589192"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00c2cc7cfa57f9fd08a939bc587d6bde88354dea9bcaedc74113561b3677499f"
   end
 
   depends_on "go" => :build
