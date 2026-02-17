@@ -3,8 +3,8 @@ class PocketTts < Formula
 
   desc "Text-to-speech application designed to run efficiently on CPUs"
   homepage "https://github.com/kyutai-labs/pocket-tts"
-  url "https://files.pythonhosted.org/packages/18/e1/8f53f592f9ec84a1f0e2a3338d8b5abe8ce65e69f4d1c838c96b00ca3b49/pocket_tts-1.1.0.tar.gz"
-  sha256 "54d8f886b516a95f6af28724a4aa2533ddaf31a25b69447d0ccaf9034af1243f"
+  url "https://files.pythonhosted.org/packages/ab/3e/2f15ee05b3dcf6ec08251f5030a3deb4643d2ecd55e17a4ca8998888c1df/pocket_tts-1.1.1.tar.gz"
+  sha256 "cdd234e49299e8fe927bd0b93c164c7785bdd83bed302622e218bcda3944f603"
   license "MIT"
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
@@ -159,13 +159,13 @@ class PocketTts < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/fd/07/b822e1b307d40e263e8253d2384cf98c51aa2368cc7ba9a07e523a1d964b/typer-0.23.1.tar.gz"
-    sha256 "2070374e4d31c83e7b61362fd859aa683576432fd5b026b060ad6b4cd3b86134"
+    url "https://files.pythonhosted.org/packages/5a/b6/3e681d3b6bb22647509bdbfdd18055d5adc0dce5c5585359fa46ff805fdc/typer-0.24.0.tar.gz"
+    sha256 "f9373dc4eff901350694f519f783c29b6d7a110fc0dcc11b1d7e353b85ca6504"
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/da/22/b9c47b8655937b6877d40791b937931702ba9c5f9d28753199266aa96f50/typer_slim-0.23.1.tar.gz"
-    sha256 "dfe92a6317030ee2380f65bf92e540d7c77fefcc689e10d585b4925b45b5e06a"
+    url "https://files.pythonhosted.org/packages/a7/a7/e6aecc4b4eb59598829a3b5076a93aff291b4fdaa2ded25efc4e1f4d219c/typer_slim-0.24.0.tar.gz"
+    sha256 "f0ed36127183f52ae6ced2ecb2521789995992c521a46083bfcdbb652d22ad34"
   end
 
   resource "urllib3" do
@@ -174,8 +174,8 @@ class PocketTts < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
-    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
+    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
+    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
   end
 
   def install
