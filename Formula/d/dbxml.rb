@@ -27,11 +27,13 @@ class Dbxml < Formula
   depends_on "xerces-c"
   depends_on "xqilla"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # No public bug tracker or mailing list to submit this to, unfortunately.
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/dbxml/c%2B%2B11.patch"
+    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/2c3abc44ccac26dc8ecf09a8fb6cf33f47b5cfc9/Patches/dbxml/cxx11.patch"
     sha256 "98d518934072d86c15780f10ceee493ca34bba5bc788fd9db1981a78234b0dc4"
   end
 
@@ -51,9 +53,9 @@ class Dbxml < Formula
       --with-xerces=#{Formula["xerces-c"].opt_prefix}
       --with-berkeleydb=#{Formula["berkeley-db"].opt_prefix}
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
+    args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}" unless OS.mac?
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     cd "dbxml" do
       system "./configure", *std_configure_args, *args
