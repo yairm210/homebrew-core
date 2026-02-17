@@ -28,7 +28,9 @@ class Fw < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "fw.1" do
     url "https://github.com/brocode/fw/releases/download/v2.21.0/fw.1"
