@@ -37,7 +37,6 @@ class FsUae < Formula
   depends_on "sdl2"
 
   uses_from_macos "zip"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -46,6 +45,7 @@ class FsUae < Formula
   on_linux do
     depends_on "libx11"
     depends_on "openal-soft"
+    depends_on "zlib-ng-compat"
   end
 
   def install
