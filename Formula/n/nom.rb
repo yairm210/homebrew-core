@@ -1,8 +1,8 @@
 class Nom < Formula
   desc "RSS reader for the terminal"
   homepage "https://github.com/guyfedwards/nom"
-  url "https://github.com/guyfedwards/nom/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "df6b145ae813c5fd5b5aabd500fee25aaae71ef0fae966031b32418a3f97a067"
+  url "https://github.com/guyfedwards/nom/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "d0c337e508ecfe6014043ef54502f6cce86b1e20ab58b9f89be84d8a4940eb16"
   license "GPL-3.0-only"
   head "https://github.com/guyfedwards/nom.git", branch: "master"
 
