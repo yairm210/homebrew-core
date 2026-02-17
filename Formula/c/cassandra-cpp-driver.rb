@@ -1,10 +1,10 @@
 class CassandraCppDriver < Formula
   desc "DataStax C/C++ Driver for Apache Cassandra"
   homepage "https://docs.datastax.com/en/developer/cpp-driver/latest"
-  url "https://github.com/datastax/cpp-driver/archive/refs/tags/2.17.1.tar.gz"
-  sha256 "53b4123aad59b39f2da0eb0ce7fe0e92559f7bba0770b2e958254f17bffcd7cf"
+  url "https://github.com/apache/cassandra-cpp-driver/archive/refs/tags/2.17.1.tar.gz"
+  sha256 "e6ab5f5c60a916dd6c0dd9a19a883a4a1ab3d6b4e95cab925a186fecff08344e"
   license "Apache-2.0"
-  head "https://github.com/datastax/cpp-driver.git", branch: "master"
+  head "https://github.com/apache/cassandra-cpp-driver.git", branch: "trunk"
 
   livecheck do
     url :stable
@@ -28,10 +28,9 @@ class CassandraCppDriver < Formula
   depends_on "libuv"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "pkgconf" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def install
