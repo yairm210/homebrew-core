@@ -9,13 +9,12 @@ class Kuzco < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a31629ad0686c63c37142d6933c52429eb83785f9e7473c09feeeb5f10fc7c2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a88f63be38154165a86ad19dc078bbecb012d395625b3b69fa712408b9b2d45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d94364db4bf83f55afdd7fe9e3dde36774ccf8363f87f32f56d12bf7440896a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "828064bd9fb70c5de1bb73c6b0a2962160a3b1cdfdb1cae11a7a5fb714df4a56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "828064bd9fb70c5de1bb73c6b0a2962160a3b1cdfdb1cae11a7a5fb714df4a56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "828064bd9fb70c5de1bb73c6b0a2962160a3b1cdfdb1cae11a7a5fb714df4a56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1651aaa2c42ca75c2f014d102a515ce52c5ea68b5382f29dc3c46e0e779a762"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f543fbf8dac52ad9e3367c9628d60e9c43841290dedb981369252007bc418fcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e260ce2a657884b2ae7439e127b71cd1b56b9bf7ca188eea7b122b5b80b5473"
   end
 
   depends_on "go" => :build
