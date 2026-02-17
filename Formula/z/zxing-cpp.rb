@@ -6,6 +6,15 @@ class ZxingCpp < Formula
   license "Apache-2.0"
   head "https://github.com/zxing-cpp/zxing-cpp.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "18ea1b16214084445c7e74b143d4985aba52702a4ebf0523b5e7b930271d7a52"
+    sha256 cellar: :any,                 arm64_sequoia: "2a9611050e2026b1aa591b390b609f55f45b2465b03f255305e6f2a0d7ed91e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d1a9af0311577b559b455d032dc1c92e9b0157afba42e80c0658c0a0c0944f1"
+    sha256 cellar: :any,                 sonoma:        "f2b04a8b3053dc47035220d526df7bf851c0140c1acae7c7a213758bc37e5f58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "168aa61e7cbb561fb6de96986d0765beea11a4f3d1bf78332029423835d678ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d0c01fed83e9bca106bd13ded01f19c95d6a9a541463a14b270c3163354079"
+  end
+
   depends_on "cmake" => :build
 
   def install
