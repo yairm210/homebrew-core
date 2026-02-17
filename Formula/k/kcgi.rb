@@ -21,10 +21,9 @@ class Kcgi < Formula
 
   depends_on "bmake" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libseccomp"
+    depends_on "zlib-ng-compat"
   end
 
   def install
