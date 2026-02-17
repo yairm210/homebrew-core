@@ -31,14 +31,13 @@ class Fourstore < Formula
   depends_on "rasqal"
   depends_on "readline"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install
