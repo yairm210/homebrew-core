@@ -27,7 +27,6 @@ class Duck < Formula
   depends_on "openjdk"
 
   uses_from_macos "libffi", since: :monterey # Uses `FFI_BAD_ARGTYPE`.
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
@@ -42,6 +41,7 @@ class Duck < Formula
     depends_on "libxrender"
     depends_on "libxtst"
     depends_on "little-cms2"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "duckscript", because: "both install `duck` binaries"
@@ -181,7 +181,8 @@ class Duck < Formula
   end
 
   test do
-    system bin/"duck", "--download", "https://ftpmirror.gnu.org/gnu/wget/wget-1.19.4.tar.gz", testpath/"test"
-    assert_equal (testpath/"test").sha256, "93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
+    test_url = "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/wget/wget-1.19.4.tar.gz"
+    system bin/"duck", "--download", test_url, testpath/"test"
+    assert_equal "93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5", (testpath/"test").sha256
   end
 end
