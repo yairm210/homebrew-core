@@ -22,7 +22,6 @@ class Mmseqs2 < Formula
   depends_on "wget"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
@@ -30,6 +29,7 @@ class Mmseqs2 < Formula
 
   on_linux do
     depends_on "gawk"
+    depends_on "zlib-ng-compat"
   end
 
   # `git ls-remote https://github.com/soedinglab/MMseqs2.wiki.git HEAD`
