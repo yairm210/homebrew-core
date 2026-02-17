@@ -37,7 +37,6 @@ class Comby < Formula
   uses_from_macos "m4"
   uses_from_macos "sqlite"
   uses_from_macos "unzip"
-  uses_from_macos "zlib"
 
   # Workaround for error due to `-mpopcnt` on arm64 macOS with Xcode 16.3+.
   # TODO: Remove once base >= 0.17.3 or if fix is backported to 0.14 and released
@@ -55,6 +54,10 @@ class Comby < Formula
         sha256 "07654aaab7e891ccae019d008155aaf2a48cfd64b5dc402c0779554d6e59967a"
       end
     end
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
