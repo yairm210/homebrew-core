@@ -24,7 +24,9 @@ class Qdbm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d63d9159c7ec417881369e52b6d4da71982b91487b03fb5d73280670296fea90"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[
@@ -38,7 +40,7 @@ class Qdbm < Formula
       # Does not want to build on Linux
       args << "--enable-bzip"
     else
-      ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
+      ENV.append "LDFLAGS", "-L#{Formula["zlib-ng-compat"].opt_lib}"
     end
 
     # GCC < 13 with -O2 or higher can cause segmentation faults from loop optimisation bug
