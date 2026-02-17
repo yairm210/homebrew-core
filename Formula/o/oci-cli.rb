@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/fb/f6/c732d838f688c000bdde85c39b0f072cb60654b37ffa03000a27134bc70f/oci_cli-3.74.0.tar.gz"
-  sha256 "8fe275e429a2b86b336d5035b7c84fac515e388b06d7028f90bdf241d0b7c279"
+  url "https://files.pythonhosted.org/packages/60/83/93436bfe889d8290a9d6b126d32d8afbc2e5ec2da9d4eca5f4665b5e7d0d/oci_cli-3.74.1.tar.gz"
+  sha256 "c469e46ea97669629d919706d3d1de0cf62a1e92dccf1139db8aa4328aabd9e5"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -40,13 +40,13 @@ class OciCli < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
-    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
+    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/c1/48/2d981e9c295bdec19962bc000a552a5d8d2a94cc0e6c5f80881408b96a88/oci-2.167.1.tar.gz"
-    sha256 "a8465d64f0ec0c3a0f7f0727fb3e0ea6b6f8da173c7c1b44462d181f3a7460f3"
+    url "https://files.pythonhosted.org/packages/08/72/42e4b67594f54f40c2456f9616b28cdae5081cebffd367b810c42fdb5688/oci-2.167.2.tar.gz"
+    sha256 "85d47cd5e1032943afa3ac8b5d852c7aacdc5ac61e3f3f82e5757657de13b52e"
   end
 
   resource "prompt-toolkit" do
@@ -65,8 +65,8 @@ class OciCli < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
-    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
+    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
+    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pyyaml" do
@@ -75,8 +75,8 @@ class OciCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
-    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "six" do
