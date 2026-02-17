@@ -37,10 +37,12 @@ class Gcab < Formula
   depends_on "vala" => :build
   depends_on "glib"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
