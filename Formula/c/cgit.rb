@@ -29,14 +29,13 @@ class Cgit < Formula
     sha256 x86_64_linux:   "472e74b2dec4db2de6714623b092f441e17d9806e5316c3597895329fde2abc3"
   end
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
     depends_on "openssl@3" => :build # Uses CommonCrypto on macOS
+    depends_on "zlib-ng-compat"
   end
 
   # git version is mandated by cgit: see GIT_VER variable in Makefile
