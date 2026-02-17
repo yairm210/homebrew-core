@@ -22,7 +22,9 @@ class Minipro < Formula
   depends_on "libusb"
   depends_on "srecord"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "CC=#{ENV.cc}", "PREFIX=#{prefix}"
