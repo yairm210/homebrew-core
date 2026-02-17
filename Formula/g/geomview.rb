@@ -34,8 +34,6 @@ class Geomview < Formula
   depends_on "mesa-glu"
   depends_on "openmotif"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on arch: :x86_64 # https://github.com/orgs/Homebrew/discussions/6025
 
@@ -44,6 +42,10 @@ class Geomview < Formula
     # TODO: Make `depends_on :linux` when removing macOS support
     deprecate! date: "2025-09-25", because: :unsupported
     disable! date: "2026-09-25", because: :unsupported
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "clip", because: "both install `clip` binaries"
