@@ -33,10 +33,12 @@ class DamaskGrid < Formula
   depends_on "petsc"
   depends_on "scalapack"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Support PETSc 3.24.x
