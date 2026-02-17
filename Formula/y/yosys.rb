@@ -24,7 +24,10 @@ class Yosys < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.append "LINKFLAGS", "-L#{Formula["readline"].opt_lib}"
