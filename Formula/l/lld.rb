@@ -23,7 +23,10 @@ class Lld < Formula
   depends_on "cmake" => :build
   depends_on "llvm"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # These used to be part of LLVM.
   link_overwrite "bin/lld", "bin/ld64.lld", "bin/ld.lld", "bin/lld-link", "bin/wasm-ld"
