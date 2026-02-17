@@ -21,7 +21,10 @@ class Quazip < Formula
   depends_on "qtbase"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -41,7 +44,7 @@ class Quazip < Formula
       CONFIG         -= app_bundle
       TARGET          = test
       SOURCES        += test.cpp
-      INCLUDEPATH    += #{include} #{Formula["zlib"].include}
+      INCLUDEPATH    += #{include} #{Formula["zlib-ng-compat"].include}
       LIBPATH        += #{lib}
       LIBS           += -lquazip#{version.major}-qt#{Formula["qt"].version.major}
       QMAKE_RPATHDIR += #{lib}
