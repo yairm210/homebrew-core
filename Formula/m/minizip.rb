@@ -1,8 +1,8 @@
 class Minizip < Formula
   desc "C library for zip/unzip via zLib"
   homepage "https://www.winimage.com/zLibDll/minizip.html"
-  url "https://zlib.net/zlib-1.3.1.tar.gz"
-  sha256 "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
+  url "https://zlib.net/zlib-1.3.2.tar.gz"
+  sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
 
   livecheck do
@@ -28,7 +28,10 @@ class Minizip < Formula
 
   uses_from_macos "unzip" => :test
   uses_from_macos "zip" => :test
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}"
@@ -46,6 +49,10 @@ class Minizip < Formula
       system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", *std_configure_args
       system "make", "install"
+      # `ints.h` is required by `ioapi.h` but is not installed in zlib 1.3.2.
+      # Remove once upstream includes it in releases:
+      # https://github.com/madler/zlib/pull/1165
+      (include/"minizip").install "ints.h"
     end
   end
 
