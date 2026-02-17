@@ -22,7 +22,9 @@ class Qcli < Formula
   depends_on "ffmpeg@6" # Issue ref: https://github.com/bavc/qctools/issues/552
   depends_on "qtbase"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["USE_BREW"] = "true"
