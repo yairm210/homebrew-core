@@ -40,7 +40,6 @@ class Fwupd < Formula
   depends_on "xz"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -48,6 +47,7 @@ class Fwupd < Formula
 
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   pypi_packages package_name:   "",
@@ -70,7 +70,7 @@ class Fwupd < Formula
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", buildpath/"venv"/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.root/Language::Python.site_packages(python3)
 
     system "meson", "setup", "build",
                     "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
