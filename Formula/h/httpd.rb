@@ -24,7 +24,10 @@ class Httpd < Formula
 
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # fixup prefix references in favour of opt_prefix references
@@ -52,7 +55,7 @@ class Httpd < Formula
       zlib = "#{MacOS.sdk_for_formula(self).path}/usr"
     else
       libxml2 = Formula["libxml2"].opt_prefix
-      zlib = Formula["zlib"].opt_prefix
+      zlib = Formula["zlib-ng-compat"].opt_prefix
     end
 
     system "./configure", "--enable-layout=Slackware-FHS",
