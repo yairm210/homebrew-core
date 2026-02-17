@@ -7,12 +7,12 @@ class Getparty < Formula
   head "https://github.com/vbauerster/getparty.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "830fa1ac371b12729704b955c5fa4e6103b3a618051f22aabfaa342c0bd96f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "830fa1ac371b12729704b955c5fa4e6103b3a618051f22aabfaa342c0bd96f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "830fa1ac371b12729704b955c5fa4e6103b3a618051f22aabfaa342c0bd96f5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c700e3f01d2596b21d35d3d43d9111f2a1e003359edaf87c78668052c681efdf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d2684fc2f55e4390e1a7c2cd1741058ce98f3d1bbb7888c091e5a90ed905cea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d9d6b3d68a13bc4238ef4b7243aa21aeda321e0e51dec1a8cc29abfe08d52b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e8a738a875501fe17023af8dfa6452add13f86fe6fadf9ca6bdbd01f397c4d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e8a738a875501fe17023af8dfa6452add13f86fe6fadf9ca6bdbd01f397c4d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e8a738a875501fe17023af8dfa6452add13f86fe6fadf9ca6bdbd01f397c4d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47a313f111332a6317c0e269292372b82cf575c4d58b70c1216664c0e2ef2769"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70bdae3987a2a997178b166b937dfc1075307178a164b94fe5ace6e39313114f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d60e0469aa69f675344d6ee6843ef5ea2548ee836cc03531060593b658563e8e"
   end
 
   depends_on "go" => :build
