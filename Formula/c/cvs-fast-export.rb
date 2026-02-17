@@ -3,8 +3,8 @@ class CvsFastExport < Formula
 
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "https://gitlab.com/esr/cvs-fast-export/-/archive/1.68/cvs-fast-export-1.68.tar.bz2"
-  sha256 "7007b6fde9e8d622e889f332012ac074a406d09189faf6c0c7bf24547fd55734"
+  url "https://gitlab.com/esr/cvs-fast-export/-/archive/2.0/cvs-fast-export-2.0.tar.bz2"
+  sha256 "9eb3d54d4631c5447b6f8c12ca8c08a32ee4255768c90dea66dbfef5b8a6a624"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/esr/cvs-fast-export.git", branch: "master"
 
@@ -26,17 +26,16 @@ class CvsFastExport < Formula
   end
 
   depends_on "asciidoctor" => :build
-  depends_on "bison" => :build
+  depends_on "go" => :build
   depends_on "cvs" => :test
 
-  uses_from_macos "flex" => :build
   uses_from_macos "python"
 
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
-    system "make", "install", "prefix=#{prefix}"
+    system "make", "man"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    man1.install buildpath.glob("*.1")
+    bin.install "cvsconvert", "cvssync"
     rewrite_shebang detected_python_shebang(use_python_from_path: true), *bin.children
   end
 
