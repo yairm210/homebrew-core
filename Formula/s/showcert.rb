@@ -3,8 +3,8 @@ class Showcert < Formula
 
   desc "X.509 TLS certificate reader and creator"
   homepage "https://github.com/yaroslaff/showcert"
-  url "https://files.pythonhosted.org/packages/ba/18/897ef38eb950e333cfbc7bace15a2c11c28535b1ec68de65a29fbed21aa9/showcert-0.4.14.tar.gz"
-  sha256 "7310f3fda1f617e224ee358ce00108ece1ce6009f07d988256f6cbc603578d70"
+  url "https://files.pythonhosted.org/packages/32/d1/2728789232c766247375f98cb9d224f1db4070c5ed836468dc8c7c1359e8/showcert-0.4.16.tar.gz"
+  sha256 "ae4ccd86b2fc6c5e4701be4c2b08b499966de1312bccbc58496fec69f1e1fcfc"
   license "MIT"
   head "https://github.com/yaroslaff/showcert.git", branch: "master"
 
