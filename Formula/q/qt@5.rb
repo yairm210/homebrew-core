@@ -55,7 +55,6 @@ class QtAT5 < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -86,6 +85,7 @@ class QtAT5 < Formula
     depends_on "xcb-util-keysyms"
     depends_on "xcb-util-renderutil"
     depends_on "xcb-util-wm"
+    depends_on "zlib-ng-compat"
   end
 
   # Fix build with ICU 75
