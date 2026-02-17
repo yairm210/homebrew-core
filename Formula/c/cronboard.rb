@@ -8,12 +8,12 @@ class Cronboard < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "367cbedd903ea75ccb0071060ff0e7e914050ab77bd2946dfd9489d6533662bd"
-    sha256 cellar: :any,                 arm64_sequoia: "11a991526e0e0bb7f54b677350bb3161e7ca29072bf05158b7088e61482a7ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d0b13cc28694fb884f1d1406a492095da8eb7f67276a4a625c0f716ac6f6ac2"
-    sha256 cellar: :any,                 sonoma:        "d692f75c87aabc06aa4e1ceed232b52f60f55048cf694f807188867bb26ffbc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1d1ce38fed7b0789639b911b7d682b244fb531d17348ea57b2e01bfb23aa15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "066e42e7a6442e9853c2dfc492f1ac0a995414caf51364f9333b8f1a2dc9c713"
+    sha256 cellar: :any,                 arm64_tahoe:   "bab261646cf6bea102ead7dc7af02972ebe5e04804299a4706960f483409193e"
+    sha256 cellar: :any,                 arm64_sequoia: "875d360220eba18efa51b61414edf65697f55741c54b922eff8435944ed75f96"
+    sha256 cellar: :any,                 arm64_sonoma:  "db705cb277ceccca33decbcce10d97922e44ae3c8b88ab63472b1014d2ef5e29"
+    sha256 cellar: :any,                 sonoma:        "05d20a3347bd4864bd3289a7bfab1c0ab67bf9098133e6db6f135465d37f99dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c82730a5f2fcbf6ae3281c5e7b6ace000a52c3fecda5ddae54afcca75f891e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1c88aefe439ef856047422497c3703dcde7e6d9ea40de06fee2039ce893ac52"
   end
 
   depends_on "rust" => :build
