@@ -23,20 +23,20 @@ class Exiv2 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build # for msgmerge
   depends_on "brotli"
   depends_on "inih"
   depends_on "libssh"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
-    depends_on "gettext" => :build # for msgmerge
+    depends_on "zlib-ng-compat"
   end
 
   def install
