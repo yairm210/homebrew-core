@@ -7,12 +7,12 @@ class GoLibrespot < Formula
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d610d55b3f4758db1eee9dbb28c4cccba5efa65723209fff081721364114556"
-    sha256 cellar: :any,                 arm64_sequoia: "cfbea79361d65a186bb3cc36664103a9df3028e9b69f986a45d5c84917b618e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "da44af082184e5e18d294f0d1e77a5eda5dcc5a205b4bdf0f12db2d28cbe89a7"
-    sha256 cellar: :any,                 sonoma:        "b64df51ccda19acdd97431a53f3cb1cebd57d8a8d963c9881ef79f807d3ac9b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90553547c5cb63755aefab6c9c6d5afb64735c9e7cc3fcd16210812e3f73442e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3897e030d117371a92aafc94ff4622d49be92445b79da8e7b13f088bab5f6fb0"
+    sha256 cellar: :any,                 arm64_tahoe:   "834d43a6e2e147728f96d902fd2550de720bd5ad9807bb027eec23d8574d8a34"
+    sha256 cellar: :any,                 arm64_sequoia: "cfeff0afd8ca7eb5739af0233c3affc8e767f3c53e4a51f0eedf52031ad5b1aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f6d20efa423aad90a50a68cf6a030a2d6e3d092c10df03bf59cd3b772b14ed2"
+    sha256 cellar: :any,                 sonoma:        "c2b34e535d922fefec908b12b2574dcd564c0357534b1f955fc6694e04bca640"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bc44cd8b9981c2491bb387ba3798cf384c7a69e138eeee8501150baf25f1ec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca5616e548f5aa4ad46abe6123f1e23da23884d3e3b60feacb416b0c4e556037"
   end
 
   depends_on "go" => :build
