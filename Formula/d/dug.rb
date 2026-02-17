@@ -20,7 +20,10 @@ class Dug < Formula
   end
 
   depends_on "dotnet"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
