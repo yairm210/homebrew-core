@@ -21,12 +21,13 @@ class Cabin < Formula
   depends_on "pkgconf" => :build
   depends_on "toml11" => :build
 
-  depends_on "curl"
   depends_on "fmt"
   depends_on "libgit2"
   depends_on "pkgconf"
   depends_on "spdlog"
   depends_on "tbb"
+
+  uses_from_macos "curl", since: :monterey # >=7.79.1
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1499
