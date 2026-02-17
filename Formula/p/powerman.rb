@@ -26,22 +26,21 @@ class Powerman < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "curl"
   depends_on "jansson"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "curl"
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--localstatedir=#{var}",
+    system "./configure", "--localstatedir=#{var}",
                           "--with-httppower",
                           "--with-ncurses",
                           "--without-genders",
                           "--without-snmppower",
-                          "--without-tcp-wrappers"
+                          "--without-tcp-wrappers",
+                          *std_configure_args
     system "make", "install"
   end
 
