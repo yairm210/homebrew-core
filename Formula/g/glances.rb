@@ -3,8 +3,8 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/61/54/5a950b209fdce0a677a7a5dd0e09d3ea8c49cd3b5427a535a97837a2558a/glances-4.5.0.4.tar.gz"
-  sha256 "23b943ebe555a9aae32f0943521a7bf91216f03b58fadadf506bcd44fa40533f"
+  url "https://files.pythonhosted.org/packages/6d/98/1675b9eaaa4717ece363d69a32976ddb29558578a462559579093ef82fc2/glances-4.5.0.5.tar.gz"
+  sha256 "64b407e725103bb748962975dbbd0b7738b45d5d67d878ce939d6764d79271a5"
   license "LGPL-3.0-or-later"
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
@@ -63,8 +63,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/a0/fc/af386750b3fd8d8828167e4c82b787a8eeca2eca5c5429c9db8bb7c70e04/fastapi-0.128.7.tar.gz"
-    sha256 "783c273416995486c155ad2c0e2b45905dedfaf20b9ef8d9f6a9124670639a24"
+    url "https://files.pythonhosted.org/packages/48/47/75f6bea02e797abff1bca968d5997793898032d9923c1935ae2efdece642/fastapi-0.129.0.tar.gz"
+    sha256 "61315cebd2e65df5f97ec298c888f9de30430dd0612d59d6480beafbc10655af"
   end
 
   resource "h11" do
@@ -153,8 +153,8 @@ class Glances < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
-    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
+    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
+    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
   end
 
   def install
