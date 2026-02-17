@@ -24,10 +24,10 @@ class ArgusClients < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libtirpc"
+    depends_on "zlib-ng-compat"
   end
 
   resource "Switch" do
