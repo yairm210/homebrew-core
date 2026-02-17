@@ -27,11 +27,12 @@ class Saldl < Formula
   depends_on "asciidoc" => :build
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
-  depends_on "curl" # curl >= 7.55 is required
   depends_on "libevent"
 
+  uses_from_macos "libxml2" => :build
+  uses_from_macos "libxslt" => :build
   uses_from_macos "python" => :build
-  uses_from_macos "libxslt"
+  uses_from_macos "curl"
 
   # Update waf for python 3.11
   # Use resource instead of patch since applying corrupts waf
