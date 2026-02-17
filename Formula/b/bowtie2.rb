@@ -6,21 +6,21 @@ class Bowtie2 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "dcc146d51b08ed4a73d4938caf374776304df1e6ab8dda1cd964ece3c570f8e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3f8eca3ff38d6b573a73c160da0b80a8d20d29a5d11c07ad0c3de51f30986636"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "539b0d025ccf750ab75234c6b1ce0cbe2db9cd1cb3aac64e645ed2703d3f93d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f0ea46f0fb6351e20c753a488ab35b8af656b025dcd8529cf489391afa53a5d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27fbcb3ea2f44568313fc80d900018727c376ce862a2e107540d73a5e118d7f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0851d07d8a4a57897ea4b2262d88073d35060638e297fd8ce3ca9b26eb510ceb"
-    sha256 cellar: :any_skip_relocation, ventura:        "65d7c4f3afd8c3437222126d750ea55f6bb4214907072f97ff1bae4c26788465"
-    sha256 cellar: :any_skip_relocation, monterey:       "76a63cb64ac6060cdeb35bf4e64e2dca18525ec103a8956e38fe6a9487aba434"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e4616762d3c198fa8b078654a6b98dd45d128a25731004a84666baae6ae92cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "574eeb3b13bb869e57844bea2fac0eaf789b708096e7b94d5f14b604655b78a9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9b418a285f79ded12b965982e047b28c5bee357ce6eda671ee908352b3f3e8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee425308d905273c61af149c3f0d5f1e276464f67abcdf67598f34875bcf0e06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bc4584844cba19954860386b56c3e633f5a0363cff2a08b0a049bcc59c1aee7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88d4a0d2ce4eb91d0c1be922a007d7cb4b836875eaa816d37066b25456d117c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "629ec739924219891200f50034c99d17b909bf01481ad12fc51fe89611d3539e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "834853310b0293c535ac29a92672208cb43fb22f2bb9917855eec064787810a6"
   end
 
   uses_from_macos "perl"
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     depends_on "simde" => :build
