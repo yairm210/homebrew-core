@@ -20,7 +20,10 @@ class Bowtie2 < Formula
 
   uses_from_macos "perl"
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     depends_on "simde" => :build
