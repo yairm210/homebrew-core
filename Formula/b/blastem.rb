@@ -53,8 +53,6 @@ class Blastem < Formula
   depends_on "glew"
   depends_on "sdl2"
 
-  uses_from_macos "zlib"
-
   on_macos do
     # Can be undeprecated if upstream decides to support arm64 macOS
     deprecate! date: "2025-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
@@ -63,6 +61,7 @@ class Blastem < Formula
 
   on_linux do
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   resource "vasm" do
