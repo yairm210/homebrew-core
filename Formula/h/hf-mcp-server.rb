@@ -1,8 +1,8 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.2.74.tgz"
-  sha256 "cd51b370cbb11498225abbf3319069a425482e980eae461ed4a6d03b23902f6d"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.3.2.tgz"
+  sha256 "f46108d653dae291295a6265ca036fc8be49723194f39181f34b0ccc12b81d1d"
   license "MIT"
 
   bottle do
@@ -21,6 +21,8 @@ class HfMcpServer < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/@llmindset/hf-mcp-server/node_modules"
+    # Remove incompatible and unneeded Bun binaries.
+    rm_r(node_modules.glob("@oven/bun-*"))
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
@@ -30,8 +32,8 @@ class HfMcpServer < Formula
 
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
-    sleep 5
-    sleep 15 if OS.mac? && Hardware::CPU.intel?
+    sleep 10
+    sleep 10 if OS.mac? && Hardware::CPU.intel?
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)
