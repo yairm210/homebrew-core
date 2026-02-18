@@ -17,7 +17,10 @@ class Libmatio < Formula
 
   depends_on "pkgconf" => :test
   depends_on "hdf5"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # fix pkg-config linkage for hdf5 and zlib
   patch :DATA
@@ -28,7 +31,7 @@ class Libmatio < Formula
       --enable-mat73=yes
       --with-hdf5=#{Formula["hdf5"].opt_prefix}
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
+    args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}" unless OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
