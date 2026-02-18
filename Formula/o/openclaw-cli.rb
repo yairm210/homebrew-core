@@ -1,8 +1,8 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.2.15.tgz"
-  sha256 "653a3f32ac8beeb38da77a763851694ff96146433234170c590584842e0a985a"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.2.17.tgz"
+  sha256 "42e083bfa6ba27b5ca5ceff256d26396542b7f5c4ba41fa5fef3b8387d2aa811"
   license "MIT"
 
   bottle do
@@ -35,6 +35,12 @@ class OpenclawCli < Formula
               basename.exclude?("vulkan")
 
       rm_r(dir)
+    end
+
+    os = OS.linux? ? "linux" : "darwin"
+    node_modules.glob("koffi/build/koffi/*").each do |dir|
+      basename = dir.basename.to_s
+      rm_r(dir) if basename != "#{os}_#{arch}"
     end
   end
 
