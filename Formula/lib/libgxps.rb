@@ -46,16 +46,19 @@ class Libgxps < Formula
   depends_on "little-cms2"
 
   uses_from_macos "zip" => :test
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     # Tell meson to search for brewed zlib before host zlib on Linux.
     # This is not the same variable as setting LD_LIBRARY_PATH!
-    ENV.append "LIBRARY_PATH", Formula["zlib"].opt_lib unless OS.mac?
+    ENV.append "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib unless OS.mac?
 
     system "meson", "setup", "build", "-Denable-test=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
