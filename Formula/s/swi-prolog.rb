@@ -1,8 +1,8 @@
 class SwiProlog < Formula
   desc "ISO/Edinburgh-style Prolog interpreter"
   homepage "https://www.swi-prolog.org/"
-  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.0.tar.gz"
-  sha256 "98c552c48fc8b44dcd4440abbfed632cceb75055fde267be12f340bea8106590"
+  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.1.tar.gz"
+  sha256 "a9504745310e36195cf8cee9ad9164a7aa99e389c669ca6d279e321efc2ad9d4"
   license "BSD-2-Clause"
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
@@ -33,7 +33,10 @@ class SwiProlog < Formula
   uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove bundled libraries
