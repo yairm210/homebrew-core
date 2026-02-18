@@ -30,7 +30,7 @@ class MysqlClient < Formula
   depends_on "pkgconf" => :build
   depends_on "libfido2"
   depends_on "openssl@3"
-  depends_on "zlib" # Zlib 1.2.13+
+  depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "libedit"
