@@ -1,8 +1,8 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.120.24.tgz"
-  sha256 "8c850c1071a7f1e4ee5d62f8d685756e6467cf6d70a31a7111ac990e4e54951f"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.120.25.tgz"
+  sha256 "3170b2be72127a5f24485631ee45ddc4642eaa685edb497d26b0453fbbfaa2aa"
   license "MIT"
 
   bottle do
@@ -21,6 +21,7 @@ class Promptfoo < Formula
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
     depends_on "gettext"
+    depends_on "pcre2"
   end
 
   fails_with :clang do
@@ -45,15 +46,9 @@ class Promptfoo < Formula
     system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
-    os = OS.mac? ? "apple-darwin" : "unknown-linux-musl"
-    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
-
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
     rm_r(node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep")
-    codex_vendor = node_modules/"@openai/codex-sdk/vendor"
-    codex_vendor.children.each { |dir| rm_r dir if dir.basename.to_s != "#{arch}-#{os}" }
-
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     keep = node_modules.glob("onnxruntime-node/bin/napi-v*/#{OS.kernel_name.downcase}/#{arch}")
     rm_r(node_modules.glob("onnxruntime-node/bin/napi-v*/*/*") - keep)
