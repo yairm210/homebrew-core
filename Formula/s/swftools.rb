@@ -31,7 +31,9 @@ class Swftools < Formula
     sha256 x86_64_linux:   "0ed51b95634f090cb753b57fdd73df90a944cc37fc2c34de45592d74c8b74139"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fixes a conftest for libfftwf.dylib that mistakenly calls fftw_malloc()
   # rather than fftwf_malloc().  Reported upstream to their mailing list:
