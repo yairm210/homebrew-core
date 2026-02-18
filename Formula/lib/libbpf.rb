@@ -13,7 +13,7 @@ class Libbpf < Formula
   depends_on "pkgconf" => :build
   depends_on "elfutils"
   depends_on :linux
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     system "make", "-C", "src"
