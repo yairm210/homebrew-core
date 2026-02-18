@@ -25,7 +25,9 @@ class Libpano < Formula
   depends_on "libpng"
   depends_on "libtiff"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   patch :DATA
 
