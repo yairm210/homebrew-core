@@ -31,14 +31,13 @@ class Scip < Formula
   depends_on "readline"
   depends_on "tbb"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "boost"
   end
 
   on_linux do
     depends_on "boost" => :no_linkage
+    depends_on "zlib-ng-compat"
   end
 
   def install
