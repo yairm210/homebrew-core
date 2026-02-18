@@ -1,8 +1,8 @@
 class TfSummarize < Formula
   desc "CLI to print the summary of the terraform plan"
   homepage "https://github.com/dineshba/tf-summarize"
-  url "https://github.com/dineshba/tf-summarize/archive/refs/tags/v0.3.15.tar.gz"
-  sha256 "54a65e0a2609d0e517531d3b152c6bfda4cb1c5f6793bd3a8d382f6bd2266b96"
+  url "https://github.com/dineshba/tf-summarize/archive/refs/tags/0.3.16.tar.gz"
+  sha256 "b37b702a4eb449d913bbfe7db59039b612bbbc3e508af59facfc6ce0207c714b"
   license "MIT"
   head "https://github.com/dineshba/tf-summarize.git", branch: "main"
 
