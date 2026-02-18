@@ -1,16 +1,14 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://github.com/argotorg/solidity/releases/download/v0.8.33/solidity_0.8.33.tar.gz"
-  sha256 "2fb0a76b13e25b21bcd50607713a563f64709c8c283ed65464db3a2d546b9abf"
+  url "https://github.com/argotorg/solidity/releases/download/v0.8.34/solidity_0.8.34.tar.gz"
+  sha256 "415acd0bfc87a12e3c436fb439aabc62639e7a66d433450f0135a23238b4fc7e"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
     url :stable
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c79ca3f8f7d2dbd1843dea047ad266b82678d0ddf73d4b83785e76f1befb1c95"
