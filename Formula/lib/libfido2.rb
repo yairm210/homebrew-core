@@ -23,10 +23,9 @@ class Libfido2 < Formula
   depends_on "libcbor"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "systemd" # for libudev
+    depends_on "zlib-ng-compat"
   end
 
   def install
