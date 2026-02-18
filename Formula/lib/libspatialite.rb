@@ -48,7 +48,10 @@ class Libspatialite < Formula
   depends_on "minizip"
   depends_on "proj"
   depends_on "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Apply Debian patch to allow disabling the usage of removed libxml2 HTTP API.
   # Ref: https://groups.google.com/g/spatialite-users/c/nyT4iAJbttY
