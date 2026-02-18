@@ -56,8 +56,6 @@ class SpiceGtk < Formula
   depends_on "spice-protocol"
   depends_on "usbredir"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gobject-introspection"
     depends_on "harfbuzz"
@@ -67,6 +65,7 @@ class SpiceGtk < Formula
     depends_on "cyrus-sasl"
     depends_on "libva"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   resource "pyparsing" do
