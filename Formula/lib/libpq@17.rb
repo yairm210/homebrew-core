@@ -34,10 +34,10 @@ class LibpqAT17 < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install
