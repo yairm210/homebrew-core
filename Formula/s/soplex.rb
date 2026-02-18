@@ -23,7 +23,10 @@ class Soplex < Formula
   depends_on "boost"
   depends_on "gmp"
   depends_on "mpfr"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DPAPILO=OFF", *std_cmake_args
