@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/62/83/59c0f4ef2af13341920ff0170016b24d25f0f9ab252187664aa84fda24a6/mcp_atlassian-0.13.1.tar.gz"
-  sha256 "d4f177598ea88c65098e1b18d3671048422002efb840a731b4c08691bc7f7957"
+  url "https://files.pythonhosted.org/packages/8d/52/1cd163b7b2bbf4b62b8f42bf54c62062c9682a5784e3db561f6e3bdb8079/mcp_atlassian-0.14.1.tar.gz"
+  sha256 "1d984dd0ffbf122c4961f16dc85bf93cd3ef34c8846ff35e466d3b7127af36ff"
   license "MIT"
 
   bottle do
@@ -571,6 +571,6 @@ class McpAtlassian < Formula
     ENV["JIRA_API_TOKEN"] = "x"
 
     output = pipe_output("#{bin}/mcp-atlassian 2>&1", json, 0)
-    assert_match "Search Jira issues using JQL (Jira Query Language)", output
+    assert_match "Starting MCP server 'Atlassian MCP'", output
   end
 end
