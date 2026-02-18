@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.9.5.tar.gz"
-  sha256 "dbe511602d42c24756d0c0e29a582a3cfee0de3ebbcf3e138307e8935a2e12fd"
+  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.9.6.tar.gz"
+  sha256 "4e351831875e81a2289d86299eec5dd681a778e0d96e6d2728e9efdd67887ee0"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -22,17 +22,17 @@ class AwsVault < Formula
 
   depends_on "go" => :build
 
+  # bump touchid-go to v0.3.0 for macos-14 compatibility, upstream pr ref, https://github.com/ByteNess/aws-vault/pull/300
+  patch do
+    url "https://github.com/ByteNess/aws-vault/commit/0dd90c6f9935ad84b528be78149e39b1bd683bd4.patch?full_index=1"
+    sha256 "238f4f2cd029e8ac2dd418bca3999bd6f41575960a11089f2705059650449713"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    # Remove this line because we don't have a certificate to code sign with
-    inreplace "Makefile",
-      "codesign --options runtime --timestamp --sign \"$(CERT_ID)\" $@", ""
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-
-    system "make", "aws-vault-#{os}-#{arch}", "VERSION=#{version}-#{tap.user}"
-    system "make", "install", "INSTALL_DIR=#{bin}", "VERSION=#{version}-#{tap.user}"
+    ldflags = "-s -w -X main.Version=#{version}-#{tap.user}"
+    system "go", "build", *std_go_args(ldflags:), "."
 
     zsh_completion.install "contrib/completions/zsh/aws-vault.zsh" => "_aws-vault"
     bash_completion.install "contrib/completions/bash/aws-vault.bash" => "aws-vault"
