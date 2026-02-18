@@ -27,7 +27,10 @@ class Libmediainfo < Formula
   depends_on "libzen"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # These files used to be distributed as part of the media-info formula
   link_overwrite "include/MediaInfo/*"
