@@ -18,7 +18,6 @@ class Osm2pgsql < Formula
   depends_on "boost" => :build
   depends_on "cli11" => :build
   depends_on "cmake" => :build
-  depends_on "fmt" => :build
   depends_on "libosmium" => :build
   depends_on "lua" => :build
   depends_on "nlohmann-json" => :build
@@ -30,7 +29,10 @@ class Osm2pgsql < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # This is essentially a CMake disrespects superenv problem
@@ -40,11 +42,12 @@ class Osm2pgsql < Formula
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
     # Remove bundled libraries
-    rm_r("contrib")
+    rm_r(Dir["contrib/*"] - ["contrib/fmt"])
 
+    # TODO: Switch to external fmt when v12+ is supported
     args = %w[
       -DEXTERNAL_CLI11=ON
-      -DEXTERNAL_FMT=ON
+      -DEXTERNAL_FMT=OFF
       -DEXTERNAL_LIBOSMIUM=ON
       -DEXTERNAL_PROTOZERO=ON
       -DWITH_LUAJIT=ON
