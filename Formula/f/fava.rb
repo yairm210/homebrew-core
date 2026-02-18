@@ -12,12 +12,12 @@ class Fava < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "898e634e34297e131af4ee22ed4f3f6b926462d71f2ce35a33e1405b5682f474"
-    sha256 cellar: :any,                 arm64_sequoia: "9c7afbd30b8a1543b14e57058d68803ffc0a593acc29a94612adbe201537b918"
-    sha256 cellar: :any,                 arm64_sonoma:  "2265e3337cc503bf61f4df750e82936c27117611cfec7437af15b493e20c7a84"
-    sha256 cellar: :any,                 sonoma:        "9fbc1ae1fb9d004ac95273ce49208440f30b4aa0893056aa74d8c7a98b49b898"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60eee0180f1050920c0f111344ed2d2ade7853f2a7aa639fdb413cff74d28e7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd3bcb29a6406737187c21912a98817a57653afa5334f2088a7e4c758e3075be"
+    sha256 cellar: :any,                 arm64_tahoe:   "0de53d1e18d59dccb62c06714c6513dfe6d1a903f283720d4a9c9dd962036a20"
+    sha256 cellar: :any,                 arm64_sequoia: "aa658dcc8d735b2517b883a93294b339d1066d1bf6a42d41bfbebfe7e5b8c897"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3f816d7a0cf6a0b57a9f3da2aadcb8cbab6e1fdc54958873d1d19485c460dcb"
+    sha256 cellar: :any,                 sonoma:        "0e134fa9fb3c246c056759bebababcdc71875197f13f7b574720f5d2b0549596"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a5a0a634ccb8088100f7ae99b62d1e2eee4fbca642f54b65ce870d8ee0b2af0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1f74a748cf0be4362e642e68bd83dde63c3d3f2c697b1b0a504fe320cf510df"
   end
 
   depends_on "bison" => :build # for beancount
