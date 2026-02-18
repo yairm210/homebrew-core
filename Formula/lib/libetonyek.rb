@@ -27,7 +27,10 @@ class Libetonyek < Formula
   depends_on "librevenge"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Upstream bug report for release 0.6.8 download asset
   # https://bitbucket.org/tagoh/liblangtag/issues/20/404-for-liblangtag-068tarbz2-asset
