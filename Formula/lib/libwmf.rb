@@ -29,7 +29,10 @@ class Libwmf < Formula
   depends_on "libpng"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport fix for macOS
   patch do
