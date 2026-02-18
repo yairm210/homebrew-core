@@ -15,12 +15,12 @@ class Tailwindcss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1a45d44119d59586315ade4e6f7ee6e78640891d5773194ca017dcf97e292b43"
-    sha256 cellar: :any,                 arm64_sequoia: "bd56dcc43d610edff784ac11d3fdafb597d06b3c5c18f42df1360242946e9336"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd56dcc43d610edff784ac11d3fdafb597d06b3c5c18f42df1360242946e9336"
-    sha256 cellar: :any,                 sonoma:        "98bb72e88d23c4bea6e3e63034115e82e3ceba9b82de7d973fc70bacb71b40dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28eb748b81c60cb7b0bdac8f16eff575b564119171b2e6fc43fe140fb652fa23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2401c8ee50faa4365f90e2043fa94ae33b5138d0e785edaaa571763f4a2c2676"
+    sha256 cellar: :any,                 arm64_tahoe:   "5a4f5505296b839fa8a47e88ae7745333224d3193fa970e5e7ed25472c5c0a2a"
+    sha256 cellar: :any,                 arm64_sequoia: "8845d8ab1bc380d09d204cd7d5920cef0c21697ebc4e3eb0fe4f988568d65111"
+    sha256 cellar: :any,                 arm64_sonoma:  "8845d8ab1bc380d09d204cd7d5920cef0c21697ebc4e3eb0fe4f988568d65111"
+    sha256 cellar: :any,                 sonoma:        "3cf58b33b4f1ba0bd3457c43a5a89d1020294ca831c1c25521705eb7294adbca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4c58da4c68b09903835da7d1865a825e2347dc052f4479080c11f159c3fa220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eff2486c5138a53eac4b04a84f27a904b1cfcb2049fd2a593284ceecfafa370"
   end
 
   depends_on "node"
