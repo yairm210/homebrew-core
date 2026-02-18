@@ -1,8 +1,8 @@
 class SwaggerCodegen < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/tools/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v3.0.77.tar.gz"
-  sha256 "0bfe29217773f4b64f516867ff421e11ec427b93d5506967751a948cddb73ac4"
+  url "https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v3.0.78.tar.gz"
+  sha256 "d936c8d525eed32edf942839dd16733c1d4bdfc28e4ed4557c5d2f55d3b28d42"
   license "Apache-2.0"
   head "https://github.com/swagger-api/swagger-codegen.git", branch: "master"
 
@@ -22,7 +22,7 @@ class SwaggerCodegen < Formula
     # Need to set JAVA_HOME manually since maven overrides 1.8 with 1.7+
     ENV["JAVA_HOME"] = Language::Java.java_home
 
-    system "mvn", "clean", "package"
+    system "mvn", "clean", "package", "-Dnet.bytebuddy.experimental=true"
     libexec.install "modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
     bin.write_jar_script libexec/"swagger-codegen-cli.jar", "swagger-codegen"
   end
@@ -30,15 +30,15 @@ class SwaggerCodegen < Formula
   test do
     (testpath/"minimal.yaml").write <<~YAML
       ---
-      openapi: 3.0.0
+      swagger: "2.0"
       info:
-        version: 0.0.0
+        version: "1.0.0"
         title: Simple API
       paths:
         /:
           get:
             responses:
-              200:
+              "200":
                 description: OK
     YAML
     system bin/"swagger-codegen", "generate", "-i", "minimal.yaml", "-l", "html"
