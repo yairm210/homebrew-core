@@ -1,8 +1,8 @@
 class Bbtools < Formula
   desc "Brian Bushnell's tools for manipulating reads"
   homepage "https://bbmap.org/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_39.74.tar.gz"
-  sha256 "9826f7dfe3b4fd3623843c4c5d0d9b14f9563047a2ef651110c38355a9975b68"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_39.75.tar.gz"
+  sha256 "a5bf0c4d63b8effa02c9f6cd88309cb3c402dcfde129c57506efecec7fc5bbae"
   license "BSD-3-Clause"
 
   bottle do
