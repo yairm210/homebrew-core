@@ -22,7 +22,14 @@ class Stgit < Formula
   depends_on "git"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libiconv"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
