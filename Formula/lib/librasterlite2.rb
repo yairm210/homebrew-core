@@ -47,7 +47,10 @@ class Librasterlite2 < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
