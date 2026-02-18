@@ -22,12 +22,12 @@ class Semgrep < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c509e2887d715628ada97d30843ba176c35bbc61b3813ea5c38fef7fbe1cda07"
-    sha256 cellar: :any, arm64_sequoia: "d2a6f9ed08f8d87db79f5207feca3a2663891a09e3b930abf704c363d9b1e8fb"
-    sha256 cellar: :any, arm64_sonoma:  "dce480f65f7e462070aafc9cc13e28a26d7b8b82eb04fad56d3ea12f465520f4"
-    sha256 cellar: :any, sonoma:        "412deac32c30f1f97864871df3d3f2a586ebb7e33f50c6001698f8d7be7c3c31"
-    sha256               arm64_linux:   "201633debf5a39b675dee1714ddeb91df2b84499ea46b1951bd1c2a6038079af"
-    sha256               x86_64_linux:  "6625bad2b199d8edf035700cac57d1b43d7fd7815069092fe842bfbd63a01c6a"
+    sha256 cellar: :any, arm64_tahoe:   "cab7780b77674fc459c75be59c932cb6256f15152f221246fb33531899b3ee80"
+    sha256 cellar: :any, arm64_sequoia: "2be4efd2d4f3da177ec4dfb46ce324b27cbdd36639f2215839995f3efdd907f7"
+    sha256 cellar: :any, arm64_sonoma:  "a0d9de8209c862a84e025d4369c513dce35b9a30239850b833d7a6f5cb1051ae"
+    sha256 cellar: :any, sonoma:        "b56745f857ac04ace7c730038f3482ba9e2ce20fcac044936326689609a03f58"
+    sha256               arm64_linux:   "631b5ea80ce3ab1561e17e089221856bc9c932ceb05ee14f8e65f1dc08467c95"
+    sha256               x86_64_linux:  "710955b4100b1ca59260d82ca9739d457cf6c425f668adbff654d1ed5151d73c"
   end
 
   depends_on "ocaml" => :build
