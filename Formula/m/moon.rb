@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://github.com/moonrepo/moon/archive/refs/tags/v1.41.8.tar.gz"
-  sha256 "ff308cc372fa8a161fdd0ff55766c763d2114fb41f47bb11990a56c84b6f769e"
+  url "https://github.com/moonrepo/moon/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "7f1d168b64ddc9bd86e4d4c4d6f779b1e2044a397a4726b4cd1db6364b15ba9e"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -46,7 +46,6 @@ class Moon < Formula
     assert_match version.to_s, shell_output("#{bin}/moon --version")
 
     system bin/"moon", "init", "--minimal", "--yes", "--force"
-    assert_path_exists testpath/".moon/id"
     assert_path_exists testpath/".moon/workspace.yml"
   end
 end
