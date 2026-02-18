@@ -26,7 +26,7 @@ class Objfw < Formula
   on_linux do
     depends_on "llvm"
     depends_on "openssl@3"
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc
