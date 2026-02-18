@@ -1,8 +1,8 @@
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https://tailwindcss.com"
-  url "https://registry.npmjs.org/@tailwindcss/cli/-/cli-4.1.18.tgz"
-  sha256 "28a45ee98b595a457bb4d464739d40f656c5e46f15a203da543cbe046b6471c5"
+  url "https://registry.npmjs.org/@tailwindcss/cli/-/cli-4.2.0.tgz"
+  sha256 "89bab5e969cb943035d281ea7960d95bab09a22ba817c931794027a4c060707e"
   license "MIT"
   head "https://github.com/tailwindlabs/tailwindcss.git", branch: "main"
 
@@ -33,8 +33,8 @@ class Tailwindcss < Formula
   end
 
   resource "@tailwindcss/forms" do
-    url "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.10.tgz"
-    sha256 "f5003f088c8bfeef2d2576932b0521e29f84b7ca68e59afd709fef75bd4fe9bb"
+    url "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.11.tgz"
+    sha256 "6180fcab09668a498d17c89ca11b54825c5ee6b6fc6d1343ad6fa558d9828c50"
   end
 
   resource "@tailwindcss/typography" do
