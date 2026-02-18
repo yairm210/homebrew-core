@@ -16,12 +16,12 @@ class ZxingCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "18ea1b16214084445c7e74b143d4985aba52702a4ebf0523b5e7b930271d7a52"
-    sha256 cellar: :any,                 arm64_sequoia: "2a9611050e2026b1aa591b390b609f55f45b2465b03f255305e6f2a0d7ed91e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d1a9af0311577b559b455d032dc1c92e9b0157afba42e80c0658c0a0c0944f1"
-    sha256 cellar: :any,                 sonoma:        "f2b04a8b3053dc47035220d526df7bf851c0140c1acae7c7a213758bc37e5f58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "168aa61e7cbb561fb6de96986d0765beea11a4f3d1bf78332029423835d678ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d0c01fed83e9bca106bd13ded01f19c95d6a9a541463a14b270c3163354079"
+    sha256 cellar: :any,                 arm64_tahoe:   "1957bd2c1cd602a47a0e9458252fb997013ed247a40122dd3bb6f88574cf3977"
+    sha256 cellar: :any,                 arm64_sequoia: "35ef6d8c193f3171538954dca59112faa8afb153a0799a5f8fad14d608491395"
+    sha256 cellar: :any,                 arm64_sonoma:  "3edeab4554d87d39a1e6f786ca85477ebad597ef9c5e4222be692d171f0d148b"
+    sha256 cellar: :any,                 sonoma:        "53c94ba2fdd891d609cee8390895289e1977a524edcea5f02cffde347f85b8e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee67c2111a969786630560ea7f1f19766c487c2ac80a6000edd14a3c9b09eb37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "956f8e6d040fb047032c2ed39956947b40ceeaecd7f6f21b561c14677cbd64fa"
   end
 
   depends_on "cmake" => :build
