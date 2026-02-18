@@ -67,8 +67,6 @@ class Opencv < Formula
   depends_on "vtk"
   depends_on "webp"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "glew"
     depends_on "imath"
@@ -80,6 +78,7 @@ class Opencv < Formula
     depends_on "gdk-pixbuf"
     depends_on "glib"
     depends_on "gtk+3"
+    depends_on "zlib-ng-compat"
   end
 
   def python3
@@ -153,7 +152,7 @@ class Opencv < Formula
         -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
-        -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so
+        -DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib}/libz.so
       ]
     end
 
