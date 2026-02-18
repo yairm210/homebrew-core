@@ -24,13 +24,13 @@ class Tarantool < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "curl" # curl 8.4.0+
   depends_on "icu4c@78"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"
   depends_on "zstd"
 
+  uses_from_macos "curl", since: :sonoma # curl 8.4.0+
   uses_from_macos "ncurses"
 
   on_linux do
@@ -44,8 +44,6 @@ class Tarantool < Formula
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DENABLE_DIST=ON
-      -DCURL_ROOT=#{Formula["curl"].opt_prefix}
-      -DCURL_ROOT_DIR=#{Formula["curl"].opt_prefix}
       -DICU_ROOT=#{icu4c.opt_prefix}
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DREADLINE_ROOT=#{Formula["readline"].opt_prefix}
@@ -55,6 +53,7 @@ class Tarantool < Formula
       -DENABLE_BUNDLED_ZSTD=OFF
       -DLUAJIT_NO_UNWIND=ON
     ]
+    args << "-DCURL_ROOT_DIR=#{MacOS.sdk_for_formula(self).path}/usr" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
