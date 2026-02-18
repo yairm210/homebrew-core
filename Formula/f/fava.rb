@@ -3,8 +3,8 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/2f/bc/8dcbaf4711603a8c62f3943b19bebfed25a8226d921ad942b19e3d8abec7/fava-1.30.11.tar.gz"
-  sha256 "384b71b654e1ea8df23f6f7a2a11a2c5f8ebe6206d3b01b7f77f9677e5e88b37"
+  url "https://files.pythonhosted.org/packages/57/d4/9cb24ac4fd50f017fcf8c16d354ebc2d715efdfcba96f67c0b5f92dfad1c/fava-1.30.12.tar.gz"
+  sha256 "7c87145635c36605dcadfea877198d683f9c565239af166d5557e39ee3de8145"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
@@ -43,8 +43,8 @@ class Fava < Formula
   end
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/7d/6b/d52e42361e1aa00709585ecc30b3f9684b3ab62530771402248b1b1d6240/babel-2.17.0.tar.gz"
-    sha256 "0c54cffb19f690cdcc52a3b50bcbf71e07a808d1c80d549f2459b9d2cf0afb9d"
+    url "https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz"
+    sha256 "b80b99a14bd085fcacfa15c9165f651fbb3406e66cc603abf11c5750937c992d"
   end
 
   resource "beancount" do
@@ -173,8 +173,8 @@ class Fava < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "tatsu-lts" do
