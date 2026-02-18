@@ -24,7 +24,9 @@ class Omega < Formula
   depends_on "pcre2"
   depends_on "xapian"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
