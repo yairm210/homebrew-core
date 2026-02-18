@@ -50,8 +50,6 @@ class Efl < Formula
   depends_on "shared-mime-info"
   depends_on "webp"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gdk-pixbuf"
     depends_on "little-cms2"
@@ -59,6 +57,7 @@ class Efl < Formula
 
   on_linux do
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   # Fix conflicting bool definition.
