@@ -24,20 +24,17 @@ class Profanity < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "libomemo-c" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "curl"
   depends_on "glib"
-  depends_on "gnutls"
   depends_on "gpgme"
-  depends_on "libgcrypt"
   depends_on "libotr"
   depends_on "libstrophe"
   depends_on "python@3.14"
   depends_on "readline"
   depends_on "sqlite"
 
+  uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   on_macos do
