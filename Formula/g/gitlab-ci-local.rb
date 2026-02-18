@@ -1,8 +1,8 @@
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https://github.com/firecow/gitlab-ci-local"
-  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.66.1.tgz"
-  sha256 "f5d8efbd1520623c17ae021282a069f2139e7aa37c2b048e08dd2ac9df8c7054"
+  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.67.0.tgz"
+  sha256 "feb4895ab85b91361e88201ce3ee8408ea4bb860d044d5b6ad703787ec0e0297"
   license "MIT"
 
   bottle do
