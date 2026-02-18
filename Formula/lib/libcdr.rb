@@ -26,7 +26,9 @@ class Libcdr < Formula
   depends_on "librevenge"
   depends_on "little-cms2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # icu4c 75+ needs C++17 and icu4c 76+ needs icu-uc
