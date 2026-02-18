@@ -33,7 +33,6 @@ class OpenjdkAT11 < Formula
   uses_from_macos "cups"
   uses_from_macos "unzip"
   uses_from_macos "zip"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
@@ -45,6 +44,7 @@ class OpenjdkAT11 < Formula
     depends_on "libxrender"
     depends_on "libxt"
     depends_on "libxtst"
+    depends_on "zlib-ng-compat"
   end
 
   # ARM64: https://www.azul.com/downloads/?version=java-11-lts&package=jdk
