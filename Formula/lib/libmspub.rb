@@ -29,11 +29,11 @@ class Libmspub < Formula
   depends_on "librevenge"
   depends_on "libwpd"
 
-  uses_from_macos "zlib"
-
-  # Fix for missing include needed to build with recent GCC. Remove in the next release.
-  # Commit ref: https://git.libreoffice.org/libmspub/+/698bed839c9129fa7a90ca1b5a33bf777bc028d1%5E%21
   on_linux do
+    depends_on "zlib-ng-compat"
+
+    # Fix for missing include needed to build with recent GCC. Remove in the next release.
+    # Commit ref: https://git.libreoffice.org/libmspub/+/698bed839c9129fa7a90ca1b5a33bf777bc028d1%5E%21
     patch :DATA
   end
 
