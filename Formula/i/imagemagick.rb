@@ -39,11 +39,14 @@ class Imagemagick < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "imath"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   skip_clean :la
