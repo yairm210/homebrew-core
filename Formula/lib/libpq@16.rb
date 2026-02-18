@@ -31,10 +31,9 @@ class LibpqAT16 < Formula
   depends_on "krb5"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install
