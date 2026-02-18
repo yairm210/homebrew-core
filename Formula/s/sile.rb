@@ -38,10 +38,13 @@ class Sile < Formula
   uses_from_macos "jq" => :build, since: :sequoia
   uses_from_macos "unzip" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "freetype"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   resource "compat53" do
@@ -162,7 +165,7 @@ class Sile < Formula
     if OS.mac?
       zlib_dir = expat_dir = "#{MacOS.sdk_path_if_needed}/usr"
     else
-      zlib_dir = Formula["zlib"].opt_prefix
+      zlib_dir = Formula["zlib-ng-compat"].opt_prefix
       expat_dir = Formula["expat"].opt_prefix
     end
 
