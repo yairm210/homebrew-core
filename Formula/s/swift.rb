@@ -48,12 +48,12 @@ class Swift < Formula
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "lld" => :build
     depends_on "python-setuptools" => :build # for distutils in lldb build
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
 
     # Doesn't have to be in sync but does need to be no older than X.(Y - 1).0
     resource "bootstrap" do
