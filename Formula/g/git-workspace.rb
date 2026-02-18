@@ -1,23 +1,10 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
+  url "https://github.com/orf/git-workspace/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "0b7992e3ec898e02a5837caeed54512f8fa9a2a78bfc19253c4134343d7240b3"
   license "MIT"
   head "https://github.com/orf/git-workspace.git", branch: "master"
-
-  stable do
-    url "https://github.com/orf/git-workspace/archive/refs/tags/v1.9.0.tar.gz"
-    sha256 "d5e2a5a0a568c46b408f82f981ea3672066d4496755fc14837e553e451c69f2d"
-
-    # Add command to generate shell completions: https://github.com/orf/git-workspace/pull/422
-    patch do
-      url "https://github.com/orf/git-workspace/commit/64a45045aa8297cdbaf081b76e5af8531f7c4364.patch?full_index=1"
-      sha256 "759bbc4ca0ee122758c9eeb0e4ea19bea09d9d5a2ad10c1f26680a441750f0f8"
-    end
-    patch do
-      url "https://github.com/orf/git-workspace/commit/1a1e35a99a783e02c563b531e5eb370cd7e80c9f.patch?full_index=1"
-      sha256 "f6fd8bd2e7fe5ec188883e7d7f19328a48d8c68a39733ff3de4a3639a1addb88"
-    end
-  end
 
   no_autobump! because: :bumped_by_upstream
 
