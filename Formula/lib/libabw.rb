@@ -28,7 +28,10 @@ class Libabw < Formula
 
   uses_from_macos "gperf" => :build
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules", "--without-docs", *std_configure_args
