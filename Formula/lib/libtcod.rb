@@ -24,7 +24,9 @@ class Libtcod < Formula
   depends_on "sdl3"
   depends_on "utf8proc"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     rm_r("src/vendor/zlib")
