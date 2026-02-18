@@ -33,7 +33,10 @@ class Spidermonkey < Formula
 
   uses_from_macos "llvm" => :build # for llvm-objdump
   uses_from_macos "m4" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # From python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
   fails_with :gcc do
