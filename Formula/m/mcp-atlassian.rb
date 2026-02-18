@@ -3,17 +3,17 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/62/83/59c0f4ef2af13341920ff0170016b24d25f0f9ab252187664aa84fda24a6/mcp_atlassian-0.13.1.tar.gz"
-  sha256 "d4f177598ea88c65098e1b18d3671048422002efb840a731b4c08691bc7f7957"
+  url "https://files.pythonhosted.org/packages/8d/52/1cd163b7b2bbf4b62b8f42bf54c62062c9682a5784e3db561f6e3bdb8079/mcp_atlassian-0.14.1.tar.gz"
+  sha256 "1d984dd0ffbf122c4961f16dc85bf93cd3ef34c8846ff35e466d3b7127af36ff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66ba65af320888c44f895e7aee3e4181406b9c663657eea8d34c32fb5efcc804"
-    sha256 cellar: :any,                 arm64_sequoia: "1d415d2fea229239fb1c56a68d66152d2b867bae81545dee58a72ae7e7b1ff44"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9aec5258368da8a327a4b09369105b9e62d92dbb3a9f91ab618b90cfb3d34af"
-    sha256 cellar: :any,                 sonoma:        "7a935d6b3e806d4ffabcf2691d3b78a3978003bad4897791d4ff3e2d22181218"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7263eccd1692bf24d8dd085a3ddee8157f85e6fbb8ac0bc888674d236fa76b79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf04515ae0e0d289c803134858bc1d85386bc0317b969d3398d190902a358fc4"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cac4e1d39a73332f33d0d5293acdd3114fd2891124b8cc24546e4e59cca0549"
+    sha256 cellar: :any,                 arm64_sequoia: "8469339df46e00dd0e6947ac08d4127db4c2c2c00d5965f5fd169adc5beb6560"
+    sha256 cellar: :any,                 arm64_sonoma:  "c237d732704dddbfc23325259e0d42de8d8edf61c3a743c62d07538da0c90aec"
+    sha256 cellar: :any,                 sonoma:        "fbcd4a8024e72f385f7fa01908143d70cea1a636ba352e29c1d397cb8e65b9bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09a5a83fe5023727cbfe207ffab6783f0b96fe0bdd416990638726c0d39c69d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f7cdb29d40297af5ac42e60a945f4a045137c6434ffcc3b7d608b980308c06c"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -571,6 +571,6 @@ class McpAtlassian < Formula
     ENV["JIRA_API_TOKEN"] = "x"
 
     output = pipe_output("#{bin}/mcp-atlassian 2>&1", json, 0)
-    assert_match "Search Jira issues using JQL (Jira Query Language)", output
+    assert_match "Starting MCP server 'Atlassian MCP'", output
   end
 end
