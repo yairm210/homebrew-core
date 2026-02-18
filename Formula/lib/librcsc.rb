@@ -24,7 +24,9 @@ class Librcsc < Formula
   depends_on "nlohmann-json" => :build
   depends_on "simdjson"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Add missing header to fix build on Monterey
   # Issue ref: https://github.com/helios-base/librcsc/issues/88
