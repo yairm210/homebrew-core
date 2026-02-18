@@ -8,12 +8,12 @@ class Backgroundremover < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69e37dcd7efe1a106eb9ed92f75b1a44761e8991df4b9c19c66e7d795288a48e"
-    sha256 cellar: :any,                 arm64_sequoia: "70a153a6e2a876ee70469504219063b6bdad259c9694be44c70f5bd244000ed7"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd6232c5c2d6e44a35f4aa23c601cd568072e3bddb614654165d3394460ef8b9"
-    sha256 cellar: :any,                 sonoma:        "2aef3bc9f546365b02f1ea0b172da7ea8a4187a527fa311ea36a00485c4bed94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb04fd6b8986e4f01974dad5efe8806b0fa080d6f25b62b68515ffa1637e026b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3616674f766effd0d2d82a44c4367e971701d2f656ef31a9a2b4149dbc84967"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed3edd08873bd85bbe5c231dcb4ae1ace46f1b199cd29d1cbe385132a4811c94"
+    sha256 cellar: :any,                 arm64_sequoia: "39d31fe2ef258c44005243e4301e3a916752fb2f6840cc6f4f6aa525dd6858c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "221720246f865645f42869a69fe8b0fccaa60b1c6a76f6959fd320eedfd3af90"
+    sha256 cellar: :any,                 sonoma:        "65185edc7ee12493e96b17dfd0c40fae4206580ec5ec930dd540688bf9660ed5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "848dd4d918b8b3603faab0ad5f9528e6ce357aa3296f5de515d424cbb40c68e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b96a22abb204ab20a9e996bf73d288ad6ce93f1557b4fb5c43c8377aea2ed68"
   end
 
   depends_on "cmake" => :build
