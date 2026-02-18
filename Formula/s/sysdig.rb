@@ -39,8 +39,6 @@ class Sysdig < Formula
   depends_on "uthash" # for `falcosecurity-libs`
   depends_on "yaml-cpp"
 
-  uses_from_macos "zlib" # for `falcosecurity-libs`
-
   # for `falcosecurity-libs`
   on_linux do
     depends_on "abseil"
@@ -48,6 +46,7 @@ class Sysdig < Formula
     depends_on "elfutils"
     depends_on "grpc"
     depends_on "protobuf"
+    depends_on "zlib-ng-compat" # for `falcosecurity-libs`
   end
 
   link_overwrite "etc/bash_completion.d/sysdig"
