@@ -6,7 +6,7 @@ class Devcontainer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a1a14884b42dcfb91169fdb1f628a95f7bd35043026499ef3f7bd08b4e069ab7"
+    sha256 cellar: :any_skip_relocation, all: "bd674106f18a860491dea3fd776dfc33f3516ba2cca5c10dc4a3447578b004b4"
   end
 
   depends_on "node"
