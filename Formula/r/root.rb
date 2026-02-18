@@ -66,7 +66,6 @@ class Root < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on :xcode
@@ -79,6 +78,7 @@ class Root < Formula
     depends_on "libxpm"
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   skip_clean "bin"
