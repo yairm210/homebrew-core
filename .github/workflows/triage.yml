@@ -186,6 +186,10 @@ jobs:
               path: Formula/.+
               content: license .*"(GPL|LGPL|AGPL|GFDL)-[0-9].[0-9][+]?".*
 
+            - label: review no_autobump stanza
+              path: Formula/.+
+              content: no_autobump! because: :requires_manual_review
+
             - label: boost
               path: Formula/.+
               content: depends_on "boost(@[0-9.]+)?"
