@@ -1,8 +1,8 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
   homepage "https://github.com/kudobuilder/kuttl"
-  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "d576b1be8294451a53dee27e9c95b814d2641573bd4a1963de468498347802cf"
+  url "https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "3b92a5acb24f3db613974f51d5667724ad70c590c7b0ff9c697e2aa10a829b27"
   license "Apache-2.0"
   head "https://github.com/kudobuilder/kuttl.git", branch: "main"
 
@@ -18,12 +18,6 @@ class Kuttl < Formula
 
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
-
-  # patch to add Go 1.26 testDeps ModulePath, upstream pr ref, https://github.com/kudobuilder/kuttl/pull/664
-  patch do
-    url "https://github.com/kudobuilder/kuttl/commit/80911cc18d690efe88a8b12a32b419b495d7bb20.patch?full_index=1"
-    sha256 "8749ea6b9cabaa92b44894b8ed5e6a5271a9bbb5fa76f35502df948d529b83cb"
-  end
 
   def install
     project = "github.com/kudobuilder/kuttl"
@@ -56,8 +50,6 @@ class Kuttl < Formula
 
     output = shell_output("#{kubectl} kuttl test --config #{testpath}/kuttl-test.yaml", 1)
     assert_match "running tests using configured kubeconfig", output
-    assert_match "fatal error getting client: " \
-                 "invalid configuration: " \
-                 "no configuration has been provided, try setting KUBERNETES_MASTER environment variable", output
+    assert_match "try setting KUBERNETES_MASTER environment variable", output
   end
 end
