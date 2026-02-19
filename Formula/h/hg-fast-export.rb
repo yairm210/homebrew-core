@@ -19,12 +19,8 @@ class HgFastExport < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26cbfd49c68c6f13eadcd0d6365eaa554aae4ea236b78780a87664f6795be7e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e452579006d0079f87d4d472b2932ce585a2730058996782cf0b6054cd8e422e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6aa8a9b701199c436905cfa33617ac33bf918e08fbc6c820defdded2dd83c9e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22d6c095c84ff4fdee418459f3aa0e9ceeef33de364dda42d24bd90232a7cf65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03cc5550a9adbe61efadcf56051885cc423d933ecf75bf43d74914090d9d4c57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7799b942685a7fa60d59a8e9b77c2d8865a681c55ddcefa2d5b23c05fbb2360"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "608ef4e7b632bb7795fe1162ad7c351c7c50f25ddd684075f3d353cbda11a0e6"
   end
 
   depends_on "mercurial"
