@@ -3,8 +3,8 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/97/c0/85151d93ba043be69e6cbe8338223809c16f2b3b2b0b30b7fa3d8f06a1b7/cycode-3.10.0.tar.gz"
-  sha256 "e82a16af3fa0a101cfd63c6f63a08640ea4d0fefcb6e81ca2e216a2068c63330"
+  url "https://files.pythonhosted.org/packages/fc/f4/6ad9db6ecc718309b8bec751389e57fe4f5d8935b334b9a171d912c24b3c/cycode-3.10.1.tar.gz"
+  sha256 "fe3ca5f83b3abd425e7af91caf51b3ba45705f6f3da371802e68876e3e9d9d95"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
@@ -117,8 +117,8 @@ class Cycode < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/70/40/faa10dc4500bca85f41ca9d8cefab282dd23d0fcc7a9b5fab40691e72e76/marshmallow-3.22.0.tar.gz"
-    sha256 "4972f529104a220bb8637d595aa4c9762afbe7f7a77d82dc58c1615d70c5823e"
+    url "https://files.pythonhosted.org/packages/55/79/de6c16cc902f4fc372236926b0ce2ab7845268dcc30fb2fbb7f71b418631/marshmallow-3.26.2.tar.gz"
+    sha256 "bbe2adb5a03e6e3571b573f42527c6fe926e17467833660bebd11593ab8dfd57"
   end
 
   resource "mcp" do
@@ -237,8 +237,8 @@ class Cycode < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c8/93/65e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1b/urllib3-1.26.19.tar.gz"
-    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do
