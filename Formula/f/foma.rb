@@ -1,18 +1,15 @@
 class Foma < Formula
   desc "Finite-state compiler and C library"
   homepage "https://github.com/mhulden/foma"
-  # Upstream didn't tag for new releases, issue ref: https://github.com/mhulden/foma/issues/93
-  url "https://github.com/mhulden/foma/archive/dfe1ccb1055af99be0232a26520d247b5fe093bc.tar.gz"
-  version "0.10.0"
-  sha256 "8016c800eca020a28ac2805841cce20562b617ffafe215d53a23dc9a3e252186"
+  url "https://github.com/mhulden/foma/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "32fff2bd0a8338716adfee71505277d8562dabd48be9bf15620c38b15c8c404e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://raw.githubusercontent.com/mhulden/foma/refs/heads/master/foma/CHANGELOG"
     regex(/v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 1
@@ -25,6 +22,8 @@ class Foma < Formula
   end
 
   depends_on "bison" => :build # requires Bison 3.0+
+  depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "flex" => :build
 
@@ -35,17 +34,10 @@ class Foma < Formula
 
   conflicts_with "freeling", because: "freeling ships its own copy of foma"
 
-  # Fedora patch for C99 compatibility
-  patch do
-    url "https://src.fedoraproject.org/rpms/foma/raw/rawhide/f/foma-c99.patch"
-    sha256 "af278be0b812e457c72e1538dd985f5247c33141a3ba39cd5ef0871445173f07"
-  end
-
   def install
-    cd "foma" do
-      system "make"
-      system "make", "install", "prefix=#{prefix}"
-    end
+    system "cmake", "-S", "foma", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
