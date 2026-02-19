@@ -1,8 +1,8 @@
 class Rasusa < Formula
   desc "Randomly subsample sequencing reads or alignments"
   homepage "https://doi.org/10.21105/joss.03941"
-  url "https://github.com/mbhall88/rasusa/archive/refs/tags/2.2.2.tar.gz"
-  sha256 "f764d257fcdedcf08b8cb18bd4e93ffab8a788785e7161feb16ea1f2d4f30361"
+  url "https://github.com/mbhall88/rasusa/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "803cda395175a6806fa8b96f22f119c7e187935e9a281f6264dbdfc4d8f9068a"
   license "MIT"
   head "https://github.com/mbhall88/rasusa.git", branch: "main"
 
