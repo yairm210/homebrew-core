@@ -8,8 +8,8 @@ class Yamlfix < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "21f1565a958b7183f6b308236158b321ddc558e5cef2b4c2055f0020f98d9606"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "2d045588a0278d68fc8602394f5550e848c93d1c4aa9952fb9d3cd81514bb4a4"
   end
 
   depends_on "pydantic" => :no_linkage
