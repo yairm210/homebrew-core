@@ -7,10 +7,8 @@ class LldAT19 < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
-    formula "llvm@19"
+    skip "No longer developed or maintained"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "db755b343e7fbf13bffe78d21c4e844f0aa5046f74a88a605608ad27cee6e980"
@@ -28,7 +26,10 @@ class LldAT19 < Formula
   depends_on "cmake" => :build
   depends_on "llvm@19"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     rpaths = [rpath]
