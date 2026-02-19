@@ -1,11 +1,9 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "67d1a562d54b3b7622cc3164588c05b9e2bf8f1a5140bb48a4e816c61a87d4a8"
+  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.9.tar.gz"
+  sha256 "d13b1b44b0215b67990cef60a92e14acc4664b480730f18f39ef116773a58d33"
   license "GPL-3.0-or-later"
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "88485142ab1fe9f43a8bf8dbc7c3847f0b8987e76606f6bf640d557f0b9f9c94"
@@ -21,14 +19,15 @@ class Kalign < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "libomp"
 
   def install
-    args = std_cmake_args + %w[
+    args = %w[
       -DENABLE_AVX=OFF
       -DENABLE_AVX2=OFF
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
