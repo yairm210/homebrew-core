@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.9.6.tar.gz"
-  sha256 "4e351831875e81a2289d86299eec5dd681a778e0d96e6d2728e9efdd67887ee0"
+  url "https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.9.7.tar.gz"
+  sha256 "5b566d4db8d7a3d48376242cb92445fa9778427ee8a8e04089a267025363479a"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -21,12 +21,6 @@ class AwsVault < Formula
   end
 
   depends_on "go" => :build
-
-  # bump touchid-go to v0.3.0 for macos-14 compatibility, upstream pr ref, https://github.com/ByteNess/aws-vault/pull/300
-  patch do
-    url "https://github.com/ByteNess/aws-vault/commit/0dd90c6f9935ad84b528be78149e39b1bd683bd4.patch?full_index=1"
-    sha256 "238f4f2cd029e8ac2dd418bca3999bd6f41575960a11089f2705059650449713"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
