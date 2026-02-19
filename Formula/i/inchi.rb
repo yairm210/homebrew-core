@@ -1,8 +1,8 @@
 class Inchi < Formula
   desc "IUPAC International Chemical Identifier"
   homepage "https://www.inchi-trust.org/"
-  url "https://github.com/IUPAC-InChI/InChI/releases/download/v1.07.4/INCHI-1-SRC.zip"
-  sha256 "9228a214a2817aa6508c81803b656333531bb86d2c37c8a4916c2883cb88b2ad"
+  url "https://github.com/IUPAC-InChI/InChI/archive/refs/tags/v1.07.5.tar.gz"
+  sha256 "9a8af985295c47bfaf424ad8386b1597da515589665ec71908dae1bd2b67ac96"
   license "MIT"
 
   bottle do
@@ -14,16 +14,20 @@ class Inchi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3053b57f288336c1124ba2ab89a26f8486499b4bf865dc9602d972a21d66481"
   end
 
+  depends_on "cmake" => :build
+
   # These used to be part of open-babel
   link_overwrite "include/inchi/inchi_api.h", "lib/libinchi.dylib", "lib/libinchi.so"
 
   def install
-    bin.mkpath
-    lib.mkpath
-
-    args = ["C_COMPILER=#{ENV.cc}", "BIN_DIR=#{bin}", "LIB_DIR=#{lib}"]
-    system "make", "-C", "INCHI_API/libinchi/gcc", *args
-    system "make", "-C", "INCHI_EXE/inchi-1/gcc", *args
+    args = ["-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"]
+    system "cmake", "-S", "INCHI-1-SRC/INCHI_EXE/inchi-1/src", "-B", "build-cli", *std_cmake_args
+    system "cmake", "-S", "INCHI-1-SRC/INCHI_API/demos/inchi_main/src", "-B", "build-main", *args, *std_cmake_args
+    system "cmake", "--build", "build-cli"
+    system "cmake", "--build", "build-main"
+    # No CMake install targets available
+    bin.install "build-main/bin/inchi_main", "build-cli/bin/inchi-1"
+    lib.install "build-main/bin/#{shared_library("libinchi")}"
 
     # Install the same headers as Debian[^1] and Fedora[^2]. Some are needed by `open-babel`[^3]
     # and `rdkit`[^4].
@@ -32,7 +36,8 @@ class Inchi < Formula
     # [^2]: https://packages.fedoraproject.org/pkgs/inchi/inchi-devel/fedora-rawhide.html#files
     # [^3]: https://github.com/openbabel/openbabel/blob/master/cmake/modules/FindInchi.cmake
     # [^4]: https://github.com/rdkit/rdkit/blob/master/External/INCHI-API/inchi.cpp
-    (include/"inchi").install %w[bcf_s.h ichisize.h inchi_api.h ixa.h].map { |header| "INCHI_BASE/src/#{header}" }
+    headers = %w[bcf_s.h ichisize.h inchi_api.h ixa.h]
+    (include/"inchi").install headers.map { |header| "INCHI-1-SRC/INCHI_BASE/src/#{header}" }
   end
 
   test do
