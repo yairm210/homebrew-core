@@ -12,7 +12,7 @@ class Commandbox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4095dd421f363b85ed73ace5321c56f6a8a6054b53eb2c93d1b78cf0e8cda19a"
+    sha256 cellar: :any_skip_relocation, all: "d480d8d137307a6345253304e5f9f3a4d862350aefdeb89ca0ba990ea65e6759"
   end
 
   # Keep pinned to Java 21 until https://ortussolutions.atlassian.net/browse/COMMANDBOX-1685 is resolved
