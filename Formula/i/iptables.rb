@@ -1,8 +1,8 @@
 class Iptables < Formula
   desc "Linux kernel packet control tool"
   homepage "https://www.netfilter.org/projects/iptables/index.html"
-  url "https://www.netfilter.org/pub/iptables/iptables-1.8.11.tar.xz"
-  sha256 "d87303d55ef8c92bcad4dd3f978b26d272013642b029425775f5bad1009fe7b2"
+  url "https://www.netfilter.org/pub/iptables/iptables-1.8.12.tar.xz"
+  sha256 "8e7ee962601492de6503d171d4a948092ab18f89f111de72e3037c1f40cfb846"
   license "GPL-2.0-or-later"
 
   livecheck do
