@@ -29,7 +29,10 @@ class ProtobufAT29 < Formula
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "abseil"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport to expose java-related symbols
   patch do
