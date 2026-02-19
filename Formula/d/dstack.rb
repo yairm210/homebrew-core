@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/ae/f6/05cc2e3520d2d63c7ea8f15c696fd9509bf4a76bac87696dc964793828c5/dstack-0.20.10.tar.gz"
-  sha256 "75104198be6fad8c99bf26fd6f66bac7a578c860c2263e58b11f98cc99431209"
+  url "https://files.pythonhosted.org/packages/de/e3/6185c96f31f4ace1936e762844eb7ce43cb0bab915da51687b3e357ae12d/dstack-0.20.11.tar.gz"
+  sha256 "ac7182c76116be0433ae640925865dd2d1cbb3b85aacdb3a14831afa026c06d1"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "29d53bc80235c540b8294cc8a2da76b0295dc9d7e98f66136d0844ad1a06ca8e"
-    sha256 cellar: :any,                 arm64_sequoia: "65584099403acc9e9c941660154667f55eecd42f340947631522ef19fa984744"
-    sha256 cellar: :any,                 arm64_sonoma:  "49501a1d01a0219bdb1ff92249a1012d97a3b7439201ceb0f27c5a5b198bafd5"
-    sha256 cellar: :any,                 sonoma:        "e42a997fb9fb9fb66c5132fbf93f5d08ceeb2c48ca77c1b985209d4c08430964"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28abbea6b75f99ae43acdd7d294972bb0c46b6ad18709ac608174c3262e8c500"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ea859264c7903fe9c3ab52558d1f1b8bed1e54599f34b60d8c4ef3363b46a74"
+    sha256 cellar: :any,                 arm64_tahoe:   "df42e9d61959bfc81216224505b3d367f47bdb11495d0781b6e887c1379b479a"
+    sha256 cellar: :any,                 arm64_sequoia: "78e7856a6f0bb04b70729620226bf56b76cb96568f94fe48cba1a1cfb66c3c4e"
+    sha256 cellar: :any,                 arm64_sonoma:  "faa9a9528ee4374ed2e6252366e657cec40ac171e8efa89cf475e37946d4d94e"
+    sha256 cellar: :any,                 sonoma:        "5d2aa3b67a4ff8edd36dbbd4000cd17493e64dec8d179bf6fdb07401db53b65f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89fba4ba82700a60288c388db908633d82a3e0462fde31150c9b4af94ea8384a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90b6c891a3a72efce3f06f1b914891c3bfc20a9bb6c49b0dbc677331ade6ddb8"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
