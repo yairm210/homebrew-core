@@ -10,7 +10,7 @@ class Bonniexx < Formula
     regex(/href=.*?bonnie\+\+[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "751104c5d03e4f91086a337c4ed4b12acd1464170f67b994cf20ec30f6456176"
