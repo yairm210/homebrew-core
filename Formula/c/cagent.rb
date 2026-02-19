@@ -1,8 +1,8 @@
 class Cagent < Formula
   desc "Agent Builder and Runtime by Docker Engineering"
   homepage "https://github.com/docker/cagent"
-  url "https://github.com/docker/cagent/archive/refs/tags/v1.23.3.tar.gz"
-  sha256 "b07c92e7bc6adaf725f9212e0828a1a0da1ca2d9b85d6edb43d4e2f643203ba9"
+  url "https://github.com/docker/cagent/archive/refs/tags/v1.23.4.tar.gz"
+  sha256 "62f8b8db13a0e6264321463d2ff268f96d9515b97d17f9f545504d2a387a021b"
   license "Apache-2.0"
   head "https://github.com/docker/cagent.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Cagent < Formula
           model: openai/gpt-4o
     YAML
 
-    assert_match("cagent version v#{version}", shell_output("#{bin}/cagent version"))
-    output = shell_output("#{bin}/cagent exec --dry-run agent.yaml hello 2>&1", 1)
-    assert_match(/must be set.*OPENAI_API_KEY/m, output)
+    assert_match version.to_s, shell_output("#{bin}/cagent version")
+    assert_match "UNAUTHORIZED: authentication required",
+      shell_output("#{bin}/cagent exec --dry-run agent.yaml hello 2>&1", 1)
   end
 end
