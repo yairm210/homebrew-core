@@ -1,8 +1,8 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
   homepage "https://github.com/bbonev/dhcpdump"
-  url "https://github.com/bbonev/dhcpdump/releases/download/v1.9/dhcpdump-1.9.tar.xz"
-  sha256 "3658ac21cc33e79e72bed070454e49c543017991cb6c37f4253c85e9176869d1"
+  url "https://github.com/bbonev/dhcpdump/releases/download/v1.10/dhcpdump-1.10.tar.xz"
+  sha256 "939bbf429cf46425cdd912486d0c2e25041ca4e7b6bd5bcf0f839e61a43a8604"
   license "BSD-2-Clause"
 
   livecheck do
