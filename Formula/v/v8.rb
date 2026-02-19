@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://github.com/v8/v8/archive/refs/tags/14.5.201.7.tar.gz"
-  sha256 "f9fcb56533d313a93d55cf3c09351145a9fe7e21445e9ffea741a5c7cbb04909"
+  url "https://github.com/v8/v8/archive/refs/tags/14.5.201.9.tar.gz"
+  sha256 "6d5bf28a8278adc068cd6293ab362b5bc11ee2fab9f2d09547cda8b2b3ceba78"
   license "BSD-3-Clause"
 
   livecheck do
@@ -22,8 +22,6 @@ class V8 < Formula
       v8_page[:content]&.scan(regex)&.map { |match| match[0] }
     end
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "09974f7671058327009eeaf181105bfebb1650ffee540acfc5f80cfa0d99731a"
