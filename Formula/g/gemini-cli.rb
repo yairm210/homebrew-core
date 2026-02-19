@@ -6,12 +6,12 @@ class GeminiCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eef20b6e449ea6cfc68f9f8ec9c7d3b900e747c4234749c7b9e02fb2ebfc2bdf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eef20b6e449ea6cfc68f9f8ec9c7d3b900e747c4234749c7b9e02fb2ebfc2bdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eef20b6e449ea6cfc68f9f8ec9c7d3b900e747c4234749c7b9e02fb2ebfc2bdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b55087bb2d6e6c924c9c3072e0163bbe473ba9bddb8a22d82e314deaf9f3d763"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0dac43265b5a60c6fd844e8f06c002f1e2381c23ebc96d463b9d7e5be8fa316"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "567f46ad73d02849f970209a4c249942ba890d111eb0750d7e9e883bc466df62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f417fbb95b6f646b26db5dec026efbeb9b5a64edebc2618972b05d18ab603ad3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f417fbb95b6f646b26db5dec026efbeb9b5a64edebc2618972b05d18ab603ad3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f417fbb95b6f646b26db5dec026efbeb9b5a64edebc2618972b05d18ab603ad3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81faaf0f200425d4945bf1c0bc7af49092fa24632278db2c80fa05d1e457904b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e6d72ad92ea0fb73868e156a31f02776aa99e1e2eb733b84d0bc06871a5814a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3eb3ff8f7b788bacb887d43bc545229b8f72d5e5485ae6b3632804e4817ec389"
   end
 
   depends_on "node"
