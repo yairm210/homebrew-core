@@ -1,8 +1,8 @@
 class Pipewire < Formula
   desc "Server and user space API to deal with multimedia pipelines"
   homepage "https://pipewire.org"
-  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.4.10/pipewire-1.4.10.tar.gz"
-  sha256 "20184b3fac2e2759385302423bdf04db64490a3c79a091147993a822ae992128"
+  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.6.0/pipewire-1.6.0.tar.gz"
+  sha256 "eef582901d8323669560dd32e3b76b1b15011d73a38f0035a3f11b933112f397"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-or-later", "MIT"]
   head "https://gitlab.freedesktop.org/pipewire/pipewire.git", branch: "master"
 
