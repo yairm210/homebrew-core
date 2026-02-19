@@ -31,8 +31,6 @@ class F3d < Formula
   depends_on "opencascade"
   depends_on "vtk"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "freetype"
     depends_on "glew"
@@ -48,6 +46,7 @@ class F3d < Formula
   on_linux do
     depends_on "libx11"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install
