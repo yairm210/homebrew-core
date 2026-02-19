@@ -9,7 +9,7 @@ class Virtualenv < Formula
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0f5e31e4cb60880176fcabf04907780de6347ec19dd385b1965d3503100dcbc5"
+    sha256 cellar: :any_skip_relocation, all: "e4f639cdbc70c569a0b25ac6566af0ba8f7cf0883be3e31cefd151fd49e6add8"
   end
 
   depends_on "python@3.14"
