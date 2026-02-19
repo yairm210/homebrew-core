@@ -3,7 +3,7 @@ class Gnunet < Formula
   homepage "https://gnunet.org/"
   url "https://ftpmirror.gnu.org/gnu/gnunet/gnunet-0.26.2.tar.gz"
   mirror "https://ftp.gnu.org/gnu/gnunet/gnunet-0.26.2.tar.gz"
-  sha256 "8fd2dc4e6eaac0dc8d828d4e2a5afc271bd77d2b820de2f0cba7589ab30ce46e"
+  sha256 "77b7e370cd84037f5792d812536bc5a1035409e6a34aa068d08c9e81be809389"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -32,10 +32,13 @@ class Gnunet < Formula
 
   uses_from_macos "curl", since: :ventura # needs curl >= 7.85.0
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
