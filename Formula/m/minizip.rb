@@ -4,6 +4,8 @@ class Minizip < Formula
   url "https://zlib.net/zlib-1.3.2.tar.gz"
   sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
+  revision 1
+  compatibility_version 1
 
   livecheck do
     formula "zlib"
@@ -30,18 +32,7 @@ class Minizip < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
-    system "make"
-
     cd "contrib/minizip" do
-      if OS.mac?
-        # edits to statically link to libz.a
-        inreplace "Makefile.am" do |s|
-          s.sub! "-L$(zlib_top_builddir)", "$(zlib_top_builddir)/libz.a"
-          s.sub! "-version-info 1:0:0 -lz", "-version-info 1:0:0"
-          s.sub! "libminizip.la -lz", "libminizip.la"
-        end
-      end
       system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", *std_configure_args
       system "make", "install"
@@ -50,13 +41,6 @@ class Minizip < Formula
       # https://github.com/madler/zlib/pull/1165
       (include/"minizip").install "ints.h"
     end
-  end
-
-  def caveats
-    <<~EOS
-      Minizip headers installed in 'minizip' subdirectory, since they conflict
-      with the venerable 'unzip' library.
-    EOS
   end
 
   test do
