@@ -1,8 +1,8 @@
 class IcannRdap < Formula
   desc "Full-rich client for the Registry Data Access Protocol (RDAP) sponsored by ICANN"
   homepage "https://github.com/icann/icann-rdap/wiki"
-  url "https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.26.tar.gz"
-  sha256 "85150d97000e4457d1bc6b78c303bae4749a145eac5ded011e8b8af452ccb469"
+  url "https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.27.tar.gz"
+  sha256 "2a675b661e5a5025e16db1375447d78868dc1273b90a8d806a2210746ebc9da0"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
