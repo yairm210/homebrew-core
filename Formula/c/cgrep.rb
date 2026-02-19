@@ -1,8 +1,8 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
-  homepage "https://github.com/awgn/cgrep"
-  url "https://github.com/awgn/cgrep/archive/refs/tags/v9.0.0.tar.gz"
-  sha256 "6f7be7a24446289421fabe98393d00a46a1751ce1f605d84135e83d0ddf1d49e"
+  homepage "https://awgn.github.io/cgrep/"
+  url "https://hackage.haskell.org/package/cgrep-9.1.0/cgrep-9.1.0.tar.gz"
+  sha256 "0bcdc712fcf21422a51338a7a152e3d3095343f595fd600f0e6e530b6565ecff"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
@@ -25,17 +25,7 @@ class Cgrep < Formula
 
   conflicts_with "aerleon", because: "both install `cgrep` binaries"
 
-  # Fix CPP directives alignment
-  # https://github.com/awgn/cgrep/pull/50
-  patch do
-    url "https://github.com/awgn/cgrep/commit/72748d85dbc2bb8059c4a4782be52347fc071eaa.patch?full_index=1"
-    sha256 "04ecc69ec482f0c07edcc07823c284e93e9822128f0398bf00918a81b08227ca"
-  end
-
   def install
-    # `base <4.16.0.0` is not available in the most recent GHC
-    inreplace "cgrep.cabal", "base ^>=4.15.0.0", "base >=4.15.0.0"
-
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell"]
 
