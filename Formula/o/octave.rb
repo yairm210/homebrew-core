@@ -70,7 +70,6 @@ class Octave < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "little-cms2"
@@ -81,6 +80,7 @@ class Octave < Formula
     depends_on "automake"
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install
