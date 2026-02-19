@@ -34,12 +34,12 @@ class LlvmAT20 < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
+    depends_on "zlib-ng-compat"
   end
 
   # Fix triple config loading for clang-cl
