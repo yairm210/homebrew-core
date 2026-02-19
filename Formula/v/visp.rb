@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.7.0.tar.gz"
   sha256 "997f247f3702c83f0a8a6dc2f72ff98cfe3a5dcbd82f7c9f01d37ccd3b8ea97a"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -36,7 +36,6 @@ class Visp < Formula
   depends_on "zbar"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "boost"
@@ -50,6 +49,7 @@ class Visp < Formula
 
   on_linux do
     depends_on "libnsl"
+    depends_on "zlib-ng-compat"
   end
 
   def install
