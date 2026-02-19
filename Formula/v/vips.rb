@@ -55,7 +55,10 @@ class Vips < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
