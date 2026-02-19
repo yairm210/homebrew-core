@@ -1,8 +1,8 @@
 class Lout < Formula
   desc "Text formatting like TeX, but simpler"
   homepage "https://savannah.nongnu.org/projects/lout"
-  url "https://github.com/william8000/lout/archive/refs/tags/3.43.2.tar.gz"
-  sha256 "11a3185ec7a5c454ee2e3b907bbb6045657b6ff09a6a4a41f6adb5abca66cf99"
+  url "https://github.com/william8000/lout/archive/refs/tags/3.43.3.tar.gz"
+  sha256 "e46c086277c421953bb4a63f7d5f4b2b892db1e31d59bde9ce2a14d082abfab0"
   license "GPL-3.0-or-later"
 
   bottle do
