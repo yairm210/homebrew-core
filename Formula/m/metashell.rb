@@ -22,14 +22,15 @@ class Metashell < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "zstd"
 
   uses_from_macos "python" => :build
   uses_from_macos "libedit"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   # include missing cstddef, upstream PR ref, https://github.com/metashell/metashell/pull/303
