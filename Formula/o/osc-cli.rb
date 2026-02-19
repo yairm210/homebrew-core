@@ -9,7 +9,8 @@ class OscCli < Formula
   revision 11
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "820b90ae6e87b38e55a060d573fceff7121e75c7e473e7de77ab399181c282dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6b3520944a0bc60b14d0afc8bd78920a00bd7657d85f7c9b5488c28fddc5c316"
   end
 
   depends_on "certifi" => :no_linkage
