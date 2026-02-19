@@ -16,7 +16,9 @@ class Marksman < Formula
 
   depends_on "dotnet@9"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
