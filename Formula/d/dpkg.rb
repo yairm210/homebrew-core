@@ -32,10 +32,11 @@ class Dpkg < Formula
   depends_on "xz" # For LZMA
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     keg_only "it conflicts with system dpkg"
+
+    depends_on "zlib-ng-compat"
   end
 
   patch :DATA
