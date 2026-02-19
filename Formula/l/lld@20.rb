@@ -26,7 +26,10 @@ class LldAT20 < Formula
   depends_on "cmake" => :build
   depends_on "llvm@20"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     rpaths = [rpath]
