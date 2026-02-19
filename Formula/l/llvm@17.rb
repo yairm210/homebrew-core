@@ -7,11 +7,8 @@ class LlvmAT17 < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
-    url :stable
-    regex(/^llvmorg[._-]v?(17(?:\.\d+)+)$/i)
+    skip "No longer developed or maintained"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "9ba308319c3f4200eeaf9d30cd2bc5f40f3b2cdeeffbd08024c4e0fe346d9022"
@@ -36,18 +33,18 @@ class LlvmAT17 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "zstd"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
+    depends_on "zlib-ng-compat"
   end
 
   # Fix arm64 misoptimisation in some cases.
@@ -58,7 +55,7 @@ class LlvmAT17 < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.14"
   end
 
   def install
