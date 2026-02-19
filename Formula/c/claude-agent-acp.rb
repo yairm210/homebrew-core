@@ -6,6 +6,15 @@ class ClaudeAgentAcp < Formula
   license "Apache-2.0"
   head "https://github.com/zed-industries/claude-agent-acp.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "aef4ab363dd0ee5c0fea05041d86a894620218832c117cbd193f97364034a81c"
+    sha256 cellar: :any,                 arm64_sequoia: "857eb1f07eb00bb52e1623c4255c7905814cca376be841c24d38fad8cd30984b"
+    sha256 cellar: :any,                 arm64_sonoma:  "857eb1f07eb00bb52e1623c4255c7905814cca376be841c24d38fad8cd30984b"
+    sha256 cellar: :any,                 sonoma:        "50f706dec727eba6d5531d2465df10b14d70d98bff51cced2206b21dd04628ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43469a06364d7ab8be4a2ed822d0bfdb9407b9de0f0a9e6ab21821ee031a8ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7ba8d8c030d6c67dfb3c0e44d97ab84c0fca1953e3131af48ba2a1b1242c2ef"
+  end
+
   depends_on "node"
   depends_on "ripgrep"
 
