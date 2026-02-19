@@ -2,7 +2,7 @@ class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
   license "GPL-2.0-only"
-  revision 8
+  revision 9
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
@@ -47,17 +47,22 @@ class Fceux < Formula
   end
 
   def install
-    ENV["CXXFLAGS"] = "-DPUBLIC_RELEASE=1" if build.stable?
-    system "cmake", ".", *std_cmake_args, "-DQT6=ON"
-    system "make"
-    cp "src/auxlib.lua", "output/luaScripts"
-    fceux_path = OS.mac? ? "src/fceux.app/Contents/MacOS" : "src"
-    libexec.install Pathname.new(fceux_path)/"fceux"
-    pkgshare.install ["output/luaScripts", "output/palettes", "output/tools"]
-    (bin/"fceux").write <<~BASH
-      #!/bin/bash
-      LUA_PATH=#{pkgshare}/luaScripts/?.lua #{libexec}/fceux "$@"
-    BASH
+    # Workaround until upstream handles newer minizip 1.3.2 cflags after
+    # https://github.com/madler/zlib/commit/7e6f0784cc0c33e8d5fcb368248168c6656f73c8
+    ENV.append_to_cflags "-I#{Formula["minizip"].opt_include}/minizip"
+
+    args = ["-DQT6=ON"]
+    args << "-DPUBLIC_RELEASE=1" if build.stable?
+    system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args
+    system "cmake", "--build", "."
+    if OS.mac?
+      cp "src/auxlib.lua", "output/luaScripts"
+      bin.install "src/fceux.app/Contents/MacOS/fceux"
+      pkgshare.install "output/luaScripts", "output/palettes", "output/tools"
+    else
+      system "cmake", "--install", "."
+    end
+    bin.env_script_all_files libexec, LUA_PATH: "#{pkgshare}/luaScripts/?.lua"
   end
 
   test do
