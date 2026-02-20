@@ -28,18 +28,20 @@ class Aptos < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "lld" => :build
     depends_on "pkgconf" => :build
     depends_on "zip" => :build
     depends_on "elfutils"
     depends_on "openssl@3"
     depends_on "systemd"
+
+    on_intel do
+      depends_on "lld" => :build
+    end
   end
 
   def install
-    # Use correct compiler to prevent blst from enabling AVX support on macOS
-    # upstream issue report, https://github.com/supranational/blst/issues/253
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
+    # Remove optimization to allow bottles to be run on our minimum supported CPUs
+    inreplace ".cargo/config.toml", /,\s*"-C",\s*"target-cpu=x86-64-v3"/, ""
 
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
   end
