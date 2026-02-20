@@ -6,12 +6,12 @@ class Beads < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d003f20d3a32aca184951a538a71881a27717191812234769c43a7f13b96fc7"
-    sha256 cellar: :any,                 arm64_sequoia: "69ceac00f0020baeb06f6b97135beb6767e3dcd0012e5d5678ce71263e2256d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7bee78e8e6930c550a12bf57b3791ff0cfe41541c73cc2a1d2907e4729ce34ce"
-    sha256 cellar: :any,                 sonoma:        "c4a37ce145654d595faab3fd3904ba69984495d755cee2e6a5ed1729ab7786e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d57454874a866799331d512a7389eddc1adc6e5b3a45eda34d3c822df1cda56e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc5785b9264840c9ac8a2462422c5c0d2e52b0c3175828ec325022639ba6877e"
+    sha256 cellar: :any,                 arm64_tahoe:   "a2bef2ab52c2621d52e5de7818c63ed454e25d3313408efb5cb8d6c957037fd0"
+    sha256 cellar: :any,                 arm64_sequoia: "e202de78063c300e11bb49dd9ab0815b2555a34971eb76e813b08114b60f1f1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a0e9fd1cba0f1ca64e74f1365aca1547f7716f6848037487866208c8de49c5b"
+    sha256 cellar: :any,                 sonoma:        "dd4c4f9a49034495ebe44ac8c8c2d08813a01cb4ebf54312b027247dc090a731"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11c6f089fc2ca8b8e517d0fc6ad3f02bad9c57406eee2985a1e1d3973745b91f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8405e7d2c28a4cf4add6b91d27be55e10d73bc1b059fb066279be16f1b69acb"
   end
 
   depends_on "go" => :build
