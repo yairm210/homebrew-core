@@ -1,8 +1,8 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.54.0.tar.gz"
-  sha256 "729833efe66a404221df1e8921d48c88ce98c888d0f03700bc321c096a2c1358"
+  url "https://github.com/steveyegge/beads/archive/refs/tags/v0.55.0.tar.gz"
+  sha256 "081a02af23e3d78b1aaeab6250da563c761aad146af1620796cdaa4b106bc1b2"
   license "MIT"
 
   bottle do
