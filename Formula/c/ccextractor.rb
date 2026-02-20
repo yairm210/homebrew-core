@@ -1,10 +1,9 @@
 class Ccextractor < Formula
   desc "Tool for extracting closed captions from video files"
   homepage "https://www.ccextractor.org"
-  url "https://github.com/CCExtractor/ccextractor/archive/refs/tags/v0.96.5.tar.gz"
-  sha256 "821614d7b31d47bf3bf6217a66464b826c0f86d2bcde070b6fba74f54dff55ff"
+  url "https://github.com/CCExtractor/ccextractor/archive/refs/tags/v0.96.6.tar.gz"
+  sha256 "d2bda9d2071ccf7a81a43c10e82ec00899b2a25b391c300e965274f92ad46208"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
     rebuild 1
