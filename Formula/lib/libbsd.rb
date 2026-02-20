@@ -3,7 +3,15 @@ class Libbsd < Formula
   homepage "https://libbsd.freedesktop.org/"
   url "https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz"
   sha256 "b88cc9163d0c652aaf39a99991d974ddba1c3a9711db8f1b5838af2a14731014"
-  license "BSD-3-Clause"
+  license all_of: [
+    "BSD-3-Clause",
+    "BSD-2-Clause",
+    "Beerware",
+    "ISC",
+    "libutil-David-Nugent",
+    "MIT",
+    :public_domain,
+  ]
 
   livecheck do
     url "https://libbsd.freedesktop.org/releases/"
@@ -22,18 +30,40 @@ class Libbsd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31fb2290fe313559d9de741089809ea8d5bc8cffdaf8237f350c6d2f836bba95"
   end
 
-  depends_on "libmd"
+  head do
+    url "https://gitlab.freedesktop.org/libbsd/libbsd.git", branch: "main"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
+  on_linux do
+    depends_on "libmd"
+  end
 
   def install
-    system "./configure",
-      "--disable-dependency-tracking",
-      "--disable-silent-rules",
-      "--prefix=#{prefix}"
+    system "./autogen" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    libbsd = lib/shared_library("libbsd", version.major.to_s)
-    assert_match "strtonum", shell_output("nm #{libbsd}")
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <bsd/stdlib.h>
+
+      int main(void) {
+        const char *q;
+        long long val = strtonum("1", 0, 10, &q);
+        if (q != NULL) {
+          printf("%s", q);
+          return 1;
+        }
+        return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", lib/shared_library("libbsd", version.major.to_s)
+    system "./test"
   end
 end
