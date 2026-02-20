@@ -5,6 +5,15 @@ class Fracturedjson < Formula
   sha256 "af9a33c1c054bf6cc363e57f07aacf4b712483346301862301da408e6e399d97"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "912aa35255a79a37bd765a4e430cb99be8d876f195bdc819b3959d302f16e16e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62b8481d7ad91c69ba73ac39ca7efeb9f6fa22e13f4e862264e977cc4e3db57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1af08c8ca1a9eb776ca48f46cf378b38873aa33be57648a4db9d8102cd67668b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0eee561941c585634651f2c51a11f6f8bef39fa07731a1986a95f7bca11dba6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f533887a298e7fd15af4f044aab1dbe5d359d01d1da31cf92c89358e78b38c3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43886998520da5802beccbc38d8265f675d59479b60ddcd320d24617dd88305d"
+  end
+
   depends_on "dotnet" => :build
 
   on_linux do
