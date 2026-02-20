@@ -1,0 +1,26 @@
+class Ironclaw < Formula
+  desc "Security-first personal AI assistant with WASM sandbox channels"
+  homepage "https://github.com/nearai/ironclaw"
+  url "https://github.com/nearai/ironclaw/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "e60ef7e056f643ccdd7ae0437abd64bad5884ecffde62edac85e2ebd31ec71b8"
+  license any_of: ["MIT", "Apache-2.0"]
+  head "https://github.com/nearai/ironclaw.git", branch: "main"
+
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
+  depends_on "openssl@3"
+
+  def install
+    system "cargo", "install", *std_cargo_args
+  end
+
+  service do
+    run [opt_bin/"ironclaw", "run"]
+    keep_alive true
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/ironclaw --version")
+    assert_match "Settings", shell_output("#{bin}/ironclaw config list")
+  end
+end
