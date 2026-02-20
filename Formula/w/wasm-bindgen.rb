@@ -1,8 +1,8 @@
 class WasmBindgen < Formula
   desc "Facilitating high-level interactions between Wasm modules and JavaScript"
   homepage "https://wasm-bindgen.github.io/wasm-bindgen/"
-  url "https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.108.tar.gz"
-  sha256 "9a4d3f69b555e5e8a588b3b571fb285b9bfdc3a893661352ceff6ab8c80eef47"
+  url "https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.109.tar.gz"
+  sha256 "30e5f80e8ed3db5c39b2821798fad215cb8f7ebd1de312a3b8747c7b713de12f"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
