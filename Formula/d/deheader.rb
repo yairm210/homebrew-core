@@ -3,8 +3,8 @@ class Deheader < Formula
 
   desc "Analyze C/C++ files for unnecessary headers"
   homepage "http://www.catb.org/~esr/deheader/"
-  url "https://gitlab.com/esr/deheader/-/archive/1.11/deheader-1.11.tar.bz2"
-  sha256 "0f21ee3d84327e0776632d133129f64354e98c547a3d752869e7945205be57f2"
+  url "https://gitlab.com/esr/deheader/-/archive/1.12/deheader-1.12.tar.bz2"
+  sha256 "08ca718429db0d3fbe4388d62239d6604a08f979a5421fc4f1a1b55cb688a4d3"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/deheader.git", branch: "master"
 
@@ -19,12 +19,12 @@ class Deheader < Formula
     sha256 cellar: :any_skip_relocation, all: "2caa30192b0b43e4892d9742d759b65d3cee8109c87e7169fd371a896cfd424e"
   end
 
-  depends_on "xmlto" => :build
+  depends_on "asciidoctor" => :build
 
   uses_from_macos "python"
 
   def install
-    system "make", "XML_CATALOG_FILES=#{etc}/xml/catalog"
+    system "asciidoctor", "-b", "manpage", "deheader.adoc"
 
     bin.install "deheader"
     man1.install "deheader.1"
