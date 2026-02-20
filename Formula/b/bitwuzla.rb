@@ -10,6 +10,15 @@ class Bitwuzla < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "bd4be0f59690b95209e2d40eead07a3da969721e99bd7904ebbd65e2442dc4a9"
+    sha256 cellar: :any, arm64_sequoia: "a11c02bc02faee3f438c2a3cc5e248c096b34b58588818ae2e1a6e7ccf260f71"
+    sha256 cellar: :any, arm64_sonoma:  "ed4d3c68db7f8c090bb1055d58bb4481d4fd0ccf376cb44a9ac526e656ec1c86"
+    sha256 cellar: :any, sonoma:        "d788de04dba4aeced6270c38f3d043ab65c821c4c0af992001847be5843b54b4"
+    sha256               arm64_linux:   "70695221d6796ec98c71e6f6d6b9754a78e6a776aa05c608feb72e080cacc261"
+    sha256               x86_64_linux:  "073560c6335ecdce5557e77b0c96f8f362f4af25002296da4c949673290f969e"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
