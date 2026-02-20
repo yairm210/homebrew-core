@@ -8,12 +8,12 @@ class Diffoscope < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "247b5d87cebff6b69c24403d895ae039112b1716fccf953830f79c08d693fd8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "247b5d87cebff6b69c24403d895ae039112b1716fccf953830f79c08d693fd8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "247b5d87cebff6b69c24403d895ae039112b1716fccf953830f79c08d693fd8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b3d6751ab4ecfc20a2582cc9aaa59bd0659500699be597b82c6de08d5eb6239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f63ab123b8bc0dfae2ff24087f3909281d14bd2098208c1a3e9e091d7e57d214"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f63ab123b8bc0dfae2ff24087f3909281d14bd2098208c1a3e9e091d7e57d214"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b2f21ff6e40acace2d12551881e3f1b2a445f561d9ce784b2cb05f95fb1925c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2f21ff6e40acace2d12551881e3f1b2a445f561d9ce784b2cb05f95fb1925c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b2f21ff6e40acace2d12551881e3f1b2a445f561d9ce784b2cb05f95fb1925c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fdcf4fe046541d5efd69fa652dcdf3487ff107f42b0e1024513392a7dc0edf9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04e58e49d9be55bf4bbde14a9587dfffa149a3d46b250d2aee0ae6afe0a30c51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e58e49d9be55bf4bbde14a9587dfffa149a3d46b250d2aee0ae6afe0a30c51"
   end
 
   depends_on "libarchive"
