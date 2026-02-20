@@ -1,8 +1,8 @@
 class Valijson < Formula
   desc "Header-only C++ library for JSON Schema validation"
   homepage "https://github.com/tristanpenman/valijson"
-  url "https://github.com/tristanpenman/valijson/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "bf0839de19510ff7792d8a8aca94ea11a288775726b36c4c9a2662651870f8da"
+  url "https://github.com/tristanpenman/valijson/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "bb37d86f5fe78f559f108517f30ce587c960ea5bd23d71413b7493cda6c3a4cc"
   license "BSD-2-Clause"
 
   bottle do
@@ -26,7 +26,7 @@ class Valijson < Formula
 
       int main (void) { std::cout << "Hello world"; }
     CPP
-    system ENV.cxx, "test.cpp", "-std=c++11", "-L#{Formula["jsoncpp"].opt_lib}", "-ljsoncpp", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{Formula["jsoncpp"].opt_lib}", "-ljsoncpp", "-o", "test"
     system "./test"
   end
 end
