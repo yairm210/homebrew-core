@@ -8,8 +8,7 @@ class Fobis < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0ac6f39a110d8a9e66df175dcab8d272bb32f9ca2d968a5b9c73e2be5827ea95"
+    sha256 cellar: :any_skip_relocation, all: "14d6e1565ee1d267168023e174abdd11b04c1677ada3b69b1d4606b22b434d5a"
   end
 
   depends_on "gcc" # for gfortran
