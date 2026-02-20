@@ -1,8 +1,8 @@
 class Ov < Formula
   desc "Feature-rich terminal-based text viewer"
   homepage "https://noborus.github.io/ov/"
-  url "https://github.com/noborus/ov/archive/refs/tags/v0.50.2.tar.gz"
-  sha256 "86277c652d1568807a61236d1565bbe8b2280be4f11a6075a03cd7581469d355"
+  url "https://github.com/noborus/ov/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "22c5d0c3b7bab2d448628680a7fce52b8050662c21813c7ac1d82e280c6cc779"
   license "MIT"
   head "https://github.com/noborus/ov.git", branch: "master"
 
