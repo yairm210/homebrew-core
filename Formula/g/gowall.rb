@@ -4,7 +4,7 @@ class Gowall < Formula
   url "https://github.com/Achno/gowall/archive/refs/tags/v0.2.3.tar.gz"
   sha256 "ff5289250cd1bfe7adef728c85c4c97aed906330e9bd79760be540eb49343d51"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/Achno/gowall.git", branch: "main"
 
   bottle do
