@@ -27,14 +27,17 @@ class Katago < Formula
   depends_on "cmake" => :build
   depends_on "libzip"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "ninja" => :build
   end
 
+  on_sequoia do
+    depends_on xcode: :build # to avoid build getting stuck
+  end
+
   on_linux do
     depends_on "eigen" => :build
+    depends_on "zlib-ng-compat"
   end
 
   # Using most recent b18c384nbt rather than strongest as it is easier to track
@@ -73,7 +76,7 @@ class Katago < Formula
     args += if OS.mac?
       ["-DUSE_BACKEND=METAL", "-GNinja"]
     else
-      ["-DUSE_BACKEND=EIGEN"]
+      ["-DUSE_BACKEND=EIGEN", "-DEIGEN3_INCLUDE_DIRS=#{Formula["eigen"].opt_include}/eigen3"]
     end
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
