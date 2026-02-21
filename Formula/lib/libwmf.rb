@@ -1,8 +1,8 @@
 class Libwmf < Formula
   desc "Library for converting WMF (Window Metafile Format) files"
   homepage "https://github.com/caolanm/libwmf"
-  url "https://github.com/caolanm/libwmf/archive/refs/tags/v0.2.13.tar.gz"
-  sha256 "18ba69febd2f515d98a2352de284a8051896062ac9728d2ead07bc39ea75a068"
+  url "https://github.com/caolanm/libwmf/releases/download/v0.2.14/libwmf-0.2.14.tar.gz"
+  sha256 "a1a0affe80fb8d0e1c71eb7e99fbd17034ac575fb82d338b2c079995c25ae6ae"
   license all_of: [
     "LGPL-2.0-or-later",
     "GPL-2.0-or-later", # COPYING
@@ -29,12 +29,6 @@ class Libwmf < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Backport fix for macOS
-  patch do
-    url "https://github.com/caolanm/libwmf/commit/5c0ffc6320c40a565ff8014d772670df3e0ad87d.patch?full_index=1"
-    sha256 "80ae84a904baa21e1566e3d2bca1c6aaa0a2a30f684fe50f25e7e5751ef3ec93"
   end
 
   def install
