@@ -8,12 +8,12 @@ class TrezorAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd5158b625457e967c61316e70a4256a46023d042fb9c1b3dc501de4a6016de0"
-    sha256 cellar: :any,                 arm64_sequoia: "6e0b6d43ac7f223d7b43aeab5a83d75a5dcebe5e0168fec7aec23ed44c623c52"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d52ab9e936932aac693da7a325dc3859691ab59c39f85d3ffba6a8b9de4a86e"
-    sha256 cellar: :any,                 sonoma:        "aab76535b0432eff5a60d97eda1ff25175dde3e42394adb55b7089e34844b3d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3711d33acf62dc7f6c5dbac9c1618e5b41a9a786d3342fa68b9945220be2ce78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf962f527f32532b78068efb4a38598795f37913ffe0c711e5981bb9b48cab97"
+    sha256 cellar: :any,                 arm64_tahoe:   "b800ca04c501796f8d7dcf2b34d4b2a6066ea381795e48708100f572dc177d13"
+    sha256 cellar: :any,                 arm64_sequoia: "ac781c4e7b4c35956d83cb32907cbd6b84d5cec92a0cf25c01e478f889deb3e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "30d9ff3d2ea5e73a2b4dcb2a5e82eba0070138443938652a2da4fd45cb2e7e28"
+    sha256 cellar: :any,                 sonoma:        "1d8d36c26d76cb7a4355a944f130ec29130a6019addb66ef4b9dfcf9e6cc0f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75d94b95fea1e36f0ebe1432593dfcc10e2ce9d38af0535c50fc04f08cd464a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc646919d623cbe65d6bc35aaa54c913715f7b8fc550e6d96abe5573d1a1e48c"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
