@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/55/6b/8407c33ce8731a3a5ed0137818f23aa9c5178aa94e75d4a83ccc9a04b966/mcp_atlassian-0.16.0.tar.gz"
-  sha256 "07fdf178c45bdc4bd5a21aa1679d1dbf8ce4a59de3e60f2a6b68bf6d50734138"
+  url "https://files.pythonhosted.org/packages/bc/0c/e5efd266e04e78e0883e7c98a36b21b81b98750ebd46e0c742b3ad4c7314/mcp_atlassian-0.16.1.tar.gz"
+  sha256 "79c8cbdff8dc884f41672dace715dae09ed9d2c0cbd2154a69f523b0908bd3f2"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c619f9f93f7692192f280b9f0b8ea41305e4aa93ab1ee8e88f7890254f23e50"
-    sha256 cellar: :any,                 arm64_sequoia: "985283151f2a7e1510de62167a9f83dd9bdc62831b058324e04921285c5fa59b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e0ef0989967e23faa152879e3aea8746b3a4fbbd9fed8f3da1b2025fd90e584"
-    sha256 cellar: :any,                 sonoma:        "3033143b6aea47285ef4e8b77c0f5eced5bb3458ad94523aeecc29ed34cad5e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f0afb7bdf1c7db5919075f74323b995c5cdb27d34aa774735fd2dbbff4cf88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349a3f3d1f58ad0562a123b7f64dfd75576179f4ff64bc26b83f0b2ca3c0ce09"
+    sha256 cellar: :any,                 arm64_tahoe:   "011f8b8384cb412c29753756ac102a38682ee946fe2b4f013fb735973e808497"
+    sha256 cellar: :any,                 arm64_sequoia: "9381a9b16c8d4cbdc532706cf616ae9a243f4b2ad19974d850c52fbbaab34353"
+    sha256 cellar: :any,                 arm64_sonoma:  "24193a2f54624936ffa4fe90c85fbf61ce321d81d92aed0a3678738d202013bc"
+    sha256 cellar: :any,                 sonoma:        "df3e73486f476626e28020500fb025ed6e163b507e83a53ca754aa63b71496ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3087ba2743722b08b2c5fe17dbe5cdfbc73bab05ab20e79c8b505698665f3af9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e194aaf9b1333f23f1110cc46ee147c1c5c8b981f7aef48a4a2756385d6958f"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -477,8 +477,8 @@ class McpAtlassian < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/5a/b6/3e681d3b6bb22647509bdbfdd18055d5adc0dce5c5585359fa46ff805fdc/typer-0.24.0.tar.gz"
-    sha256 "f9373dc4eff901350694f519f783c29b6d7a110fc0dcc11b1d7e353b85ca6504"
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   resource "types-cachetools" do
