@@ -3,8 +3,8 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/16/be/8e099f3f34bac6851490525fb1a8b62d525a95fcb5af082e8c52ba884fb5/yt_dlp-2026.2.4.tar.gz"
-  sha256 "24733ef081116f29d8ee6eae7a48127101e6c56eb7aa228dd604a60654760022"
+  url "https://files.pythonhosted.org/packages/58/d9/55ffff25204733e94a507552ad984d5a8a8e4f9d1f0d91763e6b1a41c79b/yt_dlp-2026.2.21.tar.gz"
+  sha256 "4407dfc1a71fec0dee5ef916a8d4b66057812939b509ae45451fa8fb4376b539"
   license "Unlicense"
 
   bottle do
@@ -71,8 +71,8 @@ class YtDlp < Formula
   end
 
   resource "yt-dlp-ejs" do
-    url "https://files.pythonhosted.org/packages/e9/80/4b6c7f91b373e01cdc18080f41fa399592945abce7db74c2e6d0fb8468db/yt_dlp_ejs-0.4.0.tar.gz"
-    sha256 "3c67e0beb6f9f3603fbcb56f425eabaa37c52243d90d20ccbcce1dd941cfbd07"
+    url "https://files.pythonhosted.org/packages/6b/0d/b9e4ab1b47cdeba0842df634b74b3c0144307640ad5b632a5e189c4ab7ce/yt_dlp_ejs-0.5.0.tar.gz"
+    sha256 "8dfae59e418232f485253dcf8e197fefa232423c3af7824fe19e4517b173293b"
   end
 
   def install
