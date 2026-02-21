@@ -1,8 +1,8 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands"
   homepage "https://mroth.github.io/scmpuff/"
-  url "https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "4478a53ff16d70ca433d21a66f7e3532631f43ecd64a1fbaf0a933aa7cbd2df4"
+  url "https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "3733e5af8608331835affb7530c1baf88066e80e72bf78becdaa090a26cfc5f0"
   license "MIT"
   head "https://github.com/mroth/scmpuff.git", branch: "main"
 
