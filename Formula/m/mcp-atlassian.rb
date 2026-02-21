@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/c2/23/7935ac9fbc026f3e085b90fa563ed26a38bddbe32beba66413b9ecfd37fd/mcp_atlassian-0.15.0.tar.gz"
-  sha256 "0cf4ebd6d0cb3ccae02166e4a981ddb961fc6324a37228df02cd4542bc750678"
+  url "https://files.pythonhosted.org/packages/55/6b/8407c33ce8731a3a5ed0137818f23aa9c5178aa94e75d4a83ccc9a04b966/mcp_atlassian-0.16.0.tar.gz"
+  sha256 "07fdf178c45bdc4bd5a21aa1679d1dbf8ce4a59de3e60f2a6b68bf6d50734138"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f78446efb6783c5a52261b3bea2171d46c94a63d8d5245172f7f4384769f2883"
-    sha256 cellar: :any,                 arm64_sequoia: "fcd572a6b291b636c1da49449c7bc84b3cb9b245c7d7ff592de6e26cb143fe94"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c8a272287592dcdbd2e545307cc598497260ed600e93d1ee3df4eb5649503ad"
-    sha256 cellar: :any,                 sonoma:        "d9b03819848cd9ed1d5170e6b33cc0d258e49f2358e9786f2fe13bef721e5339"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4fadf6a3f6ded34a84c6aaf486e554c9c012a88c800c727c500e6e06c7cccb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4616573a22b7c91cad23644be085c36eea7040f3ff1623e0960a0af6c72aa4"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c619f9f93f7692192f280b9f0b8ea41305e4aa93ab1ee8e88f7890254f23e50"
+    sha256 cellar: :any,                 arm64_sequoia: "985283151f2a7e1510de62167a9f83dd9bdc62831b058324e04921285c5fa59b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e0ef0989967e23faa152879e3aea8746b3a4fbbd9fed8f3da1b2025fd90e584"
+    sha256 cellar: :any,                 sonoma:        "3033143b6aea47285ef4e8b77c0f5eced5bb3458ad94523aeecc29ed34cad5e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f0afb7bdf1c7db5919075f74323b995c5cdb27d34aa774735fd2dbbff4cf88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349a3f3d1f58ad0562a123b7f64dfd75576179f4ff64bc26b83f0b2ca3c0ce09"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -332,8 +332,8 @@ class McpAtlassian < Formula
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/51/fe/319957bc0744ce6871140c3c1fb5dff89d9b9e645d36145da49e9954142b/pydocket-0.17.8.tar.gz"
-    sha256 "929628c70ee7d3bcae5f142c41f362147510e8f5d04b7030e5c5dd078b8c7f2a"
+    url "https://files.pythonhosted.org/packages/99/e9/08c8642607b1b4b4f92798c04da625d763ad2b585ced7d91cc593d301ed3/pydocket-0.17.9.tar.gz"
+    sha256 "4b98b9951303fba2b77649969539d501500cd0b0e5accc27e03b16c25a76f3e6"
   end
 
   resource "pygments" do
