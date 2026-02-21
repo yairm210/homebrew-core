@@ -50,7 +50,10 @@ class Harbour < Formula
   uses_from_macos "expat"
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Delete files that cause vendored libraries for minizip and expat to be built.
@@ -102,7 +105,7 @@ class Harbour < Formula
       ENV["HB_WITH_CURSES"] = Formula["ncurses"].opt_include
       ENV["HB_WITH_EXPAT"] = Formula["expat"].opt_include
       ENV["HB_WITH_SQLITE3"] = Formula["sqlite"].opt_include
-      ENV["HB_WITH_ZLIB"] = Formula["zlib"].opt_include
+      ENV["HB_WITH_ZLIB"] = Formula["zlib-ng-compat"].opt_include
     end
 
     ENV.deparallelize
