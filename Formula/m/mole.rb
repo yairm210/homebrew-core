@@ -1,10 +1,12 @@
 class Mole < Formula
   desc "Deep clean and optimize your Mac"
   homepage "https://github.com/tw93/Mole"
-  url "https://github.com/tw93/Mole/archive/refs/tags/V1.26.0.tar.gz"
-  sha256 "00109b9a10961b083daf10709cf0c450670e5d4e3ea02ecc422b5c06534f3259"
+  url "https://github.com/tw93/Mole/archive/refs/tags/V1.27.0.tar.gz"
+  sha256 "63e5b8de0ebc4ed8de65b8cc03f68d300064da8a9d458f68a8e289d0485dfeab"
   license "MIT"
   head "https://github.com/tw93/Mole.git", branch: "main"
+
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "088c466a790e7131ccdb0097997803b52e6b15a04c05e68ef7d4f1fbba6dad01"
