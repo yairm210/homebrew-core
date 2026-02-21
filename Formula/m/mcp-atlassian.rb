@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/55/6b/8407c33ce8731a3a5ed0137818f23aa9c5178aa94e75d4a83ccc9a04b966/mcp_atlassian-0.16.0.tar.gz"
-  sha256 "07fdf178c45bdc4bd5a21aa1679d1dbf8ce4a59de3e60f2a6b68bf6d50734138"
+  url "https://files.pythonhosted.org/packages/bc/0c/e5efd266e04e78e0883e7c98a36b21b81b98750ebd46e0c742b3ad4c7314/mcp_atlassian-0.16.1.tar.gz"
+  sha256 "79c8cbdff8dc884f41672dace715dae09ed9d2c0cbd2154a69f523b0908bd3f2"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
@@ -477,8 +477,8 @@ class McpAtlassian < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/5a/b6/3e681d3b6bb22647509bdbfdd18055d5adc0dce5c5585359fa46ff805fdc/typer-0.24.0.tar.gz"
-    sha256 "f9373dc4eff901350694f519f783c29b6d7a110fc0dcc11b1d7e353b85ca6504"
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   resource "types-cachetools" do
