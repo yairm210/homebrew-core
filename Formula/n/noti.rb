@@ -27,6 +27,8 @@ class Noti < Formula
     system "go", "build", *std_go_args(ldflags:), "cmd/noti/main.go"
     man1.install "docs/man/dist/noti.1"
     man5.install "docs/man/dist/noti.yaml.5"
+
+    generate_completions_from_executable(bin/"noti", shell_parameter_format: :cobra)
   end
 
   test do
