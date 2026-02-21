@@ -1,8 +1,8 @@
 class ClockRs < Formula
   desc "Modern, digital clock that effortlessly runs in your terminal"
   homepage "https://github.com/Oughie/clock-rs"
-  url "https://github.com/Oughie/clock-rs/archive/refs/tags/v0.1.31.tar.gz"
-  sha256 "dc8670d9922ed7b4b5ceb79a9e329f3a194c2c26edbba01655279b0c503d39d5"
+  url "https://github.com/Oughie/clock-rs/archive/refs/tags/v0.1.216.tar.gz"
+  sha256 "3aa4cbe398f68f0418f5174175e165de5e023b60c3831bc04923ffccaa4658b5"
   license "Apache-2.0"
 
   bottle do
