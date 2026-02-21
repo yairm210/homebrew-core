@@ -31,8 +31,6 @@ class Hashcat < Formula
   depends_on "minizip"
   depends_on "xxhash"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gnu-sed" => :build
   end
@@ -41,6 +39,7 @@ class Hashcat < Formula
     depends_on "opencl-headers" => :build
     depends_on "opencl-icd-loader"
     depends_on "pocl"
+    depends_on "zlib-ng-compat"
   end
 
   def install
