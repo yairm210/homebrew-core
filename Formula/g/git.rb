@@ -157,6 +157,11 @@ class Git < Formula
       git_core.install "git-subtree"
     end
 
+    # Install git-jump
+    cd "contrib/git-jump" do
+      git_core.install "git-jump"
+    end
+
     # install the completion script first because it is inside "contrib"
     bash_completion.install "contrib/completion/git-completion.bash"
     bash_completion.install "contrib/completion/git-prompt.sh"
