@@ -21,6 +21,7 @@ class Odbc2parquet < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"odbc2parquet", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
