@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/c2/23/7935ac9fbc026f3e085b90fa563ed26a38bddbe32beba66413b9ecfd37fd/mcp_atlassian-0.15.0.tar.gz"
-  sha256 "0cf4ebd6d0cb3ccae02166e4a981ddb961fc6324a37228df02cd4542bc750678"
+  url "https://files.pythonhosted.org/packages/55/6b/8407c33ce8731a3a5ed0137818f23aa9c5178aa94e75d4a83ccc9a04b966/mcp_atlassian-0.16.0.tar.gz"
+  sha256 "07fdf178c45bdc4bd5a21aa1679d1dbf8ce4a59de3e60f2a6b68bf6d50734138"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
@@ -332,8 +332,8 @@ class McpAtlassian < Formula
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/51/fe/319957bc0744ce6871140c3c1fb5dff89d9b9e645d36145da49e9954142b/pydocket-0.17.8.tar.gz"
-    sha256 "929628c70ee7d3bcae5f142c41f362147510e8f5d04b7030e5c5dd078b8c7f2a"
+    url "https://files.pythonhosted.org/packages/99/e9/08c8642607b1b4b4f92798c04da625d763ad2b585ced7d91cc593d301ed3/pydocket-0.17.9.tar.gz"
+    sha256 "4b98b9951303fba2b77649969539d501500cd0b0e5accc27e03b16c25a76f3e6"
   end
 
   resource "pygments" do
