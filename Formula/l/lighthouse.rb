@@ -37,8 +37,6 @@ class Lighthouse < Formula
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    # Use correct compiler to prevent blst from enabling AVX support on macOS
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
   end
