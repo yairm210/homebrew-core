@@ -1,17 +1,14 @@
 class GerbilScheme < Formula
   desc "Opinionated dialect of Scheme designed for Systems Programming"
   homepage "https://cons.io"
-  url "https://github.com/vyzo/gerbil.git",
-      tag:      "v0.18.1",
-      revision: "23c30a6062cd7e63f9d85300ce01585bb9035d2d"
+  url "https://github.com/mighty-gerbils/gerbil/releases/download/v0.18.1/gerbil-v0.18.1.tar.gz"
+  sha256 "e1827bb88bdb74a01a99f0d94a50a6469ae4e760905be83dd3064ffc1709ceb5"
   license any_of: ["LGPL-2.1-or-later", "Apache-2.0"]
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_tahoe:   "6c166d32e62d375fab7baf018d875b4f0a44536b9e33158bf9894af87b8964d7"
@@ -24,16 +21,17 @@ class GerbilScheme < Formula
     sha256 x86_64_linux:  "6b5f1a9d1e67afb310f18b033089eafa83514b33a9a32605651ff3ddbc5765e8"
   end
 
-  depends_on "coreutils" => :build
   depends_on "pkgconf" => :build
-
   depends_on "openssl@3"
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gcc"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "ghostscript", because: "both install `gsc` binary"
