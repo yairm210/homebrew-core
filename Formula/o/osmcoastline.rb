@@ -25,7 +25,10 @@ class Osmcoastline < Formula
   uses_from_macos "bzip2"
   uses_from_macos "expat"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
   # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
