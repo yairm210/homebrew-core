@@ -25,17 +25,18 @@ class Julia < Formula
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
-  depends_on "gcc" => :build # for gfortran
-  depends_on "ca-certificates"
+
+  depends_on "ca-certificates" => :no_linkage
   depends_on "curl"
-  depends_on "gmp"
-  depends_on "libblastrampoline"
+  depends_on "gcc" # for gfortran
+  depends_on "gmp" => :no_linkage
+  depends_on "libblastrampoline" => :no_linkage
   depends_on "libgit2"
-  depends_on "libnghttp2"
-  depends_on "libssh2"
-  depends_on "mpfr"
-  depends_on "openblas64"
-  depends_on "openlibm"
+  depends_on "libnghttp2" => :no_linkage
+  depends_on "libssh2" => :no_linkage
+  depends_on "mpfr" => :no_linkage
+  depends_on "openblas64" => :no_linkage
+  depends_on "openlibm" => :no_linkage
   depends_on "openssl@3"
   depends_on "p7zip"
   depends_on "pcre2"
@@ -46,10 +47,10 @@ class Julia < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "ncurses" # for terminfo
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "juliaup", because: "both install `julia` binaries"
