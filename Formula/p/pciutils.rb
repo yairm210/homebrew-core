@@ -11,7 +11,7 @@ class Pciutils < Formula
   end
 
   depends_on :linux # arm64 macOS is not supported: https://github.com/pciutils/pciutils/issues/111
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["ZLIB=yes", "DNS=yes", "SHARED=yes", "PREFIX=#{prefix}", "MANDIR=#{man}"]
