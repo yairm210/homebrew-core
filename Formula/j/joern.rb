@@ -26,7 +26,9 @@ class Joern < Formula
   depends_on "openjdk"
   depends_on "php"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "sbt", "stage"
