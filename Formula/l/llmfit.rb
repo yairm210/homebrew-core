@@ -1,8 +1,8 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.3.8.tar.gz"
-  sha256 "39fc00fc8998c8c6b735bb56e815ed6c4621acf6d4794bcaecf5f1c09ab764d9"
+  url "https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "3aa7c52a0629d58dda8a5baee00a7a18aa0eb020b6c8754f0f94b66ba9eab544"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Llmfit < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "llmfit-tui")
   end
 
   test do
