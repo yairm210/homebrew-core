@@ -7,12 +7,12 @@ class Klog < Formula
   head "https://github.com/jotaen/klog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9a991f938594ae7239be3146cf3e434c76ce0e77dfe8af79db376a8e5e21fef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9a991f938594ae7239be3146cf3e434c76ce0e77dfe8af79db376a8e5e21fef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9a991f938594ae7239be3146cf3e434c76ce0e77dfe8af79db376a8e5e21fef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4ff7f2c9e752ea6ba7ed016fd119ff37d58d19538e803f24d3b6c963f4fcf33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89ca8b1842fb2f4d4e485fc6c387acd0306ad8c073d57bbba64d0e0a82efdf36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cab271e9e7f45f308cd783309ee2b02a70bad752bb17e4c87c8a98543619bbb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f04bf8b78d72c92f0c708f48d5f9cb11c85b7266fc845874a08ef1d1c566fd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f04bf8b78d72c92f0c708f48d5f9cb11c85b7266fc845874a08ef1d1c566fd3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f04bf8b78d72c92f0c708f48d5f9cb11c85b7266fc845874a08ef1d1c566fd3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9685c77feb099c5a57f84e4f7ebbfe675354bd9a53b4680bfc20b280a56117e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "085936825f08a8df46e9be28d676e676000c1035e24dadadcf3c7b1a908d82a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6fb17a890a85adbc8829818930bed2aa5910cd8c72b61bc6aebefac7f06817d"
   end
 
   depends_on "go" => :build
