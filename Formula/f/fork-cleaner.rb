@@ -1,8 +1,8 @@
 class ForkCleaner < Formula
   desc "Cleans up old and inactive forks on your GitHub account"
   homepage "https://github.com/caarlos0/fork-cleaner"
-  url "https://github.com/caarlos0/fork-cleaner/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "9fde99ed9877efc80e6940f9958468531b72a232d98c433cfe7022fd4c6018d8"
+  url "https://github.com/caarlos0/fork-cleaner/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "28ded4826d8a36d25857b824bea1ae480c76029ff50e8d831f79e18c360ff032"
   license "MIT"
   head "https://github.com/caarlos0/fork-cleaner.git", branch: "main"
 
