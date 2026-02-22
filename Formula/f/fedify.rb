@@ -1,8 +1,8 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://github.com/fedify-dev/fedify/archive/refs/tags/1.10.3.tar.gz"
-  sha256 "95d0f4c9a67e634dbc1778f44e81922b8d5db005bef99e9bdd2b4bc11190c2f2"
+  url "https://github.com/fedify-dev/fedify/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "e831aea1dbe20a0c42beda1abe9e03ff65ebc1743720afcc214b4758c134f8c0"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
@@ -46,8 +46,7 @@ class Fedify < Formula
   end
 
   test do
-    version_output = shell_output "NO_COLOR=1 #{bin}/fedify --version"
-    assert_equal "fedify #{version}", version_output.strip
+    assert_match version.to_s, shell_output("NO_COLOR=1 #{bin}/fedify --version")
 
     json = shell_output "#{bin}/fedify lookup -e @homebrew@fosstodon.org"
     actor = JSON.parse(json)
