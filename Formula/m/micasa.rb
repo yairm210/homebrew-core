@@ -6,12 +6,12 @@ class Micasa < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b414610232f462f4cc2b84480a488fde1c2fb9d626a877ff7f7191b5845577c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b414610232f462f4cc2b84480a488fde1c2fb9d626a877ff7f7191b5845577c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b414610232f462f4cc2b84480a488fde1c2fb9d626a877ff7f7191b5845577c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92625c3710abd88d7ec629f70c06f75b907a02af2517eb85b9d643b82412e94c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67130db640abeef4a454b9d6677bc7fd8c8c4ae3aa932cef3f2f27bade94fbf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51a2c2330a8b01915852299fb22086eaf920b548413067c7a87b7b0ada5352d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a4684fc0b95c242800f647b860de8bb3a96c325fb50f42f67d23287217a0ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a4684fc0b95c242800f647b860de8bb3a96c325fb50f42f67d23287217a0ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a4684fc0b95c242800f647b860de8bb3a96c325fb50f42f67d23287217a0ac2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "845f6d119ce9b890384c64408558680f79e2e075f4b8536307851f8f6ce0beb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6781160bab5f6976757cc4a449abefef4fe60e4234249d22ab7c95156d87183c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "492148e581982de093e9a6a64e9c5462ffa2b8561c73d4831211642c399154c0"
   end
 
   depends_on "go" => :build
