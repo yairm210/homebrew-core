@@ -1,8 +1,8 @@
 class Worktrunk < Formula
   desc "CLI for Git worktree management, designed for parallel AI agent workflows"
   homepage "https://worktrunk.dev"
-  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "294baa3aad769ba761b559afbe8ea6c07e38ee09e672bff83e20457146246f98"
+  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "2a06a64c8884c2f22b100df674115027f22f4ca4b1ba6d0ccf2f16900925037d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
