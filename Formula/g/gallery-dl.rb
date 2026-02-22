@@ -8,6 +8,16 @@ class GalleryDl < Formula
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "75f0c1dbda83de208cd31e653ce8257bb66e4591aa1c8283d872073dfdd06825"
+    sha256 cellar: :any,                 arm64_sequoia: "daae9c3d10e5af0c2f365279483deea5c5d6eade3bf91291c673b4310e00f01f"
+    sha256 cellar: :any,                 arm64_sonoma:  "341c2398eb1b3eda262acc1a977f70b1ce581a347c0b3df56cc82f591893c30c"
+    sha256 cellar: :any,                 sonoma:        "92cb27f34cca06df1ba27e0688e786c899940bc48bd7d30a3a414362918f13e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbb186fdd063aa523c682c4e5955fd91870bc0657995f7eb3ceeb2dfe5819c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd755d41768dac92b6331aacd41204115fca61c16f3b0f02045bfffa38bde1dd"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
