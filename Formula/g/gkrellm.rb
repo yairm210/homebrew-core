@@ -1,8 +1,8 @@
 class Gkrellm < Formula
   desc "Extensible GTK system monitoring application"
   homepage "https://billw2.github.io/gkrellm/gkrellm.html"
-  url "https://gkrellm.srcbox.net/releases/gkrellm-2.5.0.tar.bz2"
-  sha256 "68c75a03a06b935afa93d3331ca1c2d862c1d50c3e9df19d9a8d48970d766b55"
+  url "https://gkrellm.srcbox.net/releases/gkrellm-2.5.1.tar.bz2"
+  sha256 "089e3c1ed398482e682c9900b504ea166a6144a6c9fa041e70c5bbca6b177e63"
   license "GPL-3.0-or-later"
 
   livecheck do
