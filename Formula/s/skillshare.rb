@@ -1,8 +1,8 @@
 class Skillshare < Formula
   desc "Sync skills across AI CLI tools"
   homepage "https://skillshare.runkids.cc"
-  url "https://github.com/runkids/skillshare/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "57758177df11ff323bea079ecfad4a6dbb6a632fd12cf7e8bbc04b10b786abbf"
+  url "https://github.com/runkids/skillshare/archive/refs/tags/v0.15.2.tar.gz"
+  sha256 "497b53beeaed3992cbb0bcf4f24d8d385bb24817e3272c6a0796479127ffc10d"
   license "MIT"
   head "https://github.com/runkids/skillshare.git", branch: "main"
 
