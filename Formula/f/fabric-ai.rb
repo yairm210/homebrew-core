@@ -1,8 +1,8 @@
 class FabricAi < Formula
   desc "Open-source framework for augmenting humans using AI"
   homepage "https://github.com/danielmiessler/fabric"
-  url "https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.418.tar.gz"
-  sha256 "eb35907b180f82c44f93ffc682a01ab6e5d67792eff57bcd5beb36808a8f6b31"
+  url "https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.419.tar.gz"
+  sha256 "a855856a22bda88cd25cebf3cb547de560801d0ce336509ac3615254c110dae6"
   license "MIT"
   head "https://github.com/danielmiessler/fabric.git", branch: "main"
 
