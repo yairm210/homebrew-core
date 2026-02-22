@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
   homepage "https://objfw.nil.im/"
-  url "https://objfw.nil.im/downloads/objfw-1.4.4.tar.gz"
-  sha256 "29be5ea5d6a9c34b9873a40091367eb0b75072d627e2508380c02c38cb60ca38"
+  url "https://objfw.nil.im/downloads/objfw-1.5.tar.gz"
+  sha256 "438f18ea760b081bdfcb2b3829c62b8645d241dde08d65a8c004ee4f6b56d9f4"
   license "LGPL-3.0-only"
   head "https://git.nil.im/ObjFW/ObjFW.git", branch: "main"
 
@@ -23,10 +23,10 @@ class Objfw < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "llvm"
-    depends_on "openssl@3"
     depends_on "zlib-ng-compat"
   end
 
@@ -67,4 +67,3 @@ index 3ec1cc5c..c0c31cac 100644
  		])
  
  		AC_SUBST(FRAMEWORK_LDFLAGS)
-
