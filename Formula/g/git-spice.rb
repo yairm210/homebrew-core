@@ -1,8 +1,8 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https://abhinav.github.io/git-spice/"
-  url "https://github.com/abhinav/git-spice/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "606f03bff29c6d6e78a74ff4380c5a1b0d6ccde6b8aae2725d8738adea6033d6"
+  url "https://github.com/abhinav/git-spice/archive/refs/tags/v0.24.2.tar.gz"
+  sha256 "6605166dc47b179af0d3e9714dba83254b633e78d6b0bc2189592c5067b0ccf2"
   license "GPL-3.0-or-later"
   head "https://github.com/abhinav/git-spice.git", branch: "main"
 
@@ -23,9 +23,22 @@ class GitSpice < Formula
 
   def install
     ldflags = "-s -w -X main._version=#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"gs")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"git-spice")
+    bin.install_symlink "git-spice" => "gs"
 
     generate_completions_from_executable(bin/"gs", "shell", "completion")
+    generate_completions_from_executable(bin/"git-spice", "shell", "completion")
+  end
+
+  def caveats
+    <<~EOS
+      The executable has been renamed to 'git-spice'.
+      To ease the transition, this release also symlinks 'gs' to 'git-spice'.
+      The symlink will be dropped in a future release.
+      If you prefer to use 'gs', add an alias to your shell configuration:
+
+        alias gs='git-spice'
+    EOS
   end
 
   test do
@@ -36,11 +49,11 @@ class GitSpice < Formula
     system "git", "add", "foo"
     system "git", "commit", "-m", "bar"
 
-    assert_match "main", shell_output("#{bin}/gs log long 2>&1")
+    assert_match "main", shell_output("#{bin}/git-spice log long 2>&1")
 
-    output = shell_output("#{bin}/gs branch create feat1 2>&1", 1)
+    output = shell_output("#{bin}/git-spice branch create feat1 2>&1", 1)
     assert_match "error: Terminal is dumb, but EDITOR unset", output
 
-    assert_match version.to_s, shell_output("#{bin}/gs --version")
+    assert_match version.to_s, shell_output("#{bin}/git-spice --version")
   end
 end
