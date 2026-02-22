@@ -6,12 +6,12 @@ class WasmBindgen < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0183cb2d7418b222664fd0402ed0ca484de14d8bded8c12ae3d80edec5707f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "915eaf15e553e6be53fe15845f52e0521a8bca84edbf7765ecf74e37c2cda3ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdb72ebd441bb890e51dfd669296fcf1078150c1cccfe905f95842d1202e70e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5555e407963833798db2651a138eaaf3101372fc52736180971fb93526533a35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4fbb53e12298342f4f82a61dda3608a63341a654c08e9d0a99fc61124a06b50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "669b7ea7fd5a29bffac07c26789de97bf7df599b37df778bcc2c818f1df67367"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76a22acbbf500b1a226d8bb2d183173b8d19a6da9971fd338019e6084ef242b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45f8fdc38d1af93b3b8a5ceb4311d637d4b88000a749293e933065fd9af31554"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88d1eafebdb6ca32e3a76efe8597021358c9799e9147ed3f18e4abd8ba73c01e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d42edfce1a5a8b42078a5a640155f5ceb47d310872c32bb37518ab422caa7018"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2a4c2e324429ba57e68da2ddcf86922e219720fef49fa3a062083ed8957ce29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24372043510e15eddb3f6f3fe11a180077561f8957dc0a57cea51755fc94a87"
   end
 
   depends_on "rust" => :build
