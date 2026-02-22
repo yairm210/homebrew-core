@@ -6,12 +6,12 @@ class Bbtools < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71be15b758fd99b04d6b6ba403129d6c2dfca5e390b6b98bf169c0a2255a3aaf"
-    sha256 cellar: :any,                 arm64_sequoia: "92ffa32edd58dc63e3c7042d75a8e49d4f621faf882cb58dbcbe4f60da742a35"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c5bd8233714586c6240217cd5f05fa0ce751c57b8ca0e58a64460518f1aeba7"
-    sha256 cellar: :any,                 sonoma:        "7dde401858bda5fe283c0dfb66e1356ebc52b64fc08d7885ca8b0fe932398789"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8973803637fe7c8abea1405afcc2294144d0cc9efac0fda1062251efe30e95a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06ea9a0f5722a041477ee66e9d170e4d52fbe21c2f48e55400f95e26857aa807"
+    sha256 cellar: :any,                 arm64_tahoe:   "7b38a8d78f8eb9883229b3192394c6a85fe2275563de3d799de4132ff57ba354"
+    sha256 cellar: :any,                 arm64_sequoia: "60f80990bcc5939e588f640b9c90a8637fcda4740e48c7a36ab3f99fdf8fca7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "1608ce56d1ab5d534247e0f83ac8f21000cbfd4f43f4164f2c2a7685dcf60044"
+    sha256 cellar: :any,                 sonoma:        "4b8c2e5b182667829ddcf99f9904713d7ffc4fd4e68b12a644e6254b968e8730"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4316d04b7928144b207f53f0288b2fd5db42bf02efd70f1b4b53e2ba8648aa26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "878a9172e70e51e7c5743b272f686f9b4b5d120d7a6dbacccd239fa06727beca"
   end
 
   depends_on "openjdk"
