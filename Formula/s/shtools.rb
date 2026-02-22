@@ -1,8 +1,8 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
   homepage "https://shtools.github.io/SHTOOLS/"
-  url "https://github.com/SHTOOLS/SHTOOLS/archive/refs/tags/v4.13.1.tar.gz"
-  sha256 "d5890049fb915604f25576cbbb9f18980a3fc88d28fe380809e3c3497448dacb"
+  url "https://github.com/SHTOOLS/SHTOOLS/archive/refs/tags/v4.14.1.tar.gz"
+  sha256 "df2085e1408b078009a798db0c7eb13b56968853d8b86e1a963695fcb985bef7"
   license "BSD-3-Clause"
   head "https://github.com/SHTOOLS/SHTOOLS.git", branch: "master"
 
@@ -28,9 +28,6 @@ class Shtools < Formula
   end
 
   def install
-    # Workaround for arm64 linux, https://github.com/SHTOOLS/SHTOOLS/issues/507
-    inreplace "Makefile", " -m64 ", " " if OS.linux? && Hardware::CPU.arm?
-
     system "make", "fortran"
     system "make", "fortran-mp"
     system "make", "install", "PREFIX=#{prefix}"
