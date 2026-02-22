@@ -26,7 +26,7 @@ class Opencolorio < Formula
   depends_on "openexr"
   depends_on "pystring"
   depends_on "yaml-cpp"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   on_arm do
     depends_on "sse2neon" => :build
