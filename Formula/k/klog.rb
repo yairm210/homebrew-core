@@ -1,8 +1,8 @@
 class Klog < Formula
   desc "Command-line tool for time tracking in a human-readable, plain-text file format"
   homepage "https://klog.jotaen.net"
-  url "https://github.com/jotaen/klog/archive/refs/tags/v7.0.tar.gz"
-  sha256 "4f0a87eb65eb2ce047ba05af0c03cf84deba142b0f2eebcf5d4614f6351d6489"
+  url "https://github.com/jotaen/klog/archive/refs/tags/v7.1.tar.gz"
+  sha256 "3cd6eee1adc16c2105713718e23b67d9607ac9872a0dbc31689c6051d0176ea6"
   license "MIT"
   head "https://github.com/jotaen/klog.git", branch: "main"
 
