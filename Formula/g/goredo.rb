@@ -11,13 +11,12 @@ class Goredo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d979f5ba93d0235c34781c18594ca1e828e430587eccd5407bdf2e12a830c60b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfdb027bb5f913d5eaf326ba4fabed0a61b14dc7cea6bea9419480f8c487a747"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5780fe19c35cda4fb5c2d884c4154488848f3d843be8734859637501e829d31d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39594646d5886a2fed9a3574dd80ee2269c37a653962338a5bc013907b8c2be9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39594646d5886a2fed9a3574dd80ee2269c37a653962338a5bc013907b8c2be9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39594646d5886a2fed9a3574dd80ee2269c37a653962338a5bc013907b8c2be9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b978e1253e230cea88f12e5a6a30e29b051b552fda6d739939bc3b6ba1faf4ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0951d98cb61b0d9da7152f5209c06100b17a9d6677b8647444ecdd15ff481f2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaed3d7c4a251b26f67767ba92951a43ed1f89f5414fb25b9ba781d5c96cb5bb"
   end
 
   depends_on "go" => :build
