@@ -49,10 +49,7 @@ class Hashlink < Formula
     # These appear to be renamed shared libraries specifically used by HashLink.
     args = ["PREFIX=#{prefix}"]
 
-    if OS.mac?
-      # make file doesn't set rpath on mac yet
-      args << "EXTRA_LFLAGS=-Wl,-rpath,#{rpath}"
-    else
+    if OS.linux?
       args << "ARCH=arm64" if Hardware::CPU.arm?
       # On Linux, also set RPATH in LIBFLAGS, so that the linker will also add the RPATH to .hdll files.
       inreplace "Makefile", "LIBFLAGS =", "LIBFLAGS = -Wl,-rpath,${INSTALL_LIB_DIR}"
