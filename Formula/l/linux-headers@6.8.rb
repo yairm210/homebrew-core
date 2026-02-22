@@ -9,6 +9,11 @@ class LinuxHeadersAT68 < Formula
     skip "Final kernel.org release for 6.8. Consider adding patches from Ubuntu 24.04."
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "64614bcba5f4d9b9535bdd54b68a588aa2c9f56f78fa048b60ddb6e98a21aea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f3000358f22ee25e733aa9dcf0881b5ec4f3c2805372d4fbe988039deaa1fef"
+  end
+
   keg_only :versioned_formula
 
   depends_on :linux
