@@ -1,8 +1,8 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://github.com/dyne/frei0r/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "318ec4a3042c94a00a58fccdc1eb0d911f36a22beb3504d27aefcca4598f40b0"
+  url "https://github.com/dyne/frei0r/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "fa6abb2a1e86cec4972f9dc891a4953c35d716a72b860c67888a26bbf1877862"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -17,12 +17,10 @@ class Frei0r < Formula
   depends_on "cmake" => :build
 
   def install
-    # Disable opportunistic linking against Cairo
-    inreplace "CMakeLists.txt", "find_package (Cairo)", ""
-
     args = %w[
       -DWITHOUT_OPENCV=ON
       -DWITHOUT_GAVL=ON
+      -DWITHOUT_CAIRO=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
