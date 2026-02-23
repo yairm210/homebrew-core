@@ -6,7 +6,7 @@ class Certsync < Formula
   url "https://files.pythonhosted.org/packages/c8/75/3928920bdbfb0af317446236fad17b47a1d6aad507f1ae2eed6bbf7e7ad9/certsync-0.1.6.tar.gz"
   sha256 "bbfffd10f36edcb8c4d2d5033f2a2e1e7d641e41d6c5bd11069e7b0827fa1c8d"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f386009da03d710bcaa6b74a9a8fc3d2ca7fbcd3876870f02127ac7e698e386"
@@ -57,13 +57,13 @@ class Certsync < Formula
   end
 
   resource "dsinternals" do
-    url "https://files.pythonhosted.org/packages/ef/e4/2ceffa1b0e1751e3470deaa4512f22d46b8e51ec2227c679b73dbe4165e5/dsinternals-1.2.4.tar.gz"
-    sha256 "030f935a70583845f68d6cfc5a22be6ce3300907788ba74faba50d6df859e91d"
+    url "https://files.pythonhosted.org/packages/f0/29/41a6937ecc61812d09b9177a09c6f4a3edc499c0e227180d572a23e24e7b/dsinternals-1.2.5-py3-none-any.whl"
+    sha256 "25c544558381a86644fc6ef3b131f2a7450675b35e324553cb414b696d86d7bd"
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
-    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+    url "https://files.pythonhosted.org/packages/26/00/35d85dcce6c57fdc871f3867d465d780f302a175ea360f62533f12b27e2b/flask-3.1.3.tar.gz"
+    sha256 "0ef0e52b8a9cd932855379197dd8f94047b359ca0a78695144304cb45f87c9eb"
   end
 
   resource "idna" do
@@ -142,8 +142,8 @@ class Certsync < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
+    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
   end
 
   resource "six" do
@@ -152,8 +152,8 @@ class Certsync < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
+    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   resource "unicrypto" do
@@ -167,8 +167,8 @@ class Certsync < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   def install
