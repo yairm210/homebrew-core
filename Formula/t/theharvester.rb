@@ -11,12 +11,12 @@ class Theharvester < Formula
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d00668c16deaee602dd0080dce392226839ecda02c2a3d5f522a9961709fb17a"
-    sha256 cellar: :any,                 arm64_sequoia: "19d7add1b07c42b7a5a85ff8ae0a97a35cdf68b68f372d58d14046226cb067d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "e351dc0f2d21dc7d33096c9ae162510f8b4e55e62c93c65c916eb4ecfd1081d3"
-    sha256 cellar: :any,                 sonoma:        "f2c6bbe84f9fca4fbb1fab600cfe5609f8c17d371728608d6728aafc55ccdf55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad70461ae4e7991126d49d4d77d7fca31446dd35e58b2ca6b4f033201af4b751"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e1553ae01506472d3e33b98df1de5821e8bbe08e5e1d06d147f356ceddd58b"
+    sha256 cellar: :any,                 arm64_tahoe:   "636d1505928e2d2caeee8060a354e057ccf41d06e71e2ca404bdb8c2514db213"
+    sha256 cellar: :any,                 arm64_sequoia: "805224bb8d2fc6c36503cd5ca3d03192b731b58eb78b4a4ea03308fde133dec9"
+    sha256 cellar: :any,                 arm64_sonoma:  "3120cc65711fdb91a4b8cb629494e4ae84856cbd7aa4e46c51b7fe58b34d3f35"
+    sha256 cellar: :any,                 sonoma:        "d17f9018009b14c85ac8083eabfc5377e4f0ebc659ecdc62407a55a884c253bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e689de814ac121f7eacf512a3a9be59dcd45450bd93ebd35780ddb7b1b639ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc8a5cda194958c55ccf31e7b3eb97d282900c24a9136a74edc759b8ac01724"
   end
 
   depends_on "cmake" => :build
