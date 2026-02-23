@@ -5,6 +5,15 @@ class BazelDiff < Formula
   sha256 "cb9d552dd5290e69e740fde77ff1687794ad5cb1efac7dcfb4c14fa9588f6490"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ec449d83bbd1bdc4bfc19120da1321a38e356b77ab23d7527821610e9b8a736"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f3e5cba3116bb7bbcff28efda1e418b5fd74bccf6390553424ec35c17245c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7492bf4c58ffc72a5ab4595b7ffdedbb40f207e5b6a3070d0a3e2f38dfc20560"
+  end
+
   depends_on "bazel" => [:build, :test]
   depends_on "openjdk"
 
