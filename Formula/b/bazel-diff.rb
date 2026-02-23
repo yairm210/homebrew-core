@@ -1,17 +1,17 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://github.com/Tinder/bazel-diff/releases/download/15.0.3/release.tar.gz"
-  sha256 "cb9d552dd5290e69e740fde77ff1687794ad5cb1efac7dcfb4c14fa9588f6490"
+  url "https://github.com/Tinder/bazel-diff/releases/download/15.0.4/release.tar.gz"
+  sha256 "3dcbf162e9d287378edfcbf5f0008cd3f0f1bbe709aa3729f0d23c4601bc070f"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f6763240dd786df11a84dba13e082364779cf1866482532b816b69c170ec932"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ec449d83bbd1bdc4bfc19120da1321a38e356b77ab23d7527821610e9b8a736"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f3e5cba3116bb7bbcff28efda1e418b5fd74bccf6390553424ec35c17245c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7492bf4c58ffc72a5ab4595b7ffdedbb40f207e5b6a3070d0a3e2f38dfc20560"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24583075c106993aa04ef1fe6197588db95c0617fd338ee18cda68e24e833973"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24583075c106993aa04ef1fe6197588db95c0617fd338ee18cda68e24e833973"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24583075c106993aa04ef1fe6197588db95c0617fd338ee18cda68e24e833973"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77c372b1b63877281ac6f6f37200c2e4db9c963350fd9a2c9ae1958f31120aa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cee9cd33cc65839e5342dd802d4b3a67c87c61fdd11624e1e582cadc0de3315f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1622b43fa22dfb39fb9f46b6ae6c6de692439434b64ee36ce9ac999ac4a0969"
   end
 
   depends_on "bazel" => [:build, :test]
