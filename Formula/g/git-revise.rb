@@ -9,8 +9,7 @@ class GitRevise < Formula
   head "https://github.com/mystor/git-revise.git", branch: "main"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, all: "0b06f748fef88b876546518daf22793e085197982bade5ebe8717552923c8903"
+    sha256 cellar: :any_skip_relocation, all: "3e1ae84726cd469773545306d82f51ede22cf7fe406b05f811fb59404012276c"
   end
 
   depends_on "python@3.14"
