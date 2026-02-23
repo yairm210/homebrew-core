@@ -1,8 +1,8 @@
 class Gastown < Formula
   desc "Multi-agent workspace manager"
   homepage "https://github.com/steveyegge/gastown"
-  url "https://github.com/steveyegge/gastown/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "b633b69592c207f200ec827a433f30dcc3d7b018bebc57dc4a2de59dd2d5d6a4"
+  url "https://github.com/steveyegge/gastown/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "821026116293fdf27ec33c89995672ba3473115d3111773d6be780f49e42b5a2"
   license "MIT"
   head "https://github.com/steveyegge/gastown.git", branch: "main"
 
@@ -17,12 +17,7 @@ class Gastown < Formula
 
   depends_on "go" => :build
   depends_on "beads"
-
-  # update timeout for `bd version` check, upstream pr ref, https://github.com/steveyegge/gastown/pull/871
-  patch do
-    url "https://github.com/steveyegge/gastown/commit/991bb63dc0181d5d6356d52a6319d70ff1684786.patch?full_index=1"
-    sha256 "2d584793851a1ae00e71a1fbe77512c84a33b3d0b81e5203e92cc6c11d0f3bdf"
-  end
+  depends_on "icu4c@78"
 
   def install
     ldflags = %W[
