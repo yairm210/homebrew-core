@@ -1,10 +1,9 @@
 class Libpeas < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  url "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.0.tar.xz"
-  sha256 "c2887233f084a69fabfc7fa0140d410491863d7050afb28677f9a553b2580ad9"
+  url "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.1.tar.xz"
+  sha256 "589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
     rebuild 1
