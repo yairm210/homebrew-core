@@ -1,21 +1,10 @@
 class Libid3tag < Formula
   desc "ID3 tag manipulation library"
   homepage "https://codeberg.org/tenacityteam/libid3tag"
+  url "https://codeberg.org/tenacityteam/libid3tag/releases/download/0.16.4/id3tag-0.16.4-source.tar.gz"
+  sha256 "8b6bc96016f6ab3a52b753349ed442e15181de9db1df01884f829e3d4f3d1e78"
   license "GPL-2.0-only"
   head "https://codeberg.org/tenacityteam/libid3tag.git", branch: "main"
-
-  stable do
-    url "https://codeberg.org/tenacityteam/libid3tag/archive/0.16.3.tar.gz"
-    sha256 "0561009778513a95d91dac33cee8418d6622f710450a7cb56a74636d53b588cb"
-    # Allow build with CMake 4.0.0
-    # Remove on next release.
-    patch do
-      url "https://codeberg.org/tenacityteam/libid3tag/commit/eee94b22508a066f7b9bc1ae05d2d85982e73959.patch"
-      sha256 "f4278e88cb23b0a2aa2bb2c074c6fc2e61029b6d0d77856f4439c3f75f888cbc"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     rebuild 2
