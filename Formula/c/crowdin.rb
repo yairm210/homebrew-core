@@ -1,8 +1,8 @@
 class Crowdin < Formula
   desc "Command-line tool that allows to manage your resources with crowdin.com"
   homepage "https://support.crowdin.com/cli-tool/"
-  url "https://github.com/crowdin/crowdin-cli/releases/download/4.13.0/crowdin-cli.zip"
-  sha256 "5e746e6ce12d682007d25247c811a2eea8cb146640eed7ce19d69a18d3aca206"
+  url "https://github.com/crowdin/crowdin-cli/releases/download/4.14.0/crowdin-cli.zip"
+  sha256 "acdb420a7b2c3108224d4e01ac7f2e5078ceb93cafac7aa528a15c96146b9d91"
   license "MIT"
 
   livecheck do
