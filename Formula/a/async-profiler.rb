@@ -6,6 +6,15 @@ class AsyncProfiler < Formula
   license "Apache-2.0"
   head "https://github.com/async-profiler/async-profiler.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a22cc696b639d326786fb71cd8a1dc121aba26962aaa87e5ec68057795edccc2"
+    sha256 cellar: :any,                 arm64_sequoia: "c339e4e5c3463a45ecdb4a93633854559e40ff128ba3eaa7dae2665935d8285f"
+    sha256 cellar: :any,                 arm64_sonoma:  "976d7a9057d97a490aaa95ea0e908f8066ce0629114cdc64f25ba4df7e7495b6"
+    sha256 cellar: :any,                 sonoma:        "eaa11bd51896193995a0902f7bc5ad698154169cc01920793d1270f95bce7fce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb5b1bb4f00674a12985f31b5aa79f9fd9a33f62b96a640c3b57bfdcfe877ba4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2b7eb1b4d1c8704e028f8e4ea609de3b94c84348da76d65d765b525a4904f93"
+  end
+
   depends_on "cmake" => :build
   depends_on "openjdk" => [:build, :test]
 
