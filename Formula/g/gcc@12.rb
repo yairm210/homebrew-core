@@ -1,16 +1,14 @@
 class GccAT12 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
-  sha256 "704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.xz"
+  sha256 "71cd373d0f04615e66c5b5b14d49c1a4c1a08efa7b30625cd240b11bab4062b3"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   # https://gcc.gnu.org/gcc-12/
-  # TODO: skip livecheck after 12.5.0
   livecheck do
-    url :stable
-    regex(%r{href=["']?gcc[._-]v?(12(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+    skip "No longer developed or maintained"
   end
 
   bottle do
@@ -42,15 +40,21 @@ class GccAT12 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/gcc/gcc-12.4.0.diff"
-    sha256 "c0e8e94fbf65a6ce13286e7f13beb5a1d84b182a610489026ce3e2420fc3d45c"
+    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/8ce16876120a7c9b08682f6128e24aca41ebac60/Patches/gcc/gcc-12.4.0.diff"
+    sha256 "6178f6473bd2c225ed80745834d584e1c3beff9597f5afa982f249efb39ca084"
   end
   # Backport commits to build on Sonoma/Sequoia to allow rebottling.
-  # TODO: merge into above patch when updating to 12.5.0.
+  # TODO: create merged patch if https://github.com/iains/gcc-12-branch is synced to 12.5.0
   patch do
     on_macos do
-      url "https://github.com/iains/gcc-12-branch/compare/e300c1337a48cf772b09e7136601fd7f9f09d6f1..99533d94172ed7a24c0e54c4ea97e6ae2260409e.patch"
-      sha256 "f01bf173c1980cef680e407a5cc4f34af13a3e54cd644138735ec35adc5c6e40"
+      url "https://github.com/iains/gcc-12-branch/compare/e300c1337a48cf772b09e7136601fd7f9f09d6f1..914cec39148b1c8a697976275629aa8526ea1050.patch"
+      sha256 "f622b8fb9d36d679bed2c98adc47c46029d40923646410704eb8e04cd672de96"
+    end
+  end
+  patch do
+    on_macos do
+      url "https://github.com/iains/gcc-12-branch/compare/f0f9d56ffca2da2cab9af21c0c378ffe4d9cf908...99533d94172ed7a24c0e54c4ea97e6ae2260409e.patch"
+      sha256 "7aa45104e32a4fd288a8f3b931848dc5c306d0b295ca28c8bf60a048edd8d2a5"
     end
   end
 
