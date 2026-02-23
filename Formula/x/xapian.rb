@@ -1,8 +1,8 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.30/xapian-core-1.4.30.tar.xz"
-  sha256 "4edf9989499e8bc95085c9f7108ed41d69546c34c6eea81da0fa22d95043bf72"
+  url "https://oligarchy.co.uk/xapian/1.4.31/xapian-core-1.4.31.tar.xz"
+  sha256 "fecf609ea2efdc8a64be369715aac733336a11f7480a6545244964ae6bc80811"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -32,8 +32,8 @@ class Xapian < Formula
   skip_clean :la
 
   resource "bindings" do
-    url "https://oligarchy.co.uk/xapian/1.4.30/xapian-bindings-1.4.30.tar.xz"
-    sha256 "abf46acd62b9647157f36b636e1844e7e3bd9457e42312c40029ed63c602379c"
+    url "https://oligarchy.co.uk/xapian/1.4.31/xapian-bindings-1.4.31.tar.xz"
+    sha256 "a38cc7ba4188cc0bd27dc7369f03906772047087a1c54f1b93355d5e9103c304"
 
     livecheck do
       formula :parent
