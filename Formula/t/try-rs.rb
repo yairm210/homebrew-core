@@ -7,12 +7,12 @@ class TryRs < Formula
   head "https://github.com/tassiovirginio/try-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66fd612b55689a3b5682e47464992e4b6dbcebb3d56cb7879dabb3bb1921e4b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36ea56d100a918150728a2c499924fc25595231db313a1f93e25b5dd32e65b2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a663225b4382cf61c22a0c048a47e5a0c807c6466a25a83d1f850e91ab4e47ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bd51a4a5bd107e8a6fc0d9da019323a55c5a3c92ad1200a2e2c06da03500aca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b897401a56a3bb5325d8a0749db12228af66d2b57563c870a1269adcb6c1018f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "272fd2ab80a5f76ed8397c0e493737ec82a1e77689036c21171f19c9448b442f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bfa2fd2990a06ca599b6e2c2dd0b3a6b2cfb7ca284b56a563b3ec35a3cffd21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2181d96bf205086bb1b95a7d88a555802a8c5aaac2827a9af038529b6e85a11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4aed30ecfe604f5f45ffc8ff7b12f5d773973ae8aab76ed26e6625271452feb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd0d1e06ca3aff54e9717458f1b27512d73a5794e4ed6dded00148ec2fc4c27c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc409a72ea25a2909b001c79953fce52cdf57a1cf3fe431da9764b79a677559"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48878b401eb12037b6714c823f7be6bc01ea8261366d5f55493aa7e3d7561a21"
   end
 
   depends_on "rust" => :build
