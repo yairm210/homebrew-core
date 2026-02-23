@@ -3,8 +3,8 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/f1/9d/24c3ba99f424f1c4db484d0e0b88c09d1ed02295c9ac0826a7c9d596de4c/bzt-1.16.48.tar.gz"
-  sha256 "3420a155d832f944a0325afe99a12e689a865696a6787eb370d3e17bd742ff4f"
+  url "https://files.pythonhosted.org/packages/e1/5d/4372f76a9a483247538138d84ad21e303f88c35c630b9745c1c69bec05f1/bzt-1.16.49.tar.gz"
+  sha256 "827408e83f8ae07a42982bf7541fd5b1f8f9162a09cfc342ba8f0d4bfd8f65e2"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
@@ -170,8 +170,8 @@ class Bzt < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "python-dateutil" do
