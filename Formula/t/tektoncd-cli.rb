@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://github.com/tektoncd/cli/archive/refs/tags/v0.43.0.tar.gz"
-  sha256 "79b602e74aea0363bb9bff8e51fadbd43765c56864207fa9606500c71ba5ffbb"
+  url "https://github.com/tektoncd/cli/archive/refs/tags/v0.44.0.tar.gz"
+  sha256 "1b6b70947056ec98a9e4f303ea802f44d150cf16363125d8b8cab20d41e3a91c"
   license "Apache-2.0"
 
   livecheck do
