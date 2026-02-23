@@ -6,6 +6,15 @@ class Kaf < Formula
   license "Apache-2.0"
   head "https://github.com/birdayz/kaf.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "379b9487564e3ea80dd8d2c78dce8b4b195078cc1dd1706e023d1da8e5712196"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1945920632597ef44df9b33ccb7f25b6ad66d96f24cc3da14e42129f5709398"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aba91729665c1f0f532c253b87e0a14cba5c60d1ca384ec99c80a6603323a4d5"
+  end
+
   depends_on "go" => :build
 
   def install
