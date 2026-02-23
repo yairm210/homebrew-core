@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://github.com/coder/coder/archive/refs/tags/v2.29.6.tar.gz"
-  sha256 "3d66744739a9c6a2d16e4ad0ac39847c0966bd79ced737380b04da14556c0939"
+  url "https://github.com/coder/coder/archive/refs/tags/v2.29.7.tar.gz"
+  sha256 "d401455d789c26b6272b7285b7a4fe199cb9bba7a6b551720e530508c95d688c"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
