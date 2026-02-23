@@ -8,6 +8,15 @@ class Scdl < Formula
   license "GPL-2.0-only"
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c53dd9bca484cb1314f2b245366cfe2827398fd37cb90825dfdf7c33b124834"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50aade0c02039ee017426aaae3aaecd5a1317ab9a2ca43760893c30871369024"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce7782e4ea3d28c9388ccfad4175ecc41fd38b94e9b05cdf21ac4e99d39075a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf0119c66fbca86e2385c89eaa216a3b7f28e666c6651a060ca0290fff64cec2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60ab05fbd09e5ab81f729edd62c934749e68a50726bf0fc0ef79dce5022c697a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440a651fb52aa6dbfea3b5e05f3127d22df5d75092933d31889233f64dc5ff39"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cffi" => :no_linkage
   depends_on "ffmpeg"
