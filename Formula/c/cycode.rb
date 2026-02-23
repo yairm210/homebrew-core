@@ -9,12 +9,12 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0359a2090c24a2d970655a54d7e5207ef9d7c9a4ec44af2f8de9e3ae7b6998b2"
-    sha256 cellar: :any,                 arm64_sequoia: "827868765dd96681a619c0909ad39b372617afc70c24d642a5caf5a7df1efcaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3745177e6fa19553f4ae4aab51727d68bf6cb165142335c245ae861b173d810"
-    sha256 cellar: :any,                 sonoma:        "90feab1c69c0d8342236fa121af4fb5aaa914e3cbb03478c0fdda36dfa0f2733"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "203ec2aaf020fbbfc1cebfe2b54f827527ebf377c177139802dfd212826969bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7fe2cde94bb48a82a7b2ee0a2272c92ade2fad42088fc201da08d25ad2ee6da"
+    sha256 cellar: :any,                 arm64_tahoe:   "3dd1a6afce4da89edd742b958a015be66aec3759c1975cc5692495b88ce6d695"
+    sha256 cellar: :any,                 arm64_sequoia: "2bfa96b55e03940080101c2ab7733931d0aa08682bb62f4654b71764b132cdd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe84bdb1ef8bc6e12db21b899d35a9ca5a60bc2e5764b4ce461cb99f52a9fb24"
+    sha256 cellar: :any,                 sonoma:        "19ffb5fd8659908e53c318f2fffd70f795ca7ed8ec9d3f1076fd2025be635d7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e03ae3189f97c61d0b72ed2870b9aa30f9e811f809fe8a6f81ed6dbf8cab56c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb191c5b552c96e8b810397d5ad2a0fbc41a9bc1b99f10f2d8410feeb3d095a2"
   end
 
   depends_on "certifi" => :no_linkage
