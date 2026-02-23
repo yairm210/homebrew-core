@@ -1,8 +1,8 @@
 class Openfga < Formula
   desc "High performance and flexible authorization/permission engine"
   homepage "https://openfga.dev/"
-  url "https://github.com/openfga/openfga/archive/refs/tags/v1.11.5.tar.gz"
-  sha256 "678814ba927a70d9ea44bfbd46b9adb63f50e5b3c9e77e2fbe9f483a3d5f4735"
+  url "https://github.com/openfga/openfga/archive/refs/tags/v1.11.6.tar.gz"
+  sha256 "02a6b227fef3c081fd052cece200399a1e18f4acb736719934d0e5831d4b4be0"
   license "Apache-2.0"
   head "https://github.com/openfga/openfga.git", branch: "main"
 
