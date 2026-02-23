@@ -9,12 +9,12 @@ class Mapproxy < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0728d13b04f6432edd2b9133e8b6481e98351a1d5127513fdf4a370aedc4bb4"
-    sha256 cellar: :any,                 arm64_sequoia: "29635c1379e483159dc64471c1f803cca29c912cee8c7c720135cea4b6cd0e25"
-    sha256 cellar: :any,                 arm64_sonoma:  "c20fee6a17d9a2ccb8272898770c01a80c4a46165f2205398c0a6c71d0907655"
-    sha256 cellar: :any,                 sonoma:        "7df1ce76b9da4f1a5f7f391e5990c6b37d7512cac7149a4be2ff9577a2481619"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "776f7c3124b697d0286737b11d6c9179f734e65c91dbca7d0e7b64455c9f188d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "367f2279c9ca9ee7cfef67d7f7363a8affa871b468cada2db6a63842594e8224"
+    sha256 cellar: :any,                 arm64_tahoe:   "fff1075146f7b05b42e2e62ef7b3b89289ebf5b1a2d252e62988d1a70a2abd67"
+    sha256 cellar: :any,                 arm64_sequoia: "a4e92fa4fbb459f869441ba6eff8b58519fbfb225ea23c5615f360753ea44295"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef4deede0e7dc309491f9d10223017be0a1afefa0ed71861abf9b3e8b429a7de"
+    sha256 cellar: :any,                 sonoma:        "2ef17b0c91eb0f771938d6b4d8f865a0c69a7180cf9dddf56f0f082d06cb59d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1503a8a7d6478f5c6d0df12fda9163900f0aa49152c2514189f9fce9397f53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14440b9b2be116fe0c01f93874d0c3ed5ccd88c47aa6316b71d7e3cb14a73c56"
   end
 
   depends_on "pkgconf" => :build
