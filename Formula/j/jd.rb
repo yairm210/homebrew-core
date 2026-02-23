@@ -1,8 +1,8 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
-  url "https://github.com/josephburnett/jd/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "084aeab667883da93dea85ece23e517e9d35aa1cfbf2e86dfc360556f71d2f83"
+  url "https://github.com/josephburnett/jd/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "f4d141122ad91d1e7628e9cfee95ca183113e144872cce61f6d3d56449efa19b"
   license "MIT"
   head "https://github.com/josephburnett/jd.git", branch: "master"
 
@@ -28,6 +28,7 @@ class Jd < Formula
     (testpath/"b.json").write('{"foo":"baz"}')
     (testpath/"c.json").write('{"foo":"baz"}')
     expected = <<~EOF
+      ^ {"file":"a.json"}
       @ ["foo"]
       - "bar"
       + "baz"
