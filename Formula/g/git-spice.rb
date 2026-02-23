@@ -9,12 +9,12 @@ class GitSpice < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "207df90982a246096dd229f68f90440106c068de5e23f880d1d6f650d17c1944"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "207df90982a246096dd229f68f90440106c068de5e23f880d1d6f650d17c1944"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "207df90982a246096dd229f68f90440106c068de5e23f880d1d6f650d17c1944"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9f3bbb181b1be833de8ef518fe731b12dfdab837a965187b36885a8e3df3843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a4964013504d7e914bb45963f1e832173873a7512c62652b04e0473ffffd09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6775405c0ac27cb37f6da0fd7675412c09a9177e83a73a6e0290dfcbea9049e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d655c0b65bf4d3a061f7b55ae16530585eca0fc8b5d45f00255ce1355b41a07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de2dbe8a6bde74014878969036a97710c9f7ae34b3fcddbe0edd3bfa91c2beaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a9ee526792a2ae72bf7d38728e2455d9843482481bfbe45a570ea2bb8b21c20"
   end
 
   depends_on "go" => :build
