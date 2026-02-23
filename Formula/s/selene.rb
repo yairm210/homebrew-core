@@ -15,13 +15,10 @@ class Selene < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e557d22a1a4bfbaaa14fd1c7fd9cd05e4154b9390a488e256cde521efea7106"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   def install
-    cd "selene" do
-      system "cargo", "install", "--bin", "selene", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "selene")
   end
 
   test do
