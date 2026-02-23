@@ -12,12 +12,12 @@ class Ipsw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe0dafd0d3c58919019fc9b61b91f429e3bf41091a11e34788e54f1e493f14a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b990863ee1f03327d5f0c10a7a91a90d365d71441672cced8ee98e41d2c08c48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c7a52cdf7d80b18639181fd8db9672f0f0e25d3d4ef33af75ce0b33285765b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd8debc27e6c89be04f1175ad58a6fbeb214f4ab7c8a8af0decb98f6e58daf0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edac9f143450b1de86f979c81c8df4215665d4496018bdbfb859ccdb412fc3ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c2462a03df4ade89408377afb5a62519a4aa8082669bf3d43da5aae65b5e692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ddf33e2e409b21a32d071c0435a9e21f39de2d8cdb6e4d8af7708b91416665e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e8bb93980ed91aa9ca259874a6dfe1d70c5b68ef13f4eac5803a1684072117d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cb61c38d9fa519cfc0b2ca0ed0eddd8510fbcfe68d4a3eafcec2d5f245b2d47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90500001bea3200f2ec76c576334d5db253a02d72c2194ed13eb7ebaf9840152"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c934bbccf3a7ef0df1ea4b942d2378f95731a0a562ec4cc61811ed40b77231cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcf5bca36426eeba3a18bb85a1d82b7bf4a333b8feacf3d6f561330f8927a5da"
   end
 
   depends_on "go" => :build
