@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/28/1c/6f423310b346703ac0e711035c619fc8233375201f2f4865c87cdd0633ec/mycli-1.55.0.tar.gz"
-  sha256 "6d295cfc0817a7f95a43d91b5fc3b04a23fccdd7d970b67d51ad62d75af38cd3"
+  url "https://files.pythonhosted.org/packages/01/a7/a2f2df6a8faedb97b5d0b075217f9fe1ec21c944c3cb2b8ec459441a3330/mycli-1.56.0.tar.gz"
+  sha256 "4ef0b343a2127789ac9492ad54538ad4ac58d8ec964a240c451cc733b01902f7"
   license "BSD-3-Clause"
 
   bottle do
@@ -139,8 +139,8 @@ class Mycli < Formula
   end
 
   resource "puremagic" do
-    url "https://files.pythonhosted.org/packages/dd/7f/9998706bc516bdd664ccf929a1da6c6e5ee06e48f723ce45aae7cf3ff36e/puremagic-1.30.tar.gz"
-    sha256 "f9ff7ac157d54e9cf3bff1addfd97233548e75e685282d84ae11e7ffee1614c9"
+    url "https://files.pythonhosted.org/packages/dc/df/a2ee3bbf55f036acb9725b35732e3a785cb06f5c5b9fe47bde8c05ab873a/puremagic-2.0.0.tar.gz"
+    sha256 "224fe42b6b3467276a45914e12b5f40905dea0e87963adbe5289667e7c607851"
   end
 
   resource "pycryptodomex" do
