@@ -9,12 +9,12 @@ class CloudformationCli < Formula
   revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "59cd87c4c3da5bf2b4448fe6d435e1927989b6d10588964a9ab512814b06f913"
-    sha256 cellar: :any,                 arm64_sequoia: "ec1a27fb82b87ad00f6dccbebfb5f52c320e823a6f3fa5c849d030ba3cf2200e"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a7627e3c7bd64e9639d955c67b1f3693a073a2273dfd7e4e734d3474452e8e2"
-    sha256 cellar: :any,                 sonoma:        "a8e8eb009fd346294c1ebb18409409f3aeea7c992aa02178092542a45d1095af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5535002bf1d8703ce0b4437f4d2ea18ec9295c40351a206f701bb59a12f01e03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adae890ec67a3588467608b15377ed01c08225f5045f4e979603b228f5cecb66"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fa285cfc30cee8baac2d5c2f52188575e726fba0ed20e8a99292a86372ce057"
+    sha256 cellar: :any,                 arm64_sequoia: "472ab758607ed16395d90b37ce86bca9c1d11bdcb75dc422ef3074916452a527"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc45fcaea87020cf9e80379f4aed3058501d68e6b3c66de47ddf1f80dbc5598b"
+    sha256 cellar: :any,                 sonoma:        "592da08f736abacce8ff072bb5cb3594c4bbc7b7f3c93cd8e6b2543533a35b65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68d9296f9ac767afd92e989177fca980bf9406a09d0409fe9e0432b6801c6fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90005a44e0b290258b1b0a4c40f22cb1c7c1b10e49707055e66c15e85218a67b"
   end
 
   depends_on "go" => :test
