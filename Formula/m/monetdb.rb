@@ -1,8 +1,8 @@
 class Monetdb < Formula
   desc "Column-store database"
   homepage "https://www.monetdb.org/"
-  url "https://www.monetdb.org/downloads/sources/Dec2025/MonetDB-11.55.1.tar.xz"
-  sha256 "a5848beef0908ee5b4477beb66a9fa72ee1ab8d5bb4eec5cafcc3fa9dc32b299"
+  url "https://www.monetdb.org/downloads/sources/Dec2025-SP1/MonetDB-11.55.3.tar.xz"
+  sha256 "9592aa0fb18aeb22ceb6a4f9b60cd7960362832704e3625a025673e89e861a51"
   license "MPL-2.0"
   head "https://www.monetdb.org/hg/MonetDB", using: :hg
 
@@ -11,7 +11,7 @@ class Monetdb < Formula
     regex(/href=.*?MonetDB[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     rebuild 2
