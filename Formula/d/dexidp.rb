@@ -1,8 +1,8 @@
 class Dexidp < Formula
   desc "OpenID Connect Identity and OAuth 2.0 Provider"
   homepage "https://dexidp.io"
-  url "https://github.com/dexidp/dex/archive/refs/tags/v2.44.0.tar.gz"
-  sha256 "e0599817d14dd1a99f0c7b967b8801751f90b42ad56d8f1aaa4afa2565d76288"
+  url "https://github.com/dexidp/dex/archive/refs/tags/v2.45.0.tar.gz"
+  sha256 "69bed527e7821e4d11195a4ea035399ffb3c95764af3108edce5fff43ce20e36"
   license "Apache-2.0"
 
   bottle do
