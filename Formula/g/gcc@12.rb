@@ -12,14 +12,13 @@ class GccAT12 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256                               arm64_tahoe:  "68b256e75d6c49bf3e9244c6bcfd00755d42094fab747d15611e4e21fedbafec"
-    sha256                               arm64_sonoma: "1fe9d445c7033c6ff42ae66c840412842a021d8ef4129a75e98fcd453cfba670"
-    sha256                               tahoe:        "f7148bf5706ad7da1b16e11bf97e485ff8695abb031fa87c18289958b4dba670"
-    sha256                               sequoia:      "e41f059f88c2af52760f1ba9f75f36dfd3a493bcf596479227e7dae3d8a32c74"
-    sha256                               sonoma:       "578d37003a6a9f1351aebee3d256a3b87041a03d82d6d583e0f37310a9c1515b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "323b47654f5bf99815d13c45d3cea0e591d2140dd3477060da34b20f98dfd63d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b10234a336bdf22bacdb79045a3b9e37322e3f3ee0dda9525a51e68ce134682"
+    sha256                               arm64_tahoe:  "d8adb7354a111d55e61c661379749d99cb6d0cbaac40b2552e471071cb38c1a6"
+    sha256                               arm64_sonoma: "ca7a9e949ae62998f413a0068cd3eba834297669f92043da35548766246ef6cf"
+    sha256                               tahoe:        "45b46f68b0f409889443043fdb529e484c858c2a9abfa165d97c6ec118089bfc"
+    sha256                               sequoia:      "93386ba3329d06cb4288e10f7fef54e606103bf940bf5be87dc099119364f22c"
+    sha256                               sonoma:       "60e80d01ab1801326bf3e3919f7c883109daa056a5d52d496707d2ce75280ab7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2b65fe2eb9ddd411fbaa0eae6d8470aca65d60d956843df26921b3e3619f6c89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9c1bcaa7819147a8539e81064d9f34d4cc9746d70e14b0ece9a80d81818ebec8"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
