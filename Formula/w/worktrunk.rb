@@ -17,6 +17,8 @@ class Worktrunk < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "wiredtiger", because: "both install `wt` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"wt", "config", "shell", "completions")
