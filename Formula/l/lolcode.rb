@@ -3,10 +3,10 @@ class Lolcode < Formula
   homepage "http://www.lolcode.org/"
   # NOTE: 0.10.* releases are stable, 0.11.* is dev. We moved over to
   # 0.11.x accidentally, should move back to stable when possible.
-  url "https://github.com/justinmeza/lci/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "cb1065936d3a7463928dcddfc345a8d7d8602678394efc0e54981f9dd98c27d2"
+  url "https://github.com/justinmeza/lci/archive/refs/tags/v1.3.tar.gz"
+  sha256 "56a77f8a19e6284868e609dad0e4f1d7c9fe59a61398e338726b58016c1eecef"
   license "GPL-3.0-or-later"
-  head "https://github.com/justinmeza/lci.git", branch: "main"
+  head "https://github.com/justinmeza/lci.git", branch: "future"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1eb6ed26315bf0661ada71178ff3d2cc437e374614f4162fe5327f060b255763"
@@ -31,12 +31,6 @@ class Lolcode < Formula
   end
 
   conflicts_with "lci", because: "both install `lci` binaries"
-
-  # Backport fix for CMake 4 compatibility
-  patch do
-    url "https://github.com/justinmeza/lci/commit/42ac17a22ddce737664b39a50442e6623a7e51a2.patch?full_index=1"
-    sha256 "03b8a8bd907501818d0c7b71444727e6a49143aabd280966bfb5eab7d9fe3fc6"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
