@@ -1,9 +1,10 @@
 class ClockRs < Formula
   desc "Modern, digital clock that effortlessly runs in your terminal"
   homepage "https://github.com/Oughie/clock-rs"
-  url "https://github.com/Oughie/clock-rs/archive/refs/tags/v0.1.216.tar.gz"
-  sha256 "3aa4cbe398f68f0418f5174175e165de5e023b60c3831bc04923ffccaa4658b5"
+  url "https://github.com/Oughie/clock-rs/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "9770f5d79408032d635a0eabe2cc70575b0238d8a02c9b5193dc5712a14b8e2d"
   license "Apache-2.0"
+  head "https://github.com/Oughie/clock-rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "888de832a36ffa73b7dd0ed3fb6550bc8ac3abb5b47a78790dbe38abe5e0fd6a"
@@ -18,6 +19,10 @@ class ClockRs < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    bash_completion.install "target/completions/clock-rs.bash" => "clock-rs"
+    fish_completion.install "target/completions/clock-rs.fish"
+    zsh_completion.install  "target/completions/_clock-rs"
   end
 
   test do
