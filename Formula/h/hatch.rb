@@ -8,12 +8,12 @@ class Hatch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0e397bb4ad0f6f410acadec5856919e6fd9b7a747b9b40740057fe8dc4a8173"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fed75010e1d5d8e29ffe3d7da57c00d370642e57c41141a4aea773baf644a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fed75010e1d5d8e29ffe3d7da57c00d370642e57c41141a4aea773baf644a79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "401a5e5697bb6f10a7fc59ac1ebc2ed2be9121414de74e11c6e074a183813a53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "401a5e5697bb6f10a7fc59ac1ebc2ed2be9121414de74e11c6e074a183813a53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "401a5e5697bb6f10a7fc59ac1ebc2ed2be9121414de74e11c6e074a183813a53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2eb5a79367bc61ff86d4203b2b069166e8626ba70caf1343497472635d6da4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f0839dd42edf58a0e682fa4fffd37d2120dab76b46613f807764c5582150db2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f0839dd42edf58a0e682fa4fffd37d2120dab76b46613f807764c5582150db2"
   end
 
   depends_on "certifi" => :no_linkage
