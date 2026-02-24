@@ -1,8 +1,8 @@
 class Peco < Formula
   desc "Simplistic interactive filtering tool"
   homepage "https://github.com/peco/peco"
-  url "https://github.com/peco/peco/archive/refs/tags/v0.5.11.tar.gz"
-  sha256 "8e32c8af533e03795f27feb4ee134960611d2fc0266528b1c512a6f1f065b164"
+  url "https://github.com/peco/peco/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "480ba339c5b15ebb9eada276d5e25315ee5c36e878d86dcfc1ea17f54a27197a"
   license "MIT"
   head "https://github.com/peco/peco.git", branch: "master"
 
@@ -24,11 +24,14 @@ class Peco < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "build"
-    system "go", "build", *std_go_args, "cmd/peco/peco.go"
+    ldflags = "-s -w -X github.com/peco/peco.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/peco"
   end
 
   test do
     system bin/"peco", "--version"
+
+    ENV["TERM"] = "xterm"
+    assert_match "homebrew", pipe_output("#{bin}/peco --select-1", "homebrew\n", 0)
   end
 end
