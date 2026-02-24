@@ -1,10 +1,10 @@
 class Packcc < Formula
   desc "Parser generator for C"
   homepage "https://github.com/arithy/packcc"
-  url "https://github.com/arithy/packcc/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "eeb123e2d328de60e0a4171649c7e4c78b25a08b60de35beffd14f3d8fdbdcc8"
+  url "https://github.com/arithy/packcc/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "6dc28154e04a5af6f1cfa89eb654cd4c691bbced75d2b2a5feb09c6e7d458ede"
   license "MIT"
-  head "https://github.com/arithy/packcc.git", branch: "master"
+  head "https://github.com/arithy/packcc.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -18,12 +18,16 @@ class Packcc < Formula
     sha256 x86_64_linux:  "ace36e10dc14b5bfa32e9f13355c9b713723148ab1f34e7b9cb90c0782550e01"
   end
 
+  depends_on "cmake" => :build
+
   def install
-    inreplace "src/packcc.c", "/usr/share/packcc/", "#{pkgshare}/"
-    build_dir = buildpath/"build"/ENV.compiler.to_s.sub(/-\d+$/, "")
-    system "make", "-C", build_dir
-    bin.install build_dir/"release/bin/packcc"
-    pkgshare.install "examples", "import"
+    inreplace "src/packcc.c", "/usr/share/packcc/", "#{prefix}/"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    pkgshare.install "examples"
   end
 
   test do
