@@ -1,18 +1,18 @@
 class Cagent < Formula
   desc "Agent Builder and Runtime by Docker Engineering"
   homepage "https://github.com/docker/cagent"
-  url "https://github.com/docker/cagent/archive/refs/tags/v1.23.6.tar.gz"
-  sha256 "ef96e31c01f964e339f8b0dc035bf38b2c2e00d9f86d9e030b9e2716fccf1f09"
+  url "https://github.com/docker/cagent/archive/refs/tags/v1.24.0.tar.gz"
+  sha256 "4e7b55d1f9b029e72f2b23990e8d0186b6605cb86fc72ade9e8d43bfea3c6a19"
   license "Apache-2.0"
   head "https://github.com/docker/cagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24bdef17cc6fbe4cafdc3fde8324630697744ed42c4da0964e8882356cc63e9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9822826b1bdc657bc7b5963b5d3c299e29d310d584b2ac76ce500633dc86e75f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4742563498d7044e7fb7103eeca84df7debd369c49ae20e0dae3d35a1cda0ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9c68b32861b376373c88b08f52e304aa8a7d8d5bff9e1d09afc6e4134969c9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a4e2d402fa34f9c0db2f85d961ec64b8c825fa397f8d9bfb8d2adeac21ce9be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa3c2a10eb36e39b951162ca159ab76e36a5905d46e2833fe0a00bfd42e746e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1881c8b7acfb636f3eec7cc9e0a7756d68f707b11cf6710680e15c9585d8e9ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee6ee3de023c9ce244f3c5f35794aec08cf2b2efa64e7c4260c60985caec0b51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fd1a481527b493c8d714810d09fbc341fc274c1120b73410c235ba688d30459"
+    sha256 cellar: :any_skip_relocation, sonoma:        "123a91b78ccd734af8c465dc08e35b3035ba1b0f14397066453b9460be7daab1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fa856b046e6fda89f80f0adafc7e02aa26bfa0c14a5c2258a6ded53720155ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17ace1eb0cfaa38d001cc5e44358879d026a4d8ce003064536f5ca7d2afe9d74"
   end
 
   depends_on "go" => :build
