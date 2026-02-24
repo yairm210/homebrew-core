@@ -1,8 +1,8 @@
 class Beakerlib < Formula
   desc "Shell-level integration testing library"
   homepage "https://github.com/beakerlib/beakerlib"
-  url "https://github.com/beakerlib/beakerlib/archive/refs/tags/1.33.tar.gz"
-  sha256 "bd77518403ee5ed6c9040d5aa9f6f4f1ed924ce39451c5dfb0bd9214909d8524"
+  url "https://github.com/beakerlib/beakerlib/archive/refs/tags/1.33.1.tar.gz"
+  sha256 "a18cecff44e3f1a2982dd2810e712cea2ebdb9f7dad6e7fd11026ca8d340e284"
   license "GPL-2.0-only"
 
   bottle do
