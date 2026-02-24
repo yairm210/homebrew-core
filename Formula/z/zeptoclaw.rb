@@ -1,18 +1,18 @@
 class Zeptoclaw < Formula
   desc "Lightweight personal AI gateway with layered safety controls"
   homepage "https://zeptoclaw.com/"
-  url "https://github.com/qhkm/zeptoclaw/archive/refs/tags/v0.5.4.tar.gz"
-  sha256 "db273080064dc41640fe70213c5cdf931cb58d761c104f66e5fd62b48117d304"
+  url "https://github.com/qhkm/zeptoclaw/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "009ae09728f986c9fa8c9c3df64f00af8db4c9cf0bb212c40b71706355671752"
   license "Apache-2.0"
   head "https://github.com/qhkm/zeptoclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de8f400b04ee5ebd840c569f2bcc662eb045ae796302b9ed65fcf33604f3892a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f1c0a5af33234c875b1818cca6ac00e3dcd1b2bf7ef3f6c220c6418cf04707d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92c044ee909f9452cbeddd22d240ae74ec6031ab472149361eba6621807a0a82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6254c1b27384e0132dbfc257f004633d27b4f2c8eca64f41125de4343e144985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45193046720f00d639144246c5d540b64e9d9d25288de2fe42f9539f656c7a10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee50997505d86885cb22f96df134a5d9eb946e5c1fea740f7ed19e711931b219"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "495e1a16fd8fd0dd4d2628c65324a6710bf1fe41ad41698432a602d3291999bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c81bfc9b3ad8ad3f5cc96cd14987fe27224640a208d676ae7cb5e18872d3fbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e7160b734ee64c7260e1302da5423fcb5fb3df4101f8d3c3dfb784be0545d6c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24f3e086735e3740ddce3de052db5c90d4cc02347f8e0910d094505c71cb898f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3be79121ad80404f765793f57201e8f0cd39832240514a72f040b28c50a0550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "570f4d8942c94874c35e1e0075cdb4e5e10919de8c676b69f5f9b661564197bb"
   end
 
   depends_on "rust" => :build
