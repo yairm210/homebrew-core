@@ -3,8 +3,8 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/34/57/5d3c8c9e2ff9d66dc8f63aa052eb0bac5041fecff7761d8689fe65c39c13/mkdocs_material-9.7.2.tar.gz"
-  sha256 "6776256552290b9b7a7aa002780e25b1e04bc9c3a8516b6b153e82e16b8384bd"
+  url "https://files.pythonhosted.org/packages/8a/b4/f900fcb8e6f510241e334ca401eddcb61ed880fb6572f7f32e4228472ca1/mkdocs_material-9.7.3.tar.gz"
+  sha256 "e5f0a18319699da7e78c35e4a8df7e93537a888660f61a86bd773a7134798f22"
   license "MIT"
 
   bottle do
