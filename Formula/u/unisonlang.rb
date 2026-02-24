@@ -23,13 +23,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb43afc196c38fc22acb91f458e52330f5a9ca8a89310784433bdbe7996e36b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58f39799ad19f50c7b240364794f2297ecb2c679a598dc5c26ba6c76cd5a7969"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d1bdf935049124742ea877056057a1cad11fa2645bc332b87ba4c8646a3d556"
-    sha256 cellar: :any_skip_relocation, sonoma:        "261ca960dc7688c11bbd48f5d83d18eca00df06d371c7f2e2336f5c5194c9474"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afa2840d1c23ebf90770cca624ab2bc50080fd63b89890be460e40c5bed116a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9114f12773e3d2357f859f61e312ed6860581bfe1a77c3178aabc228c4344f93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c48be759782c4825e0ed69637220c00e0f17442893abecb96ba5833647d60a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30e1adf291125750939b66512e06765a438574ec3112195977c060199635a24e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faed6027b097526132d57915eef0d8969a2f77a1e69c32d86267507fce355859"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c843ceeb47a15ad4c5a2c9682bd98acda719006b8593399e27f2b79e32c4b9e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1071525f32dc9eedbb6ee6169d94cc2cc09d5326895b3d8847f0d1d4f413b9eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdf175afcc0ecb46a8155e72b10affe231ce7b6d986d35907b26f2736fe072f9"
   end
 
   head do
