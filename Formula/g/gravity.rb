@@ -1,9 +1,10 @@
 class Gravity < Formula
   desc "Embeddable programming language"
   homepage "https://www.gravity-lang.org/"
-  url "https://github.com/marcobambini/gravity/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "c3bf1dfa9b881bcdbc259102b9997dec7289e18663f51103de673826783cea66"
+  url "https://github.com/marcobambini/gravity/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "a6c8894276d4f1cc3bd4014bfd666a2f1ee715539d4de55db456f8af0db2ee34"
   license "MIT"
+  head "https://github.com/marcobambini/gravity.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "984f8c939ed835a4b7d3cf1ca27a3cc0563b13a665da1ce73aa7897104a3b943"
