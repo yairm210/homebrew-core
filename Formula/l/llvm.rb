@@ -3,12 +3,12 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
+  compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
-    sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.0/llvm-project-22.1.0.src.tar.xz"
+    sha256 "25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173"
 
     # Fix triple config loading for clang-cl
     # https://github.com/llvm/llvm-project/pull/111397
@@ -37,20 +37,19 @@ class Llvm < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "swig" => :build
+  depends_on "swig" => :build # for lldb
   depends_on "python@3.14"
-  depends_on "xz"
+  depends_on "xz" # for lldb
   depends_on "z3"
   depends_on "zstd"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi"
-  uses_from_macos "ncurses"
+  uses_from_macos "ncurses" # for lldb
 
   on_linux do
+    depends_on "binutils" => :build # needed for LLVMgold plugin
     depends_on "pkgconf" => :build
-    depends_on "binutils" # needed for gold
-    depends_on "elfutils" # openmp requires <gelf.h>
     depends_on "zlib-ng-compat"
   end
 
@@ -63,18 +62,10 @@ class Llvm < Formula
   end
 
   def install
-    # Work around OOM error on arm64 linux runner by reducing number of jobs
-    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
-                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
-                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
-    if github_arm64_linux && (jobs = ENV.make_jobs - 1).positive?
-      ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = ENV["HOMEBREW_MAKE_JOBS"] = jobs.to_s
-    end
-
-    # The clang bindings need a little help finding our libclang.
+    # The clang bindings need a little help finding keg-only libclang.
     inreplace "clang/bindings/python/clang/cindex.py",
-              /^(\s*library_path\s*=\s*)None$/,
-              "\\1'#{lib}'"
+              "= os.environ.get(\"LIBCLANG_LIBRARY_PATH\")",
+              "= os.environ.get(\"LIBCLANG_LIBRARY_PATH\", \"#{lib}\")"
 
     projects = %w[
       clang
@@ -103,14 +94,6 @@ class Llvm < Formula
                              .select { |name| name.start_with? "python@" }
                              .map { |py| py.delete_prefix("python@") }
     site_packages = Language::Python.site_packages(python3).delete_prefix("lib/")
-
-    # Work around build failure (maybe from CMake 4 update) by using environment
-    # variable for https://cmake.org/cmake/help/latest/variable/CMAKE_OSX_SYSROOT.html
-    # TODO: Consider if this should be handled in superenv as impacts other formulae
-    ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path if OS.mac?
-
-    # Apple's libstdc++ is too old to build LLVM
-    ENV.libcxx if ENV.compiler == :clang
 
     # compiler-rt has some iOS simulator features that require i386 symbols
     # I'm assuming the rest of clang needs support too for 32-bit compilation
@@ -175,6 +158,7 @@ class Llvm < Formula
 
       args << "-DLLVM_BUILD_LLVM_C_DYLIB=ON"
       args << "-DLLVM_ENABLE_LIBCXX=ON"
+      args << "-DLIBCXX_ENABLE_VENDOR_AVAILABILITY_ANNOTATIONS=ON"
       args << "-DLIBCXX_PSTL_BACKEND=libdispatch"
       args << "-DLIBCXX_INSTALL_LIBRARY_DIR=#{libcxx_install_libdir}"
       args << "-DLIBUNWIND_INSTALL_LIBRARY_DIR=#{libunwind_install_libdir}"
@@ -225,8 +209,9 @@ class Llvm < Formula
     end
 
     # Skip the PGO build on HEAD installs, non-bottle source builds, or versioned formulae.
-    # Catalina and earlier requires too many hacks to build with PGO.
-    pgo_build = build.stable? && build.bottle? && OS.mac? && (MacOS.version > :catalina) && !versioned_formula?
+    # Also skip Intel macOS which is slow and will be reduced to Tier 3 in Sept 2026.
+    # TODO: Fix Linux PGO build which is currently dead code
+    pgo_build = build.stable? && build.bottle? && OS.mac? && Hardware::CPU.arm? && !versioned_formula?
     lto_build = pgo_build && OS.mac?
 
     if ENV.cflags.present?
@@ -541,6 +526,9 @@ class Llvm < Formula
 
         To use the bundled libc++ please use the following LDFLAGS:
           LDFLAGS="-L#{opt_lib}/c++ -L#{opt_lib}/unwind -lunwind"
+        Features newer than system libc++ will require the following define to enable
+        (support for this may be removed in a future major LLVM release):
+          CPPFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"
 
         NOTE: You probably want to use the libunwind and libc++ provided by macOS unless you know what you're doing.
       EOS
@@ -574,20 +562,23 @@ class Llvm < Formula
     assert_equal (lib/shared_library("libLLVM-#{soversion}")).to_s,
                  shell_output("#{bin}/llvm-config --libfiles").chomp
 
-    (testpath/"test.c").write <<~C
+    (testpath/"test.c").write <<~'C'
       #include <stdio.h>
       int main()
       {
-        printf("Hello World!\\n");
+        printf("Hello World!\n");
         return 0;
       }
     C
 
     (testpath/"test.cpp").write <<~CPP
       #include <iostream>
+      #include <string>
       int main()
       {
-        std::cout << "Hello World!" << std::endl;
+        std::string str = "Hello World!";
+        std::size_t str_hash = std::hash<std::string>{}(str);
+        std::cout << str << std::endl;
         return 0;
       }
     CPP
@@ -596,8 +587,7 @@ class Llvm < Formula
     system bin/"clang-cpp", "-v", "test.cpp"
 
     # Testing default toolchain and SDK location.
-    system bin/"clang++", "-v",
-           "-std=c++11", "test.cpp", "-o", "test++"
+    system bin/"clang++", "-v", "-std=c++11", "test.cpp", "-o", "test++"
     assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib" if OS.mac?
     assert_equal "Hello World!", shell_output("./test++").chomp
     system bin/"clang", "-v", "test.c", "-o", "test"
@@ -692,9 +682,9 @@ class Llvm < Formula
       # linking statically.
 
       system bin/"clang++", "-v", "-o", "test_pie_runtimes",
-                   "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
-                   "-stdlib=libc++", "-rtlib=compiler-rt",
-                   "-static-libstdc++", "-lpthread", "-ldl"
+             "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
+             "-stdlib=libc++", "-rtlib=compiler-rt",
+             "-static-libstdc++", "-lpthread", "-ldl"
       assert_equal "Hello World!", shell_output("./test_pie_runtimes").chomp
       (testpath/"test_pie_runtimes").dynamically_linked_libraries.each do |lib|
         refute_match(/lib(std)?c\+\+/, lib)
@@ -759,7 +749,7 @@ class Llvm < Formula
       }
     CPP
     assert_includes shell_output("#{bin}/scan-build make scanbuildtest 2>&1"),
-                    "warning: Use of memory after it is freed"
+                    "warning: Use of memory after it is released"
 
     (testpath/"clangformattest.c").write <<~C
       int    main() {
