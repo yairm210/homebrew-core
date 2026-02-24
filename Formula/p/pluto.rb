@@ -7,13 +7,12 @@ class Pluto < Formula
   head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "841f562aea4532e9d44d7a89620b0c2b34101eebf5b71970e098a47e26f4de28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c6d4a81f33ca1336f92099474b102e36dd021f03822257d19d17d4da2617b96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe0a7a915dd007ca6136e9c91f27ae003f08dff7d9823dcbade902df7aa4061"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d81142ce5487dda6568a7088702e7e2e9335be7dbbe8fdc354a624bed02f418"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d81142ce5487dda6568a7088702e7e2e9335be7dbbe8fdc354a624bed02f418"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d81142ce5487dda6568a7088702e7e2e9335be7dbbe8fdc354a624bed02f418"
+    sha256 cellar: :any_skip_relocation, sonoma:        "743e2a4ef2bb4b6d7a36c39edc826ed7aca1b843e02e33dbbc94a5b6a6ccf37d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66791b53c0fa9648b3cc98429446de111c22e2506bcce3e5dd3f002f8fa2f903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b023cd2cb3e6f0de374acb8717af424302521522c0e19a4c36dd0ad3cc5423"
   end
 
   depends_on "go" => :build
