@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/3.07/asymptote-3.07.src.tgz"
-  sha256 "e02a9c1b0fdedd5589d5408f08eb13329de6793425a4cb745290510dc98f832d"
+  url "https://downloads.sourceforge.net/project/asymptote/3.08/asymptote-3.08.src.tgz"
+  sha256 "7f2f641e1f8fede4e997d032cb6f88ca3b200f0f1b9f1ab92998387163a196f8"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -42,8 +42,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/3.07/asymptote.pdf"
-    sha256 "f5b5c30975eb39462138612ac449902e0cfa8423fe9becf3500f9d2115bfb8ee"
+    url "https://downloads.sourceforge.net/project/asymptote/3.08/asymptote.pdf"
+    sha256 "0772487ab9cf1e9488d7788352fad5ae215b06c34cc14688b7491f2ae2003405"
 
     livecheck do
       formula :parent
@@ -58,6 +58,7 @@ class Asymptote < Formula
     # Avoid use of LaTeX with these commands (instead of `make all && make install`)
     # Also workaround to override bundled bdw-gc. Upstream is not willing to add configure option.
     # Ref: https://github.com/vectorgraphics/asymptote/issues/521#issuecomment-2644549764
+    touch "doc/asy-latex.pdf"
     system "make", "install-asy", "GCLIB=#{Formula["bdw-gc"].opt_lib/shared_library("libgc")}"
 
     doc.install resource("manual")
