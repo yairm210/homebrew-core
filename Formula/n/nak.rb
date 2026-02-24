@@ -1,8 +1,8 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
   homepage "https://github.com/fiatjaf/nak"
-  url "https://github.com/fiatjaf/nak/archive/refs/tags/v0.18.4.tar.gz"
-  sha256 "51d731f9a3e0022d38fc214cd0f6404c81baf18ac026cc332f2aaf74bbda4452"
+  url "https://github.com/fiatjaf/nak/archive/refs/tags/v0.18.5.tar.gz"
+  sha256 "ff080c7690cde655408b61e0557300c28d99af02a8c46a973bbccf2f9d61821a"
   license "Unlicense"
   head "https://github.com/fiatjaf/nak.git", branch: "master"
 
