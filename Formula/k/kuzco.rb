@@ -1,8 +1,8 @@
 class Kuzco < Formula
   desc "Reviews Terraform and OpenTofu resources and uses AI to suggest improvements"
   homepage "https://github.com/RoseSecurity/Kuzco"
-  url "https://github.com/RoseSecurity/Kuzco/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "5757797a436c8817137861bbf88ef2c9b492eacf4fec5b7badfdc50110d0942e"
+  url "https://github.com/RoseSecurity/Kuzco/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "b25457792693df0e53b2e36b9f77ac5b83a8377a5bf6c10e671483bd2582eb30"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Kuzco.git", branch: "main"
 
