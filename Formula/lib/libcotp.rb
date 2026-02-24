@@ -1,8 +1,8 @@
 class Libcotp < Formula
   desc "C library that generates TOTP and HOTP"
   homepage "https://github.com/paolostivanin/libcotp"
-  url "https://github.com/paolostivanin/libcotp/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "9b5778b8e38d9b0c33d6331ec980094b0035bf53e6064bbcc2ed988b0d4b3d13"
+  url "https://github.com/paolostivanin/libcotp/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "6b17323779dac1699462d8914b81155d69914b0d28b5ed837f1570ed05f2bd90"
   license "Apache-2.0"
   head "https://github.com/paolostivanin/libcotp.git", branch: "master"
 
@@ -37,11 +37,11 @@ class Libcotp < Formula
         const int64_t counter[] = {59, 1111111109, 1111111111, 1234567890, 2000000000, 20000000000};
 
         cotp_error_t cotp_err;
-        char *K_base32 = base32_encode((const uchar *)K, strlen(K)+1, &cotp_err);
+        char *K_base32 = base32_encode(K, strlen(K)+1, &cotp_err);
 
         cotp_error_t err;
         for (int i = 0; i < 6; i++) {
-          printf("%s\\n", get_totp_at(K_base32, counter[i], 8, 30, SHA1, &err));
+          printf("%s\\n", get_totp_at(K_base32, counter[i], 8, 30, COTP_SHA1, &err));
         }
 
         free(K_base32);
