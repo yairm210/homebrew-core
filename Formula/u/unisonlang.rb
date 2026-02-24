@@ -4,12 +4,12 @@ class Unisonlang < Formula
   license "MIT"
 
   stable do
-    url "https://github.com/unisonweb/unison/archive/refs/tags/release/1.1.0.tar.gz"
-    sha256 "f776bc7f96f68a7f95ee91160a6641aba0d2f7bc6ef60d5cb4b2441474ce5a39"
+    url "https://github.com/unisonweb/unison/archive/refs/tags/release/1.1.1.tar.gz"
+    sha256 "8d7c59bcc0cf68e79f01e85df1a1d8b7c4ce6dd377c787d22af47468b3dcb870"
 
     resource "local-ui" do
-      url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.1.0.tar.gz"
-      sha256 "45556af491e8c524a6bbc5aa130aba908f66805dd981f553ad3a6f7c0db7ae61"
+      url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.1.1.tar.gz"
+      sha256 "81fcf13873d65e3fc95b69e0e1241c12c30d49c9a2f9a125ed75d55a450fa116"
 
       livecheck do
         formula :parent
@@ -42,7 +42,7 @@ class Unisonlang < Formula
 
   depends_on "elm" => :build
   depends_on "elm-format" => :build
-  depends_on "ghc@9.6" => :build # GHC 9.10 PR: https://github.com/unisonweb/unison/pull/6046
+  depends_on "ghc@9.10" => :build
   depends_on "haskell-stack" => :build
   depends_on "node" => :build
 
