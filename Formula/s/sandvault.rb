@@ -14,6 +14,8 @@ class Sandvault < Formula
 
   depends_on :macos
 
+  conflicts_with "runit", because: "both install `sv` binaries"
+
   def install
     prefix.install "guest", "sv"
     bin.write_exec_script "#{prefix}/sv"
