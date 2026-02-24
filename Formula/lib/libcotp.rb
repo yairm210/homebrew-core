@@ -7,12 +7,12 @@ class Libcotp < Formula
   head "https://github.com/paolostivanin/libcotp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84d385a54915c1048ff6a18fc4b150b9f0641966afee99596318f578a60a808b"
-    sha256 cellar: :any,                 arm64_sequoia: "6050b9fc9fb8e8179d90486ba1bed1a08b76303fa8994dfee894199956dec6f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ae0f2b236927c8fd0471d308190a2df8cac550defcdc4439e804a3c345e9796"
-    sha256 cellar: :any,                 sonoma:        "bd5666bbdf0d655a9079c1ef37f8aeb3b881e2fb55459eec2956076a1a78c642"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7db49b6cff8e362d1b905247c2d97360f30e386ff85f041bc19bd88ea7f14e8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85418e6ddf1ce99c62d2e0e524503cd7b027481a8cd44c6cd867f129a02f3ce9"
+    sha256 cellar: :any,                 arm64_tahoe:   "366cde6e9830afd63b98a7072b8944c2ffd884538fdfb7b2a7654a19ce92940d"
+    sha256 cellar: :any,                 arm64_sequoia: "1b6d2de3ca5ba1eebc06db7d5c761a68e47b37c9ba4c8a16590cb77c5960bb6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "eff6bf6b8dad34fb773d6e3e93a88b5deea02b3bbc9a6081f686308be397d416"
+    sha256 cellar: :any,                 sonoma:        "b0c06d774fd8497727ff3d2c817cc9c79a030dbf4dc95fab77bbe8b22b389659"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "339708868c22ab1e04a054e2d3fa6b97101f89831cb82b30adc992194b63f1b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d8f4381f2cf656c98d513bdb3a68212b5222ed529c7726876b9f14c9fb5fa7"
   end
 
   depends_on "cmake" => :build
