@@ -3,24 +3,10 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
+  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.11.0/syslog-ng-4.11.0.tar.gz"
+  sha256 "37ea0d4588533316de122df4e1b249867b0a0575f646c7478d0cc4d747462943"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "develop"
-
-  stable do
-    url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.10.2/syslog-ng-4.10.2.tar.gz"
-    sha256 "841503de6c2486e66fd08f0c62ac2568fc8ed1021297f855e8acd58ad7caff76"
-
-    # Backport Python dependency updates to avoid vulnerable packages
-    patch do
-      url "https://github.com/syslog-ng/syslog-ng/commit/89c1dcfb411e3c5611629fe99561f3106eb19b0f.patch?full_index=1"
-      sha256 "eb42508fa0a1b716ef8967151f10fe86b427e21fc50ef2f160c14bbd35a89291"
-    end
-    patch do
-      url "https://github.com/syslog-ng/syslog-ng/commit/dc070981e726ca1babb8e48bc368d0429eac9223.patch?full_index=1"
-      sha256 "1d7bb9994f0aff742fec24a038df90d199fa2e43aae28a396dc51a892fe7a95b"
-    end
-  end
 
   livecheck do
     url :stable
