@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/bc/0c/e5efd266e04e78e0883e7c98a36b21b81b98750ebd46e0c742b3ad4c7314/mcp_atlassian-0.16.1.tar.gz"
-  sha256 "79c8cbdff8dc884f41672dace715dae09ed9d2c0cbd2154a69f523b0908bd3f2"
+  url "https://files.pythonhosted.org/packages/5f/01/43affc74fb7e89616642b2f2de4754edd8a61f183c5fca1ac49a3c770eb2/mcp_atlassian-0.17.0.tar.gz"
+  sha256 "d4ee09e691a0bd212d64193d83389c628ae6347075706de0a22ce6a2307f7fed"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
@@ -97,8 +97,8 @@ class McpAtlassian < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/3b/d2/f37df900b163f51b4faacdb01bf4895c198906d67c5b2a85c2522de85459/cyclopts-4.5.4.tar.gz"
-    sha256 "eed4d6c76d4391aa796d8fcaabd50e5aad7793261792beb19285f62c5c456c8b"
+    url "https://files.pythonhosted.org/packages/49/5c/88a4068c660a096bbe87efc5b7c190080c9e86919c36ec5f092cb08d852f/cyclopts-4.6.0.tar.gz"
+    sha256 "483c4704b953ea6da742e8de15972f405d2e748d19a848a4d61595e8e5360ee5"
   end
 
   resource "deprecated" do
@@ -212,8 +212,8 @@ class McpAtlassian < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/a8/8d/4b2e648cf643d19e1f76260d9cb002d242e38b4298d6da110bd3c3d8d0d2/jsonschema_path-0.4.1.tar.gz"
-    sha256 "ffca3bd37f66364ae3afeaa2804d6078a9ab3b9359ade4dd9923aabbbd475e71"
+    url "https://files.pythonhosted.org/packages/b3/da/1ebeb1c0ff579c330e200e8b06e6200653e3d0758136d8bd86762d63e7de/jsonschema_path-0.4.2.tar.gz"
+    sha256 "5f5ff183150030ea24bb51cf1ddac9bf5dbf030272e2792a7ffe8262f7eea2a5"
   end
 
   resource "jsonschema-specifications" do
