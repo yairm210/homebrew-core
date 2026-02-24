@@ -3,10 +3,9 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://github.com/linode/linode-cli"
-  url "https://files.pythonhosted.org/packages/0d/d1/0b26fcfb93890e3a6277e1ffdb999a4a1cf1127e5d007256a7e83dd63d6e/linode_cli-5.65.0.tar.gz"
-  sha256 "1f690964136a32fad0baeb3691ed4335da6c27c46d2b17e4003a06c1f9a5e453"
+  url "https://files.pythonhosted.org/packages/d5/b5/0d0b3157e331325ebc353b5e439424bc9b27c8dd0cf4b19316cb308ec065/linode_cli-5.65.1.tar.gz"
+  sha256 "bdb8c48cf62798657a5804b9af98af9f96bf8ab389c8e67fc8a87bc33e36211d"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/linode/linode-cli.git", branch: "dev"
 
   bottle do
@@ -75,8 +74,8 @@ class LinodeCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pygments" do
@@ -100,8 +99,8 @@ class LinodeCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "urllib3" do
