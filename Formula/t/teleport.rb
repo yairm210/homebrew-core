@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.7.0.tar.gz"
-  sha256 "a57250671a1879498c629a0f6c06774c62423acf40f193bef438cb0384e75c93"
+  url "https://github.com/gravitational/teleport/archive/refs/tags/v18.7.1.tar.gz"
+  sha256 "6e783e34859e152a05918e9254b91779a7f001ddaad0b2ad86f41193cf0c62b9"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -49,6 +49,11 @@ class Teleport < Formula
   resource "wasm-bindgen" do
     url "https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.99.tar.gz"
     sha256 "1df06317203c9049752e55e59aee878774c88805cc6196630e514fa747f921f2"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/gravitational/teleport/refs/tags/v#{LATEST_VERSION}/Cargo.lock"
+      regex(/name\s*=\s*"wasm-bindgen".*?version\s*=\s*["'](\d+(?:\.\d+)+)["']/im)
+    end
   end
 
   # disable `wasm-opt` for ironrdp pkg release build, upstream pr ref, https://github.com/gravitational/teleport/pull/50178
