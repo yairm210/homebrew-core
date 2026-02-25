@@ -1,8 +1,8 @@
 class MacosTrash < Formula
   desc "Move files and folders to the trash"
   homepage "https://github.com/sindresorhus/macos-trash"
-  url "https://github.com/sindresorhus/macos-trash/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "daa545407550ecc46e5088669d1e9eae41219d29ff83d46f46c658bad1c00f85"
+  url "https://github.com/sindresorhus/macos-trash/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "10bc181d282ab99143178e9b6d23da46b216aef200f3ec282c783ba0d4e666b9"
   license "MIT"
   head "https://github.com/sindresorhus/macos-trash.git", branch: "main"
 
@@ -17,7 +17,7 @@ class MacosTrash < Formula
 
   depends_on xcode: ["16.0", :build]
   depends_on :macos
-  uses_from_macos "swift", since: :sonoma # Swift 6.0
+  uses_from_macos "swift", since: :tahoe # Swift 6.2
 
   conflicts_with "osx-trash", because: "both install a `trash` binary"
   conflicts_with "trash-cli", because: "both install a `trash` binary"
