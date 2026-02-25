@@ -7,12 +7,12 @@ class LeafProxy < Formula
   head "https://github.com/eycorsican/leaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3579d48166dabde991b1a2140dbe1e0f28f0fad4b1f1f9c3fb90044621c5ef2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f291ee094125dca23c46e762aca2713d6a1f6e3ca00d43d9d5f0309a43e2b1a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d899c468ac5fab42856ffa2f4add6a654e27c0d19b74e31360d745beb30deb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5295d8003fe12378677c3e012cea2a3cfd6f64461a3df7c56dbaf7ef24c17fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f1fd8d86fcf4eb1fb6620998f496ee4e0a17a76b72acc106eb4ee8a903e3b8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68dbc2d6a5c20ce7186d73a3e86945b7081dd6a846f7a8f736a8a30566f2b96f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1016d71c21c7cd08865d60ae13cf35e8a82e738e714beb13e36301473d493021"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "022edde57a3438dc21fecaa5cd7bd1037b5cb6c6e482f2b26801ef2a8e34d081"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "238269c4b6a8f6f1d6b7dc3855b19c1efcf5cfc0b262f64320b63529009d4e4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a55bc69d66adfc83208c88a2e68e743a6e7149b3b810e196507b41a4338e97e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09a9c12107bdfa315398b65b5151dd81cb2d6ebff8ef252cf1a39741f542b019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfbbbf375bbd63e099885e5073d857793625e3e499df5cfd23ae8711cd8cab81"
   end
 
   depends_on "rust" => :build
