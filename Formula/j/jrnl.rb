@@ -9,13 +9,12 @@ class Jrnl < Formula
   head "https://github.com/jrnl-org/jrnl.git", branch: "develop"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa4562748012a42ee8666c34e8f958cabb5673c484210ae7a9adf176cc952530"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5b02079d5e5e3dec94d6985b5a7868ec61ac4acb86714c64df6d6bc19fb572f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb23b46a68196e8735929c19b70a1ad2f4f95b0e29bd323926540d47cf721d46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3ff4e0060dff57b2c7aca339e44f8a636dc65f027463ce27cf6fbc3703bbeb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe81340363950af8a223846e6e25e5774f4bab14a5cc193dc64861c0663daea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5af7f46e0f51c2b377ff67fc8b88d4949fcfede069a156891e0fedf46f7f3acc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f6243f3ad0ca6d67decd79f6d1259050dff6c3a29fa1b701663704185a9f0d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5dd0c2b7573144dba8f37a77b45d31d8ce96d2e7c0e67ad65ee73a2ac331957"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb03a74a09b2047ae74c36acab7c8a4005075be0624a7e4c56c6f325b84fa656"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f79d0928c0ba26a0d9fbbbd4c8df80d5d20d2dec48d256956d9e6fc46d4c807"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35fc1e8658ba3716b4623a30f1af22f2cd3e95aa2d24cd27f27928d79ad358ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20fc1a734e0194dd3b6091528db1b747ba4b47ba4ea2df74f1106f48b9661dc7"
   end
 
   depends_on "cryptography" => :no_linkage
