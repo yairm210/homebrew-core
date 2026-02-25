@@ -6,7 +6,7 @@ class McpInspector < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2d24f8c0c6ad6e39f748a2117fccaebb91825f2b2973304ba395dd350626bee0"
+    sha256 cellar: :any_skip_relocation, all: "d50de239eab8d28569fc6daff103015df1a61d48caa0148c6727a2710c87cb2d"
   end
 
   depends_on "node"
