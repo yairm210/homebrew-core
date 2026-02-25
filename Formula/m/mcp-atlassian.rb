@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/5f/01/43affc74fb7e89616642b2f2de4754edd8a61f183c5fca1ac49a3c770eb2/mcp_atlassian-0.17.0.tar.gz"
-  sha256 "d4ee09e691a0bd212d64193d83389c628ae6347075706de0a22ce6a2307f7fed"
+  url "https://files.pythonhosted.org/packages/9c/0b/d13b5191af29b6f8587604a5698716a9699cf98e15b8a5eec199eb4cc234/mcp_atlassian-0.18.1.tar.gz"
+  sha256 "447d3cc8e06148108ab966f31f69d5ddfaf2fed7ef9beee2bf0d0035d97a569a"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
@@ -137,8 +137,8 @@ class McpAtlassian < Formula
   end
 
   resource "fakeredis" do
-    url "https://files.pythonhosted.org/packages/d8/44/c403963727d707e03f49a417712b0a23e853d33ae50729679040b6cfe281/fakeredis-2.34.0.tar.gz"
-    sha256 "72bc51a7ab39bedf5004f0cf1b5206822619c1be8c2657fd878d1f4250256c57"
+    url "https://files.pythonhosted.org/packages/11/40/fd09efa66205eb32253d2b2ebc63537281384d2040f0a88bcd2289e120e4/fakeredis-2.34.1.tar.gz"
+    sha256 "4ff55606982972eecce3ab410e03d746c11fe5deda6381d913641fbd8865ea9b"
   end
 
   resource "fastmcp" do
