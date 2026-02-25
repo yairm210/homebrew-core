@@ -1,12 +1,21 @@
 class Alive2 < Formula
   desc "Automatic verification of LLVM optimizations"
   homepage "https://github.com/AliveToolkit/alive2"
-  url "https://github.com/AliveToolkit/alive2.git",
-      tag:      "v21.0",
-      revision: "913e1556032ee70a9ebf147b5a0c7e10086b7490"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/AliveToolkit/alive2.git", branch: "master"
+
+  stable do
+    url "https://github.com/AliveToolkit/alive2.git",
+        tag:      "v21.0",
+        revision: "913e1556032ee70a9ebf147b5a0c7e10086b7490"
+
+    # Backport fix for LLVM 22
+    patch do
+      url "https://github.com/AliveToolkit/alive2/commit/a86aaa0ea44c5671ce3e998ec6d422feaa95b236.patch?full_index=1"
+      sha256 "6645b59d29e7a4bbe45e91f57391cf9d4e5dbc27ba99a93c89ad13b14d57a7c4"
+    end
+  end
 
   bottle do
     rebuild 1
