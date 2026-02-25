@@ -7,10 +7,10 @@ class MacosTrash < Formula
   head "https://github.com/sindresorhus/macos-trash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d468f853e65b8c0862c13980eb7f4c5b3d3b0bd14b634b9a73d34dc470389bb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb8c8488686d0c2598a216d567d47f19b59be24cb8ce464537225b5130f3f091"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ad2cf3a4a15dd7160bd7054ca15fd8496d56b37e5c12830bbfac49ad27f7299"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c444c294f9a34a566a6f651d1d33f6f17040e18209da2462ee808c5c47c6b8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91b9dff20bd5ab363fbd573dadf35f0b78410dfb275e77e3d77c1e424fa6cd3e"
+    sha256 cellar: :any,                 arm64_sequoia: "0dccef8a0abe4b6f56b63b16fab54058316deaf28c6b5af3360214fee7750c0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f057ac1b33b63704e23e9d62431e4925d9995df18fb064adc3aa0e48d2662bac"
+    sha256 cellar: :any,                 sonoma:        "7fe04e7f88a301551cf89a98f82e3178536c1b12b609bf9a846b06f10e3437df"
   end
 
   keg_only :shadowed_by_macos
