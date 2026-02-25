@@ -5,6 +5,7 @@ class Aflxx < Formula
   version "4.35c"
   sha256 "b6e3d90ad65c7adb5681803126454f979e15b1e74323aecf2603cab490202249"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -32,6 +33,13 @@ class Aflxx < Formula
   # The Makefile will insist on compiling with LLVM clang even without this.
   fails_with :clang
   fails_with :gcc
+
+  # Backport fix for LLVM 22
+  patch :DATA
+  patch do
+    url "https://github.com/AFLplusplus/AFLplusplus/commit/5e8278daa453328aeb5c599e0ff359e5057108f0.patch?full_index=1"
+    sha256 "49fc530c92b716f7762c2bf45c8e287b2d22aff907520bff6ba3a5687169d945"
+  end
 
   def install
     ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
@@ -74,3 +82,22 @@ class Aflxx < Formula
     assert_equal "Hello, world!", shell_output("./test")
   end
 end
+
+__END__
+diff --git a/docs/Changelog.md b/docs/Changelog.md
+index 29d700094e..e81124ad75 100644
+--- a/docs/Changelog.md
++++ b/docs/Changelog.md
+@@ -4,7 +4,11 @@
+   release of the tool. See README.md for the general instruction manual.
+ 
+ 
+-### Version ++4.35a (dev)
++### Version ++4.36a (dev)
++  - ...
++
++
++### Version ++4.35a (release)
+   - GUIFuzz++ merged: Unleashing Grey-box Fuzzing on Desktop Graphical User
+                       Interfacing Applications
+     https://futures.cs.utah.edu/papers/25ASE.pdf
