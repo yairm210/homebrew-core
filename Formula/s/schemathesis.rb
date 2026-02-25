@@ -9,12 +9,12 @@ class Schemathesis < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "494b41269c89ee33e2a4354c7e1b10b1893c9caca3328acc11fe0e40b795e3d4"
-    sha256 cellar: :any,                 arm64_sequoia: "b4ef7b9a95545aaa4f9832d53df31cc63e08a41784b0f3b9eefaa6be3f45ec9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d77e53316d2c39b57ca94328362a75362f4630481a8dc82332f0b1326da1affe"
-    sha256 cellar: :any,                 sonoma:        "62667e6ad7e7405ca8a04fb3c519f9e1574e69562880420ca50c3940e9778602"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a066a5ac19e53f826954f42839c0deaf06dbb1ef4ac91a1b4d7b640a75d9e65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a11007fe62667f3375df86b4597294c03e1ab5dd7e686e55eb0d3afeece939b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "88faf193ff1c1ef538b3fd3869158cb5b255f03fc9841b07659168e03f875fc0"
+    sha256 cellar: :any,                 arm64_sequoia: "4820e75b653570a8adbd5143465bad4c40ad2418d20088e653fb5c030b75fdd1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1507c79982cfe42c745461bd73392a5bdd9e6f916b0721bf9980d3b5963bda39"
+    sha256 cellar: :any,                 sonoma:        "aaf708f5e85ef7f1071b6c2ecfa07430b95a659fd33ec5c53856f6b4c4223c54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a1823aa79a47d867ef4173eef89550bafa33da9a2b986adc084c49ce02dd84e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff13a9f8b8d879b9aaefed0bf1179dfec07ff2a5cbffaa45accdd002a0967450"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
