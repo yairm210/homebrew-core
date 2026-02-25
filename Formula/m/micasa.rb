@@ -1,8 +1,8 @@
 class Micasa < Formula
   desc "TUI for tracking home projects, maintenance schedules, appliances and quotes"
   homepage "https://micasa.dev"
-  url "https://github.com/cpcloud/micasa/archive/refs/tags/v1.50.0.tar.gz"
-  sha256 "be3a7636a2efebc8fcda436175fd269ad63477209f4f92f4af999f5f928fb221"
+  url "https://github.com/cpcloud/micasa/archive/refs/tags/v1.51.0.tar.gz"
+  sha256 "49c27b4853329de7a51b39ae3252f1bbec21b508b4636b9e34a2dd37a288b685"
   license "Apache-2.0"
 
   bottle do
