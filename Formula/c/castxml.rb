@@ -1,8 +1,8 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
-  url "https://github.com/CastXML/CastXML/archive/refs/tags/v0.6.13.tar.gz"
-  sha256 "df954886464fe624887411e5f4e2a7db00da3d64a48f142d3aff973e2097e2d6"
+  url "https://github.com/CastXML/CastXML/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "e70728229db5444384befcba9681a01497e9a19e35166ce1ffef3b5cbc8eeefe"
   license "Apache-2.0"
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
