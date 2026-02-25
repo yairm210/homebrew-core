@@ -1,8 +1,8 @@
 class Sd < Formula
   desc "Intuitive find & replace CLI"
   homepage "https://github.com/chmln/sd"
-  url "https://github.com/chmln/sd/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2adc1dec0d2c63cbffa94204b212926f2735a59753494fca72c3cfe4001d472f"
+  url "https://github.com/chmln/sd/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "defdce484f8c92f265e1282490572575028967c2c55d356111d1e49a3ea9a88e"
   license "MIT"
 
   bottle do
@@ -21,7 +21,7 @@ class Sd < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "sd-cli")
 
     man1.install "gen/sd.1"
     bash_completion.install "gen/completions/sd.bash" => "sd"
