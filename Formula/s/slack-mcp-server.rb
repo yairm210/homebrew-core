@@ -1,8 +1,8 @@
 class SlackMcpServer < Formula
   desc "Powerful MCP Slack Server with multiple transports and smart history fetch logic"
   homepage "https://github.com/korotovsky/slack-mcp-server"
-  url "https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.1.28.tar.gz"
-  sha256 "71d6a6de907d4bc2a9927d434dc1a686ec4ccfda2730fb3d3fac58b0126e5114"
+  url "https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "efac7f244c45250fd8165cd25c77559805d6c24dabaaa7d8f4e1b8ddc09f195b"
   license "MIT"
   head "https://github.com/korotovsky/slack-mcp-server.git", branch: "master"
 
@@ -24,6 +24,7 @@ class SlackMcpServer < Formula
   test do
     # User OAuth token
     ENV["SLACK_MCP_XOXP_TOKEN"] = "xoxp-test-token"
-    assert_match "Failed to create MCP Slack client", shell_output("#{bin}/slack-mcp-server 2>&1", 1)
+    output = shell_output("#{bin}/slack-mcp-server 2>&1", 1)
+    assert_match(/Failed to create MCP Slack client|Authentication failed - check your Slack tokens/, output)
   end
 end
