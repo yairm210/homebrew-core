@@ -147,7 +147,7 @@ class Mesa < Formula
       # Work around .../rusticl_system_bindings.h:1:10: fatal error: 'stdio.h' file not found
       ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
 
-      vulkan_drivers = (MacOS.version >= :tahoe) ? "kosmickrisp,swrast" : "swrast"
+      vulkan_drivers = (MacOS.version >= :sequoia) ? "kosmickrisp,swrast" : "swrast"
 
       %W[
         -Dgallium-drivers=llvmpipe,zink
