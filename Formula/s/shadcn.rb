@@ -5,6 +5,10 @@ class Shadcn < Formula
   sha256 "24b7af646c5afa01c7604dfe8bf3f28090594c7aef3ae5cdfc678ce040b5a55f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "e435a0da8920e6de4aa77cd7e0d208e87ae1b86dff2a7459ef8460f8af0e1b79"
+  end
+
   depends_on "node"
 
   def install
