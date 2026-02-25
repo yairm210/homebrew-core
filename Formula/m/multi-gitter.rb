@@ -1,8 +1,8 @@
 class MultiGitter < Formula
   desc "Update multiple repositories in with one command"
   homepage "https://github.com/lindell/multi-gitter"
-  url "https://github.com/lindell/multi-gitter/archive/refs/tags/v0.61.0.tar.gz"
-  sha256 "4fb912a2127bdec75ada978954b3e9a963ec6891c95657237a3e4514da02b17f"
+  url "https://github.com/lindell/multi-gitter/archive/refs/tags/v0.62.0.tar.gz"
+  sha256 "9a86abe44035610e245e2b9df4992a84b10235a0b4bb00b8f79d1207cbaa6ed0"
   license "Apache-2.0"
   head "https://github.com/lindell/multi-gitter.git", branch: "master"
 
