@@ -1,7 +1,7 @@
 class OhdearCli < Formula
   desc "Tool to manage your Oh Dear sites"
   homepage "https://github.com/ohdearapp/ohdear-cli"
-  url "https://github.com/ohdearapp/ohdear-cli/releases/download/v5.0.0/ohdear.phar"
+  url "https://github.com/ohdearapp/ohdear-cli/releases/download/v5.1.0/ohdear.phar"
   sha256 "3a20dba5890edeebb09a62addf654fc41180bcea525fc8eb82802f01ea33870e"
   license "MIT"
 
