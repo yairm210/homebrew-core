@@ -12,12 +12,12 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0be3384178dc06f22f4dcc80cca1ea2e2969662bf7e6ff7511676c4e72bc0d3d"
-    sha256 arm64_sequoia: "5d00ea83f694dc8e83b65a4857e54fcb750aafacdfb38eb185721ce69bf89499"
-    sha256 arm64_sonoma:  "64e0c80c40164bd8e88883e54691da11b1615187b8e15438fc5859795bd1bbe3"
-    sha256 sonoma:        "325a2acc92fd9a483bf597ad9c1c82852c5d8e66883b8bb0b4c3d16972f04195"
-    sha256 arm64_linux:   "ff42820774fbdf9459593aa9f131d01edabfb289c2b020da820e5b9dfb63e768"
-    sha256 x86_64_linux:  "4132aa7ca1f2c1191a22a4f55b1fbf9398c56776967429ab4692ef341afd2691"
+    sha256 arm64_tahoe:   "09fab4527ab0dcd353195263195bc46e69a4a64cea23decbd2e6983db79907c2"
+    sha256 arm64_sequoia: "6c01df74f803bc3e6058d6d72dc8f963f604ae67cbe4d43fcc6b5425d50cbc40"
+    sha256 arm64_sonoma:  "b734a898bc7653f6dc65306f2ba7a885c7a631d7ae916f6aef41fab68b1ced50"
+    sha256 sonoma:        "8f87baed503376e2e032e99a972aab176fa2a498ca295197a13bd35ba87bcfc0"
+    sha256 arm64_linux:   "efd1751463dd421684e826846537c1a5e686f91c8e159f812d86bb9930a7fae4"
+    sha256 x86_64_linux:  "368f7410c9dc8abd932a79872862668b982210f04ce60918a319a52b5e686688"
   end
 
   depends_on "cmake" => :build
