@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/openmp-21.1.8.src.tar.xz"
-  sha256 "856b023748b41ac7b2c83fd8e9f765ff48a4df2fe6777d2811ef7c7ed8f2f977"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.0/llvm-project-22.1.0.src.tar.xz"
+  sha256 "25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173"
   license "MIT"
 
   livecheck do
@@ -30,31 +30,17 @@ class Libomp < Formula
     depends_on "python@3.14"
   end
 
-  resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/cmake-21.1.8.src.tar.xz"
-    sha256 "85735f20fd8c81ecb0a09abb0c267018475420e93b65050cc5b7634eab744de9"
-
-    livecheck do
-      formula :parent
-    end
-  end
-
   def install
-    odie "cmake resource needs to be updated" if version != resource("cmake").version
-
-    (buildpath/"src").install buildpath.children
-    (buildpath/"cmake").install resource("cmake")
-
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
     # libgomp alias which can conflict with GCC's libgomp.
     args = ["-DLIBOMP_INSTALL_ALIASES=OFF"]
     args << "-DOPENMP_ENABLE_LIBOMPTARGET=OFF" if OS.linux?
 
-    system "cmake", "-S", "src", "-B", "build/shared", *std_cmake_args, *args
+    system "cmake", "-S", "openmp", "-B", "build/shared", *std_cmake_args, *args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", "src", "-B", "build/static",
+    system "cmake", "-S", "openmp", "-B", "build/static",
                     "-DLIBOMP_ENABLE_SHARED=OFF",
                     *std_cmake_args, *args
     system "cmake", "--build", "build/static"
