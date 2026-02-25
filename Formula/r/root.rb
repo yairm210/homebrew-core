@@ -1,19 +1,10 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
+  url "https://root.cern/download/root_v6.38.02.source.tar.gz"
+  sha256 "77d34d2bca0ea720acfd43798bcb5d09a28584013b4d0a2910823c867d4bfa42"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
-
-  stable do
-    url "https://root.cern/download/root_v6.38.00.source.tar.gz"
-    sha256 "a4429422c460f832cde514a580dd202b1d3c96e8919c24363c3d42f8cf5accdc"
-
-    # Backport fix for RPATHs
-    patch do
-      url "https://github.com/root-project/root/commit/f646e520a5dc0b2e50b708c3d757bcf2abe618fd.patch?full_index=1"
-      sha256 "aa08b4dfe0274fd2b163d1b5eeb617864452337ff63d571264d17fe7f5d05f70"
-    end
-  end
 
   livecheck do
     url "https://root.cern/install/all_releases/"
