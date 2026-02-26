@@ -1,8 +1,8 @@
 class Docmd < Formula
   desc "Minimal Markdown documentation generator"
   homepage "https://docmd.mgks.dev/"
-  url "https://registry.npmjs.org/@docmd/core/-/core-0.4.7.tgz"
-  sha256 "6c733d0c94bc93f7ab917df935a64df57b1d0b2480362ac880df0a96b606c5b7"
+  url "https://registry.npmjs.org/@docmd/core/-/core-0.4.9.tgz"
+  sha256 "0c80fe7712b31acb402e18da6d82d16d3c255ed51ab5f50159b29db7581a109a"
   license "MIT"
 
   bottle do
@@ -27,14 +27,6 @@ class Docmd < Formula
 
     node_modules = libexec/"lib/node_modules/@docmd/core/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
-
-    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
-    rm_r(clipboardy_fallbacks_dir)
-    if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
-      linux_dir.mkpath
-      ln_sf Formula["xsel"].opt_bin/"xsel", linux_dir/"xsel"
-    end
 
     # Remove pre-built binaries
     rm_r(libexec/"lib/node_modules/@docmd/core/node_modules/@esbuild")
