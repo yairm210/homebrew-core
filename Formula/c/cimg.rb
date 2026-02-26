@@ -1,8 +1,8 @@
 class Cimg < Formula
   desc "C++ toolkit for image processing"
   homepage "https://cimg.eu/"
-  url "https://cimg.eu/files/CImg_3.7.1.zip"
-  sha256 "60726751c70f08167d4de1b0f8750a1e3f3d70c80f808fc29ccc66f0cfd57c53"
+  url "https://cimg.eu/files/CImg_3.7.2.zip"
+  sha256 "63b2d06d14b54b6f8065933cc9dab8e2ca5dbd8cf01e2ae6d8f7fae2f2686dfe"
   license "CECILL-2.0"
 
   livecheck do
