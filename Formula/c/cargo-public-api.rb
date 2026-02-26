@@ -1,8 +1,8 @@
 class CargoPublicApi < Formula
   desc "List and diff the public API of Rust library crates"
   homepage "https://github.com/cargo-public-api/cargo-public-api"
-  url "https://github.com/cargo-public-api/cargo-public-api/archive/refs/tags/v0.50.2.tar.gz"
-  sha256 "e9ae0d0a6ac5582ad99be45ef0d3f77a852e1e38e970fb2c8812337a6f997a79"
+  url "https://github.com/cargo-public-api/cargo-public-api/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "7fab168d6d60de8ff04b97fb25f2fc5f677d65344540b567ab6967c3418ff60a"
   license "MIT"
   head "https://github.com/cargo-public-api/cargo-public-api.git", branch: "main"
 
