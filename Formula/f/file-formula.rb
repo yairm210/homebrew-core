@@ -2,8 +2,8 @@
 class FileFormula < Formula
   desc "Utility to determine file types"
   homepage "https://darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.46.tar.gz"
-  sha256 "c9cc77c7c560c543135edc555af609d5619dbef011997e988ce40a3d75d86088"
+  url "https://astron.com/pub/file/file-5.47.tar.gz"
+  sha256 "45672fec165cb4cc1358a2d76b5d57d22876dcb97ab169427ac385cbe1d5597a"
   license "BSD-2-Clause-Darwin"
   head "https://github.com/file/file.git", branch: "master"
 
