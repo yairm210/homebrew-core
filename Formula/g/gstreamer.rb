@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.0/gstreamer-1.28.0.tar.bz2"
-    sha256 "f1ab0903c789ee153e116963b8dbc02d40d7bf5e8bc25c70777585b5b61f5a15"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.1/gstreamer-1.28.1.tar.bz2"
+    sha256 "86ec0179104664a1ca6de57d7c886d3a8aa0491d1a243d02514b306885272b91"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.0/gst-plugins-rs-gstreamer-1.28.0.tar.bz2"
-      sha256 "00c3e13cf2aeb5340159c046f01e6d41690157fc93a643727b03f32ac955197d"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.1/gst-plugins-rs-gstreamer-1.28.1.tar.bz2"
+      sha256 "5488965db0fbb491810188ff144ec5a43055a6a5fc3412bef6b7a81cb504e60d"
 
       livecheck do
         formula :parent
@@ -44,6 +43,7 @@ class Gstreamer < Formula
 
   depends_on "bison" => :build
   depends_on "cargo-c" => :build
+  depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -138,7 +138,7 @@ class Gstreamer < Formula
   end
 
   def python3
-    which("python3.14")
+    Formula["python@3.14"].opt_bin/"python3.14"
   end
 
   skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
@@ -214,6 +214,12 @@ class Gstreamer < Formula
     # Prevent the build from downloading an x86-64 version of bison.
     args << "-Dbuild-tools-source=system"
 
+    # TODO: Remove when gst-plugin-whisper builds on Linux arm64 again.
+    # Whisper was added in 1.28.1 and currently fails in CI with Rust type
+    # mismatches (*const i8 vs *const u8).
+    # Ref: https://gstreamer.freedesktop.org/releases/1.28/#1.28.1
+    args << "-Dgst-plugins-rs:whisper=disabled" if OS.linux? && Hardware::CPU.arm?
+
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
@@ -267,7 +273,10 @@ class Gstreamer < Formula
     skip_plugins = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if skip_plugins
 
-    assert_match(/^Total count: \d+ plugin/, shell_output(bin/"gst-inspect-1.0"))
+    ENV["LC_ALL"] = "C"
+    ENV["LANG"] = "C"
+    gst_inspect_output = shell_output(bin/"gst-inspect-1.0")
+    assert_match(/Total count: \d+ plugins?/, gst_inspect_output)
     return if skip_plugins
 
     system bin/"ges-launch-1.0", "--ges-version"
