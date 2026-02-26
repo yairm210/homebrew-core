@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.0.tar.gz"
-  sha256 "7f3edabb04ab7e22087d550e112c6666915df37ba833df722d96ddcb47313547"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.1.tar.gz"
+  sha256 "9ee55642dd4450191a6452a0aa6de6d1c5f717ac64cbca0b9367b7c5808ae142"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
@@ -23,12 +23,6 @@ class PgpoolIi < Formula
   depends_on "libpq"
 
   uses_from_macos "libxcrypt"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     # Workaround for use of `strchrnul`, which is not available on macOS
