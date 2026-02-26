@@ -12,12 +12,12 @@ class HyperMcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64129590b914113723a884ffdd56b3486966b7c67d4295a09ed737c029673ecf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b55bf8448b42c9ca3a52766470699a5fc31290d0a29ce64dbf4807c1c1fc353d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6d97a1837d8819307eb62fcc031c30ccc43f53ddbd7d72adf0c250ecbdd6050"
-    sha256 cellar: :any_skip_relocation, sonoma:        "011deea1d4c2e32bc182d2d881739cd53b441838c2de1c2a76128b8fc4c56e17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88eacd07dd16b46d487a2fb55b2da2d88b942986422b84e2d68d20880f234095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b6849ad3c70d599532f77713e3bfbb0705686da7c1ea2c58e33fe16138dd716"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6dcdd293bad6b385d5ee9bf27000417f5ca362545d8c6be71bb90667fb3bc0ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e37e98ad72dfbf7f50093d19c79367e58b75272ee5271709b00bca88cc59006"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "860db71140622a6f2fe97279ccd2ae853d9a7c3476fb46a8703be013abe513c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2e27e76dfc2878da946253a7318a2c9234de700a944126a6eb5c703883bedd6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f20af0062d0bc060e613efd577c8240e2fdae9a5e2b05a058e294e0bb4a5b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd593b60696bcd0e7d05902849bbe600aa7c7978962979d0029537ce7efa4aec"
   end
 
   depends_on "rust" => :build
