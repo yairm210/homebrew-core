@@ -6,12 +6,12 @@ class StripeCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b93a15ca710aeda973754118338e85cdd2924424395f3aa1fa05ede53883d62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0d907d9959b541347087bb15e3d07b5fe692296e1569a13c90d8b413e985e4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bcc7f4dd0634d14502215043d66b3011fee718fdfd6c13aaa38a7eaaa0f159d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ecbb0ad73f9bdeac6e521622fce6fc7205cd9bcba3220c5f91bad1712dac7e63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bc8afb807aae4615949f9fec0f81d9b83c7dd7da6b149eb054cfa75f6c58986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57ad2f225ac09f57e7cdcb6ece64d6ee86e7d0123a5af5de4dda24702fced293"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e525b4ab72430974a57bc0900e58b836e4e6e0504a0a099cef17accf525c2ef3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7dd7b56796b3abd65f18c4b7796b41531fcf69159e407feec982badc354e56e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83774b6820db352f443e26c558536212f3a6433a14557f5f46b9620c9d30dfc7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7c8253811cf87a351f7529dbe5fa917f88307db1b349aa0d96ced9a17daf586"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52759325cb909b0febe3ca34915d3eb6b91eea5a195ee1b51783967b944635b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e319139d0f7e1e870c609a5655f17c85ff9bf520c6ca6ab054167babbe816170"
   end
 
   depends_on "go" => :build
