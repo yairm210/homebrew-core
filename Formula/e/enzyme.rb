@@ -4,6 +4,7 @@ class Enzyme < Formula
   url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.249.tar.gz"
   sha256 "0842c14bd3953502bda6e8bdff22e94f3d49b042839f2ae5c3d502a7686ab969"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
@@ -40,16 +41,14 @@ class Enzyme < Formula
       }
       int main() {
         double i = 21.0;
-        printf("square(%.0f)=%.0f, dsquare(%.0f)=%.0f\\n", i, square(i), i, dsquare(i));
+        printf("square(%.0f)=%.0f, dsquare(%.0f)=%.0f", i, square(i), i, dsquare(i));
       }
     C
 
     ENV["CC"] = llvm.opt_bin/"clang"
 
-    system ENV.cc, testpath/"test.c",
-                        "-fplugin=#{lib/shared_library("ClangEnzyme-#{llvm.version.major}")}",
-                        "-O1", "-o", "test"
-
-    assert_equal "square(21)=441, dsquare(21)=42\n", shell_output("./test")
+    plugin = lib/shared_library("ClangEnzyme-#{llvm.version.major}")
+    system ENV.cc, "test.c", "-fplugin=#{plugin}", "-O1", "-o", "test"
+    assert_equal "square(21)=441, dsquare(21)=42", shell_output("./test")
   end
 end
