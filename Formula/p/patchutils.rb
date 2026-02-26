@@ -1,8 +1,8 @@
 class Patchutils < Formula
   desc "Small collection of programs that operate on patch files"
   homepage "https://cyberelk.net/tim/software/patchutils/"
-  url "https://github.com/twaugh/patchutils/releases/download/0.4.4/patchutils-0.4.4.tar.xz"
-  sha256 "2008241ee5d4f87ada3f743c719cc010b0ba929126e255f23c3fb48f614c7e32"
+  url "https://github.com/twaugh/patchutils/releases/download/0.4.5/patchutils-0.4.5.tar.xz"
+  sha256 "8386a35a4d2d3cbc28fdcc93c5be007c382c78e3ee079070139f0d822e013325"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
