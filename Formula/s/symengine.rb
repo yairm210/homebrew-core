@@ -4,7 +4,7 @@ class Symengine < Formula
   url "https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
     rebuild 1
@@ -33,6 +33,20 @@ class Symengine < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport support for LLVM 22
+  patch do
+    url "https://github.com/symengine/symengine/commit/a498ff2eadac2032d7a3982fc6dc3f69c4cca319.patch?full_index=1"
+    sha256 "308abb8a03d8d132937f0340741030f6e8148030eef7fcfea12ab3e80b03d569"
+  end
+  patch do
+    url "https://github.com/symengine/symengine/commit/de7305e5e2fee97d80c25164a8f8c9f7ecfc9953.patch?full_index=1"
+    sha256 "09a5acf3043de18d5f09b2e28a6dc4edc127fe7e4b66e2656e3a0db4c26a5e6d"
+  end
+  patch do
+    url "https://github.com/symengine/symengine/commit/ea9868e64ced2cd2abb9cdc3ae97d965b892b974.patch?full_index=1"
+    sha256 "2a94699984ead1db45c024458783d13d70aa3b250bb72b1141502fb2287344ec"
   end
 
   def install
