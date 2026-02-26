@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://www.mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/refs/tags/mame0285.tar.gz"
-  version "0.285"
-  sha256 "2b7ed1553ddf434692f62ded87b296931968d55e15f786a8588102880851f41c"
+  url "https://github.com/mamedev/mame/archive/refs/tags/mame0286.tar.gz"
+  version "0.286"
+  sha256 "ef05eb7521c841e7571b57cdd67bb729fb60ea76725a8fe27e74d805bbab9580"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -26,7 +26,7 @@ class RomTools < Formula
   depends_on "asio" => :build
   depends_on "pkgconf" => :build
   depends_on "flac"
-  depends_on "sdl2"
+  depends_on "sdl3"
   depends_on "utf8proc"
   depends_on "zstd"
 
@@ -38,7 +38,7 @@ class RomTools < Formula
     depends_on "portmidi" => :build
     depends_on "pulseaudio" => :build
     depends_on "qtbase" => :build
-    depends_on "sdl2_ttf" => :build
+    depends_on "sdl3_ttf" => :build
     depends_on "zlib-ng-compat"
   end
 
@@ -59,6 +59,7 @@ class RomTools < Formula
       USE_SYSTEM_LIB_FLAC=1
       USE_SYSTEM_LIB_UTF8PROC=1
       USE_SYSTEM_LIB_ZSTD=1
+      OSD=sdl3
       VERBOSE=1
     ]
     if OS.linux?
