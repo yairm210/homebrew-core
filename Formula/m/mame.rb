@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/refs/tags/mame0285.tar.gz"
-  version "0.285"
-  sha256 "2b7ed1553ddf434692f62ded87b296931968d55e15f786a8588102880851f41c"
+  url "https://github.com/mamedev/mame/archive/refs/tags/mame0286.tar.gz"
+  version "0.286"
+  sha256 "ef05eb7521c841e7571b57cdd67bb729fb60ea76725a8fe27e74d805bbab9580"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -41,7 +41,7 @@ class Mame < Formula
   depends_on "portaudio"
   depends_on "portmidi"
   depends_on "pugixml"
-  depends_on "sdl2"
+  depends_on "sdl3"
   depends_on "sqlite"
   depends_on "utf8proc"
   depends_on "zstd"
@@ -56,7 +56,7 @@ class Mame < Formula
     depends_on "mesa"
     depends_on "pulseaudio"
     depends_on "qtbase"
-    depends_on "sdl2_ttf"
+    depends_on "sdl3_ttf"
     depends_on "zlib-ng-compat"
   end
 
@@ -83,6 +83,7 @@ class Mame < Formula
                    "USE_SYSTEM_LIB_SQLITE3=1",
                    "USE_SYSTEM_LIB_UTF8PROC=1",
                    "USE_SYSTEM_LIB_ZSTD=1",
+                   "OSD=sdl3",
                    "VERBOSE=1"
     bin.install "mame"
     cd "docs" do
