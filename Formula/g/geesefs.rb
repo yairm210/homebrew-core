@@ -7,12 +7,12 @@ class Geesefs < Formula
   head "https://github.com/yandex-cloud/geesefs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2a7584fd8788285e1eafc28ca132bc1c7caf1e6eb4829d3cbd8ab0d8a87cf1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48aa198340fc9e44af8c1bb764b1acb39c40898da84bb891a2ff2c6682d3ef72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8f20a8b251c9cc1139506242928431f8f0236596a1e3d83f672cda218783e39"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c88310b0460d07fda844eeb4cfb21d488132097f406c4e95945759f40b3721f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4172b2ef62b0e386b3bda74772f3c6881c40c8053b306f70d99a0bc73b09b4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b8dcb30edccbea5d8edc6ef5395bdc8e7460e97c36d4712977fa758c2054b4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "698a532243b7c8b566114b067a3abb4e89758f6d49258aec2543ef39bc0f424e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eba4d3a76a5a617aa068ff3f3a2da0a452a35be0c29991d2caf6b6bdbb8d1d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5109225bcfed5b961a63b115d78247aea0bad02facbd95cefa36971bdeecae6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc9f5201631918dffe5e1bac1d411332a6136e04df9c9fdcfa7156f09bf2711c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d73dab475819446ec1b23394b9a9b8e0c39bd9ce46bf93f8dc90ba610c498b45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5246b23bacf294c6757af6429327f97025a6474f73f8182e29f3a930adae8953"
   end
 
   depends_on "go" => :build
