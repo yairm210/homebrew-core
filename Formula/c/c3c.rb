@@ -4,6 +4,7 @@ class C3c < Formula
   url "https://github.com/c3lang/c3c/archive/refs/tags/v0.7.9.tar.gz"
   sha256 "d9867c80e9dea5a96badd7c88937e155ead31f3dc6aa0758010ce0734877d17b"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -24,14 +25,14 @@ class C3c < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@21"
+  depends_on "llvm@21"
 
   uses_from_macos "curl"
 
   def install
-    lld = Formula["lld"]
-    llvm = Formula["llvm"]
+    lld = Formula["lld@21"]
+    llvm = Formula["llvm@21"]
 
     args = [
       "-DC3_LINK_DYNAMIC=ON",
