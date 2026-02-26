@@ -19,8 +19,7 @@ class Opencolorio < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
-  depends_on "expat"
+  depends_on "python@3.14" => [:build, :test]
   depends_on "imath"
   depends_on "little-cms2"
   depends_on "minizip-ng"
@@ -28,6 +27,8 @@ class Opencolorio < Formula
   depends_on "pystring"
   depends_on "yaml-cpp"
   depends_on "zlib-ng-compat"
+
+  uses_from_macos "expat", since: :sequoia # expat 2.6.0+ (Apple expat-37)
 
   on_arm do
     depends_on "sse2neon" => :build
