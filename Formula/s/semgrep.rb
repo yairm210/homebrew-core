@@ -9,8 +9,8 @@ class Semgrep < Formula
   # 2. run `brew update-python-resources semgrep`
   # 3. uncomment `pcre` resource
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.152.0",
-      revision: "2b6338b86f4846cb8dd09ef47c9d8537f7626b52"
+      tag:      "v1.153.0",
+      revision: "a4a84e81e8cde78eb4893def4b971f8597a0aed8"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -238,8 +238,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
-    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pygments" do
