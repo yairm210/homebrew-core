@@ -9,7 +9,7 @@ class Nb < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b17e861aa683d30554142bf32a767cff36651b4b251a6a46197683ed206914fe"
+    sha256 cellar: :any_skip_relocation, all: "c277c3ccde45d0375d9d947950d9f9a3185765e5a7124cbc96464beb22d04fc9"
   end
 
   depends_on "bat"
