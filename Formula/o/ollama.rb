@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.17.0",
-      revision: "06edabdde1174bd31c1d93f3d9e5efc2d9504806"
+      tag:      "v0.17.1",
+      revision: "9bf41969f0c23d2ee980d7f092f5f80ea4521d2a"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -69,30 +69,6 @@ class Ollama < Formula
     end
 
     system "go", "generate", *mlx_args, "./x/imagegen/mlx"
-
-    if OS.mac? && Hardware::CPU.arm?
-      # Temporary compatibility workaround for mlx-c 0.5.x.
-      # Introduced by MLX runner generation in https://github.com/ollama/ollama/pull/14185
-      # Upstream tracking issue https://github.com/ollama/ollama/issues/14298
-      # Drop only this symbol until upstream syncs generated bindings.
-      inreplace "x/mlxrunner/mlx/generated.h" do |s|
-        s.gsub!("\nextern mlx_metal_device_info_t (*mlx_metal_device_info_)(void);\n", "\n")
-        s.gsub!(
-          <<~C,
-
-            static inline mlx_metal_device_info_t mlx_metal_device_info(void) {
-                return mlx_metal_device_info_();
-            }
-          C
-          "\n",
-        )
-      end
-      inreplace "x/mlxrunner/mlx/generated.c" do |s|
-        s.gsub!("mlx_metal_device_info_t (*mlx_metal_device_info_)(void) = NULL;\n", "")
-        s.gsub!("    CHECK_LOAD(handle, mlx_metal_device_info);\n", "")
-      end
-    end
-
     system "go", "build", *mlx_args, *std_go_args(ldflags:)
   end
 
