@@ -3,8 +3,8 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/72/71/1e19d9be6e6ad7aa52fe466efbf1063a5c43303a579cd34538a5e96052ac/bbot-2.8.2.tar.gz"
-  sha256 "4a518440637614daccd056468fa4828dcc8f83cdb7f36391471dfa592c9ad8b3"
+  url "https://files.pythonhosted.org/packages/a8/f2/0d6ac012ad60575a706d3723db206206847c227aa3bffbcc8d0e9957a4ed/bbot-2.8.3.tar.gz"
+  sha256 "ed7a607f8d3bf313e617eb3dda156d6cb6b2bb96fc390099fe0db53a50f7ec80"
   license "AGPL-3.0-only"
 
   bottle do
@@ -35,8 +35,8 @@ class Bbot < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/22/56/a76adc20dee854b52a3e20fcb9c01280bbac52ef54308e5b1c7bc67ade76/ansible_core-2.20.2.tar.gz"
-    sha256 "75e19a3ad8cf659579ea182cdf948ee0900d700e564802e92876de53dbd9715d"
+    url "https://files.pythonhosted.org/packages/03/d6/2a1fda59f9bab7519f2e94a7bec8416e080dd2e17af4f4fb5d1e3d0c997d/ansible_core-2.20.3.tar.gz"
+    sha256 "38670ab2d2ffd67ee7e9e562f7c94e0927c8b7b4b0eb69233bc008c29e32d591"
   end
 
   resource "ansible-runner" do
@@ -85,8 +85,8 @@ class Bbot < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/cd/fa3ab025a8f9772e8a9146d8fd8eef6d62649274d231ca84249f54a0de4a/filelock-3.24.0.tar.gz"
-    sha256 "aeeab479339ddf463a1cdd1f15a6e6894db976071e5883efc94d22ed5139044b"
+    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
+    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
   end
 
   resource "h11" do
@@ -205,8 +205,8 @@ class Bbot < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
-    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
+    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
+    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
   end
 
   resource "requests" do
