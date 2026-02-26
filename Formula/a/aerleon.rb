@@ -3,8 +3,8 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4a/12/213766c9101a7f849c4051190f2ac502afadbe466d47a203b5264d575973/aerleon-1.15.0.tar.gz"
-  sha256 "105150bca3d9f384049b909f6aa982d75b474e88086c18b98cc68abfd236b353"
+  url "https://files.pythonhosted.org/packages/91/27/aeaf0098e517f9eeda65e71f5764f3913d465d2c7557281f69b43a66d83c/aerleon-1.16.0.tar.gz"
+  sha256 "3678e15a1faf00fc63263bbbc413e746261893c59d3383358d23a7f1a04ab61c"
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
