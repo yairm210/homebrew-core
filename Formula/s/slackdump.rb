@@ -1,8 +1,8 @@
 class Slackdump < Formula
   desc "Export Slack data without admin privileges"
   homepage "https://github.com/rusq/slackdump"
-  url "https://github.com/rusq/slackdump/archive/refs/tags/v4.0.2.tar.gz"
-  sha256 "effaece3298bf95495596bcaff1ca0cbf68b8e81875b2082c92e852277a244ee"
+  url "https://github.com/rusq/slackdump/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "e8d179d90799c560e7624c40ea615f2576f92d15be2f1a8d9b49f7fe007b4a2f"
   license "AGPL-3.0-only"
   head "https://github.com/rusq/slackdump.git", branch: "master"
 
