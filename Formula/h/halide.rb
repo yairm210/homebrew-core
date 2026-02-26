@@ -4,6 +4,7 @@ class Halide < Formula
   url "https://github.com/halide/Halide/archive/refs/tags/v21.0.0.tar.gz"
   sha256 "aa6b6f5e89709ca6bc754ce72b8b13b2abce0d6b001cb2516b1c6f518f910141"
   license "MIT"
+  revision 1
   head "https://github.com/halide/Halide.git", branch: "main"
 
   livecheck do
@@ -26,8 +27,8 @@ class Halide < Formula
   depends_on "flatbuffers"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@21"
+  depends_on "llvm@21"
   depends_on "python@3.14"
   depends_on "wabt"
 
@@ -37,6 +38,12 @@ class Halide < Formula
 
   def python3
     "python3.14"
+  end
+
+  # Backport support for wabt 1.0.39
+  patch do
+    url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"
+    sha256 "6b861e585ce4d71aec53b225562e078086ee310e8c6e7a052bf3fd53f03322ab"
   end
 
   def install
