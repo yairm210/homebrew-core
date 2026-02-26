@@ -1,9 +1,11 @@
 class Pocl < Formula
   desc "Portable Computing Language"
   homepage "https://portablecl.org/"
+  # TODO: Use LLVM 22 on next release
   url "https://github.com/pocl/pocl/archive/refs/tags/v7.1.tar.gz"
   sha256 "1110057cb0736c74819ad65238655a03f7b93403a0ca60cdd8849082f515ca25"
   license "MIT"
+  revision 1
   head "https://github.com/pocl/pocl.git", branch: "main"
 
   livecheck do
@@ -25,7 +27,7 @@ class Pocl < Formula
   depends_on "opencl-headers" => :build
   depends_on "pkgconf" => :build
   depends_on "hwloc"
-  depends_on "llvm"
+  depends_on "llvm@21"
   depends_on "opencl-icd-loader"
   uses_from_macos "python" => :build
 
