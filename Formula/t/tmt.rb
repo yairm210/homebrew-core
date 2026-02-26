@@ -3,8 +3,8 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/02/12/3da3aa622b58ff1e90aff2df10deaa6a4153974a65b974598ab5afc0d013/tmt-1.67.0.tar.gz"
-  sha256 "9ad86ec94df0f0aabd7974f5678fce2f0b37908bb259bf10616e89e302aaf063"
+  url "https://files.pythonhosted.org/packages/3f/47/e1a69519e50c59a5630b019624b98aecad99d8e0a320a14cab5567d44b77/tmt-1.68.0.tar.gz"
+  sha256 "470d17f9bbe6927c261433e00ee644dc5b79c83a0ab16b365942851ed4afeed4"
   license "MIT"
 
   bottle do
@@ -45,8 +45,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/71/74364ff065ca78914d8bd90b312fe78ddc5e11372d38bc9cb7104f887ce1/filelock-3.21.2.tar.gz"
-    sha256 "cfd218cfccf8b947fce7837da312ec3359d10ef2a47c8602edd59e0bacffb708"
+    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
+    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
   end
 
   resource "flexcache" do
@@ -100,8 +100,8 @@ class Tmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/71/25/ccd8e88fcd16a4eb6343a8b4b9635e6f3928a7ebcd82822a14d20e3ca29f/platformdirs-4.7.0.tar.gz"
-    sha256 "fd1a5f8599c85d49b9ac7d6e450bc2f1aaf4a23f1fe86d09952fe20ad365cf36"
+    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
+    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
   resource "pygments" do
