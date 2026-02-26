@@ -1,18 +1,15 @@
 class Libbluray < Formula
   desc "Blu-Ray disc playback library for media players like VLC"
   homepage "https://www.videolan.org/developers/libbluray.html"
-  url "https://download.videolan.org/videolan/libbluray/1.4.0/libbluray-1.4.0.tar.xz"
-  sha256 "77937baf07eadda4b2b311cf3af4c50269d2ea3165041f5843d96476c4c92777"
+  url "https://download.videolan.org/videolan/libbluray/1.4.1/libbluray-1.4.1.tar.xz"
+  sha256 "76b5dc40097f28dca4ebb009c98ed51321b2927453f75cc72cf74acd09b9f449"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://code.videolan.org/videolan/libbluray.git", branch: "master"
 
   livecheck do
     url "https://download.videolan.org/pub/videolan/libbluray/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "0ec773a6a338ab74b0e563a13065853d94252ff2c8adbbe5758bed9086d052de"
