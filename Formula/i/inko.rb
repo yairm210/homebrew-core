@@ -4,6 +4,7 @@ class Inko < Formula
   url "https://releases.inko-lang.org/0.19.1.tar.gz"
   sha256 "2261118c98d520f61624257c6fc2b0c65782d7de2b5cd6f17245f071b1d25015"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/inko-lang/inko.git", branch: "main"
 
   # The upstream website doesn't provide easily accessible version information
