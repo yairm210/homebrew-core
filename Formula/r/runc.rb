@@ -6,6 +6,11 @@ class Runc < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c1e65ec050a170357b5ffbadfe188381171a0195900cfcb831b05150ca8c4756"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "00fcd55a2e57a3a121777511457c9ae3ca626a627117e15e89bda428ce293028"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "pkgconf" => :build
