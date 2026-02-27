@@ -18,7 +18,11 @@ class AzureDev < Formula
   depends_on "go" => :build
 
   def install
-    (buildpath/".installed-by.txt").write "brew"
+    # install file to be used to determine if azd was installed by brew
+    (libexec/".installed-by.txt").write "brew"
+    inreplace "cli/azd/pkg/installer/installed_by.go",
+              'Join(exeDir, ".installed-by.txt")',
+              'Join(exeDir, "..", "libexec", ".installed-by.txt")'
 
     # Version should be in the format "<version> (commit <commit_hash>)"
     azd_version = "#{version} (commit 0000000000000000000000000000000000000000)"
