@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.23.5.tar.gz"
-  sha256 "593a43ddd0d57902237dfa76888f7b02cb7fc7747111369cb31e126db4836b9f"
+  url "https://download.samba.org/pub/samba/stable/samba-4.23.6.tar.gz"
+  sha256 "e3dabd8b5e42dc97669fa0faef032510a94e496b58f7067082e5036d88f0e702"
   license "GPL-3.0-or-later"
 
   livecheck do
