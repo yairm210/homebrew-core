@@ -9,12 +9,12 @@ class McpAtlassian < Formula
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6bcaef936a3211cc5858e086a31d5828fc77e5963eeef0891ad54865514b8bcc"
-    sha256 cellar: :any,                 arm64_sequoia: "9b59005d86c51e9499a2875fa9b7ae32259768d89c1882e215d79954fd8dcee9"
-    sha256 cellar: :any,                 arm64_sonoma:  "26a465c73f9a0ccbf2f0701df7abf9b610821c997a7f6cfac56660c9b1185089"
-    sha256 cellar: :any,                 sonoma:        "627716e6c687d29898b68f2971d8e293adffbb98a87ceb701b58aab887ce3fcd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de2afdeea2956a5415a31aadcc624675087ff38e1faa7d2ea4f98f60fccbded4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8b328a7539a2de3e5b99b9aee1f342e3841aa094a2fccd71efc55c25e170dcc"
+    sha256 cellar: :any,                 arm64_tahoe:   "280fcbe4d9533dcfbe60fb4eab70c728187cfc89806e607beb6a61cf96103afa"
+    sha256 cellar: :any,                 arm64_sequoia: "f54cf977621303ac169f14a71b3dfde53910645b9129c57cec3fd147b7887926"
+    sha256 cellar: :any,                 arm64_sonoma:  "db31c5dccbc1ddb5e0c4742e26bb4696cc2f5ad10f61b9c15563ae8536d2b172"
+    sha256 cellar: :any,                 sonoma:        "f6d831040c8800c2957a40d847b8a237cfb27d79168c351a0040467be59214c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70b7da5be368474fa24d18085b545deb6572b9f6c56f39bf2cff26b0c216c256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9d342a87c9ebb5b6614e751ccba764982654cbea283ef50fcd164dd10ce7e96"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
