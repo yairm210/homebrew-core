@@ -1,17 +1,17 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "b3bebfd62e897e6513cc5014b919adeb8f6ab0543262cd9e655d495f0a8bf13c"
+  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "983bfd7da76010d59c3de3bae3d977cac78642c5eb061009dd12b11b9db5190d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66164ffdf937da8c3f932fa479607c9ee834559e02623ab5092aab66ad15bcd1"
-    sha256 cellar: :any,                 arm64_sequoia: "842bfdab43e403696a4f909372250a696e22892b4e894872592bc577248ffcf2"
-    sha256 cellar: :any,                 arm64_sonoma:  "01754b6eb413322ee2f56a3c6734fa0033da4bf19f06cfb9643447de27af673d"
-    sha256 cellar: :any,                 sonoma:        "b5f3370ca6496ed1fc93a46fa99c2a665ee2be96d1cdeda20793274981e683f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9f9ff06096fcf7d682ed8cd9e6eb07bc9d4890d0416a09c2f05c59d2040d020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a6c89fc7c53b6b03d7b0e2669c0fcbbbb72da9789981698e379ac30296e57f2"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f71e40d9b45732086ee415ec130e03e09db751f393cffb319bc842992ea28b2"
+    sha256 cellar: :any,                 arm64_sequoia: "2358d378a572b07517447d5211684f215a6b6f5b406c976c1b4db4cbc5a78379"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e6edbd6b9e00a838c9ab9183cd9a0664c2ba097d3beffc7b8d5389f77ecea58"
+    sha256 cellar: :any,                 sonoma:        "10acec6e6df25811d99e0719a143a5a7c7bba1e1c223baf2e249b942c3dfb0f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fb9adacf8e8c08495cf7c8673618272540df6c7b26cc4d584d850b066b1d64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f797b66afe74876d22fb87c3e59b2d0ba9f004873d2127e631a4026178409e5f"
   end
 
   depends_on "cmake" => :build
