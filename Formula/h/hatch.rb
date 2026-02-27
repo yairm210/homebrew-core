@@ -3,8 +3,8 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/3a/78/44051bc8b0061b523065e3f67e42fd9b3857ae1ed8b69febdde4f1dd2a3b/hatch-1.16.4.tar.gz"
-  sha256 "1539141fe014be89c4290418964cf4a79e6bee9b6b7638787aa1d1576ff448b1"
+  url "https://files.pythonhosted.org/packages/d2/02/ce9c4c439fa3f195b21b4b5bb18b44d1076297c86477ef7e3d2de6064ec3/hatch-1.16.5.tar.gz"
+  sha256 "57bdeeaa72577859ce37091a5449583875331c06f9cb6af9077947ad40b3a1de"
   license "MIT"
 
   bottle do
@@ -159,6 +159,11 @@ class Hatch < Formula
     sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
   end
 
+  resource "python-discovery" do
+    url "https://files.pythonhosted.org/packages/82/bb/93a3e83bdf9322c7e21cafd092e56a4a17c4d8ef4277b6eb01af1a540a6f/python_discovery-1.1.0.tar.gz"
+    sha256 "447941ba1aed8cc2ab7ee3cb91be5fc137c5bdbb05b7e6ea62fbdcb66e50b268"
+  end
+
   resource "rich" do
     url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
     sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
@@ -195,8 +200,8 @@ class Hatch < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/ed/54/809199edc537dbace273495ac0884d13df26436e910a5ed4d0ec0a69806b/virtualenv-20.39.0.tar.gz"
-    sha256 "a15f0cebd00d50074fd336a169d53422436a12dfe15149efec7072cfe817df8b"
+    url "https://files.pythonhosted.org/packages/2f/c9/18d4b36606d6091844daa3bd93cf7dc78e6f5da21d9f21d06c221104b684/virtualenv-21.1.0.tar.gz"
+    sha256 "1990a0188c8f16b6b9cf65c9183049007375b26aad415514d377ccacf1e4fb44"
   end
 
   def install
