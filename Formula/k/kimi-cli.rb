@@ -3,8 +3,8 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/a9/41/ba5aabd32835fb128b71baf1287d67eda393600253cfddd701185fd53811/kimi_cli-1.14.0.tar.gz"
-  sha256 "39c35682974d58ab2d4d3355bd05696e64cab784e4d3d4d890b54fe6ea5825ca"
+  url "https://files.pythonhosted.org/packages/31/51/5e03700a83013df678b599c683a3c728b677e0afcc54520e6b5759d1d743/kimi_cli-1.15.0.tar.gz"
+  sha256 "c7578f7f9b54a28e17f6b38da41b830c790900535f84765b3c903980358d3c6b"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
@@ -550,6 +550,11 @@ class KimiCli < Formula
   resource "secretstorage" do
     url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
     sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
+  resource "setproctitle" do
+    url "https://files.pythonhosted.org/packages/8d/48/49393a96a2eef1ab418b17475fb92b8fcfad83d099e678751b05472e69de/setproctitle-1.3.7.tar.gz"
+    sha256 "bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e"
   end
 
   resource "shellingham" do
