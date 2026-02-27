@@ -1,8 +1,8 @@
 class Wiiuse < Formula
   desc "Connect Nintendo Wii Remotes"
   homepage "https://github.com/wiiuse/wiiuse"
-  url "https://github.com/wiiuse/wiiuse/archive/refs/tags/0.15.6.tar.gz"
-  sha256 "a3babe5eb284606090af706b356f1a0476123598f680094b1799670ec1780a44"
+  url "https://github.com/wiiuse/wiiuse/archive/refs/tags/0.15.7.tar.gz"
+  sha256 "d16dbe3b38e3c1dbe3e9a2c5b0a32a801710da2aca66581500ef2b98eba1d8ff"
   license "GPL-3.0-or-later"
 
   bottle do
