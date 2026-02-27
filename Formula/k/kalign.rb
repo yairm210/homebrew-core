@@ -1,17 +1,17 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.9.tar.gz"
-  sha256 "d13b1b44b0215b67990cef60a92e14acc4664b480730f18f39ef116773a58d33"
-  license "GPL-3.0-or-later"
+  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.5.0.tar.gz"
+  sha256 "b3bebfd62e897e6513cc5014b919adeb8f6ab0543262cd9e655d495f0a8bf13c"
+  license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d71de68f07c21e649985f010cef7502dd29b256700ded8efc908aa564f3b608"
-    sha256 cellar: :any,                 arm64_sequoia: "668f2d470103b6aa249f1133630e554fdfe07a0afd268dae82eea4332ff9185e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ac67fb6153ed206da0482c45964252ee16265ec714d623428aa87dd246f997a"
-    sha256 cellar: :any,                 sonoma:        "9e6198fa0dac0f702eb876485821097b110264d67a4837f0877196d0c1d5421b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e32bc0eaf913eb0271cd7c115b968b2759b4bb509120836e58765226cc53eedf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5c8d89f32862749a8f4085514e16aab7a3a52fe67c092dec6e15e66fd2eed06"
+    sha256 cellar: :any,                 arm64_tahoe:   "66164ffdf937da8c3f932fa479607c9ee834559e02623ab5092aab66ad15bcd1"
+    sha256 cellar: :any,                 arm64_sequoia: "842bfdab43e403696a4f909372250a696e22892b4e894872592bc577248ffcf2"
+    sha256 cellar: :any,                 arm64_sonoma:  "01754b6eb413322ee2f56a3c6734fa0033da4bf19f06cfb9643447de27af673d"
+    sha256 cellar: :any,                 sonoma:        "b5f3370ca6496ed1fc93a46fa99c2a665ee2be96d1cdeda20793274981e683f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9f9ff06096fcf7d682ed8cd9e6eb07bc9d4890d0416a09c2f05c59d2040d020"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a6c89fc7c53b6b03d7b0e2669c0fcbbbb72da9789981698e379ac30296e57f2"
   end
 
   depends_on "cmake" => :build
