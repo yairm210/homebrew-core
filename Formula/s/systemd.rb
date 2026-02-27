@@ -30,8 +30,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "71547eec7d90027dbde123fb3d44e96b1d741af18e9c5a30e09b390295b5c982"
-    sha256 x86_64_linux: "f5a96f68ca5366840ed13574f49bf6ae7fbe40d252e13abcda367c28baab7cb7"
+    sha256 arm64_linux:  "bc151b7cf37306601f72bcd91252a2fe998c35edef11b2a51ff0eaa2cec6b942"
+    sha256 x86_64_linux: "e790fa1b5b6d311a60b4e20683b9b9d621f2227524dd83a4541065980b76dca2"
   end
 
   keg_only "it will shadow system systemd if linked"
