@@ -1,8 +1,8 @@
 class Kaf < Formula
   desc "Modern CLI for Apache Kafka"
   homepage "https://github.com/birdayz/kaf"
-  url "https://github.com/birdayz/kaf/archive/refs/tags/v0.2.13.tar.gz"
-  sha256 "df0ad80c7be9ba53a074cb84033bd477780c151d7cbf57b6d2c2d9b8c62b7847"
+  url "https://github.com/birdayz/kaf/archive/refs/tags/v0.2.14.tar.gz"
+  sha256 "83e78c19e5bce2d1922910809c19bacf489f6d16bbabefa6dcdd3e4b5c292b13"
   license "Apache-2.0"
   head "https://github.com/birdayz/kaf.git", branch: "master"
 
