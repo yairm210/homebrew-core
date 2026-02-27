@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/9c/0b/d13b5191af29b6f8587604a5698716a9699cf98e15b8a5eec199eb4cc234/mcp_atlassian-0.18.1.tar.gz"
-  sha256 "447d3cc8e06148108ab966f31f69d5ddfaf2fed7ef9beee2bf0d0035d97a569a"
+  url "https://files.pythonhosted.org/packages/cd/9c/40b4e8b46300b4c3daf04d930c43b005b16ad22426eca610b2393c3d207d/mcp_atlassian-0.19.0.tar.gz"
+  sha256 "a5c64c5f1971626ebea2140d97601ae6dec0d8cbfa44b5909b5a2453964ef7c3"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
@@ -397,8 +397,8 @@ class McpAtlassian < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/9f/32/6fac13a11e73e1bc67a2ae821a72bfe4c2d8c4c48f0267e4a952be0f1bae/redis-7.2.0.tar.gz"
-    sha256 "4dd5bf4bd4ae80510267f14185a15cba2a38666b941aff68cccf0256b51c1f26"
+    url "https://files.pythonhosted.org/packages/e9/31/1476f206482dd9bc53fdbbe9f6fbd5e05d153f18e54667ce839df331f2e6/redis-7.2.1.tar.gz"
+    sha256 "6163c1a47ee2d9d01221d8456bc1c75ab953cbda18cfbc15e7140e9ba16ca3a5"
   end
 
   resource "referencing" do
@@ -474,6 +474,11 @@ class McpAtlassian < Formula
   resource "trio" do
     url "https://files.pythonhosted.org/packages/52/b6/c744031c6f89b18b3f5f4f7338603ab381d740a7f45938c4607b2302481f/trio-0.33.0.tar.gz"
     sha256 "a29b92b73f09d4b48ed249acd91073281a7f1063f09caba5dc70465b5c7aa970"
+  end
+
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "typer" do
