@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/cd/9c/40b4e8b46300b4c3daf04d930c43b005b16ad22426eca610b2393c3d207d/mcp_atlassian-0.19.0.tar.gz"
-  sha256 "a5c64c5f1971626ebea2140d97601ae6dec0d8cbfa44b5909b5a2453964ef7c3"
+  url "https://files.pythonhosted.org/packages/ec/a6/2f92efd528c29733bb26755e7c16d98feed2a0b8d96d40978ffd70b801b4/mcp_atlassian-0.20.0.tar.gz"
+  sha256 "bd9df5154749eb5818e7e491d8842c3410bb54411a8d51bf9e4c3dc1426118f2"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0e6783a1e80bd8ee200533dc229e0f5c1b8a931989a482b29d8ec175d85229c9"
-    sha256 cellar: :any,                 arm64_sequoia: "878e181f0ddf4f504330e00ed3b1098c35135b6c122414c63cfe1a44b84a861e"
-    sha256 cellar: :any,                 arm64_sonoma:  "aedc0b687347a61173e14652068513d068a4e9b1981315bbadf6595b8cf4713d"
-    sha256 cellar: :any,                 sonoma:        "4f92d15ad1b97210f3e5dbd2cf76314131dfb2428389b0d8180b68f9ca99bf91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb3de26f8630255b07be89201fbaaba1cb6a8169351ca01a30a20ea1de30e886"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f59eda79e2c37ec2b77083cba47c206fea3f81269167043cac5eeac2846a9a8d"
+    sha256 cellar: :any,                 arm64_tahoe:   "6bcaef936a3211cc5858e086a31d5828fc77e5963eeef0891ad54865514b8bcc"
+    sha256 cellar: :any,                 arm64_sequoia: "9b59005d86c51e9499a2875fa9b7ae32259768d89c1882e215d79954fd8dcee9"
+    sha256 cellar: :any,                 arm64_sonoma:  "26a465c73f9a0ccbf2f0701df7abf9b610821c997a7f6cfac56660c9b1185089"
+    sha256 cellar: :any,                 sonoma:        "627716e6c687d29898b68f2971d8e293adffbb98a87ceb701b58aab887ce3fcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de2afdeea2956a5415a31aadcc624675087ff38e1faa7d2ea4f98f60fccbded4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8b328a7539a2de3e5b99b9aee1f342e3841aa094a2fccd71efc55c25e170dcc"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
