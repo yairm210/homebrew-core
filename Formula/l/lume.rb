@@ -2,7 +2,7 @@ class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://github.com/trycua/cua"
   url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.84.tar.gz"
-  sha256 "643026a3986aab302bb993312f552e2ad536e33f1ad6004ae702300ab3e3712d"
+  sha256 "d889792db5de5840258784c912a0e6810e9834b8289c6c5c086d1ea7dba98191"
   license "MIT"
   head "https://github.com/trycua/cua.git", branch: "main"
 
@@ -27,7 +27,8 @@ class Lume < Formula
       system "/usr/bin/codesign", "-f", "-s", "-",
              "--entitlements", "resources/lume.local.entitlements", # Avoid SIGKILL with ad-hoc signing.
              ".build/release/lume"
-      bin.install ".build/release/lume"
+      libexec.install ".build/release/lume", ".build/release/lume_lume.bundle"
+      bin.write_exec_script libexec/"lume"
     end
   end
 
@@ -40,6 +41,11 @@ class Lume < Formula
   end
 
   test do
+    # `setup --unattended` loads presets from `lume_lume.bundle`.
+    # It should fail because the VM doesn't exist, not crash on missing resources.
+    output = shell_output("#{bin}/lume setup does-not-exist --unattended tahoe 2>&1", 1)
+    assert_match "Virtual machine not found", output
+
     # Test ipsw command
     assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
 
