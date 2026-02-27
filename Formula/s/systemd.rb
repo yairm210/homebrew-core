@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://github.com/systemd/systemd/archive/refs/tags/v259.1.tar.gz"
-  sha256 "7af4f36db512ad2f0f749a0f9886370edeb2bb5128014fc47cdf73702c7e1911"
+  url "https://github.com/systemd/systemd/archive/refs/tags/v259.2.tar.gz"
+  sha256 "2344394c5e3f7f208a62263cc7fef828b54870591699649ffdf22902e5929111"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
