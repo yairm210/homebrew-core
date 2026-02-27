@@ -3,8 +3,8 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/7c/8f/013a0ddc0cda475cf60c2b725addb1538a699ed44fa245053fc56224d175/strands_agents_sops-1.0.8.tar.gz"
-  sha256 "f369b2e0242e1a572078f3ff9d2afffedcf60557549951a24f53dc43c2553c73"
+  url "https://files.pythonhosted.org/packages/37/6a/c2212f248bbbe6e7c3698d5af6d0a98ba6644805e6c3e3e881c7be3c4e9b/strands_agents_sops-1.1.0.tar.gz"
+  sha256 "551bd1861f0b1e631687f8823e5e97664c293d13bb9f07d20d332072501c37fa"
   license "Apache-2.0"
 
   bottle do
