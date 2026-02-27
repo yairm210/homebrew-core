@@ -13,13 +13,12 @@ class Aflxx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "466e6e4777a1f0fefd04f77ccd69ec2f11466a54df7a9462403a531b3184e581"
-    sha256 arm64_sequoia: "3b6eed6895b1a96a584fdd37fdd1d5e92df00c237a24b92cbe2deb71fabe7c15"
-    sha256 arm64_sonoma:  "75d6675d206ee531ea0ef7f21d014853a13cbf27166f4215323a45fc4abffbd9"
-    sha256 sonoma:        "2eadeffff6541c592e2813e1fe1d50f85168ab240384356549d4b851e0033566"
-    sha256 arm64_linux:   "cc0659688a67e91ddb309a58beb4035edd03166ffddf018fdfde10db7598c2a7"
-    sha256 x86_64_linux:  "d812d4e274c1258b37809cb03bc2100b5f00fb99b6164ce665c1d0043a56ef92"
+    sha256 arm64_tahoe:   "c2df51739b4ef3e4bbf9ada1b5ab57c8fffc848fba7b98ff6fcdd511780b8bc2"
+    sha256 arm64_sequoia: "f97a1c2a01bed341f7e6b69ff188b151e5dc834d1dd4f14aee67c53bf0b970c5"
+    sha256 arm64_sonoma:  "9a12e059552523cd95101619d18cb4badcb30d4971234aad8ed7799044e5d63c"
+    sha256 sonoma:        "297c153c14b348dd98806bd00f0307e6313f136201e5b3c82893c458143ab649"
+    sha256 arm64_linux:   "fa49c337fd021355f5caf47f14b0b48267576edb017441b033fe7562c3717fec"
+    sha256 x86_64_linux:  "59cc5f6537182866131bece8d8f9d79f7cab1f3b871fe0eaf5bfac7275b3c333"
   end
 
   depends_on "coreutils" => :build
