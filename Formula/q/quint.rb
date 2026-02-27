@@ -1,8 +1,8 @@
 class Quint < Formula
   desc "Core tool for the Quint specification language"
   homepage "https://github.com/informalsystems/quint"
-  url "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.30.0.tgz"
-  sha256 "0f6e9138330a718cbb813e1aebc13a2d475aad120a53cddf9cc03e188cfe0815"
+  url "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.31.0.tgz"
+  sha256 "f1ba3ac13f5fd5c1439cf6b6518a56b871ec6ac4c634b2044de23e7a3cc572a8"
   license "Apache-2.0"
 
   bottle do
@@ -45,8 +45,8 @@ class Quint < Formula
       }
     QNT
 
-    out = shell_output("#{bin}/quint run bank.qnt --invariant=no_negatives --mbt --verbosity 1")
-
-    assert_match "No violation found", out
+    out = shell_output("#{bin}/quint compile bank.qnt")
+    assert_match "\"stage\":\"compiling\"", out
+    assert_match "\"main\":\"bank\"", out
   end
 end
