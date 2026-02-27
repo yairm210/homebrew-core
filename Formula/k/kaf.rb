@@ -7,12 +7,12 @@ class Kaf < Formula
   head "https://github.com/birdayz/kaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b54defd615f80e00e937ec26b2794bba3dcc81e04fe4be1c70b2c1e79fe0dca2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "379b9487564e3ea80dd8d2c78dce8b4b195078cc1dd1706e023d1da8e5712196"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1945920632597ef44df9b33ccb7f25b6ad66d96f24cc3da14e42129f5709398"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aba91729665c1f0f532c253b87e0a14cba5c60d1ca384ec99c80a6603323a4d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca55afe9d549bc18b12c10c6df7789996d411ce1ca0a5ed34ce7df422dc0d3f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca55afe9d549bc18b12c10c6df7789996d411ce1ca0a5ed34ce7df422dc0d3f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca55afe9d549bc18b12c10c6df7789996d411ce1ca0a5ed34ce7df422dc0d3f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd74e7cc23e0868a5cd22aa2531b47d990067477b85d630bccbdba70594e238a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cc88b6d60e64066ca9558378b9337937d96f609d532b5aca5e822078b0805df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d8d96547b6a6125b3af63f366c78bcc8cba07c81760683547505dd5a0e61f73"
   end
 
   depends_on "go" => :build
