@@ -1,8 +1,8 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.0.tar.gz"
-  sha256 "ace8e2c771f9c30e55f1a5e8b2b180b09fe29133e6ed1738032a6a7c3f74b22d"
+  url "https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.0.1.tar.gz"
+  sha256 "ca963550c488c8d0cd39b7f1b58a1534fd916c1c66ab6b70a1115e92855deb0e"
   license "MIT"
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
@@ -30,12 +30,6 @@ class ShairportSync < Formula
   depends_on "openssl@3"
   depends_on "popt"
   depends_on "pulseaudio"
-
-  # patch to fix version string from 5.0rc0 to 5.0, upstream pr ref, https://github.com/mikebrady/shairport-sync/pull/2144
-  patch do
-    url "https://github.com/mikebrady/shairport-sync/commit/6c71105e98af30a9b157a1534d0bed82f4e49de6.patch?full_index=1"
-    sha256 "67edc2bcb8b37a1fffacf7499d42c8abfe44a7af0312f7407f056b677d7681db"
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
