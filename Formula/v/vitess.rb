@@ -1,8 +1,8 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https://vitess.io"
-  url "https://github.com/vitessio/vitess/archive/refs/tags/v23.0.2.tar.gz"
-  sha256 "f32b112de130e53073b2abfc3b64a28836dea8f9f2ff42e3265298ec44d51a2b"
+  url "https://github.com/vitessio/vitess/archive/refs/tags/v23.0.3.tar.gz"
+  sha256 "b517deb54d0802a6864cbf9e728b9ba5b0d1746842d53ef45c82796bfaf0769d"
   license "Apache-2.0"
 
   bottle do
@@ -16,13 +16,6 @@ class Vitess < Formula
 
   depends_on "go" => :build
   depends_on "etcd"
-
-  # Support Go 1.26 and later with Swiss maps always enabled
-  # Upstream PR ref: https://github.com/vitessio/vitess/pull/19088
-  patch do
-    url "https://github.com/vitessio/vitess/commit/1e131ea41b87a047acff3b1977d9fece8e25bfff.patch?full_index=1"
-    sha256 "6dd13ffbde947a2c0d426c5a6361e3f0f708c9fc1bd1df7b000ad06fa8644a9c"
-  end
 
   def install
     # -buildvcs=false needed for build to succeed on Go 1.18.
