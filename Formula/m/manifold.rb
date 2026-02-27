@@ -1,10 +1,9 @@
 class Manifold < Formula
   desc "Geometry library for topological robustness"
   homepage "https://github.com/elalish/manifold"
-  url "https://github.com/elalish/manifold/releases/download/v3.3.2/manifold-3.3.2.tar.gz"
-  sha256 "efdae7cd75aabab20fa2673603a9ac263d5b48912559664dde37f5d9e85eced8"
+  url "https://github.com/elalish/manifold/releases/download/v3.4.0/manifold-3.4.0.tar.gz"
+  sha256 "03fb429c2080363cadc6e9a34ecd6ba7948c74d99baffb3df381546effaa6907"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d8ff8859d3a76f9572d4acf0f547d7f4f419f6902c7ec58fc4facfbfc4bfc4c8"
