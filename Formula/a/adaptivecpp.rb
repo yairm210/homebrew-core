@@ -4,6 +4,7 @@ class Adaptivecpp < Formula
   url "https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.10.0.tar.gz"
   sha256 "334b16ebff373bd2841f83332c2ae9a45ec192f2cf964d5fdfe94e1140776059"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
@@ -24,8 +25,8 @@ class Adaptivecpp < Formula
   end
 
   on_linux do
-    depends_on "lld"
-    depends_on "llvm"
+    depends_on "lld@21"
+    depends_on "llvm@21"
     depends_on "numactl"
   end
 
@@ -36,8 +37,8 @@ class Adaptivecpp < Formula
     else
       %W[
         -DACPP_EXPERIMENTAL_LLVM=ON
-        -DCLANG_EXECUTABLE_PATH=#{Formula["llvm"].opt_bin/"clang++"}
-        -DACPP_LLD_PATH=#{Formula["lld"].opt_bin/"ld.lld"}
+        -DCLANG_EXECUTABLE_PATH=#{Formula["llvm@21"].opt_bin}/clang++
+        -DACPP_LLD_PATH=#{Formula["lld@21"].opt_bin}/ld.lld
       ]
     end
 
@@ -72,7 +73,7 @@ class Adaptivecpp < Formula
     system "./hello"
 
     unless OS.mac?
-      refute_match Formula["llvm"].prefix.realpath.to_s,
+      refute_match Formula["llvm@21"].prefix.realpath.to_s,
                    (etc/"AdaptiveCpp/acpp-core.json").read,
                    "`acpp-core.json` references `llvm`'s cellar path"
     end
