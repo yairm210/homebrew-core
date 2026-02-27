@@ -1,10 +1,10 @@
 class Killswitch < Formula
   desc "VPN kill switch for macOS"
-  homepage "https://vpn-kill-switch.com"
-  url "https://github.com/vpn-kill-switch/killswitch/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "dbc1fc04e9945049e0cad3aa18740394cac9d93a0aacca00d45c82ec891346f1"
+  homepage "https://killswitch.network"
+  url "https://github.com/vpn-kill-switch/killswitch/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "99f33cdbb73ba6b2f783c567254f97e12351ba883db61f0f48523c97a9107a46"
   license "BSD-3-Clause"
-  head "https://github.com/vpn-kill-switch/killswitch.git", branch: "master"
+  head "https://github.com/vpn-kill-switch/killswitch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "65e4786320fdae32571af5ef0991a647ef7b329c7436ee7839ed0c18a138762c"
@@ -17,15 +17,15 @@ class Killswitch < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "d942fff71b6a5c2178f10dd222bb6fb5e52d2bd01d537f85e3b4ea1dff53cdab"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
   depends_on :macos
 
   def install
-    system "go", "build", "-mod=readonly", *std_go_args(ldflags: "-s -w -X main.version=#{version}"),
-           "cmd/killswitch/main.go"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match "No VPN interface found", shell_output("#{bin}/killswitch 2>&1", 1)
+    output = shell_output("#{bin}/killswitch 2>&1")
+    assert_match "No VPN interface found", output
   end
 end
