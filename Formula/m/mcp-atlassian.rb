@@ -3,8 +3,8 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/cd/9c/40b4e8b46300b4c3daf04d930c43b005b16ad22426eca610b2393c3d207d/mcp_atlassian-0.19.0.tar.gz"
-  sha256 "a5c64c5f1971626ebea2140d97601ae6dec0d8cbfa44b5909b5a2453964ef7c3"
+  url "https://files.pythonhosted.org/packages/ec/a6/2f92efd528c29733bb26755e7c16d98feed2a0b8d96d40978ffd70b801b4/mcp_atlassian-0.20.0.tar.gz"
+  sha256 "bd9df5154749eb5818e7e491d8842c3410bb54411a8d51bf9e4c3dc1426118f2"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
