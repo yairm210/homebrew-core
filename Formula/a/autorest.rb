@@ -6,7 +6,7 @@ class Autorest < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8b8b739c12e033a7458bca6b5a91396f06267289f553961157320c48e2c4a50d"
+    sha256 cellar: :any_skip_relocation, all: "b9e9e79e98255f252a645acc787169370311c4822e30d35639cc491e8d67910f"
   end
 
   depends_on "node"
