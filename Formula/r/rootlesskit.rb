@@ -5,6 +5,11 @@ class Rootlesskit < Formula
   sha256 "b491ae9a444f5f4cb925913dfa12ad7a2bcd8aa149114df7afb2fa921359b6e1"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8f0ab7ce1faaaa56061faa92db5906afcdb4826ec098d7a2f112f56eabb664f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a72021b4a7cc7003b5f3f282c6d826ef85bb3920023d71a8432720b658ef9c53"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
