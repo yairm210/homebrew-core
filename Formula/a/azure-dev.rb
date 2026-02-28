@@ -7,18 +7,23 @@ class AzureDev < Formula
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89af11734e9f3f9450921aa48a98d9c3062235501e291f749d7cf07cd5c176c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89af11734e9f3f9450921aa48a98d9c3062235501e291f749d7cf07cd5c176c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89af11734e9f3f9450921aa48a98d9c3062235501e291f749d7cf07cd5c176c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4a7c722acdfb3353157f5c415499312e7772cd212d28916d0b9306fac8483d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18b1cc1ea2c53fed5ce5226b59c574de1000e5604a4984c78f98732f0d7cd684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4ababede286df87b5d09a6a103aa810cfac89056ccee25a843fc55da7c88adf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b6579469687d630e690069e354a2181f402b86161f68a8f39d777791dd91dd10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2064e01c76dfad9c3506ea49e86e77b56b6f3cd2ee615dfaa6303b3d5654cbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "929b26cdf3a919e8bf506296b91dd1dc9abf29332127532bef743f13d72a42fb"
   end
 
   depends_on "go" => :build
 
   def install
-    (buildpath/".installed-by.txt").write "brew"
+    # install file to be used to determine if azd was installed by brew
+    (libexec/".installed-by.txt").write "brew"
+    inreplace "cli/azd/pkg/installer/installed_by.go",
+              'Join(exeDir, ".installed-by.txt")',
+              'Join(exeDir, "..", "libexec", ".installed-by.txt")'
 
     # Version should be in the format "<version> (commit <commit_hash>)"
     azd_version = "#{version} (commit 0000000000000000000000000000000000000000)"
