@@ -1,8 +1,8 @@
 class Svu < Formula
   desc "Semantic version utility"
   homepage "https://github.com/caarlos0/svu"
-  url "https://github.com/caarlos0/svu/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "64d81d3ad15c44deb872be9325e090ee545bed73b12e663b23ef7405e7ef4aeb"
+  url "https://github.com/caarlos0/svu/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "7448fafc958551e06ad7c8bb2eddc5db9bd5d7335a7d5c80750193b68b6f78bd"
   license "MIT"
   head "https://github.com/caarlos0/svu.git", branch: "main"
 
@@ -27,6 +27,6 @@ class Svu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/svu --version")
     system bin/"svu", "init"
-    assert_match "svu configuration", (testpath/".svu.yaml").read
+    assert_match "svu configuration", (testpath/".svu.yml").read
   end
 end
