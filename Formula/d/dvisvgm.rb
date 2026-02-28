@@ -2,7 +2,7 @@ class Dvisvgm < Formula
   desc "Fast DVI to SVG converter"
   homepage "https://dvisvgm.de"
   url "https://github.com/mgieseki/dvisvgm/releases/download/3.6/dvisvgm-3.6.tar.gz"
-  sha256 "19dac117e5a307db5f56bde03a711a96b8c6afa0a7d38a698b313fc8d42e1468"
+  sha256 "26446bb3b10739ff0925c9e416b76d2d222075c9d5dcfafe6e214609d072ed1a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -26,14 +26,16 @@ class Dvisvgm < Formula
   depends_on "texlive"
   depends_on "woff2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = [
       "--disable-silent-rules",
       "--with-texlive=#{Formula["texlive"].opt_prefix}",
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" if OS.linux?
+    args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}" if OS.linux?
 
     system "./configure", *args, *std_configure_args
     system "make"
