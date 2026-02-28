@@ -14,13 +14,12 @@ class RomTools < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6b154f182bd737e6a91409fb8ab436d08177ce261e7316f6a6a0f346cd700387"
-    sha256 cellar: :any,                 arm64_sequoia: "a85a3fe157e251a4446bfdc3d480daaec4362471af15bf59620d5425fd240f17"
-    sha256 cellar: :any,                 arm64_sonoma:  "80054471fd6b2eb8bd9c71174325a54ac0ea2ee2540a3eacd66e05c149f111e1"
-    sha256 cellar: :any,                 sonoma:        "c9bff74abb0f11defc3745fa45e34799f41ba5aad0f7cbe27867f8359f08420d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "008f6ffc3fc8f628d83a8176cba9ae8d37f0e4cc787dd9db48d4d9463a9fd2d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5394740275d3b0cc447d08eeb692784732bf4d75dcdf35f6db42fc96b38ccd0"
+    sha256 cellar: :any,                 arm64_tahoe:   "5b5c8d91efbea5a5da2cc7e816d09fe4b118115590bbb5e45d44a3671eda0cbf"
+    sha256 cellar: :any,                 arm64_sequoia: "9787600a6a1fa2b7d8338c8d2138d9d091f1f1f4445f1675f7f237d945b1b48a"
+    sha256 cellar: :any,                 arm64_sonoma:  "901f6b61da192d76fcdbd75384a7d74d658b759d035f4069c3525233ccb394e3"
+    sha256 cellar: :any,                 sonoma:        "196e97e1f51ef78b61daa4976e1435e83c5598700a6d64249cff29076300704f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb0e6fbd357bf02c9361275a4efe55b87659abe2c45cbcd8447441800ba0b007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f03e3ff456f73878f7c97cdf0c406db9273bf488e128445f46de915cb0ce846"
   end
 
   depends_on "asio" => :build
