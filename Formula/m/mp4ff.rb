@@ -5,6 +5,15 @@ class Mp4ff < Formula
   sha256 "8318a6045e26bb9e901442773aac2a8827bfda3f9d77e72468ca0f1ea8ac1efe"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f926ff500204c557c7b1b22c8d3e032cd92c8cd68727f5959099b5c778f1623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5f53ae01df2e2db4cc4a40cf5e57d15a42e11bf8921558a8079b3803a8c525a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25ed72e39527fda6b411ce43426b4955ece85ed4cefd8f8cbb4541e8d8b9c701"
+  end
+
   depends_on "go" => :build
 
   def tools
