@@ -11,12 +11,12 @@ class KimiCli < Formula
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3e1b095902985f40705edc3a23eed11a62d37d7ba740a8cacdac0275d495f51"
-    sha256 cellar: :any,                 arm64_sequoia: "97c62236b54bb1373187d3427c7abb29ed08543c165eb42cbd09905598696f45"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef0c6d96bca04fc1bc9d8abd6b8ee4aa5f4f58ed3c0b9dbb4a1a8bca87310bb4"
-    sha256 cellar: :any,                 sonoma:        "521d46fa7b50c522cea187c13c167dd7ca78aeff9aed08a849dba207c4914190"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a63b8e19cfeb2783dfe808fbc884353a0b758711fb93c7a32162c4334ebaa51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03c73c91161948dc353cd0896aea36c9ad894679f6a42bde97a6f5f20ac22542"
+    sha256 cellar: :any,                 arm64_tahoe:   "23f02d86ba33768bf9a7cc776da7444b3524e5cf0f40803326bfb8c6f317d0be"
+    sha256 cellar: :any,                 arm64_sequoia: "31f27b42ac0c903a65228d1f6f0dcac9ed489ae8ecee42a761bdca049fe2c729"
+    sha256 cellar: :any,                 arm64_sonoma:  "9940fd4cbffd194c1fd21918f842fe3c6e171ed8d23c3b28dfd0a047911793df"
+    sha256 cellar: :any,                 sonoma:        "fcae9ea60dc2452396065c406777bb6696a9de5fb5c420d4e899386f3a1d7f80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbc42cef0ed9cafb9b5cd0268022960515971ff24d2a73d47a131ecbc17e4c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c84732130d09bbe645979b3b32bfea85180faed1f2f873d339caff45f6b6fa44"
   end
 
   depends_on "pkgconf" => :build
