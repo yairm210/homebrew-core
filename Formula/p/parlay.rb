@@ -20,6 +20,8 @@ class Parlay < Formula
   def install
     ldflags = "-s -w -X github.com/snyk/parlay/internal/commands.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"parlay", shell_parameter_format: :cobra)
   end
 
   test do
