@@ -8,7 +8,7 @@ class StrandsAgentsSops < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e720dd455d55fa0448bc65fe1f9eefa717ebf4959d7ff6113eca4f759f58e008"
+    sha256 cellar: :any_skip_relocation, all: "2d95dbf7246f6b394187da594b8a915f3d47d49e6e4d8be752badec2034daf25"
   end
 
   depends_on "certifi" => :no_linkage
