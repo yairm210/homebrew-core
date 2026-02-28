@@ -1,8 +1,8 @@
 class CloudformationGuard < Formula
   desc "Checks CloudFormation templates for compliance using a declarative syntax"
   homepage "https://github.com/aws-cloudformation/cloudformation-guard"
-  url "https://github.com/aws-cloudformation/cloudformation-guard/archive/refs/tags/3.1.12.tar.gz"
-  sha256 "089a6268bb97c49edef45d99e5730d4c3cb0febb2a2f5ba38e2558568f685461"
+  url "https://github.com/aws-cloudformation/cloudformation-guard/archive/refs/tags/3.2.0.tar.gz"
+  sha256 "addb41aaa0a5c262aeee6eee662e4f4f04cca6765615305a3ec219df61bb252e"
   license "Apache-2.0"
 
   bottle do
@@ -18,12 +18,6 @@ class CloudformationGuard < Formula
   end
 
   depends_on "rust" => :build
-
-  # rust 1.89 build patch, upstream pr ref, https://github.com/aws-cloudformation/cloudformation-guard/pull/650
-  patch do
-    url "https://github.com/aws-cloudformation/cloudformation-guard/commit/e1d2ff2a38345d80004f4b2ffc4da24086b9c520.patch?full_index=1"
-    sha256 "2074bd7c8890f8168993a9c425178ff38414347becc5d25bd6a1f0fdfccfb345"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "guard")
