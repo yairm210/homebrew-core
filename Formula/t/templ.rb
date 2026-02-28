@@ -6,12 +6,12 @@ class Templ < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0eba12c5f7b6adc357649697322f5d30648272f3ef4420ab879276eeb36abf2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0eba12c5f7b6adc357649697322f5d30648272f3ef4420ab879276eeb36abf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0eba12c5f7b6adc357649697322f5d30648272f3ef4420ab879276eeb36abf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2f1602f8b2629a9320c1e1483c543fae06ba79e11964960d7a40e8d16ce65fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f8f9a349cbac87176887b21fa7be925be4b1fbaccb42ef6f6a7359d9b05b105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8af33b188adf6df5a85708aceeeda85716121eb3eec6dd60c9e12372a7c4e413"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2546912280488c8997ea7740e74b20167ff665b1f715fbd946640989a3685f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2546912280488c8997ea7740e74b20167ff665b1f715fbd946640989a3685f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2546912280488c8997ea7740e74b20167ff665b1f715fbd946640989a3685f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "836c8a67faa74a942231212f562dd5b28b51b297b4d6abe8a778e7008291e8d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1deda54c5e55e21dafac6f0a2a3be3422fb6e9270d3286b48956d5e90466c6d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e81c30ee347d543627fdd10dbbba838b47b1446944e175badc542f53a56627ac"
   end
 
   depends_on "go" => :build
