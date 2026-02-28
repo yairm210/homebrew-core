@@ -11,7 +11,7 @@ class PklLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ff85bd04e7dd407b52fa50ccaf348e7f02e8c269fd760cc4617a8c0531adb6c5"
+    sha256 cellar: :any_skip_relocation, all: "3d89c645b7788938fcc9874055132113da947287a6a8d18df5105da9987b2cbc"
   end
 
   depends_on "openjdk"
