@@ -4,6 +4,7 @@ class AlsaLib < Formula
   url "https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.16.1.tar.bz2"
   sha256 "f740db7f488255944ffd4428416ee3390a96742856916433df468c281436480e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -19,7 +20,11 @@ class AlsaLib < Formula
   depends_on :linux
 
   def install
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    args = %W[
+      --disable-silent-rules
+      --with-plugindir=#{HOMEBREW_PREFIX}/lib/alsa-lib
+    ]
+    system "./configure", *args, *std_configure_args
     system "make", "install"
     prefix.install "aserver/COPYING" => "COPYING-aserver"
   end
