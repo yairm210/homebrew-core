@@ -4,6 +4,7 @@ class Qxmpp < Formula
   url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.16.3/qxmpp-v1.16.3.tar.bz2"
   sha256 "8a9833b8e991736584f46b2f70a7c0252366f69846a263fbc2db723628385cad"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "832deac9e6f650ebc0669e896b898244be3e24d09e40f58ea09de546a66c0c2c"
