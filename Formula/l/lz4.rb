@@ -29,6 +29,8 @@ class Lz4 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8082c2e40dc6d63850f43ea8fa095e55adf18fb0f25ec66bcaee2c4b4438205"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
     # Prevent dependents from hardcoding Cellar paths.
