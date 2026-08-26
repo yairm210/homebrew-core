@@ -35,6 +35,8 @@ class Gmp < Formula
 
   uses_from_macos "m4" => :build
 
+  deny_network_access!
+
   def install
     if build.head?
       system "./.bootstrap"
@@ -46,7 +48,7 @@ class Gmp < Formula
     end
 
     # Enable --with-pic to avoid linking issues with the static library
-    args = std_configure_args + %w[--enable-cxx --with-pic]
+    args = %w[--enable-cxx --with-pic]
 
     cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     if OS.mac?
@@ -56,7 +58,7 @@ class Gmp < Formula
       args << "ABI=32" if Hardware::CPU.is_32_bit?
     end
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
