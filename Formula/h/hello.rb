@@ -16,14 +16,15 @@ class Hello < Formula
     sha256                               x86_64_linux:  "babafecd3b1c532d4e799de46f943f6384b5d78beffb52c9f4730e30ad374a70"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-dependency-tracking", *std_configure_args
     system "make", "install"
   end
+
   test do
     assert_equal "brew", shell_output("#{bin}/hello --greeting=brew").chomp
   end
