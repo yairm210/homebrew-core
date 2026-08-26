@@ -36,6 +36,8 @@ class Pyenv < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX
     inreplace "libexec/pyenv-rehash", "$(command -v pyenv)", opt_bin/"pyenv"
