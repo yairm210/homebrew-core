@@ -22,6 +22,8 @@ class JsonC < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # We pass `BUILD_APPS=OFF` since any built apps are never installed. See:
     #   https://github.com/json-c/json-c/blob/master/apps/CMakeLists.txt#L119-L121
