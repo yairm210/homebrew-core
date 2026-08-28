@@ -17,7 +17,12 @@ class Treehouse < Formula
   depends_on "go" => :build
 
   def install
+    # Homebrew manages upgrades, so compile out the self-update check
+    inreplace "cmd/root.go", 'os.Getenv("TREEHOUSE_NO_UPDATE_CHECK")', '"1"'
+
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
+
+    generate_completions_from_executable(bin/"treehouse", shell_parameter_format: :cobra)
   end
 
   test do
