@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.33.0",
-      revision: "ebf200f9521da9739a576a8bbf8cbf94e0cec6e3"
+      tag:      "v0.33.2",
+      revision: "f96e7aa0513b9973a0ccc71be414c2ecb9d65b1a"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -43,8 +43,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10488",
-        revision: "9d77fa17254e1dee4b9e92504c91611a60b1359f"
+        tag:      "b10630",
+        revision: "d222767c7a6516559a3f49e7721b6c6b1acc87b4"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -66,6 +66,14 @@ class Ollama < Formula
     # Build llama-server
     llama_source_dir = buildpath/"llama.cpp"
     llama_source_dir.install resource("llama.cpp")
+
+    # b10630: tools/tuning hardcodes CMAKE_SOURCE_DIR, which is the ollama
+    # build root under FetchContent; retarget to llama.cpp's own ggml-metal dir.
+    # Remove when llama.cpp fixes it upstream:
+    # https://github.com/ggml-org/llama.cpp/issues/28114
+    inreplace llama_source_dir/"tools/tuning/CMakeLists.txt",
+              "${CMAKE_SOURCE_DIR}/ggml/src/ggml-metal",
+              "${CMAKE_CURRENT_SOURCE_DIR}/../../ggml/src/ggml-metal"
 
     preset = (OS.mac? && Hardware::CPU.arm?) ? "darwin" : "cpu"
 
