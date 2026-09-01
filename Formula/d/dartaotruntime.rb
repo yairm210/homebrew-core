@@ -12,12 +12,11 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f9a11b5904f2895f1fc88e38e75321310a9632188d34e57b43c7fa377ea0b0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3442db62a853db0532be4795be25e918d5540c6ccccb194185d5034126efaf0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2c3c811d72ccac45cea76318cc6aa99ecce1f5783d8bc8629d34b7f2a5fd1f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ea091ed5f2a6e2bd3a466f327ba445f54aca6bb8b37450ea67f5481e98dfed0"
-    sha256 cellar: :any,                 arm64_linux:   "48a8b69d174e8ff5038966437813d3d2c7776af8a6b1afee786d2e1873afe08a"
-    sha256 cellar: :any,                 x86_64_linux:  "fc4290733c513e269e73c4f181182f55aa65c319b87b23a1a9532cdd885d2a2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0e21ad57e0491e917f117354c1bff8e0345c376c9a779a096dfea2971e5de08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42565d6f9921a9e73696604a5b647844ede0bf70ab5671a68a96a03e5edcd304"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1178046abb5d237a996a46b9d5b6c8a8c7f664ef47c8b2a00d154743f6e5098"
+    sha256 cellar: :any,                 arm64_linux:   "ba53af411766a662ff11ac741c120244171aae0ec99d5f27af0c9093f2de33d7"
+    sha256 cellar: :any,                 x86_64_linux:  "03cf434734cae78167eb787fe4c94f8673692f998c990d17d7c41ac06c60cf5c"
   end
 
   depends_on "ninja" => :build
