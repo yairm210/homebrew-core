@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20260717/git-annex-10.20260717.tar.gz"
-  sha256 "e0802511e0c90852f52997520668b70cfa1e57fc268d996564c24a289ea6e406"
+  url "https://hackage.haskell.org/package/git-annex-10.20260901/git-annex-10.20260901.tar.gz"
+  sha256 "f7843f937103819b93d7c436410ac5cd2db0a8863d14eabeb15712f2bfd74582"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -43,6 +43,9 @@ class GitAnnex < Formula
       "--constraint=ram<0",
       # Workaround for API breaking release of magic
       "--constraint=magic<2",
+      # Workaround for QuickCheck 2.17+ providing its own `Arbitrary (NonEmpty a)`
+      # Upstream fix in commit 16cd931e9383ef295e4faf97f51c6fdfd2b9c61c, unreleased as of 10.20260901
+      "--constraint=QuickCheck<2.17",
       # Unbundle sqlite
       "--constraint=persistent-sqlite +systemlib +use-pkgconfig",
     ]
