@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.14.0esr/source/firefox-140.14.0esr.source.tar.xz"
-  version "140.14.0"
-  sha256 "28006bd454e703932e1ea804918165774a1e21478b18e551cd1b38111d664239"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.15.0esr/source/firefox-140.15.0esr.source.tar.xz"
+  version "140.15.0"
+  sha256 "358bb03c550f95172f1e31694e4287da3411560df91e931cb25210efdf90e524"
   license "MPL-2.0"
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
@@ -81,6 +81,13 @@ class Spidermonkey < Formula
     resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1969769"
   end
 
+  # Fix Rust target detection for OpenEmbedded Linux.
+  # TODO: Check resolution in https://bugzilla.mozilla.org/show_bug.cgi?id=2068494
+  # Fixes:
+  # checking for rust host triplet...
+  # ERROR: Don't know how to translate x86_64-pc-linux-gnu for rustc
+  patch :DATA
+
   def install
     ENV.runtime_cpu_detection
     ENV.O3 if DevelopmentTools.clang_build_version >= 1500 # lld doesn't support -Os
@@ -146,3 +153,36 @@ class Spidermonkey < Formula
     assert_equal "hello", shell_output("#{bin}/js #{path}").strip
   end
 end
+
+__END__
+diff --git a/build/moz.configure/rust.configure b/build/moz.configure/rust.configure
+--- a/build/moz.configure/rust.configure
++++ b/build/moz.configure/rust.configure
+@@ -410,7 +410,14 @@ def detect_rustc_target(
+             return narrowed[0].rust_target
+
+-        # Finally, see if the vendor can be used to disambiguate.
+-        narrowed = [c for c in candidates if c.target.vendor == host_or_target.vendor]
++        # Finally, see if the vendor can be used to disambiguate. Autoconf uses
++        # "pc" where Rust uses "unknown" for generic targets.
++        vendor_aliases = {"unknown": ("pc",)}
++        narrowed = [
++            c
++            for c in candidates
++            if c.target.vendor == host_or_target.vendor
++            or host_or_target.vendor in vendor_aliases.get(c.target.vendor, ())
++        ]
+         if len(narrowed) == 1:
+             return narrowed[0].rust_target
+
+diff --git a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
+--- a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
++++ b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
+@@ -1881,6 +1881,7 @@ def gen_invoke_rustc(version, rustup_wrapper=False):
+                 "x86_64-fortanix-unknown-sgx",
+                 "x86_64-fuchsia",
+                 "x86_64-linux-android",
++                "x86_64-oe-linux-gnu",
+                 "x86_64-pc-nto-qnx710",
+                 "x86_64-pc-solaris",
+                 "x86_64-pc-windows-gnu",
