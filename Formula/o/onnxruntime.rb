@@ -4,7 +4,7 @@ class Onnxruntime < Formula
   url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.0.tar.gz"
   sha256 "0f065cfd3816eaa4b709a057ea0e237ebc6463843af44a439e0d81af76d6620e"
   license "MIT"
-  revision 2
+  revision 3
   compatibility_version 7
 
   livecheck do
@@ -23,7 +23,6 @@ class Onnxruntime < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "cpp-gsl" => :build
   depends_on "eigen" => :build
   depends_on "flatbuffers" => :build # NOTE: links to static library
   depends_on "howard-hinnant-date" => :build
@@ -34,6 +33,18 @@ class Onnxruntime < Formula
   depends_on "onnx"
   depends_on "protobuf"
   depends_on "re2"
+
+  # `cpp-gsl` 5.0.0 fails the `find_package(Microsoft.GSL 4.0)` version check
+  # (its config uses `SameMajorVersion`), so vendor the pinned version instead.
+  resource "gsl" do
+    url "https://github.com/microsoft/GSL/archive/refs/tags/v4.2.1.tar.gz"
+    sha256 "d959f1cb8bbb9c94f033ae5db60eaf5f416be1baa744493c32585adca066fe1f"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
+      regex(%r{^microsoft_gsl;.*/v?(\d+(?:\.\d+)+)\.zip}i)
+    end
+  end
 
   resource "pytorch_cpuinfo" do
     url "https://github.com/pytorch/cpuinfo/archive/4628dc060ce4e82345dc166bbac875609db4ff69.tar.gz"
