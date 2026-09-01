@@ -1,10 +1,9 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.8.0.tar.gz"
-  sha256 "793c1b6335bdd56fe3207267c63490cf0b462aed2765fd747c297ada494ff188"
+  url "https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.9.0.tar.gz"
+  sha256 "f58b0451452820d92197d393bdd01ee5a9644a0c0ad904f74faeec0d1d2d70fd"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   livecheck do
@@ -58,6 +57,14 @@ class OsrmBackend < Formula
       /usr/include/c++/11/type_traits:987:52: error: static assertion failed: template argument must be a complete class or an unbounded array
         static_assert(std::__is_complete_or_unbounded(__type_identity<_Tp>{}),
     CAUSE
+  end
+
+  # Add a missing `<ostream>` include, which libc++ 23 no longer provides transitively.
+  patch do
+    url "https://github.com/Project-OSRM/osrm-backend/commit/fb0251f4f91e2eb7e1baea350633d5352ffdb453.patch?full_index=1"
+    sha256 "fa2b62a256a49648e0fc717f5642456c4745b9c06e2b7581294c24b139a23499"
+    type :unofficial
+    resolves "https://github.com/Project-OSRM/osrm-backend/pull/7714"
   end
 
   def install
