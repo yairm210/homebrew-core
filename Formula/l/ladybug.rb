@@ -1,9 +1,17 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.20.1.tar.gz"
-  sha256 "cacec89bd105d8f0da73537054e471e818c983cf9b453e79ca17bd5d7afaefbe"
+  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.20.2.tar.gz"
+  sha256 "c4dc6844479a799247f0cdf749522bb7597b78a97b90dbde0706601b207c928f"
   license "MIT"
+
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "b623634cb3524613692bca7ea39493dbb23bde367230a74d0a637fd8bf893a9f"
