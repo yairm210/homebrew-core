@@ -1,8 +1,8 @@
 class Pixtuoid < Formula
   desc "Terminal pixel-art office for AI coding agents"
   homepage "https://github.com/IvanWng97/pixtuoid"
-  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "8af540ebf7eb0c0ea9f835fb9e76879ea186d4e3f2b6627bb9a7b9a44562da82"
+  url "https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "48455b07618e4ea25f2cc46449950c4aec63b31f34d01adcb4bbc9e8e36ceff0"
   license "MIT"
   head "https://github.com/IvanWng97/pixtuoid.git", branch: "main"
 
