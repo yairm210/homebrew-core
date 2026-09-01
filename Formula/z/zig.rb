@@ -36,6 +36,13 @@ class Zig < Formula
   # https://github.com/Homebrew/homebrew-core/issues/209483
   skip_clean "lib/zig/libc/darwin/libSystem.tbd"
 
+  # Backport fix for zig to fetch zip files to cache
+  patch do
+    url "https://codeberg.org/ziglang/zig/commit/cfde9303ff75322525746aa325026f0e12fb402c.diff"
+    sha256 "9e9aa27db65d5b66eb82df7eae13baff57656de2088c0ee15eccbda404e690fa"
+    type :backport
+  end
+
   # Force Zig to use the system libc++ on Darwin. Without this, the vendored
   # libc++ gives `zig` a private std::error_code category that disagrees with
   # libLLVM.dylib's, breaking comparisons across the boundary — e.g. `zig ar`
