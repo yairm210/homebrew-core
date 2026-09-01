@@ -6,11 +6,11 @@ class McpServerKubernetes < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
-    sha256 cellar: :any, arm64_sequoia: "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
-    sha256 cellar: :any, arm64_sonoma:  "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
-    sha256 cellar: :any, arm64_linux:   "ddbd7668715be0e6cc4eda03690733a14d5133689949600f0fb732c7f239d3fc"
-    sha256 cellar: :any, x86_64_linux:  "18153584a5890a4cad7609988dc3ba3b8bd2b57029446df5a08332d582564195"
+    sha256 cellar: :any, arm64_tahoe:   "de89dd90c2c3646e2157ff1f49736dde39301c6542f21d5756baf764c07f478f"
+    sha256 cellar: :any, arm64_sequoia: "de89dd90c2c3646e2157ff1f49736dde39301c6542f21d5756baf764c07f478f"
+    sha256 cellar: :any, arm64_sonoma:  "de89dd90c2c3646e2157ff1f49736dde39301c6542f21d5756baf764c07f478f"
+    sha256 cellar: :any, arm64_linux:   "5f2e49efdd80e743bfb9fe8e1d092c1c0389c689657fe93e1a4ee80cf3119caf"
+    sha256 cellar: :any, x86_64_linux:  "42d3770969776b9106386d6e40ba7306f7fdd675973e62b6c8f84d80cc4f46c2"
   end
 
   depends_on "node"
