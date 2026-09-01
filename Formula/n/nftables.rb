@@ -3,8 +3,8 @@ class Nftables < Formula
 
   desc "Netfilter tables userspace tools"
   homepage "https://netfilter.org/projects/nftables/"
-  url "https://www.netfilter.org/pub/nftables/nftables-1.1.6.tar.xz"
-  sha256 "372931bda8556b310636a2f9020adc710f9bab66f47efe0ce90bff800ac2530c"
+  url "https://www.netfilter.org/pub/nftables/nftables-1.1.7.tar.xz"
+  sha256 "a6fbf060d8d4fff001517a2b94f356bb4366bfbf0ba366366f9d27cc38caa58f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -37,6 +37,7 @@ class Nftables < Formula
   end
 
   test do
-    assert_match "Operation not permitted (you must be root)", shell_output("#{sbin}/nft list tables 2>&1", 1)
+    assert_match "Operation not permitted (perhaps you must be root?)",
+                 shell_output("#{sbin}/nft list tables 2>&1", 1)
   end
 end
