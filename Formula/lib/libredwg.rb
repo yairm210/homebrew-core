@@ -1,8 +1,8 @@
 class Libredwg < Formula
   desc "DWG utilities"
   homepage "https://www.gnu.org/software/libredwg/"
-  url "https://ftpmirror.gnu.org/gnu/libredwg/libredwg-0.13.3.tar.gz"
-  sha256 "6fe6c273ecbb04d4a7646e1636ede4815b51f98f974cece649dab341d24feda2"
+  url "https://ftpmirror.gnu.org/gnu/libredwg/libredwg-0.14.tar.gz"
+  sha256 "cb6ee0b078c6d9e0f09d66f1feac33ba6342df88ae544e9f9335fab475218351"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,6 +16,7 @@ class Libredwg < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
 
   def install
