@@ -7,12 +7,11 @@ class DartSdk < Formula
   compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9f1bda855ffc70d29ed75e9ccef9c2b40d296cc8f986897b3bd40f94ee04854"
-    sha256 cellar: :any, arm64_sequoia: "45ca22e65665a459ed0c9952ee7930916bba78cb025fda4b10bdb5859fead141"
-    sha256 cellar: :any, arm64_sonoma:  "e9fa642ddceec513f1de8ff487ec33e214f9bff885a8a057b9baf4b7ef39adb6"
-    sha256 cellar: :any, sonoma:        "fb06ffb3e282b4692f21275135da2682859320fe06f530aa07a5bbdb9dd6a301"
-    sha256 cellar: :any, arm64_linux:   "1c19b600073637453512ad1861a02c77c19d9e25a7bf962c6a5577f0fd19c61b"
-    sha256 cellar: :any, x86_64_linux:  "115158494c0f736cd9a83a52b71b3bffa720b9e0669b8806e4f50a579868000e"
+    sha256 cellar: :any, arm64_tahoe:   "cafb1a7eeeae149a6fa35b3de850cc405a6843ca98af8bc9bb8dad60b02b0b73"
+    sha256 cellar: :any, arm64_sequoia: "0893d6e1f0688a9805bb52320accd9cbb5ca2135c7d7a4e60bd6b0ce94270de5"
+    sha256 cellar: :any, arm64_sonoma:  "7dce6ffdbdb39155447e23a5877ead983cb8ee461767c76275b5975ef7744d91"
+    sha256 cellar: :any, arm64_linux:   "7aa5b9bb6d40089dabda6fabcfc37b1d483526a366ed67865b1324cc007673b2"
+    sha256 cellar: :any, x86_64_linux:  "1f5611ff0953d96aed50344fcbcb9b0a9bdd0e5fc59add5234330f04faa5bf1d"
   end
 
   depends_on "ninja" => :build
