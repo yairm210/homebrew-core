@@ -1,8 +1,8 @@
 class Fallow < Formula
   desc "Codebase intelligence for TypeScript and JavaScript"
   homepage "https://docs.fallow.tools"
-  url "https://github.com/fallow-rs/fallow/archive/refs/tags/v3.21.0.tar.gz"
-  sha256 "88181becf9b06603681d26a9f2e85b54003c6baf11c63c284b25e99eaaa40b30"
+  url "https://github.com/fallow-rs/fallow/archive/refs/tags/v3.22.0.tar.gz"
+  sha256 "d9772b23c4023df2e15607a2e5b2437617bf2c49d241e1d54a808acc6903106a"
   license "MIT"
   head "https://github.com/fallow-rs/fallow.git", branch: "main"
 
