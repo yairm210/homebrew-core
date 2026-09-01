@@ -3,8 +3,8 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https://github.com/Garmelon/PFERD"
-  url "https://files.pythonhosted.org/packages/92/ec/7b569ae9e3434166c57e8f900b77429ac1525eec821d09e37ebe82d855ad/pferd-3.9.3.tar.gz"
-  sha256 "3fb50a65b4bf3a830a9eea29cc6d21d656aa385e16d3153dc252b78f2c5ea18b"
+  url "https://files.pythonhosted.org/packages/16/cf/35aedbc5da2fb46fe45b00d8449f817c336e7020ea08aab7c95db67301f9/pferd-3.9.4.tar.gz"
+  sha256 "3085b9387d3157b90b311330f799975a732dafa919f2e72a319c9605d534505b"
   license "MIT"
 
   bottle do
@@ -54,8 +54,8 @@ class Pferd < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jaraco-classes" do
@@ -109,8 +109,8 @@ class Pferd < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "rich" do
@@ -124,8 +124,8 @@ class Pferd < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
-    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do
