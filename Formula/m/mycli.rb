@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/a4/89/aea358929b38dd9dc1bafa0ebf2a89690aa24ee588cf048d35fae5804cbe/mycli-2.18.4.tar.gz"
-  sha256 "43dd445f9949a0ff47640794b19e93104fdb0abc6900e87cee86a2649260d181"
+  url "https://files.pythonhosted.org/packages/e7/72/11cfbabcb276092aaa45ed22e59dda5ac2a9301efb0cc054825f40e1533c/mycli-2.18.5.tar.gz"
+  sha256 "d6891c252d4068607e6bdac59c0b4ea7573d4e0a69c54420c18e0fcd98fecfd8"
   license "BSD-3-Clause"
 
   bottle do
@@ -179,13 +179,13 @@ class Mycli < Formula
   end
 
   resource "polars" do
-    url "https://files.pythonhosted.org/packages/27/99/fe77f10a13a778705ef05b499fc708c9a0b0a3680d9eb6bc6e1b6a6b9914/polars-1.42.1.tar.gz"
-    sha256 "2fe94f3059334650bd850ae19a9c165dcd5d9cb12cd95ea04de2201662e70e8a"
+    url "https://files.pythonhosted.org/packages/89/13/3873f213304bcbaaf39e63c8b905ceb460a0524448d57f86a829f6d4d0fd/polars-1.43.2.tar.gz"
+    sha256 "c699671b99eb71ff53334d237917aaa3db5ad4dda480abcb6c80e0eaee7b677b"
   end
 
   resource "polars-runtime-32" do
-    url "https://files.pythonhosted.org/packages/1f/59/15bcc4dac380c6d63efa5446d8317f22671cbd6c9dadd576bd17a334c45a/polars_runtime_32-1.42.1.tar.gz"
-    sha256 "4d4809e1c1b9a6611f6944f27b24abea902b5159e6b6fa262fd716e947af5afd"
+    url "https://files.pythonhosted.org/packages/d4/06/11b578eeef05f867e3ee31b2a2fdd8e7684c2aa47822c49935d1be789c38/polars_runtime_32-1.43.2.tar.gz"
+    sha256 "d7b7c486bccee75a6af0158b87077da3d054657e3c60036b28644f4e1c7fdbf7"
   end
 
   resource "prompt-toolkit" do
@@ -239,8 +239,8 @@ class Mycli < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/2c/21/ef6157213316e85790041254259907eb722e00b03480256c0545d98acd33/rapidfuzz-3.14.5.tar.gz"
-    sha256 "ba10ac57884ce82112f7ed910b67e7fb6072d8ef2c06e30dc63c0f604a112e0e"
+    url "https://files.pythonhosted.org/packages/18/97/226c43b7b5d957bc3840ed52ea99eed261f99834c4619be7a4742cbaeafa/rapidfuzz-3.14.6.tar.gz"
+    sha256 "e13a8160d017b499ec7a2fa9d0ce1ae2e7377080815785819f966fb235d4eb60"
   end
 
   resource "referencing" do
@@ -274,13 +274,13 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/43/ed/a6c45aec29353b6392ea34548c40af3ac6ffd6bc5572cf23b2ce250876fc/sqlglot-30.12.0.tar.gz"
-    sha256 "6b8369704662d4f654bc934cea4dd31c916c2a571b389210cb9e951a275e5fd9"
+    url "https://files.pythonhosted.org/packages/56/d4/da49abcc81beebbb25f29ddf87f2980c63c949569d7f2da40c06d95fa415/sqlglot-30.17.0.tar.gz"
+    sha256 "2d6b8def93304fa300f4d20f48e3909e7f436fda56ca1fafd8975f6c561ef62c"
   end
 
   resource "sqlglotc" do
-    url "https://files.pythonhosted.org/packages/36/05/bdb3c3433f19324ed3499bc51adb6db934f77d947ed1c624554523b22966/sqlglotc-30.12.0.tar.gz"
-    sha256 "7c4c9c7d76026b75f64a6682faf84cf5145e3304190c07807b86962d8d535f74"
+    url "https://files.pythonhosted.org/packages/f0/57/994126404551c5b40aa5f93d2c60b56fb191271a4cec445f7007f68070ab/sqlglotc-30.17.0.tar.gz"
+    sha256 "8f83229edbeebb5c02602257a59b596d0c26e63e9827c5dfe9976681e2fb51a7"
   end
 
   resource "sqlite-fts4" do
