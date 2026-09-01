@@ -1,8 +1,8 @@
 class TodoTxt < Formula
   desc "Minimal, todo.txt-focused editor"
   homepage "http://todotxt.org/"
-  url "https://github.com/todotxt/todo.txt-cli/releases/download/v2.13.0/todo.txt_cli-2.13.0.tar.gz"
-  sha256 "d3b925434029aac212213c103fb6573a4f960c74dd467a3efac9bd9afe89d15f"
+  url "https://github.com/todotxt/todo.txt-cli/releases/download/v2.14.0/todo.txt_cli-2.14.0.tar.gz"
+  sha256 "71a703ecbf79a163f1aa9b831e7ea0e6036cdbb06fdfc6b5c3502b627efb873d"
   license "GPL-3.0-only"
   head "https://github.com/todotxt/todo.txt-cli.git", branch: "master"
 
@@ -30,7 +30,7 @@ class TodoTxt < Formula
 
   test do
     cp prefix/"todo.cfg", testpath/".todo.cfg"
-    inreplace testpath/".todo.cfg", "export TODO_DIR=${HOME:-$USERPROFILE}", "export TODO_DIR=#{testpath}"
+    inreplace testpath/".todo.cfg", ': ${TODO_DIR:="${HOME:-$USERPROFILE}"}', ": ${TODO_DIR:=\"#{testpath}\"}"
     system bin/"todo.sh", "add", "Hello World!"
     system bin/"todo.sh", "list"
   end
