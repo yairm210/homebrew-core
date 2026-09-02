@@ -1,8 +1,8 @@
 class Jdupes < Formula
   desc "Duplicate file finder and an enhanced fork of 'fdupes'"
   homepage "https://codeberg.org/jbruchon/jdupes"
-  url "https://codeberg.org/jbruchon/jdupes/archive/v1.31.1.tar.gz"
-  sha256 "9e318ea3440e5dcd33533aaebf85f8307757bb34ea1d12548ceef8d5d75c4bd9"
+  url "https://codeberg.org/jbruchon/jdupes/archive/v1.31.2.tar.gz"
+  sha256 "a003ba9c57f2fbfc30f5af5a886b12423e0a0eba008429a48506d0c31a807c17"
   license "MIT"
 
   livecheck do
@@ -23,12 +23,6 @@ class Jdupes < Formula
   depends_on "libjodycode"
 
   def install
-    # error: no member named 'st_mtim' in 'struct stat'
-    inreplace "filestat.c" do |s|
-      s.gsub! "st_mtim.tv_sec", "st_mtime"
-      s.gsub! "st_atim.tv_sec", "st_atime"
-    end
-
     system "make", "ENABLE_DEDUPE=1"
     system "make", "install", "PREFIX=#{prefix}"
   end
@@ -37,7 +31,7 @@ class Jdupes < Formula
     touch "a"
     touch "b"
     (testpath/"c").write("unique file")
-    dupes = shell_output("#{bin}/jdupes --zero-match .").strip.split("\n").sort
+    dupes = shell_output("#{bin}/jdupes --zero-match .").strip.split("\n").map { |f| File.basename(f) }.sort
     assert_equal ["a", "b"], dupes
   end
 end
