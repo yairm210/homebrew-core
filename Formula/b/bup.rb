@@ -1,8 +1,8 @@
 class Bup < Formula
   desc "Backup tool"
   homepage "https://bup.github.io/"
-  url "https://github.com/bup/bup/archive/refs/tags/0.33.10.tar.gz"
-  sha256 "5b7d169b3b0d821dc93c55798e18339594af618f018aae88dff28b8cc6333b00"
+  url "https://github.com/bup/bup/archive/refs/tags/0.34.tar.gz"
+  sha256 "ab790f39e53bee9570f17c58d22e4bc03246f25d45e12cc1b7b5f2bef6d14611"
   license all_of: ["BSD-2-Clause", "LGPL-2.0-only"]
   head "https://github.com/bup/bup.git", branch: "main"
 
@@ -21,6 +21,11 @@ class Bup < Formula
   depends_on "python@3.14"
   depends_on "readline"
 
+  on_macos do
+    depends_on "bash" => :build # config_cflags[@]: unbound variable
+    depends_on "make" => :build # Depends on `make` >= 4.2
+  end
+
   on_linux do
     depends_on "acl"
   end
@@ -32,7 +37,8 @@ class Bup < Formula
   def install
     ENV["BUP_PYTHON_CONFIG"] = "#{python3}-config"
 
-    system "make", "PREFIX=#{prefix}", "install"
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake", "PREFIX=#{prefix}", "install"
   end
 
   test do
