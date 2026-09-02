@@ -1,8 +1,8 @@
 class Grpcui < Formula
   desc "Interactive web UI for gRPC, along the lines of postman"
   homepage "https://github.com/fullstorydev/grpcui"
-  url "https://github.com/fullstorydev/grpcui/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "7b7e7bbb8d4749fc911a866a915ae987e4a45e680afb88c4fade5932cfaac2d8"
+  url "https://github.com/fullstorydev/grpcui/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "664137b2982cad4bc5e8a8e5963fb46fe3686b6aff0f2f925172fd98d2f8a12f"
   license "MIT"
   head "https://github.com/fullstorydev/grpcui.git", branch: "master"
 
