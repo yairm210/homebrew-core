@@ -11,13 +11,11 @@ class Jdupes < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f482ae6d140f2d57ce79f7f4ce86f883b8cdf3689d7723add2973dab2967bf7a"
-    sha256 cellar: :any, arm64_sequoia: "7b963f3181f00e7b5d6b489ab65cf9bcfe086383b66b3c8371bab40ab0b7937a"
-    sha256 cellar: :any, arm64_sonoma:  "3180b8ef8f149f1da85a9661f5b108ed49fde085cc91475390a9311a4461d8ee"
-    sha256 cellar: :any, sonoma:        "666263c8bab14f6cb705ea5c83b6aaea7ccca5fbe3e6726d205a6f95c4b26fbd"
-    sha256 cellar: :any, arm64_linux:   "78a4997c423477cd39ab75b312553ddf4b30f2968b7da1bba9ec6da42c04c633"
-    sha256 cellar: :any, x86_64_linux:  "39872547225f20c9e98bd23aec2bb7ecbfaa3680c3598f9a33f6bf828ba6259d"
+    sha256 cellar: :any, arm64_tahoe:   "264d71e93a0a3e1ea22093322ab654ffb7232dedae490e873b7d7dd05da1eb5a"
+    sha256 cellar: :any, arm64_sequoia: "f62c55b84332a06d253662b529927e0791692f06820ac379e48e8eb3c7a20fd5"
+    sha256 cellar: :any, arm64_sonoma:  "2b364bc664fb82e7a31fe294cfbe9de328ac8b7f362e491597bf2d8d2c0dd67f"
+    sha256 cellar: :any, arm64_linux:   "4ad03192f72fd2a0c27c7a5b47b880da451c6276e18a87ec6ef9f8cd7624178a"
+    sha256 cellar: :any, x86_64_linux:  "1d99ec4ecc50abc0a82fd2447cb610a971b4782ff190a3917449e33ab0e542e5"
   end
 
   depends_on "libjodycode"
