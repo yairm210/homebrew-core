@@ -376,52 +376,49 @@ class Semgrep < Formula
     end
 
     ENV.deparallelize
-    Dir.mktmpdir("opamroot") do |opamroot|
-      ENV["OPAMROOT"] = opamroot
-      # `--no-depexts` prevents opam from attempting to automatically search for
-      # and install system dependencies using the os-native package manager.
-      # On Linux, this leads to confusing and inaccurate `Missing dependency`
-      # errors due to querying `apt`. See:
-      #   https://github.com/Homebrew/homebrew-core/pull/82693
-      #   https://github.com/Homebrew/homebrew-core/pull/176636
-      #   https://github.com/ocaml/opam/pull/4548
-      ENV["OPAMNODEPEXTS"] = ENV["OPAMYES"] = "1"
-      # Set library path so opam + lwt can find libev
-      ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
-      # Opam's solver times out when it is set to the default of 60.0
-      # See: https://github.com/Homebrew/homebrew-core/pull/191306
-      ENV["OPAMSOLVERTIMEOUT"] = "1200"
+    ENV["OPAMROOT"] = buildpath/".opam"
+    # `--no-depexts` prevents opam from attempting to automatically search for
+    # and install system dependencies using the os-native package manager.
+    # On Linux, this leads to confusing and inaccurate `Missing dependency`
+    # errors due to querying `apt`. See:
+    #   https://github.com/Homebrew/homebrew-core/pull/82693
+    #   https://github.com/Homebrew/homebrew-core/pull/176636
+    #   https://github.com/ocaml/opam/pull/4548
+    ENV["OPAMNODEPEXTS"] = ENV["OPAMYES"] = "1"
+    # Set library path so opam + lwt can find libev
+    ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
+    # Opam's solver times out when it is set to the default of 60.0
+    # See: https://github.com/Homebrew/homebrew-core/pull/191306
+    ENV["OPAMSOLVERTIMEOUT"] = "1200"
 
-      system "opam", "init", "--no-setup", "--disable-sandboxing"
-      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
 
-      # We can't use `make install-deps-for-semgrep-core` directly because it runs
-      # `./scripts/install-tree-sitter-lib` which would conflict with Homebrew's
-      # tree-sitter dependency. Instead, we manually replicate its steps:
-      # 1. Configure tree-sitter (using homebrew's tree-sitter)
-      cd "./libs/ocaml-tree-sitter-core" do
-        system "./configure"
-      end
-
-      # 2. Proceed with installing opam dependencies (taken from the --deps-only
-      # invocation in the Semgrep Makefile's `install-opam-deps` target)
-      system "opam", "update", "-y"
-      ENV["LWT_DISCOVER_ARGUMENTS"] = "--use-libev true"
-      system "opam", "install", "--locked", "--update-invariant",
-             "--confirm-level=unsafe-yes", "-y", "--deps-only",
-             "./semgrep.opam", "./dev/required.opam"
-
-      # 3. Finally build semgrep-core using the usual Makefile targets
-      system "opam", "exec", "--", "make", "core"
-      system "opam", "exec", "--", "make", "copy-core-for-cli"
-
-      bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
+    # We can't use `make install-deps-for-semgrep-core` directly because it runs
+    # `./scripts/install-tree-sitter-lib` which would conflict with Homebrew's
+    # tree-sitter dependency. Instead, we manually replicate its steps:
+    # 1. Configure tree-sitter (using homebrew's tree-sitter)
+    cd "./libs/ocaml-tree-sitter-core" do
+      system "./configure"
     end
+
+    # 2. Proceed with installing opam dependencies (taken from the --deps-only
+    # invocation in the Semgrep Makefile's `install-opam-deps` target)
+    system "opam", "update", "-y"
+    ENV["LWT_DISCOVER_ARGUMENTS"] = "--use-libev true"
+    system "opam", "install", "--locked", "--update-invariant",
+           "--confirm-level=unsafe-yes", "-y", "--deps-only",
+           "./semgrep.opam", "./dev/required.opam"
+
+    # 3. Finally build semgrep-core using the usual Makefile targets
+    system "opam", "exec", "--", "make", "core"
+    system "opam", "exec", "--", "make", "copy-core-for-cli"
+
+    bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources.reject { |r| r.name == "pcre" }
-
     venv.pip_install_and_link buildpath/"cli"
   end
 
