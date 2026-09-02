@@ -1,8 +1,8 @@
 class GoenvAT2 < Formula
   desc "Go version management"
   homepage "https://github.com/go-nv/goenv"
-  url "https://github.com/go-nv/goenv/archive/refs/tags/2.2.44.tar.gz"
-  sha256 "2bd50e09f749b853966bb93155452a49c8c4b7b325639dd60b2ce2d8d215b23a"
+  url "https://github.com/go-nv/goenv/archive/refs/tags/2.2.45.tar.gz"
+  sha256 "72b621c107352ac9f223406ca304861cb2e2c6c380818eae00a8ad9085916139"
   license "MIT"
 
   livecheck do
