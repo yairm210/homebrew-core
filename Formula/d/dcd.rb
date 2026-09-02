@@ -8,11 +8,11 @@ class Dcd < Formula
   head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "eb63b61c6488792b9e0c4e8565e4aeaedbad40c7122d9fe49cf9055f850cf02a"
-    sha256               arm64_sequoia: "73293fd69336353e7fa85d6a4acf23f92e1dd75ffd745fa2a2062e5c25ccedc9"
-    sha256               arm64_sonoma:  "24352bbe9af0ab884555a7c53eade716f125c651ff2d5977bd9648a01baf11a7"
-    sha256 cellar: :any, arm64_linux:   "fc7e365cc62a784d914644910c4bccc8337d370b7207f294507a7b8a3a113352"
-    sha256 cellar: :any, x86_64_linux:  "e992cde45b9db7e5dd53d2b6b5f0adda84f7c73705efe72973ad61b4c6527a41"
+    sha256               arm64_tahoe:   "6c1ce1367ce4812243a4ee45f2b5e1c2a9bd46811a3557f4f7fc166f85bcaab0"
+    sha256               arm64_sequoia: "02e56a9bd8517f62992d8707db797eb67c7cd87601d22d5854fc981a91203806"
+    sha256               arm64_sonoma:  "b2063a4ace757119cc1f1c578804fe4512692c04ff7a6738b3a631d648c471b5"
+    sha256 cellar: :any, arm64_linux:   "67625d46a0f3436896ddd95c45773167bb02ffa2d7f913b198bb35a6f8953589"
+    sha256 cellar: :any, x86_64_linux:  "1720e09492588561a8c732561b851ffd62900ab048ad85d365c60155950624f6"
   end
 
   depends_on "ldc" => :build
