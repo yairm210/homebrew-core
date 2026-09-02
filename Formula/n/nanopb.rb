@@ -15,13 +15,11 @@ class Nanopb < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "b9dc6a78624375cb3a7ebf8e4a6d74b8f007180e4c5f586e4c1c44887f53a440"
-    sha256 cellar: :any, arm64_sequoia: "a7799fdadb39d845e2061dde07c02c19ecc4a984bf58f2eba96e2b5388c41620"
-    sha256 cellar: :any, arm64_sonoma:  "c1bdcb3e4dc5c5a278a36130aa7faa5c4017ba8bf6389a20315be24ca6b6c52a"
-    sha256 cellar: :any, sonoma:        "a60b70973ce8474f00bcf9fdf60b2b11bb81575d87c9eae7adc20e2bc015d78d"
-    sha256 cellar: :any, arm64_linux:   "1d09d93b87e87434ad0cd18adb07fdeca3d15d4fec144f733957c1cc76629cf1"
-    sha256 cellar: :any, x86_64_linux:  "5aad2007371a7ea6410d6ed13dcd7eb417fd0a345aba99be31384b3974b0d5b1"
+    sha256 cellar: :any, arm64_tahoe:   "545c00b1ff8f69f6104f8a3973c98fc07a3055632e7338dd2a1bc9c3cf17d2af"
+    sha256 cellar: :any, arm64_sequoia: "c645ddff14a09b5922b976a6638317af9928504a87a8a1432d2038e11d4b590b"
+    sha256 cellar: :any, arm64_sonoma:  "13a2f8f770dfbe5e432b02851b7eba08e49b6e29f37bc8a8e311766cf51115cf"
+    sha256 cellar: :any, arm64_linux:   "c1058306daf087765fd541a3e241331962364f13becb0909807e41be46f8a0f1"
+    sha256 cellar: :any, x86_64_linux:  "42999f9161873535877861e40049b26bde44d665131a5d32311c53a67447b036"
   end
 
   depends_on "cmake" => :build
