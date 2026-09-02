@@ -29,6 +29,9 @@ class ZlibNgCompat < Formula
 
   link_overwrite "include/zconf.h", "include/zlib.h", "lib/libz.*", "lib/pkgconfig/zlib.pc"
 
+  # Uses a test resource
+  allow_network_access! :test
+
   def install
     ENV.runtime_cpu_detection
     args = %w[
