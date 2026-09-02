@@ -12,12 +12,11 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "af546dc333315a81e53dfe8644aa2dd5a13fd6b0c9a5667c5a0e1f4a3b15caa4"
-    sha256 cellar: :any, arm64_sequoia: "2668466ea631d4a1e6ecf715324380e43ea4227994dbc1dbd2facb33dc56c3c1"
-    sha256 cellar: :any, arm64_sonoma:  "04164a35f288cb165d5af44fda24ae1ad7e9ed69927db4c5e5a376b32a07f9c0"
-    sha256 cellar: :any, sonoma:        "b4fca76498520b7b9f368aa8ed786590adff4e93c611f3a94833d9c388bb8062"
-    sha256 cellar: :any, arm64_linux:   "2d7cba75a86d3d22ad8839ce0e9410353bc31aebb42a39a8106d2765e335099a"
-    sha256 cellar: :any, x86_64_linux:  "3f997a3244665f0e9a313cfb6699149376cf964b90849452577fa9f0a70405f0"
+    sha256 cellar: :any, arm64_tahoe:   "6734dd80d5073f5bb604b5ba36d287221655346170d55c4ddc740a8318f67c4e"
+    sha256 cellar: :any, arm64_sequoia: "d464163f75401534baa01cd84b8def82b900956b9c0c7af6c116b39a607f497b"
+    sha256 cellar: :any, arm64_sonoma:  "54676d6a11a221dcc0a4992c301b29ec6b64fbdb940076d33d166cb10214732c"
+    sha256 cellar: :any, arm64_linux:   "c0e635443c4ca93acb0ecb6579b94b303cbb3760b9ab9796ce48d1d44f246900"
+    sha256 cellar: :any, x86_64_linux:  "db9943ba4f7be2b9d04c5c518005ce5e084bae41399b48fdb38b3008c75b8618"
   end
 
   depends_on "cmake" => :build
