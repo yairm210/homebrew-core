@@ -6,11 +6,11 @@ class Httrack < Formula
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_tahoe:   "05927252ee2360225f44ff52f66c41fbed5a83090c66dabcfe80ce29878a0c53"
-    sha256 arm64_sequoia: "cbf5772ffed694b93f047bd28431cfb5dde33bf2e6d4b81cff2ca880e5f22fd1"
-    sha256 arm64_sonoma:  "a2ca1734c1ea0bc4e3b6ae3666177e99913bb55982c7fd375fe5816fb1a06e51"
-    sha256 arm64_linux:   "ed1630409efc122b55fc6938b838815359ada12608b8fc31e0f5d4cd1712dd06"
-    sha256 x86_64_linux:  "63f0365ab8627d61abfaf18509c8328d4cd8c9b95821e36157ec391620615638"
+    sha256 arm64_tahoe:   "e73f0b952b984a61dd27a92dd6925714181e89bd3704935877f54e961164413b"
+    sha256 arm64_sequoia: "8df78807a4e735a853d7a29765a48639d09bbb26c507b45848807d8a2d4e35bc"
+    sha256 arm64_sonoma:  "7339ff8b3ed0128ea4d468ddc83209f59553a16f7d87de4cec6db5b9509a626c"
+    sha256 arm64_linux:   "bed1b01c054f31d54c14c4ae2d8dd49061d6db7a48143b6e1532b4f892d1ce56"
+    sha256 x86_64_linux:  "53467fc1326aab6cc55f9092e14308f1aa89d1f007c30904737800d5349cdeb7"
   end
 
   depends_on "openssl@4"
