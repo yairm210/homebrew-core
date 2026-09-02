@@ -1,8 +1,8 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https://coccinelle.gitlabpages.inria.fr/website/"
-  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.2.tar.gz"
-  sha256 "84c1b62af85e69b8e7100f54d19a21d090300d5e5e790953eb6b1e2c4d6edf0c"
+  url "https://coccinelle.gitlabpages.inria.fr/website/distrib/coccinelle-1.3.3.tar.gz"
+  sha256 "265dba12a71e5169d49af9a2d8c3c4b8e2cae4c451c918beb2587c33d6128e3d"
   license "GPL-2.0-only"
   head "https://github.com/coccinelle/coccinelle.git", branch: "master"
 
