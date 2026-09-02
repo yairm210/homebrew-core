@@ -6,11 +6,11 @@ class NetworkDoctor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1122fce1982cd79086cf584052b17a804e064dc9e446460313c21488bccc5e97"
-    sha256 cellar: :any,                 x86_64_linux:  "15ceed67b7406db07bb196a1c358eaf34ea44279ba52137cf31e55c0ceb54b06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f940488fb39449bab5fb49351179b34ae7867a8c768df994ff4b58cb818e38a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f940488fb39449bab5fb49351179b34ae7867a8c768df994ff4b58cb818e38a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f940488fb39449bab5fb49351179b34ae7867a8c768df994ff4b58cb818e38a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28cff857cb2585362ff42e7fe766efeaaeb2db6aa2680b7c380bc00b8a930cfb"
+    sha256 cellar: :any,                 x86_64_linux:  "fa98b6dc6f77afa800b547cb5837de2e367da4c03a0ec936b7122fd0afd02a11"
   end
 
   depends_on "go" => :build
