@@ -17,12 +17,11 @@ class Qthttpserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b31323e38067b47d0de4c4f0d3343ed3cde4b571bf26c43681618159c1acb37"
-    sha256 cellar: :any,                 arm64_sequoia: "8f0a781425931769978b4943840fb8a3ace69ae36e9b9cdf794fd94d2979adcf"
-    sha256 cellar: :any,                 arm64_sonoma:  "8186ab9439ff806a978d7cf1d87b489f00fad8c45de12aacb9e6f1b7b257a881"
-    sha256 cellar: :any,                 sonoma:        "78392913cf1011230c3a2f51353d208266c16098c66622f6eb414122c887707f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc4041a2e2fb83ff7cf9a35ea56e07194edabae43987b707e40dfc855481eca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d2cc1e9915b0fd4a8a9283ef91f957261f43c06dd00995363e779237a9e042"
+    sha256 cellar: :any, arm64_tahoe:   "72448ee71f7fcab71bc620a266cf9c82082dfde535f261e4db468035e149d108"
+    sha256 cellar: :any, arm64_sequoia: "7aa2fda8458425b6467df5deca5f4f82e33995118e24b045d4195c50a52885d0"
+    sha256 cellar: :any, arm64_sonoma:  "d564f6696f1987eb22403e77bde1618abfe5fdb16836b6ed11620b2b0ce73779"
+    sha256 cellar: :any, arm64_linux:   "0e88c2a090b54838d5d4eb2c7319b3e80853b34c0595d9b2f756708950676dce"
+    sha256 cellar: :any, x86_64_linux:  "5fa32c3251e635d80e412bd097ed32e2e12107a2508b63fa8431503c892890de"
   end
 
   depends_on "cmake" => [:build, :test]
