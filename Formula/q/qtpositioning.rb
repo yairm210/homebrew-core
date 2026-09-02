@@ -19,12 +19,11 @@ class Qtpositioning < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3eae7c50185a2099527a1456e72b746bcaf709569b69a7c5a1802d99b9dcf50b"
-    sha256 cellar: :any,                 arm64_sequoia: "5d5393e5e47f67a32be62f450dda35cbc4acbdf455de33f7cf5f0bb10029d5fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fc04fa26c47681c1fb8d1d1dfd4fe40748ddc86c8c81364c7c241b9b16061cf"
-    sha256 cellar: :any,                 sonoma:        "6bf61b4bee6dbb362d191853678e6abc0d4dacfd268a30980f833baef15f649a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5c21b82dccaafa55453570a8a8cdba77349e76ee6ef02ac3a0d3c3831cebf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5f4c05a3cef51b5de3768bb47cf2d08bd95ae39be052121e9eef6e118876cd"
+    sha256 cellar: :any, arm64_tahoe:   "f9c1d1bbeb029487c4ea7bd17093396f943ca104c8429f3f8a2244b70ffdc2bc"
+    sha256 cellar: :any, arm64_sequoia: "2945271934446644a7d5d34c10f84725eb605422656cea43cc3c3da513185313"
+    sha256 cellar: :any, arm64_sonoma:  "bc0cabfbf9d2774e3c108e717373f2ca75a27fc02813763229a3129e01cc8c71"
+    sha256 cellar: :any, arm64_linux:   "e97648bc2b93c493d952be0c6597c8cb0fb921b60e7801eb904868f5c1ad0f23"
+    sha256 cellar: :any, x86_64_linux:  "7668b74c297f351526f0aa913f74e1e750e08631caf9067149767358b9af6f1b"
   end
 
   depends_on "cmake" => [:build, :test]
