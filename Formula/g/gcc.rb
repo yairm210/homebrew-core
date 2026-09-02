@@ -66,6 +66,8 @@ class Gcc < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
