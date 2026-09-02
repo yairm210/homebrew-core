@@ -14,11 +14,11 @@ class Circleci < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e76e305eeed28d105107ef9939e32131db679332b67d0fa41bb1865b2e84f28f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "450253ca08ebc8bcd576f245637c097299c2dbcf437cbbc2b1b88e0e0965e941"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1193f505772fbdef8cd329861e6184a757d97c520e7986c38067a0ac5355ed03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e157752229bb92a49d05283a8856ccc5f46fa032f841554d6889c183cbf03933"
-    sha256 cellar: :any,                 x86_64_linux:  "dc0850e5f4478f79b28c4177886ac93684d8778f24bec1e383f608cb1eff3d17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b37e03ab2d5148629fcb55df3ef5c02c695e82aed755d4fff91236503e363aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8f9eb88ac9ac912e7b21c3b61aae6e54894da1da031234eaa376b91029b27dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a8301633e101439fd72e640496afaea0fd41942d43aae0e68e2b2b0b9a2b066"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d9761d876f23a0c4b21234ba318bad18a6e434c7cd728481399f75458c741ac"
+    sha256 cellar: :any,                 x86_64_linux:  "9808a27e83ae6e894c8ab798a188a31f65fd668acff60fa1ffd433c7cfe7a9c6"
   end
 
   depends_on "go" => :build
