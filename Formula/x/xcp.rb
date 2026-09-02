@@ -1,8 +1,8 @@
 class Xcp < Formula
   desc "Fast & lightweight command-line tool for managing Xcode projects, built in Swift"
   homepage "https://github.com/wojciech-kulik/XcodeProjectCLI"
-  url "https://github.com/wojciech-kulik/XcodeProjectCLI/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "83595b93cec1466bc6aa4b8025d39c507ca50ffd05d3fd8cd575ac5c20bc862a"
+  url "https://github.com/wojciech-kulik/XcodeProjectCLI/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "47e282024767603d31eed14ccc7082585409df58b7a8eca9009be3f4fce2b814"
   license "MIT"
 
   bottle do
