@@ -7,6 +7,14 @@ class Virglrenderer < Formula
   sha256 "088040d130eaa0458a978fe7867fbfb1fcf1fdff52bf3b27a00658828bc4189f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "d82b1e4e7af7e434e07548417e5555deb27142fe20d4e1adef1c5a72b43c3a89"
+    sha256 cellar: :any, arm64_sequoia: "dcdc6584a0748af2e5abd4ba5532fb14944adf2a153ae353515cd076555ba7d4"
+    sha256 cellar: :any, arm64_sonoma:  "6a062481a04adba4b4d96b5e5e17362c8b47f3882aa40c969ace63c8713301ce"
+    sha256 cellar: :any, arm64_linux:   "d29f701ea302f35ef37d4a7438816525b1e3d9d0e72f127d00bf779cb6eeef24"
+    sha256 cellar: :any, x86_64_linux:  "370ad6b6163a93b02ab9114e21b385863694ebdcac010e6e8d53416e36a809c6"
+  end
+
   depends_on "libyaml" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
