@@ -12,12 +12,11 @@ class QtLibiodbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db0a945099dc64c46deda3b0e9ceee2541cb406e9c6c9ce7a3eb1d35f2f2d38e"
-    sha256 cellar: :any,                 arm64_sequoia: "bc0b298f4b55422922cd1ec357d5cd8467b10a5a868b5d0e2294e98402d06000"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b3e8ac438290f2d02766edfa712d4acbe0907e1af07a5fc05408de91accd315"
-    sha256 cellar: :any,                 sonoma:        "c0d7ac60986e2a7acea8ca1db4db8242c7d57f8d64e05c04fe7c5903b6887e00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8bd6a926998a5d0f850716c3a5761bb360d71f9b01890dae223766283348000"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d9fe13eeee1ff94bb367e3c39763843b8871ac21baf551afcfeda784793f8fa"
+    sha256 cellar: :any, arm64_tahoe:   "5f8cbd72cf42175f927392f7792d363bb621968e0b2776114993b6f8da372de5"
+    sha256 cellar: :any, arm64_sequoia: "651ced969976bf59474e68cec5075cb3ed1ce987e2c1ba86c8ea32a61f4f7570"
+    sha256 cellar: :any, arm64_sonoma:  "96b6db4a872f80e3daff58c85de3ff7822338267df2a987c88bde8f8bcc523b0"
+    sha256 cellar: :any, arm64_linux:   "b11f59b3235a02bab1d852f0588592764fd3a74571edc7cadb170c0a17f259d2"
+    sha256 cellar: :any, x86_64_linux:  "7edbf1d73fc733e8c789b0ef9d7a2b24187360b7ed10a9a3e44e65d74b357bbd"
   end
 
   depends_on "cmake" => [:build, :test]
