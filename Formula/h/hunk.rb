@@ -12,11 +12,11 @@ class Hunk < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256                               arm64_sequoia: "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256                               arm64_sonoma:  "e18471769f711a33e006009a2c0cbe680ef55ded798a6e55968e3db78c1a92d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72f3707988210371916a50799a25e3f73ae3234890a2a2dda339d66ae318b7d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b081942696923580a53d63c05b3d6cba4abe4399066e2e5d930ddb2bb72c765"
+    sha256                               arm64_tahoe:   "2b9aba67b17bb14d2b7d569634a4a06ca2a254ce2d88cbdd85694e73ab5aa0e0"
+    sha256                               arm64_sequoia: "2b9aba67b17bb14d2b7d569634a4a06ca2a254ce2d88cbdd85694e73ab5aa0e0"
+    sha256                               arm64_sonoma:  "2b9aba67b17bb14d2b7d569634a4a06ca2a254ce2d88cbdd85694e73ab5aa0e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f105a8debbc66cf030cb7d998cc6f7d352ee0141adba76770752523c97e1c5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de7cdc0cc6d8acf793827e119b7a00861daea2ed89dee73b0a9e8a728d9b427a"
   end
 
   depends_on "bun" => :build
