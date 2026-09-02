@@ -1,8 +1,8 @@
 class Sdl2Compat < Formula
   desc "SDL2 compatibility layer that uses SDL3 behind the scenes"
   homepage "https://github.com/libsdl-org/sdl2-compat"
-  url "https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.70/sdl2-compat-2.32.70.tar.gz"
-  sha256 "998fa62557eb46ffe7e5c3e2c123bc332f7df9d9f593b3ceed88ed1158428a44"
+  url "https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.72/sdl2-compat-2.32.72.tar.gz"
+  sha256 "a14d2f78dad8e83ef1039b6534ace4d14f11f5b11d023af989affd70ac1bb35e"
   license "Zlib"
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
