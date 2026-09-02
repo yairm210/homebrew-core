@@ -6,7 +6,7 @@ class Govulncheck < Formula
       tag:      "v1.7.0",
       revision: "617f44b718537dccdea1915395650e0529e3b72e"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/golang/vuln.git", branch: "master"
 
   bottle do
