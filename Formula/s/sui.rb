@@ -11,12 +11,11 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54b63183f4b0b6d1e6b46846d470952870543522724683b5d0ba7c0f4b5cdf6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4893f714c8a1b858bbcfa8ca496467c58bcd19afbd4d167bf085d0fe53593e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "208a5565b201893a5d997fe61d4fb375229ee61fd266db4a61a5cb703ec52dea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f49db82cd95e2a9f33d27f85123eb894519032d78a7fb2b3626c0e6074f92592"
-    sha256 cellar: :any,                 arm64_linux:   "579085716839d082e0e32ddb2bb7578a3cf952bf4ad3d44d128d90516a1a1720"
-    sha256 cellar: :any,                 x86_64_linux:  "1faab9f00a0eabf541a62deb05201cc98abcdfcf7bca99850fcf996d205a22bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd55881bcb1d16cdc12eac62f8247ebfde02031fd98cb98716120170ce7c7f0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c0843284b025b6fa14140a2cdcdd1d37c618dbcf24fb745208a28e6a4e0a207"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b07bc2056fa602fa5a55b9ccccb0ac85899dc6f3b430f22b91372c643db4c62"
+    sha256 cellar: :any,                 arm64_linux:   "de521a970d861221f2ffd779aaf2987351756701852eb86d83637dded53a0052"
+    sha256 cellar: :any,                 x86_64_linux:  "5de92fad40e8d76e467005a7018685b39df4dddded358a24b69a5b82c59abaee"
   end
 
   depends_on "cmake" => :build
