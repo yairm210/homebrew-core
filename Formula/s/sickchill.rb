@@ -10,12 +10,11 @@ class Sickchill < Formula
   head "https://github.com/SickChill/SickChill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffb59de2177491b2689398cb1c963cf0d267f0166c7842f1dc77da1562460736"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cf0fe01a2e9faf2689384e97443ab6c573280c5b528ce468d432475a9428c80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c291a97375c1cf33cb173435b78d1ac0750ab8db7cafc76dcabf61377b07e79b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd73f69f4fc9c35023bcbe1e535621342fa7a3c27d44a20c2a084cd848a9c025"
-    sha256 cellar: :any,                 arm64_linux:   "42986448e4013dce047f308afb7f208bf7820beb4190c3a863f3e71006cefab6"
-    sha256 cellar: :any,                 x86_64_linux:  "526c7115a7076fcf131f72ab47f1b3dc4fa3352f116437af99612f4ff17f7e74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "012e8ead5adecf2255c06f25d312430d75fa35367b3de3417a0559877886c4ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6b479f58aa5f75aee955b4fa0d25216dd53828c1f29367c407f5ca212099c72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41791c6fa366c2e7f6317904c6292e0e2d8ba89b2285a1d4b0cad816de050ad1"
+    sha256 cellar: :any,                 arm64_linux:   "d7ba3e748b24d73547e77d057e2da03202e66e28e65e15b7cf88460274ec4fef"
+    sha256 cellar: :any,                 x86_64_linux:  "e716c37f919cb62cdebbd8de042e97a0b074f630cc6a52b8d44a9866313b2e0a"
   end
 
   depends_on "rust" => :build # for cachecontrol
