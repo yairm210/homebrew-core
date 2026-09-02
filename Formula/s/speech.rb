@@ -7,8 +7,8 @@ class Speech < Formula
   head "https://github.com/soniqo/speech-swift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "130fcb8f18f84e65e251a4c610f93cb08bfb5d482acc2ce389e43213f3904c03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8967e440fd098397f30391fb30896a6583432c183a3b4c057958f8851b12955"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "475125d961ec0a88a745eba538cb3391b04179fc2c080958fc971e59744e553d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffe5bdf118b28ec13bb1c1916f976ff801641f865faf572a562b02bb84eadf38"
   end
 
   depends_on xcode: ["16.3", :build]
