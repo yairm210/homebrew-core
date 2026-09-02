@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.xz"
-  sha256 "03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.xz"
+  sha256 "66ac7c0e725278eb2b039e3104f2c91119341d941b41bac7a285c695f940bd57"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -55,12 +55,12 @@ class UtilLinux < Formula
     conflicts_with "rename", because: "both install `rename` binaries"
   end
 
-  # Fix macOS builds
+  # libmount/src/hook_idmap.c:335:33: error: ‘RESOLVE_NO_SYMLINKS’ undeclared (first use in this function)
   patch do
-    url "https://github.com/util-linux/util-linux/commit/d22edc2f100eb8dd83d3515758565cb73b0d2eed.patch?full_index=1"
-    sha256 "2fb01154faa3fd8b0fce27eb88049ed9c8f839e706e412399c19c087f7f3b5e1"
-    type :unofficial
-    resolves "https://github.com/util-linux/util-linux/pull/4173"
+    url "https://github.com/util-linux/util-linux/commit/a323dddbcd1ed05a10e7e870b3e1a48b4ed44a43.patch?full_index=1"
+    sha256 "7c3cd540618ff46cfb1e22a5273d198012711c0b1169b70ddd731d8e581e6f64"
+    type :backport
+    resolves "https://github.com/util-linux/util-linux/issues/4597"
   end
 
   def install
