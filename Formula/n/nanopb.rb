@@ -4,10 +4,10 @@ class Nanopb < Formula
 
   desc "C library for encoding and decoding Protocol Buffer messages"
   homepage "https://jpa.kapsi.fi/nanopb/docs/index.html"
-  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.1.tar.gz"
-  sha256 "882cd8473ad932b24787e676a808e4fb29c12e086d20bcbfbacc66c183094b5c"
+  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.9.2.tar.gz"
+  sha256 "98b8cadce538f37230ca0d5d8796894e3067d58dd2fb2618e6712c7362bdd8bb"
   license "Zlib"
-  revision 6
+  head "https://github.com/nanopb/nanopb.git", branch: "master"
 
   livecheck do
     url "https://jpa.kapsi.fi/nanopb/download/"
@@ -28,11 +28,12 @@ class Nanopb < Formula
   depends_on "protobuf" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages package_name: "nanopb"
+  # Restore `package_name: "nanopb"` when 0.4.9.2 is on PyPI
+  pypi_packages package_name: "", extra_packages: "protobuf"
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
-    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
+    url "https://files.pythonhosted.org/packages/86/73/f66c748df06e7fe24e658eddd600d19c4b40bad836c97ce2d0ad9851fb6b/protobuf-7.36.1.tar.gz"
+    sha256 "d0f6470f0ce2b84e3feaea2d4b816378b37ba4d4aa08a274305373de93e2d524"
   end
 
   def install
