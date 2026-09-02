@@ -1,8 +1,8 @@
 class Auth0 < Formula
   desc "Build, manage and test your Auth0 integrations from the command-line"
   homepage "https://auth0.github.io/auth0-cli"
-  url "https://github.com/auth0/auth0-cli/archive/refs/tags/v1.33.0.tar.gz"
-  sha256 "b4488d0d4d07e6aa810121801d49ba73ba66aafe3ebb5f3b993fabf88f51c8f9"
+  url "https://github.com/auth0/auth0-cli/archive/refs/tags/v1.34.0.tar.gz"
+  sha256 "af0d75fc51deed8ea3313bfa384b2ae55fdec21fbfe000bcb7f4e1d8a3e4980a"
   license "MIT"
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
