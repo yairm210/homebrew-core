@@ -14,11 +14,11 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f04fdebc8eae16e8d485162999ef53f5a64b9d0294c39e6d8fb4d54c2aadef9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f04fdebc8eae16e8d485162999ef53f5a64b9d0294c39e6d8fb4d54c2aadef9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f04fdebc8eae16e8d485162999ef53f5a64b9d0294c39e6d8fb4d54c2aadef9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccfdf52bfc063f5cca49c6dbcb9755d27a36e8ebe8c7edb1863c37693e367e9f"
-    sha256 cellar: :any,                 x86_64_linux:  "024e2ef148dd81fb92e1653e9fcf963a8c68651e63fe34ea2cb42c432307867a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6f44d8010a81999c105c3ddef4c79a16d9563be778628567c2acd7e0ac03bce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6f44d8010a81999c105c3ddef4c79a16d9563be778628567c2acd7e0ac03bce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6f44d8010a81999c105c3ddef4c79a16d9563be778628567c2acd7e0ac03bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "009ea725c7be86acfd1e5a61e7e93ee2bc3285a427d256163c4a165291a7c7df"
+    sha256 cellar: :any,                 x86_64_linux:  "5a27824ddd25cbe6a3341945c1eaf3a9085439457e9edb0b516af6ec73a79a00"
   end
 
   depends_on "go" => :build
