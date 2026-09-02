@@ -1,8 +1,8 @@
 class NetworkDoctor < Formula
   desc "Network troubleshooting TUI"
   homepage "https://github.com/heymaikol/network-doctor/"
-  url "https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "9c954c36dc83d24decbeeb7fec6a2f379aca114eed165a0193cb35d0b64c9ee5"
+  url "https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "0bef07ea72d0e09645560250fb452448a9cc8bcd1d70adf29232c7dacd7613f8"
   license "Apache-2.0"
 
   bottle do
