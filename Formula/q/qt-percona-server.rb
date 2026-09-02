@@ -12,12 +12,11 @@ class QtPerconaServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2134921332088c304f2b5f8be54fce88e0f12d10ec0dc50d0941a78a72f98a37"
-    sha256 cellar: :any,                 arm64_sequoia: "4c47a64b83bc00a78f6e93ed26c5bced9fc8fc01c8a92c0631c5825e41b8d821"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1dc09e701afe70d9d1805d052050325128bad45a69f264c5d74bc8f58856577"
-    sha256 cellar: :any,                 sonoma:        "e30788384b57ae630bd8ded2ff6a8dc3c959efb4aea7c16ab29307f5321e140e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c115a2acb9a9981434d7db0403482c03855a6be391894ec0f8069d8ab986aae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ab5a284306c416a7bd006fd5257989412c4be8760a9adc02e9b61e6c0422fcd"
+    sha256 cellar: :any, arm64_tahoe:   "f929cb6a71b55b4ef4c6f0d68cc72dbb518389c7645bbd2aa91c3e3c59ce6745"
+    sha256 cellar: :any, arm64_sequoia: "2c5adcaef8e55a4d411bbda794b948d95e83d4789630f86be77267eee7b1cc05"
+    sha256 cellar: :any, arm64_sonoma:  "7f1bc24101dc15ff482732c1b6d9b9fc40d61706b0837070960f4a5170f86eed"
+    sha256 cellar: :any, arm64_linux:   "dfbf66d3bd7143899119133942018bad6232242dc74c6274bae2c3aa8ec0c4f1"
+    sha256 cellar: :any, x86_64_linux:  "a1a8d81354613707b32a5e7595ebe5304883af2fb666c2e9622e8f49cf3db591"
   end
 
   depends_on "cmake" => [:build, :test]
