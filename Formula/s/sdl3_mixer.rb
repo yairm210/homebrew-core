@@ -4,6 +4,7 @@ class Sdl3Mixer < Formula
   url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-3.2.4/SDL3_mixer-3.2.4.tar.gz"
   sha256 "182a07c745375e113dc740d43964ff21b0be29f29f59876c4dbc4db3d32f6901"
   license "Zlib"
+  revision 1
   head "https://github.com/libsdl-org/SDL_mixer.git", branch: "main"
 
   livecheck do
@@ -35,7 +36,8 @@ class Sdl3Mixer < Formula
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON
-      -DSDLMIXER_DEPS_SHARED=ON
+      -DSDLMIXER_STRICT=ON
+      -DSDLMIXER_DEPS_SHARED=OFF
       -DSDLMIXER_VENDORED=OFF
       -DSDLMIXER_EXAMPLES=OFF
       -DSDLMIXER_TESTS=OFF
