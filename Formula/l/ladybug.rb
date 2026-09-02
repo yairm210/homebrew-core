@@ -14,11 +14,11 @@ class Ladybug < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b623634cb3524613692bca7ea39493dbb23bde367230a74d0a637fd8bf893a9f"
-    sha256 cellar: :any, arm64_sequoia: "0b4f4c75b1b13dbb0ec77def6b9ae9120fac9159e1e96b0c09cad22dcae1051d"
-    sha256 cellar: :any, arm64_sonoma:  "ca1dcef665fa4390284873715ae179f1cd6357ff50bb8bae574b331f595a35bb"
-    sha256 cellar: :any, arm64_linux:   "53e3f9a5df3cea48ae5182eae74c8ce68186a5426c394ab07773e68c6f663214"
-    sha256 cellar: :any, x86_64_linux:  "733a3daeb8aaa232d43b99d66ab6a608ea31b88491f539d9fcce950d567971db"
+    sha256 cellar: :any, arm64_tahoe:   "520a0de76435832a11633a1ef6b8fb88ae4d6e375e5f49e8bbb2759a445fba90"
+    sha256 cellar: :any, arm64_sequoia: "a67663c6e22dc85853a5e7c5a726cd8b89255c0676ee483bf7adb2051202ecf1"
+    sha256 cellar: :any, arm64_sonoma:  "6f92b650cfcc8241ce4ea4c2949ce5885674559c1fbe4890269e4b1d3ce9bd7d"
+    sha256 cellar: :any, arm64_linux:   "f4e1de849f0a3ba8fb708e25dcf1428f5db7fc8532c867b1f1aa8cac36ec41ee"
+    sha256 cellar: :any, x86_64_linux:  "942549c5ed70cc58614e47bcc2f428a05b0a627f61ff8d52dcb4dd37d5dcd2ca"
   end
 
   depends_on "cmake" => :build
