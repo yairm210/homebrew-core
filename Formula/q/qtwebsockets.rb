@@ -17,12 +17,11 @@ class Qtwebsockets < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "515b1fffe664d577880912a557abdb489a6594fb543f36d8a12c4ed4b7dca55f"
-    sha256 cellar: :any,                 arm64_sequoia: "69cfe6ad85a6d7a9d8a60020e67e677cd056b56bd9d4b91dd224b3e0dc17295d"
-    sha256 cellar: :any,                 arm64_sonoma:  "537548ae9ef5e66b0a8272228adc81b38939afafec50a96d0569493a3df31009"
-    sha256 cellar: :any,                 sonoma:        "c1d7ba997215e62a49fa97083f5837a77fce55ce5640a57565236c1e6125a64a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cd66e3f95b57197153eff9f3ae19d0f2affcea894ca3a414720e14cb307bd38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "489733730581cef17bc4204fe5a7d523310424428f7bb1545dedaf7d7a096ead"
+    sha256 cellar: :any, arm64_tahoe:   "b109a87ab128dfd4b9512fcf36626f52ff4b02cc6fa3018d13a7a8aa09548718"
+    sha256 cellar: :any, arm64_sequoia: "fc840142fe3232a844b87536afc44e474db3ebdb5b665e66486c5f84dc374616"
+    sha256 cellar: :any, arm64_sonoma:  "d8d1faf11f0762053cd1b0ec265077a764928ea504392b9179d807e88b8a44b6"
+    sha256 cellar: :any, arm64_linux:   "9e1461d323f2bd9d322fd04f98af2c85cc0d9833b7cfae4d22713518d921748e"
+    sha256 cellar: :any, x86_64_linux:  "959810e91bf034f7a51b1fa43b6a7377b8cba8a1fbdd9bf8dc4f02b41dd972e4"
   end
 
   depends_on "cmake" => [:build, :test]
