@@ -1,8 +1,8 @@
 class Atf < Formula
   desc "Automated testing framework"
   homepage "https://github.com/freebsd/atf"
-  url "https://github.com/freebsd/atf/releases/download/atf-0.24/atf-0.24.tar.gz"
-  sha256 "c21595ffbb91aef0716904ff58cdb5c28b9646c8270fd7d3ca2e2859235bf85e"
+  url "https://github.com/freebsd/atf/releases/download/atf-0.25/atf-0.25.tar.gz"
+  sha256 "a52be96b5565733e71df8d0ecc8a4255a495e45183de7e3657491e0a8069423f"
   license "BSD-2-Clause"
   head "https://github.com/freebsd/atf.git", branch: "master"
 
