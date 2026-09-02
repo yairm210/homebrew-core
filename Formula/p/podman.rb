@@ -1,8 +1,8 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
-  url "https://github.com/podman-container-tools/podman/archive/refs/tags/v6.1.0.tar.gz"
-  sha256 "e086183db2f852476a7fa2580d0276cef32086b4cf17ae7020948f06eb613e0d"
+  url "https://github.com/podman-container-tools/podman/archive/refs/tags/v6.1.1.tar.gz"
+  sha256 "3646384ab6eff7b3d4473e1a0c1e34b6a8001e5a89600af44cc12376da77bccc"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   compatibility_version 1
   head "https://github.com/podman-container-tools/podman.git", branch: "main"
@@ -58,6 +58,10 @@ class Podman < Formula
   #
   # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do
+    livecheck do
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
+
     on_macos do
       url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.9.tar.gz"
       sha256 "6cbcb7959a5d90b59253ea6d8bdf0285e2cfbc3b301398704b41e3069293f4fb"
@@ -65,6 +69,10 @@ class Podman < Formula
   end
 
   resource "vfkit" do
+    livecheck do
+      url :url
+    end
+
     on_macos do
       url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.4.tar.gz"
       sha256 "ff496bd6ee6772ed070f286c4282a8a2e2f5231d4f8e98b2255b883ba69af42d"
@@ -72,6 +80,10 @@ class Podman < Formula
   end
 
   resource "catatonit" do
+    livecheck do
+      url :url
+    end
+
     on_linux do
       url "https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.1.tar.gz"
       sha256 "771385049516fdd561fbb9164eddf376075c4c7de3900a8b18654660172748f1"
@@ -79,16 +91,24 @@ class Podman < Formula
   end
 
   resource "netavark" do
+    livecheck do
+      url :url
+    end
+
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v2.0.0.tar.gz"
-      sha256 "031aeeacc930382e8635d40a885798eff1da164dfcf9024b698f822e5995d9c8"
+      url "https://github.com/containers/netavark/archive/refs/tags/v2.1.0.tar.gz"
+      sha256 "96677048168ddd1abe313e4c2e17f1cace72b60ee1bac8ca12a4bd7dfcadfbbb"
     end
   end
 
   resource "aardvark-dns" do
+    livecheck do
+      url :url
+    end
+
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v2.0.0.tar.gz"
-      sha256 "d3f5d6b3be3c2d80e8257fb9467e34ff104f299474427979454034dca6dc88cc"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v2.1.0.tar.gz"
+      sha256 "daf871488603e659b0501224cf0731ac317809b1d1701fc061cb4f6ae39a894f"
     end
   end
 
