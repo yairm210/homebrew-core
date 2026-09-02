@@ -6,12 +6,11 @@ class NodeRed < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "083bba7887975a790a3d17a281014c0f5ada119627e1d94d17e9f4f7dbc4d62f"
-    sha256 cellar: :any,                 arm64_sequoia: "083bba7887975a790a3d17a281014c0f5ada119627e1d94d17e9f4f7dbc4d62f"
-    sha256 cellar: :any,                 arm64_sonoma:  "083bba7887975a790a3d17a281014c0f5ada119627e1d94d17e9f4f7dbc4d62f"
-    sha256 cellar: :any,                 sonoma:        "5dd05342772224ad3282aae7117327b57079f2b14c18305e6df134a2f2adfd19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01f6b1bfd3a162367287bfb39c7bba4539dcc9bb364aac9929215f0f26897bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd1f96e227942be506ee36e269c342260e2c1901b86a34443038cf6c284a1b27"
+    sha256 cellar: :any,                 arm64_tahoe:   "c0c669d9b462aae119bce6b864a175ea1c2abab3a237dabb3fb4684a3e186c8a"
+    sha256 cellar: :any,                 arm64_sequoia: "c0c669d9b462aae119bce6b864a175ea1c2abab3a237dabb3fb4684a3e186c8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0c669d9b462aae119bce6b864a175ea1c2abab3a237dabb3fb4684a3e186c8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6807f1dd148f3540fdc565f907ec829a4d7fd9b0f00aec6e40f571ad45632d06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76a371c0c5cac78a0cffa30bede2dc91a9bef505f3a7ef5b340d935717d5057a"
   end
 
   depends_on "node"
