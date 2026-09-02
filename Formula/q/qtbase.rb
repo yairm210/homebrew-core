@@ -22,12 +22,11 @@ class Qtbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6419abdf69aad16d191e9436c0bee2f9ff76d9de35ebc92f618773824e299e1e"
-    sha256 cellar: :any,                 arm64_sequoia: "b2527029cb0737da5123adef886f9f076acc4ab181e70753d6b20391a9eda5d3"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e768903b1be563380a7e1a788ad46e644f7acdd31700ceb2f168d7f932b5420"
-    sha256 cellar: :any,                 sonoma:        "9b1f643d440cba0d3edd1ff9a053f08005fb95e6a1ca26d59cde380e2e4c0b08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3776facf2705b2e0c421a9d449bfba1564365474c6979aa6ba2a69f3d421cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b0c4e72c8d2910533b2a99d6376ee671ab7084c8784be4ee81ca36a6a24878f"
+    sha256 cellar: :any, arm64_tahoe:   "486a59ab53fa0c5cf5896f11e0447725fd0a1f75935934f96beef7359a966a0e"
+    sha256 cellar: :any, arm64_sequoia: "915107dff86161df385ff082f795e8fdb81c66e8b91d0dc4cee268b9988d0121"
+    sha256 cellar: :any, arm64_sonoma:  "7dec8f7c74e6cfb3bd30a546543ffb28285fc25a53c16d976ffa6245827a6845"
+    sha256 cellar: :any, arm64_linux:   "6316df1e04451026a2d556366f0e34d59e1bb3a8e4ace4e1193ce3b01e9436ea"
+    sha256 cellar: :any, x86_64_linux:  "a3661100c16372cc4b7ede861225a658d574ba0cf3081d31c3a639a1462d879a"
   end
 
   depends_on "cmake" => [:build, :test]
