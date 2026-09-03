@@ -12,17 +12,22 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1267fe903802263093baf96fedfbcad261162edda114ec8e997dafeaa78e63e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aa6fdc0733df99213934dae11c0dc7481bc23f28002401d194bde79f9b9fc72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c934c58d55908dada47c2d79605383bf780878d0473c1aad6c021fc9338710f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "899b0194642dc68d0419400f934f1f779c23b2c296c9322a5faaa224caefbc27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faac973962087fad1f5a5f212a0f3fa9ef45798ff230782d2d021daefc282a74"
   end
 
-  # TODO: unpin go@1.26 when go-critic supports a newer Go version
-  # ref: https://github.com/go-critic/go-critic/pull/1523
-  depends_on "go@1.26" => [:build, :test]
+  depends_on "go"
+
+  patch do
+    url "https://github.com/go-critic/go-critic/commit/0cd18ce8030e494780f72d6bf8db49cfe8ec0cda.patch?full_index=1"
+    sha256 "e1b9934a2fb8c6ed675bbbd3e65a913cfe1c7514ad915b7a5b2b48c6fc18b44f"
+    type :unofficial
+    resolves "https://github.com/go-critic/go-critic/pull/1538"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/go-critic"
@@ -30,9 +35,6 @@ class GoCritic < Formula
   end
 
   test do
-    # TODO: remove when unpinning go@1.26
-    ENV.prepend_path "PATH", formula_opt_libexec("go@1.26")/"bin" # for keg_only go 1.26 binary
-
     assert_predicate bin/"gocritic", :symlink?
     assert_equal "go-critic", (bin/"gocritic").readlink.to_s
 
