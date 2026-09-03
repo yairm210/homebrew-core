@@ -1,8 +1,8 @@
 class Plakar < Formula
   desc "Create backups with compression, encryption and deduplication"
   homepage "https://plakar.io"
-  url "https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "3991e0bec18fa098d6a6450e68a6bda21fb2541f9ec95e543568fe23ad78ab6a"
+  url "https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "0358c57accf22cc002273b38b77c8ef4f8e26f5bfa3027e81dee537829387ebd"
   license "ISC"
 
   livecheck do
@@ -19,8 +19,7 @@ class Plakar < Formula
     sha256 cellar: :any,                 x86_64_linux:  "9d5af84ab961a3c448c817818ebc309433fa6e5f8a50187552fb0663d9afa1c1"
   end
 
-  # TODO: unpin go@1.26 when plakar supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args
@@ -30,6 +29,7 @@ class Plakar < Formula
     assert_match version.to_s, shell_output("#{bin}/plakar version")
 
     repo = testpath/"plakar"
+    ENV["PLAKAR_INSECURE_PLAINTEXT"] = "1"
     system bin/"plakar", "at", repo, "create", "-plaintext", "-no-compression"
     assert_path_exists repo
     assert_match "Repository", shell_output("#{bin}/plakar at #{repo} info")
