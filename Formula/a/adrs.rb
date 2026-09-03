@@ -1,8 +1,8 @@
 class Adrs < Formula
   desc "Architectural Decision Record tool in Rust"
   homepage "https://joshrotenberg.com/adrs/"
-  url "https://github.com/joshrotenberg/adrs/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "26ba39328efab570589d7bebd98b05b1bc6bfce746716fdb1d2896c8cee2a6c3"
+  url "https://github.com/joshrotenberg/adrs/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "f8c66465ba16f8f28f5123c59a365b5b08ebb02ef6918e1e9c003bd822989bd9"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/joshrotenberg/adrs.git", branch: "main"
 
