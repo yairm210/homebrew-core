@@ -58,57 +58,62 @@ class Podman < Formula
   #
   # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do
-    livecheck do
-      regex(/^v?(\d+(?:\.\d+)+)$/i)
-    end
-
     on_macos do
       url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.9.tar.gz"
       sha256 "6cbcb7959a5d90b59253ea6d8bdf0285e2cfbc3b301398704b41e3069293f4fb"
+
+      livecheck do
+        url :url
+        regex(/^v?(\d+(?:\.\d+)+)$/i)
+      end
     end
   end
 
   resource "vfkit" do
-    livecheck do
-      url :url
-    end
-
     on_macos do
       url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.4.tar.gz"
       sha256 "ff496bd6ee6772ed070f286c4282a8a2e2f5231d4f8e98b2255b883ba69af42d"
+
+      livecheck do
+        url :url
+        regex(/^v?(\d+(?:\.\d+)+)$/i)
+      end
     end
   end
 
   resource "catatonit" do
-    livecheck do
-      url :url
-    end
-
     on_linux do
       url "https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.1.tar.gz"
       sha256 "771385049516fdd561fbb9164eddf376075c4c7de3900a8b18654660172748f1"
+
+      livecheck do
+        url :url
+        regex(/^v?(\d+(?:\.\d+)+)$/i)
+      end
     end
   end
 
   resource "netavark" do
-    livecheck do
-      url :url
-    end
-
     on_linux do
       url "https://github.com/containers/netavark/archive/refs/tags/v2.1.0.tar.gz"
       sha256 "96677048168ddd1abe313e4c2e17f1cace72b60ee1bac8ca12a4bd7dfcadfbbb"
+
+      livecheck do
+        url :url
+        regex(/^v?(\d+(?:\.\d+)+)$/i)
+      end
     end
   end
 
   resource "aardvark-dns" do
-    livecheck do
-      url :url
-    end
-
     on_linux do
       url "https://github.com/containers/aardvark-dns/archive/refs/tags/v2.1.0.tar.gz"
       sha256 "daf871488603e659b0501224cf0731ac317809b1d1701fc061cb4f6ae39a894f"
+
+      livecheck do
+        url :url
+        regex(/^v?(\d+(?:\.\d+)+)$/i)
+      end
     end
   end
 
