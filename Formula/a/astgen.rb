@@ -1,8 +1,8 @@
 class Astgen < Formula
   desc "Generate AST in json format for JS/TS"
   homepage "https://github.com/joernio/astgen-monorepo"
-  url "https://github.com/joernio/astgen-monorepo/archive/refs/tags/javascript-astgen/v3.47.0.tar.gz"
-  sha256 "471a1c6392fd620a153e64d5755f84e1ce0251315020bb1b80243ad9e038c2fb"
+  url "https://github.com/joernio/astgen-monorepo/archive/refs/tags/javascript-astgen/v3.49.0.tar.gz"
+  sha256 "8ba03a5258151a0dc520511fd5d13192b1b318d6a442acc91fb4dc9ff9d728cd"
   license "Apache-2.0"
   head "https://github.com/joernio/astgen-monorepo.git", branch: "main"
 
@@ -15,20 +15,21 @@ class Astgen < Formula
     sha256 cellar: :any_skip_relocation, all: "cecdb58c1cbee3ab8a97cea19079b401fe2da5fc4f241b0ba0b68b713e4c38d0"
   end
 
-  depends_on "node"
+  depends_on "bun" => :build
 
   on_linux do
-    depends_on "zlib-ng-compat"
+    depends_on "icu4c@78"
   end
 
   def install
     cd "javascript-astgen" do
-      # Install `devDependency` packages to compile the TypeScript files
-      system "npm", "install", *std_npm_args(prefix: false), "-D"
-      system "npm", "run", "build"
+      system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
+      system "bun", "run", "binary"
 
-      system "npm", "install", *std_npm_args
-      bin.install_symlink libexec.glob("bin/*")
+      os = OS.mac? ? "macos" : "linux"
+      arch = Hardware::CPU.arm? ? "arm64" : "x64"
+
+      bin.install "astgen-#{os}-#{arch}" => "astgen"
     end
   end
 
