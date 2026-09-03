@@ -1,8 +1,8 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://github.com/canonical/snapd/releases/download/2.76.3/snapd_2.76.3.vendor.tar.xz"
-  sha256 "d97627913cbe4ec0a72b507e561f7c9da87c4be5c59412a3e1a94bdc079fa838"
+  url "https://github.com/canonical/snapd/releases/download/2.77/snapd_2.77.vendor.tar.xz"
+  sha256 "e74fc1a761f8ac1b80f2df0e634f14f729ee5cee17b7724619d6b1c5be52d264"
   license "GPL-3.0-only"
 
   livecheck do
@@ -23,15 +23,21 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
-    # TODO: Drop when a release tarball ships a `vendor` synced with `go.mod`.
-    inreplace "mkversion.sh", "MOD=-mod=vendor", "MOD=-mod=mod"
+    # 2.77's vendor tarball wraps the source in an extra directory, unlike the packing scripts
+    work_dir = File.directory?("snapd-#{version}") ? "snapd-#{version}" : "."
 
-    system "./mkversion.sh", version.to_s
-    tags = OS.mac? ? "nosecboot" : ""
-    system "go", "build", "-mod=mod", *std_go_args(tags:), "./cmd/snap"
+    cd work_dir do
+      # TODO: Drop when a release tarball ships a `vendor` synced with `go.mod`.
+      inreplace "mkversion.sh", "MOD=-mod=vendor", "MOD=-mod=mod"
 
-    bash_completion.install "data/completion/bash/snap"
-    zsh_completion.install "data/completion/zsh/_snap"
+      system "./mkversion.sh", version.to_s
+      tags = OS.mac? ? "nosecboot" : ""
+
+      system "go", "build", "-mod=mod", *std_go_args(tags:), "./cmd/snapd"
+
+      bash_completion.install "data/completion/bash/snap"
+      zsh_completion.install "data/completion/zsh/_snap"
+    end
 
     (man8/"snap.8").write Utils.safe_popen_read(bin/"snap", "help", "--man")
   end
