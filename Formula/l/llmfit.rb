@@ -1,8 +1,8 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://static.crates.io/crates/llmfit/llmfit-1.1.12.crate"
-  sha256 "01cd443d80c29be355239fe3566f320f6bf3522ac0572011b0f6dd56e70c9793"
+  url "https://static.crates.io/crates/llmfit/llmfit-1.1.14.crate"
+  sha256 "2ac16516c3210f7c669b2a1b057db65371215da98b0dbfaea22c1841cfa7db29"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
@@ -16,12 +16,18 @@ class Llmfit < Formula
 
   depends_on "rust" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
+
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--offline", *std_cargo_args
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/llmfit --version")
-    assert_match "Multiple models match", shell_output("#{bin}/llmfit info llama")
+    assert_match(/Found \d+ model\(s\)/i, shell_output("#{bin}/llmfit search llama"))
   end
 end
