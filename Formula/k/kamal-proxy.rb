@@ -1,8 +1,8 @@
 class KamalProxy < Formula
   desc "Lightweight proxy server for Kamal"
   homepage "https://kamal-deploy.org/"
-  url "https://github.com/basecamp/kamal-proxy/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "8c020dc914051b941653d35251746cd8c3b48526d72d3c042e1839944e5d50b1"
+  url "https://github.com/basecamp/kamal-proxy/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "ed75954d6b9aa119d6e3853600b92ab80d9da029b5ed506be07efa016c7646a1"
   license "MIT"
   head "https://github.com/basecamp/kamal-proxy.git", branch: "main"
 
@@ -34,11 +34,7 @@ class KamalProxy < Formula
     sleep 2
 
     output = read.gets
-    assert_match "No previous state to restore", output
-    output = read.gets
-    assert_match "Server started", output
-    output = read.gets
-    assert_match "user_agent\":\"HOMEBREW", output
+    assert_match "Starting kamal-proxy", output
   ensure
     Process.kill("HUP", pid)
   end
