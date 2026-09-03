@@ -1,8 +1,8 @@
 class Zf < Formula
   desc "Command-line fuzzy finder that prioritizes matches on filenames"
   homepage "https://github.com/natecraddock/zf"
-  url "https://github.com/natecraddock/zf/archive/refs/tags/0.10.4.tar.gz"
-  sha256 "109995116dc1161619e73c12806f5d168441cf5cf96aa6bb780939d10ffce978"
+  url "https://github.com/natecraddock/zf/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "6c990a8277d5ad16a5492bbb76fa2ace8ce8f4ecfc40ddf49b31d7ea5341d792"
   license "MIT"
   head "https://github.com/natecraddock/zf.git", branch: "main"
 
@@ -15,7 +15,7 @@ class Zf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "035ab9aebe146b56a3c40e46c1fa39aba039a22db37d5c57e4e25f3737940fe1"
   end
 
-  depends_on "zig@0.15" => :build
+  depends_on "zig" => :build
 
   def install
     system "zig", "build", *std_zig_args
