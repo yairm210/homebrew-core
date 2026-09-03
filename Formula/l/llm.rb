@@ -3,8 +3,8 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/4d/f3/6eea036e9bf54f034d2d463b1552b41d0e5cf006152717fd682673a84427/llm-0.33.tar.gz"
-  sha256 "e491db0615679a6b40b842a6e4da18de14ced6b691788bcb080d2565b6198a65"
+  url "https://files.pythonhosted.org/packages/f9/8e/5ffec2a091d4cd2691cfd0e8ba3e1904aeb1931313287cfd68f9c1db8b40/llm-0.34.tar.gz"
+  sha256 "09d0b076c4c720c4daeece6ee3a0aae76620059aced552f09589e0e0d7c5f09d"
   license "Apache-2.0"
 
   bottle do
@@ -30,8 +30,8 @@ class Llm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "click-default-group" do
@@ -70,8 +70,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/7d/9c/ba0c292b4032ede74c249ca314ad64eb1bb5a03a843f6e01facb02f80cd8/openai-3.3.1.tar.gz"
-    sha256 "6f22807de1a976c932cecda620e8172a8c3fdbaeed29c7f21564e0c2410edf56"
+    url "https://files.pythonhosted.org/packages/ad/ba/6d46da4232f80cb5842280e024242e6fed163418ab81bebc1c83f693bb0b/openai-3.7.0.tar.gz"
+    sha256 "e836eb7effee89df802cd0c7d1bad8de8c993976cf238c44d5b5b844f5aefd38"
   end
 
   resource "pluggy" do
