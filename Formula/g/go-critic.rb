@@ -1,8 +1,8 @@
 class GoCritic < Formula
   desc "Opinionated Go source code linter"
   homepage "https://go-critic.com"
-  url "https://github.com/go-critic/go-critic/archive/refs/tags/v0.14.4.tar.gz"
-  sha256 "03c19c7a0d1ed931ae1f2c227bd881725d520f4767ccbbac0085644f69069094"
+  url "https://github.com/go-critic/go-critic/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "6cee82b801a849aef3adb714b7900d6df7b27213af984368be4c65db8400632e"
   license "MIT"
   head "https://github.com/go-critic/go-critic.git", branch: "master"
 
@@ -21,13 +21,6 @@ class GoCritic < Formula
   end
 
   depends_on "go"
-
-  patch do
-    url "https://github.com/go-critic/go-critic/commit/0cd18ce8030e494780f72d6bf8db49cfe8ec0cda.patch?full_index=1"
-    sha256 "e1b9934a2fb8c6ed675bbbd3e65a913cfe1c7514ad915b7a5b2b48c6fc18b44f"
-    type :unofficial
-    resolves "https://github.com/go-critic/go-critic/pull/1538"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/go-critic"
