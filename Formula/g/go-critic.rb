@@ -20,9 +20,14 @@ class GoCritic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c934c58d55908dada47c2d79605383bf780878d0473c1aad6c021fc9338710f8"
   end
 
-  # TODO: unpin go@1.26 when go-critic supports a newer Go version
-  # ref: https://github.com/go-critic/go-critic/pull/1523
-  depends_on "go@1.26" => [:build, :test]
+  depends_on "go"
+
+  patch do
+    url "https://github.com/go-critic/go-critic/commit/0cd18ce8030e494780f72d6bf8db49cfe8ec0cda.patch?full_index=1"
+    sha256 "e1b9934a2fb8c6ed675bbbd3e65a913cfe1c7514ad915b7a5b2b48c6fc18b44f"
+    type :unofficial
+    resolves "https://github.com/go-critic/go-critic/pull/1538"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/go-critic"
@@ -30,9 +35,6 @@ class GoCritic < Formula
   end
 
   test do
-    # TODO: remove when unpinning go@1.26
-    ENV.prepend_path "PATH", formula_opt_libexec("go@1.26")/"bin" # for keg_only go 1.26 binary
-
     assert_predicate bin/"gocritic", :symlink?
     assert_equal "go-critic", (bin/"gocritic").readlink.to_s
 
