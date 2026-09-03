@@ -3,8 +3,8 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/14/5d/9e488ea8b9458a7e087209ad8bc85b5a215a576ba6b4bec21ab07b198be8/harlequin-2.12.2.tar.gz"
-  sha256 "30e82deafef4d602d5f73f0884fc0301bc8fef5e4cda0340b1cf2b7ac52cfb8a"
+  url "https://files.pythonhosted.org/packages/ef/9a/cff4402e0cf9d6cff4d8d7676806e54a63fd2481cffdf965f845281ffb94/harlequin-2.13.0.tar.gz"
+  sha256 "b613ec50c170d2284200eb3e8a86a24b287d1fd99e4f1707077e0110732fc7f0"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
@@ -37,8 +37,8 @@ class Harlequin < Formula
                 extra_packages:   "psycopg-c"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "duckdb" do
@@ -177,8 +177,8 @@ class Harlequin < Formula
   end
 
   resource "textual-textarea" do
-    url "https://files.pythonhosted.org/packages/5b/e4/aa225ac619c07149b18864a240fd8cc6a710e8ffc01028bafa0059ace893/textual_textarea-0.18.1.tar.gz"
-    sha256 "9db53da7659883cd905e66eabae11943c5b2e3a7530873ff85ee35d4bc3d928d"
+    url "https://files.pythonhosted.org/packages/a2/e8/061ba3d6861984e5377b08bbf6f55d06fe43623d5bb4b26e27239a0f3959/textual_textarea-0.18.2.tar.gz"
+    sha256 "55890c62e270dd6f4a8988e0cfc54120a05022eead82c665095dd2be14bf17a9"
   end
 
   resource "tomlkit" do
