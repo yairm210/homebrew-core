@@ -6,13 +6,11 @@ class Mailcatcher < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3403bf380a433529d8be12139efa13559b1e6d8edd8459291c38b9d1d3739540"
-    sha256 cellar: :any,                 arm64_sequoia: "8922d322087511af1252413be29da5acc36a80c0fa3f8637cabd045fe51b5c33"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f7ae002bbc85e18e6ffb5961be8d88bd8b30eba798c674e705973973af180c3"
-    sha256 cellar: :any,                 sonoma:        "5eea40aec4d9fc9eae8a4312eaf695b287af5ae86f207911b20d7bc9b68469c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4e5e7f3396a9ed8a27acba60216f835aec1d4db497c8ad1b66185cd395cd47d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84be37438a4f72435ac7646b2abb4595163a560f015a833c5c8d5a35ce36f4a3"
+    sha256 cellar: :any, arm64_tahoe:   "bc09e2f849b5ad9591fc1d7f40629130beef8471daae2f3f4989fbfc85d3901d"
+    sha256 cellar: :any, arm64_sequoia: "83084196397ee32f86cb8357400871ef5aa6b4b2d6831a264449a3740e0eff0f"
+    sha256 cellar: :any, arm64_sonoma:  "20dfdecca185bc4e67828f44d974a69d7089e093d68507cede4a91951087b605"
+    sha256 cellar: :any, arm64_linux:   "5df7c7dce299f185ed29e8ff5213ac668ba5adb4fbb77b8198d491060d8d9a30"
+    sha256 cellar: :any, x86_64_linux:  "839ea0b9b2138b2d1d64e5c371ee797ee5ca5f0df7b3be97a034c4e50637e794"
   end
 
   depends_on "pkgconf" => :build
