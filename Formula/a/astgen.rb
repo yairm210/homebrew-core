@@ -12,7 +12,11 @@ class Astgen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cecdb58c1cbee3ab8a97cea19079b401fe2da5fc4f241b0ba0b68b713e4c38d0"
+    sha256 arm64_tahoe:   "ebbf830e8d2003329735715cb5d1ea7ca40419ce3c559ec3be24df4e844fdf92"
+    sha256 arm64_sequoia: "78333f52d40447a680acb8447619f255b9056edda3b2a6b7f37fa92f3e57dd59"
+    sha256 arm64_sonoma:  "29223531f584ec3f46e96bb704fc11e16d026f954d3d3e4773b62ab11df99ed8"
+    sha256 arm64_linux:   "f1700517106f6ebcf1fc96d2f88960e90ab6551c4a5abb66a0cd95e4ecf6d8f3"
+    sha256 x86_64_linux:  "682d8cbafbb0993acffcd7ccde9fe3c2d4180e330520a7f92bc281341f895f57"
   end
 
   depends_on "bun" => :build
