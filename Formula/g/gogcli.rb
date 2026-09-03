@@ -7,11 +7,11 @@ class Gogcli < Formula
   head "https://github.com/openclaw/gogcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd310b8f35d21bb56d3f8c479097b4385e936a28e529764565bc7b8824749588"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "531c773c7fc191ccefeda7dc19ed1eaf9d3866b513f58c2ea1cfdd4115900721"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80e18abaca9dc3f2c21a140fefce59c09b2fce51b29d024e75b67bd2bb5cd9c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3ed685cc5b3c9f1fc58a3bb95c8464b38f750874c7ddf09dc7769baf5de8f0"
-    sha256 cellar: :any,                 x86_64_linux:  "74639092ae84bf887ca8ac630a39b11caaa277ce1f6f6cc062e7aa9e5703960b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00a06fc902be1398c93ed460150bfdd9c90b57fe61ee55e500752693e7fcc702"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1daa0b450d27e9fb26341b4702b51f24a1c2b16c7715e0b9f1166612ee25fff6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae82c2fd243aed254c895c123d66d644c5189544ed9cbf01450ce27c706ae620"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48de3542f6d44a623d848246e269479dfb06b338679bb197ae7b6d8af507c3dd"
+    sha256 cellar: :any,                 x86_64_linux:  "311b5435de6c115b2174e8e432f0cd589d10868abf70bbe223991b61fdf60e06"
   end
 
   depends_on "go" => :build
