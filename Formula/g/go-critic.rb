@@ -12,12 +12,12 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1123df5d5711bf6f005df489e7f66c9c192794c7b00b63bfce7a0c5fbcd1d4a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1267fe903802263093baf96fedfbcad261162edda114ec8e997dafeaa78e63e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aa6fdc0733df99213934dae11c0dc7481bc23f28002401d194bde79f9b9fc72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c934c58d55908dada47c2d79605383bf780878d0473c1aad6c021fc9338710f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9b91dd4268dcb70b12a7ad3782e20939e63fe4867838df07afb4dbd6d0d9644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "899b0194642dc68d0419400f934f1f779c23b2c296c9322a5faaa224caefbc27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faac973962087fad1f5a5f212a0f3fa9ef45798ff230782d2d021daefc282a74"
   end
 
   depends_on "go"
