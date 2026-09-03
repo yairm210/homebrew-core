@@ -1,8 +1,8 @@
 class Talosctl < Formula
   desc "CLI for out-of-band management of Kubernetes nodes created by Talos"
   homepage "https://www.talos.dev/"
-  url "https://github.com/siderolabs/talos/archive/refs/tags/v1.13.9.tar.gz"
-  sha256 "d8f328eb5963a7ee65eab01d1095ab14a127d03a2522c6050dcd0ca2b6447ed5"
+  url "https://github.com/siderolabs/talos/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "41d89d3bba1c0a5b1713cc72e09167b99048da79d0fc6146561a458591b6e45f"
   license "MPL-2.0"
   head "https://github.com/siderolabs/talos.git", branch: "main"
 
@@ -38,6 +38,6 @@ class Talosctl < Formula
     assert_match version.to_s, shell_output("#{bin}/talosctl version 2>&1", 1)
 
     output = shell_output("#{bin}/talosctl list 2>&1", 1)
-    assert_match "error constructing client: failed to determine endpoints", output
+    assert_match "failed to determine endpoints", output
   end
 end
