@@ -6,6 +6,7 @@ class HermesAgent < Formula
   url "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.31.tar.gz"
   sha256 "78fb3ff707ec1d17044b875ecac8bef28aa39d44242824f6871ca40afe7bf217"
   license "MIT"
+  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -34,7 +35,14 @@ class HermesAgent < Formula
   depends_on "ripgrep"
   depends_on "tirith"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic],
+                extra_packages:   %w[agent-client-protocol==0.9.0]
+
+  # `hermes-acp` imports this at startup with no lazy-install fallback; upstream pins ==0.9.0
+  resource "agent-client-protocol" do
+    url "https://files.pythonhosted.org/packages/eb/13/3b893421369767e7043cc115d6ef0df417c298b84563be3a12df0416158d/agent_client_protocol-0.9.0.tar.gz"
+    sha256 "f744c48ab9af0f0b4452e5ab5498d61bcab97c26dbe7d6feec5fd36de49be30b"
+  end
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -362,6 +370,7 @@ class HermesAgent < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hermes --version")
+    assert_match "Hermes ACP check OK", shell_output("#{bin}/hermes-acp --check")
 
     assert_match "No sessions found", shell_output("#{bin}/hermes sessions list")
     system bin/"hermes", "status"
