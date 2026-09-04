@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/20/f7/6c6bba6a17d871f387186dd1684f0f2b73f3a0dcb8fcf113fe13d7ab0b87/rapid_mlx-0.13.3.tar.gz"
-  sha256 "99fb26613267c265f60c016197c5ad3939222454dd1250a64ab7f50565bd862e"
+  url "https://files.pythonhosted.org/packages/79/6e/152eb1a898db0ed708a4df03ba96267943857e482938d215a0aef09d4664/rapid_mlx-0.13.4.tar.gz"
+  sha256 "58a1f21964730d56783d678e27676b487543159cb89c166624ace6edcf96a6c3"
   license "Apache-2.0"
 
   bottle do
@@ -35,8 +35,8 @@ class RapidMlx < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
+    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
   end
 
   resource "argcomplete" do
