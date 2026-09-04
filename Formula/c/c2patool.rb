@@ -1,8 +1,8 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https://contentauthenticity.org"
-  url "https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.19.tar.gz"
-  sha256 "c5ac81c81e73b0b6155c59daedd2ee923122b8351bdf3b63a832cc3543abad99"
+  url "https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.20.tar.gz"
+  sha256 "5e05255ad8625467cf2cacc8b155938a7b40b596eb50326773d925864566d418"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/contentauth/c2pa-rs.git", branch: "main"
 
