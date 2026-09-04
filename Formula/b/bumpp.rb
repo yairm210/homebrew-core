@@ -1,8 +1,8 @@
 class Bumpp < Formula
   desc "Interactive CLI that bumps your version numbers and more"
   homepage "https://github.com/antfu-collective/bumpp"
-  url "https://registry.npmjs.org/bumpp/-/bumpp-12.2.2.tgz"
-  sha256 "eb599eb2bafe571aa9153d38b58cac2b75aaed4cdb49fecbe7872e26ec2abff9"
+  url "https://registry.npmjs.org/bumpp/-/bumpp-12.2.3.tgz"
+  sha256 "da842b359544e2dc5aac10518a289789b8ae3aad623e0bb924a63963b9c567db"
   license "MIT"
 
   bottle do
