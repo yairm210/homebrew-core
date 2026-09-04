@@ -7,12 +7,11 @@ class Fastga < Formula
   head "https://github.com/thegenemyers/FASTGA.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc7e3ef73e130726949e4e4634d3bd7aa78d1fb22c5fd9bde34123417ced18b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc1497b72cdebea582d06375aa7ececc525046644bf998556ca6079c059599aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24ad4e0719c6e0989bde3418e81a4d351ff23e777a031f097366a26b9134614f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93ff80dce20906e24e09a813db8d110535e3e6c7ea7bfdd140023ab14dfb3d58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af70dcfdb57ed0d5da744ff2b4e436eda1a41d0c0280d0f173cd78b711393091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "483d64fefe5df9f673614f9b122cd4326a3af4742780a03021ee3937cc1bce1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da40274ea88ca3f0b1c07ff960b414be3b9c6a9fb4298711ebf165737f8245b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b11e1ae3c102ac630c65a2ba2bc7e1bf67cbdc977008c169a1fd1d897bdd18bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b114761dd31fbf7f32a151c1539bbfff662a9abaf0cadd9fc71db534fbd291ec"
+    sha256 cellar: :any,                 arm64_linux:   "1eadd47bfe4a9e9f9dd40b25124ef7e40d4a9e1d079b347656b73bee4c2834e6"
+    sha256 cellar: :any,                 x86_64_linux:  "fbf6bb0079d6951d3d6efba50ec9f5af34b1a6b03720dde4dea1a62ed32bccb2"
   end
 
   on_linux do
