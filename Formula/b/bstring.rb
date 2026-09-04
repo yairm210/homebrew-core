@@ -7,12 +7,11 @@ class Bstring < Formula
   head "https://github.com/msteinert/bstring.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66f545fd557342e3560304aa78e39175200a6f273955bab4fafe33388e1708aa"
-    sha256 cellar: :any,                 arm64_sequoia: "44c469620eaedcf00a73624f1dfcd9b2e9938cb996154d968fa10839633e71ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c44ce068f5f426899aaf2015c23a35550c28188e18e1d13266547491cce4e8b"
-    sha256 cellar: :any,                 sonoma:        "2f842371020537e4110b9fe388ed73ad7488435ecb04d75aa390c75f0da664d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c13cb49f5a8255a1c8adf436297f6cbd5e6e49890f45d772ad079f9a1c97e23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db207735a893a428a7e470852c19e223eb24a208b53b14a13c0e4a4061c598a"
+    sha256 cellar: :any, arm64_tahoe:   "f46d07f7afa97ec3ed27924da2b06af56046c6aa6229dc8617efae46aaf7d5c8"
+    sha256 cellar: :any, arm64_sequoia: "e3f3e05e03d8e3e5f6ea5cb49565295c9a77f1469f9c5cdcf7aac78cf0a679e8"
+    sha256 cellar: :any, arm64_sonoma:  "cb3042db71a6e28cfbaab9dca1e3d115541cb453845734ad15a27eca60490a80"
+    sha256 cellar: :any, arm64_linux:   "0723348b119a474ce5777dfe9c980fc87b999795abda090e377469ceafc1459f"
+    sha256 cellar: :any, x86_64_linux:  "a32ee843a1fe747475d7f2731f3caafbd1738956b47fd15d95b00d73926af9e8"
   end
 
   depends_on "meson" => :build
