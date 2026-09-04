@@ -1,8 +1,8 @@
 class FetchCrl < Formula
   desc "Retrieve certificate revocation lists (CRLs)"
   homepage "https://wiki.nikhef.nl/grid/FetchCRL3"
-  url "https://dist.eugridpma.info/distribution/util/fetch-crl3/fetch-crl-3.0.23.tar.gz"
-  sha256 "077097aee513ac8e892bde196744c49502ee8c88c8d94740db1a3153d20d3ceb"
+  url "https://dist.eugridpma.info/distribution/util/fetch-crl3/fetch-crl-3.0.24.tar.gz"
+  sha256 "6a109c3cd93531e5fbd9e3fc4cef5cdda4a553c31e983507cead72a145627fa7"
   license "Apache-2.0"
 
   livecheck do
@@ -70,11 +70,10 @@ class FetchCrl < Formula
 
     if OS.linux?
       bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"]
-      sbin.env_script_all_files libexec/"sbin", PERL5LIB: ENV["PERL5LIB"]
     end
   end
 
   test do
-    system sbin/"fetch-crl", "-l", testpath
+    system bin/"fetch-crl", "-l", testpath
   end
 end
