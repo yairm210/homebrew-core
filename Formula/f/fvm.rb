@@ -6,12 +6,11 @@ class Fvm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "254550e6fded53f94681480c42ab9f8edb442e429629f0d91f7a553096f8073e"
-    sha256 cellar: :any,                 arm64_sequoia: "69831e970a5503948e7c0242c0e4c6c7eba0850a35b08661b5a0a2a1a9c37deb"
-    sha256 cellar: :any,                 arm64_sonoma:  "693022704abb92bda486001fe4be417a62cc6b7e2a227f41bb253c96ebd6d140"
-    sha256 cellar: :any,                 sonoma:        "044655a73bb1e619c2daa0bcc7ff32a02fe9cd302359147a9f4facce185c7278"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aceee35cc7df23de2c183cd3f53eef25d038e12a268211732e2679089745d19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edcf4f11652ba84356a6750c4300ebfd201ab74c642c7fb4df46c92429a2746e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea97fc5863682025710d0876b2ff9f2cc3397c624ecc20d1e2ee07511df50f64"
+    sha256 cellar: :any,                 arm64_sequoia: "6aef819a301bbaa689f480ad98984bde01711730ee0873039bf1de973d751d15"
+    sha256 cellar: :any,                 arm64_sonoma:  "19ade28ea75331a562bb2f2006295b6b7359b9019a05d14c3e15c6e096b24f5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9e7ac1ebe9549a17e99db8b75d29eceaf5f1b5cbce681b7f4b1f34c36230dc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c38f41e38edb138574d084604aa6f8ec93691fbc9fb9a46dd601ce703efd645"
   end
 
   depends_on "dart-sdk" => :build
