@@ -6,6 +6,14 @@ class Tgrep < Formula
   license "MIT"
   head "https://github.com/microsoft/tgrep.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f28fe8f25aab52e04f9f390c0e00926f9e18c26c6a536260122e89d4bddfd9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d0c52f4ff0754aad894a747324ba186a5f1db8d55d62d0be6a7300fb59be7f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46d78ff20eaec32e727e3c2a6d0c5c274425a63248e18c347eddcce12e4c9e79"
+    sha256 cellar: :any,                 arm64_linux:   "d1d57fc2ec7c366931ae8606a8d4f8c05c3d9f03d9c402206fc34eebeb661825"
+    sha256 cellar: :any,                 x86_64_linux:  "01a4d6ddc6640415687dbc8234ca1b911d6287dcd9df14927ff735c789e5023d"
+  end
+
   depends_on "rust" => :build
 
   def install
