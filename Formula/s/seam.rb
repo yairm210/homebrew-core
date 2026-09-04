@@ -1,8 +1,8 @@
 class Seam < Formula
   desc "Command-line interface (CLI) for interacting and developing with the Seam API"
   homepage "https://github.com/seamapi/cli"
-  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.37.0.tgz"
-  sha256 "b927585809c97e3d6e04c5cdf88a13ab0c4c3ea907ff63cfebe8c813e81a4132"
+  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.38.0.tgz"
+  sha256 "7f49335dc643c5f40c345b8503e0e6fccaff452025a70c737227b40c43e187f6"
   license "MIT"
 
   bottle do
@@ -20,7 +20,7 @@ class Seam < Formula
     # which uses proprietary license.
     (libexec/"seam").install buildpath.children
     cd libexec/"seam" do
-      system "npm", "install", "--omit=optional", "--omit=dev", *std_npm_args(prefix: false)
+      system "npm", "install", "--omit=optional", "--omit=dev", "--legacy-peer-deps", *std_npm_args(prefix: false)
       with_env(npm_config_prefix: libexec) do
         system "npm", "link"
       end
