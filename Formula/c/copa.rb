@@ -7,12 +7,11 @@ class Copa < Formula
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92e017c1f99ef926c939150ca09c2faa2a02c377cf9535d1b45ebbc199f5ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92e017c1f99ef926c939150ca09c2faa2a02c377cf9535d1b45ebbc199f5ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f92e017c1f99ef926c939150ca09c2faa2a02c377cf9535d1b45ebbc199f5ca9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c1b1c08db56ab1b75a79e35136075bf6984c284564862f96f980bd8df47d6e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ca2ce4ee5893e7dd3cb3cb9554422ff97be5a747eca67d88ce3cbe911d7894b"
-    sha256 cellar: :any,                 x86_64_linux:  "6ddc9a3602ed9074882746a41ffe31ccfc211018575236f9cdb4bc416b0221c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "756a5fab9d31d74033ffb2b46e9e99408c51ce965471c8d145bf0137a0853d58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "756a5fab9d31d74033ffb2b46e9e99408c51ce965471c8d145bf0137a0853d58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "756a5fab9d31d74033ffb2b46e9e99408c51ce965471c8d145bf0137a0853d58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20555d1d0decaeb338a1c549d62e21931fa706f232f2d7bf761d61baa0f089fb"
+    sha256 cellar: :any,                 x86_64_linux:  "83855dbc6192e585d4fce9a6c5caee8e5f728f877f007c80330b1826b4c28dda"
   end
 
   depends_on "go" => :build
