@@ -13,12 +13,11 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "846935614fa4f53fd822a78f60a605f721799802661a7532c9980dea956d273c"
-    sha256               arm64_sequoia: "987e29d22d26fb54af1c79c83c63db68c3fe092382bbec66cae2bd6c1b0ae63f"
-    sha256               arm64_sonoma:  "14804f3eb2ef6c0d3532c608d40e1e48e95ab92867dfd486a81d693585d3de2c"
-    sha256               sonoma:        "9164b500375f9bd859f33f1bd83de228f66e0315c6b3e205388034cf8d108583"
-    sha256               arm64_linux:   "27a8ab11d0eca3f7e861d55845824bbd8e9bce4ff81492fa9cbc0b38a2b50007"
-    sha256 cellar: :any, x86_64_linux:  "f28db54631e464f1a52416140cf558204194eabbdf5602ea653e20e0cfbb823f"
+    sha256 arm64_tahoe:   "e37dcc50527415d4fc064896e416bfea7f6f23a39948fc5caae942898bc62d39"
+    sha256 arm64_sequoia: "bdd5e66d58ff1700ec0d68a28f1e837ede76dfdf04d326e2e2b3182ca4c9df59"
+    sha256 arm64_sonoma:  "d6f70f039946ea94daf2c12f0529205803484a238911265a159eba8b139d6648"
+    sha256 arm64_linux:   "07d8fa9927808548e9e1c3f0a3307033fad618119cd32bd03e6dd7c83c920ec9"
+    sha256 x86_64_linux:  "b5b3f727fbc6ba05e8ff6921b5ab67ca5c3c9cc1e89518ba0d8edcb35a90f2ed"
   end
 
   depends_on "cgal" => :build
