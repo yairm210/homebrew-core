@@ -12,12 +12,11 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12530ba116861b25b9354abd8c37b3606c6282140a4b299d97c9be6958ba40c3"
-    sha256 cellar: :any, arm64_sequoia: "a3a5a17849fe9e5c9da2d3082163c745492a9be4258681e4067f45bdd9b152cd"
-    sha256 cellar: :any, arm64_sonoma:  "f19901e1320be728e45d7fe8c00c1b4822fa210e2c6c88812f4cbed34bd1d9b8"
-    sha256 cellar: :any, sonoma:        "b7b2f435165199d59f2f0834cf47109c9d36b125121233f9e50f606a8472cbf7"
-    sha256 cellar: :any, arm64_linux:   "0ac5c2d7fc81524fce9ac79d0ceac356b454275d686f04fd55e10a51006224c0"
-    sha256 cellar: :any, x86_64_linux:  "453d8037b197ee24619aebb2c091d6662855cffb9bed51c7aa82da6b5e73b7a1"
+    sha256 cellar: :any, arm64_tahoe:   "f724ac320fae339fe3c7ffbc58e16f091081180b700600ddb299359865709ab3"
+    sha256 cellar: :any, arm64_sequoia: "6aea9b67a7e262b680d0f796b22cf54379f963e95a33533858af685184eb870a"
+    sha256 cellar: :any, arm64_sonoma:  "b60b3624c360ff38f979a0231bf5409c777522ef815904fd8aaf4a4a70ea6804"
+    sha256 cellar: :any, arm64_linux:   "3d55e0abf4f4f8a90d75a13352e8aff55d44bfe695f5aa06c0b14015b67230f9"
+    sha256 cellar: :any, x86_64_linux:  "f919f9d7ebe24f0f6ff1c045a3e571831b413284be7fd62e28b427722e8ff35b"
   end
 
   depends_on "ruby"
