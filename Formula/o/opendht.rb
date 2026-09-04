@@ -1,10 +1,9 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "363bbe80e937e612c6642e0a395a9efbc0714dfeb65935ec6a63194a55ca8aec"
+  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "6b52bf081f3539536a93f442e0ea56d0a871eb5b7c06619740c5460c5e338a18"
   license "MIT"
-  revision 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -32,13 +31,6 @@ class Opendht < Formula
   depends_on "msgpack-cxx" => :no_linkage
   depends_on "nettle"
   depends_on "readline"
-
-  # Apply Arch Linux patch to support Nettle 4
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/opendht/-/raw/f9240e64a01cdadc5c8401e3a1106ed7cd9bf3ee/nettle-4.patch"
-    sha256 "88556b2a0cf071971a565ea312be9164356747656078d3537d3910bc38af8880"
-    type :unofficial
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
