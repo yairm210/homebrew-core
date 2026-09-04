@@ -1,8 +1,8 @@
 class Rv < Formula
   desc "Ruby version manager"
   homepage "https://github.com/spinel-coop/rv"
-  url "https://github.com/spinel-coop/rv/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "905a2564062620a72fdf6cc2d1c28bb4756d46af5b211f5712539c1f13428808"
+  url "https://github.com/spinel-coop/rv/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c7d6c173ea022b9eec1eca727859e33a9c8fd68a5aac147ebf5e351df7f0d9e1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
@@ -22,6 +22,8 @@ class Rv < Formula
 
   depends_on "rust" => :build
 
+  uses_from_macos "llvm" => :build # for libclang
+
   on_macos do
     depends_on macos: :sonoma
   end
@@ -36,6 +38,9 @@ class Rv < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/rv --version")
     assert_match "No Ruby installations found.", shell_output("#{bin}/rv ruby list --installed-only 2>&1")
-    assert_match "Homebrew", shell_output("#{bin}/rv ruby run 3.4.5 -- -e 'puts \"Homebrew\"'")
+    (testpath/"hello.rb").write <<~RUBY
+      puts "Homebrew"
+    RUBY
+    assert_match "Homebrew", shell_output("#{bin}/rv run --ruby 3.4.5 hello.rb")
   end
 end
