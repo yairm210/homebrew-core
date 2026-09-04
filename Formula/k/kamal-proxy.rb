@@ -7,12 +7,11 @@ class KamalProxy < Formula
   head "https://github.com/basecamp/kamal-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "478c74971a4fa286300ae1880211ffe67d9f11b03967de22b126da6e7b5e7018"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0978c00a32b8646ada7c683f15017ad06e6e5deeff9ae951819ac6f034c165e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb7443d081fea5fec0f4d28da1c91af52e6bda2fb5c5f311f33b40c8aa7edc17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf864dd9aea86ee2f33e469fa39c48ba1124170e37b030f8a35b577b6ed53478"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72c88174507d978e9ffa83473089ec872a2aeb535258f84b00b39d73c42a2b86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb60afa749bd752d782ccd3557b4306f1bce197e195bac901b0fe17887a6684"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef37239b56025333a167704496ee426d55dafbf0d4b988f366ac97fd1e9b436f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f96df97d14d4168df4d077afbb5261c2073996788ec62aa5558bd8c8f1a854bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "891d4f74eb3a1f8c6436fee0d2d77f5ce43d0d05f75f642cddb865cb3991d306"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b30e9ef8f836b80e26dec8e6429a8ad69364bc32290b9f6757eb311630e36b1d"
+    sha256 cellar: :any,                 x86_64_linux:  "2baca77705c2a2503787bd0b4f1bc82422b1509e56cfa4f451661b7f34a1267e"
   end
 
   depends_on "go" => :build
