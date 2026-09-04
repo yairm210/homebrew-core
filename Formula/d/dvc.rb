@@ -9,12 +9,11 @@ class Dvc < Formula
   revision 15
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bf6e58390794647fc55731d3cd9ed76343c45fcf4593b15bc1f9c37f9f00412e"
-    sha256 cellar: :any, arm64_sequoia: "a935b268b88683ba7ee5fd82caf88c904e7ac7585869b73ce85b3fa6fcee4b93"
-    sha256 cellar: :any, arm64_sonoma:  "e040f6bac1d94dac8d89943b36730cc05a2a9229bd8352ff8a00535e141899b5"
-    sha256 cellar: :any, sonoma:        "558aa8e2c1ffd98e5a1cbdcb3d63a0f5a689ab30d7eb13a2376ecd58a2a02295"
-    sha256 cellar: :any, arm64_linux:   "d4765cc281dd4e6b9a9adf700b1f7f2fc0cb26462aee46f2f5a48a8cf6969b05"
-    sha256 cellar: :any, x86_64_linux:  "843db869d398f7f618532ab6d347ae4ba291968a4c5954a0cea26f3923814570"
+    sha256 cellar: :any, arm64_tahoe:   "21f31d06137a2a124064468491dbcb5c7c1e5dd71fe05df061768aa890da0302"
+    sha256 cellar: :any, arm64_sequoia: "00039ed6c1eb42dcba981b72f7b1cbb39d639430cb1961ad743d5bfdb46c1546"
+    sha256 cellar: :any, arm64_sonoma:  "c389f71c4de2f5389f6dbe220b79bba2001f8c4735e867b3b96c1706926033c2"
+    sha256 cellar: :any, arm64_linux:   "7e0dc68b31bb9d28ec22fdac096be56e8023b566f761e281140f1852d3e6a756"
+    sha256 cellar: :any, x86_64_linux:  "350138b91874aefeef1cea99f6befb30f50de14f7f98f52363a259679196c2d8"
   end
 
   # `pkgconf` and `rust` are for bcrypt
