@@ -10,12 +10,11 @@ class Deepline < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83c790e48ea431db0f4b0a3e0b36098d62443aa9c2c1ed7466696fbc30cc24c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83c790e48ea431db0f4b0a3e0b36098d62443aa9c2c1ed7466696fbc30cc24c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83c790e48ea431db0f4b0a3e0b36098d62443aa9c2c1ed7466696fbc30cc24c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00f7e690193ddfc1de7e14d1f607b3ec16c92262d9007fd912efa7f0b694638e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76344c3763ee3e16d39819756b4aaf37abfd6ecca4ee56856ec709d86a3ccdbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1579c5573a515dffd309d4fbcc9f25c492c6577f38067b66154aeeef49fcabae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "066b4ead1f67f185799e07c7906de35e5f3e1ad4a52bde04cb60b471208e1af2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "066b4ead1f67f185799e07c7906de35e5f3e1ad4a52bde04cb60b471208e1af2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "066b4ead1f67f185799e07c7906de35e5f3e1ad4a52bde04cb60b471208e1af2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23303e63aba00d91dbbc7ff1ddf2299b516d5dd0d9f22bdead8b9f3493c6da79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c424649af3394e437b6cabc6084869acb5aab23dbc949e9505c3522bbf9237"
   end
 
   depends_on "node"
