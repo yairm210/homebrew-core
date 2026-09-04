@@ -1,8 +1,8 @@
 class Tgrep < Formula
   desc "Trigram-indexed grep for fast regex search in large codebases"
   homepage "https://github.com/microsoft/tgrep"
-  url "https://github.com/microsoft/tgrep/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "6c8665ca44eb60b0d1e52afc17a98ded645ead8bc7822433842437094ad10bfc"
+  url "https://github.com/microsoft/tgrep/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "d91fc2f4cd04998a16b92cf58d29bfc94272fff39a78701b32223a05e1e89b68"
   license "MIT"
   head "https://github.com/microsoft/tgrep.git", branch: "main"
 
@@ -15,6 +15,12 @@ class Tgrep < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "tgrep-cli")
