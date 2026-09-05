@@ -18,11 +18,11 @@ class Puzzles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9db305bfd68df9c2c6c447496749e3d82e77c4bdfe6b6cb167ec8d881c42e5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6070328c2a9db2098d216285d51489c3f32cb7844b5233b8baf7a028241c933"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeb20aa42b6b52078927ffeddc0f5dfcee621d599b7f4246dbf02522d5877f98"
-    sha256                               arm64_linux:   "be9efd2f45ba2b48d3d74469e5fb2f4f1b5bc53f8ff7279a2d38c6e0e9e2b081"
-    sha256                               x86_64_linux:  "48cb0a0cec4cc20a1f3d45b7f591315596c53c1d416cd66eae0e7d93aa3150a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c55e09c43c19403c8658aa48c62085847122b580a02664052b3384855dd26ad5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bdbd3a1f6162609da14fe74fe9e9b70a8207d4ca9fcb0a9c61b0171a2743f63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e6a1fc0b33e95d30a51de429d7054322fc75811fd103a218490cc160703c378"
+    sha256                               arm64_linux:   "f9e4615a320cfb9d32d8de3e19a8bfffd38e6c9af497882ddbc4c54b33390d7e"
+    sha256                               x86_64_linux:  "3b562146d7611cbf420bbf2c1a0ab3941fcb4320f4151f3ef379b6170540abbe"
   end
 
   depends_on "cmake" => :build
