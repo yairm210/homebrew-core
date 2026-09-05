@@ -7,12 +7,11 @@ class Weechat < Formula
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "7c1aed85988cbfef76281202126e2b4b7efe364df35bf15b0f8fe3eb0bfddb0f"
-    sha256 arm64_sequoia: "b530be66bac2608601d6228041741ed77fd68d9a8a5ddecb62310462c3169cce"
-    sha256 arm64_sonoma:  "33abffc8c856461e6b9bb71d206cba571fd24f5f66b302f01a35b187a678e9f8"
-    sha256 sonoma:        "eb3f9db700dc85084590dd665c51b3cd8ca339f59793432fbcc27e482a71c889"
-    sha256 arm64_linux:   "905af3ffbca1dee1c845c379a6c264e3e4d75314df85e66b97aceac0c67613ba"
-    sha256 x86_64_linux:  "03dcdd1efbcab92ec2c007c5bb927acc61899758c58bffae3a517de62af85958"
+    sha256 arm64_tahoe:   "a074adeb4675b71a7bf626b4025b8dbd6f03fe073dc974976672cfae5f3f52ea"
+    sha256 arm64_sequoia: "11020d58947b920934ba78240b36a346ecbd82cb55c808cfe958efaa84130b9d"
+    sha256 arm64_sonoma:  "1d4803ddc01b8c216dfd0f1c15dd8d77910aa3a22189411b587eb4645206f902"
+    sha256 arm64_linux:   "baa12901851357e79b0b970b50e082b67a06fe69c38cb348c358a14b0c045e8c"
+    sha256 x86_64_linux:  "7b161a25a45d09db535a131f61d47d48bf6444da9226b9bc180415ef4ba0aa3d"
   end
 
   depends_on "asciidoctor" => :build
