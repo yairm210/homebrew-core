@@ -1,8 +1,8 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.7.1.tgz"
-  sha256 "67ad539d9915efb63d5f294beeb9290b7172d23c92d8052110a9c8355f783458"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.9.1.tgz"
+  sha256 "1bfcac877d53f1e41b69d15c24e081895b2f07d6ff2ffdfe0bf8a7336ab00e59"
   license "MIT"
 
   bottle do
@@ -19,6 +19,9 @@ class OpenclawCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # `--ignore-scripts` leaves a marker that makes the launcher write into the read-only keg
+    system "node", libexec/"lib/node_modules/openclaw/scripts/postinstall-bundled-plugins.mjs"
 
     node_modules = libexec/"lib/node_modules/openclaw/node_modules/"
 
@@ -50,9 +53,13 @@ class OpenclawCli < Formula
       rm_r(dir) if basename != "#{os}-#{arch}"
     end
 
-    node_modules.glob("koffi/build/koffi/*").each do |dir|
-      rm_r(dir) if dir.basename.to_s != "#{os}_#{arch}"
+    # koffi binaries moved to `@koromix/koffi-*`, which also ships a musl build
+    node_modules.glob("@koromix/koffi-*/*").each do |dir|
+      rm_r(dir) if dir.directory? && dir.basename.to_s != "#{os}_#{arch}"
     end
+
+    # Unusable prebuilt: patching it for X11 rpaths or thinning the fat Mach-O breaks its pinned digest
+    node_modules.glob("@trycua/cua-driver-*").each { |dir| rm_r(dir) }
   end
 
   test do
