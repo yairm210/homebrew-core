@@ -1,8 +1,8 @@
 class Bitwise < Formula
   desc "Terminal based bit manipulator in ncurses"
   homepage "https://github.com/mellowcandle/bitwise"
-  url "https://github.com/mellowcandle/bitwise/releases/download/v0.60/bitwise-v0.60.tar.gz"
-  sha256 "92727527d53286488751515830afd8934fde75f9d652521c69aea9c9f0e742ad"
+  url "https://github.com/mellowcandle/bitwise/releases/download/v0.70/bitwise-v0.70.tar.gz"
+  sha256 "b8f41f49b9b73ac3abb1e7533a410504f759673fc6e7f35acf56fc82e39cdf37"
   license "GPL-3.0-or-later"
 
   bottle do
