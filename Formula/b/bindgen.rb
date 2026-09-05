@@ -7,13 +7,11 @@ class Bindgen < Formula
   head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2f7d3db04e1d65571db3b16e177306ac4eb49b5822285f16f3fb10efb1ef4c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b3a1d65a74fdc60b6baf24a69534ed17f9125be32c5d558259284422478d2cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e886c463767c888ab70a4f433110146e55a3efd8e3b81bac60a49ed9bd9f31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed1122e2b31766476afb2d1a56408b1b290ef935e87fc4b5a2a1b4110aadad01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd76fccd60a9833a65116705011cbe7357729c425e11634076c2aab36b84945e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ea06f579a2e35648dd5127263947f8d654809ed968c26db40cf8e3884e7eb11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39958c407fe0675c2b22765413e92fcfa1cca0c7100bebdd9e243fa82e02cabd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65b431508800d1fc607564ae9c6c1ea4b9fcf9f12bf34b748af4119584f476f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17cc3d01c2358bcabb094c4ebdc45b97978dc6cf52163065c0c07a6dc61e4322"
+    sha256 cellar: :any,                 arm64_linux:   "59f386960ae468167d2b9be1f83798b5da5953030a2c9a1c501011bb35a37e69"
+    sha256 cellar: :any,                 x86_64_linux:  "a0a6329fa82b4c03882bfcd3639b3a42a9ceb7cb0e73774d8002a411d794fa7e"
   end
 
   depends_on "rust" => :build
