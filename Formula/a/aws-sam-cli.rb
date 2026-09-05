@@ -3,17 +3,17 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/4f/c3/53ba095961b402b2b3341faf7fe21fcc50ee2a0e4e38834e13685624ca33/aws_sam_cli-1.166.0.tar.gz"
-  sha256 "3e7c08b6b11eabb20aaa94c37a9871aa3aaf563e2ce8a3eb6cb1232dfd82d22b"
+  url "https://files.pythonhosted.org/packages/9f/f8/af8a25e955ad132e346b1bf036fd479407de3d07fbf89c3e796bd19d39c2/aws_sam_cli-1.166.1.tar.gz"
+  sha256 "32a4c5c1f03211d51d93b58e3cc5f4fb331c3dee4bff4105cbe0a24c71b770b3"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4436807c6e2c2c16737b8999e9f0e8b9520c35b261ade6ddd70538ae558d5be3"
-    sha256 cellar: :any, arm64_sequoia: "aa633521b961b404acc29af54cbb233408699a1feb402a708e47ddcc555169e8"
-    sha256 cellar: :any, arm64_sonoma:  "ddb61f036ed5566c65692bdf7f631ca407c76f818dd5a32d15d4d64aa9a9c0ac"
-    sha256 cellar: :any, arm64_linux:   "a264d5203009818bc77baa6b226f34664603b48b3961a4ec55e23949d912fbe7"
-    sha256 cellar: :any, x86_64_linux:  "7d7c3d610660a1a9fcec53eca6e7a56af5ee85b3488b24b1da3d01e3c7ce85f8"
+    sha256 cellar: :any, arm64_tahoe:   "3022159c5d8a7abf2c9ba60efd8b8e38aec7153402d36b63eb7a2603ba261d82"
+    sha256 cellar: :any, arm64_sequoia: "c12a6985ffb3fc48327d7f9f0e118497deb58d5ef4e85c532de442dafbd06a25"
+    sha256 cellar: :any, arm64_sonoma:  "91a79b548f7df89307853c6bf8578772c04c0d286ffec6d0ce02ed3f3f053bfe"
+    sha256 cellar: :any, arm64_linux:   "48cfebc6633599d2312f1435e2af939ffab222f9d1328ca465aeecd19b37ba14"
+    sha256 cellar: :any, x86_64_linux:  "c04b032445989abba2bba10670f74ff32be651fcf9134da4ab97209d7090ae0c"
   end
 
   depends_on "cmake" => :build # for `awscrt`
@@ -87,8 +87,8 @@ class AwsSamCli < Formula
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/04/85/37d9d1dc05cb00ab870e9fd424b334c94a4703bae48533ecc56e2feb28a6/cfn_lint-1.55.1.tar.gz"
-    sha256 "1e870ec3dfad17bf2cf164decba961551aed00a3eb3e51182eca6987eddb5562"
+    url "https://files.pythonhosted.org/packages/47/f6/2a8db80df4bcfce834376d570df37472986ed4f277ea3d523830af5ad151/cfn_lint-1.53.3.tar.gz"
+    sha256 "2ed701460d68314e905165a9ceed4a9ddf874a03f5022a1070b96e3869b1a931"
   end
 
   resource "charset-normalizer" do
