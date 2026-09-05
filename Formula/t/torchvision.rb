@@ -47,7 +47,6 @@ class Torchvision < Formula
       'jpeg_found, jpeg_include_dir, jpeg_library_dir = find_library(header="jpeglib.h")',
       "jpeg_found, jpeg_include_dir, jpeg_library_dir = True, '#{jpeg.include}', '#{jpeg.lib}'"
 
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
