@@ -18,6 +18,12 @@ class Sabiql < Formula
 
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
+
   def install
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
