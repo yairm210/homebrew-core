@@ -6,11 +6,11 @@ class KimiCode < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae96e6233077bc08a597a17b6a184057d8fb6830d24036ed7520d142078eb7f4"
-    sha256 cellar: :any,                 arm64_sequoia: "ae96e6233077bc08a597a17b6a184057d8fb6830d24036ed7520d142078eb7f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae96e6233077bc08a597a17b6a184057d8fb6830d24036ed7520d142078eb7f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b7c1816c467b424c4384260603a9b0f6381d7f4cd78f2f1cb16d86aab03e588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c03b44fa915f904246c9c863ea8f6bb5d3420f7c8583fab1d28e37f17598dac2"
+    sha256 cellar: :any,                 arm64_tahoe:   "16a1d8333124a68230eaf0be7a5518acd36520b6dae3af7997030bfdd893182c"
+    sha256 cellar: :any,                 arm64_sequoia: "16a1d8333124a68230eaf0be7a5518acd36520b6dae3af7997030bfdd893182c"
+    sha256 cellar: :any,                 arm64_sonoma:  "16a1d8333124a68230eaf0be7a5518acd36520b6dae3af7997030bfdd893182c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf88da5678b316d19f238c5ca6e569ff882ed5d39b95ceb506747091222e2ce1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b7f4e6c521d89f88953287978b141a4b9b3bbac555ec85c0df58ca75dfc3da"
   end
 
   depends_on "node"
