@@ -6,7 +6,7 @@ class Gnhf < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "082c4d78b3c6e5881e3a333e40dd04b5e3d0a3de169739cfe38d6fee47e91426"
+    sha256 cellar: :any_skip_relocation, all: "4b314177734a2ca34ff23a6332de69380cbb9c7f2df3afb16c4daa0e3b397f9b"
   end
 
   depends_on "node"
