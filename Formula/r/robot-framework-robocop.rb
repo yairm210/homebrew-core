@@ -99,6 +99,11 @@ class RobotFrameworkRobocop < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # The `robocop-mcp` server needs the optional `mcp` extra, which is not installed.
+    (bin/"robocop-mcp").unlink
+
+    generate_completions_from_executable(bin/"robocop", shell_parameter_format: :typer)
   end
 
   test do
