@@ -9,14 +9,11 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f98be7779f9aa806741ebf8fd55cccc8da57d250816b5bcd638ab13daeafb96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b28349a7f47d6d38c10d6790dc53a3b38ae55850eac105db54ce80d332655f63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e32e73a3a00d918d49cec2cb8741ee33a4f7c49ecec15b4cb5cc27ffbbe115fb"
-    sha256 cellar: :any_skip_relocation, tahoe:         "0619ebdc3086487f61efdb8476c1f727cf540a1d00b17a6169aa84576636d3bc"
-    sha256 cellar: :any_skip_relocation, sequoia:       "fe57a605d6f98655598456829bba254aeb7a0230c14c6dd67ff20298d9afe9fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31b8313dcbe82b93e8c2c2997684506d0600abc798daa47c0e70a69792c4c79e"
-    sha256 cellar: :any,                 arm64_linux:   "2ebe65fb583e94f19055433e3210b90c934d41d70801cb8ce1e9a84a334ad329"
-    sha256 cellar: :any,                 x86_64_linux:  "32ce94dd9f32b51a3bf760dd04c5fe3d3078595153c934f84a5c89e689c295e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c19003335a8ce00dcbb7fa4caf0fd44f6644f7db26079fd284e25c6496137763"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcb1e703a696b3a9b50b13cf524bea60cbd5289f9b2e20a72608732dda6c6266"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ddef401c7e86ce1cc31e99b8828f8d48c39d24695815a789e71737846eafbd"
+    sha256 cellar: :any,                 arm64_linux:   "8c5b2c1e7b42801537bf2efbc74819c5caa39ba9caff12d160d3390b04031112"
+    sha256 cellar: :any,                 x86_64_linux:  "fa8fc424e9d37d950a78ed8df99914fe7527be8907b5bb0fdd1cde87b49bbec8"
   end
 
   depends_on "certifi"
