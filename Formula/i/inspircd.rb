@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://github.com/inspircd/inspircd/archive/refs/tags/v4.11.0.tar.gz"
-  sha256 "7f2ea0731a7e337e6ebaa1335bb22d576cba779baefaa311e15558624b5ca31a"
+  url "https://github.com/inspircd/inspircd/archive/refs/tags/v4.12.0.tar.gz"
+  sha256 "5eefae1428d2e8b072c530cb01a1095a811927d63749d8c073c8044842e9c214"
   license "GPL-2.0-only"
 
   livecheck do
@@ -44,6 +44,6 @@ class Inspircd < Formula
   end
 
   test do
-    assert_match("ERROR: Cannot open config file", shell_output(bin/"inspircd", 1))
+    assert_match("Cannot find config file", shell_output(bin/"inspircd", 1))
   end
 end
