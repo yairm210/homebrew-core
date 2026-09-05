@@ -106,8 +106,6 @@ class Pytorch < Formula
   end
 
   def install
-    python3 = "python3.14"
-
     # Avoid building AVX512 code
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"
 
