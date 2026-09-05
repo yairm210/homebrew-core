@@ -4,14 +4,14 @@ class Picotool < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/raspberrypi/picotool/archive/refs/tags/2.3.0.tar.gz"
-    sha256 "97aaf36800d2317683528cba5762e3d4e7a5de0cba729d28011a6ee94b3b7538"
+    url "https://github.com/raspberrypi/picotool/archive/refs/tags/2.3.1.tar.gz"
+    sha256 "07946d294ab5c474b610660c53c5d94216e4ab13555de075ed521f98afc4f44c"
 
     resource "pico-sdk" do
       # Use git checkout to allow fetching mbedtls submodule
       url "https://github.com/raspberrypi/pico-sdk.git",
-          tag:      "2.3.0",
-          revision: "98a542c1a62fb549ffb5d66a3e5892b06276b670"
+          tag:      "2.3.1",
+          revision: "079c6f39023649b154152db30f1d781e884879bc"
 
       livecheck do
         formula :parent
@@ -56,7 +56,7 @@ class Picotool < Formula
     # from https://github.com/raspberrypi/pico-examples?tab=readme-ov-file#first-examples
     resource "homebrew-blink_universal" do
       url "https://datasheets.raspberrypi.com/soft/blink_picow.uf2"
-      sha256 "e8f8e578129ebded860ae019288b282b0a620f5ac2dfc49adedc565c73e6ad22"
+      sha256 "c2171f11f2d6a8a0b139e551c4e729f5ae3dd33625d58f94252ad5f5bef636d1"
     end
 
     resource("homebrew-blink_universal").stage do
@@ -67,7 +67,7 @@ class Picotool < Formula
          name:          blink_universal
          web site:      https://github.com/raspberrypi/pico-examples/tree/HEAD/universal/blink_universal
          binary start:  0x10000000
-         binary end:    0x100407bc
+         binary end:    0x10040494
       EOS
       assert_equal result, shell_output("#{bin}/picotool info blink_universal.uf2")
     end
