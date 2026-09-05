@@ -20,12 +20,11 @@ class Picotool < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4bd285ece87f46f5cb4246897c5841f23b7e9496497cad36628125e704a7084f"
-    sha256 arm64_sequoia: "fec365c2892ad427846efc7fc0e4c4308bba4707e36fc0bd6cdf5a28bcf4a67d"
-    sha256 arm64_sonoma:  "019117ac178f54c58722ff1a401d6d8de12d6ff615accb48c8ce110db0f08796"
-    sha256 sonoma:        "ca3973e3d44fe2826c86f5b55abbb3bfe0f769dcc78eb9105bcc6286eb21859b"
-    sha256 arm64_linux:   "6cd1d212f061779ae3a341aab7811c3daf17c1f4f3397546d2ead512dea5691e"
-    sha256 x86_64_linux:  "a437179a646290aa7fedaee69c0d0f486882ed043d8633d85a4635fb1b96b4c0"
+    sha256 arm64_tahoe:   "7369725188e5db055acd76b7bee8cff97ab1cde39760e3f19d7c9b3122341df0"
+    sha256 arm64_sequoia: "74d05844dc6491b153f4f05564d8f0599cfec11de293b134c34f3a3ab9a1569f"
+    sha256 arm64_sonoma:  "2e7ba3ee5af3ab9f28f7757c524a0d777661064697f3760f23c7a66a19969959"
+    sha256 arm64_linux:   "c0dc4abada1def5355cbb1d2c3d9a5e2e22871a001a1c62af7528ccfc6ccec93"
+    sha256 x86_64_linux:  "5a9c06d853733783dbb809f2efcf270a4adc69ff96a390798fa15e9f4791a36b"
   end
 
   head do
