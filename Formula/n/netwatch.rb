@@ -1,8 +1,8 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.29.2.tar.gz"
-  sha256 "af26e1e7d924a11cb1e06e09b0d93e0698a66df75318ead991d4d631b3397cb5"
+  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "95dfbbf1208806d383bf8309ff40ec29fc55e1081ecd7c41ee8f110c8aa32227"
   license "MIT"
 
   bottle do
@@ -37,7 +37,7 @@ class Netwatch < Formula
     end
 
     screenlog = (testpath/"screenlog.ansi").read
-    assert_match "Topology", screenlog
+    assert_match "topology", screenlog
     # match text in help dialog
     assert_match "DASHBOARD", screenlog
   end
