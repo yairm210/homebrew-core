@@ -73,7 +73,6 @@ class SyslogNg < Formula
     # Need to regenerate configure on macOS to avoid undefined symbols, e.g. "_evt_tag_errno"
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     # FIXME: we should use resource blocks but there is no upstream pip support besides this requirements.txt
     # https://github.com/syslog-ng/syslog-ng/blob/master/requirements.txt
