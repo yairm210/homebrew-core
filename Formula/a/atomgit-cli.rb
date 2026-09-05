@@ -1,8 +1,8 @@
 class AtomgitCli < Formula
   desc "Command-line interface for AtomGit"
   homepage "https://atomgit.com/hust-open-atom-club/atomgit-cli"
-  url "https://raw.atomgit.com/hust-open-atom-club/atomgit-cli/archive/refs/heads/v0.7.2.tar.gz"
-  sha256 "100a177997c7c6199f9d8633fe4cebc5ec6d974a807e1c5318d2634ba14c008b"
+  url "https://raw.atomgit.com/hust-open-atom-club/atomgit-cli/archive/refs/heads/v0.7.3.tar.gz"
+  sha256 "2ff037a7ffa50964ed8927a0d38bde1a84b77a267a015295ea5c5bbf6d42c23d"
   license "MulanPSL-2.0"
   head "https://atomgit.com/hust-open-atom-club/atomgit-cli.git", branch: "main"
 
