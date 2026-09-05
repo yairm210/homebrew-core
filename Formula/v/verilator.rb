@@ -1,8 +1,8 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://github.com/verilator/verilator/archive/refs/tags/v5.050.tar.gz"
-  sha256 "ec6723f30c1798b1fbbbed97364f09c431fb4875577c314f37240e99b60a4a04"
+  url "https://github.com/verilator/verilator/archive/refs/tags/v5.052.tar.gz"
+  sha256 "8c8d2e11e6ad32f641dd250742a94195ddecb912e2e2dabe2f42ddbbb99c1092"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
   head "https://github.com/verilator/verilator.git", branch: "master"
 
