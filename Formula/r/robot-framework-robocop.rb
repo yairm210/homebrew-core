@@ -7,6 +7,14 @@ class RobotFrameworkRobocop < Formula
   sha256 "c176337e235a3ebf563bf7c064d6c2f890366133f8beccedf62152c2cb1a6009"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1e2c5995aebd821f0e95387dee6b2e43e95b4ef6ebb111d14247d2363ba2d5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea19afd4c0229c86b443d84777862b02776a1532d1091b0306f1a763dbe37f3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13214a566cd763040b7ba1f768bbce07c79eae2e3d14d638deed6b59ed0229a1"
+    sha256 cellar: :any,                 arm64_linux:   "0e3a4735fc02045045eac6ef5be5b90fcbb536dd708ac065492b9a9f8c255236"
+    sha256 cellar: :any,                 x86_64_linux:  "03a253ed543071cdb81230c6ad13468141c319bc91763a6a6832ec6fc7080b09"
+  end
+
   depends_on "python@3.14"
 
   resource "annotated-doc" do
