@@ -6,11 +6,11 @@ class Rulesync < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f210602d4162f5a95cc2e7bb61cbfd5db484a678596b9eb45173975a887dca6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f210602d4162f5a95cc2e7bb61cbfd5db484a678596b9eb45173975a887dca6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f210602d4162f5a95cc2e7bb61cbfd5db484a678596b9eb45173975a887dca6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbca5e2771d54b299d0abb88941e931961b4edde0868ba91af2db683061b00c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbca5e2771d54b299d0abb88941e931961b4edde0868ba91af2db683061b00c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0421eaaa44b4d35c6f8874b6e1ad018d92820ac558e410b51c9d0a54732fc47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0421eaaa44b4d35c6f8874b6e1ad018d92820ac558e410b51c9d0a54732fc47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0421eaaa44b4d35c6f8874b6e1ad018d92820ac558e410b51c9d0a54732fc47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "064b6648af9dfd394c6678e97bdcc9642a0584c128de113ae86a4b279c59859f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064b6648af9dfd394c6678e97bdcc9642a0584c128de113ae86a4b279c59859f"
   end
 
   depends_on "node"
