@@ -26,7 +26,7 @@ class LlamaCpp < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "node" => :build
-  depends_on "ggml" # NOTE: reject all PRs that try to bundle ggml
+  depends_on "ggml"
   depends_on "openssl@3"
 
   # `test do` block downloads a model from Hugging Face
@@ -39,6 +39,7 @@ class LlamaCpp < Formula
   end
 
   def install
+    odie("we do not want to bundle ggml") if deps.map(&:to_formula).none? { |f| f.name == "ggml" }
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
