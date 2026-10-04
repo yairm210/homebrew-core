@@ -1,8 +1,8 @@
 class ArcaneCli < Formula
   desc "Command-line client for the Arcane Docker management platform"
   homepage "https://getarcane.app"
-  url "https://github.com/getarcaneapp/arcane/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "302e11669a07c49e4d03f6982a3905a070b42ff336762167bfa42d93fa61faa3"
+  url "https://github.com/getarcaneapp/arcane/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "f180d833540e2b1e5f857022fe104e22ea760cf6013590ddbb2099f339c78d7b"
   license "BSD-3-Clause"
   head "https://github.com/getarcaneapp/arcane.git", branch: "main"
 
@@ -48,8 +48,8 @@ class ArcaneCli < Formula
     system bin/"arcane-cli", "--config", config, "config", "set", "server-url", "http://127.0.0.1:3552"
     assert_match "server_url: http://127.0.0.1:3552", config.read
 
-    output = shell_output("#{bin}/arcane-cli --config #{config} version 2>&1", 1)
-    assert_match "Authentication is not configured", output
+    output = shell_output("#{bin}/arcane-cli --config #{config} version 2>&1")
+    assert_match "authentication is not configured", output
 
     assert_match(/^ENCRYPTION_KEY=\h{64}$/, shell_output("#{bin}/arcane-cli generate secret --format hex"))
   end
