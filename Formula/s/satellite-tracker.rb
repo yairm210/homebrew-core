@@ -1,8 +1,8 @@
 class SatelliteTracker < Formula
   desc "Terminal-based real-time satellite tracking and orbit prediction application"
   homepage "https://github.com/ShenMian/tracker"
-  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "2b17176d0fd2ffb1aacd799c77a07c5ca3749061877ec4b7e9f60fcea022c64e"
+  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "2cfb81377db86b39faba1159fbbc81481eeb9418ae8c943a49d1aba5bc2b1473"
   license "Apache-2.0"
 
   bottle do
@@ -36,12 +36,18 @@ class SatelliteTracker < Formula
 
     assert_match version.to_s, shell_output("#{bin}/tracker --version")
 
+    (testpath/".config/tracker/config.toml").write <<~TOML
+      [world_map]
+      lon_delta_deg = 0
+    TOML
+
     PTY.spawn(bin/"tracker") do |r, w, pid|
       r.winsize = [43, 120]
       r.set_encoding("UTF-8")
+      refute_nil r.expect("lon_delta_deg must be a finite number greater than 0, got 0", 10),
+        "expected invalid configuration to be rejected"
+      refute_nil r.expect("Using default configuration.", 10), "expected fallback to default configuration"
       refute_nil r.expect(/\e\[6n/, 10), "expected cursor position query"
-      w.write "\e[1;1R"
-      refute_nil r.expect("World map", 10), "expected the world map to render"
     ensure
       r.close
       w.close
