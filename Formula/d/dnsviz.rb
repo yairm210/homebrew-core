@@ -3,10 +3,9 @@ class Dnsviz < Formula
 
   desc "Tools for analyzing and visualizing DNS and DNSSEC behavior"
   homepage "https://github.com/dnsviz/dnsviz/"
-  url "https://files.pythonhosted.org/packages/59/91/aa152739fea36d4456fbcc71a26333ffef587526d722c10c281ab12a6a35/dnsviz-0.11.1.tar.gz"
-  sha256 "203b1aa2e3aa09af415a96a0afc98eef4acf845ab8af57bf9f7569bd13161717"
+  url "https://files.pythonhosted.org/packages/50/33/de6ddf145bdb6c94ee25b33bc314af3bdbd15950c5a4647295da224ab58f/dnsviz-0.11.2.tar.gz"
+  sha256 "ca136788bd868c03b1f2653575d899ffef41a016711655c0ee65f89c1bea3514"
   license "GPL-2.0-or-later"
-  revision 3
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e57a56ddf9f4b9ea391a9a756be73f6325a4a3832560d4213ea12ebfb0b35cfe"
@@ -26,7 +25,7 @@ class Dnsviz < Formula
   depends_on "openssl@3"
   depends_on "python@3.14"
 
-  pypi_packages extra_packages: ["dnspython", "pygraphviz"]
+  pypi_packages extra_packages: ["dnspython", "pygraphviz", "setuptools"]
 
   resource "dnspython" do
     url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
@@ -34,12 +33,28 @@ class Dnsviz < Formula
   end
 
   resource "pygraphviz" do
-    url "https://files.pythonhosted.org/packages/66/ca/823d5c74a73d6b8b08e1f5aea12468ef334f0732c65cbb18df2a7f285c87/pygraphviz-1.14.tar.gz"
-    sha256 "c10df02377f4e39b00ae17c862f4ee7e5767317f1c6b2dfd04cea6acc7fc2bea"
+    url "https://files.pythonhosted.org/packages/01/f7/a82e7f47573168960ce7e2a6c937a084a14d58599fe2a48ea3cde8ca555b/pygraphviz-2.0.3.tar.gz"
+    sha256 "e46818608638959ceabec66a36d2efc1d60b790a845f29705e403feecc7ee0c0"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   def install
-    virtualenv_install_with_resources
+    # TODO: Remove when PyGraphviz discovers nonstandard Graphviz prefixes.
+    # https://github.com/pygraphviz/pygraphviz/issues/630
+    if OS.linux?
+      graphviz_prefix = formula_opt_prefix("graphviz")
+      ENV["GRAPHVIZ_PREFIX"] = graphviz_prefix
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{graphviz_prefix}/lib/graphviz"
+    end
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources.reject { |r| r.name == "pygraphviz" }
+    # Use Homebrew's SWIG instead of rebuilding it in pip's isolated environment.
+    venv.pip_install resource("pygraphviz"), build_isolation: false
+    venv.pip_install_and_link buildpath
   end
 
   test do
