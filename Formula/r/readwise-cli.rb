@@ -6,7 +6,7 @@ class ReadwiseCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe044c28473e69cdb20f70445fc0d10098ad4c267eb2eeebe60c068e43fec050"
+    sha256 cellar: :any_skip_relocation, all: "c15d6ef3c7ce6624b8e2e0ffedd024ed8ee3e8bc986ff2848aaaef33be14c26f"
   end
 
   depends_on "node"
