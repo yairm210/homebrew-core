@@ -6,6 +6,14 @@ class Packslip < Formula
   license "MIT"
   head "https://github.com/jdx/packslip.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "227f4928ce56c025a0d32a2a7fc6b427c3e1d0deba09cc07c6cef8009a4a595b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a873963b71998c91f139e401cef7d96da6d0b33879d508bddcccb7ee7fdb4581"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "009579fa44c548c988c2513e0b7a7da52bf126403c4b93dc20c98ee455e93c19"
+    sha256 cellar: :any,                 arm64_linux:       "020018446e6045c53d19ccaf110a66f44479d583e4abe5818b0ad93b0367cdc0"
+    sha256 cellar: :any,                 x86_64_linux:      "8617b75ddc1c55038e6fbb2ca8ec1a5499af7ab231e67642313fb598197d43a1"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
