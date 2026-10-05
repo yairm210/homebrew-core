@@ -1,8 +1,8 @@
 class ReadwiseCli < Formula
   desc "Command-line interface for Readwise and Reader"
   homepage "https://readwise.io/cli"
-  url "https://registry.npmjs.org/@readwise/cli/-/cli-0.5.9.tgz"
-  sha256 "5cbc88096ca20c70f005b5264453ba698b6203f4bfae8ba72658bc3768a06de9"
+  url "https://registry.npmjs.org/@readwise/cli/-/cli-0.5.10.tgz"
+  sha256 "43d0be21396b40766c834bd671b5b5ecc79b27d20766d7c16ee6e064191a6a5e"
   license "MIT"
 
   bottle do
