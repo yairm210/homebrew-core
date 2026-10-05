@@ -1,8 +1,8 @@
 class Oxvg < Formula
   desc "Fastest SVG toolchain for optimisation, minification, linting, and actions"
   homepage "https://github.com/noahbald/oxvg"
-  url "https://github.com/noahbald/oxvg/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "48cd09db206039b530f9ac8e214a68699a82773c5ed508c63baf080bd4a4e754"
+  url "https://github.com/noahbald/oxvg/archive/refs/tags/v0.0.9.tar.gz"
+  sha256 "9f6fbc2385784bcca8a3411fbbd7deb690799d0866bc5f5d7cd88756b7746af6"
   license "MIT"
 
   bottle do
