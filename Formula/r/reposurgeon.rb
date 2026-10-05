@@ -1,8 +1,8 @@
 class Reposurgeon < Formula
   desc "Edit version-control repository history"
   homepage "http://www.catb.org/esr/reposurgeon/"
-  url "https://gitlab.com/esr/reposurgeon/-/archive/5.11/reposurgeon-5.11.tar.gz"
-  sha256 "c51bfb9e9e2af6537224b1973872761031250ceadbebf1e292534870e54bdbc0"
+  url "https://gitlab.com/esr/reposurgeon/-/archive/5.12/reposurgeon-5.12.tar.gz"
+  sha256 "e9a6cce233e8f01e2b30882b7d6cc7aefd0d6683ab51b92e6bac582be36a8859"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
