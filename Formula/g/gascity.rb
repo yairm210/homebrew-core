@@ -1,8 +1,8 @@
 class Gascity < Formula
   desc "Orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  url "https://github.com/gastownhall/gascity/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "98a4cc61249e7277357b1dd6adf526d64bdf312472f8c5568126c4d586d56d59"
+  url "https://github.com/gastownhall/gascity/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "b36a0e00e7bc6c0c4e759a0639b2d88ecd80c51f1c682fceb8d03ba56fbc9a2d"
   license "MIT"
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
@@ -32,9 +32,7 @@ class Gascity < Formula
   end
 
   def install
-    # TODO: Remove http2legacy tag when Gascity works without it in Go 1.27 (in release > 1.4.1?)
-    # ref: https://github.com/gastownhall/gascity/pull/5030
-    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", tags: "http2legacy", output: bin/"gc"), "./cmd/gc"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"gc"), "./cmd/gc"
   end
 
   test do
