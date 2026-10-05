@@ -1,8 +1,8 @@
 class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
-  url "https://github.com/WasmEdge/WasmEdge/releases/download/0.17.2/WasmEdge-0.17.2-src.tar.gz"
-  sha256 "7f2ef28b45bc136ee1f13a3453caab91d0dd2ba141dce599008486b561a63eac"
+  url "https://github.com/WasmEdge/WasmEdge/releases/download/0.18.0/WasmEdge-0.18.0-src.tar.gz"
+  sha256 "c3ef59723d8e5e09021bb9ed7ec55c596b33969b95bc1fbfb0ce1d21075e061e"
   license "Apache-2.0"
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
@@ -21,12 +21,6 @@ class Wasmedge < Formula
   depends_on "spdlog"
 
   # fmt 12.2 dropped operator~ on uint128_fallback; upstream fix not in 0.17.1.
-  patch do
-    url "https://github.com/WasmEdge/WasmEdge/commit/41a01b6b4f40defbac0dd551663c542cdcf9ae76.patch?full_index=1"
-    sha256 "55657c3a628a406b655ba224019f0121f2489140dca128c3f8c623c019de84b1"
-    type :backport
-    resolves "https://github.com/WasmEdge/WasmEdge/pull/4936"
-  end
 
   deny_network_access!
 
