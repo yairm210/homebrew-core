@@ -1,8 +1,8 @@
 class Nbsdgames < Formula
   desc "Text-based modern games"
   homepage "https://github.com/abakh/nbsdgames"
-  url "https://github.com/abakh/nbsdgames/archive/refs/tags/v6.0.2.tar.gz"
-  sha256 "9545b099f6edb2be08d8885eaae2e10cf3d114c3a8fa1fc3eefff156053f37ca"
+  url "https://github.com/abakh/nbsdgames/archive/refs/tags/v6.0.3.tar.gz"
+  sha256 "359da5f698da00437205eddad3fc97fbdcecfa8cb005fd8d1830fe8fd3dd7e3b"
   license :public_domain
   head "https://github.com/abakh/nbsdgames.git", branch: "master"
 
