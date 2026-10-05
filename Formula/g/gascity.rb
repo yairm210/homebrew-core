@@ -7,11 +7,11 @@ class Gascity < Formula
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
   bottle do
-    sha256                               arm64_golden_gate: "1e1b37f0210e5ba1f71e2da4a6c2ba5dc37abe6f44f2e767c933669ec546fc44"
-    sha256                               arm64_tahoe:       "52f1734c5a0d697ab1d64f213c7e1b1a157a976d0f3bdbb791bbbbbd3ec9465e"
-    sha256                               arm64_sequoia:     "fd4ac2df417c3d4af83ad99385d6e3f51792e61c39992728b928efa1d5b94451"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ae37be24a16bd92c3fdaaf92dd82083d905afcce2743fc67905ea70ec5f5bed0"
-    sha256 cellar: :any,                 x86_64_linux:      "c5f8aa3dcb182bfb324fadd5bfe90b7a6b97f8b9fd8fa962c15241768b616904"
+    sha256                               arm64_golden_gate: "7d41f9aca007b375f741d3ea83ac27752a8423129b577eea7c0578cbb1ca6915"
+    sha256                               arm64_tahoe:       "aab58140f12f9bd093b149a89b2dfed47567197de7590eb7ca33410690319446"
+    sha256                               arm64_sequoia:     "4cf709f8fa783a0bd664ca705c9e19393b15a1c0cf8b0bb1710e875f24be559a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a4bb8299446be26ddeb7f00821c5a5446112f303ffe93c2a434422a593c60284"
+    sha256 cellar: :any,                 x86_64_linux:      "05d35bcc664ac55cdbfcdb3b6b46a2c4ac2a90b85dc694bf6e1842532f581499"
   end
 
   depends_on "go" => :build
