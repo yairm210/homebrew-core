@@ -21,6 +21,12 @@ class PostgresLanguageServer < Formula
   depends_on "tree-sitter-cli" => :build
   depends_on "libpg_query"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["PGLS_VERSION"] = version.to_s
     ENV["LIBPG_QUERY_PATH"] = formula_opt_prefix("libpg_query")
