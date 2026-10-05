@@ -16,8 +16,6 @@ class Ratex < Formula
 
   depends_on "rust" => :build
 
-  conflicts_with "texlive", because: "both install `lualatex`, `pdflatex`, `xelatex` binaries"
-
   deny_network_access!
 
   def fetch
