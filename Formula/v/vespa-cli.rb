@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/refs/tags/v8.753.16.tar.gz"
-  sha256 "38158f73e68b982e4a4d688d7a31333b03cae5ea2b67be64904d93c67f0d1114"
+  url "https://github.com/vespa-engine/vespa/archive/refs/tags/v8.763.13.tar.gz"
+  sha256 "0dc8040ad4ddb63fe7dbd65632ac64457917dffc4495325c78001e722c83bfd0"
   license "Apache-2.0"
 
   livecheck do
@@ -20,6 +20,14 @@ class VespaCli < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    cd "client/go" do
+      system "go", "mod", "download"
+    end
+  end
 
   def install
     cd "client/go" do
