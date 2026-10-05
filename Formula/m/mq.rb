@@ -7,11 +7,11 @@ class Mq < Formula
   head "https://github.com/harehare/mq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "42eb0dc131cbbf28c8197d0d7e045591a1df623ba3cd1c7ffa539ac0808db5c6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "294a53c289bf98b90a429036a36c5279123fd48b9c5ea8ca5594f038103c32f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a35aac7636330b5fcd0d78507fe2c36f0314a4df89c37da1de62e976c7e1419"
-    sha256 cellar: :any,                 arm64_linux:       "367f6a60a0a32536899a1699a4c64b7e5fc96c0ae1c8c2376c34b991c02f5472"
-    sha256 cellar: :any,                 x86_64_linux:      "04df09960786ce1a58797d9a780362f244a5d6c1964ebf7d61aaadd01ccbbc67"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a13a553d082095d87fd049372afa7344685d532420ec739e54abbe9177981086"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2fa315d30dd244bb8aa31026c55707de0904cb73fcbe66d244952ba10afb5193"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "979ab845f7953f0ba41eb35bdda0b33bfd4c496c0662b57fbcf9d135713c64f3"
+    sha256 cellar: :any,                 arm64_linux:       "7adfd67f88a6333bcf21db4d92c33114dd4364b3253bf080938b225d20753fff"
+    sha256 cellar: :any,                 x86_64_linux:      "cfcdaa729a0cfd6d95d2dbae8a5d39fa24e2eb0e0c8180e4b3e6f499c9a435c0"
   end
 
   depends_on "rust" => :build
