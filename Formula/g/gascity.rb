@@ -25,6 +25,8 @@ class Gascity < Formula
     depends_on "flock"
   end
 
+  conflicts_with "graphviz", because: "both install a `gc` binary"
+
   deny_network_access!
 
   def fetch
