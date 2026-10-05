@@ -6,6 +6,14 @@ class Doltlite < Formula
   license all_of: ["Apache-2.0", "blessing"]
   head "https://github.com/dolthub/doltlite.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "bdf7a1af22c801b074fc8e9f39a3b88edf85abef2502cb42013cb9d57ee8e365"
+    sha256 cellar: :any, arm64_tahoe:       "1e4d2bd31f0628bc6e2022b57d366c78b48c54cdfd913af5e648f1e6f12f7d7d"
+    sha256 cellar: :any, arm64_sequoia:     "2e97276e10cb5c74e56477744ccd0aea346162107d74f5cb8c290bccc1d992b2"
+    sha256 cellar: :any, arm64_linux:       "81f51087434bb83210b224d7ad8636adf6aa532885ea12ed85aea3d86771ae71"
+    sha256 cellar: :any, x86_64_linux:      "b57e3c2f925b2431a765311a78d056d37985b8b70148f324785d275786e902d6"
+  end
+
   on_linux do
     depends_on "zlib-ng-compat"
   end
