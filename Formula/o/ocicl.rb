@@ -4,7 +4,7 @@ class Ocicl < Formula
   url "https://github.com/ocicl/ocicl/archive/refs/tags/v2.20.0.tar.gz"
   sha256 "c93441daeb9772922af5f7b394d60bbe44c67ea061511648943db07d33b5abb0"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "acf9195fe118e0d9651349031e5004d6b0e0c3641e5d978efaa6ea3728782c4c"
@@ -51,14 +51,19 @@ class Ocicl < Formula
     # Parallel ghcr.io downloads get reset on CI runners, and 2.20.0 fails the install on any download error
     ENV["OCICL_DOWNLOAD_CONCURRENCY"] = "1"
     ENV["OCICL_HTTP_RETRIES"] = "5"
-    system bin/"ocicl", "install", "chat"
-    assert_path_exists testpath/"ocicl.csv"
+    # Install a system with a single dependency to keep the number of ghcr.io downloads small
+    system bin/"ocicl", "install", "flexi-streams"
+    assert_match "trivial-gray-streams", (testpath/"ocicl.csv").read
 
-    version_files = testpath.glob("ocicl/cl-chat*/_00_OCICL_VERSION")
+    version_files = testpath.glob("ocicl/flexi-streams-*/_00_OCICL_VERSION")
     assert_equal 1, version_files.length, "Expected exactly one _00_OCICL_VERSION file"
 
     (testpath/"init.lisp").write shell_output("#{bin}/ocicl setup")
-    system "sbcl", "--non-interactive", "--load", "init.lisp",
-           "--eval", "(progn (asdf:load-system :chat) (sb-ext:quit))"
+    output = shell_output "sbcl --noinform --non-interactive --load init.lisp " \
+                          "--eval '(asdf:load-system :flexi-streams)' " \
+                          "--eval '(princ (flexi-streams:octets-to-string " \
+                          "(flexi-streams:string-to-octets \"Homebrew\" :external-format :utf-16le) " \
+                          ":external-format :utf-16le))'"
+    assert_match "Homebrew", output
   end
 end
