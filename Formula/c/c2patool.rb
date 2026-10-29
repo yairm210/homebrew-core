@@ -1,14 +1,14 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https://contentauthenticity.org"
-  url "https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.22.tar.gz"
-  sha256 "4f1a2823572a06debb4a1e41397d74582094c44bb6a189ebfa390aadb6264527"
+  url "https://github.com/contentauth/c2patool/archive/refs/tags/v0.28.4.tar.gz"
+  sha256 "2ed01103cdcb65184dfcaa6f522beac4c715291b51a44e503b572fa9b5255aba"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/contentauth/c2pa-rs.git", branch: "main"
+  head "https://github.com/contentauth/c2patool.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^c2patool[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class C2patool < Formula
 
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
-    system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
