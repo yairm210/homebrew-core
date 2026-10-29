@@ -4,6 +4,7 @@ class Fricas < Formula
   url "https://github.com/fricas/fricas/releases/download/1.4.0/fricas-1.4.0-full.tar.bz2"
   sha256 "e113c721aaba673226d0806076a12ec82c07562c2954479443047d4264172514"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e456dde0e8d3c3499d13ad15f6c9d07e609744d1e3fea29c48018ca609939e06"
