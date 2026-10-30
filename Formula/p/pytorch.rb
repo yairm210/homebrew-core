@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://github.com/pytorch/pytorch/releases/download/v2.14.1/pytorch-v2.14.1.tar.gz"
-  sha256 "d0ebad9ca4219959b29b7ad9ab6469fe49a3d668f8b5a62dd115f02f3a914447"
+  url "https://github.com/pytorch/pytorch/releases/download/v2.15.0/pytorch-v2.15.0.tar.gz"
+  sha256 "d0688c9feb1139c6304675c41f4c5fbb8e5b084f19a83d9f95ddcb10ced9e3e7"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 3
 
   livecheck do
@@ -43,11 +42,14 @@ class Pytorch < Formula
 
   pypi_packages package_name:     "torch[opt-einsum]",
                 extra_packages:   %w[pyyaml packaging scikit-build-core six],
-                exclude_packages: %w[cuda-bindings numpy nvidia-cublas]
+                exclude_packages: %w[cuda-bindings cuda-toolkit numpy nvidia-cublas nvidia-cuda-cccl
+                                     nvidia-cuda-cupti nvidia-cuda-runtime nvidia-cudnn-cu13
+                                     nvidia-cufft nvidia-cufile nvidia-cusolver nvidia-cusparselt-cu13
+                                     nvidia-nccl-cu13 nvidia-nvshmem-cu13 nvidia-nvtx triton]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d8/9c/925c4f62920e4200d573d2bfe5cfd1b993134c3aee5f9bd3b7c55e20297e/filelock-4.0.11.tar.gz"
-    sha256 "9dc453a1edd25626a6fc97c2cb1bd9f7e46345843d40b3181c071761fb9a5f7a"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "fsspec" do
@@ -101,8 +103,8 @@ class Pytorch < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do
@@ -118,14 +120,6 @@ class Pytorch < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  # A Metal 4 toolchain with an older SDK trips the MPP include, which is only version-gated
-  patch do
-    url "https://github.com/pytorch/pytorch/commit/938bf9785f38e2b2b21879713ae94625aec4787e.patch?full_index=1"
-    sha256 "a89a1f1ac61776832e31865295fe388edf19bbf93be3dbff3a9910fe70cbdec3"
-    type :unofficial
-    resolves "https://github.com/pytorch/pytorch/pull/196104"
   end
 
   def install
