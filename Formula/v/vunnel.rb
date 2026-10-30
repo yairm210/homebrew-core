@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/6c/d8/9e41b4e09e3d17e251bcac922461a0daaa8581495b47e9b7ddb884c0b0e8/vunnel-0.65.1.tar.gz"
-  sha256 "fa26a17abb3d7ee00bfcc00b620b59a5e5e6d486d2343bfe19bf1740f1584b1a"
+  url "https://files.pythonhosted.org/packages/a0/c0/4980e71141ed26f805e31234f25b4dbdda519c61172b16db1006c51c5061/vunnel-0.66.0.tar.gz"
+  sha256 "a216245630960d0e5ebd0f469f864f536c3df737ba18ea15f621e67f97d7f21f"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -150,8 +150,8 @@ class Vunnel < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/e4/47/b9efed96c114afcfa3c9d3fe98a76a1d14c74a9e266d397cf6eb64be5e01/pytest-9.1.1.tar.gz"
-    sha256 "1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313"
+    url "https://files.pythonhosted.org/packages/79/42/bb4641652e58dedeac2ec51abc1f8cae4fee4ec63899a0999016229a0f2a/pytest-9.2.0.tar.gz"
+    sha256 "97c4f3b1f3c7414aa36465e09b8220f1d03627993bd51b1282e193753c80557b"
   end
 
   resource "pytest-snapshot" do
@@ -180,8 +180,8 @@ class Vunnel < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/ae/58/690cf56da80c8f2c8bf12042b6017beac2c34fe961f65420bcb3fb7fac38/ruff-0.17.2.tar.gz"
-    sha256 "84d632402d14c23b488f941db23712d6736a013225162062d34558c3f3c780eb"
+    url "https://files.pythonhosted.org/packages/59/73/81f140c4edd9cc323de5478e6bbd3bbcfae9a82692df1a258de8cec6a6d2/ruff-0.17.3.tar.gz"
+    sha256 "a57049c8addb3662073859bb55a7ad35aa54f8a7c9ed268911d1333c5aadaaa9"
   end
 
   resource "six" do
@@ -215,8 +215,8 @@ class Vunnel < Formula
   end
 
   resource "xxhash" do
-    url "https://files.pythonhosted.org/packages/0d/31/57c33f9d0755882926e1454ad09bb3d808270f746fbb1c10fecd50415d02/xxhash-3.8.2.tar.gz"
-    sha256 "2506a631a506c01db09d6eae288d731a0ba4f58a9e7a8c805dca08c61a9267a4"
+    url "https://files.pythonhosted.org/packages/39/e6/ed6c428055ffd3f9299db3ec8671fd78b70c24173c040b8faafb6348ebbb/xxhash-4.0.2.tar.gz"
+    sha256 "af3d1b3cfa5280e84d8968e9f30c9eca75781db4915eb6d6acb0dd4fc93e0f47"
   end
 
   resource "zipp" do
@@ -231,9 +231,6 @@ class Vunnel < Formula
 
   def install
     ENV["XXHASH_LINK_SO"] = "1"
-
-    # Allow Python 3.15: https://github.com/anchore/vunnel/commit/c4b3ae12be0b8fd7a12803ba342861628a08baf7
-    inreplace "pyproject.toml", 'requires-python = "<3.15,>=3.13"', 'requires-python = ">=3.13"'
 
     venv = virtualenv_install_with_resources without: "zstandard"
 
