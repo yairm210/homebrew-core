@@ -1,8 +1,8 @@
 class Morphe < Formula
   desc "Desktop app and CLI for patching Android apps with Morphe"
   homepage "https://github.com/MorpheApp/morphe-desktop"
-  url "https://github.com/MorpheApp/morphe-desktop/archive/refs/tags/v1.19.1.tar.gz"
-  sha256 "912d29261351450d97d6124917edfe202b6f715e56aefd428e0d008ff042f502"
+  url "https://github.com/MorpheApp/morphe-desktop/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "3bb46ef82e4700693cb05c18288aa4041ef34ac5b0aef669f4c30649498a74e0"
   license "GPL-3.0-only"
 
   bottle do
@@ -18,8 +18,8 @@ class Morphe < Formula
   depends_on "openjdk"
 
   resource "morphe-patcher" do
-    url "https://github.com/MorpheApp/morphe-patcher/archive/refs/tags/v2.0.1.tar.gz"
-    sha256 "b6988054617729ddb53df33cfe6113e12ae0bb5fea1b69a7de2c00bccedb5de5"
+    url "https://github.com/MorpheApp/morphe-patcher/archive/refs/tags/v2.1.0.tar.gz"
+    sha256 "12c2b808990607f5fd019ac23f7bb48bf33c5b72bae5c355b1900b8d095d6a78"
 
     livecheck do
       url "https://raw.githubusercontent.com/MorpheApp/morphe-desktop/refs/tags/v#{LATEST_VERSION}/gradle/libs.versions.toml"
@@ -37,13 +37,13 @@ class Morphe < Formula
     end
   end
 
+  # Unused by morphe-desktop itself but still required by `morphe-library`
   resource "jadb" do
     url "https://github.com/MorpheApp/jadb/archive/refs/tags/v1.2.3.tar.gz"
     sha256 "d2391d34c46d5844eee225e37e8b8b56ac5c4378073db1379cb9414b07b74da7"
 
     livecheck do
-      url "https://raw.githubusercontent.com/MorpheApp/morphe-desktop/refs/tags/v#{LATEST_VERSION}/gradle/libs.versions.toml"
-      regex(/^jadb\s*=\s*"([^"]+)"/)
+      url :url
     end
   end
 
