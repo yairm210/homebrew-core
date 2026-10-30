@@ -9,11 +9,11 @@ class Harlequin < Formula
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8b4d5bd6782edc4f6dd548e1fb3f27ef82f6686bcb6086903a17c2bc997c86ff"
-    sha256 cellar: :any, arm64_tahoe:       "9ce770591c4f563bf1085d867ed70e05e715ef3c2d3752b4ca564bde9618649d"
-    sha256 cellar: :any, arm64_sequoia:     "ff347c23ed4fcde3f3788668536798ee86f796d70a8e874c267eab14649dc9e0"
-    sha256 cellar: :any, arm64_linux:       "3bd092f64066eedbf7dab85b77f9f0a3c54beec5202cfcf401ed0b3f8fdf2edc"
-    sha256 cellar: :any, x86_64_linux:      "f6e8095d307acaf1b0ca291b2b66c329dd5515788bc3972925c5cf1c128ee913"
+    sha256 cellar: :any, arm64_golden_gate: "991e65115a82cf7a8492f3c7728ff1e360f534cd5bc852bc247ef7317a45c924"
+    sha256 cellar: :any, arm64_tahoe:       "cafa0f170a7f2acc4108410cf0e9aee4d49a33f068b9836d397a4a6d3ed5d144"
+    sha256 cellar: :any, arm64_sequoia:     "62071d2e9d49cb11e8c06e76c8ed94440d3d420ebc4f2b5fedd4294565f459ec"
+    sha256 cellar: :any, arm64_linux:       "90bec23ab073fb2248cfd7e8825ca4a54c1233a19b0846e1fac97a1a3ac23a6c"
+    sha256 cellar: :any, x86_64_linux:      "c46b3a044485781bf5831e33f6907839512b23564098a5d6bf3628f436610e73"
   end
 
   depends_on "cmake" => :build
