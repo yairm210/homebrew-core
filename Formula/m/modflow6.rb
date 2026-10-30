@@ -1,8 +1,8 @@
 class Modflow6 < Formula
   desc "USGS modular hydrologic model"
   homepage "https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model"
-  url "https://github.com/MODFLOW-ORG/modflow6/archive/refs/tags/6.8.1.tar.gz"
-  sha256 "16b9368d582c66de83106a4c075d22c2a7a08daa7d8dfb7f40e21a5d983be699"
+  url "https://github.com/MODFLOW-ORG/modflow6/archive/refs/tags/6.8.2.tar.gz"
+  sha256 "f40c64d333cf2d5089bb777cb296aa05a8b4ba11a49a1602d6e5e8626019dade"
   license "CC0-1.0"
   head "https://github.com/MODFLOW-ORG/modflow6.git", branch: "develop"
 
