@@ -135,6 +135,12 @@ jobs:
               !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
             }}
 
+      # Don't label formulae with `deprecate!` or `disable!` dates in future years.
+      - name: Match years up to now
+        id: past-years
+        if: always()
+        run: echo "regex=($(seq -s '|' 2020 "$(date -u +%Y)"))" >>"${GITHUB_OUTPUT}"
+
       - name: Label pull request
         uses: Homebrew/actions/label-pull-requests@d482da0e602890d3160aade42e72c8556103bf04 # 2026.10.26.1
         if: always()
@@ -171,11 +177,11 @@ jobs:
 
             - label: formula deprecated
               path: Formula/.+
-              content: \n  deprecate!.*\n
+              content: '\n  deprecate! date: "${{ steps.past-years.outputs.regex }}-.*\n'
 
             - label: formula disabled
               path: Formula/.+
-              content: \n  disable!.*\n
+              content: '\n  disable! date: "${{ steps.past-years.outputs.regex }}-.*\n'
 
             - label: homepage
               status: modified
