@@ -2,8 +2,8 @@ class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
   homepage "https://ejdb.org"
   url "https://github.com/Softmotions/ejdb.git",
-      tag:      "v2.95",
-      revision: "3ed77af15559da8d3fe29ff3ff0c188ce6faf421"
+      tag:      "v2.96",
+      revision: "13a323eb2ccaf482d39dde2bf2c1c63c77f2b307"
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
@@ -26,8 +26,8 @@ class Ejdb < Formula
   end
 
   resource "iwnet" do
-    url "https://github.com/Softmotions/iwnet/archive/refs/tags/v1.4.1.tar.gz"
-    sha256 "43428ea216ac1bb461833e082924e0302b21cfc172de377395d0bdbda6d1be8a"
+    url "https://github.com/Softmotions/iwnet/archive/refs/tags/v1.4.2.tar.gz"
+    sha256 "d9cd5d89c009085717f53334eb70f115c15317178e357a388653e587180834c5"
 
     livecheck do
       url "https://raw.githubusercontent.com/Softmotions/ejdb/refs/tags/v#{LATEST_VERSION}/Autark"
@@ -37,8 +37,8 @@ class Ejdb < Formula
 
   # iowow is pinned by iwnet rather than ejdb, so follow iwnet's default branch
   resource "iowow" do
-    url "https://github.com/Softmotions/iowow/archive/refs/tags/v1.7.1.tar.gz"
-    sha256 "5d3d608099138c37f88bfe3b94c5b8e851584ff7767d695b140e47bfa24f95c7"
+    url "https://github.com/Softmotions/iowow/archive/refs/tags/v1.7.2.tar.gz"
+    sha256 "42e47ba8a84be2cf1b88677594393356007f103f6b399b0472e4e53043a8fad0"
 
     livecheck do
       url "https://raw.githubusercontent.com/Softmotions/iwnet/refs/heads/master/iowow.autark"
