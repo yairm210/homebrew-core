@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://tetragon.io/"
-  url "https://github.com/cilium/tetragon/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "d4de499f97899855329b5ab8d7fc9fed5be349abd6e45b673c70554e4918bd2a"
+  url "https://github.com/cilium/tetragon/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "49538903f16bd08bfa24ff4b1bfb16c0edf93eebd730e072425200a4b21faed1"
   license "Apache-2.0"
 
   livecheck do
@@ -37,6 +37,7 @@ class Tetra < Formula
 
   test do
     assert_match "CLI version: #{version}", shell_output("#{bin}/tetra version --build")
-    assert_match "{}", pipe_output("#{bin}/tetra getevents", "invalid_event")
+    event = '{"process_exec":{"process":{"binary":"/usr/bin/foo","arguments":"bar"}}}'
+    assert_match "/usr/bin/foo bar", pipe_output("#{bin}/tetra getevents -o compact", event)
   end
 end
