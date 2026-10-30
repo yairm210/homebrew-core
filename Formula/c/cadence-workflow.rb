@@ -2,8 +2,8 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
   url "https://github.com/cadence-workflow/cadence.git",
-      tag:      "v1.4.2",
-      revision: "c98e64e010409fbaae94cdc19c2e70ee662634b7"
+      tag:      "v1.4.5",
+      revision: "ecd2b70caf1fe9921aca19b00eb0b2905a3cc602"
   license "Apache-2.0"
   head "https://github.com/cadence-workflow/cadence.git", branch: "master"
 
