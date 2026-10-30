@@ -5,6 +5,11 @@ class EntireCli < Formula
   sha256 "45beafa8e260c4fb3e74368b8e27ab7d77c407db5e4fa3e77ff38e67ff592e26"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1203d43fafe4cb7d64d8b94b127b7f5009bd7835cc5a6fd51cf16e1b655ad964"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1203d43fafe4cb7d64d8b94b127b7f5009bd7835cc5a6fd51cf16e1b655ad964"
