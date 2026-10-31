@@ -1,15 +1,11 @@
 class Mpfi < Formula
   desc "Multiple precision interval arithmetic library"
   homepage "https://perso.ens-lyon.fr/nathalie.revol/software.html"
-  url "https://perso.ens-lyon.fr/nathalie.revol/softwares/mpfi-1.5.4.tar.bz2"
-  sha256 "d20ba56a8d57d0816f028be8b18a4aa909a068efcb9a260e69577939e4199752"
+  url "https://gitlab.inria.fr/mpfi/mpfi/-/archive/1.5.5/mpfi-1.5.5.tar.bz2"
+  sha256 "4c5d0c43759ee3e2bd8e4ffce078e85e928925b8bea97206cdf1620b2225b463"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
   compatibility_version 1
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?mpfi[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://gitlab.inria.fr/mpfi/mpfi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "c76135d26d03732d5726c0e6f5c1d50a9685435002386ef822494bbaaa9a9932"
@@ -27,10 +23,16 @@ class Mpfi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "43395ab987d381a3f22eb91b2ce74c8a7d39623e0eac8a78f95d2e50b644b1cd"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "gmp"
   depends_on "mpfr"
 
+  deny_network_access!
+
   def install
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
