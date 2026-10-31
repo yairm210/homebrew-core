@@ -1,8 +1,8 @@
 class CBlosc < Formula
   desc "Blocking, shuffling and loss-less compression library"
   homepage "https://www.blosc.org/"
-  url "https://github.com/Blosc/c-blosc/archive/refs/tags/v1.21.6.tar.gz"
-  sha256 "9fcd60301aae28f97f1301b735f966cc19e7c49b6b4321b839b4579a0c156f38"
+  url "https://github.com/Blosc/c-blosc/archive/refs/tags/v1.21.7.tar.gz"
+  sha256 "3c81252accfeeabd236fa219a8bf564c4feed9feb7a3291c227b03a00adb976f"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -21,14 +21,6 @@ class CBlosc < Formula
   end
 
   depends_on "cmake" => :build
-
-  # Update minimal cmake version
-  # Remove on next release.
-  patch do
-    url "https://github.com/Blosc/c-blosc/commit/051b9d2cb9437e375dead8574f66d80ebce47bee.patch?full_index=1"
-    sha256 "756460f653877c12575889f20640605ecc2e49ab72583fba62f59642098fcd63"
-    type :backport
-  end
 
   deny_network_access!
 
