@@ -6,7 +6,7 @@ class Hblock < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4b1d02f032f4ba28b0f3497231a40a3d4f47064f7a740064e16ed83aa6357f42"
+    sha256 cellar: :any_skip_relocation, all: "6c09fc931678743d58339fdd89bba47265c00deb2037a3670e21de7957fc512a"
   end
 
   uses_from_macos "curl"
