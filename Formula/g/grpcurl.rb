@@ -1,10 +1,20 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://www.fullstory.com/resources/content/fullstory-engineering-blog/"
-  url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
-  sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
   license "MIT"
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
+
+  stable do
+    url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
+    sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
+
+    # Fix Go 1.27 JSONv2 compatibility
+    patch do
+      url "https://github.com/fullstorydev/grpcurl/commit/cfa6ff68868284de47db88318a835c00b36d8777.patch?full_index=1"
+      sha256 "e4efd7be56266b2665e88e92c4805691b6c540cc1973c786f0e1a922c777d678"
+      type :backport
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "605806917cf60295403f7a448eb73aa3f30e4ec2a77c976aeb3a02cb7ad27b94"
@@ -15,9 +25,7 @@ class Grpcurl < Formula
     sha256 cellar: :any,                 x86_64_linux:      "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
   end
 
-  # TODO: unpin go@1.26 when grpcurl supports go 1.27
-  # ref: https://github.com/fullstorydev/grpcurl/issues/568
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   deny_network_access!
 
