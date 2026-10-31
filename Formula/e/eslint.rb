@@ -7,7 +7,7 @@ class Eslint < Formula
   head "https://github.com/eslint/eslint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0d2282d44b78fc1a4e69ed52b1418e996f28cabce6bee195c65ebac00d058bfb"
+    sha256 cellar: :any_skip_relocation, all: "5ec05dcd04efb9fd81c87b95e3c104adde0f31f36f258ea97c8881899b03b6bb"
   end
 
   depends_on "node"
