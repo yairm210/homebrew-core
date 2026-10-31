@@ -9,11 +9,11 @@ class Ttyd < Formula
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "11f48dfa4ef0f29f80ea7d3e0173b4564272eb91360a2d741c53cb7838476493"
-    sha256 arm64_tahoe:       "c9f5788221927bfe0d5e491f0eced92c6369a73e7e968ea712639b66c1864f40"
-    sha256 arm64_sequoia:     "aedd77feb2ab16fd9b6faf4c15e47a62e6b1ce3f1342ad05b4b6e70fc04cb3e9"
-    sha256 arm64_linux:       "cd87a1a24e6a0d92900681fac6961559ea48f3350fa2e28a3209e3428f02e4bd"
-    sha256 x86_64_linux:      "f12a7a7151dc432a48cba81f11f004514ee729e28369e5491970c11e2329e610"
+    sha256 arm64_golden_gate: "c12c23ab10ea0ca8de625359fba6964aed32f2c67b3794459a68e83984dd106f"
+    sha256 arm64_tahoe:       "cea9d6cddc179d6219e21ed19dddf4b6c51895696e957999c5655c6f40a9fdf1"
+    sha256 arm64_sequoia:     "e074e9140fe2e77d597dfb53b841e0c49aa9e48b9f168ac6e9f69ab17f2f9f5f"
+    sha256 arm64_linux:       "b2c46232a6a319ba24099a4cb38cd895681fa13204f5d06ff636d73c416da23f"
+    sha256 x86_64_linux:      "a646eda3acd22047ed2b590c12b8977f027b10ae6e07c15e305757abd19187d5"
   end
 
   depends_on "cmake" => :build
