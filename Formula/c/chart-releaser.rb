@@ -7,11 +7,11 @@ class ChartReleaser < Formula
   head "https://github.com/helm/chart-releaser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9b7b0e9fc1866d239f00a03905197b8fcd75e11b664499bc6d322135840fa6e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d3c1121a01a00f89037b0781ec5431ed30772cc2c0c0af1d7606f2ee5d83120"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99ce19735f00b3e953f619a937c0db90f7a5d9771188ae8df05008c0576534e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "40f87c5c3939fe82ee32978b97dda4269e173355ee77ccb35ea9dcfe809624c1"
-    sha256 cellar: :any,                 x86_64_linux:      "4d2bfda05fbe0df611e2b6a55c5d49723bd7c4f01a4a3b3b890621034a7fe97c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6afbbab4243741ecbd5377f94a17f0287a6f05dcd10df599a344d4b3a36d6e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b0d8d8d005096695d14cf0e472be9fa0a7b2992aa4b9fe1241570534c57d6554"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "383abd2d763fc81d32b6755fd37dae0cac2b4c1a4b642a3f433fcf212ea53a1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d0c4d33d766d7e2320e8c113e2a3a595fc1b3c9da58687a764271b63a743fb6e"
+    sha256 cellar: :any,                 x86_64_linux:      "aff737e3a6d106d85cd59792b225f599bd19084e7423945792e4990cb96b34f3"
   end
 
   depends_on "go" => :build
