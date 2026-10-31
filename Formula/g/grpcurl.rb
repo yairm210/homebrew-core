@@ -17,12 +17,12 @@ class Grpcurl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "605806917cf60295403f7a448eb73aa3f30e4ec2a77c976aeb3a02cb7ad27b94"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a53d7cc70c45181bd570774db9800d7c37357b632efd48c5240042eb8f4d1dd"
-    sha256 cellar: :any,                 x86_64_linux:      "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29c80db5f314866f97402a77d7d842e8834ca7bf187bea8ff5bb88ec227b6a93"
+    sha256 cellar: :any,                 x86_64_linux:      "05f07ff5a6eee550ad66048d0188c7e892fec3843255a21539d05879ef125e3b"
   end
 
   depends_on "go" => :build
