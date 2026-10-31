@@ -9,12 +9,11 @@ class Ipython < Formula
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e28834fcddf319abe55612a846d5c5bd1b575063c19402e58dc2d44c5912678"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "056f18d13a4fa8bbf175ca896c458bd8b03da6c8e11bbafd13f8404ce24a2080"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "373573c56824bb486b0b9ff65648203260c1ad31dcd2d8c8971b41dd78d36c85"
-    sha256 cellar: :any,                 arm64_linux:       "085515c81cf80ce37d5aaf38b98d25a55552323f2fb4822c0a2b21fa53fe175e"
-    sha256 cellar: :any,                 x86_64_linux:      "9658dae19c8a4419e286b0d03467ab54f12a2c866cc9c15aa74dfd14f821dd01"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "08586d5e8274423b4ff1996347603de9c006be1a0fd08d42c68683da221ece32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9bee0c0dd95819045d7a93f8a6928ed3307ab8a4d212c346701d745df7c1ec2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42621e1fa689ad05faa2bcd14e581f6b3057590f6f8053f8ef9bfc2b11b22ac6"
+    sha256 cellar: :any,                 arm64_linux:       "083e27e14688807627e4fc7f88768fb11749b52168d8a2d70e53a7ff011ebbac"
+    sha256 cellar: :any,                 x86_64_linux:      "9cf4ab4911dfba376d8d573c868c041ac3a5ee58fc3c4df7eb37d644fa82bc9b"
   end
 
   depends_on "python@3.15"
