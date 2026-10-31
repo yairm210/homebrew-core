@@ -6,7 +6,7 @@ class SmbclientNg < Formula
   url "https://github.com/p0dalirius/smbclient-ng/archive/refs/tags/3.1.0.tar.gz"
   sha256 "aad2a2b185ce3cbbc9d771dfea4144cc745d552dbd53c420d5719fff816d947c"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/p0dalirius/smbclient-ng.git", branch: "main"
 
   bottle do
@@ -43,8 +43,8 @@ class SmbclientNg < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
-    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
+    url "https://files.pythonhosted.org/packages/91/21/7fcd6780f61e9756aafaea760560509bb4111375daa2e23c1be7a89f33f1/dnspython-2.9.1.tar.gz"
+    sha256 "9a6d30e55f8dc63e6052597666112bff0586b95a2474a9deda03afbbf820d37a"
   end
 
   resource "flask" do
@@ -98,8 +98,8 @@ class SmbclientNg < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
-    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
+    url "https://files.pythonhosted.org/packages/88/7e/3c0da41061a2021cac7cd524fd57092adbe5b515e8bf9005702e366802e2/pyasn1-0.6.5.tar.gz"
+    sha256 "6b11616a6bcf3a40e635f082bb232fa57b5e0dd7f517bd7ddd69ec3794508a47"
   end
 
   resource "pyasn1-modules" do
