@@ -7,11 +7,11 @@ class Openexr < Formula
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5253d81b12415e20841324740f399f92d070e09e75421ba914385e0374973620"
-    sha256 cellar: :any, arm64_tahoe:       "5b6d293d0f7d3b4b8b8aba409f86ff3824b62ac5e4f0b57951158ab0ae98a937"
-    sha256 cellar: :any, arm64_sequoia:     "20e7c998ed534e281f8606b1567b047ceedb0e19272bf0545ae2128d8c589488"
-    sha256 cellar: :any, arm64_linux:       "a26985be817fe6e606ece9e3fcec6474946199a7f8d680ef8fcf8a493399cdf5"
-    sha256 cellar: :any, x86_64_linux:      "5a998e444c48037ae9c9a5e0a3b87a2cb7132f6820b5167a83534c65485c98e9"
+    sha256 cellar: :any, arm64_golden_gate: "3a3b5b63f3c3b538534cba64bf6eb3a3ac2fa696fb644235a14ca923e8b8f412"
+    sha256 cellar: :any, arm64_tahoe:       "b3a6ad7e8364cf139e7feb137ba8dffeb844ff597d5b68415aa527782ded33e8"
+    sha256 cellar: :any, arm64_sequoia:     "fd371a894a6197dad5a71d0098f42c20b41879eac7b00f15995e8c1b5ea1eb18"
+    sha256 cellar: :any, arm64_linux:       "2bab7e6525266a3989ec704984db69f2a49aa3dc1330a2a62d1812119b9f40f6"
+    sha256 cellar: :any, x86_64_linux:      "1fe59f6d3b20bb61f648f3798dec916290479899cfc340a010d4f4dbb04ed116"
   end
 
   depends_on "cmake" => :build
