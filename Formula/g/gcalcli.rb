@@ -10,12 +10,11 @@ class Gcalcli < Formula
   head "https://github.com/insanum/gcalcli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "27b4198ce23b7db6d9e676b7c73cca53648efdfbf5471ec21e4898b48dad9ffb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "046e1a2e474ef48c829faf946c6821a11849cc2092a688bf230944b3db28da5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb296b7ad44b74dc695525c7b502dddafa57457cdbcbdd90375e4b85cdb79ad7"
-    sha256 cellar: :any,                 arm64_linux:       "35142f6416f8dd914825c4abc325605a781f023e2c9600399c91f8bfa5e173f2"
-    sha256 cellar: :any,                 x86_64_linux:      "d71da3c08a07c098ad099c5189ea845e907ea19c7f5a24f6bb50da82d9097520"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3b65e400d870741b539581b63383ba5e4a71596d5c4fdecc4ff08f59fd7a62c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab53d8c2f04b48e6c065e145542b69a3f43d609b7bf1c70a37da093ab51a3a06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e608f3610baff553981ff9946dcbd15f44ab4f3bcc6d3b6e365b178a3c1d03f"
+    sha256 cellar: :any,                 arm64_linux:       "3c7b584ae16aa61bf707aec3259b28e47628a4748f87cfd7a3474415479941f0"
+    sha256 cellar: :any,                 x86_64_linux:      "d1d5bd587ec28d0c674553f1f59935960370cbb7d59ef1c59eb54571ed092578"
   end
 
   depends_on "certifi" => :no_linkage
