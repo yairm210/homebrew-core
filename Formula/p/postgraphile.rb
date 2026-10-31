@@ -6,7 +6,7 @@ class Postgraphile < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b9dfda85997743e3a4dc89ea998f57c784ef6b9c29700df83d75e51f13aab50c"
+    sha256 cellar: :any_skip_relocation, all: "7acd05b12d46ba4b3ad2ab9a921d57376e54c49e3a956ac58fac996a0b09d823"
   end
 
   depends_on "postgresql@18" => :test
