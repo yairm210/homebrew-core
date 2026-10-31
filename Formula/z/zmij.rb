@@ -5,6 +5,14 @@ class Zmij < Formula
   sha256 "13e11c9309fab358d5b6f656050e4f3efa1d20ecf15958ae9055382d07b0268f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "62d66e334e441e90a5523a174382817d668eab622d20c9b1b700e80aec81c76b"
+    sha256 cellar: :any, arm64_tahoe:       "4d0a4759ed511331f2f6ef0b39add6a41ae103972fe27e34c60392f9dbd5b417"
+    sha256 cellar: :any, arm64_sequoia:     "a7590743f17917101da42245d6f8f3f9f35c3c7c015c618eb9bb76bc1ec248f5"
+    sha256 cellar: :any, arm64_linux:       "1d4bee56fd0eb7b745fe580808bc1cd5326374534df4b73de7fb4b733b352acb"
+    sha256 cellar: :any, x86_64_linux:      "96ebfe53b1911767ada47a181dc75118f23dbf816d4c9d576211e2d1dd5756a6"
+  end
+
   depends_on "cmake" => :build
 
   deny_network_access!
