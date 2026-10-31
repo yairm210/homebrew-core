@@ -350,10 +350,9 @@ jobs:
                 ocaml|\
                 ocaml-findlib|\
                 openjdk|\
-                openssl@3|\
                 openssl@4|\
                 pkgconf|\
-                python@3.14|\
+                python@3.15|\
                 rust|\
                 zlib-ng-compat\
                 ).rb"
