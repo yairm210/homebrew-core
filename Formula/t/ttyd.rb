@@ -4,7 +4,7 @@ class Ttyd < Formula
   url "https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.7.tar.gz"
   sha256 "039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650"
   license "MIT"
-  revision 14
+  revision 15
   compatibility_version 1
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
@@ -27,6 +27,14 @@ class Ttyd < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Run the libuv loop directly as `lws_service` only runs a single turn from libwebsockets 5.1
+  patch do
+    url "https://github.com/tsl0922/ttyd/commit/fddd63815631223a794f3474869d5685362d5017.patch?full_index=1"
+    sha256 "7b98a6acf9df66ffeb77423ff1af75111f220065eedc4157691f59fbac9d3bf2"
+    type :unofficial
+    resolves "https://github.com/tsl0922/ttyd/pull/1589"
   end
 
   allow_network_access! :test
