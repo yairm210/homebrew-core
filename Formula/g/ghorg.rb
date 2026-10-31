@@ -7,11 +7,11 @@ class Ghorg < Formula
   head "https://github.com/gabrie30/ghorg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d23ebbb6fe52c861cad13bb27aaf9efb6a2cf8a8985e19467676ea7aefac0dd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d23ebbb6fe52c861cad13bb27aaf9efb6a2cf8a8985e19467676ea7aefac0dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5d23ebbb6fe52c861cad13bb27aaf9efb6a2cf8a8985e19467676ea7aefac0dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2ab6c780d090958fd87d7d84ef9f54118139ab0df324c5aa7e107f5bcaed7f5b"
-    sha256 cellar: :any,                 x86_64_linux:      "8bb075d5523b959cb3ea361e87c260f193c04dec77708b13a26e19e3e993bfad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6904ed2eac3d916d3816e5ef8153bc49eeea88e0738862a913e2cf2654b81356"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6904ed2eac3d916d3816e5ef8153bc49eeea88e0738862a913e2cf2654b81356"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6904ed2eac3d916d3816e5ef8153bc49eeea88e0738862a913e2cf2654b81356"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "719944dbb2616f4d845824182a7bcf75859eee385d54a750450d465481cf5645"
+    sha256 cellar: :any,                 x86_64_linux:      "1f5606e02ce8885e33b0852fb9d94a95fd476522c0343f5c5d0ebc9acab02fd0"
   end
 
   depends_on "go" => :build
