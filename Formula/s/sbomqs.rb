@@ -6,6 +6,14 @@ class Sbomqs < Formula
   license "Apache-2.0"
   head "https://github.com/interlynk-io/sbomqs.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ca1488845f7c4fe1d56f969fe3ffbabc29c92c9734c9075fca385011d3a6573"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ca1488845f7c4fe1d56f969fe3ffbabc29c92c9734c9075fca385011d3a6573"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6ca1488845f7c4fe1d56f969fe3ffbabc29c92c9734c9075fca385011d3a6573"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b92a9f132f8b85c8a55698847f85ec4fcc5f289f848e5d4bd6c77722210ac454"
+    sha256 cellar: :any,                 x86_64_linux:      "253eb5cc404db3f320cbd725473351163ecf930e890f4ff57936065ac247f423"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
