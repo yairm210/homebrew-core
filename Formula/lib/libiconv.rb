@@ -1,9 +1,9 @@
 class Libiconv < Formula
   desc "Conversion library"
   homepage "https://www.gnu.org/software/libiconv/"
-  url "https://ftpmirror.gnu.org/libiconv/libiconv-1.19.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libiconv/libiconv-1.19.tar.gz"
-  sha256 "88dd96a8c0464eca144fc791ae60cd31cd8ee78321e67397e25fc095c4a19aa6"
+  url "https://ftpmirror.gnu.org/libiconv/libiconv-1.19.1.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libiconv/libiconv-1.19.1.tar.gz"
+  sha256 "9a06844846d664d7122161700c10a64480d7c7bcead3091925a785b38c91edab"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
   compatibility_version 1
 
