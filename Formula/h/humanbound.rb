@@ -8,12 +8,11 @@ class Humanbound < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f384d4aa79fd42b3483fea220a6222ad323e071e97401096a28d708beb9f388e"
-    sha256 cellar: :any, arm64_tahoe:       "c26b02756bcb654ef3ed5da6484028696e9a17c53957dfddd8b7a65ff9826fe3"
-    sha256 cellar: :any, arm64_sequoia:     "7fff93fc05444b9b5fec1242cc891c3a86d14d0de463740a9331cf991f358fc3"
-    sha256 cellar: :any, arm64_linux:       "dc2d2ae87dee0f10cac1459262e6c92c6bf3c82e06fe86076a7f7f69c25b26a0"
-    sha256 cellar: :any, x86_64_linux:      "289f151839ebfb068552f06e0e94a7e6beb25b37a5cd8f6084b1a9f69e867bc4"
+    sha256 cellar: :any, arm64_golden_gate: "4f0af39147e6e4240647faabb0b3e8c6162c9830d47bce3a447a499463be27fe"
+    sha256 cellar: :any, arm64_tahoe:       "1cf9113bad2a81f2f134f4c400d15ff24d8775a7c9ddf945766a057108f3aee6"
+    sha256 cellar: :any, arm64_sequoia:     "9ba38beca7a22cc922118d3049185437fd962a43e0e38f84c31a4d301c762da8"
+    sha256 cellar: :any, arm64_linux:       "c4bffed4e4107133ac547854af754aa45736ef31b6567a56d692a2bc2c49e39b"
+    sha256 cellar: :any, x86_64_linux:      "1d376e1827e76adbf29a7bd38c2223d2f2a9f7ce12d2003df52755fb0ae4f347"
   end
 
   depends_on "certifi" => :no_linkage
