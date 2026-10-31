@@ -1,8 +1,8 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  url "https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.5.7.tar.gz"
-  sha256 "09a49e6f19de361444e6e5bf4ccc522a03b37fd9f6d317fd55f0316f2d11aa32"
+  url "https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "937ff5e7d975a3f2630be79e339258eae9fea1d2a42ff9845e0fc67f9ef18d6b"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
