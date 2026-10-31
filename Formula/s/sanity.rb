@@ -1,16 +1,16 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/@sanity/cli/-/cli-8.25.0.tgz"
-  sha256 "56ec6f89c905d92fc2b50aa4094d357e50387848497c1448a2d78ead73f444f0"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-8.26.0.tgz"
+  sha256 "a03b77b9bc7bd1ac08b87f1ad954acc36c859f7bac97b64cddbe87b16609e270"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4715fcb4f98cf0d4eeb6d14a579a21c2205d8c7cb3a440f1a9a7392425b4a7d9"
-    sha256 cellar: :any, arm64_tahoe:       "4715fcb4f98cf0d4eeb6d14a579a21c2205d8c7cb3a440f1a9a7392425b4a7d9"
-    sha256 cellar: :any, arm64_sequoia:     "f4b1bbb601ebc312d179e39e876e1d259c74499418b0d125ed95f239e9e689b9"
-    sha256 cellar: :any, arm64_linux:       "66d5afc389338e033f7105d95fce7c6bbe3f238f8115dc9178b1575f2034ecfe"
-    sha256 cellar: :any, x86_64_linux:      "8bdc444c937df8598ab9a18f1365d3cb60937e8e7a3bf740e2fd8b1872079262"
+    sha256 cellar: :any, arm64_golden_gate: "946b4caecdb449f95a1e009d50f5ea03ec857c3a36090a15a56e68a233da701e"
+    sha256 cellar: :any, arm64_tahoe:       "946b4caecdb449f95a1e009d50f5ea03ec857c3a36090a15a56e68a233da701e"
+    sha256 cellar: :any, arm64_sequoia:     "946b4caecdb449f95a1e009d50f5ea03ec857c3a36090a15a56e68a233da701e"
+    sha256 cellar: :any, arm64_linux:       "f0f6c760254490ee0497586eebf850d40c250e3946353a19ff89c71821267c17"
+    sha256 cellar: :any, x86_64_linux:      "6521c4ec853ea304298e6987e79b58c4732c76561a22a985216bdd68e0e9055e"
   end
 
   depends_on "node"
