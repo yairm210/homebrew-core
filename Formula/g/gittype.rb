@@ -1,8 +1,8 @@
 class Gittype < Formula
   desc "CLI code-typing game that turns your source code into typing challenges"
   homepage "https://github.com/unhappychoice/gittype"
-  url "https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "49d734b079854549380e4048ac1894112736c5b8fb848957ab1e2d3d6cd4a534"
+  url "https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "f8e26bf41a4b6408cf5289569056728924ce731a167dee4c76f0690a232bf59b"
   license "MIT"
   head "https://github.com/unhappychoice/gittype.git", branch: "main"
 
