@@ -1,9 +1,14 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.40.6.tar.gz"
-  sha256 "f5ed3d708d1598b9c8b2bbf07e0f1bfd9f4f6235a3157013a9a889d5081147e1"
+  url "https://ganigeorgiev.com/api/git/pocketbase/pocketbase/archive?rev=refs/tags/v0.41.1"
+  sha256 "fe1d9266eb1049977cda0dbf715b2114edc0f97690d825782f4c14f9fe0409c2"
   license "MIT"
+
+  livecheck do
+    url "https://ganigeorgiev.com/api/git/pocketbase/pocketbase/refs"
+    regex(%r{refs/tags/v?(\d+(?:\.\d+)+)"}i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
@@ -24,7 +29,7 @@ class Pocketbase < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    system "go", "build", *std_go_args(ldflags: "-X github.com/pocketbase/pocketbase.Version=#{version}"), "./examples/base"
+    system "go", "build", *std_go_args(ldflags: "-X ganigeorgiev.com/pocketbase/pocketbase.Version=#{version}"), "./examples/base"
   end
 
   test do
