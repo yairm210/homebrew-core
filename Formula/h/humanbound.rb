@@ -3,8 +3,8 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/5d/36/bafb9ce772cfc374540305d3993360798380f81d4da56e5808bc86cc031a/humanbound-2.13.0.tar.gz"
-  sha256 "873393659445b22d9c1b7c7c6d9ec165689e84375046f83cde2d92d512fceca1"
+  url "https://files.pythonhosted.org/packages/f9/b8/abbe5561953a94ca4116b99242d7d1dc1460f8020d9e3fe9779a78f54083/humanbound-2.14.0.tar.gz"
+  sha256 "83dee3be5237e104a9c106a64428c59a4fedb0fa861166e4c7bf1eb0310fe932"
   license "Apache-2.0"
 
   bottle do
@@ -84,8 +84,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/34/1d/bb4b6538c94b63c32bbe32a4782393ae0560d49f9517f51b04fe3e970d4a/posthog-7.67.0.tar.gz"
-    sha256 "37feb3c125f067ca077800dd986a5a9f1d264a3d92d75ca3061047c4db93565e"
+    url "https://files.pythonhosted.org/packages/0e/f5/21477c4d7868129ce839a4a768a51225da9df3b54c4775d73d04d769c1d8/posthog-7.81.1.tar.gz"
+    sha256 "6d1d7846c4be791d8e91b474a6dd6b73ba994ef52f9ad86ad78e42d8d07ee085"
   end
 
   resource "pygments" do
@@ -114,8 +114,8 @@ class Humanbound < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
-    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+    url "https://files.pythonhosted.org/packages/48/bb/3d8757f21e9a53d9035c9eb039a777047139a16bfdbedfc7a58241c3d914/starlette-1.10.0.tar.gz"
+    sha256 "b8399098d4c1e3522734f7235dc79b1fc967f96cf139c81e0fa30479e0685f9b"
   end
 
   resource "urllib3" do
