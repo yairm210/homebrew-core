@@ -7,11 +7,11 @@ class FilmcraftCli < Formula
   head "https://github.com/storytold/filmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "088e3cdf77c6ea5f2381f1d50a90c3ca93b1ab87de893d32df980063aa1b9ce6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "165da8ad78ba5555d212b14ed426f7b31d54c3e10029c401fc41bade039b97a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a04b2ad3a413fa92473eb4c206fcdd35ac9943b3ab92b7a08e873b3d886a5ceb"
-    sha256 cellar: :any,                 arm64_linux:       "308faac427e45b88c7b6f5f8e0139f1bfd4e58590d6d0c84595a65010a8ba9e5"
-    sha256 cellar: :any,                 x86_64_linux:      "f4ec2ddbe2b7269452efcbc12d9783e8887c66b4056c0b98a6471706ece93e3e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "939b5858adf9e3ee0e09a276ac745cc048d1104ce66559a7bf976af39ab073e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2df5f4703bcf8b352446633db970bbed03942d97f1da653a6449a2bf86e1ad59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc3baad2cc76f871b3acbcdbfd7e685adeabb8d04570e48af956bafaf6c349f6"
+    sha256 cellar: :any,                 arm64_linux:       "c301a9c859713c0fbe63bafbf2d65f62d7ea137ed668e9ca07302187feb04419"
+    sha256 cellar: :any,                 x86_64_linux:      "d4e8b4ff5ef951ec8e4e9b7dd8db83a568350c5a389873a1968baee8a2937716"
   end
 
   depends_on "rust" => :build
