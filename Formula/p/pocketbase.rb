@@ -11,11 +11,11 @@ class Pocketbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "19ef7a7827899fb377ebce1cdf33f05fc7e23cc7f10b5a8a770fc19de8e8af21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f6386945e5d96c9734ed70c9d241ae40c082d5a7c9f80672f319e1808d2f6e96"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "56c71026ccf79c77f204a0599d9d6e7b6e2e36081f6918de9166114d81abf605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c09c633a1e87b01a60bb868d532b8151224dcc7bcc6fb0faba1a96c27b947ff5"
   end
 
   depends_on "go" => :build
