@@ -1,8 +1,8 @@
 class Miniaudio < Formula
   desc "Audio playback and capture library"
   homepage "https://miniaud.io"
-  url "https://github.com/mackron/miniaudio/archive/refs/tags/0.11.25.tar.gz"
-  sha256 "b900edcffe979816e2560a0580b9b1216d674b4f17fbadeca8f777a7f8ab0274"
+  url "https://github.com/mackron/miniaudio/archive/refs/tags/0.11.26.tar.gz"
+  sha256 "838ba55a21c9142adf7b76bdc4351e5cd8b7ae128f46b25ec25f94ae9969c600"
   license any_of: [:public_domain, "MIT-0"]
 
   bottle do
