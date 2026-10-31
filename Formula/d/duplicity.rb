@@ -12,12 +12,11 @@ class Duplicity < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1b858932e64dfd163794acdd700c0d989d47a01862fa70e1d439c9fcde0016af"
-    sha256 cellar: :any, arm64_tahoe:       "66d32a359529c98ffd357739addfcd271cdc8ea7ac940a22424b38fbb895dc91"
-    sha256 cellar: :any, arm64_sequoia:     "f412b0c6807a813fb9ab1d2fe900a59d266345cad72ab05824ed22bdb18761e5"
-    sha256 cellar: :any, arm64_linux:       "5ab7f543bf6fd1c31856ba4d152b8c42c8960bdd9e2fbc56ef3da14ae51175dd"
-    sha256 cellar: :any, x86_64_linux:      "b9a37d47aaf253357ff0f35076154817c18f27166ac334afe265a1a8efd742f8"
+    sha256 cellar: :any, arm64_golden_gate: "2d4268ae58b599294283a5edf06bc69334011da45e766cbc0d5baf56a8bcf105"
+    sha256 cellar: :any, arm64_tahoe:       "bd18ee4cc4a3a8443f0785d6246ad5a77a4d03ac8bc9a26aea517df0d223bb36"
+    sha256 cellar: :any, arm64_sequoia:     "30fc585e6c442a4df3303ef57aa65d7b402f438ee5d7d24e40ee59d68d8cc9d0"
+    sha256 cellar: :any, arm64_linux:       "5758635a7b00c0782f0f627856a56cf6c23af608be5abcf749ae0dcacb7b35e0"
+    sha256 cellar: :any, x86_64_linux:      "4e594f48363d7786621f6c328b004481d6e26c2eebf93f895621c79045a865b3"
   end
 
   # `pkgconf` and `rust` are for bcrypt
