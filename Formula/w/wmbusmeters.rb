@@ -1,8 +1,8 @@
 class Wmbusmeters < Formula
   desc "Read wired or wireless mbus protocol to acquire utility meter readings"
   homepage "https://github.com/wmbusmeters/wmbusmeters"
-  url "https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/3.1.0.tar.gz"
-  sha256 "bb4f739551093167fb22dd65b618536d62b99fb7b7fe5335edbfeb382d391a28"
+  url "https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/3.1.1.tar.gz"
+  sha256 "973278c4febc57faa15854879d12c0e36beebea9ea5374f15717d7f727b6b246"
   license "GPL-3.0-or-later"
   head "https://github.com/wmbusmeters/wmbusmeters.git", branch: "master"
 
