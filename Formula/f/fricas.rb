@@ -7,11 +7,11 @@ class Fricas < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e456dde0e8d3c3499d13ad15f6c9d07e609744d1e3fea29c48018ca609939e06"
-    sha256 cellar: :any, arm64_tahoe:       "0640dae52ae26122b806c5216208d84f6ec8d999c40a7e45b519f0ad7a004b7e"
-    sha256 cellar: :any, arm64_sequoia:     "00569be634dff84d65f0887e8a439af7b8ed0a9bd47929c774c22ecb013f6185"
-    sha256 cellar: :any, arm64_linux:       "92ab0b0f852d615a56d657a4f7a2524602e7afd1aa575840cb38211ddb0192ee"
-    sha256 cellar: :any, x86_64_linux:      "a4b33fc89353ac231d2868efd6e8943867c04f9e3850e0fc7e26cffa71044747"
+    sha256 cellar: :any, arm64_golden_gate: "19e8489980440724251e2239cc19851f6704ba045da5d1314ffd8205443458e0"
+    sha256 cellar: :any, arm64_tahoe:       "84fc55f7ed80bc4d3f329518891a3cd7e11a275f02377e1743f10a22672889d1"
+    sha256 cellar: :any, arm64_sequoia:     "9d00fe01185d295f387e5ef8b6f59253b684957ecd4cb496f2cadfc1537a5460"
+    sha256 cellar: :any, arm64_linux:       "c57177f9de1c7722979869f56839708163a689f62a81abdd5e6f2391c4de8b94"
+    sha256 cellar: :any, x86_64_linux:      "de8d79d1599836cf1a0d1364cbddb4c39ca93a0377ca9dca55d0b4bc50badc76"
   end
 
   depends_on "gmp"
