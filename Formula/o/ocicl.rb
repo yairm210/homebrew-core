@@ -7,11 +7,11 @@ class Ocicl < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "acf9195fe118e0d9651349031e5004d6b0e0c3641e5d978efaa6ea3728782c4c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3ff7d1814cfe7166c574c91bf343147954c950d4de16499cb4c91c8a806a077"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13e3662b5566a1167c54149ccd9a7ca7eb8c0f1b7efc74c1d07bd159f521887c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e3b267282e9cc5a442a0ebabb7c707c96d017ac9988f2835663370f215d5414"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b6bb1e48276d3a7fe7ed76ad6f6095af363021e038042487c0e6b55cfe68d3ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a9e7367c7c03c4368ecce8d10a622822578ebfb4e121fe90693992e82a8ff6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "75b10389427263c700a67571f55096ed1eb8eee65daebc9aedb1a2766de1522d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2aae3f91ce22fb368eed816ab6ec820aca0ff4bba237bceeca8ecdc53800579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a922be7671b55c414c6b45ff050fb8fedac20ea9d70a387f6f3a49f4ad677967"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "42564dab05cc0c56b22253316d973c49d092f52a81a80cf125428f55d9b1ab20"
   end
 
   depends_on "sbcl"
