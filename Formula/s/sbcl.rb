@@ -12,11 +12,11 @@ class Sbcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "62c404a86f264d56bd106ea5b81c9cedf86c28ad6f1b201f211217b511511136"
-    sha256 cellar: :any, arm64_tahoe:       "bf1fbd12c145773884bd4eb4e106529c6ff70bd9f06b4fde64d845f732a750f3"
-    sha256 cellar: :any, arm64_sequoia:     "f5ea0e39f978a60a22bf2583927e150164c7ac3142f906198fe03407280ecd87"
-    sha256 cellar: :any, arm64_linux:       "3410c8fd521d0d7c6506a07a3de080958af04720e0acdf0fdbb6ed7273384d64"
-    sha256 cellar: :any, x86_64_linux:      "890a44c77132873f2bbde23854100f08e7c38dde89b4347eb70c93c4f7621f4d"
+    sha256 cellar: :any, arm64_golden_gate: "51472a993f01f7657ea20d0b73c86f333a544e77a7d905855f50035a3a27fcf3"
+    sha256 cellar: :any, arm64_tahoe:       "76b49e3ec6f6513ac15e4f94686d00bfa3e79d17ee437e8bdd0682071083a974"
+    sha256 cellar: :any, arm64_sequoia:     "ba4949e62ab71def6ef27f843cddcb376172a1bf012f646d3ab3e50f8deec57a"
+    sha256 cellar: :any, arm64_linux:       "9316d0beb7e1e0e05804d8ed5b26c490f8263adc2b94e928eba30498622f521a"
+    sha256 cellar: :any, x86_64_linux:      "29c906b341d4175c011ead65372c26dfb82d056dbcd61a7a849617c049297870"
   end
 
   depends_on "ecl" => :build
