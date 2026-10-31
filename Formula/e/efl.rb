@@ -11,11 +11,11 @@ class Efl < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f96de6b0a5b4fed1d76a77c788934b5193bab9e6c8c01bff18457704d1349acf"
-    sha256 arm64_tahoe:       "7edd1f9d16c5beeefd1ed0c2c35c26ea99e25a35a59770ae29bcd7708aa7c70e"
-    sha256 arm64_sequoia:     "cf4a1b17006786fd7b48c8114d484cc46950cc0b756ed3f0503a1fa9345880e5"
-    sha256 arm64_linux:       "97c66e9bd234f504b85d5481d06e40ed572427938a7933e7bf65062c16a29b31"
-    sha256 x86_64_linux:      "5c2491ce7dccbf77b55884c6fe33d28d7bbefb0296eb17391b11eb8cc88d2891"
+    sha256 arm64_golden_gate: "dc4103c6c07e0aa7d98a760407124148c7e11573db0bab26b14f64655425a1f7"
+    sha256 arm64_tahoe:       "02b4765b2d84f0b9c921c86754140ddc204d1fbdbabe32bade328d3a283661a3"
+    sha256 arm64_sequoia:     "fb7e94400484464d6258c55231fe7ee188de9fbf710fa68a9f0b483fa9d5ed65"
+    sha256 arm64_linux:       "3cd90d3cd15576fb436f2553a025a4c1b4abd84c915847fd358438a7f71206e0"
+    sha256 x86_64_linux:      "32cd21c2d78fd8fbf118b1ce96a846508fd931b2f25b30e9a55c1fcfa18e9291"
   end
 
   depends_on "meson" => :build
